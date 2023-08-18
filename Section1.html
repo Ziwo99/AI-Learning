@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+
+					<h1>Section 9: La programmation orientée objet en Python</h1>
+
+					<h2>Introduction à la programmation orientée objet en Python</h2>
+					<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer
+						et d'organiser le code de manière plus modulaire et réutilisable. En Python, tout est un objet,
+						ce qui signifie que chaque élément du programme est une instance d'une classe.</p>
+
+					<p>Les principaux concepts de la POO en Python sont les classes, les objets, les méthodes et
+						l'héritage. Commençons par comprendre ce qu'est une classe.</p>
+
+					<h2>Les classes et les objets en Python</h2>
+					<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les attributs (variables)
+						et les méthodes (fonctions) qui caractérisent un objet de cette classe.</p>
+
+					<p>Voici un exemple de définition d'une classe en Python :</p>
+
+					<pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print("Hello, my name is", self.name)
+
+# Création d'un objet de la classe Person
+person1 = Person("John", 25)
+
+# Appel de la méthode greet de l'objet person1
+person1.greet()</code></pre>
+
+					<p>Dans cet exemple, nous avons créé une classe "Person" avec deux attributs (name et age) et une
+						méthode (greet). Ensuite, nous avons créé un objet "person1" de la classe "Person" et appelé sa
+						méthode "greet".</p>
+
+					<h2>L'héritage en Python</h2>
+					<p>L'héritage est un mécanisme qui permet à une classe d'hériter des attributs et des méthodes d'une
+						autre classe. La classe qui hérite est appelée classe dérivée ou sous-classe, et la classe dont
+						elle hérite est appelée classe de base ou superclasse.</p>
+
+					<p>Voici un exemple d'utilisation de l'héritage en Python :</p>
+
+					<pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+# Création d'objets de différentes classes dérivées
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+# Appel de la méthode speak des objets
+print(dog.speak())  # Output: Woof!
+print(cat.speak())  # Output: Meow!</code></pre>
+
+					<p>Dans cet exemple, nous avons une classe de base "Animal" avec une méthode "speak" qui est
+						déclarée comme une méthode abstraite en levant une exception "NotImplementedError". Ensuite,
+						nous avons deux classes dérivées "Dog" et "Cat" qui héritent de la classe "Animal" et
+						implémentent leur propre version de la méthode "speak".</p>
+
+					<h2>Les méthodes spéciales en Python</h2>
+					<p>Les méthodes spéciales, également appelées méthodes magiques, sont des méthodes prédéfinies en
+						Python qui permettent de définir le comportement spécial d'un objet. Elles sont identifiées par
+						des noms entourés de doubles underscores (par exemple, __init__ pour le constructeur).</p>
+
+					<p>Voici quelques exemples de méthodes spéciales couramment utilisées en Python :</p>
+
+					<pre><code>class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def __str__(self):
+        return "Vector({}, {})".format(self.x, self.y)
+
+# Création d'objets de la classe Vector
+v1 = Vector(2, 3)
+v2 = Vector(4, 5)
+
+# Utilisation de la méthode spéciale __add__
+v3 = v1 + v2
+
+# Utilisation de la méthode spéciale __str__
+print(v3)  # Output: Vector(6, 8)</code></pre>
+
+					<p>Dans cet exemple, nous avons une classe "Vector" avec une méthode spéciale "__add__" qui permet
+						d'additionner deux objets de la classe "Vector". Nous avons également une méthode spéciale
+						"__str__" qui définit la représentation sous forme de chaîne de caractères de l'objet.</p>
+
+					<p>Les méthodes spéciales en Python offrent une grande flexibilité et permettent de personnaliser le
+						comportement des objets en fonction des besoins spécifiques du programme.</p>
+
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
