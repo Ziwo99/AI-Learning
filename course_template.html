@@ -8,7 +8,7 @@
 <html>
 
 <head>
-	<title>AI-Learning - FORMATIONS</title>
+	<title>AI-Learning - {{ subject }} cours</title>
 	<meta charset="utf-8" />
 	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport" />
 	<link href="assets/css/main.css" rel="stylesheet" />
@@ -47,28 +47,25 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Formations</h2>
-					<p>Bienvenue dans l’univers de l’apprentissage du futur.</p>
+					<h2>{{ subject }}</h2>
+					<p>{{ description }}</p>
 				</div>
 			</header>
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					<h2 class="major">Formations AI-Learning</h2>
-					<h3>Voici une collection
-						de formations e-learning générée par intelligence artificielle :</h3>
-					<section class="features">
-						<!-- DEPART -->
-						<article>
-							<a class="image" href="#"><img alt="" src="images/python.png" /></a>
-							<h3 class="major">Python</h3>
-							<p>Python est un langage de programmation moderne, polyvalent et en forte demande sur le
-								marché du travail. Simple à apprendre, mais puissant dans son exécution, il est le choix
-								idéal pour les débutants comme pour les développeurs expérimentés.</p>
-							<a class="special" href="course.html">Commencer le cours</a>
-						</article>
-						<!-- FIN -->
-					</section>
+					<h3 class="major">Table des matières</h3>
+					<ul class="alt">
+						{% for section, sub_sections in training_plan.items() %}
+						<li><a href="#{{ section }}">{{ section }}</a>
+							<ul>
+								{% for sub_section in sub_sections %}
+								<li>{{ sub_section }}<br></li>
+								{% endfor %}
+							</ul>
+						</li>
+						{% endfor %}
+					</ul>
 				</div>
 			</div>
 		</section>
