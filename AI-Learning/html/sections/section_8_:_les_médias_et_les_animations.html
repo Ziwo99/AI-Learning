@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les médias et les animations</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 8 : Les médias et les animations</h1>
+
+<h2>Les balises audio et vidéo</h2>
+<p>Les balises audio et vidéo permettent d'intégrer des fichiers audio et vidéo dans une page HTML. Voici comment les utiliser :</p>
+
+<p>Pour intégrer un fichier audio, utilisez la balise <code>&lt;audio&gt;</code> :</p>
+<pre><code>&lt;audio src="chemin_vers_le_fichier_audio.mp3"&gt;
+    Votre navigateur ne supporte pas l'élément audio.
+&lt;/audio&gt;</code></pre>
+
+<p>Pour intégrer une vidéo, utilisez la balise <code>&lt;video&gt;</code> :</p>
+<pre><code>&lt;video src="chemin_vers_le_fichier_video.mp4" controls&gt;
+    Votre navigateur ne supporte pas l'élément vidéo.
+&lt;/video&gt;</code></pre>
+
+<p>Assurez-vous de spécifier le chemin vers le fichier audio ou vidéo dans l'attribut <code>src</code>. Vous pouvez également ajouter l'attribut <code>controls</code> pour afficher les contrôles de lecture.</p>
+
+<h2>Les animations CSS</h2>
+<p>Les animations CSS permettent de créer des effets visuels dynamiques sur une page HTML. Voici comment les utiliser :</p>
+
+<p>Pour créer une animation CSS, vous devez définir une règle d'animation dans votre fichier CSS :</p>
+<pre><code>@keyframes nom_de_l_animation {
+    0% { propriété: valeur_initiale; }
+    100% { propriété: valeur_finale; }
+}</code></pre>
+
+<p>Ensuite, vous pouvez appliquer cette animation à un élément HTML en utilisant la propriété <code>animation</code> :</p>
+<pre><code>element {
+    animation: nom_de_l_animation durée timing-function nombre_d_iterations direction;
+}</code></pre>
+
+<p>Assurez-vous de remplacer <code>nom_de_l_animation</code> par le nom que vous avez donné à votre animation, et de spécifier la durée, la fonction de temporisation, le nombre d'itérations et la direction souhaités.</p>
+
+<h2>Les transitions CSS</h2>
+<p>Les transitions CSS permettent de créer des effets de transition fluides entre les états d'un élément HTML. Voici comment les utiliser :</p>
+
+<p>Pour créer une transition CSS, vous devez définir une règle de transition dans votre fichier CSS :</p>
+<pre><code>element {
+    transition: propriété durée timing-function;
+}</code></pre>
+
+<p>Ensuite, vous pouvez spécifier les états de transition en utilisant les pseudo-classes <code>:hover</code>, <code>:active</code>, <code>:focus</code>, etc. :</p>
+<pre><code>element:hover {
+    propriété: valeur;
+}</code></pre>
+
+<p>Assurez-vous de remplacer <code>propriété</code> par la propriété CSS que vous souhaitez animer, et de spécifier la durée et la fonction de temporisation souhaitées.</p>
+
+<h2>Les transformations CSS</h2>
+<p>Les transformations CSS permettent de modifier la position, la taille, la rotation et l'échelle d'un élément HTML. Voici comment les utiliser :</p>
+
+<p>Pour appliquer une transformation CSS à un élément, utilisez la propriété <code>transform</code> :</p>
+<pre><code>element {
+    transform: valeur_transformation;
+}</code></pre>
+
+<p>Voici quelques exemples de transformations couramment utilisées :</p>
+<pre><code>element {
+    transform: translate(x, y); /* Déplace l'élément selon les coordonnées x et y */
+    transform: rotate(angle); /* Fait tourner l'élément selon l'angle spécifié */
+    transform: scale(x, y); /* Redimensionne l'élément selon les facteurs x et y */
+}</code></pre>
+
+<p>Assurez-vous de remplacer <code>valeur_transformation</code> par la transformation que vous souhaitez appliquer, en utilisant les valeurs appropriées.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

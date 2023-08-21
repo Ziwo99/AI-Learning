@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les mises en page CSS</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 7 : Les mises en page CSS</h1>
+
+<h2>Les boîtes CSS</h2>
+<p>Les boîtes CSS sont des éléments fondamentaux pour la mise en page d'une page web. Elles permettent de structurer et de positionner les différents éléments de contenu. Une boîte CSS est composée de quatre parties principales : le contenu, le padding, la bordure et la marge.</p>
+
+<p>Le contenu représente le texte ou les éléments visuels à l'intérieur de la boîte. Le padding est l'espace entre le contenu et la bordure. La bordure est une ligne qui entoure la boîte. Enfin, la marge est l'espace entre la boîte et les autres éléments de la page.</p>
+
+<p>Voici un exemple de code HTML utilisant les balises appropriées pour créer une boîte CSS :</p>
+
+<pre><code>&lt;div class="boite"&gt;
+    &lt;p&gt;Contenu de la boîte&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>Les modèles de boîtes CSS</h2>
+<p>Les modèles de boîtes CSS permettent de contrôler la taille et le positionnement des boîtes. Il existe deux modèles de boîtes principaux : le modèle de boîte en bloc et le modèle de boîte en ligne.</p>
+
+<p>Le modèle de boîte en bloc est utilisé par défaut pour les éléments de type "block". Il occupe toute la largeur disponible et crée un nouveau bloc en dessous de l'élément précédent.</p>
+
+<p>Le modèle de boîte en ligne est utilisé par défaut pour les éléments de type "inline". Il occupe uniquement l'espace nécessaire pour afficher son contenu et ne crée pas de nouveau bloc en dessous de l'élément précédent.</p>
+
+<p>Voici un exemple de code HTML utilisant les balises appropriées pour créer une boîte CSS avec le modèle de boîte en bloc :</p>
+
+<pre><code>&lt;div class="boite-bloc"&gt;
+    &lt;p&gt;Contenu de la boîte en bloc&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Et voici un exemple de code HTML utilisant les balises appropriées pour créer une boîte CSS avec le modèle de boîte en ligne :</p>
+
+<pre><code>&lt;span class="boite-ligne"&gt;Contenu de la boîte en ligne&lt;/span&gt;</code></pre>
+
+<h2>Les propriétés de positionnement CSS</h2>
+<p>Les propriétés de positionnement CSS permettent de contrôler la position des éléments sur la page. Il existe plusieurs propriétés de positionnement, notamment :</p>
+
+<ul>
+    <li><code>position: static;</code> : positionnement par défaut, l'élément suit le flux normal du document.</li>
+    <li><code>position: relative;</code> : positionnement relatif à sa position normale. Les propriétés <code>top</code>, <code>right</code>, <code>bottom</code> et <code>left</code> peuvent être utilisées pour ajuster la position.</li>
+    <li><code>position: absolute;</code> : positionnement absolu par rapport à son premier parent positionné. Les propriétés <code>top</code>, <code>right</code>, <code>bottom</code> et <code>left</code> peuvent être utilisées pour ajuster la position.</li>
+    <li><code>position: fixed;</code> : positionnement fixe par rapport à la fenêtre du navigateur. L'élément reste à la même position même lorsque la page est défilée.</li>
+</ul>
+
+<p>Voici un exemple de code HTML utilisant les balises appropriées pour créer un élément avec une position relative :</p>
+
+<pre><code>&lt;div class="element-relatif"&gt;
+    &lt;p&gt;Contenu de l'élément relatif&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>Les propriétés de mise en page CSS</h2>
+<p>Les propriétés de mise en page CSS permettent de contrôler la disposition des éléments sur la page. Il existe plusieurs propriétés de mise en page, notamment :</p>
+
+<ul>
+    <li><code>display: block;</code> : l'élément est affiché comme un bloc, occupant toute la largeur disponible.</li>
+    <li><code>display: inline;</code> : l'élément est affiché en ligne, occupant uniquement l'espace nécessaire pour afficher son contenu.</li>
+    <li><code>display: inline-block;</code> : l'élément est affiché en ligne, mais peut avoir une largeur et une hauteur définies.</li>
+    <li><code>float: left;</code> : l'élément est déplacé vers la gauche et les autres éléments s'alignent autour de lui.</li>
+    <li><code>clear: both;</code> : empêche les éléments suivants de flotter à gauche ou à droite.</li>
+</ul>
+
+<p>Voici un exemple de code HTML utilisant les balises appropriées pour créer un élément avec une mise en page en bloc :</p>
+
+<pre><code>&lt;div class="element-bloc"&gt;
+    &lt;p&gt;Contenu de l'élément en bloc&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
