@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les fonctionnalités avancées de Scala</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 5 : Les fonctionnalités avancées de Scala</h1>
+
+<h2>Pattern matching</h2>
+<p>Le pattern matching est une fonctionnalité puissante de Scala qui permet de faire correspondre des valeurs à des motifs spécifiques. Cela permet de simplifier le code et d'effectuer des actions différentes en fonction des différentes valeurs possibles.</p>
+
+<p>Voici un exemple de pattern matching en Scala :</p>
+
+<pre><code>val x: Any = 5
+
+x match {
+  case 1 => println("Un")
+  case 2 => println("Deux")
+  case 3 => println("Trois")
+  case _ => println("Autre")
+}</code></pre>
+
+<p>Dans cet exemple, la valeur de la variable x est comparée aux différents motifs spécifiés. Si la valeur correspond à l'un des motifs, l'action correspondante est exécutée. Dans le cas contraire, l'action par défaut est exécutée.</p>
+
+<h2>Implicits</h2>
+<p>Les implicits sont une fonctionnalité avancée de Scala qui permet de définir des conversions implicites, des paramètres implicites et des méthodes implicites. Cela permet d'améliorer la lisibilité et la concision du code.</p>
+
+<p>Voici un exemple d'utilisation des implicits en Scala :</p>
+
+<pre><code>implicit val rate: Double = 0.1
+
+def calculateInterest(amount: Double)(implicit rate: Double): Double = {
+  amount * rate
+}
+
+val interest = calculateInterest(1000) // Le taux implicite est utilisé ici
+
+println(interest)</code></pre>
+
+<p>Dans cet exemple, la valeur du taux est définie comme implicite. Lorsque la méthode calculateInterest est appelée sans spécifier explicitement le taux, la valeur implicite est utilisée. Cela permet de simplifier l'appel de la méthode et de rendre le code plus lisible.</p>
+
+<h2>Types avancés</h2>
+<p>Scala offre une variété de types avancés qui permettent de manipuler des données de manière plus précise et de garantir la sécurité du type. Certains de ces types incluent les types optionnels, les types de collection et les types de fonction.</p>
+
+<p>Voici un exemple d'utilisation des types avancés en Scala :</p>
+
+<pre><code>val maybeName: Option[String] = Some("John")
+
+maybeName match {
+  case Some(name) => println(s"Hello, $name!")
+  case None => println("Hello, anonymous!")
+}</code></pre>
+
+<p>Dans cet exemple, le type Option est utilisé pour représenter une valeur qui peut être présente ou absente. Le pattern matching est utilisé pour vérifier si la valeur est présente ou absente, et agir en conséquence. Cela permet de gérer les cas où une valeur peut être manquante de manière plus sûre.</p>
+
+<h2>Macros</h2>
+<p>Les macros sont une fonctionnalité avancée de Scala qui permet de générer du code à la compilation. Cela permet d'effectuer des transformations complexes sur le code source et d'ajouter des fonctionnalités supplémentaires au langage.</p>
+
+<p>Voici un exemple d'utilisation des macros en Scala :</p>
+
+<pre><code>import scala.language.experimental.macros
+import scala.reflect.macros.blackbox.Context
+
+def debug(expr: Any): Unit = macro debugImpl
+
+def debugImpl(c: Context)(expr: c.Expr[Any]): c.Expr[Unit] = {
+  import c.universe._
+
+  val code = q"""println("Debug: " + $expr)"""
+  c.Expr[Unit](code)
+}
+
+debug(5 + 3)</code></pre>
+
+<p>Dans cet exemple, une macro est définie pour ajouter des instructions de débogage au code. Lorsque la méthode debug est appelée, la macro est invoquée et génère du code qui affiche le résultat de l'expression passée en paramètre. Cela permet d'ajouter facilement des instructions de débogage au code sans avoir à les écrire manuellement.</p>
+
+<h2>Programmation concurrente avec Scala</h2>
+<p>Scala offre des fonctionnalités avancées pour la programmation concurrente, ce qui permet d'écrire des programmes qui peuvent s'exécuter de manière concurrente et tirer parti des processeurs multi-cœurs.</p>
+
+<p>Voici un exemple d'utilisation de la programmation concurrente en Scala :</p>
+
+<pre><code>import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+
+val future1 = Future {
+  // Code exécuté de manière asynchrone
+  // ...
+  "Résultat 1"
+}
+
+val future2 = Future {
+  // Code exécuté de manière asynchrone
+  // ...
+  "Résultat 2"
+}
+
+val combinedFuture = for {
+  result1 <- future1
+  result2 <- future2
+} yield (result1, result2)
+
+combinedFuture.foreach { case (result1, result2) =>
+  println(s"Résultat 1 : $result1")
+  println(s"Résultat 2 : $result2")
+}</code></pre>
+
+<p>Dans cet exemple, deux futures sont créés pour exécuter du code de manière asynchrone. Les résultats des deux futures sont ensuite combinés à l'aide d'une expression for-comprehension. Enfin, les résultats combinés sont affichés. Cela permet d'exécuter des tâches de manière concurrente et de récupérer les résultats une fois qu'ils sont disponibles.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

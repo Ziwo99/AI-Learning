@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Programmation fonctionnelle en Scala</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 4: Programmation fonctionnelle en Scala</h1>
+
+<h2>Fonctions de haut niveau</h2>
+<p>Les fonctions de haut niveau en Scala sont des fonctions qui peuvent être passées en tant que paramètres à d'autres fonctions ou retournées en tant que résultats. Elles sont considérées comme des valeurs de première classe. Cela signifie que les fonctions peuvent être traitées de la même manière que les autres types de données.</p>
+
+<p>Voici un exemple de fonction de haut niveau en Scala :</p>
+<pre><code>def applyOperation(x: Int, y: Int, operation: (Int, Int) => Int): Int = {
+  operation(x, y)
+}
+
+def add(x: Int, y: Int): Int = {
+  x + y
+}
+
+val result = applyOperation(5, 3, add)
+println(result) // Output: 8
+</code></pre>
+
+<h2>Fonctions anonymes et lambdas</h2>
+<p>Les fonctions anonymes en Scala sont des fonctions qui n'ont pas de nom. Elles sont également appelées lambdas. Les fonctions anonymes peuvent être utilisées pour simplifier le code en évitant la nécessité de définir une fonction séparée.</p>
+
+<p>Voici un exemple d'utilisation d'une fonction anonyme en Scala :</p>
+<pre><code>val numbers = List(1, 2, 3, 4, 5)
+
+val squaredNumbers = numbers.map(x => x * x)
+println(squaredNumbers) // Output: List(1, 4, 9, 16, 25)
+</code></pre>
+
+<h2>Fonctions récursives</h2>
+<p>Les fonctions récursives en Scala sont des fonctions qui s'appellent elles-mêmes. Elles sont souvent utilisées pour résoudre des problèmes qui peuvent être décomposés en sous-problèmes plus petits.</p>
+
+<p>Voici un exemple de fonction récursive en Scala pour calculer le factoriel d'un nombre :</p>
+<pre><code>def factorial(n: Int): Int = {
+  if (n == 0) 1
+  else n * factorial(n - 1)
+}
+
+val result = factorial(5)
+println(result) // Output: 120
+</code></pre>
+
+<h2>Immutabilité et immutabilité partielle</h2>
+<p>L'immutabilité en Scala signifie que les objets ne peuvent pas être modifiés une fois qu'ils ont été créés. Cela permet d'éviter les effets de bord indésirables et facilite la programmation concurrente.</p>
+
+<p>Voici un exemple d'utilisation de l'immutabilité en Scala :</p>
+<pre><code>val list = List(1, 2, 3, 4, 5)
+val newList = list.map(x => x * 2)
+println(newList) // Output: List(2, 4, 6, 8, 10)
+</code></pre>
+
+<p>L'immutabilité partielle en Scala signifie que certains éléments d'un objet peuvent être modifiés, tandis que d'autres restent immuables. Cela permet de combiner les avantages de l'immutabilité avec la flexibilité de la modification sélective.</p>
+
+<h2>Fonctions d'ordre supérieur</h2>
+<p>Les fonctions d'ordre supérieur en Scala sont des fonctions qui prennent d'autres fonctions en tant que paramètres ou retournent des fonctions en tant que résultats. Elles permettent de créer des fonctions génériques et réutilisables.</p>
+
+<p>Voici un exemple d'utilisation d'une fonction d'ordre supérieur en Scala :</p>
+<pre><code>def applyTwice(f: Int => Int, x: Int): Int = {
+  f(f(x))
+}
+
+def increment(x: Int): Int = {
+  x + 1
+}
+
+val result = applyTwice(increment, 5)
+println(result) // Output: 7
+</code></pre>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
