@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les fonctionnalités avancées de Java</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 4 : Les fonctionnalités avancées de Java</h1>
+
+<h2>Gestion des fichiers et des flux</h2>
+<p>La gestion des fichiers et des flux est une fonctionnalité avancée de Java qui permet de manipuler des fichiers et de lire/écrire des données à partir/depuis ces fichiers. Cette fonctionnalité est essentielle pour de nombreuses applications, notamment celles qui nécessitent le stockage et la récupération de données.</p>
+
+<p>Voici un exemple de code qui illustre comment lire le contenu d'un fichier texte :</p>
+<pre><code>try {
+    File file = new File("example.txt");
+    BufferedReader br = new BufferedReader(new FileReader(file));
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+    br.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<p>Et voici un exemple de code qui montre comment écrire dans un fichier texte :</p>
+<pre><code>try {
+    FileWriter writer = new FileWriter("example.txt");
+    writer.write("Hello, world!");
+    writer.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<h2>Les exceptions avancées</h2>
+<p>Les exceptions avancées sont utilisées pour gérer les erreurs et les situations exceptionnelles dans un programme Java. Elles permettent de détecter et de traiter les erreurs de manière appropriée, ce qui améliore la robustesse et la fiabilité du code.</p>
+
+<p>Voici un exemple de code qui montre comment gérer une exception :</p>
+<pre><code>try {
+    int result = divide(10, 0);
+    System.out.println("Result: " + result);
+} catch (ArithmeticException e) {
+    System.out.println("Error: Division by zero");
+}
+
+public static int divide(int a, int b) throws ArithmeticException {
+    if (b == 0) {
+        throw new ArithmeticException("Division by zero");
+    }
+    return a / b;
+}</code></pre>
+
+<h2>Les annotations</h2>
+<p>Les annotations sont des métadonnées qui fournissent des informations supplémentaires sur les éléments du code Java. Elles peuvent être utilisées pour spécifier des contraintes, des configurations ou des comportements particuliers.</p>
+
+<p>Voici un exemple de code qui utilise une annotation personnalisée :</p>
+<pre><code>@MyAnnotation(name = "John", age = 30)
+public class Person {
+    // Code de la classe Person
+}</code></pre>
+
+<h2>Les génériques</h2>
+<p>Les génériques permettent de créer des classes, des interfaces et des méthodes qui peuvent être paramétrées par un type. Cela permet de réutiliser du code et d'améliorer la sécurité et la lisibilité du code.</p>
+
+<p>Voici un exemple de code qui montre comment utiliser des génériques :</p>
+<pre><code>public class Box&lt;T&gt; {
+    private T content;
+    
+    public void setContent(T content) {
+        this.content = content;
+    }
+    
+    public T getContent() {
+        return content;
+    }
+}
+
+Box&lt;String&gt; box = new Box&lt;&gt;();
+box.setContent("Hello, world!");
+String content = box.getContent();</code></pre>
+
+<h2>Les threads et la concurrence</h2>
+<p>Les threads permettent d'exécuter plusieurs tâches simultanément dans un programme Java. La concurrence est la gestion de l'accès simultané aux ressources partagées par plusieurs threads. Ces fonctionnalités sont essentielles pour développer des applications réactives et performantes.</p>
+
+<p>Voici un exemple de code qui montre comment créer et exécuter un thread :</p>
+<pre><code>public class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running");
+    }
+}
+
+MyThread thread = new MyThread();
+thread.start();</code></pre>
+
+<h2>Les expressions lambda et les streams</h2>
+<p>Les expressions lambda et les streams sont des fonctionnalités introduites dans Java 8 qui simplifient le traitement des collections de données. Les expressions lambda permettent de définir des fonctions anonymes de manière concise, tandis que les streams permettent d'effectuer des opérations de traitement de données de manière fluide et parallèle.</p>
+
+<p>Voici un exemple de code qui montre comment utiliser une expression lambda et un stream :</p>
+<pre><code>List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.stream()
+                 .filter(n -> n % 2 == 0)
+                 .mapToInt(n -> n)
+                 .sum();
+System.out.println("Sum of even numbers: " + sum);</code></pre>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
