@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Programmation asynchrone</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 5: Programmation asynchrone</h1>
+
+<h2>Introduction à la programmation asynchrone</h2>
+<p>La programmation asynchrone est un concept clé en JavaScript qui permet d'exécuter des tâches de manière non bloquante. Contrairement à la programmation synchrone, où les tâches sont exécutées les unes après les autres, la programmation asynchrone permet d'exécuter plusieurs tâches en parallèle.</p>
+
+<p>La programmation asynchrone est particulièrement utile lorsque nous devons effectuer des opérations qui prennent du temps, comme les appels réseau ou les accès à la base de données. Au lieu de bloquer l'exécution du programme jusqu'à ce que ces opérations soient terminées, nous pouvons les exécuter de manière asynchrone et continuer à exécuter d'autres tâches en attendant leur achèvement.</p>
+
+<h2>Les callbacks en Javascript</h2>
+<p>Les callbacks sont une technique couramment utilisée en JavaScript pour gérer la programmation asynchrone. Un callback est une fonction qui est passée en tant qu'argument à une autre fonction et qui sera appelée une fois que cette fonction aura terminé son exécution.</p>
+
+<p>Voici un exemple d'utilisation d'un callback pour effectuer une requête AJAX :</p>
+
+<pre><code>function makeAjaxRequest(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            callback(xhr.responseText);
+        }
+    };
+    xhr.send();
+}
+
+function handleResponse(response) {
+    console.log('La réponse est : ' + response);
+}
+
+makeAjaxRequest('https://api.example.com/data', handleResponse);
+</code></pre>
+
+<p>Dans cet exemple, la fonction makeAjaxRequest effectue une requête AJAX asynchrone vers l'URL spécifiée et appelle le callback handleResponse une fois que la réponse est reçue. Cela permet d'exécuter d'autres tâches pendant que la requête est en cours d'exécution.</p>
+
+<h2>Les Promises en Javascript</h2>
+<p>Les Promises sont une autre façon de gérer la programmation asynchrone en JavaScript. Une Promise représente une valeur qui peut être disponible maintenant, dans le futur ou jamais. Elle permet de gérer les opérations asynchrones de manière plus lisible et plus expressive.</p>
+
+<p>Voici un exemple d'utilisation d'une Promise pour effectuer une requête AJAX :</p>
+
+<pre><code>function makeAjaxRequest(url) {
+    return new Promise(function(resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    resolve(xhr.responseText);
+                } else {
+                    reject(xhr.statusText);
+                }
+            }
+        };
+        xhr.send();
+    });
+}
+
+makeAjaxRequest('https://api.example.com/data')
+    .then(function(response) {
+        console.log('La réponse est : ' + response);
+    })
+    .catch(function(error) {
+        console.error('Une erreur s\'est produite : ' + error);
+    });
+</code></pre>
+
+<p>Dans cet exemple, la fonction makeAjaxRequest retourne une Promise qui est résolue avec la réponse de la requête AJAX si celle-ci réussit, ou rejetée avec le statut de la requête si elle échoue. Les méthodes then et catch permettent de gérer respectivement la résolution et le rejet de la Promise.</p>
+
+<h2>Les async/await en Javascript</h2>
+<p>Les async/await sont une syntaxe introduite dans ECMAScript 2017 pour simplifier la gestion de la programmation asynchrone en JavaScript. Ils permettent d'écrire du code asynchrone de manière plus synchrone, en utilisant des mots-clés spéciaux.</p>
+
+<p>Voici un exemple d'utilisation des async/await pour effectuer une requête AJAX :</p>
+
+<pre><code>async function makeAjaxRequest(url) {
+    try {
+        var response = await fetch(url);
+        var data = await response.json();
+        console.log('Les données sont : ' + JSON.stringify(data));
+    } catch (error) {
+        console.error('Une erreur s\'est produite : ' + error);
+    }
+}
+
+makeAjaxRequest('https://api.example.com/data');
+</code></pre>
+
+<p>Dans cet exemple, la fonction makeAjaxRequest est déclarée avec le mot-clé async, ce qui permet d'utiliser le mot-clé await à l'intérieur de cette fonction. L'opérateur await permet d'attendre la résolution d'une Promise avant de continuer l'exécution du code. Cela permet d'écrire du code asynchrone de manière plus lisible et plus proche de la syntaxe synchrone.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

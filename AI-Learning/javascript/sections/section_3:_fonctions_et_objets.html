@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Fonctions et Objets</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 3: Fonctions et Objets</h1>
+
+<h2>Les fonctions en Javascript</h2>
+<p>Les fonctions en Javascript sont des blocs de code réutilisables qui peuvent être appelés à partir d'autres parties du programme. Elles permettent d'organiser le code en le divisant en tâches plus petites et plus gérables.</p>
+
+<p>Pour déclarer une fonction en Javascript, utilisez le mot-clé <code>function</code> suivi du nom de la fonction et des parenthèses. Par exemple :</p>
+
+<pre><code>function maFonction() {
+    // Code de la fonction
+}</code></pre>
+
+<p>Les fonctions peuvent prendre des paramètres, qui sont des valeurs que vous pouvez passer à la fonction lors de son appel. Les paramètres sont spécifiés entre les parenthèses de la déclaration de la fonction. Par exemple :</p>
+
+<pre><code>function addition(a, b) {
+    return a + b;
+}</code></pre>
+
+<p>Pour appeler une fonction, utilisez simplement son nom suivi de parenthèses. Par exemple :</p>
+
+<pre><code>maFonction();</code></pre>
+
+<p>Les fonctions peuvent également renvoyer une valeur à l'endroit où elles ont été appelées à l'aide du mot-clé <code>return</code>. Par exemple :</p>
+
+<pre><code>var resultat = addition(3, 5);
+console.log(resultat); // Affiche 8</code></pre>
+
+<h2>Les objets en Javascript</h2>
+<p>Les objets en Javascript sont des structures de données qui regroupent des propriétés et des méthodes. Les propriétés sont des variables qui contiennent des valeurs, tandis que les méthodes sont des fonctions associées à l'objet.</p>
+
+<p>Pour créer un objet en Javascript, utilisez la notation littérale d'objet. Par exemple :</p>
+
+<pre><code>var personne = {
+    nom: "John",
+    age: 30,
+    direBonjour: function() {
+        console.log("Bonjour !");
+    }
+};</code></pre>
+
+<p>Vous pouvez accéder aux propriétés d'un objet en utilisant la notation pointée. Par exemple :</p>
+
+<pre><code>console.log(personne.nom); // Affiche "John"</code></pre>
+
+<p>Vous pouvez également appeler les méthodes d'un objet en utilisant la notation pointée suivie de parenthèses. Par exemple :</p>
+
+<pre><code>personne.direBonjour(); // Affiche "Bonjour !"</code></pre>
+
+<h2>Les prototypes en Javascript</h2>
+<p>Les prototypes en Javascript sont utilisés pour ajouter de nouvelles propriétés et méthodes à un objet existant. Ils permettent d'étendre les fonctionnalités d'un objet sans avoir à le modifier directement.</p>
+
+<p>Pour créer un prototype en Javascript, utilisez la fonction constructeur et le mot-clé <code>prototype</code>. Par exemple :</p>
+
+<pre><code>function Personne(nom, age) {
+    this.nom = nom;
+    this.age = age;
+}
+
+Personne.prototype.direBonjour = function() {
+    console.log("Bonjour !");
+};
+
+var personne = new Personne("John", 30);
+personne.direBonjour(); // Affiche "Bonjour !"</code></pre>
+
+<p>Les prototypes permettent de créer des objets avec des propriétés et des méthodes communes, tout en économisant de la mémoire en ne dupliquant pas ces propriétés et méthodes pour chaque instance d'objet.</p>
+
+<h2>Les classes en Javascript</h2>
+<p>Les classes en Javascript sont une nouvelle façon d'écrire des objets et des prototypes. Elles fournissent une syntaxe plus claire et plus orientée objet pour la création d'objets.</p>
+
+<p>Pour créer une classe en Javascript, utilisez le mot-clé <code>class</code>. Par exemple :</p>
+
+<pre><code>class Personne {
+    constructor(nom, age) {
+        this.nom = nom;
+        this.age = age;
+    }
+
+    direBonjour() {
+        console.log("Bonjour !");
+    }
+}
+
+var personne = new Personne("John", 30);
+personne.direBonjour(); // Affiche "Bonjour !"</code></pre>
+
+<p>Les classes en Javascript sont basées sur les prototypes et offrent une syntaxe plus concise pour créer des objets avec des propriétés et des méthodes.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

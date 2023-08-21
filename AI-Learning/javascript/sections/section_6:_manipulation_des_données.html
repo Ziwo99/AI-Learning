@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Manipulation des données</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 6: Manipulation des données</h1>
+
+<h2>Les tableaux en Javascript</h2>
+<p>Les tableaux sont des structures de données utilisées pour stocker et manipuler des collections d'éléments de manière ordonnée. En Javascript, un tableau peut contenir des valeurs de différents types, y compris des nombres, des chaînes de caractères, des objets, etc.</p>
+
+<p>Voici comment créer un tableau en Javascript :</p>
+<pre><code>var fruits = ['pomme', 'banane', 'orange'];</code></pre>
+
+<p>Pour accéder à un élément spécifique dans un tableau, vous pouvez utiliser l'index de cet élément. L'index commence à 0 pour le premier élément :</p>
+<pre><code>var premierFruit = fruits[0]; // pomme</code></pre>
+
+<p>Vous pouvez également modifier la valeur d'un élément en utilisant son index :</p>
+<pre><code>fruits[1] = 'kiwi'; // ['pomme', 'kiwi', 'orange']</code></pre>
+
+<p>Il existe de nombreuses méthodes intégrées pour manipuler les tableaux en Javascript, telles que <code>push()</code> pour ajouter un élément à la fin du tableau, <code>pop()</code> pour supprimer le dernier élément, <code>splice()</code> pour ajouter ou supprimer des éléments à des positions spécifiques, etc.</p>
+
+<h2>Les objets JSON en Javascript</h2>
+<p>JSON (JavaScript Object Notation) est un format de données largement utilisé pour échanger des informations structurées entre un serveur et un client. En Javascript, un objet JSON est une collection de paires clé-valeur, où les clés sont des chaînes de caractères et les valeurs peuvent être de n'importe quel type de données valide.</p>
+
+<p>Voici un exemple d'objet JSON en Javascript :</p>
+<pre><code>var personne = {
+    "nom": "John Doe",
+    "âge": 30,
+    "ville": "Paris"
+};</code></pre>
+
+<p>Pour accéder à une valeur spécifique dans un objet JSON, vous pouvez utiliser la notation pointée :</p>
+<pre><code>var nomPersonne = personne.nom; // John Doe</code></pre>
+
+<p>Vous pouvez également modifier la valeur d'une clé en utilisant la notation pointée :</p>
+<pre><code>personne.ville = "Lyon"; // {"nom": "John Doe", "âge": 30, "ville": "Lyon"}</code></pre>
+
+<p>Les objets JSON peuvent également contenir des tableaux, des objets imbriqués et d'autres structures de données complexes.</p>
+
+<h2>Les requêtes HTTP en Javascript</h2>
+<p>Les requêtes HTTP sont utilisées pour communiquer avec des serveurs et récupérer des données à partir de ressources externes. En Javascript, vous pouvez effectuer des requêtes HTTP en utilisant l'API Fetch ou l'objet XMLHttpRequest.</p>
+
+<p>Voici un exemple d'utilisation de l'API Fetch pour effectuer une requête GET :</p>
+<pre><code>fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });</code></pre>
+
+<p>Cet exemple envoie une requête GET à l'URL spécifiée et récupère les données JSON renvoyées par le serveur. Les données sont ensuite affichées dans la console.</p>
+
+<p>Vous pouvez également effectuer des requêtes POST, PUT, DELETE, etc., en spécifiant la méthode appropriée dans la configuration de la requête.</p>
+
+<p>Il est important de noter que les requêtes HTTP peuvent être soumises à des restrictions de sécurité, telles que la politique de même origine (Same Origin Policy) ou les en-têtes CORS (Cross-Origin Resource Sharing). Assurez-vous de comprendre ces concepts et de les prendre en compte lors de l'implémentation de requêtes HTTP en Javascript.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
