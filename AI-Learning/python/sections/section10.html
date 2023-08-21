@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Les bases de données en Python</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 10: Les bases de données en Python</h1>
+
+<h2>Introduction aux bases de données en Python</h2>
+<p>Les bases de données sont des outils essentiels pour stocker et organiser de grandes quantités de données de manière structurée. En Python, nous pouvons utiliser différents modules pour interagir avec les bases de données, tels que SQLite, MySQL, PostgreSQL, etc.</p>
+
+<p>Pour commencer à travailler avec les bases de données en Python, nous devons d'abord installer le module approprié. Par exemple, pour utiliser SQLite, nous pouvons installer le module sqlite3 en utilisant la commande suivante :</p>
+
+<pre><code>pip install pysqlite3</code></pre>
+
+<p>Une fois le module installé, nous pouvons importer la bibliothèque dans notre programme Python :</p>
+
+<pre><code>import sqlite3</code></pre>
+
+<h2>La connexion à une base de données en Python</h2>
+<p>Pour interagir avec une base de données, nous devons d'abord établir une connexion. Dans le cas de SQLite, nous pouvons créer une connexion en utilisant la fonction <code>connect()</code> du module sqlite3 :</p>
+
+<pre><code>conn = sqlite3.connect('ma_base_de_donnees.db')</code></pre>
+
+<p>Cette ligne de code crée une connexion à une base de données SQLite appelée "ma_base_de_donnees.db". Si la base de données n'existe pas, elle sera créée automatiquement.</p>
+
+<h2>Les requêtes SQL en Python</h2>
+<p>Une fois que nous avons établi une connexion à la base de données, nous pouvons exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données.</p>
+
+<p>Pour exécuter une requête SQL en Python, nous devons d'abord créer un curseur à l'aide de la méthode <code>cursor()</code> :</p>
+
+<pre><code>cursor = conn.cursor()</code></pre>
+
+<p>Ensuite, nous pouvons exécuter une requête en utilisant la méthode <code>execute()</code> du curseur :</p>
+
+<pre><code>cursor.execute("SELECT * FROM ma_table")</code></pre>
+
+<p>Cette ligne de code exécute une requête SELECT pour récupérer toutes les lignes de la table "ma_table". Les résultats de la requête peuvent être récupérés en utilisant la méthode <code>fetchall()</code> :</p>
+
+<pre><code>rows = cursor.fetchall()</code></pre>
+
+<p>Nous pouvons également exécuter des requêtes INSERT, UPDATE ou DELETE pour insérer, mettre à jour ou supprimer des données dans la base de données.</p>
+
+<p>Voici un exemple d'une requête INSERT pour insérer une nouvelle ligne dans une table :</p>
+
+<pre><code>cursor.execute("INSERT INTO ma_table (colonne1, colonne2) VALUES (?, ?)", (valeur1, valeur2))</code></pre>
+
+<p>Cette ligne de code insère une nouvelle ligne dans la table "ma_table" avec les valeurs spécifiées pour les colonnes "colonne1" et "colonne2". Les valeurs sont passées en tant que paramètres pour éviter les injections SQL.</p>
+
+<p>Une fois que nous avons terminé d'exécuter nos requêtes, nous devons valider les modifications et fermer la connexion à la base de données :</p>
+
+<pre><code>conn.commit()
+conn.close()</code></pre>
+
+<p>Cela garantit que toutes les modifications sont enregistrées dans la base de données et que la connexion est correctement fermée.</p>
+
+<p>En résumé, les bases de données en Python nous permettent de stocker, organiser et manipuler des données de manière efficace. En utilisant les modules appropriés et en exécutant des requêtes SQL, nous pouvons interagir avec les bases de données de manière transparente.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

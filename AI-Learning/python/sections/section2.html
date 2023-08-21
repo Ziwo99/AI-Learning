@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les types de données en Python</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 2: Les types de données en Python</h1>
+
+<h2>Les nombres en Python</h2>
+<p>En Python, les nombres sont utilisés pour représenter des valeurs numériques. Il existe deux types de nombres en Python : les entiers (int) et les nombres à virgule flottante (float).</p>
+
+<p>Les entiers sont des nombres entiers sans décimales. Par exemple :</p>
+<pre><code>x = 5
+y = -10
+z = 0
+</code></pre>
+
+<p>Les nombres à virgule flottante sont des nombres avec une partie décimale. Par exemple :</p>
+<pre><code>a = 3.14
+b = -2.5
+c = 0.0
+</code></pre>
+
+<p>Python prend en charge les opérations mathématiques de base sur les nombres, telles que l'addition, la soustraction, la multiplication et la division. Par exemple :</p>
+<pre><code>addition = 5 + 3
+soustraction = 10 - 2
+multiplication = 4 * 2
+division = 10 / 3
+</code></pre>
+
+<h2>Les chaînes de caractères en Python</h2>
+<p>En Python, les chaînes de caractères sont utilisées pour représenter du texte. Elles sont entourées de guillemets simples ('') ou doubles (""). Par exemple :</p>
+<pre><code>message = 'Bonjour'
+nom = "Alice"
+</code></pre>
+
+<p>Les chaînes de caractères peuvent être concaténées en utilisant l'opérateur +. Par exemple :</p>
+<pre><code>message_complet = message + ' ' + nom
+</code></pre>
+
+<p>Python prend en charge de nombreuses opérations sur les chaînes de caractères, telles que la longueur d'une chaîne, l'accès à des caractères spécifiques et le découpage de chaînes. Par exemple :</p>
+<pre><code>longueur = len(message)
+premier_caractere = message[0]
+derniers_caracteres = message[1:]
+</code></pre>
+
+<h2>Les listes en Python</h2>
+<p>En Python, les listes sont utilisées pour stocker une collection ordonnée d'éléments. Les éléments d'une liste peuvent être de différents types de données. Par exemple :</p>
+<pre><code>ma_liste = [1, 2, 3, 'quatre', 'cinq']
+</code></pre>
+
+<p>Les listes peuvent être modifiées en ajoutant, supprimant ou modifiant des éléments. Par exemple :</p>
+<pre><code>ma_liste.append(6)
+ma_liste.remove('quatre')
+ma_liste[0] = 'un'
+</code></pre>
+
+<p>Python fournit de nombreuses méthodes pour manipuler les listes, telles que le tri, la recherche d'éléments et le découpage de listes. Par exemple :</p>
+<pre><code>ma_liste.sort()
+index = ma_liste.index('cinq')
+sous_liste = ma_liste[2:4]
+</code></pre>
+
+<h2>Les tuples en Python</h2>
+<p>En Python, les tuples sont similaires aux listes, mais ils sont immuables, ce qui signifie qu'ils ne peuvent pas être modifiés une fois créés. Les tuples sont souvent utilisés pour stocker des collections d'éléments hétérogènes. Par exemple :</p>
+<pre><code>mon_tuple = (1, 'deux', 3.0)
+</code></pre>
+
+<p>Les tuples peuvent être utilisés de la même manière que les listes pour accéder à des éléments spécifiques. Par exemple :</p>
+<pre><code>premier_element = mon_tuple[0]
+sous_tuple = mon_tuple[1:]
+</code></pre>
+
+<h2>Les dictionnaires en Python</h2>
+<p>En Python, les dictionnaires sont utilisés pour stocker des paires clé-valeur. Chaque élément d'un dictionnaire est composé d'une clé et d'une valeur associée. Par exemple :</p>
+<pre><code>mon_dictionnaire = {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+</code></pre>
+
+<p>Les dictionnaires permettent d'accéder rapidement à une valeur en utilisant sa clé. Par exemple :</p>
+<pre><code>age = mon_dictionnaire['age']
+</code></pre>
+
+<p>Les dictionnaires peuvent être modifiés en ajoutant, supprimant ou modifiant des paires clé-valeur. Par exemple :</p>
+<pre><code>mon_dictionnaire['profession'] = 'ingénieur'
+del mon_dictionnaire['ville']
+</code></pre>
+
+<h2>Les ensembles en Python</h2>
+<p>En Python, les ensembles sont utilisés pour stocker une collection non ordonnée d'éléments uniques. Les ensembles ne peuvent pas contenir de doublons. Par exemple :</p>
+<pre><code>mon_ensemble = {1, 2, 3, 4, 5}
+</code></pre>
+
+<p>Les ensembles peuvent être modifiés en ajoutant ou en supprimant des éléments. Par exemple :</p>
+<pre><code>mon_ensemble.add(6)
+mon_ensemble.remove(3)
+</code></pre>
+
+<p>Les ensembles peuvent être utilisés pour effectuer des opérations mathématiques telles que l'union, l'intersection et la différence. Par exemple :</p>
+<pre><code>ensemble1 = {1, 2, 3}
+ensemble2 = {3, 4, 5}
+union = ensemble1.union(ensemble2)
+intersection = ensemble1.intersection(ensemble2)
+difference = ensemble1.difference(ensemble2)
+</code></pre>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

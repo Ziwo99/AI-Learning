@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: La programmation orientée objet en Python</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 7: La programmation orientée objet en Python</h1>
+
+<h2>Introduction à la programmation orientée objet en Python</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. En Python, tout est un objet, ce qui signifie que chaque élément du programme est une instance d'une classe.</p>
+
+<p>Les principaux concepts de la POO en Python sont les classes, les objets, les méthodes et les attributs. Une classe est un modèle ou un plan pour créer des objets. Un objet est une instance d'une classe. Les méthodes sont des fonctions qui sont définies à l'intérieur d'une classe et qui peuvent être appelées sur les objets de cette classe. Les attributs sont des variables qui sont associées à un objet.</p>
+
+<h2>Les classes et les objets en Python</h2>
+<p>Pour créer une classe en Python, utilisez le mot-clé <code>class</code> suivi du nom de la classe. Les méthodes de la classe sont définies à l'intérieur de cette classe en utilisant le mot-clé <code>def</code>. Pour créer un objet à partir d'une classe, utilisez le nom de la classe suivi de parenthèses.</p>
+
+<pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print("Hello, my name is " + self.name + " and I am " + str(self.age) + " years old.")
+
+person1 = Person("John", 25)
+person1.greet()</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe <code>Person</code> avec une méthode <code>__init__</code> qui est appelée lors de la création d'un nouvel objet. La méthode <code>greet</code> affiche un message de salutation en utilisant les attributs <code>name</code> et <code>age</code> de l'objet.</p>
+
+<h2>L'héritage en Python</h2>
+<p>L'héritage est un concept clé de la POO qui permet de créer de nouvelles classes en utilisant des classes existantes. Une classe qui hérite d'une autre classe est appelée une classe dérivée ou une sous-classe, et la classe dont elle hérite est appelée une classe de base ou une superclasse.</p>
+
+<p>En Python, pour créer une classe dérivée, utilisez le nom de la classe de base entre parenthèses après le nom de la classe dérivée. Les méthodes de la classe de base peuvent être appelées sur les objets de la classe dérivée.</p>
+
+<pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print("The animal speaks.")
+
+class Dog(Animal):
+    def speak(self):
+        print("The dog barks.")
+
+animal1 = Animal("Generic Animal")
+animal1.speak()
+
+dog1 = Dog("Buddy")
+dog1.speak()</code></pre>
+
+<p>Dans cet exemple, nous avons une classe de base <code>Animal</code> avec une méthode <code>speak</code> qui affiche un message générique. La classe dérivée <code>Dog</code> a également une méthode <code>speak</code>, mais elle remplace la méthode de la classe de base pour afficher un message spécifique aux chiens.</p>
+
+<h2>Les méthodes spéciales en Python</h2>
+<p>Les méthodes spéciales en Python sont des méthodes prédéfinies qui ont un comportement spécial lorsqu'elles sont appelées. Elles sont souvent utilisées pour effectuer des opérations spécifiques sur les objets, telles que la comparaison, l'ajout ou la soustraction.</p>
+
+<p>Voici quelques-unes des méthodes spéciales les plus couramment utilisées en Python :</p>
+
+<ul>
+    <li><code>__init__</code>: Cette méthode est appelée lors de la création d'un nouvel objet.</li>
+    <li><code>__str__</code>: Cette méthode retourne une représentation sous forme de chaîne de l'objet.</li>
+    <li><code>__eq__</code>: Cette méthode est utilisée pour comparer deux objets pour l'égalité.</li>
+    <li><code>__add__</code>: Cette méthode est utilisée pour ajouter deux objets.</li>
+</ul>
+
+<pre><code>class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return "(" + str(self.x) + ", " + str(self.y) + ")"
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+point1 = Point(1, 2)
+point2 = Point(3, 4)
+
+print(point1)
+print(point1 == point2)
+print(point1 + point2)</code></pre>
+
+<p>Dans cet exemple, nous avons une classe <code>Point</code> avec les méthodes spéciales <code>__init__</code>, <code>__str__</code>, <code>__eq__</code> et <code>__add__</code>. La méthode <code>__str__</code> retourne une représentation sous forme de chaîne de l'objet, la méthode <code>__eq__</code> compare deux objets pour l'égalité, et la méthode <code>__add__</code> ajoute deux objets.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

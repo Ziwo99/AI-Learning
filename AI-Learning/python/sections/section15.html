@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 15: Projets pratiques en Python</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 15: Projets pratiques en Python</h1>
+
+<h2>Projet 1 : Création d'un jeu en Python</h2>
+<p>Dans ce projet, nous allons créer un jeu simple en utilisant Python. Le jeu consistera à deviner un nombre aléatoire généré par l'ordinateur. Voici les étapes pour créer ce jeu :</p>
+
+<p>1. Générer un nombre aléatoire entre 1 et 100.</p>
+<pre><code>import random
+
+nombre_secret = random.randint(1, 100)
+</code></pre>
+
+<p>2. Demander à l'utilisateur de deviner le nombre.</p>
+<pre><code>nombre_devine = int(input("Devinez le nombre : "))
+</code></pre>
+
+<p>3. Vérifier si le nombre deviné est correct.</p>
+<pre><code>if nombre_devine == nombre_secret:
+    print("Félicitations ! Vous avez deviné le nombre.")
+else:
+    print("Désolé, ce n'est pas le bon nombre. Le nombre était", nombre_secret)
+</code></pre>
+
+<p>4. Répéter les étapes 2 et 3 jusqu'à ce que le nombre deviné soit correct.</p>
+<pre><code>while nombre_devine != nombre_secret:
+    nombre_devine = int(input("Devinez le nombre : "))
+    
+    if nombre_devine == nombre_secret:
+        print("Félicitations ! Vous avez deviné le nombre.")
+        break
+    else:
+        print("Désolé, ce n'est pas le bon nombre. Veuillez réessayer.")
+</code></pre>
+
+<h2>Projet 2 : Création d'une application web en Python</h2>
+<p>Dans ce projet, nous allons créer une application web simple en utilisant Python et le framework Flask. L'application consistera en une page d'accueil et une page de contact. Voici les étapes pour créer cette application :</p>
+
+<p>1. Installer Flask en utilisant la commande suivante :</p>
+<pre><code>pip install flask
+</code></pre>
+
+<p>2. Importer Flask et créer une instance de l'application.</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+</code></pre>
+
+<p>3. Créer une route pour la page d'accueil.</p>
+<pre><code>@app.route('/')
+def home():
+    return "Bienvenue sur la page d'accueil !"
+</code></pre>
+
+<p>4. Créer une route pour la page de contact.</p>
+<pre><code>@app.route('/contact')
+def contact():
+    return "Voici nos coordonnées de contact : ..."
+</code></pre>
+
+<p>5. Exécuter l'application.</p>
+<pre><code>if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<h2>Projet 3 : Création d'un programme de gestion de base de données en Python</h2>
+<p>Dans ce projet, nous allons créer un programme de gestion de base de données en utilisant Python et le module sqlite3. Le programme permettra de créer une base de données, d'ajouter des données, de les modifier et de les supprimer. Voici les étapes pour créer ce programme :</p>
+
+<p>1. Importer le module sqlite3.</p>
+<pre><code>import sqlite3
+</code></pre>
+
+<p>2. Créer une connexion à la base de données.</p>
+<pre><code>conn = sqlite3.connect('ma_base_de_donnees.db')
+</code></pre>
+
+<p>3. Créer une table dans la base de données.</p>
+<pre><code>conn.execute('''CREATE TABLE utilisateurs
+                (id INT PRIMARY KEY NOT NULL,
+                nom TEXT NOT NULL,
+                age INT NOT NULL);''')
+</code></pre>
+
+<p>4. Insérer des données dans la table.</p>
+<pre><code>conn.execute("INSERT INTO utilisateurs (id, nom, age) VALUES (1, 'John Doe', 25)")
+</code></pre>
+
+<p>5. Modifier des données dans la table.</p>
+<pre><code>conn.execute("UPDATE utilisateurs SET age = 30 WHERE id = 1")
+</code></pre>
+
+<p>6. Supprimer des données de la table.</p>
+<pre><code>conn.execute("DELETE FROM utilisateurs WHERE id = 1")
+</code></pre>
+
+<p>7. Fermer la connexion à la base de données.</p>
+<pre><code>conn.close()
+</code></pre>
+
+<p>Ce projet vous permettra de comprendre les bases de la création et de la gestion d'une base de données en utilisant Python.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

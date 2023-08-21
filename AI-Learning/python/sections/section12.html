@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12: Les tests unitaires en Python</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 12: Les tests unitaires en Python</h1>
+
+<h2>Introduction aux tests unitaires en Python</h2>
+<p>Les tests unitaires sont une pratique essentielle dans le développement logiciel. Ils permettent de vérifier le bon fonctionnement des différentes parties d'un programme de manière isolée. En Python, nous utilisons le module intégré <code>unittest</code> pour écrire et exécuter des tests unitaires.</p>
+
+<h2>Les bibliothèques de tests unitaires en Python</h2>
+<p>En Python, il existe plusieurs bibliothèques de tests unitaires populaires, telles que <code>unittest</code>, <code>pytest</code> et <code>doctest</code>. Dans cette formation, nous nous concentrerons sur l'utilisation de la bibliothèque <code>unittest</code>.</p>
+
+<h2>L'écriture de tests unitaires en Python</h2>
+<p>Pour écrire des tests unitaires en Python, nous devons créer une classe qui hérite de la classe <code>unittest.TestCase</code>. Chaque méthode de cette classe représente un test unitaire et doit commencer par le préfixe <code>test_</code>. À l'intérieur de chaque méthode de test, nous utilisons les méthodes d'assertion fournies par <code>unittest.TestCase</code> pour vérifier les résultats attendus.</p>
+
+<pre><code>import unittest
+
+class MyTestCase(unittest.TestCase):
+    def test_addition(self):
+        result = 2 + 2
+        self.assertEqual(result, 4)
+
+    def test_subtraction(self):
+        result = 5 - 3
+        self.assertEqual(result, 2)
+
+if __name__ == '__main__':
+    unittest.main()
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe <code>MyTestCase</code> qui contient deux méthodes de test : <code>test_addition</code> et <code>test_subtraction</code>. À l'intérieur de chaque méthode, nous utilisons la méthode d'assertion <code>assertEqual</code> pour vérifier les résultats attendus.</p>
+
+<p>Pour exécuter les tests unitaires, nous utilisons la fonction <code>unittest.main()</code> qui exécute tous les tests définis dans la classe.</p>
+
+<p>Il est également possible d'organiser les tests en utilisant des méthodes spéciales telles que <code>setUp</code> et <code>tearDown</code>, qui sont exécutées avant et après chaque méthode de test, respectivement. Ces méthodes peuvent être utilisées pour préparer l'environnement de test et nettoyer les ressources utilisées.</p>
+
+<p>En utilisant <code>unittest</code>, nous pouvons également effectuer des tests de comparaison de chaînes, de listes, de dictionnaires, etc., en utilisant les méthodes d'assertion appropriées telles que <code>assertEqual</code>, <code>assertNotEqual</code>, <code>assertIn</code>, <code>assertNotIn</code>, etc.</p>
+
+<p>Il est recommandé d'écrire des tests unitaires pour chaque fonction ou méthode que vous développez, afin de vous assurer que votre code fonctionne correctement et de faciliter la détection des erreurs lors de modifications ultérieures.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

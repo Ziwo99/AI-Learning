@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les modules en Python</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 5: Les modules en Python</h1>
+
+<h2>Introduction aux modules en Python</h2>
+<p>Les modules en Python sont des fichiers contenant des définitions et des instructions qui peuvent être utilisées dans d'autres programmes Python. Ils permettent de regrouper du code lié à une fonctionnalité spécifique, ce qui facilite la réutilisation et la gestion du code.</p>
+
+<p>Pour utiliser un module en Python, il faut l'importer dans le programme. Cela se fait en utilisant le mot-clé <code>import</code>, suivi du nom du module. Par exemple :</p>
+
+<pre><code>import math</code></pre>
+
+<p>Une fois le module importé, on peut utiliser ses fonctions, classes et variables en utilisant la syntaxe <code>nom_du_module.nom_de_la_fonction()</code> ou <code>nom_du_module.nom_de_la_variable</code>. Par exemple :</p>
+
+<pre><code>import math
+
+print(math.sqrt(16))  # Affiche la racine carrée de 16</code></pre>
+
+<h2>Les modules intégrés en Python</h2>
+<p>Python dispose de nombreux modules intégrés qui offrent des fonctionnalités prêtes à l'emploi. Voici quelques exemples :</p>
+
+<ul>
+  <li><code>math</code> : fournit des fonctions mathématiques avancées telles que les racines carrées, les logarithmes, les fonctions trigonométriques, etc.</li>
+  <li><code>random</code> : permet de générer des nombres aléatoires.</li>
+  <li><code>datetime</code> : offre des fonctionnalités pour manipuler les dates et les heures.</li>
+  <li><code>os</code> : permet d'interagir avec le système d'exploitation, par exemple pour manipuler des fichiers et des répertoires.</li>
+</ul>
+
+<p>Pour utiliser ces modules, il suffit de les importer comme expliqué précédemment. Par exemple :</p>
+
+<pre><code>import random
+
+print(random.randint(1, 10))  # Affiche un nombre aléatoire entre 1 et 10</code></pre>
+
+<h2>L'importation de modules en Python</h2>
+<p>En plus des modules intégrés, il est possible d'importer des modules créés par d'autres développeurs ou par vous-même. Ces modules peuvent être téléchargés à partir de sources externes ou être présents dans le même répertoire que votre programme.</p>
+
+<p>Pour importer un module externe, vous devez d'abord l'installer à l'aide d'un gestionnaire de paquets tel que <code>pip</code>. Une fois installé, vous pouvez l'importer de la même manière que les modules intégrés.</p>
+
+<p>Pour importer un module présent dans le même répertoire que votre programme, vous pouvez utiliser la syntaxe <code>from nom_du_module import nom_de_la_fonction</code> ou <code>from nom_du_module import *</code> pour importer toutes les fonctions du module. Par exemple :</p>
+
+<pre><code>from mon_module import ma_fonction
+
+ma_fonction()  # Appelle la fonction ma_fonction du module mon_module</code></pre>
+
+<p>Il est également possible de renommer un module lors de l'importation en utilisant le mot-clé <code>as</code>. Cela peut être utile pour éviter les conflits de noms. Par exemple :</p>
+
+<pre><code>import mon_module as mm
+
+mm.ma_fonction()  # Appelle la fonction ma_fonction du module mon_module en utilisant le nom mm</code></pre>
+
+<p>Il est recommandé de consulter la documentation du module que vous souhaitez utiliser pour connaître les fonctions et les fonctionnalités disponibles.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
