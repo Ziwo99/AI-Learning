@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Déploiement de conteneurs avec Docker Swarm</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 6 : Déploiement de conteneurs avec Docker Swarm</h1>
+
+<h2>Introduction à Docker Swarm</h2>
+<p>
+Docker Swarm est un outil de clustering et d'orchestration intégré à Docker, qui permet de créer et de gérer un cluster de machines hôtes pour exécuter des conteneurs Docker. Il facilite le déploiement et la gestion d'applications distribuées sur un ensemble de machines, offrant ainsi une haute disponibilité et une scalabilité horizontale.
+</p>
+
+<p>
+Pour commencer à utiliser Docker Swarm, vous devez d'abord initialiser un nœud maître (manager) et ajouter des nœuds ouvriers (workers) à votre cluster. Le nœud maître est responsable de la coordination et de la planification des tâches, tandis que les nœuds ouvriers exécutent les conteneurs.
+</p>
+
+<h2>Configuration d'un cluster Docker Swarm</h2>
+<p>
+Pour configurer un cluster Docker Swarm, vous devez d'abord installer Docker sur toutes les machines que vous souhaitez inclure dans le cluster. Une fois Docker installé, vous pouvez initialiser le nœud maître en utilisant la commande suivante :
+</p>
+
+<pre><code>docker swarm init</code></pre>
+
+<p>
+Cette commande génère un jeton d'adhésion (join token) que vous utiliserez pour ajouter des nœuds ouvriers à votre cluster. Vous pouvez afficher ce jeton en utilisant la commande suivante :
+</p>
+
+<pre><code>docker swarm join-token worker</code></pre>
+
+<p>
+Pour ajouter un nœud ouvrier à votre cluster, exécutez la commande affichée précédemment sur la machine que vous souhaitez ajouter. Une fois que tous les nœuds ouvriers sont ajoutés, vous pouvez vérifier l'état de votre cluster en utilisant la commande suivante :
+</p>
+
+<pre><code>docker node ls</code></pre>
+
+<h2>Déploiement et gestion de services avec Docker Swarm</h2>
+<p>
+Une fois que votre cluster Docker Swarm est configuré, vous pouvez déployer des services sur celui-ci. Un service est une définition d'une tâche ou d'un ensemble de tâches à exécuter sur le cluster. Pour déployer un service, utilisez la commande suivante :
+</p>
+
+<pre><code>docker service create --name mon-service mon-image</code></pre>
+
+<p>
+Cette commande crée un service nommé "mon-service" à partir de l'image Docker "mon-image". Vous pouvez spécifier des options supplémentaires, telles que le nombre de réplicas (instances) du service, les ports à exposer, etc.
+</p>
+
+<p>
+Une fois que le service est déployé, vous pouvez le gérer en utilisant différentes commandes Docker Swarm. Par exemple, pour mettre à l'échelle le service en ajoutant plus de réplicas, utilisez la commande suivante :
+</p>
+
+<pre><code>docker service scale mon-service=5</code></pre>
+
+<p>
+Cette commande mettra à l'échelle le service "mon-service" pour qu'il ait 5 réplicas en cours d'exécution. Vous pouvez également mettre à jour les paramètres du service, arrêter ou supprimer le service, etc.
+</p>
+
+<p>
+En conclusion, Docker Swarm est un outil puissant pour le déploiement et la gestion de conteneurs Docker sur un cluster de machines. Il facilite la création d'applications distribuées hautement disponibles et évolutives. En utilisant les commandes et les fonctionnalités de Docker Swarm, vous pouvez orchestrer efficacement vos conteneurs et tirer pleinement parti de la puissance de Docker.
+</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

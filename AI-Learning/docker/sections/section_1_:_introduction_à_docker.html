@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1 : Introduction à Docker</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 1: Introduction à Docker</h1>
+
+<h2>Qu'est-ce que Docker ?</h2>
+<p>Docker est une plateforme open-source qui permet d'automatiser le déploiement, la gestion et l'exécution d'applications dans des conteneurs. Un conteneur est une unité d'exécution légère et portable qui contient tout le nécessaire pour exécuter une application, y compris le code, les bibliothèques, les dépendances et les variables d'environnement.</p>
+
+<p>Les conteneurs Docker sont isolés les uns des autres, ce qui signifie qu'ils peuvent être exécutés de manière indépendante sur n'importe quel système d'exploitation qui prend en charge Docker. Cela permet aux développeurs de créer des applications qui fonctionnent de manière cohérente, quel que soit l'environnement de déploiement.</p>
+
+<h2>Avantages de l'utilisation de Docker</h2>
+<p>L'utilisation de Docker présente de nombreux avantages pour les développeurs et les équipes de développement :</p>
+
+<ul>
+  <li><strong>Portabilité :</strong> Les conteneurs Docker sont portables, ce qui signifie qu'ils peuvent être exécutés sur n'importe quel système d'exploitation qui prend en charge Docker. Cela facilite le déploiement et la gestion des applications sur différents environnements.</li>
+  <li><strong>Isolation :</strong> Les conteneurs Docker sont isolés les uns des autres, ce qui signifie qu'ils ne partagent pas les ressources système. Cela permet d'éviter les conflits entre les applications et garantit une exécution cohérente.</li>
+  <li><strong>Évolutivité :</strong> Docker permet de créer et de gérer facilement plusieurs instances d'une même application. Cela facilite la mise à l'échelle horizontale des applications et permet de répondre aux pics de charge.</li>
+  <li><strong>Efficacité :</strong> Les conteneurs Docker sont légers et rapides à démarrer. Ils utilisent également moins de ressources système par rapport aux machines virtuelles traditionnelles, ce qui permet d'optimiser les performances.</li>
+</ul>
+
+<h2>Concepts de base de Docker</h2>
+<p>Pour comprendre Docker, il est important de connaître les concepts de base suivants :</p>
+
+<ul>
+  <li><strong>Images :</strong> Une image Docker est un modèle de base à partir duquel les conteneurs sont créés. Elle contient le code, les bibliothèques, les dépendances et les variables d'environnement nécessaires à l'exécution d'une application.</li>
+  <li><strong>Conteneurs :</strong> Un conteneur Docker est une instance exécutable d'une image Docker. Il s'agit d'un environnement isolé dans lequel une application peut s'exécuter de manière indépendante.</li>
+  <li><strong>Répertoires de travail :</strong> Les répertoires de travail sont des emplacements dans le système de fichiers de l'image Docker où les fichiers de l'application peuvent être stockés et manipulés.</li>
+  <li><strong>Registres Docker :</strong> Les registres Docker sont des dépôts centralisés où les images Docker peuvent être stockées et partagées. Le registre Docker par défaut est Docker Hub, mais il existe également d'autres registres publics et privés.</li>
+</ul>
+
+<p>Voici un exemple de code Dockerfile qui illustre la création d'une image Docker :</p>
+
+<pre><code>FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y python3
+
+COPY app.py /app/app.py
+
+WORKDIR /app
+
+CMD ["python3", "app.py"]</code></pre>
+
+<p>Ce Dockerfile utilise une image Ubuntu comme base, installe Python 3, copie le fichier app.py dans le répertoire de travail /app et définit la commande par défaut pour exécuter l'application.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

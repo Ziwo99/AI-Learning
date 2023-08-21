@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Orchestration de conteneurs avec Docker Compose</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 5 : Orchestration de conteneurs avec Docker Compose</h1>
+
+<h2>Introduction à Docker Compose</h2>
+<p>
+Docker Compose est un outil qui permet de définir et de gérer des applications multi-conteneurs. Il facilite le déploiement et la gestion de plusieurs conteneurs Docker en utilisant un fichier de configuration simple et facile à comprendre. Avec Docker Compose, vous pouvez spécifier les services, les réseaux et les volumes nécessaires pour votre application, et les déployer en un seul clic.
+</p>
+
+<h2>Création d'un fichier de configuration Docker Compose</h2>
+<p>
+Pour commencer à utiliser Docker Compose, vous devez créer un fichier de configuration appelé "docker-compose.yml". Ce fichier contient les informations nécessaires pour déployer et gérer vos conteneurs. Voici un exemple de fichier de configuration Docker Compose pour une application web :
+</p>
+
+<pre><code>version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/app
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=myapp
+</code></pre>
+
+<p>
+Dans cet exemple, nous avons deux services : "web" et "db". Le service "web" est construit à partir du répertoire actuel (".") et est exposé sur le port 80 de l'hôte. Le répertoire "app" est monté en tant que volume dans le conteneur. Le service "db" utilise l'image MySQL et définit les variables d'environnement pour le mot de passe root et la base de données.
+</p>
+
+<h2>Déploiement et gestion de plusieurs conteneurs avec Docker Compose</h2>
+<p>
+Une fois que vous avez créé votre fichier de configuration Docker Compose, vous pouvez déployer et gérer vos conteneurs en utilisant la commande "docker-compose". Voici quelques commandes utiles :
+</p>
+
+<pre><code># Déployer les conteneurs
+docker-compose up
+
+# Déployer les conteneurs en arrière-plan
+docker-compose up -d
+
+# Arrêter les conteneurs
+docker-compose down
+
+# Afficher les journaux des conteneurs
+docker-compose logs
+
+# Exécuter une commande dans un conteneur
+docker-compose exec &lt;service&gt; &lt;command&gt;
+</code></pre>
+
+<p>
+Avec ces commandes, vous pouvez facilement déployer, arrêter, afficher les journaux et exécuter des commandes dans vos conteneurs Docker Compose. Cela facilite grandement la gestion de vos applications multi-conteneurs.
+</p>
+
+<p>
+En conclusion, Docker Compose est un outil puissant pour l'orchestration de conteneurs Docker. Il simplifie le déploiement et la gestion de vos applications multi-conteneurs en utilisant un fichier de configuration simple. En utilisant Docker Compose, vous pouvez facilement créer des environnements de développement, de test et de production cohérents et reproductibles.
+</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
