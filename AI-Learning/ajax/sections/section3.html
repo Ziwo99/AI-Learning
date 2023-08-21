@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Utilisation de JavaScript avec Ajax</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 3 : Utilisation de JavaScript avec Ajax</h1>
+
+<h2>Manipulation du DOM avec JavaScript</h2>
+<p>La manipulation du DOM (Document Object Model) est une étape essentielle dans le développement d'applications web interactives. Avec JavaScript, vous pouvez facilement accéder et modifier les éléments HTML d'une page.</p>
+
+<p>Voici un exemple de code JavaScript qui modifie le contenu d'un élément HTML :</p>
+<pre><code>var element = document.getElementById('myElement');
+element.innerHTML = 'Nouveau contenu';</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>getElementById</code> pour sélectionner l'élément avec l'ID "myElement". Ensuite, nous utilisons la propriété <code>innerHTML</code> pour modifier le contenu de cet élément.</p>
+
+<h2>Gestion des événements avec JavaScript</h2>
+<p>La gestion des événements est une autre fonctionnalité importante de JavaScript. Elle permet de réagir aux actions de l'utilisateur, telles que le clic sur un bouton ou la soumission d'un formulaire.</p>
+
+<p>Voici un exemple de code JavaScript qui ajoute un gestionnaire d'événements à un bouton :</p>
+<pre><code>var button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+    alert('Le bouton a été cliqué');
+});</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>addEventListener</code> pour ajouter un gestionnaire d'événements au bouton avec l'ID "myButton". Lorsque le bouton est cliqué, la fonction anonyme est exécutée et affiche une boîte de dialogue avec le message "Le bouton a été cliqué".</p>
+
+<h2>Utilisation des objets XMLHttpRequest</h2>
+<p>L'objet XMLHttpRequest est utilisé pour effectuer des requêtes HTTP asynchrones, ce qui permet de charger des données à partir d'un serveur sans recharger la page entière.</p>
+
+<p>Voici un exemple de code JavaScript qui utilise l'objet XMLHttpRequest pour charger des données depuis un fichier JSON :</p>
+<pre><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', 'data.json', true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        console.log(data);
+    }
+};
+xhr.send();</code></pre>
+
+<p>Dans cet exemple, nous créons un nouvel objet XMLHttpRequest en utilisant le constructeur <code>XMLHttpRequest</code>. Ensuite, nous utilisons la méthode <code>open</code> pour spécifier le type de requête (GET), l'URL du fichier JSON et si la requête doit être asynchrone (true). Enfin, nous utilisons la propriété <code>onreadystatechange</code> pour définir une fonction qui sera appelée chaque fois que l'état de la requête change. Lorsque la requête est terminée (readyState = 4) et que le statut est OK (status = 200), nous utilisons la méthode <code>JSON.parse</code> pour convertir la réponse en un objet JavaScript.</p>
+
+<p>Ce sont là quelques-uns des concepts clés de l'utilisation de JavaScript avec Ajax. En comprenant ces concepts et en les appliquant dans vos projets, vous pourrez créer des applications web interactives et dynamiques.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

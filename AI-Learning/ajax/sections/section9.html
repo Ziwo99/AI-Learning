@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Déploiement et maintenance d'applications Ajax</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 9 : Déploiement et maintenance d'applications Ajax</h1>
+
+<h2>Déploiement d'applications Ajax</h2>
+<p>Lors du déploiement d'une application Ajax, il est important de prendre en compte certains aspects spécifiques à cette technologie. Voici quelques points clés à considérer :</p>
+
+<p>1. Hébergement : Assurez-vous que votre serveur d'hébergement prend en charge les technologies nécessaires pour exécuter des applications Ajax, telles que PHP, ASP.NET ou Java.</p>
+
+<p>2. Compatibilité des navigateurs : Vérifiez que votre application fonctionne correctement sur les principaux navigateurs, tels que Chrome, Firefox, Safari et Internet Explorer. Testez également sur différentes versions de ces navigateurs pour assurer une compatibilité maximale.</p>
+
+<p>3. Optimisation des performances : Veillez à optimiser les performances de votre application Ajax en minimisant les requêtes HTTP, en utilisant la mise en cache et en compressant les fichiers JavaScript et CSS.</p>
+
+<p>Voici un exemple de code JavaScript montrant comment effectuer une requête Ajax :</p>
+
+<pre><code>var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("demo").innerHTML = this.responseText;
+  }
+};
+xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();</code></pre>
+
+<h2>Maintenance et débogage d'applications Ajax</h2>
+<p>La maintenance et le débogage d'applications Ajax peuvent être un défi, mais en suivant quelques bonnes pratiques, vous pouvez faciliter ces tâches :</p>
+
+<p>1. Utilisez les outils de développement des navigateurs : Les navigateurs modernes offrent des outils de développement puissants qui vous permettent d'inspecter les requêtes Ajax, de déboguer le code JavaScript et de surveiller les performances de votre application.</p>
+
+<p>2. Gestion des erreurs : Assurez-vous de gérer correctement les erreurs lors des requêtes Ajax. Affichez des messages d'erreur clairs pour les utilisateurs et enregistrez les erreurs dans des fichiers journaux pour faciliter le débogage.</p>
+
+<p>3. Testez régulièrement : Effectuez des tests réguliers pour vous assurer que votre application fonctionne correctement après des mises à jour ou des modifications. Utilisez des outils de test automatisés pour faciliter ce processus.</p>
+
+<h2>Bonnes pratiques de gestion de projet pour les applications Ajax</h2>
+<p>La gestion de projet pour les applications Ajax nécessite une approche spécifique pour assurer le succès du projet. Voici quelques bonnes pratiques à suivre :</p>
+
+<p>1. Planification : Établissez un plan détaillé pour le développement de votre application Ajax, en incluant les étapes de conception, de développement, de test et de déploiement. Définissez également des objectifs clairs et des délais réalistes.</p>
+
+<p>2. Communication : Assurez-vous de maintenir une communication régulière avec votre équipe de développement et les parties prenantes du projet. Tenez-les informés des progrès, des problèmes éventuels et des décisions prises.</p>
+
+<p>3. Suivi des performances : Surveillez les performances de votre application Ajax en utilisant des outils d'analyse et de suivi. Identifiez les goulots d'étranglement et les zones à améliorer pour garantir une expérience utilisateur optimale.</p>
+
+<p>Voici un exemple de code HTML montrant comment inclure une bibliothèque JavaScript externe dans votre application Ajax :</p>
+
+<pre><code>&lt;script src="jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

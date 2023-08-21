@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les frameworks Ajax</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 4 : Les frameworks Ajax</h1>
+
+<h2>Présentation des principaux frameworks Ajax</h2>
+<p>Les frameworks Ajax sont des bibliothèques de code qui facilitent l'utilisation de la technologie Ajax dans le développement web. Ils fournissent des fonctionnalités prêtes à l'emploi pour effectuer des requêtes asynchrones, manipuler le DOM et mettre à jour dynamiquement les pages web.</p>
+
+<p>Les principaux frameworks Ajax sont :</p>
+
+<ul>
+  <li>jQuery</li>
+  <li>Prototype</li>
+  <li>Dojo Toolkit</li>
+  <li>AngularJS</li>
+</ul>
+
+<h2>Utilisation de jQuery avec Ajax</h2>
+<p>jQuery est l'un des frameworks les plus populaires pour le développement web. Il simplifie l'utilisation d'Ajax en fournissant des méthodes simples et concises pour effectuer des requêtes asynchrones.</p>
+
+<p>Voici un exemple d'utilisation de jQuery pour effectuer une requête Ajax :</p>
+
+<pre><code>$.ajax({
+  url: 'example.php',
+  method: 'GET',
+  data: { param1: 'value1', param2: 'value2' },
+  success: function(response) {
+    // Traitement de la réponse
+  },
+  error: function(xhr, status, error) {
+    // Gestion des erreurs
+  }
+});</code></pre>
+
+<h2>Utilisation de Prototype avec Ajax</h2>
+<p>Prototype est un autre framework populaire pour le développement web. Il offre des fonctionnalités similaires à jQuery, mais avec une syntaxe légèrement différente.</p>
+
+<p>Voici un exemple d'utilisation de Prototype pour effectuer une requête Ajax :</p>
+
+<pre><code>new Ajax.Request('example.php', {
+  method: 'GET',
+  parameters: { param1: 'value1', param2: 'value2' },
+  onSuccess: function(response) {
+    // Traitement de la réponse
+  },
+  onFailure: function(xhr) {
+    // Gestion des erreurs
+  }
+});</code></pre>
+
+<p>Il est important de noter que ces exemples sont simplifiés pour des besoins de démonstration. Dans une application réelle, vous devrez prendre en compte la gestion des erreurs, la validation des données et d'autres aspects de la sécurité.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
