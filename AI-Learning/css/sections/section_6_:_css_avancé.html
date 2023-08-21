@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : CSS avancé</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 6 : CSS avancé</h1>
+
+<h2>Les variables CSS</h2>
+<p>Les variables CSS permettent de stocker des valeurs réutilisables dans une feuille de style. Elles sont déclarées avec le préfixe "--" suivi d'un nom et d'une valeur. Pour utiliser une variable, il suffit de la référencer en utilisant la fonction "var()". Voici un exemple :</p>
+
+<pre><code>:root {
+  --primary-color: #ff0000;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+</code></pre>
+
+<p>Dans cet exemple, nous avons déclaré une variable "--primary-color" avec la valeur "#ff0000". En utilisant la fonction "var(--primary-color)", nous appliquons cette couleur au texte des balises h1.</p>
+
+<h2>Les fonctions CSS</h2>
+<p>Les fonctions CSS permettent de manipuler les valeurs des propriétés CSS. Elles sont utilisées en tant que valeurs de propriétés ou dans des sélecteurs. Voici quelques exemples de fonctions couramment utilisées :</p>
+
+<pre><code>p {
+  color: rgb(255, 0, 0); /* Utilisation de la fonction rgb() pour définir une couleur */
+  font-size: calc(12px + 2vw); /* Utilisation de la fonction calc() pour effectuer des calculs */
+  text-transform: uppercase; /* Utilisation de la fonction uppercase() pour mettre en majuscules */
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction rgb() pour définir une couleur en utilisant les valeurs des composantes rouge, vert et bleu. Nous utilisons également la fonction calc() pour effectuer un calcul de taille de police basé sur la largeur de la fenêtre. Enfin, nous utilisons la fonction uppercase() pour mettre en majuscules le texte des balises p.</p>
+
+<h2>Les modules CSS (ex : Flexbox, Grid)</h2>
+<p>Les modules CSS sont des ensembles de fonctionnalités qui étendent les capacités de mise en page et de style du CSS. Deux modules populaires sont Flexbox et Grid :</p>
+
+<pre><code>.container {
+  display: flex; /* Utilisation du module Flexbox pour créer un conteneur flexible */
+  justify-content: center; /* Centrer les éléments horizontalement */
+  align-items: center; /* Centrer les éléments verticalement */
+}
+
+.grid-container {
+  display: grid; /* Utilisation du module Grid pour créer une grille */
+  grid-template-columns: repeat(3, 1fr); /* Créer 3 colonnes de largeur égale */
+  grid-gap: 10px; /* Espacement entre les éléments de la grille */
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module Flexbox pour créer un conteneur flexible qui centre ses éléments horizontalement et verticalement. Nous utilisons également le module Grid pour créer une grille avec 3 colonnes de largeur égale et un espacement de 10 pixels entre les éléments.</p>
+
+<h2>Les nouveautés CSS (ex : CSS Custom Properties)</h2>
+<p>Les nouveautés CSS sont des fonctionnalités récentes qui ont été ajoutées au CSS pour améliorer sa flexibilité et sa puissance. Une de ces nouveautés est CSS Custom Properties :</p>
+
+<pre><code>:root {
+  --primary-color: #ff0000; /* Déclaration d'une propriété personnalisée */
+}
+
+h1 {
+  color: var(--primary-color); /* Utilisation de la propriété personnalisée */
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons CSS Custom Properties pour déclarer une propriété personnalisée "--primary-color" avec la valeur "#ff0000". Nous pouvons ensuite utiliser cette propriété personnalisée en utilisant la fonction "var(--primary-color)" pour appliquer cette couleur au texte des balises h1.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

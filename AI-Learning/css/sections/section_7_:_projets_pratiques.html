@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Projets pratiques</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 7 : Projets pratiques</h1>
+
+<h2>Création d'une mise en page responsive</h2>
+<p>
+La création d'une mise en page responsive est essentielle pour garantir une expérience utilisateur optimale sur différents appareils et tailles d'écran. Pour cela, nous utiliserons les médias queries CSS pour ajuster le contenu en fonction de la résolution de l'écran.
+</p>
+
+<p>
+Voici un exemple de code CSS pour créer une mise en page responsive :
+</p>
+
+<pre><code>
+/* Styles pour les écrans de petite taille */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        width: 100%;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        width: 100%;
+    }
+}
+
+/* Styles pour les écrans de taille moyenne */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .container {
+        width: 80%;
+    }
+    
+    .sidebar {
+        display: block;
+        width: 30%;
+    }
+    
+    .content {
+        width: 70%;
+    }
+}
+
+/* Styles pour les écrans de grande taille */
+@media only screen and (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+    
+    .container {
+        width: 60%;
+    }
+    
+    .sidebar {
+        display: block;
+        width: 20%;
+    }
+    
+    .content {
+        width: 80%;
+    }
+}
+</code></pre>
+
+<h2>Animation d'éléments avec CSS</h2>
+<p>
+L'animation d'éléments avec CSS permet d'ajouter des effets visuels attrayants à votre site web. Vous pouvez animer des propriétés telles que la couleur, la taille, la position et la transparence des éléments en utilisant les transitions CSS ou les animations CSS.
+</p>
+
+<p>
+Voici un exemple de code CSS pour animer un élément lorsqu'il est survolé par la souris :
+</p>
+
+<pre><code>
+/* Définition de l'animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Application de l'animation à l'élément */
+.element {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Changement de l'opacité de l'élément lorsqu'il est survolé */
+.element:hover {
+    opacity: 0.5;
+}
+</code></pre>
+
+<h2>Utilisation d'un préprocesseur CSS dans un projet</h2>
+<p>
+Les préprocesseurs CSS tels que Sass ou Less permettent d'améliorer l'efficacité et la maintenabilité de votre code CSS en ajoutant des fonctionnalités supplémentaires telles que les variables, les mixins et les boucles.
+</p>
+
+<p>
+Voici un exemple de code Sass pour définir des variables et les utiliser dans votre feuille de style :
+</p>
+
+<pre><code>
+/* Définition des variables */
+$primary-color: #ff0000;
+$secondary-color: #00ff00;
+
+/* Utilisation des variables */
+.element {
+    color: $primary-color;
+    background-color: $secondary-color;
+}
+</code></pre>
+
+<p>
+N'oubliez pas de compiler votre code Sass en CSS avant de l'utiliser dans votre projet.
+</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
