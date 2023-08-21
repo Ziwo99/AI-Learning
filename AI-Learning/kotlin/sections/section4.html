@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les collections en Kotlin</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 4 : Les collections en Kotlin</h1>
+
+<h2>Listes</h2>
+<p>Les listes sont des collections ordonnées d'éléments en Kotlin. Elles peuvent contenir des éléments de différents types et peuvent être modifiées (ajout, suppression, modification). Pour créer une liste, vous pouvez utiliser la fonction <code>listOf()</code> en spécifiant les éléments à inclure entre parenthèses. Voici un exemple :</p>
+
+<pre><code>val fruits = listOf("pomme", "banane", "orange")
+</code></pre>
+
+<p>Vous pouvez accéder aux éléments d'une liste en utilisant l'opérateur d'indexation <code>[]</code>. Par exemple, pour accéder au premier élément de la liste <code>fruits</code>, vous pouvez utiliser <code>fruits[0]</code>. Les listes en Kotlin sont immuables, ce qui signifie que vous ne pouvez pas modifier directement les éléments d'une liste. Si vous souhaitez modifier une liste, vous devez utiliser une liste mutable.</p>
+
+<h2>Ensembles</h2>
+<p>Les ensembles en Kotlin sont des collections qui ne contiennent pas d'éléments en double et n'ont pas d'ordre spécifique. Pour créer un ensemble, vous pouvez utiliser la fonction <code>setOf()</code> en spécifiant les éléments à inclure entre parenthèses. Voici un exemple :</p>
+
+<pre><code>val nombres = setOf(1, 2, 3, 4, 5)
+</code></pre>
+
+<p>Les ensembles en Kotlin sont immuables, ce qui signifie que vous ne pouvez pas ajouter ou supprimer des éléments directement à partir d'un ensemble. Si vous souhaitez modifier un ensemble, vous devez utiliser un ensemble mutable.</p>
+
+<h2>Maps</h2>
+<p>Les maps en Kotlin sont des collections qui associent des clés à des valeurs. Chaque clé doit être unique dans une map. Pour créer une map, vous pouvez utiliser la fonction <code>mapOf()</code> en spécifiant les paires clé-valeur entre parenthèses. Voici un exemple :</p>
+
+<pre><code>val capitales = mapOf("France" to "Paris", "Espagne" to "Madrid", "Italie" to "Rome")
+</code></pre>
+
+<p>Vous pouvez accéder à une valeur dans une map en utilisant l'opérateur d'indexation <code>[]</code> avec la clé correspondante. Par exemple, pour accéder à la capitale de la France dans la map <code>capitales</code>, vous pouvez utiliser <code>capitales["France"]</code>.</p>
+
+<h2>Manipulation des collections</h2>
+<p>En Kotlin, il existe de nombreuses fonctions utiles pour manipuler les collections. Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+
+<ul>
+  <li><code>filter()</code> : permet de filtrer les éléments d'une collection en fonction d'un prédicat.</li>
+  <li><code>map()</code> : permet de transformer chaque élément d'une collection en un autre élément.</li>
+  <li><code>reduce()</code> : permet de réduire une collection à une seule valeur en appliquant une opération sur chaque élément.</li>
+  <li><code>sorted()</code> : permet de trier les éléments d'une collection selon un ordre spécifié.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+
+<pre><code>val nombres = listOf(1, 2, 3, 4, 5)
+
+val nombresPairs = nombres.filter { it % 2 == 0 }
+
+val carres = nombres.map { it * it }
+
+val somme = nombres.reduce { acc, nombre -> acc + nombre }
+
+val nombresTries = nombres.sorted()
+</code></pre>
+
+<p>En utilisant ces fonctions, vous pouvez effectuer des opérations complexes sur les collections de manière concise et lisible.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

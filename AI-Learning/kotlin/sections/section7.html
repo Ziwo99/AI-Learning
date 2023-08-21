@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Développement d'applications Android avec Kotlin</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<h1>Section 7 : Développement d'applications Android avec Kotlin</h1>
+
+<h2>Introduction à Android Studio</h2>
+<p>Android Studio est l'environnement de développement intégré (IDE) recommandé pour le développement d'applications Android avec Kotlin. Il offre une interface conviviale et de puissantes fonctionnalités pour faciliter la création, la compilation et le débogage des applications Android.</p>
+
+<p>Pour commencer, téléchargez et installez Android Studio à partir du site officiel d'Android. Une fois installé, ouvrez Android Studio et créez un nouveau projet Android en sélectionnant "Nouveau projet" dans le menu principal.</p>
+
+<p>Choisissez un nom de projet, un emplacement et une configuration appropriés, puis sélectionnez Kotlin comme langage de programmation. Android Studio générera automatiquement une structure de projet de base pour vous.</p>
+
+<h2>Création d'une application Android avec Kotlin</h2>
+<p>Pour créer une application Android avec Kotlin, vous devez comprendre les composants de base d'une application Android, tels que les activités, les fragments, les vues et les ressources.</p>
+
+<p>Une activité est une classe qui représente une fenêtre d'interface utilisateur. Elle est responsable de l'affichage des vues et de la gestion des interactions utilisateur. Pour créer une activité, vous pouvez utiliser le générateur de code d'Android Studio ou créer manuellement une classe qui étend la classe AppCompatActivity.</p>
+
+<p>Un fragment est une partie réutilisable d'une interface utilisateur. Il peut être utilisé pour afficher une partie de l'interface utilisateur dans une activité ou pour créer des interfaces utilisateur modulaires. Pour créer un fragment, vous pouvez utiliser le générateur de code d'Android Studio ou créer manuellement une classe qui étend la classe Fragment.</p>
+
+<p>Les vues sont les éléments d'interface utilisateur tels que les boutons, les champs de texte, les images, etc. Vous pouvez les ajouter à votre activité ou à votre fragment en utilisant le fichier XML de mise en page correspondant. Vous pouvez également accéder et manipuler les vues programmation en utilisant leur ID.</p>
+
+<p>Les ressources sont les fichiers tels que les images, les chaînes de texte, les couleurs, etc., utilisés dans votre application. Vous pouvez les stocker dans le dossier "res" de votre projet et y accéder à partir de votre code Kotlin.</p>
+
+<h2>Utilisation des fonctionnalités spécifiques à Kotlin dans le développement Android</h2>
+<p>Kotlin offre de nombreuses fonctionnalités spécifiques qui simplifient le développement d'applications Android. Voici quelques-unes des fonctionnalités les plus couramment utilisées :</p>
+
+<p>1. Null Safety : Kotlin introduit le concept de null safety pour éviter les erreurs de pointeur nul. Vous pouvez déclarer explicitement si une variable peut être nulle ou non, ce qui permet de détecter les erreurs potentielles à la compilation.</p>
+
+<pre><code>var name: String? = null
+name?.length // Utilisation de l'opérateur de sécurité null pour éviter les erreurs</code></pre>
+
+<p>2. Extension Functions : Kotlin permet d'ajouter de nouvelles fonctions à des classes existantes sans les modifier. Cela facilite l'ajout de fonctionnalités supplémentaires à des classes Android telles que les vues.</p>
+
+<pre><code>fun View.hide() {
+    visibility = View.GONE
+}
+
+fun Button.show() {
+    visibility = View.VISIBLE
+}</code></pre>
+
+<p>3. Data Classes : Les data classes sont utilisées pour représenter des données immuables. Elles génèrent automatiquement des méthodes telles que equals(), hashCode() et toString(), ce qui facilite la manipulation des données.</p>
+
+<pre><code>data class User(val name: String, val age: Int)
+
+val user = User("John", 25)
+println(user.name) // Affiche "John"</code></pre>
+
+<p>4. Coroutines : Les coroutines sont utilisées pour effectuer des opérations asynchrones de manière séquentielle et concurrence. Elles simplifient la gestion des threads et améliorent les performances de l'application.</p>
+
+<pre><code>fun fetchData() {
+    GlobalScope.launch {
+        val data = async { fetchDataFromNetwork() }
+        val result = data.await()
+        displayData(result)
+    }
+}</code></pre>
+
+<p>Ce ne sont là que quelques-unes des fonctionnalités spécifiques à Kotlin qui peuvent être utilisées dans le développement d'applications Android. En explorant davantage Kotlin, vous découvrirez de nombreuses autres fonctionnalités puissantes qui peuvent améliorer votre productivité en tant que développeur Android.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
