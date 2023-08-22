@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les API en Javascript</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux API en Javascript</h2>
+<p>Les API (Application Programming Interface) en Javascript sont des ensembles de fonctions et de méthodes prédéfinies qui permettent aux développeurs d'interagir avec des fonctionnalités spécifiques d'un navigateur ou d'un système d'exploitation. Elles offrent un moyen pratique d'accéder à des fonctionnalités avancées sans avoir à réinventer la roue.</p>
+
+<h2>Utilisation des API en Javascript</h2>
+<p>Pour utiliser une API en Javascript, il faut généralement inclure une référence à la bibliothèque ou au fichier contenant l'API dans la balise <code>&lt;script&gt;</code> de la page HTML. Une fois que l'API est chargée, vous pouvez appeler ses fonctions et méthodes pour effectuer des opérations spécifiques.</p>
+
+<h2>Les API de géolocalisation en Javascript</h2>
+<p>Les API de géolocalisation en Javascript permettent d'obtenir la position géographique d'un utilisateur à partir de son navigateur. Elles offrent des fonctionnalités telles que la récupération des coordonnées GPS, la détection du pays ou de la ville dans laquelle se trouve l'utilisateur, etc.</p>
+<pre><code>navigator.geolocation.getCurrentPosition(function(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log("Latitude : " + latitude);
+    console.log("Longitude : " + longitude);
+});
+</code></pre>
+
+<h2>Les API de stockage en Javascript</h2>
+<p>Les API de stockage en Javascript permettent de stocker des données localement dans le navigateur de l'utilisateur. Elles offrent des fonctionnalités telles que le stockage de données persistantes (localStorage) ou le stockage de données temporaires (sessionStorage).</p>
+<pre><code>// Stockage de données persistantes
+localStorage.setItem("nom", "John");
+var nom = localStorage.getItem("nom");
+console.log("Nom : " + nom);
+
+// Stockage de données temporaires
+sessionStorage.setItem("prenom", "Jane");
+var prenom = sessionStorage.getItem("prenom");
+console.log("Prénom : " + prenom);
+</code></pre>
+
+<h2>Les API de communication en Javascript</h2>
+<p>Les API de communication en Javascript permettent d'interagir avec des serveurs ou d'autres applications via des protocoles tels que HTTP. Elles offrent des fonctionnalités telles que l'envoi de requêtes AJAX, la récupération de données à partir d'une API REST, etc.</p>
+<pre><code>// Envoi d'une requête AJAX
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://api.example.com/data", true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        console.log(response);
+    }
+};
+xhr.send();
+</code></pre>
+
+Ceci conclut la formation sur les API en Javascript. Vous avez maintenant une compréhension solide de leur utilisation et de leurs fonctionnalités. N'hésitez pas à pratiquer et à explorer davantage ces API pour améliorer vos compétences en développement Javascript.
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les modules en Javascript</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux modules en Javascript</h2>
+<p>Les modules en Javascript sont des unités de code réutilisables qui permettent d'organiser et de structurer efficacement notre code. Ils nous aident à éviter les conflits de noms et à rendre notre code plus modulaire et maintenable.</p>
+<p>Pour créer un module en Javascript, nous utilisons la directive <code>export</code> pour spécifier les éléments que nous souhaitons rendre accessibles depuis le module. Ensuite, nous pouvons importer ces éléments dans d'autres fichiers en utilisant la directive <code>import</code>.</p>
+<p>Voici un exemple de module en Javascript :</p>
+<pre><code>/* Dans le fichier module.js */
+export function add(a, b) {
+    return a + b;
+}
+
+export function subtract(a, b) {
+    return a - b;
+}</code></pre>
+
+<h2>Déclaration et utilisation des modules en Javascript</h2>
+<p>Pour utiliser un module en Javascript, nous devons d'abord l'importer dans notre fichier. Nous pouvons utiliser la directive <code>import</code> suivie du nom du module et des éléments que nous souhaitons importer.</p>
+<p>Voici un exemple d'utilisation d'un module en Javascript :</p>
+<pre><code>/* Dans le fichier main.js */
+import { add, subtract } from './module.js';
+
+console.log(add(5, 3)); // Output: 8
+console.log(subtract(10, 4)); // Output: 6</code></pre>
+
+<h2>L'importation et l'exportation de modules en Javascript</h2>
+<p>En plus d'exporter des fonctions et des variables individuelles, nous pouvons également exporter un objet contenant plusieurs éléments. Cela nous permet de regrouper plusieurs fonctionnalités connexes dans un seul module.</p>
+<p>Voici un exemple d'exportation d'un objet contenant plusieurs éléments :</p>
+<pre><code>/* Dans le fichier module.js */
+export const mathUtils = {
+    add(a, b) {
+        return a + b;
+    },
+    subtract(a, b) {
+        return a - b;
+    }
+};</code></pre>
+<p>Et voici comment nous pouvons importer et utiliser cet objet dans un autre fichier :</p>
+<pre><code>/* Dans le fichier main.js */
+import { mathUtils } from './module.js';
+
+console.log(mathUtils.add(5, 3)); // Output: 8
+console.log(mathUtils.subtract(10, 4)); // Output: 6</code></pre>
+
+<h2>Les modules dynamiques en Javascript</h2>
+<p>Les modules dynamiques en Javascript nous permettent de charger des modules à la demande, au lieu de les importer tous au début de notre application. Cela peut être utile lorsque nous avons des modules volumineux ou lorsque nous souhaitons optimiser les performances de notre application.</p>
+<p>Voici un exemple d'utilisation d'un module dynamique en Javascript :</p>
+<pre><code>/* Dans le fichier main.js */
+import('./module.js')
+    .then(module => {
+        console.log(module.add(5, 3)); // Output: 8
+        console.log(module.subtract(10, 4)); // Output: 6
+    })
+    .catch(error => {
+        console.error('Error loading module:', error);
+    });</code></pre>
+
+<h2>Les modules asynchrones en Javascript</h2>
+<p>Les modules asynchrones en Javascript nous permettent de charger des modules de manière asynchrone, ce qui peut améliorer les performances de notre application en évitant de bloquer l'exécution du code principal.</p>
+<p>Voici un exemple d'utilisation d'un module asynchrone en Javascript :</p>
+<pre><code>/* Dans le fichier main.js */
+async function loadModule() {
+    try {
+        const module = await import('./module.js');
+        console.log(module.add(5, 3)); // Output: 8
+        console.log(module.subtract(10, 4)); // Output: 6
+    } catch (error) {
+        console.error('Error loading module:', error);
+    }
+}
+
+loadModule();</code></pre>
+
+<p>C'est ainsi que nous pouvons utiliser les modules en Javascript pour organiser notre code, le rendre plus modulaire et maintenable, et améliorer les performances de notre application.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

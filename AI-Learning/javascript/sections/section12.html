@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Projets pratiques en Javascript</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Projet 1 : Création d'un jeu en Javascript</h2>
+<p>Dans ce projet, nous allons créer un jeu simple en utilisant Javascript. Nous allons apprendre à manipuler les éléments HTML, à gérer les événements et à mettre en place la logique du jeu.</p>
+
+<p>Voici un exemple de code pour créer un jeu de devinette en Javascript :</p>
+<pre><code>let randomNumber = Math.floor(Math.random() * 100) + 1;
+let guesses = 0;
+
+document.querySelector('#check-button').addEventListener('click', function() {
+    let userGuess = Number(document.querySelector('#guess-input').value);
+    guesses++;
+
+    if (userGuess === randomNumber) {
+        document.querySelector('#result').textContent = 'Bravo, vous avez deviné le nombre en ' + guesses + ' essais !';
+    } else if (userGuess > randomNumber) {
+        document.querySelector('#result').textContent = 'Trop grand, essayez encore.';
+    } else {
+        document.querySelector('#result').textContent = 'Trop petit, essayez encore.';
+    }
+});
+</code></pre>
+
+<h2>Projet 2 : Développement d'une application web en Javascript</h2>
+<p>Dans ce projet, nous allons apprendre à développer une application web en utilisant Javascript. Nous allons explorer les concepts de manipulation du DOM, de gestion des événements et de communication avec un serveur.</p>
+
+<p>Voici un exemple de code pour créer une application web de liste de tâches en Javascript :</p>
+<pre><code>let taskList = [];
+
+document.querySelector('#add-button').addEventListener('click', function() {
+    let taskInput = document.querySelector('#task-input').value;
+    taskList.push(taskInput);
+    displayTasks();
+});
+
+function displayTasks() {
+    let taskListElement = document.querySelector('#task-list');
+    taskListElement.innerHTML = '';
+
+    for (let i = 0; i < taskList.length; i++) {
+        let taskItem = document.createElement('li');
+        taskItem.textContent = taskList[i];
+        taskListElement.appendChild(taskItem);
+    }
+}
+</code></pre>
+
+<h2>Projet 3 : Création d'une application mobile en Javascript</h2>
+<p>Dans ce projet, nous allons découvrir comment créer une application mobile en utilisant Javascript. Nous allons explorer les frameworks et les bibliothèques populaires pour le développement d'applications mobiles.</p>
+
+<p>Voici un exemple de code pour créer une application mobile de gestion des dépenses en Javascript avec le framework React Native :</p>
+<pre><code>import React, { useState } from 'react';
+import { View, Text, TextInput, Button } from 'react-native';
+
+export default function ExpenseTracker() {
+    const [expense, setExpense] = useState('');
+    const [expenses, setExpenses] = useState([]);
+
+    const addExpense = () => {
+        setExpenses([...expenses, expense]);
+        setExpense('');
+    };
+
+    return (
+        <View>
+            <Text>Expense Tracker</Text>
+            <TextInput
+                value={expense}
+                onChangeText={text => setExpense(text)}
+            />
+            <Button
+                title="Add Expense"
+                onPress={addExpense}
+            />
+            {expenses.map((item, index) => (
+                <Text key={index}>{item}</Text>
+            ))}
+        </View>
+    );
+}
+</code></pre>
+
+<h2>Projet 4 : Réalisation d'un site e-commerce en Javascript</h2>
+<p>Dans ce projet, nous allons apprendre à créer un site e-commerce en utilisant Javascript. Nous allons explorer les concepts de manipulation du DOM, de gestion des données et de mise en place d'un panier d'achat.</p>
+
+<p>Voici un exemple de code pour créer un site e-commerce en Javascript :</p>
+<pre><code>let products = [
+    { id: 1, name: 'Product 1', price: 10 },
+    { id: 2, name: 'Product 2', price: 20 },
+    { id: 3, name: 'Product 3', price: 30 }
+];
+
+let cart = [];
+
+function addToCart(productId) {
+    let product = products.find(item => item.id === productId);
+    cart.push(product);
+}
+
+function displayCart() {
+    let cartElement = document.querySelector('#cart');
+    cartElement.innerHTML = '';
+
+    for (let i = 0; i < cart.length; i++) {
+        let cartItem = document.createElement('li');
+        cartItem.textContent = cart[i].name + ' - $' + cart[i].price;
+        cartElement.appendChild(cartItem);
+    }
+}
+</code></pre>
+
+<h2>Projet 5 : Mise en place d'un chatbot en Javascript</h2>
+<p>Dans ce projet, nous allons apprendre à créer un chatbot en utilisant Javascript. Nous allons explorer les concepts de traitement du langage naturel, de gestion des conversations et de mise en place d'une interface utilisateur pour le chatbot.</p>
+
+<p>Voici un exemple de code pour créer un chatbot en Javascript :</p>
+<pre><code>const chatbot = {
+    greeting: 'Bonjour, comment puis-je vous aider ?',
+    responses: {
+        'Bonjour': 'Bonjour, comment puis-je vous aider ?',
+        'Quel est votre nom ?': 'Je suis un chatbot.',
+        'Quel temps fait-il aujourd\'hui ?': 'Il fait beau et ensoleillé.',
+        'Au revoir': 'Au revoir, à bientôt !'
+    },
+    getResponse: function(message) {
+        return this.responses[message] || 'Désolé, je ne comprends pas.';
+    }
+};
+
+function sendMessage() {
+    let messageInput = document.querySelector('#message-input');
+    let message = messageInput.value;
+    let chatbox = document.querySelector('#chatbox');
+    let response = chatbot.getResponse(message);
+
+    let messageElement = document.createElement('div');
+    messageElement.textContent = 'User: ' + message;
+    chatbox.appendChild(messageElement);
+
+    let responseElement = document.createElement('div');
+    responseElement.textContent = 'Chatbot: ' + response;
+    chatbox.appendChild(responseElement);
+
+    messageInput.value = '';
+}
+</code></pre>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les classes et l'héritage en Javascript</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux classes en Javascript</h2>
+<p>Les classes en Javascript sont un moyen de créer des objets réutilisables avec des propriétés et des méthodes communes. Elles permettent d'organiser et de structurer le code de manière plus claire et plus maintenable.</p>
+
+<p>Pour déclarer une classe en Javascript, on utilise le mot-clé <code>class</code> suivi du nom de la classe. Par exemple :</p>
+
+<pre><code>class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    sayHello() {
+        console.log('Hello, my name is ' + this.name);
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous avons déclaré une classe <code>Person</code> avec un constructeur prenant deux paramètres : <code>name</code> et <code>age</code>. La méthode <code>sayHello</code> affiche un message de salutation avec le nom de la personne.</p>
+
+<h2>Déclaration et utilisation des classes en Javascript</h2>
+<p>Pour créer une instance d'une classe en Javascript, on utilise le mot-clé <code>new</code> suivi du nom de la classe et des arguments du constructeur. Par exemple :</p>
+
+<pre><code>let person1 = new Person('John', 25);
+person1.sayHello(); // Affiche "Hello, my name is John"</code></pre>
+
+<p>Dans cet exemple, nous avons créé une instance de la classe <code>Person</code> appelée <code>person1</code> avec les valeurs 'John' et 25 pour les paramètres <code>name</code> et <code>age</code>. Ensuite, nous avons appelé la méthode <code>sayHello</code> sur cette instance.</p>
+
+<h2>L'héritage en Javascript</h2>
+<p>L'héritage en Javascript permet à une classe d'hériter des propriétés et des méthodes d'une autre classe. Cela permet de créer une hiérarchie de classes et de réutiliser du code déjà existant.</p>
+
+<p>Pour définir une classe qui hérite d'une autre classe, on utilise le mot-clé <code>extends</code>. Par exemple :</p>
+
+<pre><code>class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age);
+        this.grade = grade;
+    }
+
+    study() {
+        console.log(this.name + ' is studying.');
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous avons défini une classe <code>Student</code> qui hérite de la classe <code>Person</code>. Le constructeur de la classe <code>Student</code> appelle le constructeur de la classe <code>Person</code> à l'aide du mot-clé <code>super</code> et ajoute une propriété supplémentaire <code>grade</code>. La classe <code>Student</code> a également une méthode <code>study</code> qui affiche un message indiquant que l'étudiant étudie.</p>
+
+<h2>Les méthodes statiques en Javascript</h2>
+<p>Les méthodes statiques en Javascript sont des méthodes qui appartiennent à la classe elle-même plutôt qu'à ses instances. Elles sont utiles pour regrouper des fonctionnalités liées à la classe qui ne dépendent pas des instances spécifiques.</p>
+
+<p>Pour déclarer une méthode statique en Javascript, on utilise le mot-clé <code>static</code> avant le nom de la méthode. Par exemple :</p>
+
+<pre><code>class MathUtils {
+    static square(x) {
+        return x * x;
+    }
+}
+
+console.log(MathUtils.square(5)); // Affiche 25</code></pre>
+
+<p>Dans cet exemple, nous avons déclaré une classe <code>MathUtils</code> avec une méthode statique <code>square</code> qui calcule le carré d'un nombre. La méthode <code>square</code> peut être appelée directement sur la classe sans avoir besoin d'instancier un objet.</p>
+
+<h2>Les classes abstraites en Javascript</h2>
+<p>Les classes abstraites en Javascript sont des classes qui ne peuvent pas être instanciées directement, mais qui servent de modèles pour d'autres classes. Elles définissent des méthodes et des propriétés communes que les classes dérivées doivent implémenter.</p>
+
+<p>Pour déclarer une classe abstraite en Javascript, on utilise le mot-clé <code>abstract</code> avant le nom de la classe. Par exemple :</p>
+
+<pre><code>abstract class Shape {
+    constructor() {
+        if (new.target === Shape) {
+            throw new Error('Cannot instantiate abstract class Shape.');
+        }
+    }
+
+    abstract calculateArea();
+}
+
+class Rectangle extends Shape {
+    constructor(width, height) {
+        super();
+        this.width = width;
+        this.height = height;
+    }
+
+    calculateArea() {
+        return this.width * this.height;
+    }
+}
+
+let rectangle = new Rectangle(5, 10);
+console.log(rectangle.calculateArea()); // Affiche 50</code></pre>
+
+<p>Dans cet exemple, nous avons déclaré une classe abstraite <code>Shape</code> avec une méthode abstraite <code>calculateArea</code>. La classe <code>Shape</code> ne peut pas être instanciée directement, mais elle sert de modèle pour la classe dérivée <code>Rectangle</code>. La classe <code>Rectangle</code> implémente la méthode <code>calculateArea</code> en calculant l'aire du rectangle.</p>
+
+<p>En conclusion, les classes et l'héritage en Javascript permettent de créer des structures de code plus organisées et réutilisables. Les classes permettent de regrouper des propriétés et des méthodes liées, tandis que l'héritage permet de créer une hiérarchie de classes et de réutiliser du code déjà existant. Les méthodes statiques sont utiles pour regrouper des fonctionnalités liées à la classe, tandis que les classes abstraites servent de modèles pour d'autres classes.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

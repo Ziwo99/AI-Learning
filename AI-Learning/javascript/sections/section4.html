@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les tableaux et les objets en Javascript</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux tableaux en Javascript</h2>
+<p>Les tableaux sont des structures de données utilisées pour stocker et organiser des collections d'éléments de données de manière ordonnée. En Javascript, un tableau peut contenir des valeurs de différents types, tels que des nombres, des chaînes de caractères, des objets, etc.</p>
+
+<p>Voici comment déclarer et initialiser un tableau en Javascript :</p>
+<pre><code>var fruits = ['pomme', 'banane', 'orange'];</code></pre>
+
+<p>Les éléments d'un tableau sont indexés à partir de zéro. Par exemple, pour accéder au premier élément du tableau "fruits", nous utilisons la syntaxe suivante :</p>
+<pre><code>var premierFruit = fruits[0]; // pomme</code></pre>
+
+<h2>Manipulation des tableaux en Javascript</h2>
+<p>Il existe de nombreuses opérations que nous pouvons effectuer sur les tableaux en Javascript. Voici quelques-unes des opérations les plus courantes :</p>
+
+<p><strong>Ajouter un élément à la fin du tableau :</strong></p>
+<pre><code>fruits.push('raisin');</code></pre>
+
+<p><strong>Supprimer le dernier élément du tableau :</strong></p>
+<pre><code>fruits.pop();</code></pre>
+
+<p><strong>Ajouter un élément au début du tableau :</strong></p>
+<pre><code>fruits.unshift('kiwi');</code></pre>
+
+<p><strong>Supprimer le premier élément du tableau :</strong></p>
+<pre><code>fruits.shift();</code></pre>
+
+<p><strong>Obtenir la longueur du tableau :</strong></p>
+<pre><code>var longueur = fruits.length;</code></pre>
+
+<h2>Introduction aux objets en Javascript</h2>
+<p>Les objets sont des structures de données plus complexes qui permettent de stocker des collections d'informations liées. En Javascript, un objet est composé de paires clé-valeur, où chaque clé est une propriété et chaque valeur est la valeur associée à cette propriété.</p>
+
+<p>Voici comment déclarer et initialiser un objet en Javascript :</p>
+<pre><code>var personne = {
+    nom: 'Dupont',
+    age: 30,
+    profession: 'ingénieur'
+};</code></pre>
+
+<p>Pour accéder aux propriétés d'un objet, nous utilisons la syntaxe suivante :</p>
+<pre><code>var nomPersonne = personne.nom; // Dupont</code></pre>
+
+<h2>Manipulation des objets en Javascript</h2>
+<p>Il existe plusieurs façons de manipuler les objets en Javascript. Voici quelques-unes des opérations les plus courantes :</p>
+
+<p><strong>Ajouter une nouvelle propriété à un objet :</strong></p>
+<pre><code>personne.ville = 'Paris';</code></pre>
+
+<p><strong>Modifier la valeur d'une propriété existante :</strong></p>
+<pre><code>personne.age = 35;</code></pre>
+
+<p><strong>Supprimer une propriété d'un objet :</strong></p>
+<pre><code>delete personne.profession;</code></pre>
+
+<h2>Les tableaux d'objets en Javascript</h2>
+<p>En Javascript, il est également possible de stocker des objets dans un tableau. Cela peut être utile lorsque nous avons besoin de manipuler une collection d'objets similaires.</p>
+
+<p>Voici un exemple de tableau d'objets en Javascript :</p>
+<pre><code>var personnes = [
+    { nom: 'Dupont', age: 30 },
+    { nom: 'Martin', age: 25 },
+    { nom: 'Durand', age: 40 }
+];</code></pre>
+
+<p>Pour accéder aux propriétés d'un objet dans un tableau, nous utilisons la syntaxe suivante :</p>
+<pre><code>var nomPremierePersonne = personnes[0].nom; // Dupont</code></pre>
+
+<p>Il est également possible de parcourir un tableau d'objets à l'aide d'une boucle :</p>
+<pre><code>for (var i = 0; i &lt; personnes.length; i++) {
+    var nom = personnes[i].nom;
+    var age = personnes[i].age;
+    console.log(nom + ' a ' + age + ' ans.');
+}</code></pre>
+
+<p>Ceci conclut la section sur les tableaux et les objets en Javascript. Vous avez maintenant une compréhension solide de ces concepts et vous êtes prêt à les utiliser dans vos projets Javascript.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

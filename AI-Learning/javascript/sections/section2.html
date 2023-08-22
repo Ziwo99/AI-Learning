@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="#">Formations</a></li>
+					<li><a href="#">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="#">Comment sont générer nos formations ?</a></li>
+					<li><a href="#">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Manipulation du DOM</h2>
+				</div>
+			</header>
+
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la manipulation du DOM</h2>
+<p>La manipulation du DOM (Document Object Model) est une étape essentielle dans le développement JavaScript. Le DOM représente la structure d'une page HTML et permet d'accéder et de modifier les éléments de cette page.</p>
+
+<p>Grâce à la manipulation du DOM, vous pouvez :</p>
+<ul>
+  <li>Sélectionner des éléments spécifiques</li>
+  <li>Modifier le contenu des éléments</li>
+  <li>Ajouter ou supprimer des éléments</li>
+  <li>Gérer les événements</li>
+</ul>
+
+<h2>Sélection d'éléments du DOM</h2>
+<p>Pour sélectionner des éléments du DOM, vous pouvez utiliser différentes méthodes :</p>
+
+<pre><code>// Sélection par ID
+var element = document.getElementById('myElement');
+
+// Sélection par classe
+var elements = document.getElementsByClassName('myClass');
+
+// Sélection par balise
+var elements = document.getElementsByTagName('div');
+
+// Sélection par sélecteur CSS
+var elements = document.querySelectorAll('.myClass');
+</code></pre>
+
+<h2>Modification du contenu des éléments du DOM</h2>
+<p>Une fois que vous avez sélectionné un élément du DOM, vous pouvez modifier son contenu en utilisant la propriété <code>innerHTML</code>. Voici un exemple :</p>
+
+<pre><code>var element = document.getElementById('myElement');
+element.innerHTML = 'Nouveau contenu';
+</code></pre>
+
+<h2>Ajout et suppression d'éléments du DOM</h2>
+<p>Pour ajouter un nouvel élément au DOM, vous pouvez utiliser la méthode <code>createElement</code> pour créer un nouvel élément, puis la méthode <code>appendChild</code> pour l'ajouter à un élément parent. Voici un exemple :</p>
+
+<pre><code>var parentElement = document.getElementById('parentElement');
+var newElement = document.createElement('div');
+newElement.innerHTML = 'Nouvel élément';
+parentElement.appendChild(newElement);
+</code></pre>
+
+<p>Pour supprimer un élément du DOM, vous pouvez utiliser la méthode <code>removeChild</code>. Voici un exemple :</p>
+
+<pre><code>var parentElement = document.getElementById('parentElement');
+var elementToRemove = document.getElementById('elementToRemove');
+parentElement.removeChild(elementToRemove);
+</code></pre>
+
+<h2>Gestion des événements du DOM</h2>
+<p>Les événements du DOM permettent de réagir aux actions de l'utilisateur, comme un clic sur un bouton ou la soumission d'un formulaire. Vous pouvez utiliser la méthode <code>addEventListener</code> pour attacher un gestionnaire d'événements à un élément. Voici un exemple :</p>
+
+<pre><code>var button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+  alert('Le bouton a été cliqué !');
+});
+</code></pre>
+
+<p>Vous pouvez également utiliser des gestionnaires d'événements prédéfinis, tels que <code>onclick</code> ou <code>onsubmit</code>, directement dans les balises HTML. Voici un exemple :</p>
+
+<pre><code>&lt;button onclick="alert('Le bouton a été cliqué !')"&gt;Cliquez-moi&lt;/button&gt;
+</code></pre>
+
+<p>Il est important de noter que la manipulation du DOM peut avoir un impact sur les performances de votre application, surtout si vous effectuez des modifications fréquentes ou complexes. Il est donc recommandé d'optimiser votre code pour minimiser ces impacts.</p>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>
