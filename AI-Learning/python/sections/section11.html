@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Bonnes pratiques de développement en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Documentation et commentaires</h2>
+<p>La documentation et les commentaires jouent un rôle essentiel dans le développement en Python. Ils permettent de rendre le code plus compréhensible et facilitent la collaboration entre les développeurs. Voici quelques bonnes pratiques à suivre :</p>
+
+<p>1. Utilisez des commentaires pour expliquer le fonctionnement du code, les choix de conception et les décisions prises.</p>
+<pre><code># Cette fonction calcule la somme de deux nombres
+def addition(a, b):
+    return a + b
+</code></pre>
+
+<p>2. Utilisez des docstrings pour documenter vos fonctions, classes et modules. Les docstrings sont des chaînes de caractères placées juste après la signature de l'élément à documenter.</p>
+<pre><code>def addition(a, b):
+    """
+    Calcule la somme de deux nombres.
+
+    Args:
+        a (int): Le premier nombre.
+        b (int): Le deuxième nombre.
+
+    Returns:
+        int: La somme des deux nombres.
+    """
+    return a + b
+</code></pre>
+
+<p>3. Suivez les conventions de documentation de Python, telles que celles définies dans le PEP 257.</p>
+
+<h2>Tests unitaires</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité du code Python. Ils permettent de vérifier que chaque composant du code fonctionne correctement individuellement. Voici un exemple de test unitaire :</p>
+<pre><code>import unittest
+
+def addition(a, b):
+    return a + b
+
+class TestAddition(unittest.TestCase):
+    def test_addition(self):
+        self.assertEqual(addition(2, 3), 5)
+        self.assertEqual(addition(-1, 1), 0)
+        self.assertEqual(addition(0, 0), 0)
+
+if __name__ == '__main__':
+    unittest.main()
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module unittest pour créer une classe de test qui hérite de TestCase. Chaque méthode de test doit commencer par le préfixe "test_" et utiliser les assertions pour vérifier les résultats attendus.</p>
+
+<h2>Gestion de versions avec Git</h2>
+<p>Git est un système de contrôle de version populaire qui permet de gérer efficacement les modifications apportées au code source. Voici quelques concepts clés de Git :</p>
+
+<p>1. Initialisation d'un dépôt Git :</p>
+<pre><code>git init
+</code></pre>
+
+<p>2. Ajout de fichiers au suivi de Git :</p>
+<pre><code>git add fichier.py
+</code></pre>
+
+<p>3. Création d'un commit :</p>
+<pre><code>git commit -m "Message de commit"
+</code></pre>
+
+<p>4. Création d'une branche :</p>
+<pre><code>git branch nouvelle_branche
+</code></pre>
+
+<p>5. Changement de branche :</p>
+<pre><code>git checkout autre_branche
+</code></pre>
+
+<p>6. Fusion de branches :</p>
+<pre><code>git merge branche_a_fusionner
+</code></pre>
+
+<p>Ce ne sont que quelques-unes des fonctionnalités de base de Git. Il existe de nombreuses autres commandes et concepts à explorer pour une gestion avancée des versions.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Déploiement d'applications Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Virtualenv</h2>
+<p>Virtualenv est un outil qui permet de créer des environnements Python isolés. Cela signifie que vous pouvez avoir plusieurs environnements Python sur votre machine, chacun avec ses propres packages et dépendances, sans qu'ils n'interfèrent les uns avec les autres.</p>
+
+<p>Pour créer un nouvel environnement virtuel avec Virtualenv, utilisez la commande suivante :</p>
+
+<pre><code>virtualenv myenv</code></pre>
+
+<p>Cela créera un nouveau dossier appelé "myenv" qui contiendra l'environnement virtuel.</p>
+
+<p>Pour activer l'environnement virtuel, utilisez la commande suivante :</p>
+
+<pre><code>source myenv/bin/activate</code></pre>
+
+<p>Vous verrez maintenant que votre invite de commande est préfixée par le nom de votre environnement virtuel.</p>
+
+<p>Pour désactiver l'environnement virtuel, utilisez la commande suivante :</p>
+
+<pre><code>deactivate</code></pre>
+
+<h2>Docker</h2>
+<p>Docker est une plateforme open-source qui permet d'automatiser le déploiement d'applications dans des conteneurs logiciels. Les conteneurs Docker sont légers, portables et autonomes, ce qui les rend idéaux pour le déploiement d'applications Python.</p>
+
+<p>Pour utiliser Docker, vous devez d'abord installer Docker sur votre machine. Une fois installé, vous pouvez créer un fichier appelé "Dockerfile" qui contient les instructions pour construire votre conteneur Docker.</p>
+
+<p>Voici un exemple de Dockerfile pour une application Python simple :</p>
+
+<pre><code>FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app.py"]</code></pre>
+
+<p>Ce Dockerfile utilise l'image de base Python 3.9, copie le fichier requirements.txt dans le conteneur, installe les dépendances, copie le reste des fichiers de l'application dans le conteneur, puis exécute le fichier app.py.</p>
+
+<p>Pour construire l'image Docker, utilisez la commande suivante :</p>
+
+<pre><code>docker build -t myapp .</code></pre>
+
+<p>Cela construira l'image Docker avec le tag "myapp".</p>
+
+<p>Pour exécuter le conteneur Docker, utilisez la commande suivante :</p>
+
+<pre><code>docker run myapp</code></pre>
+
+<h2>Heroku</h2>
+<p>Heroku est une plateforme de cloud qui permet de déployer et de gérer des applications web. Elle prend en charge de nombreux langages de programmation, y compris Python.</p>
+
+<p>Pour déployer une application Python sur Heroku, vous devez d'abord créer un compte Heroku et installer l'outil en ligne de commande Heroku.</p>
+
+<p>Une fois cela fait, vous pouvez créer un fichier appelé "Procfile" qui contient les commandes pour exécuter votre application sur Heroku.</p>
+
+<p>Voici un exemple de Procfile pour une application Flask :</p>
+
+<pre><code>web: gunicorn app:app</code></pre>
+
+<p>Ce Procfile indique à Heroku d'utiliser Gunicorn pour exécuter l'application Flask.</p>
+
+<p>Pour déployer l'application sur Heroku, utilisez les commandes suivantes :</p>
+
+<pre><code>heroku login
+heroku create
+git push heroku main
+heroku ps:scale web=1
+heroku open</code></pre>
+
+<p>Cela vous connectera à votre compte Heroku, créera une nouvelle application, poussera votre code vers Heroku, mettra en place une instance de votre application et ouvrira l'URL de votre application dans votre navigateur.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

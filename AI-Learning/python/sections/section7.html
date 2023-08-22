@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Les bibliothèques populaires de Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Numpy</h2>
+<p>Numpy est une bibliothèque populaire de Python utilisée pour effectuer des opérations mathématiques et statistiques sur des tableaux multidimensionnels. Elle fournit des fonctions efficaces pour la manipulation de données numériques, telles que l'addition, la soustraction, la multiplication, la division, etc.</p>
+
+<p>Voici un exemple d'utilisation de Numpy pour effectuer une opération mathématique simple :</p>
+
+<pre><code>import numpy as np
+
+# Création d'un tableau numpy
+arr = np.array([1, 2, 3, 4, 5])
+
+# Addition de 1 à chaque élément du tableau
+arr = arr + 1
+
+print(arr)
+</code></pre>
+
+<p>Ce code crée un tableau numpy contenant les nombres de 1 à 5, puis ajoute 1 à chaque élément du tableau. Le résultat affiché sera [2, 3, 4, 5, 6].</p>
+
+<h2>Pandas</h2>
+<p>Pandas est une bibliothèque Python utilisée pour la manipulation et l'analyse de données. Elle offre des structures de données puissantes, telles que les DataFrames, qui permettent de stocker et de manipuler facilement des données tabulaires.</p>
+
+<p>Voici un exemple d'utilisation de Pandas pour lire un fichier CSV et effectuer des opérations sur les données :</p>
+
+<pre><code>import pandas as pd
+
+# Lecture du fichier CSV
+df = pd.read_csv('data.csv')
+
+# Affichage des premières lignes du DataFrame
+print(df.head())
+</code></pre>
+
+<p>Ce code lit un fichier CSV appelé "data.csv" et stocke les données dans un DataFrame. Ensuite, il affiche les premières lignes du DataFrame à l'aide de la fonction head().</p>
+
+<h2>Matplotlib</h2>
+<p>Matplotlib est une bibliothèque de visualisation de données en Python. Elle permet de créer des graphiques et des visualisations de haute qualité pour représenter les données de manière claire et compréhensible.</p>
+
+<p>Voici un exemple d'utilisation de Matplotlib pour tracer un graphique à partir de données :</p>
+
+<pre><code>import matplotlib.pyplot as plt
+
+# Données à tracer
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# Tracé du graphique
+plt.plot(x, y)
+
+# Affichage du graphique
+plt.show()
+</code></pre>
+
+<p>Ce code crée un graphique à partir des données fournies dans les listes x et y. Le graphique affiche une ligne reliant les points (1, 2), (2, 4), (3, 6), (4, 8) et (5, 10).</p>
+
+<h2>Scikit-learn</h2>
+<p>Scikit-learn est une bibliothèque Python utilisée pour l'apprentissage automatique (machine learning). Elle fournit des outils et des algorithmes pour effectuer des tâches courantes d'apprentissage automatique, telles que la classification, la régression, le regroupement, etc.</p>
+
+<p>Voici un exemple d'utilisation de Scikit-learn pour effectuer une classification avec l'algorithme des k plus proches voisins :</p>
+
+<pre><code>from sklearn.neighbors import KNeighborsClassifier
+from sklearn.datasets import load_iris
+
+# Chargement du jeu de données Iris
+iris = load_iris()
+
+# Création du modèle de classification
+knn = KNeighborsClassifier(n_neighbors=3)
+
+# Entraînement du modèle
+knn.fit(iris.data, iris.target)
+
+# Prédiction d'une nouvelle observation
+new_observation = [[5.2, 3.6, 1.4, 0.2]]
+prediction = knn.predict(new_observation)
+
+print(prediction)
+</code></pre>
+
+<p>Ce code utilise l'algorithme des k plus proches voisins pour effectuer une classification sur le jeu de données Iris. Il crée un modèle de classification en utilisant les trois voisins les plus proches, puis entraîne le modèle avec les données d'entrée et les étiquettes correspondantes. Ensuite, il effectue une prédiction sur une nouvelle observation représentée par les valeurs [5.2, 3.6, 1.4, 0.2] et affiche la prédiction.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

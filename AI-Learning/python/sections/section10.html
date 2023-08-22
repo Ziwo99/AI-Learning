@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Projets pratiques en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Création d'un jeu en Python</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un jeu en utilisant le langage de programmation Python. Nous allons commencer par définir les règles du jeu, puis nous allons expliquer comment créer les différentes fonctionnalités du jeu.</p>
+
+<p>Voici un exemple de code pour créer un jeu simple en Python :</p>
+
+<pre><code>import random
+
+def guess_number():
+    number = random.randint(1, 100)
+    guess = 0
+    tries = 0
+
+    while guess != number:
+        guess = int(input("Devinez le nombre: "))
+        tries += 1
+
+        if guess < number:
+            print("Le nombre est plus grand.")
+        elif guess > number:
+            print("Le nombre est plus petit.")
+
+    print("Bravo, vous avez deviné le nombre en", tries, "essais!")
+
+guess_number()
+</code></pre>
+
+<p>Ce code crée un jeu où l'utilisateur doit deviner un nombre compris entre 1 et 100. Le programme génère un nombre aléatoire, puis demande à l'utilisateur de deviner le nombre. Le programme indique si le nombre à deviner est plus grand ou plus petit que la proposition de l'utilisateur. Le jeu se termine lorsque l'utilisateur devine correctement le nombre.</p>
+
+<h2>Création d'une application web en Python</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application web en utilisant le langage de programmation Python. Nous allons utiliser le framework Flask pour créer notre application web.</p>
+
+<p>Voici un exemple de code pour créer une application web simple en Python :</p>
+
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Bonjour, monde!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<p>Ce code crée une application web qui affiche le message "Bonjour, monde!" lorsque l'utilisateur accède à la page d'accueil de l'application. Le code utilise le framework Flask pour créer l'application web et définit une route pour la page d'accueil.</p>
+
+<p>Vous pouvez personnaliser le contenu de votre application web en modifiant la fonction <code>hello_world()</code> pour renvoyer le contenu souhaité.</p>
+
+<p>Ce sont juste des exemples de projets pratiques que vous pouvez réaliser en utilisant Python. Vous pouvez explorer d'autres idées de projets et les implémenter en utilisant les connaissances que vous avez acquises dans cette formation.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

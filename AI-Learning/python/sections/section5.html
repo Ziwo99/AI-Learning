@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Programmation orientée objet en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO offre une approche modulaire et réutilisable pour développer des applications.</p>
+
+<p>En Python, tout est un objet. Les types de données primitifs tels que les entiers, les flottants et les chaînes de caractères sont des objets. Les objets ont des attributs (variables) et des méthodes (fonctions) qui leur sont propres.</p>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle pour créer des objets. Elle définit les attributs et les méthodes que les objets de cette classe auront. Pour créer un objet à partir d'une classe, on utilise le mot-clé <code>class</code> suivi du nom de la classe.</p>
+
+<pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print("Hello, my name is " + self.name + " and I am " + str(self.age) + " years old.")
+
+person1 = Person("Alice", 25)
+person1.greet()</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe <code>Person</code> avec deux attributs : <code>name</code> et <code>age</code>. La méthode spéciale <code>__init__</code> est appelée lors de la création d'un nouvel objet et permet d'initialiser ses attributs. La méthode <code>greet</code> affiche un message de salutation en utilisant les attributs de l'objet.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage est un concept clé de la POO qui permet de créer de nouvelles classes en se basant sur des classes existantes. Une classe qui hérite d'une autre classe est appelée une classe dérivée ou sous-classe, tandis que la classe dont elle hérite est appelée une classe de base ou superclasse.</p>
+
+<p>Le polymorphisme est la capacité d'un objet à prendre différentes formes. En Python, le polymorphisme est géré automatiquement grâce à la dynamique du langage. Cela signifie que vous pouvez utiliser une méthode d'une classe de base sur un objet d'une classe dérivée.</p>
+
+<pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Woof!")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow!")
+
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+dog.make_sound()
+cat.make_sound()</code></pre>
+
+<p>Dans cet exemple, nous avons une classe de base <code>Animal</code> avec une méthode <code>make_sound</code> qui est définie comme une méthode abstraite (elle ne fait rien). Les classes dérivées <code>Dog</code> et <code>Cat</code> héritent de la classe <code>Animal</code> et redéfinissent la méthode <code>make_sound</code> pour produire des sons spécifiques.</p>
+
+<p>En utilisant le polymorphisme, nous pouvons appeler la méthode <code>make_sound</code> sur des objets de différentes classes dérivées, et le comportement sera spécifique à chaque classe.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

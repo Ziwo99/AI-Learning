@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Développement web avec Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction au développement web</h2>
+<p>
+Le développement web est un domaine passionnant qui permet de créer des sites web interactifs et dynamiques. Python est un langage de programmation polyvalent qui peut être utilisé pour développer des applications web. Dans cette section, nous explorerons les bases du développement web avec Python.
+</p>
+
+<h2>Flask</h2>
+<p>
+Flask est un framework web léger et flexible qui permet de créer rapidement des applications web en utilisant Python. Il est idéal pour les petits projets et les prototypes. Voici un exemple de code Flask qui affiche "Hello, World!" sur une page web :
+</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<h2>Django</h2>
+<p>
+Django est un framework web complet et puissant qui facilite le développement d'applications web complexes. Il suit le principe du "batteries included", ce qui signifie qu'il offre de nombreuses fonctionnalités prêtes à l'emploi. Voici un exemple de code Django qui affiche une liste de tâches à faire :
+</p>
+<pre><code>from django.shortcuts import render
+
+def todo_list(request):
+    tasks = ['Task 1', 'Task 2', 'Task 3']
+    return render(request, 'todo_list.html', {'tasks': tasks})
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons le moteur de templates de Django pour afficher la liste des tâches sur une page web. Le fichier "todo_list.html" contient le code HTML correspondant à la présentation des tâches.
+</p>
+
+<p>
+En conclusion, le développement web avec Python offre de nombreuses possibilités pour créer des applications web puissantes et interactives. Que vous choisissiez Flask pour des projets plus simples ou Django pour des projets plus complexes, Python est un excellent choix pour le développement web.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
