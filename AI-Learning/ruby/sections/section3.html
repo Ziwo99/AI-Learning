@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Programmation orientée objet en Ruby</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Concepts de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. Les objets sont des instances de classes, qui sont des modèles pour créer des objets avec des attributs et des méthodes.</p>
+<p>En Ruby, tout est un objet, y compris les entiers, les chaînes de caractères et même les classes elles-mêmes. Pour créer une classe, on utilise le mot-clé <code>class</code> suivi du nom de la classe en commençant par une majuscule.</p>
+<pre><code>class Person
+  # attributs et méthodes de la classe
+end
+</code></pre>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle pour créer des objets. Elle définit les attributs et les méthodes que les objets de cette classe auront.</p>
+<p>Pour créer un nouvel objet à partir d'une classe, on utilise la méthode <code>new</code> de la classe :</p>
+<pre><code>person = Person.new
+</code></pre>
+<p>Les attributs d'un objet sont des variables qui lui sont propres. On peut les définir dans le constructeur de la classe :</p>
+<pre><code>class Person
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+end
+
+person = Person.new("John", 25)
+</code></pre>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage permet de créer une nouvelle classe basée sur une classe existante. La nouvelle classe hérite des attributs et des méthodes de la classe parente.</p>
+<p>En Ruby, on utilise le symbole <code>&lt;</code> pour indiquer l'héritage :</p>
+<pre><code>class Student &lt; Person
+  # attributs et méthodes spécifiques aux étudiants
+end
+</code></pre>
+<p>Le polymorphisme permet à des objets de différentes classes d'être traités de manière similaire. Par exemple, si une méthode attend un objet de la classe parente, on peut lui passer un objet de la classe enfant sans problème.</p>
+<pre><code>def print_name(person)
+  puts person.name
+end
+
+person = Person.new("John", 25)
+student = Student.new("Alice", 20)
+
+print_name(person)  # affiche "John"
+print_name(student) # affiche "Alice"
+</code></pre>
+
+<h2>Modules et mixins</h2>
+<p>Les modules sont des collections de méthodes et de constantes qui peuvent être incluses dans une classe. Ils permettent de regrouper du code réutilisable.</p>
+<p>En Ruby, on utilise le mot-clé <code>module</code> pour définir un module :</p>
+<pre><code>module MathUtils
+  def self.square(x)
+    x * x
+  end
+end
+
+puts MathUtils.square(5) # affiche 25
+</code></pre>
+<p>Les mixins sont une façon d'inclure des modules dans une classe. Cela permet à la classe d'utiliser les méthodes du module comme si elles étaient ses propres méthodes.</p>
+<pre><code>class Calculator
+  include MathUtils
+
+  def square_root(x)
+    Math.sqrt(x)
+  end
+end
+
+calculator = Calculator.new
+puts calculator.square(5)       # affiche 25
+puts calculator.square_root(25) # affiche 5
+</code></pre>
+
+<h2>Exceptions et gestion des erreurs</h2>
+<p>Les exceptions sont des événements qui se produisent lorsqu'une erreur se produit pendant l'exécution du programme. Elles permettent de gérer les erreurs de manière structurée.</p>
+<p>En Ruby, on utilise le mot-clé <code>rescue</code> pour capturer une exception et le mot-clé <code>raise</code> pour lever une exception :</p>
+<pre><code>begin
+  # code susceptible de lever une exception
+rescue ExceptionType
+  # code à exécuter en cas d'exception
+end
+
+def divide(x, y)
+  raise "Division by zero" if y == 0
+  x / y
+rescue => e
+  puts "An error occurred: #{e.message}"
+end
+
+puts divide(10, 2)  # affiche 5
+puts divide(10, 0)  # affiche "An error occurred: Division by zero"
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

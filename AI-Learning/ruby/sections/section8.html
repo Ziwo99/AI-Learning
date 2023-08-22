@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Déploiement d'applications Ruby</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Configuration d'un serveur d'hébergement</h2>
+<p>Avant de pouvoir déployer une application Ruby sur un serveur, vous devez d'abord configurer le serveur d'hébergement pour prendre en charge Ruby. Voici les étapes à suivre :</p>
+
+<p>1. Assurez-vous que le serveur dispose de Ruby installé. Vous pouvez vérifier cela en exécutant la commande suivante dans le terminal :</p>
+<pre><code>ruby -v</code></pre>
+
+<p>2. Installez les dépendances nécessaires à l'exécution d'une application Ruby, telles que RubyGems et Bundler. Utilisez les commandes suivantes :</p>
+<pre><code>gem install rubygems</code></pre>
+<pre><code>gem install bundler</code></pre>
+
+<p>3. Configurez le serveur pour exécuter l'application Ruby en utilisant un serveur d'application tel que Apache ou Nginx. Suivez les instructions spécifiques à votre serveur pour configurer les paramètres appropriés.</p>
+
+<h2>Déploiement d'applications Ruby sur un serveur</h2>
+<p>Une fois que le serveur d'hébergement est configuré, vous pouvez déployer votre application Ruby en suivant ces étapes :</p>
+
+<p>1. Assurez-vous que votre application est prête à être déployée en vérifiant que tous les fichiers nécessaires sont présents et que les dépendances sont correctement spécifiées dans le fichier Gemfile.</p>
+
+<p>2. Utilisez Bundler pour installer les dépendances de l'application en exécutant la commande suivante :</p>
+<pre><code>bundle install</code></pre>
+
+<p>3. Transférez les fichiers de votre application sur le serveur d'hébergement à l'aide d'un outil de transfert de fichiers tel que FTP ou SCP.</p>
+
+<p>4. Configurez les paramètres de l'application sur le serveur, tels que les variables d'environnement et les fichiers de configuration spécifiques à votre application.</p>
+
+<p>5. Démarrez l'application sur le serveur en exécutant la commande suivante :</p>
+<pre><code>bundle exec ruby app.rb</code></pre>
+
+<h2>Gestion des mises à jour et de la maintenance</h2>
+<p>Une fois que votre application Ruby est déployée, vous devrez gérer les mises à jour et la maintenance régulière. Voici quelques bonnes pratiques à suivre :</p>
+
+<p>1. Effectuez des sauvegardes régulières de votre application et de ses données pour éviter toute perte de données en cas de problème.</p>
+
+<p>2. Surveillez les journaux d'erreurs de l'application pour détecter les problèmes potentiels et les corriger rapidement.</p>
+
+<p>3. Mettez à jour régulièrement les dépendances de votre application en exécutant la commande suivante :</p>
+<pre><code>bundle update</code></pre>
+
+<p>4. Testez les mises à jour avant de les déployer sur le serveur de production pour éviter les problèmes de compatibilité.</p>
+
+<p>5. Planifiez des maintenances régulières pour effectuer des tâches de maintenance, telles que la mise à jour du système d'exploitation du serveur ou l'optimisation des performances de l'application.</p>
+
+<p>En suivant ces bonnes pratiques, vous pourrez maintenir votre application Ruby en bon état de fonctionnement et garantir une expérience utilisateur optimale.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

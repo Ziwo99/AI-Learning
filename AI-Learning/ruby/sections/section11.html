@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Avancé et sujets avancés en Ruby</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Méta-programmation en Ruby</h2>
+<p>La méta-programmation en Ruby est une technique puissante qui permet de créer du code qui peut modifier ou générer du code lui-même. Cela permet aux développeurs de créer des bibliothèques et des frameworks flexibles et dynamiques.</p>
+
+<p>Voici un exemple de méta-programmation en Ruby :</p>
+<pre><code>class MyClass
+  define_method :my_dynamic_method do
+    puts "This is a dynamic method created using meta-programming!"
+  end
+end
+
+obj = MyClass.new
+obj.my_dynamic_method
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>define_method</code> pour créer une méthode dynamique <code>my_dynamic_method</code> dans la classe <code>MyClass</code>. Cette méthode peut être appelée sur une instance de la classe et affiche un message à l'écran.</p>
+
+<h2>Utilisation de bibliothèques avancées</h2>
+<p>En Ruby, il existe de nombreuses bibliothèques avancées qui peuvent être utilisées pour étendre les fonctionnalités de base du langage. Ces bibliothèques offrent des fonctionnalités supplémentaires et facilitent le développement d'applications plus complexes.</p>
+
+<p>Un exemple de bibliothèque avancée en Ruby est <code>ActiveRecord</code>, qui est utilisée dans le framework Ruby on Rails pour gérer les bases de données. Voici un exemple d'utilisation d'ActiveRecord :</p>
+<pre><code>require 'active_record'
+
+class User &lt; ActiveRecord::Base
+  validates :name, presence: true
+end
+
+user = User.new
+user.valid?  # Retourne false car le nom est manquant
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons ActiveRecord pour définir une classe <code>User</code> qui représente une table dans une base de données. Nous utilisons également la validation <code>presence</code> pour nous assurer que le champ <code>name</code> n'est pas vide.</p>
+
+<h2>Optimisation des performances</h2>
+<p>L'optimisation des performances est un aspect important du développement en Ruby. Il existe plusieurs techniques et bonnes pratiques qui peuvent être utilisées pour améliorer les performances d'une application Ruby.</p>
+
+<p>Un exemple de technique d'optimisation des performances en Ruby est l'utilisation de la méthode <code>map</code> au lieu de la méthode <code>each</code> pour itérer sur une collection :</p>
+<pre><code>numbers = [1, 2, 3, 4, 5]
+
+# Utilisation de la méthode each
+squared_numbers = []
+numbers.each do |number|
+  squared_numbers &lt;&lt; number * number
+end
+
+# Utilisation de la méthode map
+squared_numbers = numbers.map { |number| number * number }
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>map</code> pour créer un nouveau tableau <code>squared_numbers</code> qui contient les carrés des nombres du tableau <code>numbers</code>. Cette méthode est plus performante que l'utilisation de la méthode <code>each</code> avec un tableau vide et l'opérateur << pour ajouter les éléments au tableau.</p>
+
+<h2>Sécurité et bonnes pratiques de sécurité en Ruby</h2>
+<p>La sécurité est un aspect crucial du développement d'applications en Ruby. Il est important de suivre les bonnes pratiques de sécurité pour protéger les données sensibles et éviter les vulnérabilités.</p>
+
+<p>Un exemple de bonne pratique de sécurité en Ruby est l'utilisation de la gem <code>bcrypt</code> pour le hachage sécurisé des mots de passe :</p>
+<pre><code>require 'bcrypt'
+
+password = "my_password"
+hashed_password = BCrypt::Password.create(password)
+
+puts hashed_password
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la gem <code>bcrypt</code> pour créer un hachage sécurisé du mot de passe. Le mot de passe est stocké sous forme de hachage dans la variable <code>hashed_password</code>. Cela permet de stocker les mots de passe de manière sécurisée dans une base de données, sans les exposer en clair.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

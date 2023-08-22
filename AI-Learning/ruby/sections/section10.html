@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Projets pratiques en Ruby</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Création d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application de gestion de tâches en utilisant Ruby. Cette application permettra aux utilisateurs de créer, afficher, mettre à jour et supprimer des tâches.</p>
+
+<p>Voici un exemple de code pour créer une classe Task :</p>
+<pre><code>class Task
+  attr_accessor :title, :description, :completed
+
+  def initialize(title, description)
+    @title = title
+    @description = description
+    @completed = false
+  end
+
+  def complete
+    @completed = true
+  end
+
+  def to_s
+    "#{@title} - #{@description} (#{@completed ? 'Completed' : 'Incomplete'})"
+  end
+end
+</code></pre>
+
+<p>En utilisant cette classe Task, vous pouvez créer des instances de tâches, les afficher, les marquer comme terminées, etc.</p>
+
+<h2>Développement d'un jeu simple en Ruby</h2>
+<p>Dans cette sous-section, nous allons développer un jeu simple en utilisant Ruby. Le jeu consistera à deviner un nombre aléatoire généré par l'ordinateur.</p>
+
+<p>Voici un exemple de code pour le jeu :</p>
+<pre><code>def guess_number
+  number = rand(1..100)
+  guessed = false
+
+  while !guessed
+    print "Guess a number between 1 and 100: "
+    guess = gets.chomp.to_i
+
+    if guess == number
+      puts "Congratulations! You guessed the number."
+      guessed = true
+    elsif guess < number
+      puts "Too low. Try again."
+    else
+      puts "Too high. Try again."
+    end
+  end
+end
+
+guess_number
+</code></pre>
+
+<p>En exécutant ce code, les joueurs pourront deviner le nombre généré par l'ordinateur jusqu'à ce qu'ils le trouvent.</p>
+
+<h2>Création d'un site web basique avec Ruby on Rails</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un site web basique en utilisant Ruby on Rails. Ce site web aura des fonctionnalités de base telles que l'inscription des utilisateurs, la connexion, la création de pages, etc.</p>
+
+<p>Voici un exemple de code pour créer une page d'accueil simple :</p>
+<pre><code># app/controllers/pages_controller.rb
+class PagesController &lt; ApplicationController
+  def home
+  end
+end
+
+# app/views/pages/home.html.erb
+&lt;h1>Welcome to my website!&lt;/h1>
+&lt;p>This is the home page of my website.&lt;/p>
+
+# config/routes.rb
+Rails.application.routes.draw do
+  root 'pages#home'
+end
+</code></pre>
+
+<p>En utilisant ce code, vous pouvez créer une page d'accueil simple pour votre site web Ruby on Rails.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

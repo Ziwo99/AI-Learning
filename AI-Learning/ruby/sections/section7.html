@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Tests et débogage en Ruby</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux tests unitaires</h2>
+<p>Les tests unitaires sont une pratique essentielle dans le développement logiciel. Ils permettent de vérifier le bon fonctionnement des différentes parties d'un programme de manière isolée. En Ruby, il existe plusieurs frameworks de tests unitaires populaires, tels que RSpec et MiniTest.</p>
+
+<p>Les tests unitaires consistent à écrire des cas de tests qui vérifient le comportement attendu d'une méthode ou d'une fonction. Ces cas de tests sont exécutés automatiquement et signalent toute déviation par rapport au comportement attendu.</p>
+
+<p>Voici un exemple de test unitaire en utilisant le framework RSpec :</p>
+
+<pre><code>require 'rspec'
+
+class Calculator
+  def add(a, b)
+    a + b
+  end
+end
+
+RSpec.describe Calculator do
+  describe '#add' do
+    it 'returns the sum of two numbers' do
+      calculator = Calculator.new
+      result = calculator.add(2, 3)
+      expect(result).to eq(5)
+    end
+  end
+end
+</code></pre>
+
+<h2>Utilisation de frameworks de tests (RSpec, MiniTest)</h2>
+<p>Les frameworks de tests tels que RSpec et MiniTest fournissent des outils et des structures pour écrire et exécuter des tests unitaires de manière organisée.</p>
+
+<p>RSpec est un framework de tests très populaire en Ruby. Il utilise une syntaxe expressive et permet de décrire le comportement attendu d'une méthode ou d'une fonction de manière claire et lisible.</p>
+
+<p>Voici un exemple d'utilisation de RSpec pour tester une classe Calculator :</p>
+
+<pre><code>require 'rspec'
+
+class Calculator
+  def add(a, b)
+    a + b
+  end
+end
+
+RSpec.describe Calculator do
+  describe '#add' do
+    it 'returns the sum of two numbers' do
+      calculator = Calculator.new
+      result = calculator.add(2, 3)
+      expect(result).to eq(5)
+    end
+  end
+end
+</code></pre>
+
+<p>MiniTest est un autre framework de tests intégré à Ruby. Il est plus léger que RSpec et utilise une syntaxe plus proche des tests unitaires traditionnels.</p>
+
+<p>Voici un exemple d'utilisation de MiniTest pour tester une classe Calculator :</p>
+
+<pre><code>require 'minitest/autorun'
+
+class Calculator
+  def add(a, b)
+    a + b
+  end
+end
+
+class CalculatorTest < MiniTest::Test
+  def test_add
+    calculator = Calculator.new
+    result = calculator.add(2, 3)
+    assert_equal 5, result
+  end
+end
+</code></pre>
+
+<h2>Débogage de code Ruby</h2>
+<p>Le débogage est une compétence essentielle pour identifier et résoudre les erreurs dans un programme. En Ruby, il existe plusieurs outils et techniques de débogage qui peuvent vous aider à comprendre le comportement d'un programme et à localiser les erreurs.</p>
+
+<p>Un outil de débogage couramment utilisé en Ruby est le débogueur intégré (IRB). Il permet d'exécuter du code Ruby pas à pas et d'inspecter les valeurs des variables à chaque étape.</p>
+
+<p>Voici un exemple d'utilisation du débogueur IRB :</p>
+
+<pre><code>def factorial(n)
+  if n == 0
+    1
+  else
+    n * factorial(n-1)
+  end
+end
+
+result = factorial(5)
+puts result
+</code></pre>
+
+<p>Pour déboguer ce code, vous pouvez insérer la ligne suivante avant l'appel à la méthode factorial :</p>
+
+<pre><code>require 'irb'; binding.irb</code></pre>
+
+<p>Cela ouvrira une console IRB à l'endroit où vous avez inséré la ligne. Vous pouvez alors exécuter du code Ruby et inspecter les valeurs des variables pour comprendre le comportement du programme.</p>
+
+<p>En utilisant ces techniques de débogage, vous serez en mesure d'identifier et de résoudre les erreurs dans votre code Ruby de manière efficace.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
