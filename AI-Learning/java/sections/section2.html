@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les fondamentaux de la programmation Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle sont essentielles en programmation Java pour contrôler le flux d'exécution du programme. Les boucles permettent de répéter des instructions plusieurs fois, tandis que les conditions permettent de prendre des décisions en fonction de certaines conditions.</p>
+
+<p>Voici un exemple d'utilisation de la boucle while en Java :</p>
+<pre><code>i = 0;
+
+while (i &lt; 10) {
+    System.out.println("Iteration " + i);
+    i++;
+}</code></pre>
+
+<p>Dans cet exemple, la boucle while répète les instructions à l'intérieur tant que la condition "i &lt; 10" est vraie. À chaque itération, la variable i est incrémentée de 1.</p>
+
+<p>Les conditions sont utilisées pour exécuter des blocs de code en fonction de certaines conditions. Voici un exemple d'utilisation de la condition if en Java :</p>
+<pre><code>int age = 18;
+
+if (age &gt;= 18) {
+    System.out.println("Vous êtes majeur.");
+} else {
+    System.out.println("Vous êtes mineur.");
+}</code></pre>
+
+<p>Dans cet exemple, le bloc de code à l'intérieur de la condition if est exécuté si la condition "age &gt;= 18" est vraie. Sinon, le bloc de code à l'intérieur de la condition else est exécuté.</p>
+
+<h2>Les tableaux en Java</h2>
+<p>Les tableaux en Java permettent de stocker plusieurs valeurs de même type dans une seule variable. Ils sont utiles lorsque vous avez besoin de manipuler un ensemble de données.</p>
+
+<p>Voici un exemple de déclaration et d'utilisation d'un tableau en Java :</p>
+<pre><code>int[] numbers = {1, 2, 3, 4, 5};
+
+for (int i = 0; i &lt; numbers.length; i++) {
+    System.out.println(numbers[i]);
+}</code></pre>
+
+<p>Dans cet exemple, nous déclarons un tableau d'entiers appelé "numbers" et lui attribuons les valeurs 1, 2, 3, 4 et 5. Ensuite, nous utilisons une boucle for pour parcourir chaque élément du tableau et l'afficher.</p>
+
+<h2>Les méthodes et les fonctions en Java</h2>
+<p>Les méthodes et les fonctions en Java permettent d'organiser le code en le divisant en blocs réutilisables. Ils sont utilisés pour effectuer des actions spécifiques et peuvent prendre des paramètres en entrée et renvoyer des valeurs en sortie.</p>
+
+<p>Voici un exemple de déclaration et d'appel d'une méthode en Java :</p>
+<pre><code>public int addNumbers(int a, int b) {
+    return a + b;
+}
+
+int result = addNumbers(5, 3);
+System.out.println(result);</code></pre>
+
+<p>Dans cet exemple, nous déclarons une méthode appelée "addNumbers" qui prend deux paramètres entiers "a" et "b" et renvoie leur somme. Ensuite, nous appelons cette méthode avec les valeurs 5 et 3, et stockons le résultat dans la variable "result" que nous affichons ensuite.</p>
+
+<h2>La gestion des exceptions en Java</h2>
+<p>La gestion des exceptions en Java permet de gérer les erreurs et les situations exceptionnelles qui peuvent survenir pendant l'exécution d'un programme. Elle permet de capturer et de traiter ces exceptions de manière appropriée.</p>
+
+<p>Voici un exemple de gestion d'exception en Java :</p>
+<pre><code>try {
+    int result = 10 / 0;
+    System.out.println(result);
+} catch (ArithmeticException e) {
+    System.out.println("Une erreur de division par zéro s'est produite.");
+}</code></pre>
+
+<p>Dans cet exemple, nous essayons de diviser 10 par 0, ce qui provoque une exception de type ArithmeticException. Nous capturons cette exception à l'aide du bloc try-catch et affichons un message d'erreur approprié.</p>
+
+<h2>Les classes et les objets en Java</h2>
+<p>Les classes et les objets sont les éléments fondamentaux de la programmation orientée objet en Java. Les classes sont des modèles ou des plans pour créer des objets, qui sont des instances de ces classes.</p>
+
+<p>Voici un exemple de déclaration d'une classe et de création d'un objet en Java :</p>
+<pre><code>public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void sayHello() {
+        System.out.println("Bonjour, je m'appelle " + name + " et j'ai " + age + " ans.");
+    }
+}
+
+Person person = new Person("Alice", 25);
+person.sayHello();</code></pre>
+
+<p>Dans cet exemple, nous déclarons une classe appelée "Person" avec deux attributs privés "name" et "age". Nous avons également un constructeur pour initialiser ces attributs et une méthode "sayHello" pour afficher un message de salutation. Ensuite, nous créons un objet de type "Person" avec le nom "Alice" et l'âge 25, et appelons la méthode "sayHello" sur cet objet.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

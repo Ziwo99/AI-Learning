@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Les frameworks et les bibliothèques en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les frameworks de développement web en Java</h2>
+<p>
+Les frameworks de développement web en Java sont des outils puissants qui facilitent la création d'applications web robustes et évolutives. Ils fournissent des fonctionnalités prêtes à l'emploi, telles que la gestion des requêtes HTTP, la gestion des sessions, la gestion des formulaires, etc. Voici quelques-uns des frameworks de développement web les plus populaires en Java :
+
+- <strong>Spring MVC :</strong> Spring MVC est un framework léger et flexible qui suit le modèle MVC (Modèle-Vue-Contrôleur). Il offre une grande modularité et facilite le développement d'applications web en utilisant des annotations et des configurations XML.
+
+- <strong>JavaServer Faces (JSF) :</strong> JSF est un framework basé sur des composants qui simplifie la création d'interfaces utilisateur riches. Il fournit des composants réutilisables et une gestion automatique des états, ce qui facilite le développement d'applications web interactives.
+
+- <strong>Struts :</strong> Struts est un framework MVC populaire qui facilite la création d'applications web en utilisant des actions et des configurations XML. Il offre une gestion transparente des requêtes HTTP et facilite la validation des formulaires.
+
+Voici un exemple de code utilisant le framework Spring MVC pour créer un contrôleur qui gère une requête HTTP GET :
+
+<pre><code>import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HelloWorldController {
+
+    @GetMapping("/hello")
+    @ResponseBody
+    public String sayHello() {
+        return "Hello, World!";
+    }
+}
+</code></pre>
+</p>
+
+<h2>Les frameworks de persistance en Java</h2>
+<p>
+Les frameworks de persistance en Java facilitent l'interaction avec les bases de données relationnelles. Ils fournissent des fonctionnalités pour mapper les objets Java aux tables de la base de données, exécuter des requêtes SQL et gérer les transactions. Voici quelques-uns des frameworks de persistance les plus utilisés en Java :
+
+- <strong>Hibernate :</strong> Hibernate est un framework ORM (Object-Relational Mapping) populaire qui facilite la persistance des objets Java dans une base de données relationnelle. Il offre une grande flexibilité et facilite le développement d'applications évolutives.
+
+- <strong>Java Persistence API (JPA) :</strong> JPA est une spécification Java qui définit une interface commune pour les frameworks de persistance. Il simplifie le développement d'applications en fournissant une API unifiée pour interagir avec différentes implémentations de frameworks de persistance.
+
+- <strong>MyBatis :</strong> MyBatis est un framework de persistance léger qui facilite le mapping des requêtes SQL aux méthodes Java. Il offre une grande flexibilité et permet de gérer manuellement les requêtes SQL.
+
+Voici un exemple de code utilisant le framework Hibernate pour mapper une classe Java à une table de base de données :
+
+<pre><code>import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String username;
+    private String password;
+
+    // Getters and setters
+}
+</code></pre>
+</p>
+
+<h2>Les bibliothèques de manipulation de données en Java</h2>
+<p>
+Les bibliothèques de manipulation de données en Java offrent des fonctionnalités pour manipuler et traiter des données de différentes sources, telles que des fichiers CSV, des bases de données, des API REST, etc. Voici quelques-unes des bibliothèques de manipulation de données les plus utilisées en Java :
+
+- <strong>Apache POI :</strong> Apache POI est une bibliothèque qui permet de lire et d'écrire des fichiers Microsoft Office, tels que des fichiers Excel, Word et PowerPoint. Elle offre des fonctionnalités avancées pour manipuler les données et les formats de fichier.
+
+- <strong>Jackson :</strong> Jackson est une bibliothèque de sérialisation et de désérialisation JSON très populaire en Java. Elle permet de convertir des objets Java en JSON et vice versa, facilitant ainsi l'intégration avec des API REST.
+
+- <strong>OpenCSV :</strong> OpenCSV est une bibliothèque légère qui facilite la lecture et l'écriture de fichiers CSV en Java. Elle offre des fonctionnalités pour manipuler les données CSV, telles que la lecture de lignes, l'extraction de colonnes, etc.
+
+Voici un exemple de code utilisant la bibliothèque Apache POI pour lire un fichier Excel et afficher son contenu :
+
+<pre><code>import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ExcelReader {
+
+    public static void main(String[] args) throws IOException {
+        FileInputStream file = new FileInputStream("data.xlsx");
+        Workbook workbook = new XSSFWorkbook(file);
+        Sheet sheet = workbook.getSheetAt(0);
+
+        for (Row row : sheet) {
+            for (Cell cell : row) {
+                System.out.print(cell.getStringCellValue() + "\t");
+            }
+            System.out.println();
+        }
+
+        workbook.close();
+        file.close();
+    }
+}
+</code></pre>
+</p>
+
+<h2>Les bibliothèques de traitement d'images en Java</h2>
+<p>
+Les bibliothèques de traitement d'images en Java offrent des fonctionnalités pour manipuler et traiter des images, telles que le redimensionnement, la rotation, la conversion de formats, etc. Voici quelques-unes des bibliothèques de traitement d'images les plus utilisées en Java :
+
+- <strong>Java Advanced Imaging (JAI) :</strong> JAI est une bibliothèque Java qui offre des fonctionnalités avancées pour le traitement d'images. Elle permet de manipuler des images de grande taille et offre des fonctionnalités telles que le filtrage, la transformation, etc.
+
+- <strong>ImageJ :</strong> ImageJ est une bibliothèque Java qui facilite le traitement d'images scientifiques. Elle offre des fonctionnalités pour l'analyse d'images, la visualisation et la manipulation d'images médicales, etc.
+
+- <strong>Thumbnailator :</strong> Thumbnailator est une bibliothèque légère qui facilite la création de miniatures d'images en Java. Elle offre des fonctionnalités pour redimensionner, recadrer et appliquer des effets aux images.
+
+Voici un exemple de code utilisant la bibliothèque JAI pour redimensionner une image :
+
+<pre><code>import javax.media.jai.JAI;
+import javax.media.jai.RenderedOp;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+public class ImageResizer {
+
+    public static void main(String[] args) throws IOException {
+        String inputImagePath = "input.jpg";
+        String outputImagePath = "output.jpg";
+        int newWidth = 300;
+        int newHeight = 200;
+
+        RenderedOp image = JAI.create("fileload", inputImagePath);
+        BufferedImage resizedImage = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB);
+        resizedImage.getGraphics().drawImage(image.getAsBufferedImage().getScaledInstance(newWidth, newHeight, BufferedImage.SCALE_SMOOTH), 0, 0, null);
+
+        File outputFile = new File(outputImagePath);
+        ImageIO.write(resizedImage, "jpg", outputFile);
+    }
+}
+</code></pre>
+</p>
+
+<h2>Les bibliothèques de génération de rapports en Java</h2>
+<p>
+Les bibliothèques de génération de rapports en Java permettent de créer des rapports dynamiques et personnalisés à partir de données. Elles offrent des fonctionnalités pour générer des rapports au format PDF, HTML, Excel, etc. Voici quelques-unes des bibliothèques de génération de rapports les plus utilisées en Java :
+
+- <strong>JasperReports :</strong> JasperReports est une bibliothèque de génération de rapports populaire en Java. Elle permet de créer des rapports riches en fonctionnalités, tels que des tableaux, des graphiques, des images, etc.
+
+- <strong>BIRT (Business Intelligence and Reporting Tools) :</strong> BIRT est une suite d'outils open source qui facilite la création de rapports interactifs en Java. Elle offre des fonctionnalités pour la création de rapports complexes, la visualisation des données, etc.
+
+- <strong>Apache POI :</strong> En plus de sa fonctionnalité de manipulation de fichiers Microsoft Office, Apache POI offre également des fonctionnalités pour générer des rapports Excel à partir de données.
+
+Voici un exemple de code utilisant la bibliothèque JasperReports pour générer un rapport PDF à partir de données :
+
+<pre><code>import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ReportGenerator {
+
+    public static void main(String[] args) throws JRException {
+        List<Employee> employees = getEmployees(); // Méthode pour récupérer les données des employés
+
+        JasperReport jasperReport = JasperCompileManager.compileReport("report.jrxml");
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(employees);
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("Title", "Liste des employés");
+
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
+
+        JasperExportManager.exportReportToPdfFile(jasperPrint, "report.pdf");
+    }
+}
+</code></pre>
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

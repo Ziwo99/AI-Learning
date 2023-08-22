@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les entrées/sorties en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les flux d'entrée/sortie en Java</h2>
+<p>Les flux d'entrée/sortie en Java permettent de lire et d'écrire des données à partir de différentes sources, telles que des fichiers, des sockets réseau, etc. Ils sont essentiels pour la manipulation des données dans les programmes Java.</p>
+
+<p>Pour lire des données à partir d'une source, on utilise un flux d'entrée. Pour écrire des données vers une destination, on utilise un flux de sortie. Les flux d'entrée/sortie sont représentés par les classes InputStream et OutputStream respectivement.</p>
+
+<p>Voici un exemple de lecture de données à partir d'un fichier en utilisant un flux d'entrée :</p>
+
+<pre><code>try {
+    InputStream inputStream = new FileInputStream("fichier.txt");
+    int data = inputStream.read();
+    while (data != -1) {
+        // Traiter les données lues
+        System.out.print((char) data);
+        data = inputStream.read();
+    }
+    inputStream.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<p>Et voici un exemple d'écriture de données vers un fichier en utilisant un flux de sortie :</p>
+
+<pre><code>try {
+    OutputStream outputStream = new FileOutputStream("fichier.txt");
+    String data = "Contenu à écrire dans le fichier";
+    byte[] bytes = data.getBytes();
+    outputStream.write(bytes);
+    outputStream.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<h2>La sérialisation en Java</h2>
+<p>La sérialisation en Java permet de convertir un objet en une séquence d'octets, afin de pouvoir le stocker dans un fichier ou le transmettre sur un réseau. La désérialisation permet de reconstituer l'objet à partir de la séquence d'octets.</p>
+
+<p>Pour sérialiser un objet, il doit implémenter l'interface Serializable. Voici un exemple :</p>
+
+<pre><code>import java.io.*;
+
+public class Personne implements Serializable {
+    private String nom;
+    private int age;
+
+    // Constructeur, getters, setters, etc.
+
+    public static void main(String[] args) {
+        Personne personne = new Personne("John Doe", 30);
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("personne.ser");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(personne);
+            objectOutputStream.close();
+            fileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+
+<p>Pour désérialiser un objet, on utilise le code suivant :</p>
+
+<pre><code>try {
+    FileInputStream fileInputStream = new FileInputStream("personne.ser");
+    ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+    Personne personne = (Personne) objectInputStream.readObject();
+    objectInputStream.close();
+    fileInputStream.close();
+} catch (IOException | ClassNotFoundException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<h2>La gestion des fichiers en Java</h2>
+<p>La gestion des fichiers en Java permet de créer, supprimer, renommer, copier, déplacer, etc. des fichiers et des répertoires. Elle est réalisée en utilisant la classe File.</p>
+
+<p>Voici un exemple de création d'un fichier :</p>
+
+<pre><code>File file = new File("fichier.txt");
+try {
+    if (file.createNewFile()) {
+        System.out.println("Le fichier a été créé avec succès.");
+    } else {
+        System.out.println("Le fichier existe déjà.");
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<p>Et voici un exemple de suppression d'un fichier :</p>
+
+<pre><code>File file = new File("fichier.txt");
+if (file.delete()) {
+    System.out.println("Le fichier a été supprimé avec succès.");
+} else {
+    System.out.println("Échec de la suppression du fichier.");
+}</code></pre>
+
+<h2>Les opérations sur les fichiers en Java</h2>
+<p>Les opérations sur les fichiers en Java permettent de lire, écrire, copier, déplacer, renommer, etc. des fichiers. Elles sont réalisées en utilisant les classes FileReader, FileWriter, BufferedReader, BufferedWriter, etc.</p>
+
+<p>Voici un exemple de lecture d'un fichier ligne par ligne :</p>
+
+<pre><code>try {
+    BufferedReader bufferedReader = new BufferedReader(new FileReader("fichier.txt"));
+    String line = bufferedReader.readLine();
+    while (line != null) {
+        // Traiter la ligne lue
+        System.out.println(line);
+        line = bufferedReader.readLine();
+    }
+    bufferedReader.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<p>Et voici un exemple d'écriture dans un fichier :</p>
+
+<pre><code>try {
+    BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("fichier.txt"));
+    bufferedWriter.write("Contenu à écrire dans le fichier");
+    bufferedWriter.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<h2>Les flux de données en Java</h2>
+<p>Les flux de données en Java permettent de lire et d'écrire des données de types primitifs (int, double, etc.) et d'objets. Ils sont réalisés en utilisant les classes DataInputStream et DataOutputStream.</p>
+
+<p>Voici un exemple de lecture de données à partir d'un fichier en utilisant un flux de données :</p>
+
+<pre><code>try {
+    DataInputStream dataInputStream = new DataInputStream(new FileInputStream("fichier.dat"));
+    int intValue = dataInputStream.readInt();
+    double doubleValue = dataInputStream.readDouble();
+    String stringValue = dataInputStream.readUTF();
+    dataInputStream.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+
+<p>Et voici un exemple d'écriture de données vers un fichier en utilisant un flux de données :</p>
+
+<pre><code>try {
+    DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("fichier.dat"));
+    int intValue = 42;
+    double doubleValue = 3.14;
+    String stringValue = "Hello World";
+    dataOutputStream.writeInt(intValue);
+    dataOutputStream.writeDouble(doubleValue);
+    dataOutputStream.writeUTF(stringValue);
+    dataOutputStream.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

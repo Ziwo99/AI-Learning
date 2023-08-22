@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/logo_small.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les interfaces graphiques en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les composants graphiques en Java</h2>
+<p>Les composants graphiques en Java sont des éléments visuels tels que des boutons, des champs de texte, des listes déroulantes, etc., qui permettent à l'utilisateur d'interagir avec l'application. Ils sont utilisés pour créer une interface utilisateur conviviale et attrayante.</p>
+
+<p>Voici un exemple de code pour créer un bouton en Java :</p>
+<pre><code>import javax.swing.JButton;
+
+public class MyButtonExample {
+    public static void main(String[] args) {
+        JButton button = new JButton("Cliquez ici");
+        button.setBounds(50, 50, 100, 30); // Définit la position et la taille du bouton
+        // Ajoutez le bouton à votre interface utilisateur
+    }
+}
+</code></pre>
+
+<h2>Les événements en Java</h2>
+<p>Les événements en Java sont des actions déclenchées par l'utilisateur, telles que le clic sur un bouton ou la saisie d'un texte. Les événements permettent de capturer les actions de l'utilisateur et d'y réagir en conséquence.</p>
+
+<p>Voici un exemple de code pour gérer un événement de clic sur un bouton en Java :</p>
+<pre><code>import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
+public class MyButtonExample {
+    public static void main(String[] args) {
+        JButton button = new JButton("Cliquez ici");
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Code à exécuter lorsque le bouton est cliqué
+            }
+        });
+        // Ajoutez le bouton à votre interface utilisateur
+    }
+}
+</code></pre>
+
+<h2>La gestion des actions en Java</h2>
+<p>La gestion des actions en Java consiste à définir des actions spécifiques à effectuer en réponse à des événements. Cela permet de contrôler le comportement de l'application en fonction des actions de l'utilisateur.</p>
+
+<p>Voici un exemple de code pour gérer une action de clic sur un bouton en Java :</p>
+<pre><code>import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
+public class MyButtonExample {
+    public static void main(String[] args) {
+        JButton button = new JButton("Cliquez ici");
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Code à exécuter lorsque le bouton est cliqué
+            }
+        });
+        // Ajoutez le bouton à votre interface utilisateur
+    }
+}
+</code></pre>
+
+<h2>Les boîtes de dialogue en Java</h2>
+<p>Les boîtes de dialogue en Java sont des fenêtres contextuelles qui affichent des messages, des avertissements ou demandent à l'utilisateur de saisir des informations. Elles sont utilisées pour interagir avec l'utilisateur et lui fournir des informations importantes.</p>
+
+<p>Voici un exemple de code pour afficher une boîte de dialogue en Java :</p>
+<pre><code>import javax.swing.JOptionPane;
+
+public class MyDialogExample {
+    public static void main(String[] args) {
+        JOptionPane.showMessageDialog(null, "Ceci est un message de boîte de dialogue");
+    }
+}
+</code></pre>
+
+<h2>La création d'une interface utilisateur en Java</h2>
+<p>La création d'une interface utilisateur en Java consiste à utiliser les composants graphiques, les événements et les actions pour créer une interface conviviale et interactive. Cela permet à l'utilisateur d'interagir avec l'application de manière intuitive.</p>
+
+<p>Voici un exemple de code pour créer une interface utilisateur simple en Java :</p>
+<pre><code>import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MyInterfaceExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Ma fenêtre");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(300, 200);
+        
+        JButton button = new JButton("Cliquez ici");
+        button.setBounds(50, 50, 100, 30);
+        
+        frame.add(button);
+        
+        frame.setLayout(null);
+        frame.setVisible(true);
+    }
+}
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
