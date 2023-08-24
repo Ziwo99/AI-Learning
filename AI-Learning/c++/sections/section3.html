@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les concepts avancés du C++</h2>
+					<a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les pointeurs et les références</h2>
+<p>Les pointeurs et les références sont des concepts avancés du langage C++ qui permettent de manipuler directement les adresses mémoire des variables. Ils offrent une grande flexibilité et sont largement utilisés dans la programmation C++.</p>
+
+<p>Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable. Il est déclaré en utilisant l'opérateur "*" suivi du type de la variable pointée. Par exemple :</p>
+
+<pre><code>int* ptr; // Déclaration d'un pointeur vers un entier</code></pre>
+
+<p>Une référence, quant à elle, est un alias d'une variable existante. Elle est déclarée en utilisant l'opérateur "&" suivi du type de la variable référencée. Par exemple :</p>
+
+<pre><code>int a = 5;
+int&amp; ref = a; // Déclaration d'une référence à la variable "a"</code></pre>
+
+<p>Les pointeurs et les références permettent d'accéder et de modifier la valeur d'une variable en utilisant son adresse mémoire. Ils sont notamment utilisés pour passer des paramètres par référence à une fonction, pour allouer et libérer dynamiquement de la mémoire, et pour implémenter des structures de données avancées.</p>
+
+<h2>La gestion dynamique de la mémoire</h2>
+<p>La gestion dynamique de la mémoire est une fonctionnalité avancée du langage C++ qui permet d'allouer et de libérer de la mémoire pendant l'exécution d'un programme. Elle est réalisée à l'aide des opérateurs "new" et "delete".</p>
+
+<p>L'opérateur "new" est utilisé pour allouer de la mémoire pour un objet ou un tableau d'objets. Par exemple :</p>
+
+<pre><code>int* ptr = new int; // Allocation dynamique d'un entier
+int* arr = new int[10]; // Allocation dynamique d'un tableau de 10 entiers</code></pre>
+
+<p>L'opérateur "delete" est utilisé pour libérer la mémoire allouée précédemment. Il est important de libérer la mémoire allouée dynamiquement pour éviter les fuites de mémoire. Par exemple :</p>
+
+<pre><code>delete ptr; // Libération de la mémoire allouée pour l'entier
+delete[] arr; // Libération de la mémoire allouée pour le tableau</code></pre>
+
+<p>La gestion dynamique de la mémoire est souvent utilisée lorsque la taille d'un objet ou d'un tableau est inconnue à la compilation, ou lorsque la durée de vie d'un objet doit être contrôlée manuellement.</p>
+
+<h2>Les classes et les objets</h2>
+<p>Les classes et les objets sont les fondements de la programmation orientée objet en C++. Une classe est une structure de données qui regroupe des variables (appelées membres) et des fonctions (appelées méthodes) qui agissent sur ces variables. Un objet est une instance d'une classe.</p>
+
+<p>Pour déclarer une classe, on utilise le mot-clé "class" suivi du nom de la classe. Par exemple :</p>
+
+<pre><code>class Person {
+    private:
+        string name;
+        int age;
+    
+    public:
+        void setName(string n) {
+            name = n;
+        }
+        
+        void setAge(int a) {
+            age = a;
+        }
+        
+        void printInfo() {
+            cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; ", Age: " &lt;&lt; age &lt;&lt; endl;
+        }
+};</code></pre>
+
+<p>Pour créer un objet à partir d'une classe, on utilise le nom de la classe suivi du nom de l'objet. Par exemple :</p>
+
+<pre><code>Person p;
+p.setName("John");
+p.setAge(25);
+p.printInfo(); // Affiche "Name: John, Age: 25"</code></pre>
+
+<p>Les classes permettent d'encapsuler des données et des fonctionnalités connexes, ce qui facilite la gestion et la réutilisation du code. Elles sont largement utilisées dans le développement de logiciels en C++.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage et le polymorphisme sont des concepts clés de la programmation orientée objet en C++. L'héritage permet de créer de nouvelles classes (appelées classes dérivées) à partir d'une classe existante (appelée classe de base), en héritant de ses membres et en ajoutant de nouveaux membres.</p>
+
+<p>Le polymorphisme permet à un objet d'une classe dérivée d'être traité comme un objet de sa classe de base. Cela permet de créer des hiérarchies de classes et d'utiliser des objets de différentes classes de manière transparente.</p>
+
+<p>Par exemple, considérons une classe de base "Shape" et deux classes dérivées "Circle" et "Rectangle". La classe "Shape" peut avoir une méthode virtuelle "area()" qui est redéfinie dans les classes dérivées :</p>
+
+<pre><code>class Shape {
+    public:
+        virtual double area() {
+            return 0;
+        }
+};
+
+class Circle : public Shape {
+    private:
+        double radius;
+    
+    public:
+        Circle(double r) {
+            radius = r;
+        }
+        
+        double area() {
+            return 3.14 * radius * radius;
+        }
+};
+
+class Rectangle : public Shape {
+    private:
+        double width;
+        double height;
+    
+    public:
+        Rectangle(double w, double h) {
+            width = w;
+            height = h;
+        }
+        
+        double area() {
+            return width * height;
+        }
+};</code></pre>
+
+<p>En utilisant le polymorphisme, on peut créer un tableau d'objets de type "Shape" et y stocker des objets de type "Circle" et "Rectangle" :</p>
+
+<pre><code>Shape* shapes[2];
+shapes[0] = new Circle(5);
+shapes[1] = new Rectangle(3, 4);
+
+for (int i = 0; i &lt; 2; i++) {
+    cout &lt;&lt; "Area: " &lt;&lt; shapes[i]-&gt;area() &lt;&lt; endl;
+}</code></pre>
+
+<p>Cela permet d'appeler la méthode "area()" spécifique à chaque classe dérivée, même si les objets sont stockés dans un tableau de type "Shape".</p>
+
+<h2>Les templates et la programmation générique</h2>
+<p>Les templates et la programmation générique sont des fonctionnalités avancées du langage C++ qui permettent de créer des fonctions et des classes génériques, c'est-à-dire capables de travailler avec différents types de données.</p>
+
+<p>Un template est une sorte de modèle qui permet de définir une fonction ou une classe avec des paramètres de type génériques. Par exemple, voici une fonction template qui retourne la valeur maximale entre deux valeurs :</p>
+
+<pre><code>template &lt;typename T&gt;
+T max(T a, T b) {
+    return (a &gt; b) ? a : b;
+}</code></pre>
+
+<p>Cette fonction peut être utilisée avec différents types de données :</p>
+
+<pre><code>int maxInt = max(5, 10); // Utilisation avec des entiers
+double maxDouble = max(3.14, 2.71); // Utilisation avec des nombres à virgule</code></pre>
+
+<p>Les templates permettent d'écrire du code générique et réutilisable, ce qui facilite le développement de bibliothèques et de frameworks.</p>
+					<a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
