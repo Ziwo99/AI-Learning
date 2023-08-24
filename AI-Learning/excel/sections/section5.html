@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Analyse des données avec Excel</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Utilisation des tableaux croisés dynamiques</h2>
+<p>Les tableaux croisés dynamiques sont un outil puissant dans Excel pour analyser et résumer des données. Ils permettent de regrouper et de synthétiser des informations à partir d'un ensemble de données.</p>
+<p>Pour créer un tableau croisé dynamique, suivez les étapes suivantes :</p>
+<ol>
+  <li>Sélectionnez les données que vous souhaitez analyser.</li>
+  <li>Cliquez sur l'onglet "Insertion" dans le ruban Excel.</li>
+  <li>Cliquez sur le bouton "Tableau croisé dynamique" dans le groupe "Tableaux".</li>
+  <li>Sélectionnez l'emplacement où vous souhaitez placer le tableau croisé dynamique.</li>
+  <li>Dans la boîte de dialogue qui s'ouvre, faites glisser les champs de données dans les zones appropriées (lignes, colonnes, valeurs).</li>
+  <li>Personnalisez le tableau croisé dynamique en utilisant les options disponibles dans le ruban Excel.</li>
+</ol>
+<p>Voici un exemple de code pour créer un tableau croisé dynamique à partir d'une plage de données :</p>
+<pre><code>Sub CreatePivotTable()
+    Dim ws As Worksheet
+    Dim rng As Range
+    Dim pvtCache As PivotCache
+    Dim pvtTable As PivotTable
+    
+    ' Set the worksheet and range variables
+    Set ws = ThisWorkbook.Worksheets("Sheet1")
+    Set rng = ws.Range("A1:D10")
+    
+    ' Create a new PivotCache object
+    Set pvtCache = ThisWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:=rng)
+    
+    ' Create a new PivotTable object
+    Set pvtTable = pvtCache.CreatePivotTable(TableDestination:=ws.Range("F1"), TableName:="PivotTable1")
+    
+    ' Add fields to the PivotTable
+    With pvtTable
+        .PivotFields("Category").Orientation = xlRowField
+        .PivotFields("Product").Orientation = xlRowField
+        .PivotFields("Sales").Orientation = xlDataField
+    End With
+End Sub
+</code></pre>
+
+<h2>Utilisation des graphiques croisés dynamiques</h2>
+<p>Les graphiques croisés dynamiques sont une autre fonctionnalité d'Excel qui permet de visualiser les données d'un tableau croisé dynamique sous forme de graphique. Ils offrent une représentation visuelle des informations pour une meilleure compréhension.</p>
+<p>Pour créer un graphique croisé dynamique, procédez comme suit :</p>
+<ol>
+  <li>Sélectionnez le tableau croisé dynamique que vous souhaitez représenter graphiquement.</li>
+  <li>Cliquez sur l'onglet "Insertion" dans le ruban Excel.</li>
+  <li>Cliquez sur le type de graphique souhaité dans le groupe "Graphiques recommandés" ou "Autres graphiques".</li>
+  <li>Personnalisez le graphique en utilisant les options disponibles dans le ruban Excel.</li>
+</ol>
+<p>Voici un exemple de code pour créer un graphique croisé dynamique à partir d'un tableau croisé dynamique existant :</p>
+<pre><code>Sub CreatePivotChart()
+    Dim ws As Worksheet
+    Dim pvtTable As PivotTable
+    Dim pvtChart As Chart
+    
+    ' Set the worksheet and PivotTable variables
+    Set ws = ThisWorkbook.Worksheets("Sheet1")
+    Set pvtTable = ws.PivotTables("PivotTable1")
+    
+    ' Create a new PivotChart object
+    Set pvtChart = ws.Shapes.AddChart2(240, xlColumnClustered).Chart
+    
+    ' Set the source data for the PivotChart
+    pvtChart.SetSourceData Source:=pvtTable.TableRange1
+    
+    ' Customize the PivotChart
+    With pvtChart
+        .HasTitle = True
+        .ChartTitle.Text = "Sales by Category and Product"
+        .Axes(xlCategory).HasTitle = True
+        .Axes(xlCategory).AxisTitle.Text = "Category"
+        .Axes(xlValue).HasTitle = True
+        .Axes(xlValue).AxisTitle.Text = "Sales"
+    End With
+End Sub
+</code></pre>
+
+<h2>Utilisation des fonctions statistiques</h2>
+<p>Excel propose de nombreuses fonctions statistiques pour analyser et interpréter des données. Ces fonctions permettent de calculer des mesures telles que la moyenne, la médiane, l'écart type, etc.</p>
+<p>Voici quelques exemples de fonctions statistiques couramment utilisées :</p>
+<ul>
+  <li><code>AVERAGE</code> : calcule la moyenne des valeurs d'une plage de cellules.</li>
+  <li><code>MEDIAN</code> : renvoie la valeur médiane d'une plage de cellules.</li>
+  <li><code>STDEV</code> : calcule l'écart type des valeurs d'une plage de cellules.</li>
+  <li><code>COUNT</code> : compte le nombre de cellules contenant des valeurs numériques dans une plage.</li>
+</ul>
+<p>Voici un exemple de code utilisant la fonction statistique <code>AVERAGE</code> :</p>
+<pre><code>Sub CalculateAverage()
+    Dim ws As Worksheet
+    Dim rng As Range
+    Dim averageValue As Double
+    
+    ' Set the worksheet and range variables
+    Set ws = ThisWorkbook.Worksheets("Sheet1")
+    Set rng = ws.Range("A1:A10")
+    
+    ' Calculate the average value
+    averageValue = Application.WorksheetFunction.Average(rng)
+    
+    ' Display the average value
+    MsgBox "The average value is: " & averageValue
+End Sub
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Collaboration et partage des données</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Utilisation des commentaires et des annotations</h2>
+<p>Les commentaires et les annotations sont des outils utiles pour collaborer et partager des informations dans Excel. Les commentaires permettent aux utilisateurs d'ajouter des notes spécifiques à une cellule, tandis que les annotations permettent d'ajouter des notes plus générales à une feuille de calcul.</p>
+
+<p>Pour ajouter un commentaire à une cellule, sélectionnez la cellule, puis cliquez avec le bouton droit de la souris et choisissez "Insérer un commentaire". Une boîte de dialogue apparaîtra où vous pourrez saisir votre commentaire. Une fois le commentaire ajouté, un indicateur visuel apparaîtra dans la cellule pour indiquer qu'un commentaire est présent.</p>
+
+<p>Voici un exemple de code pour ajouter un commentaire à une cellule :</p>
+<pre><code>Sub AddComment()
+    Range("A1").AddComment "Ceci est un commentaire"
+End Sub
+</code></pre>
+
+<p>Pour ajouter une annotation à une feuille de calcul, cliquez avec le bouton droit de la souris sur l'onglet de la feuille de calcul, puis choisissez "Insérer une annotation". Une boîte de dialogue apparaîtra où vous pourrez saisir votre annotation. L'annotation apparaîtra sous forme d'icône dans le coin supérieur droit de la feuille de calcul.</p>
+
+<p>Voici un exemple de code pour ajouter une annotation à une feuille de calcul :</p>
+<pre><code>Sub AddAnnotation()
+    ActiveSheet.Cells(1, 1).AddComment "Ceci est une annotation"
+End Sub
+</code></pre>
+
+<h2>Partage des classeurs Excel</h2>
+<p>Excel offre différentes options pour partager des classeurs avec d'autres utilisateurs. Vous pouvez partager un classeur en le sauvegardant dans un emplacement partagé, en l'envoyant par e-mail ou en utilisant des outils de collaboration en ligne.</p>
+
+<p>Pour partager un classeur en le sauvegardant dans un emplacement partagé, cliquez sur "Fichier" dans la barre de menu, puis choisissez "Enregistrer sous". Sélectionnez l'emplacement partagé où vous souhaitez enregistrer le classeur, puis cliquez sur "Enregistrer". Les autres utilisateurs pourront accéder au classeur à partir de cet emplacement partagé.</p>
+
+<p>Pour partager un classeur par e-mail, cliquez sur "Fichier" dans la barre de menu, puis choisissez "Envoyer". Sélectionnez "En tant que pièce jointe Excel" et choisissez l'option d'envoi par e-mail. Entrez les adresses e-mail des destinataires, ajoutez un message facultatif, puis cliquez sur "Envoyer". Les destinataires recevront le classeur en pièce jointe dans leur boîte de réception.</p>
+
+<p>Pour utiliser des outils de collaboration en ligne, vous pouvez utiliser des services tels que Microsoft OneDrive ou Google Drive. Ces services vous permettent de télécharger et de partager des classeurs Excel avec d'autres utilisateurs. Vous pouvez également autoriser les utilisateurs à modifier le classeur en ligne, ce qui facilite la collaboration en temps réel.</p>
+
+<h2>Utilisation des outils de suivi des modifications</h2>
+<p>Les outils de suivi des modifications permettent de suivre les modifications apportées à un classeur Excel par différents utilisateurs. Cela peut être utile lorsque vous travaillez en équipe et que vous souhaitez garder une trace des modifications effectuées.</p>
+
+<p>Pour activer le suivi des modifications, cliquez sur "Révision" dans la barre de menu, puis choisissez "Suivi des modifications". Cochez la case "Suivre les modifications" pour activer le suivi. Vous pouvez également spécifier les options de suivi, telles que l'affichage des modifications dans une couleur spécifique ou l'affichage des modifications dans une nouvelle fenêtre.</p>
+
+<p>Lorsque le suivi des modifications est activé, Excel enregistre toutes les modifications apportées au classeur, telles que l'ajout, la suppression ou la modification de données. Les modifications sont affichées dans le classeur avec des indicateurs visuels, tels que des bordures colorées autour des cellules modifiées.</p>
+
+<p>Pour accepter ou rejeter les modifications, cliquez sur "Révision" dans la barre de menu, puis choisissez "Accepter" ou "Rejeter" les modifications. Vous pouvez également afficher les détails des modifications en cliquant sur "Afficher les détails" dans le volet des modifications.</p>
+
+<p>Voici un exemple de code pour activer le suivi des modifications :</p>
+<pre><code>Sub EnableTrackChanges()
+    ActiveWorkbook.TrackChanges = True
+End Sub
+</code></pre>
+
+<p>Ce sont les principales fonctionnalités de collaboration et de partage des données dans Excel. En utilisant les commentaires, les annotations, le partage de classeurs et les outils de suivi des modifications, vous pouvez travailler efficacement avec d'autres utilisateurs sur des projets Excel.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

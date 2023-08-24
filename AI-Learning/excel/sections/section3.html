@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Mise en forme des données</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Mise en forme des cellules</h2>
+<p>La mise en forme des cellules est une fonctionnalité essentielle dans Excel qui permet de modifier l'apparence des données. Cela inclut la modification de la police, de la taille, de la couleur, du style et de bien d'autres aspects visuels.</p>
+
+<p>Pour mettre en forme une cellule, sélectionnez-la et utilisez la barre d'outils "Mise en forme" située en haut de l'interface Excel. Vous pouvez également faire un clic droit sur la cellule et choisir l'option "Mise en forme des cellules" dans le menu contextuel.</p>
+
+<p>Voici un exemple de code pour mettre en forme une cellule avec une police en gras et une couleur de fond jaune :</p>
+
+<pre><code>Sub MiseEnFormeCellule()
+    Range("A1").Font.Bold = True
+    Range("A1").Interior.Color = RGB(255, 255, 0)
+End Sub
+</code></pre>
+
+<h2>Utilisation des styles et des thèmes</h2>
+<p>Les styles et les thèmes sont des fonctionnalités puissantes dans Excel qui permettent d'appliquer rapidement des mises en forme cohérentes à un ensemble de cellules ou de feuilles de calcul.</p>
+
+<p>Pour utiliser un style prédéfini, sélectionnez les cellules concernées, puis cliquez sur le bouton "Styles" dans la barre d'outils "Mise en forme". Choisissez ensuite le style souhaité dans la liste déroulante.</p>
+
+<p>Si vous souhaitez créer votre propre style, vous pouvez le faire en utilisant l'onglet "Styles" dans le ruban Excel. Cliquez sur le bouton "Nouveau style" et suivez les instructions pour définir les attributs de mise en forme.</p>
+
+<p>Voici un exemple de code pour appliquer un style prédéfini à une plage de cellules :</p>
+
+<pre><code>Sub UtilisationStyles()
+    Range("A1:C10").Style = "Normal"
+End Sub
+</code></pre>
+
+<h2>Gestion des tableaux et des graphiques</h2>
+<p>Excel offre des fonctionnalités avancées pour la gestion des tableaux et des graphiques. Les tableaux permettent de structurer les données de manière organisée et de les manipuler plus facilement. Les graphiques permettent de visualiser les données de manière claire et compréhensible.</p>
+
+<p>Pour créer un tableau, sélectionnez la plage de cellules contenant les données, puis cliquez sur le bouton "Tableau" dans l'onglet "Insertion" du ruban Excel. Suivez les instructions pour personnaliser le tableau selon vos besoins.</p>
+
+<p>Pour créer un graphique, sélectionnez les données à représenter, puis cliquez sur le bouton "Insérer un graphique" dans l'onglet "Insertion" du ruban Excel. Choisissez le type de graphique souhaité et personnalisez-le selon vos préférences.</p>
+
+<p>Voici un exemple de code pour créer un tableau et un graphique à partir de données :</p>
+
+<pre><code>Sub GestionTableauxGraphiques()
+    Range("A1:C10").Select
+    ActiveSheet.ListObjects.Add(xlSrcRange, Selection, , xlYes).Name = "Tableau1"
+    
+    Dim chart As ChartObject
+    Set chart = ActiveSheet.ChartObjects.Add(Left:=100, Width:=375, Top:=75, Height:=225)
+    chart.Chart.SetSourceData Source:=Range("Tableau1")
+    chart.Chart.ChartType = xlColumnClustered
+End Sub
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
