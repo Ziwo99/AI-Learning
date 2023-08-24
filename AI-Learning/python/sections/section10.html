@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Déploiement et distribution d'applications Python</h2>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Packaging et distribution d'une application Python</h2>
+<p>Lorsque vous avez terminé de développer votre application Python, vous devez la préparer pour la distribution. Cela implique de créer un package contenant tous les fichiers nécessaires à l'exécution de l'application sur d'autres machines. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Créez un fichier setup.py à la racine de votre projet. Ce fichier contiendra les informations sur votre application, telles que le nom, la version, les dépendances, etc.</li>
+  <li>Utilisez l'outil setuptools pour créer un package à partir de votre application. Vous pouvez le faire en exécutant la commande suivante dans le terminal :</li>
+</ol>
+
+<pre><code>python setup.py sdist</code></pre>
+
+<p>Cette commande va créer un fichier tar.gz contenant votre application et tous ses fichiers nécessaires.</p>
+
+<ol start="3">
+  <li>Pour distribuer votre application, vous pouvez envoyer le fichier tar.gz à vos utilisateurs, qui pourront l'installer en exécutant la commande suivante :</li>
+</ol>
+
+<pre><code>pip install nom_du_package.tar.gz</code></pre>
+
+<p>Assurez-vous d'inclure des instructions d'installation détaillées pour vos utilisateurs, en expliquant comment installer les dépendances et exécuter l'application.</p>
+
+<h2>Déploiement sur des plateformes de cloud computing</h2>
+<p>Le déploiement d'une application Python sur une plateforme de cloud computing vous permet de l'exécuter sur des serveurs distants, ce qui facilite la mise à l'échelle et la disponibilité de votre application. Voici quelques-unes des plateformes de cloud computing populaires pour le déploiement d'applications Python :</p>
+
+<ul>
+  <li>Amazon Web Services (AWS) : AWS offre une gamme de services pour le déploiement d'applications Python, tels que Amazon Elastic Beanstalk, AWS Lambda et Amazon EC2.</li>
+  <li>Google Cloud Platform (GCP) : GCP propose des services tels que Google App Engine, Google Kubernetes Engine et Google Compute Engine pour le déploiement d'applications Python.</li>
+  <li>Microsoft Azure : Azure propose des services tels que Azure App Service, Azure Functions et Azure Virtual Machines pour le déploiement d'applications Python.</li>
+</ul>
+
+<p>Chaque plateforme a sa propre documentation détaillée sur la façon de déployer des applications Python, alors assurez-vous de consulter les ressources appropriées pour la plateforme que vous choisissez.</p>
+
+<h2>Utilisation de conteneurs pour le déploiement d'applications</h2>
+<p>Les conteneurs sont devenus une méthode populaire pour le déploiement d'applications, car ils permettent d'isoler l'application et ses dépendances dans un environnement autonome. Docker est l'une des plateformes de conteneurisation les plus populaires pour le déploiement d'applications Python. Voici les étapes pour déployer une application Python à l'aide de Docker :</p>
+
+<ol>
+  <li>Créez un fichier Dockerfile à la racine de votre projet. Ce fichier contiendra les instructions pour créer l'image Docker de votre application.</li>
+  <li>Utilisez la commande docker build pour créer l'image Docker à partir du Dockerfile :</li>
+</ol>
+
+<pre><code>docker build -t nom_de_l_image .</code></pre>
+
+<ol start="3">
+  <li>Une fois que l'image est créée, vous pouvez l'exécuter en utilisant la commande docker run :</li>
+</ol>
+
+<pre><code>docker run nom_de_l_image</code></pre>
+
+<p>Assurez-vous d'inclure des instructions détaillées sur la façon de construire et d'exécuter l'image Docker, ainsi que sur la configuration des conteneurs pour votre application.</p>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

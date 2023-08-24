@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Programmation orientée objet en Python</h2>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code de manière plus modulaire et réutilisable. En POO, on définit des classes qui représentent des objets du monde réel ou des concepts abstraits. Ces classes sont des modèles à partir desquels on crée des instances appelées objets. Chaque objet possède des attributs (variables) et des méthodes (fonctions) qui lui sont propres.</p>
+
+<p>En Python, tout est un objet, même les types de données de base tels que les entiers, les chaînes de caractères et les listes. La POO en Python repose sur les concepts fondamentaux suivants :</p>
+
+<ul>
+  <li>Classes : les classes sont des modèles qui définissent les attributs et les méthodes communes à un ensemble d'objets.</li>
+  <li>Objets : les objets sont des instances d'une classe spécifique. Chaque objet possède ses propres valeurs d'attributs et peut exécuter les méthodes définies dans sa classe.</li>
+  <li>Attributs : les attributs sont des variables qui définissent les caractéristiques d'un objet. Ils peuvent être des variables d'instance (propres à chaque objet) ou des variables de classe (partagées par tous les objets d'une classe).</li>
+  <li>Méthodes : les méthodes sont des fonctions qui définissent le comportement d'un objet. Elles peuvent accéder et modifier les attributs de l'objet.</li>
+  <li>Héritage : l'héritage permet de créer de nouvelles classes en se basant sur des classes existantes. Les classes dérivées héritent des attributs et des méthodes de la classe parente, et peuvent ajouter ou modifier leur comportement.</li>
+  <li>Polymorphisme : le polymorphisme permet à des objets de différentes classes d'être traités de manière similaire. Cela permet d'écrire du code générique qui peut être utilisé avec différents types d'objets.</li>
+  <li>Encapsulation : l'encapsulation consiste à regrouper les attributs et les méthodes d'une classe afin de les rendre privés ou protégés. Cela permet de contrôler l'accès aux données et de garantir l'intégrité de l'objet.</li>
+  <li>Abstraction : l'abstraction consiste à définir des classes abstraites qui servent de modèles pour d'autres classes. Les classes abstraites ne peuvent pas être instanciées, mais elles peuvent être utilisées pour définir des méthodes communes à plusieurs classes dérivées.</li>
+</ul>
+
+<h2>Classes et objets</h2>
+<p>En Python, on crée une classe en utilisant le mot-clé <code>class</code> suivi du nom de la classe. Par convention, les noms de classe commencent par une majuscule. Voici un exemple de définition de classe :</p>
+
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def dire_bonjour(self):
+        print("Bonjour, je m'appelle", self.nom, "et j'ai", self.age, "ans.")
+
+# Création d'un objet de la classe Personne
+personne1 = Personne("Alice", 25)
+
+# Appel de la méthode dire_bonjour de l'objet personne1
+personne1.dire_bonjour()</code></pre>
+
+<p>Dans cet exemple, la classe <code>Personne</code> a deux attributs : <code>nom</code> et <code>age</code>. La méthode spéciale <code>__init__</code> est un constructeur qui est appelé lors de la création d'un nouvel objet de la classe. La méthode <code>dire_bonjour</code> affiche un message de salutation en utilisant les valeurs des attributs de l'objet.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>En Python, on peut créer une classe dérivée (ou sous-classe) à partir d'une classe existante (ou superclasse) en spécifiant la superclasse entre parenthèses après le nom de la classe dérivée. La classe dérivée hérite des attributs et des méthodes de la superclasse.</p>
+
+<pre><code>class Employe(Personne):
+    def __init__(self, nom, age, salaire):
+        super().__init__(nom, age)
+        self.salaire = salaire
+
+    def dire_bonjour(self):
+        super().dire_bonjour()
+        print("Je suis un employé et mon salaire est de", self.salaire, "euros.")
+
+# Création d'un objet de la classe Employe
+employe1 = Employe("Bob", 30, 5000)
+
+# Appel de la méthode dire_bonjour de l'objet employe1
+employe1.dire_bonjour()</code></pre>
+
+<p>Dans cet exemple, la classe <code>Employe</code> est dérivée de la classe <code>Personne</code>. Elle ajoute un nouvel attribut <code>salaire</code> et redéfinit la méthode <code>dire_bonjour</code> pour afficher des informations supplémentaires spécifiques aux employés.</p>
+
+<p>Le polymorphisme permet d'utiliser des objets de différentes classes de manière interchangeable. Par exemple, on peut appeler la méthode <code>dire_bonjour</code> sur un objet de la classe <code>Personne</code> ou de la classe <code>Employe</code> sans se soucier du type réel de l'objet.</p>
+
+<h2>Encapsulation et abstraction</h2>
+<p>En Python, on peut définir des attributs et des méthodes privés en les préfixant par deux traits de soulignement (par exemple, <code>__nom_attribut</code> ou <code>__methode</code>). Les attributs et les méthodes privés ne peuvent être accédés que depuis l'intérieur de la classe.</p>
+
+<pre><code>class CompteBancaire:
+    def __init__(self, solde):
+        self.__solde = solde
+
+    def deposer(self, montant):
+        self.__solde += montant
+
+    def retirer(self, montant):
+        if montant &lt;= self.__solde:
+            self.__solde -= montant
+        else:
+            print("Solde insuffisant.")
+
+    def __afficher_solde(self):
+        print("Solde :", self.__solde)
+
+# Création d'un objet de la classe CompteBancaire
+compte1 = CompteBancaire(1000)
+
+# Appel des méthodes deposer, retirer et __afficher_solde de l'objet compte1
+compte1.deposer(500)
+compte1.retirer(200)
+compte1.__afficher_solde()</code></pre>
+
+<p>Dans cet exemple, l'attribut <code>__solde</code> et la méthode <code>__afficher_solde</code> sont privés. Ils ne peuvent être accédés que depuis l'intérieur de la classe <code>CompteBancaire</code>. Les méthodes <code>deposer</code> et <code>retirer</code> permettent de modifier l'attribut <code>__solde</code> de manière contrôlée.</p>
+
+<p>L'abstraction permet de définir des classes abstraites qui servent de modèles pour d'autres classes. En Python, on peut utiliser le module <code>abc</code> pour définir des classes abstraites et des méthodes abstraites. Une classe abstraite ne peut pas être instanciée, mais elle peut être utilisée comme superclasse pour d'autres classes.</p>
+
+<pre><code>from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def faire_son(self):
+        pass
+
+class Chien(Animal):
+    def faire_son(self):
+        print("Le chien aboie.")
+
+class Chat(Animal):
+    def faire_son(self):
+        print("Le chat miaule.")
+
+# Création d'objets de la classe Chien et de la classe Chat
+chien1 = Chien()
+chat1 = Chat()
+
+# Appel de la méthode faire_son des objets chien1 et chat1
+chien1.faire_son()
+chat1.faire_son()</code></pre>
+
+<p>Dans cet exemple, la classe <code>Animal</code> est une classe abstraite qui définit une méthode abstraite <code>faire_son</code>. Les classes dérivées <code>Chien</code> et <code>Chat</code> redéfinissent cette méthode pour produire des sons spécifiques à chaque animal.</p>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

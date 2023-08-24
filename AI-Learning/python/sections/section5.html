@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des erreurs et exceptions</h2>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux exceptions</h2>
+<p>En programmation, une exception est une erreur ou une condition anormale qui se produit pendant l'exécution d'un programme. Lorsqu'une exception se produit, le programme s'arrête immédiatement et affiche un message d'erreur correspondant à l'exception.</p>
+<p>Python fournit un mécanisme de gestion des exceptions qui permet de détecter et de gérer ces erreurs de manière contrôlée. Cela permet d'éviter que le programme ne se bloque complètement en cas d'erreur et de prendre des mesures appropriées pour gérer l'exception.</p>
+<p>Les exceptions peuvent être générées par le programme lui-même ou par des erreurs système, telles que l'ouverture d'un fichier inexistant ou la division par zéro.</p>
+
+<h2>Gestion des erreurs avec les blocs try-except</h2>
+<p>En Python, la gestion des exceptions se fait à l'aide de blocs try-except. Un bloc try contient le code susceptible de générer une exception, tandis qu'un bloc except définit le code à exécuter en cas d'exception.</p>
+<p>Voici la syntaxe générale d'un bloc try-except :</p>
+<pre><code>try:
+    # Code susceptible de générer une exception
+except ExceptionType:
+    # Code à exécuter en cas d'exception de type ExceptionType
+</code></pre>
+<p>Le bloc except peut également être suivi d'une clause else, qui est exécutée si aucune exception n'est levée dans le bloc try :</p>
+<pre><code>try:
+    # Code susceptible de générer une exception
+except ExceptionType:
+    # Code à exécuter en cas d'exception de type ExceptionType
+else:
+    # Code à exécuter si aucune exception n'est levée
+</code></pre>
+<p>Il est également possible de capturer plusieurs types d'exceptions dans un seul bloc except :</p>
+<pre><code>try:
+    # Code susceptible de générer une exception
+except (ExceptionType1, ExceptionType2):
+    # Code à exécuter en cas d'exception de type ExceptionType1 ou ExceptionType2
+</code></pre>
+
+<h2>Utilisation des exceptions personnalisées</h2>
+<p>En plus des exceptions prédéfinies dans Python, il est possible de créer ses propres exceptions personnalisées pour gérer des situations spécifiques dans un programme. Pour cela, il suffit de créer une classe dérivée de la classe de base Exception.</p>
+<p>Voici un exemple de création d'une exception personnalisée :</p>
+<pre><code>class CustomException(Exception):
+    def __init__(self, message):
+        self.message = message
+
+try:
+    raise CustomException("Une erreur personnalisée s'est produite.")
+except CustomException as e:
+    print(e.message)
+</code></pre>
+<p>Dans cet exemple, nous créons une classe CustomException dérivée de la classe Exception. Nous définissons également un constructeur qui prend un message en paramètre et l'assigne à l'attribut message de l'exception.</p>
+<p>Ensuite, nous utilisons le mot-clé raise pour lever une instance de notre exception personnalisée. Enfin, nous capturons cette exception avec un bloc except et affichons son message.</p>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Développement web avec Python</h2>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction au développement web</h2>
+<p>
+Le développement web avec Python est une compétence essentielle pour créer des sites web dynamiques et interactifs. Python offre plusieurs frameworks web populaires tels que Django et Flask, qui facilitent le processus de développement en fournissant des fonctionnalités prêtes à l'emploi et une structure organisée.
+</p>
+<p>
+Dans cette sous-section, nous explorerons les bases du développement web avec Python, y compris les concepts clés, les outils et les bonnes pratiques.
+</p>
+
+<h2>Création d'une application web avec Flask</h2>
+<p>
+Flask est un framework web léger et flexible qui permet de créer rapidement des applications web en utilisant Python. Il offre une grande simplicité et une grande extensibilité, ce qui en fait un choix populaire parmi les développeurs.
+</p>
+<p>
+Dans cette sous-section, nous apprendrons à installer Flask, à configurer une application Flask de base, à créer des routes, à gérer les requêtes et les réponses, à utiliser des templates pour générer des pages web dynamiques, et à intégrer des formulaires pour interagir avec les utilisateurs.
+</p>
+<pre><code>from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<h2>Utilisation de bases de données dans une application web</h2>
+<p>
+La plupart des applications web nécessitent une base de données pour stocker et récupérer des données. Python offre plusieurs bibliothèques et outils pour interagir avec des bases de données relationnelles et non relationnelles.
+</p>
+<p>
+Dans cette sous-section, nous explorerons comment utiliser une base de données dans une application web Flask. Nous apprendrons à configurer une base de données, à créer des modèles de données, à effectuer des opérations de lecture et d'écriture, et à gérer les migrations de base de données.
+</p>
+<pre><code>from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+
+<p>
+Cette sous-section vous fournira les connaissances nécessaires pour créer des applications web robustes et interactives en utilisant Python et Flask.
+</p>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

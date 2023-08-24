@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12: Projets pratiques en Python</h2>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Création d'un jeu en Python</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un jeu en utilisant Python. Nous allons explorer les concepts de base de la programmation de jeux et utiliser les fonctionnalités de Python pour créer une expérience interactive.</p>
+
+<p>Voici un exemple de code pour créer un jeu simple en Python :</p>
+<pre><code>import pygame
+
+# Initialisation de pygame
+pygame.init()
+
+# Création de la fenêtre du jeu
+screen = pygame.display.set_mode((800, 600))
+
+# Boucle principale du jeu
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Mise à jour de l'affichage
+    pygame.display.flip()
+
+# Fermeture de pygame
+pygame.quit()
+</code></pre>
+
+<p>Ce code utilise la bibliothèque Pygame pour créer une fenêtre de jeu et gérer les événements. Vous pouvez personnaliser ce code pour ajouter des graphismes, des sons et des fonctionnalités de jeu spécifiques.</p>
+
+<h2>Développement d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer une application de gestion de tâches en utilisant Python. Nous allons explorer les concepts de base de la programmation d'applications et utiliser les fonctionnalités de Python pour créer une application pratique.</p>
+
+<p>Voici un exemple de code pour créer une application de gestion de tâches en Python :</p>
+<pre><code>class Task:
+    def __init__(self, name, priority):
+        self.name = name
+        self.priority = priority
+
+    def __str__(self):
+        return f"Task: {self.name}, Priority: {self.priority}"
+
+# Création de quelques tâches
+task1 = Task("Faire les courses", 2)
+task2 = Task("Nettoyer la maison", 1)
+task3 = Task("Préparer le dîner", 3)
+
+# Affichage des tâches
+print(task1)
+print(task2)
+print(task3)
+</code></pre>
+
+<p>Ce code utilise une classe Task pour représenter une tâche avec un nom et une priorité. Vous pouvez personnaliser ce code pour ajouter des fonctionnalités de gestion de tâches telles que l'ajout, la suppression et la modification de tâches.</p>
+
+<h2>Création d'un site web dynamique avec Django</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un site web dynamique en utilisant le framework Django en Python. Nous allons explorer les concepts de base du développement web et utiliser les fonctionnalités de Django pour créer un site web interactif.</p>
+
+<p>Voici un exemple de code pour créer un site web dynamique avec Django :</p>
+<pre><code>from django.shortcuts import render
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Bienvenue sur mon site web!")
+
+def about(request):
+    return HttpResponse("À propos de moi")
+
+def contact(request):
+    return HttpResponse("Contactez-moi")
+
+# Configuration des URL
+urlpatterns = [
+    path('', index),
+    path('about/', about),
+    path('contact/', contact),
+]
+</code></pre>
+
+<p>Ce code utilise le framework Django pour définir les vues et les URL de base d'un site web. Vous pouvez personnaliser ce code pour ajouter des pages supplémentaires, des formulaires et des fonctionnalités spécifiques à votre site web.</p>
+
+<p>C'est ainsi que se termine la section 12 de notre formation e-learning Python. Vous avez maintenant appris à créer un jeu en Python, à développer une application de gestion de tâches et à créer un site web dynamique avec Django. Félicitations pour avoir atteint ce niveau de compétence en Python !</p>
+
+<h1>Section 13: Ressources supplémentaires</h1>
+
+<h2>Livres recommandés sur Python</h2>
+<p>Dans cette sous-section, nous vous recommandons quelques livres sur Python qui vous aideront à approfondir vos connaissances et à devenir un expert en Python :</p>
+<ul>
+  <li>"Apprenez à programmer en Python" par Gérard Swinnen</li>
+  <li>"Python Crash Course" par Eric Matthes</li>
+  <li>"Automate the Boring Stuff with Python" par Al Sweigart</li>
+</ul>
+
+<h2>Sites web et forums pour approfondir ses connaissances</h2>
+<p>Dans cette sous-section, nous vous recommandons quelques sites web et forums où vous pouvez trouver des ressources supplémentaires et poser des questions pour approfondir vos connaissances en Python :</p>
+<ul>
+  <li><a href="https://www.python.org/">Site officiel de Python</a></li>
+  <li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+  <li><a href="https://realpython.com/">Real Python</a></li>
+</ul>
+
+<h2>Communautés et événements Python</h2>
+<p>Dans cette sous-section, nous vous recommandons quelques communautés et événements Python où vous pouvez rencontrer d'autres passionnés de Python et élargir votre réseau professionnel :</p>
+<ul>
+  <li>Python Software Foundation (PSF)</li>
+  <li>PyCon (conférence annuelle sur Python)</li>
+  <li>Meetup.com (recherchez des groupes Python locaux dans votre région)</li>
+</ul>
+
+<p>C'est ainsi que se termine notre formation e-learning Python. Nous espérons que vous avez apprécié d'apprendre Python avec nous et que vous êtes prêt à utiliser vos nouvelles compétences dans vos projets futurs. Bonne continuation dans votre parcours de développement Python !</p>
+					<a href="AI-Learning/{subject_lower_encoded}/{subject_lower_encoded}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
