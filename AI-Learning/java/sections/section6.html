@@ -51,7 +51,10 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 6 : Les entrées/sorties en Java</h2>
+					<h2>Section 6 : Les bases de données et la persistance en Java</h2>
+					<a href="AI-Learningjava/java.html"
+						class="button primary">
+						Retour au cours </a>
 				</div>
 			</header>
 			<!-- Content -->
@@ -59,125 +62,130 @@
 				<div class="inner">
 					
 
-<h2>Lecture et écriture de fichiers</h2>
-<p>La lecture et l'écriture de fichiers sont des opérations courantes en programmation Java. Pour lire un fichier, vous pouvez utiliser la classe <code>FileReader</code> et pour écrire dans un fichier, vous pouvez utiliser la classe <code>FileWriter</code>. Voici un exemple de code qui lit le contenu d'un fichier :</p>
+<h2>Les bases de données relationnelles en Java</h2>
+<p>Les bases de données relationnelles sont un élément essentiel de nombreux systèmes d'application. En Java, nous pouvons interagir avec ces bases de données en utilisant le langage SQL (Structured Query Language) pour exécuter des requêtes et manipuler les données.</p>
+<p>Java fournit une API appelée JDBC (Java Database Connectivity) qui permet de se connecter à une base de données relationnelle et d'exécuter des requêtes SQL. Pour utiliser JDBC, nous devons d'abord charger le pilote JDBC approprié pour la base de données que nous utilisons.</p>
+<p>Voici un exemple de code qui montre comment se connecter à une base de données MySQL en utilisant JDBC :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-<pre><code>import java.io.FileReader;
-import java.io.IOException;
-
-public class FileExample {
+public class DatabaseConnection {
     public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
         try {
-            FileReader reader = new FileReader("example.txt");
-            int character;
-            while ((character = reader.read()) != -1) {
-                System.out.print((char) character);
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database!");
+        } catch (SQLException e) {
+            System.out.println("Failed to connect to the database.");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>Les requêtes SQL en Java</h2>
+<p>Une fois connecté à une base de données, nous pouvons exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. Les requêtes SQL sont des instructions qui permettent d'interagir avec la base de données.</p>
+<p>Voici un exemple de code qui montre comment exécuter une requête SELECT pour récupérer des données à partir d'une table :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class SelectExample {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
             }
-            reader.close();
-        } catch (IOException e) {
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Failed to execute the query.");
             e.printStackTrace();
         }
     }
 }
 </code></pre>
 
-<p>Dans cet exemple, nous utilisons la méthode <code>read()</code> de la classe <code>FileReader</code> pour lire chaque caractère du fichier. La boucle se poursuit tant qu'il y a des caractères à lire. Une fois la lecture terminée, nous fermons le lecteur en utilisant la méthode <code>close()</code>.</p>
-
-<p>Pour écrire dans un fichier, vous pouvez utiliser la classe <code>FileWriter</code>. Voici un exemple de code qui écrit du texte dans un fichier :</p>
-
-<pre><code>import java.io.FileWriter;
-import java.io.IOException;
-
-public class FileExample {
-    public static void main(String[] args) {
-        try {
-            FileWriter writer = new FileWriter("example.txt");
-            writer.write("Hello, world!");
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
-</code></pre>
-
-<p>Dans cet exemple, nous utilisons la méthode <code>write()</code> de la classe <code>FileWriter</code> pour écrire le texte "Hello, world!" dans le fichier. Ensuite, nous fermons le writer en utilisant la méthode <code>close()</code>.</p>
-
-<h2>Utilisation des flux d'entrée/sortie</h2>
-<p>En plus des classes <code>FileReader</code> et <code>FileWriter</code>, Java fournit également des classes de flux d'entrée/sortie pour lire et écrire des données à partir de différentes sources, telles que le clavier, les fichiers, les sockets réseau, etc. Voici quelques-unes des classes de flux d'entrée/sortie les plus couramment utilisées :</p>
-
+<h2>Les frameworks de persistance en Java</h2>
+<p>En plus de JDBC, il existe plusieurs frameworks de persistance en Java qui simplifient l'interaction avec les bases de données. Ces frameworks fournissent une couche d'abstraction supplémentaire et permettent de manipuler les données de manière plus facile et plus efficace.</p>
+<p>Voici quelques-uns des frameworks de persistance les plus populaires en Java :</p>
 <ul>
-    <li><code>InputStream</code> : utilisé pour lire des données binaires à partir d'une source.</li>
-    <li><code>OutputStream</code> : utilisé pour écrire des données binaires vers une destination.</li>
-    <li><code>Reader</code> : utilisé pour lire des données caractère à partir d'une source.</li>
-    <li><code>Writer</code> : utilisé pour écrire des données caractère vers une destination.</li>
+  <li>Hibernate</li>
+  <li>Spring Data JPA</li>
+  <li>MyBatis</li>
+  <li>EclipseLink</li>
 </ul>
+<p>Ces frameworks offrent des fonctionnalités avancées telles que la gestion des relations entre les tables, la génération automatique des requêtes SQL, la mise en cache des données, etc. Ils facilitent également la gestion des transactions et la gestion des erreurs liées à la persistance des données.</p>
 
-<p>Voici un exemple de code qui utilise la classe <code>BufferedReader</code> pour lire une ligne de texte à partir de l'entrée standard (clavier) :</p>
+<h2>Les transactions en Java</h2>
+<p>Les transactions sont utilisées pour garantir l'intégrité des données dans une base de données. Une transaction est un ensemble d'opérations qui doivent être exécutées de manière atomique, c'est-à-dire soit toutes les opérations réussissent et sont validées, soit aucune opération n'est effectuée.</p>
+<p>En Java, nous pouvons gérer les transactions en utilisant les fonctionnalités fournies par JDBC ou les frameworks de persistance. Les transactions sont généralement utilisées dans des situations où plusieurs opérations doivent être exécutées de manière cohérente, par exemple lors de la création d'un nouvel enregistrement et de la mise à jour d'autres enregistrements liés.</p>
+<p>Voici un exemple de code qui montre comment utiliser les transactions en utilisant JDBC :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-<pre><code>import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class ConsoleExample {
+public class TransactionExample {
     public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.print("Enter your name: ");
-            String name = reader.readLine();
-            System.out.println("Hello, " + name + "!");
-            reader.close();
-        } catch (IOException e) {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            connection.setAutoCommit(false);
+
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com')");
+            statement.executeUpdate("UPDATE accounts SET balance = balance - 100 WHERE user_id = 1");
+
+            connection.commit();
+
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Failed to execute the transaction.");
             e.printStackTrace();
         }
     }
 }
 </code></pre>
 
-<p>Dans cet exemple, nous utilisons la classe <code>BufferedReader</code> pour lire une ligne de texte à partir de l'entrée standard (clavier). La méthode <code>readLine()</code> lit une ligne de texte et la retourne en tant que chaîne de caractères. Ensuite, nous affichons un message de salutation avec le nom saisi.</p>
-
-<h2>Sérialisation des objets</h2>
-<p>La sérialisation des objets en Java permet de convertir un objet en une séquence d'octets, qui peut ensuite être enregistrée dans un fichier ou transmise sur le réseau. Pour sérialiser un objet, vous pouvez utiliser la classe <code>ObjectOutputStream</code>, et pour désérialiser un objet, vous pouvez utiliser la classe <code>ObjectInputStream</code>. Voici un exemple de code :</p>
-
-<pre><code>import java.io.*;
-
-public class SerializationExample {
-    public static void main(String[] args) {
-        try {
-            // Sérialisation
-            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("object.ser"));
-            MyObject object = new MyObject("Hello, world!");
-            outputStream.writeObject(object);
-            outputStream.close();
-
-            // Désérialisation
-            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("object.ser"));
-            MyObject deserializedObject = (MyObject) inputStream.readObject();
-            inputStream.close();
-
-            System.out.println(deserializedObject.getMessage());
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-}
-
-class MyObject implements Serializable {
-    private String message;
-
-    public MyObject(String message) {
-        this.message = message;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-}
-</code></pre>
-
-<p>Dans cet exemple, nous sérialisons un objet de la classe <code>MyObject</code> en utilisant la classe <code>ObjectOutputStream</code>. Nous écrivons ensuite l'objet sérialisé dans un fichier. Pour désérialiser l'objet, nous utilisons la classe <code>ObjectInputStream</code> et nous effectuons un cast vers la classe <code>MyObject</code>. Enfin, nous affichons le message de l'objet désérialisé.</p>
-
-<p>Il est important de noter que les classes que vous souhaitez sérialiser doivent implémenter l'interface <code>Serializable</code>.</p>
+<h2>Les bonnes pratiques de gestion des bases de données en Java</h2>
+<p>Lors de la gestion des bases de données en Java, il est important de suivre certaines bonnes pratiques pour assurer la performance, la sécurité et la maintenabilité de l'application.</p>
+<p>Voici quelques bonnes pratiques à prendre en compte :</p>
+<ul>
+  <li>Utiliser des requêtes paramétrées pour éviter les attaques par injection SQL.</li>
+  <li>Fermer les connexions, les déclarations et les résultats de requête après utilisation pour libérer les ressources.</li>
+  <li>Utiliser des transactions pour garantir l'intégrité des données.</li>
+  <li>Utiliser des index pour améliorer les performances des requêtes.</li>
+  <li>Effectuer des sauvegardes régulières de la base de données pour éviter la perte de données.</li>
+</ul>
+<p>En suivant ces bonnes pratiques, nous pouvons garantir que notre application Java fonctionne de manière optimale et sécurisée lorsqu'elle interagit avec une base de données.</p>
+					<a href="AI-Learningjava/java.html"
+						class="button primary">
+						Retour au cours </a>
 				</div>
 			</div>
 		</section>

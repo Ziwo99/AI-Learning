@@ -51,7 +51,10 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 2 : Les bases du langage Java</h2>
+					<h2>Section 2 : Les bases de la programmation en Java</h2>
+					<a href="AI-Learningjava/java.html"
+						class="button primary">
+						Retour au cours </a>
 				</div>
 			</header>
 			<!-- Content -->
@@ -59,65 +62,117 @@
 				<div class="inner">
 					
 
-<h2>Opérateurs et expressions</h2>
-<p>Les opérateurs en Java permettent de manipuler les valeurs et d'effectuer des opérations sur elles. Les expressions sont des combinaisons d'opérateurs, de variables et de constantes qui produisent une valeur.</p>
-<p>Voici quelques exemples d'opérateurs couramment utilisés en Java :</p>
-<pre><code>int a = 10;
-int b = 5;
-int c = a + b; // Addition
-int d = a - b; // Soustraction
-int e = a * b; // Multiplication
-int f = a / b; // Division
-int g = a % b; // Modulo</code></pre>
+<h2>Les structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un programme en Java. Elles comprennent les boucles et les conditions.</p>
 
-<h2>Structures de contrôle (boucles, conditions)</h2>
-<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un programme en fonction de certaines conditions.</p>
-<p>Voici quelques exemples de structures de contrôle couramment utilisées en Java :</p>
-<pre><code>// Boucle while
-int i = 0;
-while (i &lt; 10) {
-    System.out.println(i);
-    i++;
+<p>Les boucles permettent de répéter un bloc de code plusieurs fois. Il existe trois types de boucles en Java :</p>
+<pre><code>while (condition) {
+    // code à exécuter tant que la condition est vraie
 }
 
-// Boucle for
-for (int j = 0; j &lt; 10; j++) {
-    System.out.println(j);
-}
+do {
+    // code à exécuter au moins une fois, puis tant que la condition est vraie
+} while (condition);
 
-// Condition if-else
-int age = 18;
-if (age &gt;= 18) {
-    System.out.println("Vous êtes majeur.");
-} else {
-    System.out.println("Vous êtes mineur.");
+for (initialisation; condition; mise à jour) {
+    // code à exécuter tant que la condition est vraie
 }</code></pre>
 
-<h2>Tableaux et collections</h2>
-<p>Les tableaux et les collections permettent de stocker et de manipuler des ensembles de données en Java.</p>
-<p>Voici quelques exemples d'utilisation des tableaux et des collections en Java :</p>
-<pre><code>// Tableau
-int[] numbers = {1, 2, 3, 4, 5};
-System.out.println(numbers[0]); // Affiche 1
+<p>Les conditions permettent d'exécuter un bloc de code en fonction d'une condition donnée. Les opérateurs de comparaison et les opérateurs logiques sont utilisés pour évaluer les conditions. Voici quelques exemples :</p>
+<pre><code>if (condition) {
+    // code à exécuter si la condition est vraie
+} else if (autreCondition) {
+    // code à exécuter si la première condition est fausse et l'autre condition est vraie
+} else {
+    // code à exécuter si toutes les conditions précédentes sont fausses
+}
 
-// ArrayList
-ArrayList&lt;String&gt; names = new ArrayList&lt;&gt;();
-names.add("Alice");
-names.add("Bob");
-names.add("Charlie");
-System.out.println(names.get(0)); // Affiche "Alice"</code></pre>
+switch (variable) {
+    case valeur1:
+        // code à exécuter si la variable a la valeur 1
+        break;
+    case valeur2:
+        // code à exécuter si la variable a la valeur 2
+        break;
+    default:
+        // code à exécuter si la variable n'a aucune des valeurs précédentes
+        break;
+}</code></pre>
 
-<h2>Manipulation des chaînes de caractères</h2>
-<p>Les chaînes de caractères sont utilisées pour représenter du texte en Java. Il existe de nombreuses méthodes pour manipuler et formater les chaînes de caractères.</p>
-<p>Voici quelques exemples de manipulation des chaînes de caractères en Java :</p>
-<pre><code>String message = "Hello, World!";
-System.out.println(message.length()); // Affiche 13
+<h2>Les tableaux en Java</h2>
+<p>Un tableau est une structure de données qui permet de stocker plusieurs valeurs de même type dans une seule variable. En Java, les tableaux sont indexés à partir de zéro.</p>
+<pre><code>// Déclaration et initialisation d'un tableau de nombres
+int[] tableau = {1, 2, 3, 4, 5};
 
-String name = "Alice";
-String greeting = "Hello, " + name + "!";
-System.out.println(greeting); // Affiche "Hello, Alice!"</code></pre>
+// Accès aux éléments du tableau
+int premierElement = tableau[0];
+int dernierElement = tableau[tableau.length - 1];
 
-<p>Ces exemples couvrent les bases du langage Java. Ils vous permettront de comprendre et d'utiliser les concepts fondamentaux du langage.</p>
+// Parcours d'un tableau avec une boucle for
+for (int i = 0; i < tableau.length; i++) {
+    // code à exécuter pour chaque élément du tableau
+}</code></pre>
+
+<h2>Les fonctions et les méthodes en Java</h2>
+<p>Les fonctions et les méthodes permettent de regrouper un ensemble d'instructions et de les réutiliser à plusieurs endroits dans un programme. En Java, les fonctions sont définies en dehors des classes, tandis que les méthodes sont définies à l'intérieur des classes.</p>
+<pre><code>// Définition d'une fonction
+int addition(int a, int b) {
+    return a + b;
+}
+
+// Appel d'une fonction
+int resultat = addition(3, 4);
+
+// Définition d'une méthode
+public class MaClasse {
+    int multiplication(int a, int b) {
+        return a * b;
+    }
+}
+
+// Appel d'une méthode
+MaClasse maInstance = new MaClasse();
+int resultat = maInstance.multiplication(3, 4);</code></pre>
+
+<h2>La gestion des exceptions en Java</h2>
+<p>Les exceptions permettent de gérer les erreurs et les situations exceptionnelles qui peuvent se produire lors de l'exécution d'un programme en Java. Les exceptions peuvent être levées (throw) et capturées (catch).</p>
+<pre><code>try {
+    // code susceptible de générer une exception
+} catch (TypeException e) {
+    // code à exécuter si une exception de type TypeException est levée
+} catch (AutreTypeException e) {
+    // code à exécuter si une exception de type AutreTypeException est levée
+} finally {
+    // code à exécuter quoi qu'il arrive, même s'il y a une exception
+}</code></pre>
+
+<h2>Les entrées/sorties en Java</h2>
+<p>Les entrées/sorties (E/S) permettent de lire des données depuis un périphérique d'entrée (comme le clavier) et d'écrire des données vers un périphérique de sortie (comme l'écran ou un fichier). En Java, les E/S sont gérées à l'aide de classes et de méthodes spécifiques.</p>
+<pre><code>// Lecture d'une ligne de texte depuis le clavier
+Scanner scanner = new Scanner(System.in);
+String ligne = scanner.nextLine();
+
+// Écriture d'une ligne de texte vers la console
+System.out.println("Hello, World!");
+
+// Lecture et écriture de fichiers
+try {
+    BufferedReader lecteur = new BufferedReader(new FileReader("fichier.txt"));
+    String ligne;
+    while ((ligne = lecteur.readLine()) != null) {
+        System.out.println(ligne);
+    }
+    lecteur.close();
+
+    BufferedWriter ecrivain = new BufferedWriter(new FileWriter("fichier.txt"));
+    ecrivain.write("Hello, World!");
+    ecrivain.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+					<a href="AI-Learningjava/java.html"
+						class="button primary">
+						Retour au cours </a>
 				</div>
 			</div>
 		</section>

@@ -51,7 +51,10 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 4 : Gestion des exceptions</h2>
+					<h2>Section 4 : Les collections en Java</h2>
+					<a href="AI-Learningjava/java.html"
+						class="button primary">
+						Retour au cours </a>
 				</div>
 			</header>
 			<!-- Content -->
@@ -59,52 +62,97 @@
 				<div class="inner">
 					
 
-<h2>Introduction aux exceptions</h2>
-<p>En programmation Java, une exception est un événement anormal qui se produit pendant l'exécution d'un programme et qui interrompt le flux normal d'exécution. Les exceptions sont utilisées pour gérer les erreurs et les situations exceptionnelles qui peuvent survenir lors de l'exécution d'un programme.</p>
+<h2>Les listes en Java</h2>
+<p>Une liste en Java est une collection ordonnée d'éléments. Elle permet de stocker des objets de manière séquentielle et d'accéder à ces objets par leur position dans la liste.</p>
+<p>En Java, la classe <code>List</code> est une interface qui définit les méthodes de base pour manipuler une liste. Il existe plusieurs implémentations de cette interface, telles que <code>ArrayList</code> et <code>LinkedList</code>.</p>
+<p>Voici un exemple de création et de manipulation d'une liste en Java :</p>
+<pre><code>List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("pomme");
+fruits.add("banane");
+fruits.add("orange");
 
-<p>Java fournit une hiérarchie de classes d'exceptions prédéfinies qui peuvent être utilisées pour gérer différents types d'exceptions. Les exceptions peuvent être levées (ou "jetées") à l'aide du mot-clé <code>throw</code> et capturées à l'aide du bloc <code>try-catch</code>.</p>
+System.out.println(fruits.get(0)); // Affiche "pomme"
+System.out.println(fruits.size()); // Affiche 3
+</code></pre>
 
-<h2>Gestion des exceptions avec try-catch</h2>
-<p>Le bloc <code>try-catch</code> est utilisé pour capturer et gérer les exceptions levées dans un bloc de code. Le bloc <code>try</code> contient le code qui peut générer une exception, tandis que le bloc <code>catch</code> contient le code qui est exécuté lorsque l'exception est levée.</p>
+<h2>Les ensembles en Java</h2>
+<p>Un ensemble en Java est une collection d'éléments uniques, c'est-à-dire qu'il ne peut pas contenir de doublons. Il permet de stocker des objets sans se soucier de leur ordre.</p>
+<p>En Java, la classe <code>Set</code> est une interface qui définit les méthodes de base pour manipuler un ensemble. Les implémentations courantes de cette interface sont <code>HashSet</code> et <code>TreeSet</code>.</p>
+<p>Voici un exemple de création et de manipulation d'un ensemble en Java :</p>
+<pre><code>Set&lt;String&gt; villes = new HashSet&lt;&gt;();
+villes.add("Paris");
+villes.add("Londres");
+villes.add("New York");
 
-<p>Voici un exemple de structure de base d'un bloc <code>try-catch</code> :</p>
+System.out.println(villes.contains("Paris")); // Affiche true
+System.out.println(villes.size()); // Affiche 3
+</code></pre>
 
-<pre><code>try {
-    // Code susceptible de générer une exception
-} catch (TypeException e) {
-    // Code exécuté lorsque l'exception de type TypeException est levée
-}</code></pre>
+<h2>Les cartes en Java</h2>
+<p>Une carte en Java est une collection d'associations clé-valeur. Chaque élément de la carte est composé d'une clé unique et d'une valeur associée.</p>
+<p>En Java, la classe <code>Map</code> est une interface qui définit les méthodes de base pour manipuler une carte. Les implémentations courantes de cette interface sont <code>HashMap</code> et <code>TreeMap</code>.</p>
+<p>Voici un exemple de création et de manipulation d'une carte en Java :</p>
+<pre><code>Map&lt;String, Integer&gt; scores = new HashMap&lt;&gt;();
+scores.put("Alice", 10);
+scores.put("Bob", 15);
+scores.put("Charlie", 12);
 
-<p>Dans cet exemple, si une exception de type <code>TypeException</code> est levée dans le bloc <code>try</code>, le code dans le bloc <code>catch</code> sera exécuté pour gérer cette exception.</p>
+System.out.println(scores.get("Bob")); // Affiche 15
+System.out.println(scores.containsKey("Alice")); // Affiche true
+</code></pre>
 
-<h2>Création de ses propres exceptions</h2>
-<p>En plus des exceptions prédéfinies, il est également possible de créer ses propres exceptions personnalisées en définissant des classes d'exceptions. Pour créer une exception personnalisée, il suffit de créer une classe qui étend la classe <code>Exception</code> ou l'une de ses sous-classes.</p>
+<h2>Les itérations et les filtres en Java</h2>
+<p>En Java, il est possible de parcourir les éléments d'une collection à l'aide de boucles ou d'itérateurs. Cela permet d'effectuer des opérations sur chaque élément de la collection.</p>
+<p>Voici un exemple d'itération sur une liste en Java :</p>
+<pre><code>List&lt;Integer&gt; nombres = new ArrayList&lt;&gt;();
+nombres.add(1);
+nombres.add(2);
+nombres.add(3);
 
-<p>Voici un exemple de création d'une exception personnalisée :</p>
+for (int nombre : nombres) {
+    System.out.println(nombre);
+}
+</code></pre>
+<p>Il est également possible de filtrer les éléments d'une collection en utilisant des prédicats ou des expressions lambda. Cela permet de sélectionner uniquement les éléments qui satisfont une condition spécifique.</p>
+<p>Voici un exemple de filtrage d'une liste en Java :</p>
+<pre><code>List&lt;Integer&gt; nombres = new ArrayList&lt;&gt;();
+nombres.add(1);
+nombres.add(2);
+nombres.add(3);
 
-<pre><code>public class CustomException extends Exception {
-    public CustomException(String message) {
-        super(message);
-    }
-}</code></pre>
+List&lt;Integer&gt; nombresPairs = nombres.stream()
+                                     .filter(nombre -&gt; nombre % 2 == 0)
+                                     .collect(Collectors.toList());
 
-<p>Dans cet exemple, nous avons créé une classe <code>CustomException</code> qui étend la classe <code>Exception</code>. La classe <code>CustomException</code> a un constructeur qui prend un message en paramètre et appelle le constructeur de la classe <code>Exception</code> avec ce message.</p>
+System.out.println(nombresPairs); // Affiche [2]
+</code></pre>
 
-<p>Une fois que vous avez créé votre exception personnalisée, vous pouvez la lever (ou "jeter") à l'aide du mot-clé <code>throw</code> :</p>
+<h2>Les comparateurs en Java</h2>
+<p>En Java, il est possible de trier les éléments d'une collection en utilisant des comparateurs. Un comparateur permet de définir l'ordre des éléments en fonction de critères spécifiques.</p>
+<p>Voici un exemple de tri d'une liste en Java :</p>
+<pre><code>List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("pomme");
+fruits.add("banane");
+fruits.add("orange");
 
-<pre><code>throw new CustomException("Une erreur personnalisée s'est produite.");</code></pre>
+Collections.sort(fruits);
 
-<p>Dans cet exemple, nous avons levé une exception de type <code>CustomException</code> avec un message d'erreur personnalisé.</p>
+System.out.println(fruits); // Affiche [banane, orange, pomme]
+</code></pre>
+<p>Il est également possible de définir des comparateurs personnalisés pour trier les éléments selon des critères spécifiques.</p>
+<p>Voici un exemple de tri avec un comparateur personnalisé en Java :</p>
+<pre><code>List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("pomme");
+fruits.add("banane");
+fruits.add("orange");
 
-<p>Il est également possible de capturer et de gérer une exception personnalisée à l'aide d'un bloc <code>try-catch</code> :</p>
+Collections.sort(fruits, (fruit1, fruit2) -&gt; fruit1.length() - fruit2.length());
 
-<pre><code>try {
-    // Code susceptible de générer une exception personnalisée
-} catch (CustomException e) {
-    // Code exécuté lorsque l'exception de type CustomException est levée
-}</code></pre>
-
-<p>Dans cet exemple, si une exception de type <code>CustomException</code> est levée dans le bloc <code>try</code>, le code dans le bloc <code>catch</code> sera exécuté pour gérer cette exception.</p>
+System.out.println(fruits); // Affiche [pomme, orange, banane]
+</code></pre>
+					<a href="AI-Learningjava/java.html"
+						class="button primary">
+						Retour au cours </a>
 				</div>
 			</div>
 		</section>
