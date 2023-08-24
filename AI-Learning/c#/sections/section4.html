@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des exceptions en C#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux exceptions</h2>
+<p>
+Les exceptions sont des événements qui se produisent lorsqu'une erreur ou une condition anormale se produit pendant l'exécution d'un programme. En C#, les exceptions sont utilisées pour gérer ces situations et permettre au programme de réagir de manière appropriée.
+</p>
+
+<p>
+Lorsqu'une exception se produit, le programme peut être interrompu et une trace d'exécution détaillée de l'erreur peut être affichée. Cela permet aux développeurs de comprendre ce qui s'est passé et de corriger le problème.
+</p>
+
+<h2>Gestion des exceptions avec try-catch</h2>
+<p>
+En C#, la gestion des exceptions se fait à l'aide des blocs try-catch. Le code potentiellement problématique est placé dans le bloc try, et si une exception se produit, elle est capturée et gérée dans le bloc catch.
+</p>
+
+<p>
+Voici un exemple de code utilisant try-catch pour gérer une exception de division par zéro :
+</p>
+
+<pre><code>
+try {
+    int result = 10 / 0;
+    Console.WriteLine(result);
+}
+catch (DivideByZeroException ex) {
+    Console.WriteLine("Une exception de division par zéro s'est produite : " + ex.Message);
+}
+</code></pre>
+
+<p>
+Dans cet exemple, le code tente de diviser 10 par zéro, ce qui provoque une exception de division par zéro. Cette exception est capturée dans le bloc catch, où un message d'erreur approprié est affiché.
+</p>
+
+<h2>Utilisation des exceptions personnalisées</h2>
+<p>
+En plus des exceptions prédéfinies telles que DivideByZeroException, il est également possible de créer des exceptions personnalisées en C#. Cela permet aux développeurs de définir des erreurs spécifiques à leur application et de les gérer de manière appropriée.
+</p>
+
+<p>
+Voici un exemple de code montrant comment créer et utiliser une exception personnalisée :
+</p>
+
+<pre><code>
+public class CustomException : Exception {
+    public CustomException(string message) : base(message) { }
+}
+
+try {
+    throw new CustomException("Une erreur personnalisée s'est produite !");
+}
+catch (CustomException ex) {
+    Console.WriteLine("Une exception personnalisée s'est produite : " + ex.Message);
+}
+</code></pre>
+
+<p>
+Dans cet exemple, une classe CustomException est créée en dérivant de la classe Exception. Cette classe personnalisée peut avoir des propriétés et des méthodes supplémentaires pour gérer l'erreur de manière spécifique.
+</p>
+
+<p>
+Ensuite, une instance de CustomException est lancée à l'aide du mot-clé throw, et elle est capturée et gérée dans le bloc catch approprié.
+</p>
+
+<p>
+Il est recommandé d'utiliser des exceptions personnalisées lorsque des erreurs spécifiques à votre application se produisent, afin de pouvoir les gérer de manière appropriée et de fournir des informations précises sur l'erreur.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

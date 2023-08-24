@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Accès aux données avec ADO.NET</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à ADO.NET</h2>
+<p>ADO.NET est une technologie de Microsoft qui permet d'accéder aux bases de données relationnelles à partir d'applications C#. Il fournit une interface pour se connecter aux bases de données, exécuter des requêtes SQL, récupérer et manipuler les données.</p>
+<p>Pour utiliser ADO.NET, vous devez d'abord ajouter une référence à la bibliothèque System.Data dans votre projet C#. Ensuite, vous pouvez utiliser les classes fournies par ADO.NET pour interagir avec la base de données.</p>
+
+<h2>Connexion à une base de données</h2>
+<p>Pour se connecter à une base de données avec ADO.NET, vous devez utiliser la classe SqlConnection. Voici un exemple de code pour établir une connexion à une base de données :</p>
+<pre><code>string connectionString = "Data Source=nomServeur;Initial Catalog=nomBaseDeDonnées;User ID=nomUtilisateur;Password=motDePasse";
+SqlConnection connection = new SqlConnection(connectionString);
+connection.Open();
+</code></pre>
+<p>Assurez-vous de remplacer les valeurs "nomServeur", "nomBaseDeDonnées", "nomUtilisateur" et "motDePasse" par les informations appropriées pour votre base de données.</p>
+
+<h2>Exécution de requêtes SQL</h2>
+<p>Pour exécuter des requêtes SQL avec ADO.NET, vous devez utiliser la classe SqlCommand. Voici un exemple de code pour exécuter une requête SELECT :</p>
+<pre><code>string query = "SELECT * FROM nomTable";
+SqlCommand command = new SqlCommand(query, connection);
+SqlDataReader reader = command.ExecuteReader();
+
+while (reader.Read())
+{
+    // Traiter les données récupérées
+}
+
+reader.Close();
+</code></pre>
+<p>Assurez-vous de remplacer "nomTable" par le nom de la table de votre base de données.</p>
+
+<h2>Utilisation des transactions</h2>
+<p>Les transactions permettent de regrouper plusieurs opérations de base de données en une seule unité logique. ADO.NET prend en charge les transactions à l'aide de la classe SqlTransaction. Voici un exemple de code pour utiliser des transactions :</p>
+<pre><code>SqlTransaction transaction = connection.BeginTransaction();
+
+try
+{
+    // Effectuer des opérations de base de données
+
+    transaction.Commit();
+}
+catch (Exception ex)
+{
+    transaction.Rollback();
+    // Gérer l'erreur
+}
+finally
+{
+    transaction.Dispose();
+}
+</code></pre>
+<p>Assurez-vous d'inclure vos opérations de base de données à l'intérieur du bloc try. Si une erreur se produit, la transaction sera annulée en appelant la méthode Rollback(). Si tout se passe bien, la transaction sera validée en appelant la méthode Commit().</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Manipulation des fichiers et des dossiers en C#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes lors du développement d'applications en C#. Pour lire le contenu d'un fichier, vous pouvez utiliser la classe <code>StreamReader</code>. Voici un exemple de code qui lit le contenu d'un fichier texte :</p>
+
+<pre><code>using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string filePath = "example.txt";
+
+        using (StreamReader reader = new StreamReader(filePath)) {
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+                Console.WriteLine(line);
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la classe <code>StreamReader</code> pour ouvrir le fichier spécifié par le chemin <code>filePath</code>. Ensuite, nous utilisons une boucle <code>while</code> pour lire chaque ligne du fichier et l'afficher à la console.</p>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la classe <code>StreamWriter</code>. Voici un exemple de code qui écrit du texte dans un fichier :</p>
+
+<pre><code>using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string filePath = "example.txt";
+
+        using (StreamWriter writer = new StreamWriter(filePath)) {
+            writer.WriteLine("Hello, world!");
+        }
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la classe <code>StreamWriter</code> pour ouvrir le fichier spécifié par le chemin <code>filePath</code>. Ensuite, nous utilisons la méthode <code>WriteLine</code> pour écrire la chaîne de caractères "Hello, world!" dans le fichier.</p>
+
+<h2>Manipulation des dossiers et des chemins</h2>
+<p>La manipulation des dossiers et des chemins est également une tâche courante lors du développement d'applications en C#. La classe <code>Directory</code> fournit des méthodes utiles pour créer, supprimer et parcourir des dossiers.</p>
+
+<p>Voici un exemple de code qui crée un nouveau dossier :</p>
+
+<pre><code>using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string folderPath = "exampleFolder";
+
+        Directory.CreateDirectory(folderPath);
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>CreateDirectory</code> de la classe <code>Directory</code> pour créer un nouveau dossier avec le chemin spécifié par <code>folderPath</code>.</p>
+
+<p>La classe <code>Path</code> fournit des méthodes pour manipuler les chemins de fichiers et de dossiers de manière portable. Voici un exemple de code qui combine deux chemins :</p>
+
+<pre><code>using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string folderPath = "exampleFolder";
+        string filePath = Path.Combine(folderPath, "example.txt");
+
+        Console.WriteLine(filePath);
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>Combine</code> de la classe <code>Path</code> pour combiner le chemin du dossier <code>folderPath</code> avec le nom du fichier <code>example.txt</code>. Le résultat est stocké dans la variable <code>filePath</code> et affiché à la console.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

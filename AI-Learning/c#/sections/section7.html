@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Développement d'applications Windows avec Windows Forms</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à Windows Forms</h2>
+<p>Windows Forms est un framework de développement d'interfaces utilisateur graphiques pour les applications Windows. Il permet de créer des applications Windows avec une interface utilisateur riche et interactive.</p>
+<p>Les applications Windows Forms sont basées sur le concept de fenêtres et de contrôles. Une fenêtre représente une interface utilisateur et peut contenir différents contrôles tels que des boutons, des zones de texte, des listes déroulantes, etc.</p>
+<p>Voici un exemple de code qui crée une fenêtre Windows Forms simple :</p>
+<pre><code>using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+    public class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.Text = "Ma première application Windows Forms";
+            this.Size = new Size(400, 300);
+        }
+
+        [STAThread]
+        static void Main()
+        {
+            Application.Run(new MainForm());
+        }
+    }
+}
+</code></pre>
+
+<h2>Création d'interfaces utilisateur</h2>
+<p>La création d'interfaces utilisateur dans Windows Forms se fait en utilisant les différents contrôles disponibles. Ces contrôles peuvent être placés sur une fenêtre et configurés pour répondre aux besoins de l'application.</p>
+<p>Voici un exemple de code qui crée une interface utilisateur avec un bouton et une zone de texte :</p>
+<pre><code>using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+    public class MainForm : Form
+    {
+        private Button myButton;
+        private TextBox myTextBox;
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.Text = "Ma première application Windows Forms";
+            this.Size = new Size(400, 300);
+
+            myButton = new Button();
+            myButton.Text = "Cliquez-moi !";
+            myButton.Location = new Point(100, 100);
+            myButton.Click += MyButton_Click;
+            this.Controls.Add(myButton);
+
+            myTextBox = new TextBox();
+            myTextBox.Location = new Point(100, 150);
+            this.Controls.Add(myTextBox);
+        }
+
+        private void MyButton_Click(object sender, EventArgs e)
+        {
+            myTextBox.Text = "Bonjour !";
+        }
+
+        [STAThread]
+        static void Main()
+        {
+            Application.Run(new MainForm());
+        }
+    }
+}
+</code></pre>
+
+<h2>Gestion des événements</h2>
+<p>La gestion des événements dans Windows Forms permet de répondre aux actions de l'utilisateur, telles que le clic sur un bouton ou la saisie de texte dans une zone de texte. Les événements sont associés à des méthodes qui seront exécutées lorsque l'événement se produit.</p>
+<p>Voici un exemple de code qui gère l'événement de clic sur un bouton :</p>
+<pre><code>using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+    public class MainForm : Form
+    {
+        private Button myButton;
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.Text = "Ma première application Windows Forms";
+            this.Size = new Size(400, 300);
+
+            myButton = new Button();
+            myButton.Text = "Cliquez-moi !";
+            myButton.Location = new Point(100, 100);
+            myButton.Click += MyButton_Click;
+            this.Controls.Add(myButton);
+        }
+
+        private void MyButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vous avez cliqué sur le bouton !");
+        }
+
+        [STAThread]
+        static void Main()
+        {
+            Application.Run(new MainForm());
+        }
+    }
+}
+</code></pre>
+
+<h2>Utilisation des contrôles Windows Forms</h2>
+<p>Les contrôles Windows Forms offrent une large gamme de fonctionnalités pour créer des interfaces utilisateur interactives. Ils peuvent être utilisés pour afficher du texte, des images, des listes, des tableaux, etc.</p>
+<p>Voici un exemple de code qui utilise différents contrôles Windows Forms :</p>
+<pre><code>using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+    public class MainForm : Form
+    {
+        private Label myLabel;
+        private ListBox myListBox;
+        private DataGridView myDataGridView;
+
+        public MainForm()
+        {
+            InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            this.Text = "Ma première application Windows Forms";
+            this.Size = new Size(400, 300);
+
+            myLabel = new Label();
+            myLabel.Text = "Exemple d'utilisation des contrôles Windows Forms";
+            myLabel.Location = new Point(100, 50);
+            this.Controls.Add(myLabel);
+
+            myListBox = new ListBox();
+            myListBox.Items.Add("Élément 1");
+            myListBox.Items.Add("Élément 2");
+            myListBox.Items.Add("Élément 3");
+            myListBox.Location = new Point(100, 100);
+            this.Controls.Add(myListBox);
+
+            myDataGridView = new DataGridView();
+            myDataGridView.Columns.Add("Column1", "Colonne 1");
+            myDataGridView.Columns.Add("Column2", "Colonne 2");
+            myDataGridView.Rows.Add("Donnée 1", "Donnée 2");
+            myDataGridView.Rows.Add("Donnée 3", "Donnée 4");
+            myDataGridView.Location = new Point(100, 150);
+            this.Controls.Add(myDataGridView);
+        }
+
+        [STAThread]
+        static void Main()
+        {
+            Application.Run(new MainForm());
+        }
+    }
+}
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

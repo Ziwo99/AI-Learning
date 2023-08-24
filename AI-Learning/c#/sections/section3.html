@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation orientée objet en C#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO repose sur quatre principes fondamentaux : l'encapsulation, l'abstraction, l'héritage et le polymorphisme.</p>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les propriétés et les comportements que les objets de cette classe auront. Les objets sont des instances de classes, c'est-à-dire qu'ils sont créés à partir d'une classe spécifique. Les propriétés d'un objet sont des variables qui stockent des données spécifiques à cet objet, tandis que les méthodes sont des fonctions qui définissent les actions que l'objet peut effectuer.</p>
+<pre><code>public class Person {
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void SayHello() {
+        Console.WriteLine("Hello, my name is " + Name + " and I am " + Age + " years old.");
+    }
+}
+
+Person person1 = new Person();
+person1.Name = "John";
+person1.Age = 25;
+person1.SayHello(); // Output: Hello, my name is John and I am 25 years old.
+</code></pre>
+
+<h2>Encapsulation et abstraction</h2>
+<p>L'encapsulation est un mécanisme qui regroupe les données et les méthodes liées dans une classe, en les rendant accessibles uniquement à l'intérieur de cette classe ou à travers des méthodes spécifiques. Cela permet de protéger les données et d'assurer une meilleure modularité du code. L'abstraction est un concept qui permet de représenter les caractéristiques essentielles d'un objet sans se soucier des détails internes de son implémentation.</p>
+<pre><code>public class BankAccount {
+    private decimal balance;
+
+    public void Deposit(decimal amount) {
+        balance += amount;
+    }
+
+    public void Withdraw(decimal amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        }
+    }
+
+    public decimal GetBalance() {
+        return balance;
+    }
+}
+
+BankAccount account = new BankAccount();
+account.Deposit(100);
+account.Withdraw(50);
+decimal balance = account.GetBalance(); // Output: 50
+</code></pre>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage est un mécanisme qui permet à une classe d'hériter des propriétés et des comportements d'une autre classe. La classe qui est héritée est appelée classe de base ou superclasse, tandis que la classe qui hérite est appelée classe dérivée ou sous-classe. Le polymorphisme est la capacité d'un objet à prendre différentes formes ou à être traité comme un objet de son type de base.</p>
+<pre><code>public class Animal {
+    public virtual void MakeSound() {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+public class Dog : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+public class Cat : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("The cat meows.");
+    }
+}
+
+Animal animal1 = new Animal();
+animal1.MakeSound(); // Output: The animal makes a sound.
+
+Animal dog = new Dog();
+dog.MakeSound(); // Output: The dog barks.
+
+Animal cat = new Cat();
+cat.MakeSound(); // Output: The cat meows.
+</code></pre>
+
+<h2>Interfaces et classes abstraites</h2>
+<p>Une interface est une collection de méthodes et de propriétés qui définissent un contrat que les classes doivent respecter. Une classe abstraite est une classe qui ne peut pas être instanciée directement, mais qui peut être utilisée comme classe de base pour d'autres classes. Les interfaces et les classes abstraites permettent de définir des comportements communs et de favoriser la réutilisabilité du code.</p>
+<pre><code>public interface IShape {
+    double GetArea();
+    double GetPerimeter();
+}
+
+public abstract class Shape {
+    public abstract double GetArea();
+    public abstract double GetPerimeter();
+}
+
+public class Rectangle : Shape {
+    private double width;
+    private double height;
+
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public override double GetArea() {
+        return width * height;
+    }
+
+    public override double GetPerimeter() {
+        return 2 * (width + height);
+    }
+}
+
+Rectangle rectangle = new Rectangle(5, 3);
+double area = rectangle.GetArea(); // Output: 15
+double perimeter = rectangle.GetPerimeter(); // Output: 16
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
