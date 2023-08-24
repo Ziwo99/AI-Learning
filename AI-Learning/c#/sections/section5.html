@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Manipulation des fichiers et des dossiers</h2>
+					<a href="/AI-Learning/c%23/c%23.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes en programmation. En C#, vous pouvez utiliser la classe <code>File</code> du namespace <code>System.IO</code> pour effectuer ces opérations.</p>
+
+<p>Pour lire le contenu d'un fichier, vous pouvez utiliser la méthode <code>ReadAllText</code> de la classe <code>File</code>. Cette méthode prend en paramètre le chemin du fichier et renvoie une chaîne de caractères contenant le contenu du fichier.</p>
+
+<pre><code>string content = File.ReadAllText("chemin/vers/le/fichier.txt");
+Console.WriteLine(content);
+</code></pre>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la méthode <code>WriteAllText</code> de la classe <code>File</code>. Cette méthode prend en paramètre le chemin du fichier et la chaîne de caractères à écrire.</p>
+
+<pre><code>string content = "Contenu à écrire dans le fichier";
+File.WriteAllText("chemin/vers/le/fichier.txt", content);
+</code></pre>
+
+<h2>Manipulation des dossiers et des chemins de fichiers</h2>
+<p>En plus de la manipulation des fichiers, vous pouvez également manipuler les dossiers et les chemins de fichiers en utilisant la classe <code>Directory</code> du namespace <code>System.IO</code>.</p>
+
+<p>Pour créer un nouveau dossier, vous pouvez utiliser la méthode <code>CreateDirectory</code> de la classe <code>Directory</code>. Cette méthode prend en paramètre le chemin du dossier à créer.</p>
+
+<pre><code>Directory.CreateDirectory("chemin/vers/le/nouveau/dossier");
+</code></pre>
+
+<p>Pour vérifier si un dossier existe, vous pouvez utiliser la méthode <code>Exists</code> de la classe <code>Directory</code>. Cette méthode renvoie une valeur booléenne indiquant si le dossier existe ou non.</p>
+
+<pre><code>bool folderExists = Directory.Exists("chemin/vers/le/dossier");
+if (folderExists)
+{
+    Console.WriteLine("Le dossier existe.");
+}
+else
+{
+    Console.WriteLine("Le dossier n'existe pas.");
+}
+</code></pre>
+
+<p>Vous pouvez également obtenir la liste des fichiers et des dossiers présents dans un dossier en utilisant la méthode <code>GetFiles</code> et la méthode <code>GetDirectories</code> de la classe <code>Directory</code>. Ces méthodes renvoient respectivement un tableau de chaînes de caractères contenant les chemins des fichiers et des dossiers.</p>
+
+<pre><code>string[] files = Directory.GetFiles("chemin/vers/le/dossier");
+string[] folders = Directory.GetDirectories("chemin/vers/le/dossier");
+</code></pre>
+
+<h2>Gestion des erreurs lors de la manipulation des fichiers</h2>
+<p>Lors de la manipulation des fichiers, il est important de prendre en compte les erreurs qui peuvent survenir. En C#, vous pouvez utiliser des blocs <code>try-catch</code> pour gérer les exceptions.</p>
+
+<p>Par exemple, si vous essayez de lire le contenu d'un fichier qui n'existe pas, une exception de type <code>FileNotFoundException</code> sera levée. Vous pouvez capturer cette exception et afficher un message d'erreur approprié.</p>
+
+<pre><code>try
+{
+    string content = File.ReadAllText("chemin/vers/le/fichier.txt");
+    Console.WriteLine(content);
+}
+catch (FileNotFoundException e)
+{
+    Console.WriteLine("Le fichier n'existe pas : " + e.Message);
+}
+</code></pre>
+
+<p>Vous pouvez également utiliser d'autres types d'exceptions, tels que <code>IOException</code> pour gérer les erreurs liées à l'écriture ou à la lecture des fichiers.</p>
+
+<p>Il est recommandé de gérer les exceptions de manière appropriée afin de fournir des messages d'erreur clairs et de prendre les mesures nécessaires pour résoudre les problèmes.</p>
+					<a href="/AI-Learning/c%23/c%23.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

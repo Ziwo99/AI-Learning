@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des exceptions</h2>
+					<a href="/AI-Learning/c%23/c%23.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux exceptions</h2>
+<p>
+Lorsque vous développez des applications en C#, il est important de prendre en compte la gestion des exceptions. Une exception est une erreur qui se produit pendant l'exécution d'un programme et qui peut interrompre son flux normal. Les exceptions peuvent être causées par divers facteurs, tels que des erreurs de syntaxe, des erreurs de logique ou des erreurs d'exécution.
+</p>
+<p>
+En C#, les exceptions sont gérées à l'aide de blocs try-catch. Un bloc try est utilisé pour entourer le code qui peut générer une exception, tandis qu'un bloc catch est utilisé pour capturer et gérer l'exception. Si une exception se produit dans le bloc try, le programme saute immédiatement au bloc catch correspondant et exécute le code à l'intérieur de ce bloc.
+</p>
+<p>
+Voici un exemple de code qui illustre l'utilisation des blocs try-catch pour gérer une exception :
+</p>
+<pre><code>try {
+    // Code susceptible de générer une exception
+} catch (Exception ex) {
+    // Code de gestion de l'exception
+}</code></pre>
+
+<h2>Gestion des exceptions avec try-catch</h2>
+<p>
+Dans la gestion des exceptions, il est important de capturer et de traiter les exceptions de manière appropriée. Lorsque vous utilisez un bloc catch, vous pouvez spécifier le type d'exception que vous souhaitez capturer. Cela vous permet de gérer différents types d'exceptions de manière spécifique.
+</p>
+<p>
+Voici un exemple de code qui illustre la gestion des exceptions avec try-catch en utilisant différents blocs catch pour différents types d'exceptions :
+</p>
+<pre><code>try {
+    // Code susceptible de générer une exception
+} catch (DivideByZeroException ex) {
+    // Code de gestion de l'exception DivideByZeroException
+} catch (FileNotFoundException ex) {
+    // Code de gestion de l'exception FileNotFoundException
+} catch (Exception ex) {
+    // Code de gestion de toutes les autres exceptions
+}</code></pre>
+
+<h2>Utilisation des exceptions personnalisées</h2>
+<p>
+En plus des exceptions prédéfinies dans le langage C#, vous pouvez également créer vos propres exceptions personnalisées. Les exceptions personnalisées sont utiles lorsque vous souhaitez gérer des erreurs spécifiques à votre application.
+</p>
+<p>
+Pour créer une exception personnalisée, vous devez créer une classe qui dérive de la classe Exception. Vous pouvez ajouter des propriétés et des méthodes supplémentaires à votre exception personnalisée pour fournir des informations supplémentaires sur l'erreur.
+</p>
+<p>
+Voici un exemple de code qui illustre la création et l'utilisation d'une exception personnalisée :
+</p>
+<pre><code>public class MonExceptionPersonnalisee : Exception {
+    public MonExceptionPersonnalisee(string message) : base(message) {
+        // Initialisation de la classe de base avec le message d'erreur
+    }
+}
+
+try {
+    // Code susceptible de générer une exception personnalisée
+    throw new MonExceptionPersonnalisee("Une erreur s'est produite !");
+} catch (MonExceptionPersonnalisee ex) {
+    // Code de gestion de l'exception personnalisée
+}</code></pre>
+
+<p>
+Il est important de noter que vous devez utiliser le mot-clé throw pour générer une exception personnalisée. Vous pouvez également ajouter des informations supplémentaires à votre exception en utilisant les propriétés de la classe Exception, telles que Message, InnerException, StackTrace, etc.
+</p>
+
+<p>
+C'était la section 4 sur la gestion des exceptions en C#. Dans cette section, nous avons appris l'importance de la gestion des exceptions, comment utiliser les blocs try-catch pour capturer et gérer les exceptions, ainsi que comment créer et utiliser des exceptions personnalisées. Dans la prochaine section, nous aborderons la manipulation des fichiers et des dossiers en C#.
+</p>
+					<a href="/AI-Learning/c%23/c%23.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

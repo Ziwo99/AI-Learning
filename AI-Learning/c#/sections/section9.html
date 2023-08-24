@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Développement d'applications web avec ASP.NET</h2>
+					<a href="/AI-Learning/c%23/c%23.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à ASP.NET</h2>
+<p>ASP.NET est un framework de développement web créé par Microsoft. Il permet de construire des applications web robustes et évolutives en utilisant le langage de programmation C#. ASP.NET offre une grande flexibilité et de nombreuses fonctionnalités pour le développement d'applications web.</p>
+
+<h2>Création de pages web avec ASP.NET</h2>
+<p>La création de pages web avec ASP.NET se fait en utilisant le modèle de programmation basé sur les pages. Dans ce modèle, chaque page web est représentée par un fichier avec l'extension .aspx. Ce fichier contient du code HTML et du code C# qui est exécuté côté serveur.</p>
+<p>Voici un exemple de code ASP.NET pour une page web simple :</p>
+<pre><code>&lt;%@ Page Language="C#" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Ma première page ASP.NET&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Bienvenue sur ma page ASP.NET&lt;/h1&gt;
+    &lt;p&gt;Cette page a été créée en utilisant ASP.NET.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<h2>Utilisation des contrôles web</h2>
+<p>ASP.NET offre une large gamme de contrôles web qui permettent d'ajouter des fonctionnalités interactives aux pages web. Ces contrôles peuvent être utilisés pour afficher du texte, des images, des formulaires, des boutons, des listes déroulantes, etc.</p>
+<p>Voici un exemple de code ASP.NET utilisant un contrôle de bouton :</p>
+<pre><code>&lt;%@ Page Language="C#" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Utilisation des contrôles web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Utilisation des contrôles web&lt;/h1&gt;
+    &lt;asp:Button ID="btnSubmit" runat="server" Text="Cliquez ici" OnClick="btnSubmit_Click" /&gt;
+    &lt;asp:Label ID="lblMessage" runat="server" /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Dans cet exemple, un bouton est affiché sur la page et lorsqu'il est cliqué, le code C# associé à l'événement OnClick est exécuté.</p>
+
+<h2>Gestion des sessions et des cookies</h2>
+<p>ASP.NET permet de gérer les sessions et les cookies pour stocker des informations spécifiques à un utilisateur. Les sessions permettent de stocker des données côté serveur, tandis que les cookies sont utilisés pour stocker des données côté client.</p>
+<p>Voici un exemple de code ASP.NET pour stocker une valeur dans une session :</p>
+<pre><code>&lt;%@ Page Language="C#" %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Gestion des sessions et des cookies&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Gestion des sessions et des cookies&lt;/h1&gt;
+    &lt;asp:Button ID="btnSetSession" runat="server" Text="Définir la session" OnClick="btnSetSession_Click" /&gt;
+    &lt;asp:Label ID="lblSessionValue" runat="server" /&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Dans cet exemple, lorsque le bouton est cliqué, le code C# associé à l'événement OnClick définit une valeur dans la session. Cette valeur peut ensuite être récupérée et affichée sur la page.</p>
+
+<p>Ce contenu fournit une introduction détaillée à ASP.NET, en couvrant la création de pages web, l'utilisation des contrôles web et la gestion des sessions et des cookies. Il fournit également des exemples de code pour illustrer les concepts clés.
+					<a href="/AI-Learning/c%23/c%23.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
