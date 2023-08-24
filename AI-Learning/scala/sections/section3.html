@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation orientée objet en Scala</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Classes et objets en Scala</h2>
+<p>En Scala, la programmation orientée objet est au cœur du langage. Les classes et les objets sont les éléments fondamentaux de la programmation orientée objet en Scala.</p>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les propriétés et les comportements communs à un ensemble d'objets. Pour créer une classe en Scala, utilisez le mot-clé <code>class</code> suivi du nom de la classe.</p>
+<p>Voici un exemple de déclaration de classe en Scala :</p>
+<pre><code>class Personne(nom: String, age: Int) {
+  def afficherDetails(): Unit = {
+    println("Nom: " + nom)
+    println("Age: " + age)
+  }
+}</code></pre>
+<p>Dans cet exemple, nous avons défini une classe <code>Personne</code> avec deux propriétés : <code>nom</code> de type <code>String</code> et <code>age</code> de type <code>Int</code>. La classe a également une méthode <code>afficherDetails</code> qui affiche les détails de la personne.</p>
+<p>Pour créer un objet à partir d'une classe en Scala, utilisez le mot-clé <code>new</code> suivi du nom de la classe et des arguments appropriés :</p>
+<pre><code>val personne1 = new Personne("Alice", 25)
+personne1.afficherDetails()</code></pre>
+<p>Ce code crée un nouvel objet <code>Personne</code> avec le nom "Alice" et l'âge 25, puis appelle la méthode <code>afficherDetails</code> pour afficher les détails de la personne.</p>
+
+<h2>Héritage et polymorphisme en Scala</h2>
+<p>En Scala, vous pouvez utiliser l'héritage pour créer des classes dérivées à partir d'une classe de base existante. La classe dérivée hérite des propriétés et des comportements de la classe de base.</p>
+<p>Pour définir une classe dérivée en Scala, utilisez le mot-clé <code>extends</code> suivi du nom de la classe de base :</p>
+<pre><code>class Etudiant(nom: String, age: Int, numeroEtudiant: String) extends Personne(nom, age) {
+  def afficherNumeroEtudiant(): Unit = {
+    println("Numéro étudiant: " + numeroEtudiant)
+  }
+}</code></pre>
+<p>Dans cet exemple, nous avons défini une classe <code>Etudiant</code> qui hérite de la classe <code>Personne</code>. La classe <code>Etudiant</code> a une propriété supplémentaire <code>numeroEtudiant</code> et une méthode <code>afficherNumeroEtudiant</code> qui affiche le numéro d'étudiant.</p>
+<p>Le polymorphisme est également pris en charge en Scala. Cela signifie que vous pouvez utiliser une instance d'une classe dérivée là où une instance de la classe de base est attendue.</p>
+<p>Voici un exemple :</p>
+<pre><code>val personne2: Personne = new Etudiant("Bob", 20, "12345")
+personne2.afficherDetails()</code></pre>
+<p>Dans cet exemple, nous avons créé un objet <code>Etudiant</code> et l'avons assigné à une variable de type <code>Personne</code>. Cela est possible car la classe <code>Etudiant</code> hérite de la classe <code>Personne</code>. Nous pouvons ensuite appeler la méthode <code>afficherDetails</code> sur cet objet, qui est en réalité une instance de la classe <code>Etudiant</code>.</p>
+
+<h2>Traits et mixins en Scala</h2>
+<p>En plus de l'héritage, Scala prend en charge les traits, qui sont des unités de code réutilisables qui peuvent être mélangées dans des classes pour ajouter des fonctionnalités supplémentaires.</p>
+<p>Pour définir un trait en Scala, utilisez le mot-clé <code>trait</code> suivi du nom du trait :</p>
+<pre><code>trait Loggable {
+  def log(message: String): Unit = {
+    println("Log: " + message)
+  }
+}</code></pre>
+<p>Dans cet exemple, nous avons défini un trait <code>Loggable</code> avec une méthode <code>log</code> qui affiche un message de journalisation.</p>
+<p>Pour mélanger un trait dans une classe en Scala, utilisez le mot-clé <code>with</code> :</p>
+<pre><code>class Service extends Loggable {
+  def doSomething(): Unit = {
+    log("Doing something...")
+  }
+}</code></pre>
+<p>Dans cet exemple, la classe <code>Service</code> mélange le trait <code>Loggable</code> en utilisant le mot-clé <code>with</code>. Cela signifie que la classe <code>Service</code> a maintenant accès à la méthode <code>log</code> définie dans le trait <code>Loggable</code>.</p>
+
+<h2>Gestion des exceptions en Scala</h2>
+<p>En Scala, vous pouvez gérer les exceptions à l'aide des blocs <code>try</code>, <code>catch</code> et <code>finally</code>.</p>
+<p>Voici un exemple :</p>
+<pre><code>try {
+  // Code susceptible de générer une exception
+  val resultat = 10 / 0
+} catch {
+  case e: ArithmeticException =&gt; println("Erreur de division par zéro")
+} finally {
+  // Code exécuté toujours, qu'il y ait eu une exception ou non
+  println("Fin du bloc try-catch")
+}</code></pre>
+<p>Dans cet exemple, nous essayons de diviser 10 par 0, ce qui génère une exception <code>ArithmeticException</code>. Le bloc <code>catch</code> capture cette exception et affiche un message d'erreur approprié. Le bloc <code>finally</code> est exécuté après le bloc <code>try</code> et le bloc <code>catch</code>, qu'il y ait eu une exception ou non.</p>
+<p>Il est également possible de lancer des exceptions personnalisées en utilisant le mot-clé <code>throw</code>. Voici un exemple :</p>
+<pre><code>def diviser(a: Int, b: Int): Int = {
+  if (b == 0) {
+    throw new IllegalArgumentException("Division par zéro")
+  } else {
+    a / b
+  }
+}</code></pre>
+<p>Dans cet exemple, nous avons défini une fonction <code>diviser</code> qui prend deux entiers en argument. Si le deuxième argument est zéro, nous lançons une exception <code>IllegalArgumentException</code> avec un message d'erreur personnalisé.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

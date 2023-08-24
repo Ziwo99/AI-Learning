@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Intégration avec d'autres technologies</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Utilisation de Scala avec Java</h2>
+<p>
+Scala est compatible avec Java, ce qui signifie que vous pouvez utiliser des bibliothèques Java existantes dans vos projets Scala et vice versa. Scala s'exécute sur la machine virtuelle Java (JVM) et peut interagir de manière transparente avec le code Java. Pour utiliser une bibliothèque Java dans Scala, vous devez simplement importer les classes et les méthodes nécessaires. Voici un exemple de code Scala utilisant une classe Java :
+</p>
+
+<pre><code>
+import java.util.ArrayList
+
+val list = new ArrayList[String]()
+list.add("Hello")
+list.add("World")
+
+for (i &lt;- 0 until list.size()) {
+  println(list.get(i))
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous importons la classe ArrayList du package java.util, puis nous créons une instance de cette classe et ajoutons des éléments à la liste. Ensuite, nous utilisons une boucle for pour parcourir la liste et afficher chaque élément.
+</p>
+
+<h2>Utilisation de Scala avec les bases de données</h2>
+<p>
+Scala offre une intégration transparente avec les bases de données relationnelles grâce à des bibliothèques telles que Slick et Quill. Ces bibliothèques permettent de manipuler les données de la base de données en utilisant une syntaxe Scala expressive et sûre. Voici un exemple d'utilisation de Slick pour interagir avec une base de données SQLite :
+</p>
+
+<pre><code>
+import slick.jdbc.SQLiteProfile.api._
+
+val db = Database.forConfig("sqlite")
+
+case class User(id: Int, name: String)
+
+class Users(tag: Tag) extends Table[User](tag, "users") {
+  def id = column[Int]("id", O.PrimaryKey)
+  def name = column[String]("name")
+  def * = (id, name) &lt;&lt;>>(User.apply, User.unapply)
+}
+
+val users = TableQuery[Users]
+
+val query = users.filter(_.id === 1).result.head
+
+val result = db.run(query)
+
+result.onComplete {
+  case Success(user) => println(user)
+  case Failure(ex) => println("An error occurred: " + ex.getMessage)
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous définissons une classe User qui représente une ligne dans la table "users" de la base de données. Nous définissons également une classe Users qui représente la table elle-même. Ensuite, nous créons une requête pour récupérer l'utilisateur avec l'ID 1 et exécutons la requête en utilisant la méthode db.run(). Enfin, nous traitons le résultat de la requête en utilisant la méthode onComplete() pour afficher l'utilisateur ou gérer les erreurs éventuelles.
+</p>
+
+<h2>Utilisation de Scala avec les frameworks web</h2>
+<p>
+Scala offre une grande variété de frameworks web pour le développement d'applications web. Certains des frameworks les plus populaires sont Play Framework, Akka HTTP et Scalatra. Ces frameworks offrent des fonctionnalités avancées telles que la gestion des routes, la gestion des sessions, la validation des formulaires, etc. Voici un exemple d'utilisation de Play Framework pour créer une application web simple :
+</p>
+
+<pre><code>
+import play.api.mvc._
+
+class HomeController(cc: ControllerComponents) extends AbstractController(cc) {
+  def index() = Action { implicit request: Request[AnyContent] =>
+    Ok("Hello, world!")
+  }
+}
+
+object Routes {
+  def routes: PartialFunction[RequestHeader, Handler] = {
+    case GET(p"/") => HomeController.index()
+  }
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous définissons une classe HomeController qui étend la classe AbstractController de Play Framework. Nous définissons une méthode index() qui renvoie une réponse "Hello, world!" lorsque l'utilisateur accède à la page d'accueil. Ensuite, nous définissons un objet Routes qui définit les routes de notre application. Dans cet exemple, nous avons une seule route qui correspond à l'URL "/" et appelle la méthode index() du HomeController.
+</p>
+
+<p>
+Ces exemples montrent comment Scala peut être utilisé avec différentes technologies pour créer des applications puissantes et flexibles. Que ce soit pour intégrer du code Java existant, interagir avec des bases de données ou développer des applications web, Scala offre une grande variété d'options pour répondre à vos besoins.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
