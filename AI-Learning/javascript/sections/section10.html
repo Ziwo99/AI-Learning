@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Advanced JavaScript Concepts</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Closures and lexical scope</h2>
+<p>
+Closures are an important concept in JavaScript that allow functions to access variables from their outer scope even after the outer function has finished executing. This is possible because JavaScript has lexical scoping, which means that functions are executed in the scope they are defined in, not the scope they are called in.
+
+A closure is created when a function is defined inside another function and the inner function references variables from the outer function. The inner function maintains a reference to the outer function's variables, even after the outer function has returned.
+
+Here's an example of a closure in JavaScript:
+
+<pre><code>function outerFunction() {
+  var outerVariable = 'I am from the outer function';
+
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+
+  return innerFunction;
+}
+
+var closure = outerFunction();
+closure(); // Output: "I am from the outer function"
+</code></pre>
+
+In this example, the inner function `innerFunction` is defined inside the outer function `outerFunction`. The inner function references the `outerVariable` from the outer function. When we call `outerFunction` and assign its return value to the variable `closure`, we create a closure. The closure retains a reference to the `outerVariable`, allowing us to access it even after the `outerFunction` has finished executing.
+
+Closures are commonly used in JavaScript for various purposes, such as creating private variables and implementing data encapsulation. They are a powerful tool for managing scope and creating modular code.
+</p>
+
+<h2>Event delegation and bubbling</h2>
+<p>
+Event delegation and event bubbling are two related concepts in JavaScript that are used to handle events efficiently and reduce the number of event listeners.
+
+Event delegation is a technique where instead of attaching an event listener to each individual element, you attach a single event listener to a parent element that will handle events for its child elements. This is possible because events in JavaScript "bubble" up the DOM tree, meaning that when an event occurs on a child element, it also triggers the same event on its parent elements.
+
+Here's an example of event delegation:
+
+<pre><code>var parentElement = document.getElementById('parent');
+
+parentElement.addEventListener('click', function(event) {
+  if (event.target.classList.contains('child')) {
+    console.log('Child element clicked');
+  }
+});
+</code></pre>
+
+In this example, we have a parent element with the id "parent" and several child elements with the class "child". Instead of attaching a click event listener to each child element, we attach a single click event listener to the parent element. When a child element is clicked, the event bubbles up to the parent element, and we can check if the clicked element has the class "child" using the `event.target` property.
+
+Event bubbling is the mechanism that allows event delegation to work. When an event occurs on an element, it triggers the same event on its parent elements, all the way up to the root element. This allows us to handle events at a higher level in the DOM tree, reducing the number of event listeners and improving performance.
+
+Both event delegation and event bubbling are widely used in JavaScript to handle events efficiently, especially in situations where there are many dynamically created elements or elements with similar behavior.
+</p>
+
+<h2>Regular expressions</h2>
+<p>
+Regular expressions, often referred to as regex or regexp, are powerful patterns used to match and manipulate text in JavaScript. They provide a concise and flexible way to search, replace, and validate strings based on specific patterns.
+
+A regular expression is defined using a combination of characters and special symbols that represent the pattern you want to match. Here are some common symbols used in regular expressions:
+
+- `.`: Matches any single character except a newline.
+- `*`: Matches zero or more occurrences of the preceding character or group.
+- `+`: Matches one or more occurrences of the preceding character or group.
+- `?`: Matches zero or one occurrence of the preceding character or group.
+- `[]`: Matches any single character within the brackets.
+- `^`: Matches the beginning of a string.
+- `$`: Matches the end of a string.
+- `|`: Matches either the expression before or after the pipe symbol.
+- `\`: Escapes a special character.
+
+Here's an example of using a regular expression in JavaScript:
+
+<pre><code>var pattern = /hello/i;
+var str = 'Hello, world!';
+
+console.log(pattern.test(str)); // Output: true
+console.log(str.match(pattern)); // Output: ["Hello", index: 0, input: "Hello, world!", groups: undefined]
+</code></pre>
+
+In this example, we define a regular expression pattern `/hello/i` that matches the word "hello" case-insensitively. We then use the `test` method to check if the pattern matches the string `str`, and the `match` method to find all occurrences of the pattern in the string.
+
+Regular expressions are widely used in JavaScript for tasks such as form validation, string manipulation, and data extraction. They can be complex and require some practice to master, but they are a powerful tool for working with text.
+</p>
+
+<h2>Functional programming concepts in JavaScript</h2>
+<p>
+Functional programming is a programming paradigm that emphasizes the use of pure functions and immutable data. In JavaScript, functional programming concepts can be applied using higher-order functions, closures, and other language features.
+
+Here are some key concepts of functional programming in JavaScript:
+
+1. Pure functions: Pure functions are functions that always produce the same output for the same input and have no side effects. They don't modify external state or rely on external state. Pure functions are predictable and easier to test and reason about.
+
+2. Immutability: Immutability means that once a value is created, it cannot be changed. In JavaScript, primitive values like numbers and strings are immutable, but objects and arrays are mutable. To achieve immutability with objects and arrays, you can use techniques like object spread syntax or array methods that return new arrays.
+
+3. Higher-order functions: Higher-order functions are functions that take one or more functions as arguments or return a function as a result. They enable you to write reusable and composable code by abstracting common patterns.
+
+4. Function composition: Function composition is the process of combining multiple functions to create a new function. It allows you to build complex functionality by chaining together simple functions.
+
+5. Recursion: Recursion is a technique where a function calls itself to solve a problem. It is often used in functional programming to solve problems that can be divided into smaller subproblems.
+
+Functional programming concepts can lead to code that is more modular, reusable, and easier to reason about. They are particularly useful when working with asynchronous operations, data transformations, and complex logic.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

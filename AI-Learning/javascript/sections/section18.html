@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 18: JavaScript for Data Visualization</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to data visualization with JavaScript</h2>
+<p>Data visualization is the process of representing data in a visual format, such as charts, graphs, or maps, to help understand patterns, trends, and relationships within the data. JavaScript provides powerful tools and libraries for creating interactive and dynamic data visualizations on the web.</p>
+
+<h2>Using libraries like D3.js or Chart.js for data visualization</h2>
+<p>There are several popular JavaScript libraries available for data visualization, including D3.js and Chart.js.</p>
+<p>D3.js (Data-Driven Documents) is a powerful library that allows you to create custom data visualizations using HTML, SVG, and CSS. It provides a wide range of functions for manipulating data and creating interactive visualizations.</p>
+<p>Chart.js is a simpler library that focuses on creating responsive and customizable charts, such as bar charts, line charts, and pie charts. It provides an easy-to-use API for creating and styling charts with minimal code.</p>
+
+<h2>Creating interactive charts and graphs</h2>
+<p>JavaScript libraries like D3.js and Chart.js allow you to create interactive charts and graphs that respond to user interactions. You can add tooltips, animations, and interactivity to your visualizations to enhance the user experience.</p>
+<p>For example, you can create a bar chart that displays sales data for different products. When the user hovers over a bar, a tooltip can appear showing the exact sales value. You can also add animations to the chart to make it more engaging and visually appealing.</p>
+
+<pre><code>// Example using D3.js
+const data = [10, 20, 30, 40, 50];
+
+const svg = d3.select("body")
+  .append("svg")
+  .attr("width", 500)
+  .attr("height", 300);
+
+svg.selectAll("rect")
+  .data(data)
+  .enter()
+  .append("rect")
+  .attr("x", (d, i) => i * 50)
+  .attr("y", (d) => 300 - d)
+  .attr("width", 40)
+  .attr("height", (d) => d)
+  .attr("fill", "blue");
+
+// Example using Chart.js
+const ctx = document.getElementById('myChart').getContext('2d');
+const myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+</code></pre>
+
+<p>In the above examples, we create a simple bar chart using D3.js and Chart.js. The D3.js example uses SVG elements to draw the bars, while the Chart.js example uses the HTML canvas element. Both libraries provide a wide range of customization options to create visually appealing and interactive data visualizations.</p>
+
+<p>By using these libraries, you can easily create data visualizations that effectively communicate complex information and insights to your users.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

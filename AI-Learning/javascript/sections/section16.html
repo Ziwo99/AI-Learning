@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 16: JavaScript for Mobile and Desktop Applications</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to JavaScript frameworks for mobile and desktop apps</h2>
+<p>
+JavaScript frameworks have revolutionized the way we build mobile and desktop applications. These frameworks provide developers with a set of tools and libraries that simplify the development process and allow for the creation of powerful and feature-rich applications.
+</p>
+<p>
+Some popular JavaScript frameworks for mobile app development include React Native, Ionic, and NativeScript. These frameworks allow developers to build cross-platform applications using a single codebase, which can be a huge time and cost saver. They provide access to native device features and APIs, allowing for the creation of high-performance and native-like applications.
+</p>
+<p>
+For desktop app development, Electron is a widely used JavaScript framework. Electron allows developers to build desktop applications using web technologies such as HTML, CSS, and JavaScript. It provides a powerful runtime environment that enables the creation of cross-platform desktop applications that can run on Windows, macOS, and Linux.
+</p>
+
+<h2>React Native for mobile app development</h2>
+<p>
+React Native is a popular JavaScript framework for building mobile applications. It allows developers to build native mobile apps using JavaScript and React, a popular JavaScript library for building user interfaces. React Native uses native components, which makes the resulting applications indistinguishable from those built using traditional native development tools.
+</p>
+<p>
+With React Native, developers can write code once and deploy it on both iOS and Android platforms. This significantly reduces development time and effort, as there is no need to write separate codebases for each platform. React Native also provides access to native device features and APIs, allowing developers to create highly performant and feature-rich applications.
+</p>
+<pre><code>import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello, React Native!</Text>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});
+
+export default App;</code></pre>
+
+<h2>Electron for desktop app development</h2>
+<p>
+Electron is a popular JavaScript framework for building desktop applications. It allows developers to use web technologies such as HTML, CSS, and JavaScript to build cross-platform desktop applications. Electron combines the power of Chromium and Node.js, providing a runtime environment that enables the creation of native-like desktop applications.
+</p>
+<p>
+With Electron, developers can leverage their existing web development skills to build desktop applications. They can use popular web frameworks and libraries such as React, Angular, or Vue.js to create the user interface of their applications. Electron also provides access to native APIs, allowing developers to interact with the underlying operating system and create applications with rich functionality.
+</p>
+<pre><code>const { app, BrowserWindow } = require('electron');
+
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
+
+  win.loadFile('index.html');
+}
+
+app.whenReady().then(() => {
+  createWindow();
+
+  app.on('activate', function () {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
+});
+
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit();
+});</code></pre>
+
+<p>
+In this example, we create a simple Electron application that opens a window and loads an HTML file. The application is configured to use Node.js integration, allowing us to use Node.js modules and APIs in our application.
+</p>
+
+<p>
+That concludes the content for Section 16: JavaScript for Mobile and Desktop Applications. In this section, we covered the introduction to JavaScript frameworks for mobile and desktop apps, including React Native for mobile app development and Electron for desktop app development. These frameworks provide developers with powerful tools to build cross-platform applications using JavaScript and web technologies.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

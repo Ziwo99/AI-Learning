@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 25: JavaScript for Web Animation</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<section>
+  
+
+  <h2>Introduction to web animation with JavaScript</h2>
+  <p>
+    Web animation is a powerful tool that allows developers to bring websites to life by adding motion and interactivity. With JavaScript, you can create dynamic animations that respond to user interactions, enhance user experience, and make your website more engaging.
+  </p>
+  <p>
+    JavaScript provides various APIs and libraries that simplify the process of creating animations. These animations can be applied to different elements on a webpage, such as text, images, buttons, and more. By manipulating CSS properties and using JavaScript functions, you can control the timing, duration, and effects of animations.
+  </p>
+
+  <h2>Using CSS animations and transitions</h2>
+  <p>
+    CSS animations and transitions are two popular techniques for creating web animations. CSS animations allow you to define keyframes and specify how an element should change over time. Transitions, on the other hand, enable smooth changes in CSS properties when triggered by events like hover or click.
+  </p>
+  <p>
+    To create CSS animations, you can use the <code>@keyframes</code> rule to define the animation steps and then apply the animation to an element using the <code>animation</code> property. Transitions can be applied using the <code>transition</code> property, specifying the CSS properties to transition and the duration of the transition.
+  </p>
+  <pre><code>
+    /* CSS animation example */
+    @keyframes slide-in {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    .box {
+      animation: slide-in 1s ease-in-out;
+    }
+
+    /* CSS transition example */
+    .button {
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #ff0000;
+    }
+  </code></pre>
+
+  <h2>Creating dynamic animations with JavaScript libraries like GSAP</h2>
+  <p>
+    GreenSock Animation Platform (GSAP) is a popular JavaScript library for creating high-performance animations. It provides a wide range of features and effects that can be easily applied to HTML elements. GSAP allows you to control animations with precision, create complex timelines, and add advanced effects like easing, staggering, and morphing.
+  </p>
+  <p>
+    To use GSAP, you need to include the library in your project by adding the script tag to your HTML file. Once included, you can use GSAP's API to create animations by targeting elements, specifying properties to animate, and defining the duration and easing of the animation.
+  </p>
+  <pre><code>
+    // GSAP animation example
+    gsap.to('.box', { x: 200, rotation: 360, duration: 1, ease: 'power2.out' });
+
+    // GSAP timeline example
+    const timeline = gsap.timeline();
+    timeline.to('.element', { opacity: 0, duration: 0.5 })
+            .to('.element', { x: 100, duration: 1, ease: 'bounce' })
+            .to('.element', { scale: 2, duration: 0.5 });
+  </code></pre>
+
+</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

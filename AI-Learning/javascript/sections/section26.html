@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 26: JavaScript for Web Scraping</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to web scraping with JavaScript</h2>
+<p>Web scraping is the process of extracting data from websites. It allows you to gather information from various sources on the internet and use it for analysis, research, or any other purpose. JavaScript is a powerful language that can be used for web scraping due to its ability to manipulate web pages and interact with their content.</p>
+
+<h2>Using libraries like Puppeteer or Cheerio for web scraping</h2>
+<p>There are several JavaScript libraries available for web scraping, such as Puppeteer and Cheerio. Puppeteer is a Node.js library that provides a high-level API for controlling headless Chrome or Chromium browsers. It allows you to automate tasks like clicking buttons, filling forms, and navigating through web pages. Cheerio, on the other hand, is a lightweight library that provides jQuery-like syntax for parsing and manipulating HTML and XML documents. It is particularly useful for scraping static web pages.</p>
+
+<h2>Extracting and manipulating data from websites</h2>
+<p>Once you have fetched a web page using a library like Puppeteer or Cheerio, you can extract and manipulate data from it using JavaScript. You can use CSS selectors or XPath expressions to select specific elements on the page and retrieve their content. For example, you can extract the text of a heading or the value of an input field. Additionally, you can modify the content of the web page by adding, removing, or modifying elements.</p>
+
+<p>Here's an example of how you can extract data from a web page using Puppeteer:</p>
+
+<pre><code>const puppeteer = require('puppeteer');
+
+(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto('https://www.example.com');
+  
+  const title = await page.$eval('h1', element => element.textContent);
+  console.log(title);
+  
+  await browser.close();
+})();
+</code></pre>
+
+<p>In this example, we use Puppeteer to launch a headless browser, navigate to a web page, and extract the text content of the first <code>&lt;h1&gt;</code> element on the page. The extracted title is then logged to the console.</p>
+
+<p>It's important to note that web scraping should be done responsibly and in accordance with the website's terms of service. Make sure to respect the website's robots.txt file and avoid overloading the server with too many requests.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

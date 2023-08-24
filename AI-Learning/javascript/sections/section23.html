@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 23: JavaScript for Web Performance</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to web performance optimization</h2>
+<p>
+Web performance optimization is the process of improving the speed and efficiency of web applications. It involves optimizing various aspects of a website, such as loading time, rendering speed, and overall responsiveness. By optimizing web performance, you can enhance user experience, increase conversion rates, and improve search engine rankings.
+</p>
+
+<h2>Minification and compression techniques for JavaScript</h2>
+<p>
+Minification and compression are techniques used to reduce the size of JavaScript files, resulting in faster loading times. Minification involves removing unnecessary characters, such as white spaces, line breaks, and comments, from the code. Compression, on the other hand, involves compressing the code using algorithms like Gzip or Brotli to further reduce its size.
+</p>
+<p>
+Here's an example of minified JavaScript code:
+</p>
+<pre><code>var x=5;function double(n){return n*2;}console.log(double(x));</code></pre>
+
+<h2>Lazy loading and caching strategies for improved performance</h2>
+<p>
+Lazy loading is a technique that defers the loading of non-critical resources, such as images or scripts, until they are needed. This can significantly improve initial page load times. Caching, on the other hand, involves storing frequently accessed resources, such as images or CSS files, in the browser's cache. This allows subsequent page loads to be faster as the resources can be retrieved from the cache instead of the server.
+</p>
+<p>
+Here's an example of lazy loading images using the "loading" attribute:
+</p>
+<pre><code>&lt;img src="image.jpg" alt="Image" loading="lazy"&gt;</code></pre>
+<p>
+And here's an example of setting cache headers in JavaScript to enable caching:
+</p>
+<pre><code>app.get('/image.jpg', function(req, res) {
+  res.setHeader('Cache-Control', 'public, max-age=86400'); // Cache for 24 hours
+  res.sendFile(__dirname + '/image.jpg');
+});</code></pre>
+
+<p>
+By implementing these techniques, you can significantly improve the performance of your web applications, resulting in faster loading times and a better user experience.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

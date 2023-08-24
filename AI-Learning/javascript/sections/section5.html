@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: JavaScript Objects</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Object-oriented programming in JavaScript</h2>
+<p>
+Object-oriented programming (OOP) is a programming paradigm that allows developers to organize and structure their code by creating objects that encapsulate data and behavior. JavaScript supports object-oriented programming through its prototype-based inheritance model.
+</p>
+<p>
+In JavaScript, objects are created using the <code>Object</code> constructor function or object literal notation. The properties and methods of an object can be accessed using dot notation or bracket notation.
+</p>
+<pre><code>const person = {
+  name: 'John',
+  age: 30,
+  greet: function() {
+    console.log('Hello, my name is ' + this.name);
+  }
+};
+
+console.log(person.name); // Output: John
+console.log(person['age']); // Output: 30
+person.greet(); // Output: Hello, my name is John
+</code></pre>
+
+<h2>Creating and using objects</h2>
+<p>
+In JavaScript, objects can be created using the <code>new</code> keyword and a constructor function. Constructor functions are used to define the properties and methods of an object. The <code>this</code> keyword refers to the current instance of the object being created.
+</p>
+<pre><code>function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function() {
+  console.log('Hello, my name is ' + this.name);
+};
+
+const person = new Person('John', 30);
+console.log(person.name); // Output: John
+console.log(person.age); // Output: 30
+person.greet(); // Output: Hello, my name is John
+</code></pre>
+
+<h2>Prototypes and inheritance</h2>
+<p>
+In JavaScript, objects can inherit properties and methods from other objects through prototypes. Prototypes are a way to share common functionality between objects. When a property or method is accessed on an object, JavaScript will first look for it on the object itself, and if not found, it will look for it in the object's prototype chain.
+</p>
+<pre><code>function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function() {
+  console.log('Hello, my name is ' + this.name);
+};
+
+function Employee(name, age, job) {
+  Person.call(this, name, age);
+  this.job = job;
+}
+
+Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
+
+Employee.prototype.work = function() {
+  console.log('Working as a ' + this.job);
+};
+
+const employee = new Employee('John', 30, 'developer');
+console.log(employee.name); // Output: John
+console.log(employee.age); // Output: 30
+console.log(employee.job); // Output: developer
+employee.greet(); // Output: Hello, my name is John
+employee.work(); // Output: Working as a developer
+</code></pre>
+
+<h2>Object methods and properties</h2>
+<p>
+JavaScript objects can have methods and properties. Methods are functions that are associated with an object and can be called on that object. Properties are values associated with an object.
+</p>
+<pre><code>const person = {
+  name: 'John',
+  age: 30,
+  greet: function() {
+    console.log('Hello, my name is ' + this.name);
+  }
+};
+
+console.log(person.hasOwnProperty('name')); // Output: true
+console.log(person.hasOwnProperty('greet')); // Output: true
+console.log(Object.keys(person)); // Output: ['name', 'age', 'greet']
+</code></pre>
+
+<p>
+In the example above, the <code>hasOwnProperty()</code> method is used to check if an object has a specific property. The <code>Object.keys()</code> method is used to retrieve an array of an object's own enumerable properties.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

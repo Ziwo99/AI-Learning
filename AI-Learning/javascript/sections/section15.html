@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 15: JavaScript Deployment and Build Tools</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Building and bundling JavaScript applications</h2>
+<p>Building and bundling JavaScript applications is an essential step in the deployment process. It involves combining multiple JavaScript files into a single file, optimizing the code, and preparing it for production use. This process helps reduce the number of HTTP requests and improves the overall performance of the application.</p>
+
+<p>One popular tool for building and bundling JavaScript applications is <strong>Webpack</strong>. Webpack allows you to define an entry point for your application and automatically resolves dependencies between modules. It can handle various file types, including JavaScript, CSS, and images, and optimize them for production.</p>
+
+<p>Here's an example of a basic Webpack configuration file:</p>
+
+<pre><code>const path = require('path');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: 'file-loader',
+      },
+    ],
+  },
+};
+</code></pre>
+
+<p>In this example, the entry point of the application is defined as './src/index.js', and the bundled JavaScript file will be outputted to the 'dist' directory with the name 'bundle.js'. The 'module' section defines rules for handling different file types, such as JavaScript files using Babel for transpilation, CSS files using style-loader and css-loader, and image files using file-loader.</p>
+
+<h2>Task runners and build automation tools</h2>
+<p>Task runners and build automation tools help streamline the development and deployment process by automating repetitive tasks, such as minification, linting, and running tests. They allow developers to define custom workflows and execute them with a single command.</p>
+
+<p>One popular task runner is <strong>Grunt</strong>. Grunt uses a configuration file to define tasks and their associated plugins. It provides a wide range of plugins for tasks like concatenation, minification, and code quality checking.</p>
+
+<p>Here's an example of a Grunt configuration file:</p>
+
+<pre><code>module.exports = function(grunt) {
+  grunt.initConfig({
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: ['src/*.js'],
+        dest: 'dist/bundle.js',
+      },
+    },
+    uglify: {
+      dist: {
+        src: 'dist/bundle.js',
+        dest: 'dist/bundle.min.js',
+      },
+    },
+    jshint: {
+      files: ['src/*.js'],
+    },
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  grunt.registerTask('default', ['concat', 'uglify', 'jshint']);
+};
+</code></pre>
+
+<p>In this example, the 'concat' task concatenates all JavaScript files in the 'src' directory into a single file named 'bundle.js' in the 'dist' directory. The 'uglify' task then minifies the 'bundle.js' file and outputs it as 'bundle.min.js'. The 'jshint' task checks the code quality of all JavaScript files in the 'src' directory.</p>
+
+<h2>Continuous integration and deployment</h2>
+<p>Continuous integration (CI) and deployment (CD) are practices that involve automatically building, testing, and deploying code changes to production environments. They help ensure that the application is always in a releasable state and reduce the risk of introducing bugs or errors.</p>
+
+<p>One popular CI/CD tool is <strong>Jenkins</strong>. Jenkins allows you to define pipelines that automate the entire software delivery process, from building and testing to deployment. It integrates with version control systems, build tools, and deployment platforms, making it a powerful tool for managing the deployment of JavaScript applications.</p>
+
+<p>Here's an example of a Jenkins pipeline for a JavaScript application:</p>
+
+<pre><code>pipeline {
+  agent any
+
+  stages {
+    stage('Build') {
+      steps {
+        sh 'npm install'
+        sh 'npm run build'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm run test'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'npm run deploy'
+      }
+    }
+  }
+}
+</code></pre>
+
+<p>In this example, the pipeline consists of three stages: 'Build', 'Test', and 'Deploy'. In the 'Build' stage, the necessary dependencies are installed using npm and the application is built using the 'build' script defined in the package.json file. In the 'Test' stage, the application is tested using the 'test' script. Finally, in the 'Deploy' stage, the application is deployed using the 'deploy' script.</p>
+
+<p>By setting up a CI/CD pipeline, developers can automate the deployment process and ensure that changes are thoroughly tested before being deployed to production.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

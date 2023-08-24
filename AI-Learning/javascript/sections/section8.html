@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: JavaScript Modules and Libraries</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to JavaScript modules</h2>
+<p>
+JavaScript modules are a way to organize and structure your code by separating it into smaller, reusable pieces. Modules allow you to encapsulate related functionality, making your code more maintainable and easier to understand. They also promote code reusability and help prevent naming conflicts between different parts of your application.
+</p>
+<p>
+In JavaScript, modules can be created using the <code>export</code> and <code>import</code> keywords. The <code>export</code> keyword is used to expose functions, variables, or objects from a module, while the <code>import</code> keyword is used to import those exported entities into another module.
+</p>
+<p>
+Here's an example of exporting and importing a function from a module:
+</p>
+<pre><code>// math.js
+export function add(a, b) {
+  return a + b;
+}
+
+// main.js
+import { add } from './math.js';
+
+console.log(add(2, 3)); // Output: 5
+</code></pre>
+
+<h2>Using third-party libraries and frameworks</h2>
+<p>
+JavaScript offers a wide range of third-party libraries and frameworks that can greatly simplify and enhance your development process. These libraries and frameworks provide pre-built functions, components, and tools that you can use to speed up your development and add advanced functionality to your applications.
+</p>
+<p>
+Some popular JavaScript libraries and frameworks include:
+</p>
+<ul>
+  <li>React.js: A JavaScript library for building user interfaces, particularly for single-page applications.</li>
+  <li>Angular: A full-featured framework for building web applications, developed and maintained by Google.</li>
+  <li>Vue.js: A progressive JavaScript framework for building user interfaces, known for its simplicity and flexibility.</li>
+  <li>jQuery: A fast, small, and feature-rich JavaScript library that simplifies HTML document traversal and manipulation, event handling, and animation.</li>
+</ul>
+<p>
+To use a third-party library or framework, you typically need to include its JavaScript file in your HTML document using the <code>&lt;script&gt;</code> tag. You can then access the library's functions and components in your JavaScript code.
+</p>
+<p>
+Here's an example of including the jQuery library in an HTML document:
+</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    // You can now use jQuery functions here
+    $('h1').text('Hello, jQuery!');
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<h2>Common JavaScript libraries and their usage</h2>
+<p>
+There are numerous JavaScript libraries available, each with its own specific purpose and usage. Here are some commonly used JavaScript libraries and their typical use cases:
+</p>
+<ul>
+  <li><strong>Lodash:</strong> A utility library that provides helpful functions for manipulating arrays, objects, strings, and more.</li>
+  <li><strong>Moment.js:</strong> A library for parsing, validating, manipulating, and formatting dates and times.</li>
+  <li><strong>axios:</strong> A promise-based HTTP client for making asynchronous HTTP requests.</li>
+  <li><strong>Chart.js:</strong> A simple yet flexible JavaScript charting library for creating interactive and responsive charts.</li>
+  <li><strong>Bootstrap:</strong> A popular CSS framework that provides pre-built components and styles for building responsive web pages.</li>
+</ul>
+<p>
+To use these libraries, you typically need to include their JavaScript files in your HTML document and follow their respective documentation for usage instructions.
+</p>
+
+<p>
+Here's an example of using the Lodash library to filter an array of numbers:
+</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script&gt;
+    const numbers = [1, 2, 3, 4, 5];
+    const evenNumbers = _.filter(numbers, (num) =&gt; num % 2 === 0);
+    console.log(evenNumbers); // Output: [2, 4]
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+Remember to always refer to the official documentation of the libraries you are using for detailed usage instructions and examples.
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: JavaScript Functions</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Function declaration and expression</h2>
+<p>
+A function in JavaScript is a block of code that can be executed when called. There are two ways to define a function: function declaration and function expression.
+</p>
+
+<p>
+<b>Function declaration:</b> A function declaration starts with the keyword "function" followed by the name of the function and a pair of parentheses. The code block of the function is enclosed in curly braces.
+</p>
+
+<pre><code>function greet() {
+    console.log("Hello, world!");
+}
+
+greet(); // Output: Hello, world!
+</code></pre>
+
+<p>
+<b>Function expression:</b> A function expression is similar to a function declaration, but the function is assigned to a variable. It can be anonymous or have a name.
+</p>
+
+<pre><code>var greet = function() {
+    console.log("Hello, world!");
+};
+
+greet(); // Output: Hello, world!
+</code></pre>
+
+<h2>Function parameters and arguments</h2>
+<p>
+Functions can accept parameters, which are variables listed in the function's parentheses. These parameters act as placeholders for values that will be passed to the function when it is called. Arguments, on the other hand, are the actual values passed to the function.
+</p>
+
+<pre><code>function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("John"); // Output: Hello, John!
+</code></pre>
+
+<p>
+In the example above, the parameter "name" is defined in the function declaration. When the function is called with the argument "John", the value of "name" is set to "John" within the function's code block.
+</p>
+
+<h2>Return statements and function scope</h2>
+<p>
+The return statement is used to specify the value that a function should return. It is followed by an expression or a value that will be returned when the function is called. The return statement also ends the execution of the function.
+</p>
+
+<pre><code>function add(a, b) {
+    return a + b;
+}
+
+var result = add(3, 5);
+console.log(result); // Output: 8
+</code></pre>
+
+<p>
+In the example above, the function "add" takes two parameters, "a" and "b", and returns their sum. The return statement is used to pass the result back to the caller.
+</p>
+
+<p>
+Function scope refers to the visibility and accessibility of variables within a function. Variables declared inside a function are only accessible within that function, unless they are explicitly returned or assigned to a variable outside the function.
+</p>
+
+<pre><code>function multiply(a, b) {
+    var result = a * b;
+    return result;
+}
+
+var product = multiply(2, 4);
+console.log(result); // Output: ReferenceError: result is not defined
+</code></pre>
+
+<p>
+In the example above, the variable "result" is declared inside the "multiply" function and is not accessible outside of it. Trying to access it outside the function will result in a ReferenceError.
+</p>
+
+<h2>Higher-order functions and callbacks</h2>
+<p>
+In JavaScript, functions can be assigned to variables, passed as arguments to other functions, and returned from other functions. Functions that accept other functions as arguments or return functions are called higher-order functions.
+</p>
+
+<pre><code>function doSomething(callback) {
+    console.log("Doing something...");
+    callback();
+}
+
+function sayHello() {
+    console.log("Hello!");
+}
+
+doSomething(sayHello); // Output: Doing something... Hello!
+</code></pre>
+
+<p>
+In the example above, the function "doSomething" accepts a callback function as an argument and calls it within its code block. The function "sayHello" is passed as the callback, so it is executed when "doSomething" is called.
+</p>
+
+<p>
+Callbacks are commonly used in asynchronous programming to handle the completion of an operation or to perform an action after a certain event occurs.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 14: JavaScript Testing</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to JavaScript testing</h2>
+<p>
+JavaScript testing is an essential part of the development process. It helps ensure that your code works as expected and reduces the likelihood of introducing bugs or errors. Testing involves running your code through a series of tests to verify its functionality and identify any issues.
+</p>
+<p>
+There are different types of tests you can perform in JavaScript, including unit testing and integration testing. Unit testing focuses on testing individual units or components of your code, while integration testing checks how different components work together.
+</p>
+<p>
+By writing tests for your JavaScript code, you can catch errors early on and have confidence in the reliability of your application. In this section, we will explore different testing frameworks and techniques commonly used in JavaScript development.
+</p>
+
+<h2>Unit testing with frameworks like Jest or Mocha</h2>
+<p>
+Unit testing is a method of testing individual units or components of your code in isolation. It involves writing test cases that cover different scenarios and expected outcomes. Unit tests are typically written by developers and are executed frequently during the development process.
+</p>
+<p>
+There are several popular JavaScript testing frameworks available, such as Jest and Mocha. These frameworks provide a set of tools and utilities to write and run unit tests effectively. They offer features like test runners, assertion libraries, and mocking capabilities.
+</p>
+<p>
+Jest is a widely used testing framework developed by Facebook. It provides a simple and intuitive API for writing tests and comes with built-in code coverage reporting. Mocha, on the other hand, is a flexible testing framework that allows you to choose your preferred assertion library and test runner.
+</p>
+<p>
+To write unit tests with Jest or Mocha, you need to define test cases using functions or test suites. Each test case should cover a specific aspect of your code and include assertions to verify the expected behavior. You can use various assertion methods provided by the testing framework to compare actual and expected values.
+</p>
+<pre><code>const sum = (a, b) => a + b;
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+</code></pre>
+
+<h2>Integration testing with frameworks like Cypress or Selenium</h2>
+<p>
+Integration testing focuses on testing how different components of your application work together. It ensures that the interactions between various parts of your code function correctly and produce the expected results. Integration tests are typically written to simulate real-world scenarios and cover end-to-end functionality.
+</p>
+<p>
+Cypress and Selenium are popular frameworks used for integration testing in JavaScript. Cypress provides a comprehensive set of tools for end-to-end testing, including a powerful test runner, automatic waiting, and real-time reloading. Selenium, on the other hand, is a widely adopted framework for browser automation and supports multiple programming languages.
+</p>
+<p>
+To write integration tests with Cypress or Selenium, you need to define test cases that simulate user interactions and verify the expected outcomes. These frameworks allow you to interact with your application in a browser-like environment and perform actions like clicking buttons, filling forms, and navigating between pages. You can then use assertions to check if the application behaves as intended.
+</p>
+<pre><code>describe('Login functionality', () => {
+  it('should log in successfully', () => {
+    cy.visit('/login');
+    cy.get('input[name="username"]').type('testuser');
+    cy.get('input[name="password"]').type('password');
+    cy.get('button[type="submit"]').click();
+    cy.url().should('include', '/dashboard');
+  });
+});
+</code></pre>
+
+<p>
+In this section, we have explored the importance of JavaScript testing and introduced two popular testing frameworks: Jest and Mocha for unit testing, and Cypress and Selenium for integration testing. These frameworks provide powerful tools and utilities to write and execute tests effectively. By incorporating testing into your development process, you can ensure the reliability and functionality of your JavaScript applications.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

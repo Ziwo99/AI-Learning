@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 22: JavaScript for Web Security</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to web security and common vulnerabilities</h2>
+<p>
+Web security is a crucial aspect of developing JavaScript applications. It involves protecting your application and its users from various threats and vulnerabilities. By understanding common vulnerabilities, you can implement effective security measures to safeguard your application.
+</p>
+
+<p>
+Some common web security vulnerabilities include:
+</p>
+
+<ul>
+  <li>Cross-Site Scripting (XSS): This vulnerability allows attackers to inject malicious scripts into web pages viewed by users. It can lead to unauthorized access, data theft, and other malicious activities.</li>
+  <li>Cross-Site Request Forgery (CSRF): CSRF attacks trick users into performing unwanted actions on a website without their consent. Attackers can exploit the trust between a user and a website to perform malicious actions on behalf of the user.</li>
+  <li>SQL Injection: This vulnerability occurs when an attacker inserts malicious SQL statements into a web application's database query. It can lead to unauthorized access, data manipulation, and even data loss.</li>
+  <li>Clickjacking: Clickjacking involves tricking users into clicking on hidden or disguised elements on a web page. Attackers can use this technique to perform actions without the user's knowledge or consent.</li>
+  <li>Session Hijacking: Session hijacking occurs when an attacker gains unauthorized access to a user's session. This can lead to identity theft, unauthorized access to sensitive information, and other malicious activities.</li>
+</ul>
+
+<h2>Implementing secure coding practices in JavaScript</h2>
+<p>
+To ensure web security, it is essential to follow secure coding practices when writing JavaScript code. Here are some best practices to consider:
+</p>
+
+<ul>
+  <li>Validate and sanitize user input: Always validate and sanitize user input to prevent XSS and SQL injection attacks. Use input validation techniques and sanitize user input before using it in your application.</li>
+  <li>Use parameterized queries: When interacting with databases, use parameterized queries or prepared statements to prevent SQL injection attacks. Parameterized queries separate SQL code from user input, making it safer.</li>
+  <li>Implement proper authentication and authorization: Use secure authentication mechanisms, such as hashing and salting passwords, to protect user credentials. Implement authorization checks to ensure that users have the necessary permissions to access certain resources.</li>
+  <li>Keep software and libraries up to date: Regularly update your JavaScript libraries and frameworks to benefit from security patches and bug fixes. Outdated software can have known vulnerabilities that attackers can exploit.</li>
+  <li>Use HTTPS: Always use HTTPS to encrypt data transmitted between the client and the server. HTTPS ensures that data remains confidential and prevents man-in-the-middle attacks.</li>
+  <li>Implement access controls: Restrict access to sensitive resources and functionalities based on user roles and permissions. Implement proper access controls to prevent unauthorized access to critical parts of your application.</li>
+</ul>
+
+<h2>Protecting against cross-site scripting (XSS) and cross-site request forgery (CSRF)</h2>
+<p>
+To protect against XSS and CSRF attacks, you can implement the following measures:
+</p>
+
+<h3>Cross-Site Scripting (XSS) prevention techniques:</h3>
+<ul>
+  <li>Use proper input validation and sanitization techniques to prevent malicious scripts from being executed.</li>
+  <li>Encode user input before displaying it on web pages to prevent script execution.</li>
+  <li>Implement Content Security Policy (CSP) to restrict the types of content that can be loaded on a web page.</li>
+  <li>Use HTTP-only cookies to prevent client-side scripts from accessing sensitive information stored in cookies.</li>
+</ul>
+
+<h3>Cross-Site Request Forgery (CSRF) prevention techniques:</h3>
+<ul>
+  <li>Implement anti-CSRF tokens in your web forms to validate the origin of requests.</li>
+  <li>Use the SameSite attribute for cookies to restrict their usage to same-site requests.</li>
+  <li>Verify the Referer header in server-side code to ensure that requests originate from trusted sources.</li>
+  <li>Implement CAPTCHAs or other challenge-response mechanisms to prevent automated CSRF attacks.</li>
+</ul>
+
+<p>
+By implementing these techniques, you can significantly reduce the risk of XSS and CSRF attacks in your JavaScript applications.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

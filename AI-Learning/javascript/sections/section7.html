@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Error Handling and Debugging</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Common JavaScript errors and debugging techniques</h2>
+<p>When working with JavaScript, it's common to encounter errors. Understanding the most common types of errors and knowing how to debug them is essential for effective development. Here are some common JavaScript errors and techniques for debugging:</p>
+
+<p><strong>Syntax Errors:</strong> These errors occur when the code violates the language's syntax rules. They are often caused by missing or misplaced characters, such as missing parentheses or semicolons. To debug syntax errors, carefully review the code and check for any syntax mistakes.</p>
+
+<p><strong>Reference Errors:</strong> These errors occur when the code tries to access a variable or function that doesn't exist. They can be caused by misspelled variable names or using variables that are out of scope. To debug reference errors, check for any misspelled variable names and ensure that variables are properly declared and in scope.</p>
+
+<p><strong>Type Errors:</strong> These errors occur when the code tries to perform an operation on a value of the wrong type. They can be caused by passing the wrong arguments to a function or using incompatible data types. To debug type errors, review the code and check for any inconsistencies in data types.</p>
+
+<p><strong>Debugging Techniques:</strong> Here are some techniques for debugging JavaScript code:</p>
+
+<p>- <strong>Console.log:</strong> Use console.log statements to output values and debug information to the browser console. This can help you track the flow of your code and identify any unexpected behavior.</p>
+
+<p>- <strong>Browser DevTools:</strong> Most modern browsers come with built-in developer tools that allow you to inspect and debug JavaScript code. These tools provide features like breakpoints, step-by-step execution, and variable inspection.</p>
+
+<p>- <strong>Error Messages:</strong> When an error occurs, JavaScript often provides an error message that can help you identify the cause of the error. Pay attention to these error messages and use them as a starting point for debugging.</p>
+
+<p>- <strong>Code Review:</strong> Sometimes, a fresh pair of eyes can spot errors that you might have missed. Consider asking a colleague or peer to review your code and provide feedback.</p>
+
+<h2>Using the browser console for debugging</h2>
+<p>The browser console is a powerful tool for debugging JavaScript code. It allows you to log messages, inspect variables, and track the flow of your code. Here are some techniques for using the browser console:</p>
+
+<p>- <strong>Logging Messages:</strong> Use the console.log() function to output messages to the console. This can help you understand the flow of your code and track the values of variables at different points in your program.</p>
+
+<p>- <strong>Inspecting Variables:</strong> You can use the console.log() function to print the value of a variable to the console. This can help you verify that the variable has the expected value and identify any issues.</p>
+
+<p>- <strong>Debugging with Breakpoints:</strong> Breakpoints allow you to pause the execution of your code at a specific line. This can help you analyze the state of your program at that point and identify any errors or unexpected behavior.</p>
+
+<p>- <strong>Stepping Through Code:</strong> Once you've set a breakpoint, you can use the step buttons (step into, step over, step out) to navigate through your code line by line. This can help you understand the flow of your program and identify any issues.</p>
+
+<p>- <strong>Monitoring Network Requests:</strong> The browser console also allows you to monitor network requests made by your JavaScript code. This can help you identify any issues with API calls or resource loading.</p>
+
+<h2>Error handling with try...catch statements</h2>
+<p>The try...catch statement is used to handle errors in JavaScript. It allows you to catch and handle specific types of errors, preventing them from crashing your program. Here's how the try...catch statement works:</p>
+
+<pre><code>try {
+    // Code that might throw an error
+} catch (error) {
+    // Code to handle the error
+}</code></pre>
+
+<p>Within the try block, you place the code that might throw an error. If an error occurs, JavaScript immediately jumps to the catch block, where you can handle the error. The error object contains information about the error, such as its type and message.</p>
+
+<p>Here's an example that demonstrates the use of try...catch:</p>
+
+<pre><code>try {
+    const result = someFunction();
+    console.log(result);
+} catch (error) {
+    console.log('An error occurred:', error.message);
+}</code></pre>
+
+<p>In this example, if the someFunction() call throws an error, the catch block will be executed, and the error message will be logged to the console. This prevents the error from crashing the program and allows you to handle it gracefully.</p>
+
+<p>It's important to note that try...catch statements should be used sparingly and only for handling expected errors. They should not be used as a general mechanism for error suppression.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

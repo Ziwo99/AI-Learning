@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 24: JavaScript for Progressive Web Apps</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to progressive web apps (PWAs)</h2>
+<p>Progressive Web Apps (PWAs) are web applications that provide a native app-like experience to users. They combine the best features of web and mobile apps, allowing users to access them offline, receive push notifications, and have a responsive and fast user interface.</p>
+<p>PWAs are built using web technologies such as HTML, CSS, and JavaScript, and can be accessed through a web browser without the need for installation from an app store. They are designed to be responsive and work across different devices and platforms.</p>
+<p>By leveraging service workers, PWAs can cache and store assets and data, enabling offline functionality. They can also be installed on a user's home screen, making them easily accessible like native apps.</p>
+
+<h2>Building offline-capable web applications with service workers</h2>
+<p>Service workers are a key component of PWAs that enable offline functionality. They are JavaScript files that run in the background, separate from the web page, and can intercept network requests, cache assets, and provide offline support.</p>
+<p>To build an offline-capable web application, you need to register a service worker in your JavaScript code. The service worker can then cache important assets such as HTML, CSS, JavaScript files, images, and other resources. When the user visits the web app again, the service worker can serve these cached assets, allowing the app to work offline.</p>
+<pre><code>// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(function(registration) {
+      console.log('Service worker registered:', registration);
+    })
+    .catch(function(error) {
+      console.log('Service worker registration failed:', error);
+    });
+}</code></pre>
+
+<h2>Implementing push notifications and background sync</h2>
+<p>Push notifications are a powerful feature of PWAs that allow you to send notifications to users even when they are not actively using your web app. They can be used to deliver important updates, reminders, or personalized content.</p>
+<p>To implement push notifications, you need to request permission from the user and obtain a push notification subscription. This subscription can then be used to send notifications using a push service such as Firebase Cloud Messaging (FCM) or OneSignal.</p>
+<p>Background sync is another feature that allows your web app to synchronize data with a server even when the app is not actively being used. This is useful for scenarios where the user may have a poor internet connection or is offline. The background sync API allows you to defer actions until the user has a stable internet connection.</p>
+<pre><code>// Request push notification permission
+Notification.requestPermission().then(function(permission) {
+  if (permission === 'granted') {
+    // Get push notification subscription
+    return navigator.serviceWorker.ready.then(function(registration) {
+      return registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: 'your-public-key'
+      });
+    });
+  }
+}).then(function(subscription) {
+  // Send subscription to server for push notifications
+  fetch('/subscribe', {
+    method: 'POST',
+    body: JSON.stringify(subscription),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+}).catch(function(error) {
+  console.log('Push notification permission denied:', error);
+});
+
+// Background sync example
+navigator.serviceWorker.ready.then(function(registration) {
+  return registration.sync.register('sync-data');
+}).catch(function(error) {
+  console.log('Background sync registration failed:', error);
+});</code></pre>
+
+<h2>Conclusion</h2>
+<p>Progressive Web Apps (PWAs) provide a modern and engaging user experience, combining the best features of web and mobile apps. By leveraging service workers, offline functionality, push notifications, and background sync can be implemented, making PWAs powerful and versatile.</p>
+<p>With the increasing adoption of PWAs, it is essential for web developers to understand and utilize the capabilities of JavaScript to build progressive web apps that deliver a seamless user experience across different devices and platforms.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

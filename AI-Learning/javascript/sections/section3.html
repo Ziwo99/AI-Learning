@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: DOM Manipulation</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<section>
+  
+
+  <h2>Introduction to the Document Object Model (DOM)</h2>
+  <p>
+    The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the structure of a web page as a tree-like structure, where each node in the tree represents an HTML element. The DOM allows JavaScript to interact with and manipulate the elements and content of a web page.
+  </p>
+
+  <h2>Selecting and manipulating DOM elements</h2>
+  <p>
+    To select DOM elements, JavaScript provides several methods such as <code>getElementById</code>, <code>getElementsByClassName</code>, and <code>getElementsByTagName</code>. These methods allow you to retrieve specific elements based on their ID, class, or tag name.
+  </p>
+  <p>
+    Once you have selected an element, you can manipulate its properties and attributes using JavaScript. For example, you can change the text content of an element using the <code>textContent</code> property or modify its style using the <code>style</code> property.
+  </p>
+  <pre><code>
+// Selecting an element by ID
+const element = document.getElementById('myElement');
+
+// Changing the text content of an element
+element.textContent = 'New text content';
+
+// Modifying the style of an element
+element.style.color = 'red';
+  </code></pre>
+
+  <h2>Event handling and listeners</h2>
+  <p>
+    JavaScript allows you to handle events triggered by user interactions, such as clicks, mouse movements, or keyboard inputs. You can attach event listeners to DOM elements to execute specific code when an event occurs.
+  </p>
+  <p>
+    To add an event listener, you can use the <code>addEventListener</code> method. This method takes two arguments: the event type and a callback function that will be executed when the event occurs.
+  </p>
+  <pre><code>
+// Adding an event listener to a button element
+const button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+  // Code to be executed when the button is clicked
+  console.log('Button clicked!');
+});
+  </code></pre>
+
+  <h2>Creating and modifying HTML elements dynamically</h2>
+  <p>
+    JavaScript allows you to create new HTML elements and add them to the DOM dynamically. You can also modify existing elements by adding or removing attributes, classes, or styles.
+  </p>
+  <p>
+    To create a new element, you can use the <code>createElement</code> method. This method takes the tag name of the element as an argument. Once the element is created, you can set its attributes, content, and style before appending it to the DOM.
+  </p>
+  <pre><code>
+// Creating a new paragraph element
+const paragraph = document.createElement('p');
+
+// Setting attributes and content
+paragraph.textContent = 'This is a new paragraph';
+paragraph.setAttribute('class', 'highlight');
+
+// Appending the element to the DOM
+const container = document.getElementById('myContainer');
+container.appendChild(paragraph);
+  </code></pre>
+</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Asynchronous JavaScript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to asynchronous programming</h2>
+<p>
+Asynchronous programming is a programming paradigm that allows multiple tasks to be executed concurrently, without blocking the execution of other tasks. In JavaScript, asynchronous programming is commonly used to handle tasks that may take a long time to complete, such as network requests or file operations, without freezing the user interface.
+</p>
+
+<p>
+JavaScript provides several mechanisms for asynchronous programming, including callbacks, promises, and async/await. These mechanisms allow you to write code that can continue executing while waiting for a task to complete, improving the overall performance and responsiveness of your applications.
+</p>
+
+<h2>Callbacks and the event loop</h2>
+<p>
+Callbacks are a fundamental concept in asynchronous JavaScript. A callback is a function that is passed as an argument to another function and is executed once a task is completed. This allows you to define what should happen after a task finishes executing.
+</p>
+
+<p>
+In JavaScript, the event loop is responsible for managing the execution of asynchronous tasks. It continuously checks for completed tasks and executes their corresponding callbacks. This ensures that your code can continue running without being blocked by long-running tasks.
+</p>
+
+<pre><code>setTimeout(() => {
+    console.log('This code will be executed after 1 second.');
+}, 1000);
+</code></pre>
+
+<h2>Promises and async/await</h2>
+<p>
+Promises are another mechanism for handling asynchronous operations in JavaScript. A promise represents the eventual completion or failure of an asynchronous operation and allows you to attach callbacks to handle the result.
+</p>
+
+<p>
+Async/await is a syntax introduced in ES2017 that simplifies the use of promises. It allows you to write asynchronous code that looks and behaves like synchronous code, making it easier to understand and maintain.
+</p>
+
+<pre><code>function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data fetched successfully.');
+        }, 2000);
+    });
+}
+
+async function getData() {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getData();
+</code></pre>
+
+<h2>Fetch API and AJAX</h2>
+<p>
+The Fetch API is a modern JavaScript API that provides an interface for making network requests. It allows you to send HTTP requests and handle the responses in a more flexible and powerful way compared to traditional AJAX (Asynchronous JavaScript and XML) techniques.
+</p>
+
+<p>
+AJAX is a technique that allows you to update parts of a web page without reloading the entire page. It involves making asynchronous requests to the server and updating the page dynamically with the received data.
+</p>
+
+<pre><code>fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+</code></pre>
+
+<p>
+In this example, the Fetch API is used to make a GET request to the specified URL. The response is then converted to JSON format and logged to the console. Any errors that occur during the request are caught and logged as well.
+</p>
+
+<p>
+AJAX can also be achieved using the XMLHttpRequest object, which provides lower-level control over the request and response handling.
+</p>
+
+<h2>Conclusion</h2>
+<p>
+Asynchronous JavaScript is a crucial aspect of modern web development. Understanding how to handle asynchronous tasks effectively can greatly improve the performance and user experience of your applications. By using callbacks, promises, and async/await, you can write code that is more efficient, maintainable, and responsive.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

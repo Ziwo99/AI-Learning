@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 19: JavaScript for Game Development</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction to game development with JavaScript</h2>
+<p>
+Game development with JavaScript has become increasingly popular due to its versatility and ease of use. JavaScript allows developers to create interactive and engaging games that can be played directly in a web browser without the need for additional plugins or installations. In this section, we will explore the fundamentals of game development using JavaScript and learn how to create exciting games from scratch.
+</p>
+
+<h2>Using game development frameworks like Phaser or Unity</h2>
+<p>
+Game development frameworks provide developers with a set of tools, libraries, and resources to streamline the game development process. Two popular game development frameworks for JavaScript are Phaser and Unity.
+</p>
+<p>
+Phaser is an open-source framework that allows developers to create 2D games using JavaScript and HTML5. It provides a wide range of features, including sprite animation, physics simulation, and input handling, making it a powerful tool for game development.
+</p>
+<p>
+Unity, on the other hand, is a cross-platform game development engine that supports multiple programming languages, including JavaScript. It offers a comprehensive set of tools and features for creating both 2D and 3D games, making it a popular choice for professional game developers.
+</p>
+
+<h2>Creating basic game mechanics and interactions</h2>
+<p>
+To create a game, it is essential to understand the basic game mechanics and interactions. These include player movement, collision detection, scoring, and game over conditions. Let's take a look at an example of how to create a simple game mechanic using JavaScript:
+</p>
+<pre><code>var playerX = 0;
+var playerY = 0;
+
+function movePlayer(direction) {
+    if (direction === 'up') {
+        playerY -= 1;
+    } else if (direction === 'down') {
+        playerY += 1;
+    } else if (direction === 'left') {
+        playerX -= 1;
+    } else if (direction === 'right') {
+        playerX += 1;
+    }
+}
+
+function checkCollision() {
+    // Code to check collision with other game objects
+}
+
+function updateGame() {
+    // Code to update game state and render graphics
+}
+
+function gameLoop() {
+    movePlayer('up');
+    checkCollision();
+    updateGame();
+}
+
+// Call the game loop function to start the game
+gameLoop();</code></pre>
+
+<p>
+In this example, we have defined a player's position using the variables playerX and playerY. The movePlayer function allows the player to move in different directions based on user input. The checkCollision function checks if the player has collided with other game objects. The updateGame function updates the game state and renders the graphics. Finally, the gameLoop function calls all these functions in a loop to continuously update the game.
+</p>
+
+<p>
+By combining these basic game mechanics and interactions, you can create more complex and engaging games using JavaScript.
+</p>
+
+<p>
+Continue to the next section to learn more about JavaScript for game development.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
