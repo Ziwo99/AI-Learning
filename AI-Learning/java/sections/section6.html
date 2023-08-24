@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les entrées/sorties en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes en programmation Java. Pour lire un fichier, vous pouvez utiliser la classe <code>FileReader</code> et pour écrire dans un fichier, vous pouvez utiliser la classe <code>FileWriter</code>. Voici un exemple de code qui lit le contenu d'un fichier :</p>
+
+<pre><code>import java.io.FileReader;
+import java.io.IOException;
+
+public class FileExample {
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("example.txt");
+            int character;
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>read()</code> de la classe <code>FileReader</code> pour lire chaque caractère du fichier. La boucle se poursuit tant qu'il y a des caractères à lire. Une fois la lecture terminée, nous fermons le lecteur en utilisant la méthode <code>close()</code>.</p>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la classe <code>FileWriter</code>. Voici un exemple de code qui écrit du texte dans un fichier :</p>
+
+<pre><code>import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileExample {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("example.txt");
+            writer.write("Hello, world!");
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>write()</code> de la classe <code>FileWriter</code> pour écrire le texte "Hello, world!" dans le fichier. Ensuite, nous fermons le writer en utilisant la méthode <code>close()</code>.</p>
+
+<h2>Utilisation des flux d'entrée/sortie</h2>
+<p>En plus des classes <code>FileReader</code> et <code>FileWriter</code>, Java fournit également des classes de flux d'entrée/sortie pour lire et écrire des données à partir de différentes sources, telles que le clavier, les fichiers, les sockets réseau, etc. Voici quelques-unes des classes de flux d'entrée/sortie les plus couramment utilisées :</p>
+
+<ul>
+    <li><code>InputStream</code> : utilisé pour lire des données binaires à partir d'une source.</li>
+    <li><code>OutputStream</code> : utilisé pour écrire des données binaires vers une destination.</li>
+    <li><code>Reader</code> : utilisé pour lire des données caractère à partir d'une source.</li>
+    <li><code>Writer</code> : utilisé pour écrire des données caractère vers une destination.</li>
+</ul>
+
+<p>Voici un exemple de code qui utilise la classe <code>BufferedReader</code> pour lire une ligne de texte à partir de l'entrée standard (clavier) :</p>
+
+<pre><code>import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class ConsoleExample {
+    public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Enter your name: ");
+            String name = reader.readLine();
+            System.out.println("Hello, " + name + "!");
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la classe <code>BufferedReader</code> pour lire une ligne de texte à partir de l'entrée standard (clavier). La méthode <code>readLine()</code> lit une ligne de texte et la retourne en tant que chaîne de caractères. Ensuite, nous affichons un message de salutation avec le nom saisi.</p>
+
+<h2>Sérialisation des objets</h2>
+<p>La sérialisation des objets en Java permet de convertir un objet en une séquence d'octets, qui peut ensuite être enregistrée dans un fichier ou transmise sur le réseau. Pour sérialiser un objet, vous pouvez utiliser la classe <code>ObjectOutputStream</code>, et pour désérialiser un objet, vous pouvez utiliser la classe <code>ObjectInputStream</code>. Voici un exemple de code :</p>
+
+<pre><code>import java.io.*;
+
+public class SerializationExample {
+    public static void main(String[] args) {
+        try {
+            // Sérialisation
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("object.ser"));
+            MyObject object = new MyObject("Hello, world!");
+            outputStream.writeObject(object);
+            outputStream.close();
+
+            // Désérialisation
+            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("object.ser"));
+            MyObject deserializedObject = (MyObject) inputStream.readObject();
+            inputStream.close();
+
+            System.out.println(deserializedObject.getMessage());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class MyObject implements Serializable {
+    private String message;
+
+    public MyObject(String message) {
+        this.message = message;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous sérialisons un objet de la classe <code>MyObject</code> en utilisant la classe <code>ObjectOutputStream</code>. Nous écrivons ensuite l'objet sérialisé dans un fichier. Pour désérialiser l'objet, nous utilisons la classe <code>ObjectInputStream</code> et nous effectuons un cast vers la classe <code>MyObject</code>. Enfin, nous affichons le message de l'objet désérialisé.</p>
+
+<p>Il est important de noter que les classes que vous souhaitez sérialiser doivent implémenter l'interface <code>Serializable</code>.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

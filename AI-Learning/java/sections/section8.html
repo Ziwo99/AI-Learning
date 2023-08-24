@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les bases de données en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Connexion à une base de données</h2>
+<p>
+La connexion à une base de données est une étape essentielle dans le développement d'applications Java qui nécessitent de stocker et de récupérer des données. Pour se connecter à une base de données en Java, nous avons besoin d'une bibliothèque JDBC (Java Database Connectivity) qui fournit les classes et les méthodes nécessaires pour interagir avec différentes bases de données.
+</p>
+<p>
+Voici un exemple de code pour se connecter à une base de données MySQL en utilisant JDBC :
+</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connected to the database!");
+        } catch (SQLException e) {
+            System.out.println("Failed to connect to the database.");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>Exécution de requêtes SQL</h2>
+<p>
+Une fois connecté à une base de données, nous pouvons exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. En Java, nous utilisons des objets de type Statement ou PreparedStatement pour exécuter des requêtes SQL.
+</p>
+<p>
+Voici un exemple de code pour exécuter une requête SELECT en utilisant JDBC :
+</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseQuery {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM users");
+
+            while (resultSet.next()) {
+                String name = resultSet.getString("name");
+                int age = resultSet.getInt("age");
+                System.out.println("Name: " + name + ", Age: " + age);
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Failed to execute the query.");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>Utilisation des transactions</h2>
+<p>
+Les transactions sont utilisées pour regrouper plusieurs opérations de base de données en une seule unité logique. En Java, nous pouvons utiliser les méthodes commit() et rollback() pour valider ou annuler une transaction.
+</p>
+<p>
+Voici un exemple de code pour utiliser des transactions en utilisant JDBC :
+</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseTransaction {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            connection.setAutoCommit(false);
+
+            Statement statement = connection.createStatement();
+            statement.executeUpdate("INSERT INTO users (name, age) VALUES ('John', 25)");
+            statement.executeUpdate("UPDATE users SET age = 30 WHERE name = 'John'");
+
+            connection.commit();
+
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Failed to execute the transaction.");
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>Utilisation des frameworks de persistance (Hibernate, JPA)</h2>
+<p>
+Les frameworks de persistance comme Hibernate et JPA (Java Persistence API) simplifient l'interaction avec les bases de données en fournissant des fonctionnalités avancées telles que la gestion des objets persistants, la génération automatique des requêtes SQL et la gestion des transactions.
+</p>
+<p>
+Voici un exemple de code pour utiliser Hibernate pour la persistance des objets en Java :
+</p>
+<pre><code>import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateExample {
+    public static void main(String[] args) {
+        Configuration configuration = new Configuration().configure();
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        User user = new User();
+        user.setName("John");
+        user.setAge(25);
+        session.save(user);
+
+        session.getTransaction().commit();
+
+        session.close();
+        sessionFactory.close();
+    }
+}
+</code></pre>
+
+<p>
+Ceci conclut la section sur les bases de données en Java. Nous avons appris comment se connecter à une base de données, exécuter des requêtes SQL, utiliser des transactions et utiliser des frameworks de persistance tels que Hibernate et JPA. Ces connaissances sont essentielles pour développer des applications Java qui nécessitent une interaction avec une base de données.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

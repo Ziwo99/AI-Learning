@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Gestion des exceptions</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux exceptions</h2>
+<p>En programmation Java, une exception est un événement anormal qui se produit pendant l'exécution d'un programme et qui interrompt le flux normal d'exécution. Les exceptions sont utilisées pour gérer les erreurs et les situations exceptionnelles qui peuvent survenir lors de l'exécution d'un programme.</p>
+
+<p>Java fournit une hiérarchie de classes d'exceptions prédéfinies qui peuvent être utilisées pour gérer différents types d'exceptions. Les exceptions peuvent être levées (ou "jetées") à l'aide du mot-clé <code>throw</code> et capturées à l'aide du bloc <code>try-catch</code>.</p>
+
+<h2>Gestion des exceptions avec try-catch</h2>
+<p>Le bloc <code>try-catch</code> est utilisé pour capturer et gérer les exceptions levées dans un bloc de code. Le bloc <code>try</code> contient le code qui peut générer une exception, tandis que le bloc <code>catch</code> contient le code qui est exécuté lorsque l'exception est levée.</p>
+
+<p>Voici un exemple de structure de base d'un bloc <code>try-catch</code> :</p>
+
+<pre><code>try {
+    // Code susceptible de générer une exception
+} catch (TypeException e) {
+    // Code exécuté lorsque l'exception de type TypeException est levée
+}</code></pre>
+
+<p>Dans cet exemple, si une exception de type <code>TypeException</code> est levée dans le bloc <code>try</code>, le code dans le bloc <code>catch</code> sera exécuté pour gérer cette exception.</p>
+
+<h2>Création de ses propres exceptions</h2>
+<p>En plus des exceptions prédéfinies, il est également possible de créer ses propres exceptions personnalisées en définissant des classes d'exceptions. Pour créer une exception personnalisée, il suffit de créer une classe qui étend la classe <code>Exception</code> ou l'une de ses sous-classes.</p>
+
+<p>Voici un exemple de création d'une exception personnalisée :</p>
+
+<pre><code>public class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe <code>CustomException</code> qui étend la classe <code>Exception</code>. La classe <code>CustomException</code> a un constructeur qui prend un message en paramètre et appelle le constructeur de la classe <code>Exception</code> avec ce message.</p>
+
+<p>Une fois que vous avez créé votre exception personnalisée, vous pouvez la lever (ou "jeter") à l'aide du mot-clé <code>throw</code> :</p>
+
+<pre><code>throw new CustomException("Une erreur personnalisée s'est produite.");</code></pre>
+
+<p>Dans cet exemple, nous avons levé une exception de type <code>CustomException</code> avec un message d'erreur personnalisé.</p>
+
+<p>Il est également possible de capturer et de gérer une exception personnalisée à l'aide d'un bloc <code>try-catch</code> :</p>
+
+<pre><code>try {
+    // Code susceptible de générer une exception personnalisée
+} catch (CustomException e) {
+    // Code exécuté lorsque l'exception de type CustomException est levée
+}</code></pre>
+
+<p>Dans cet exemple, si une exception de type <code>CustomException</code> est levée dans le bloc <code>try</code>, le code dans le bloc <code>catch</code> sera exécuté pour gérer cette exception.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

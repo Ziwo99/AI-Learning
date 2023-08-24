@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les threads et la concurrence en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux threads</h2>
+<p>Un thread est une séquence d'instructions qui peut être exécutée en parallèle avec d'autres threads. En Java, les threads sont utilisés pour exécuter des tâches simultanées, ce qui permet d'améliorer les performances et la réactivité des applications.</p>
+<p>Pour créer un thread en Java, vous pouvez soit étendre la classe Thread, soit implémenter l'interface Runnable. Voici un exemple de création d'un thread en implémentant l'interface Runnable :</p>
+<pre><code>public class MyRunnable implements Runnable {
+    public void run() {
+        // Code à exécuter dans le thread
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread thread = new Thread(new MyRunnable());
+        thread.start();
+    }
+}</code></pre>
+
+<h2>Création et gestion des threads</h2>
+<p>Une fois que vous avez créé un thread, vous pouvez le démarrer en appelant la méthode start(). Cela permet au thread de s'exécuter en parallèle avec le thread principal.</p>
+<p>Voici un exemple de création et de démarrage d'un thread :</p>
+<pre><code>public class MyThread extends Thread {
+    public void run() {
+        // Code à exécuter dans le thread
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start();
+    }
+}</code></pre>
+<p>Vous pouvez également arrêter un thread en appelant la méthode stop(). Cependant, cette méthode est déconseillée car elle peut entraîner des problèmes de synchronisation et de corruption des données. Il est préférable d'utiliser des mécanismes de contrôle tels que les variables de contrôle ou les méthodes de terminaison pour arrêter un thread de manière sécurisée.</p>
+
+<h2>Synchronisation et verrous</h2>
+<p>La synchronisation est utilisée pour garantir l'accès sécurisé aux ressources partagées entre les threads. En Java, vous pouvez utiliser le mot-clé synchronized pour définir des blocs de code critiques qui ne peuvent être exécutés que par un seul thread à la fois.</p>
+<p>Voici un exemple de bloc de code synchronisé :</p>
+<pre><code>public class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}</code></pre>
+<p>Dans cet exemple, la méthode increment() est synchronisée, ce qui signifie qu'un seul thread peut l'exécuter à la fois. Cela garantit que l'incrémentation de la variable count se fait de manière cohérente et sans conflits.</p>
+<p>En plus de la synchronisation, vous pouvez également utiliser des verrous (locks) pour contrôler l'accès aux ressources partagées. Les verrous permettent à un seul thread d'acquérir l'accès à une ressource à la fois, tandis que les autres threads attendent leur tour.</p>
+<p>Voici un exemple d'utilisation de verrous :</p>
+<pre><code>public class MyRunnable implements Runnable {
+    private Lock lock = new ReentrantLock();
+
+    public void run() {
+        lock.lock();
+        try {
+            // Code à exécuter dans le thread
+        } finally {
+            lock.unlock();
+        }
+    }
+}</code></pre>
+<p>Dans cet exemple, le verrou lock est utilisé pour contrôler l'accès à la section critique du code. Le verrou est acquis en appelant la méthode lock() et est libéré en appelant la méthode unlock(). Cela garantit que seul un thread peut exécuter la section critique à la fois.</p>
+
+<h2>Utilisation des classes utilitaires pour la concurrence</h2>
+<p>Java fournit également des classes utilitaires pour faciliter la gestion de la concurrence et des threads. Ces classes incluent des mécanismes de synchronisation avancés, tels que les sémaphores, les compteurs cycliques et les barrières de synchronisation.</p>
+<p>Voici quelques exemples de classes utilitaires pour la concurrence :</p>
+<ul>
+  <li>Semaphore : permet de contrôler l'accès à un nombre limité de ressources.</li>
+  <li>CyclicBarrier : permet de synchroniser un groupe de threads à un point de rendez-vous commun.</li>
+  <li>CountDownLatch : permet à un thread d'attendre la fin de l'exécution d'un ensemble de threads.</li>
+  <li>ExecutorService : permet de gérer l'exécution de tâches parallèles en utilisant un pool de threads.</li>
+</ul>
+<p>Voici un exemple d'utilisation de la classe ExecutorService :</p>
+<pre><code>ExecutorService executor = Executors.newFixedThreadPool(5);
+
+for (int i = 0; i < 10; i++) {
+    Runnable worker = new MyRunnable();
+    executor.execute(worker);
+}
+
+executor.shutdown();
+while (!executor.isTerminated()) {
+    // Attente de la fin de l'exécution de toutes les tâches
+}</code></pre>
+<p>Dans cet exemple, un pool de threads avec une taille fixe de 5 est créé à l'aide de la classe Executors. Ensuite, 10 tâches de type MyRunnable sont soumises à l'exécution du pool de threads à l'aide de la méthode execute(). Enfin, la méthode shutdown() est appelée pour arrêter le pool de threads une fois que toutes les tâches ont été exécutées.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

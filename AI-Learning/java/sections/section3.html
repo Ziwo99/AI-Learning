@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Programmation orientée objet en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Principes de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Les objets sont des instances de classes, qui sont des modèles ou des plans pour créer des objets. La POO repose sur quatre principes fondamentaux :</p>
+<ul>
+  <li><strong>Encapsulation :</strong> Il s'agit de regrouper les données et les méthodes qui les manipulent au sein d'une même entité appelée classe. L'encapsulation permet de cacher les détails d'implémentation et de protéger les données sensibles.</li>
+  <li><strong>Héritage :</strong> Il permet de créer de nouvelles classes en se basant sur des classes existantes. La classe héritante (ou sous-classe) hérite des attributs et des méthodes de la classe parente (ou superclasse) et peut les modifier ou en ajouter de nouveaux.</li>
+  <li><strong>Polymorphisme :</strong> Il permet à un objet d'être utilisé comme s'il était d'un type différent. Cela permet de traiter des objets de différentes classes de manière uniforme, en utilisant des méthodes communes.</li>
+  <li><strong>Abstraction :</strong> Il s'agit de simplifier la complexité en se concentrant sur les aspects essentiels et en ignorant les détails non pertinents. L'abstraction permet de créer des classes abstraites et des interfaces, qui définissent des comportements communs pour les classes qui les implémentent.</li>
+</ul>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les attributs (variables) et les méthodes (fonctions) qui caractérisent les objets de cette classe. Pour créer un objet à partir d'une classe, on utilise le mot-clé <code>new</code>. Par exemple :</p>
+<pre><code>public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void sayHello() {
+        System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
+}
+
+// Création d'un objet Person
+Person person = new Person("John", 25);
+person.sayHello();
+</code></pre>
+
+<h2>Encapsulation, héritage et polymorphisme</h2>
+<p>L'encapsulation permet de regrouper les données et les méthodes qui les manipulent au sein d'une même classe. Les données peuvent être déclarées comme privées pour les protéger de l'accès direct et les méthodes peuvent être utilisées pour les manipuler de manière contrôlée.</p>
+<p>L'héritage permet de créer de nouvelles classes en se basant sur des classes existantes. La classe héritante hérite des attributs et des méthodes de la classe parente et peut les modifier ou en ajouter de nouveaux. Cela permet de réutiliser du code et de créer une hiérarchie de classes.</p>
+<p>Le polymorphisme permet à un objet d'être utilisé comme s'il était d'un type différent. Cela permet de traiter des objets de différentes classes de manière uniforme, en utilisant des méthodes communes. Par exemple :</p>
+<pre><code>public class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+
+public class Dog extends Animal {
+    public void makeSound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+public class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("The cat meows.");
+    }
+}
+
+Animal animal1 = new Animal();
+Animal animal2 = new Dog();
+Animal animal3 = new Cat();
+
+animal1.makeSound(); // Output: The animal makes a sound.
+animal2.makeSound(); // Output: The dog barks.
+animal3.makeSound(); // Output: The cat meows.
+</code></pre>
+
+<h2>Interfaces et classes abstraites</h2>
+<p>Les interfaces et les classes abstraites sont des mécanismes de l'orienté objet qui permettent de définir des comportements communs pour les classes qui les implémentent ou les étendent.</p>
+<p>Une interface est une collection de méthodes abstraites (sans implémentation) et de constantes. Une classe peut implémenter plusieurs interfaces. Par exemple :</p>
+<pre><code>public interface Drawable {
+    void draw();
+}
+
+public class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+public class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+}
+
+Drawable circle = new Circle();
+Drawable rectangle = new Rectangle();
+
+circle.draw(); // Output: Drawing a circle.
+rectangle.draw(); // Output: Drawing a rectangle.
+</code></pre>
+<p>Une classe abstraite est une classe qui ne peut pas être instanciée et qui peut contenir des méthodes abstraites (sans implémentation) et des méthodes concrètes (avec implémentation). Une classe peut étendre une seule classe abstraite. Par exemple :</p>
+<pre><code>public abstract class Shape {
+    public abstract double getArea();
+
+    public void printArea() {
+        System.out.println("The area is " + getArea());
+    }
+}
+
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+Shape circle = new Circle(5);
+circle.printArea(); // Output: The area is 78.53981633974483.
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

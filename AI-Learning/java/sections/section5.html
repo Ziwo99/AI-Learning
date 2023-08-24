@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les collections en Java</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les différentes interfaces de collection</h2>
+<p>En Java, les collections sont utilisées pour stocker et manipuler des groupes d'objets. Une collection peut contenir des objets de n'importe quel type, y compris des types primitifs grâce à l'autoboxing.</p>
+<p>Il existe plusieurs interfaces de collection disponibles dans Java :</p>
+<ul>
+  <li><code>Collection</code> : L'interface de base pour toutes les collections. Elle définit les opérations de base telles que l'ajout, la suppression et la recherche d'éléments.</li>
+  <li><code>List</code> : Une collection ordonnée qui permet les doublons. Les éléments d'une liste peuvent être accédés par leur index.</li>
+  <li><code>Set</code> : Une collection qui ne permet pas les doublons. Les éléments d'un ensemble ne sont pas ordonnés.</li>
+  <li><code>Queue</code> : Une collection qui représente une file d'attente. Les éléments sont ajoutés à la fin et retirés du début de la file.</li>
+  <li><code>Map</code> : Une collection qui associe des clés à des valeurs uniques. Chaque élément de la carte est une paire clé-valeur.</li>
+</ul>
+
+<h2>Les listes, ensembles et maps</h2>
+<p>Les listes, ensembles et maps sont des implémentations spécifiques des interfaces de collection.</p>
+<p>Les listes, implémentées par des classes telles que <code>ArrayList</code> et <code>LinkedList</code>, permettent d'ajouter, de supprimer et d'accéder aux éléments par leur index. Les listes peuvent contenir des doublons et maintiennent l'ordre d'insertion des éléments.</p>
+<p>Les ensembles, implémentés par des classes telles que <code>HashSet</code> et <code>TreeSet</code>, ne permettent pas les doublons. Les ensembles n'ont pas d'ordre spécifique pour les éléments.</p>
+<p>Les maps, implémentées par des classes telles que <code>HashMap</code> et <code>TreeMap</code>, associent des clés à des valeurs uniques. Les clés sont utilisées pour accéder aux valeurs correspondantes.</p>
+
+<h2>Utilisation des itérateurs</h2>
+<p>Les itérateurs sont utilisés pour parcourir les éléments d'une collection. Ils permettent de parcourir les éléments dans l'ordre et de les supprimer en toute sécurité pendant l'itération.</p>
+<p>Voici comment utiliser un itérateur pour parcourir une collection :</p>
+<pre><code>ArrayList&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("Pomme");
+fruits.add("Banane");
+fruits.add("Orange");
+
+Iterator&lt;String&gt; iterator = fruits.iterator();
+while (iterator.hasNext()) {
+    String fruit = iterator.next();
+    System.out.println(fruit);
+}</code></pre>
+
+<h2>Comparaison des performances des différentes collections</h2>
+<p>Les performances des différentes collections peuvent varier en fonction de la manière dont elles sont utilisées. Il est important de choisir la bonne collection en fonction des besoins spécifiques de votre application.</p>
+<p>Voici un aperçu des performances des différentes collections :</p>
+<ul>
+  <li><code>ArrayList</code> : Bonnes performances pour l'accès aux éléments par leur index, mais des performances médiocres pour l'insertion et la suppression en milieu de liste.</li>
+  <li><code>LinkedList</code> : Bonnes performances pour l'insertion et la suppression en milieu de liste, mais des performances médiocres pour l'accès aux éléments par leur index.</li>
+  <li><code>HashSet</code> : Bonnes performances pour l'ajout, la suppression et la recherche d'éléments, mais les éléments ne sont pas ordonnés.</li>
+  <li><code>TreeSet</code> : Bonnes performances pour l'ajout, la suppression et la recherche d'éléments, et les éléments sont triés.</li>
+  <li><code>HashMap</code> : Bonnes performances pour l'ajout, la suppression et la recherche d'éléments, mais les éléments ne sont pas ordonnés.</li>
+  <li><code>TreeMap</code> : Bonnes performances pour l'ajout, la suppression et la recherche d'éléments, et les éléments sont triés en fonction de leurs clés.</li>
+</ul>
+
+<p>Il est important de noter que les performances peuvent varier en fonction de la taille de la collection et du type d'opérations effectuées.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
