@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Programmation avancée en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Gestion des erreurs avancée</h2>
+<p>La gestion des erreurs est une partie essentielle de tout programme Python. Dans cette sous-section, nous allons explorer des techniques avancées pour gérer les erreurs de manière efficace.</p>
+
+<p>Une des techniques les plus courantes pour gérer les erreurs est d'utiliser des blocs try-except. Cela permet d'attraper les erreurs et d'exécuter un code de secours en cas d'échec. Voici un exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une erreur
+    result = 10 / 0
+except ZeroDivisionError:
+    # Code à exécuter en cas d'erreur de division par zéro
+    print("Erreur : division par zéro")
+</code></pre>
+
+<p>En plus des exceptions intégrées, vous pouvez également créer vos propres exceptions personnalisées en définissant des classes d'exceptions. Cela vous permet de gérer des erreurs spécifiques à votre programme. Voici un exemple :</p>
+
+<pre><code>class MonException(Exception):
+    pass
+
+try:
+    # Code susceptible de générer une erreur
+    raise MonException("Une erreur s'est produite")
+except MonException as e:
+    # Code à exécuter en cas d'erreur personnalisée
+    print("Erreur personnalisée :", str(e))
+</code></pre>
+
+<p>En utilisant les mots-clés try, except et finally, vous pouvez également gérer les exceptions de manière plus complexe. Le bloc finally est exécuté qu'il y ait eu une exception ou non. Voici un exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une erreur
+    result = 10 / 0
+except ZeroDivisionError:
+    # Code à exécuter en cas d'erreur de division par zéro
+    print("Erreur : division par zéro")
+finally:
+    # Code à exécuter quoi qu'il arrive
+    print("Fin de l'exécution")
+</code></pre>
+
+<h2>Décorateurs</h2>
+<p>Les décorateurs sont une fonctionnalité avancée de Python qui permet de modifier le comportement d'une fonction sans la modifier directement. Ils sont souvent utilisés pour ajouter des fonctionnalités supplémentaires à une fonction existante. Voici un exemple :</p>
+
+<pre><code>def decorateur(fonction):
+    def fonction_modifiee():
+        print("Avant l'exécution de la fonction")
+        fonction()
+        print("Après l'exécution de la fonction")
+    return fonction_modifiee
+
+@decorateur
+def ma_fonction():
+    print("Exécution de ma_fonction")
+
+ma_fonction()
+</code></pre>
+
+<p>Dans cet exemple, le décorateur "decorateur" ajoute du code supplémentaire avant et après l'exécution de la fonction "ma_fonction". L'utilisation du symbole "@" avant la définition de la fonction permet d'appliquer automatiquement le décorateur.</p>
+
+<h2>Générateurs et itérables</h2>
+<p>Les générateurs et les itérables sont des concepts avancés de Python qui permettent de créer des objets qui peuvent être itérés. Les générateurs sont des fonctions spéciales qui utilisent le mot-clé "yield" pour retourner des valeurs de manière itérative. Voici un exemple :</p>
+
+<pre><code>def generateur():
+    yield 1
+    yield 2
+    yield 3
+
+for valeur in generateur():
+    print(valeur)
+</code></pre>
+
+<p>Dans cet exemple, la fonction "generateur" est un générateur qui retourne les valeurs 1, 2 et 3 à chaque itération. L'utilisation de la boucle "for" permet d'itérer sur les valeurs générées.</p>
+
+<p>Les itérables sont des objets qui peuvent être itérés, c'est-à-dire parcourus avec une boucle "for". Les listes, les tuples et les dictionnaires sont des exemples d'objets itérables. Vous pouvez également créer vos propres itérables en implémentant les méthodes spéciales "__iter__" et "__next__". Voici un exemple :</p>
+
+<pre><code>class MonIterable:
+    def __init__(self):
+        self.valeurs = [1, 2, 3]
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index >= len(self.valeurs):
+            raise StopIteration
+        valeur = self.valeurs[self.index]
+        self.index += 1
+        return valeur
+
+for valeur in MonIterable():
+    print(valeur)
+</code></pre>
+
+<p>Dans cet exemple, la classe "MonIterable" est un itérable qui retourne les valeurs 1, 2 et 3 à chaque itération. L'implémentation des méthodes spéciales "__iter__" et "__next__" permet de parcourir les valeurs avec une boucle "for".</p>
+
+<h2>Métaclasses</h2>
+<p>Les métaclasses sont un concept avancé de Python qui permet de contrôler la création de classes. Elles sont utilisées pour créer des classes personnalisées avec des comportements spécifiques. Voici un exemple :</p>
+
+<pre><code>class MaMetaclasse(type):
+    def __new__(cls, nom, bases, attributs):
+        print("Création de la classe", nom)
+        return super().__new__(cls, nom, bases, attributs)
+
+class MaClasse(metaclass=MaMetaclasse):
+    pass
+</code></pre>
+
+<p>Dans cet exemple, la métaclass "MaMetaclasse" est utilisée pour contrôler la création de la classe "MaClasse". La méthode spéciale "__new__" est appelée lors de la création de la classe et permet de personnaliser son comportement.</p>
+
+<p>Les métaclasses sont un sujet avancé et ne sont pas souvent utilisées dans la programmation Python quotidienne. Elles sont principalement utilisées dans des cas spécifiques où un contrôle fin de la création de classes est nécessaire.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

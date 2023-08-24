@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Déploiement et gestion de projets Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Création d'un environnement virtuel</h2>
+<p>Lorsque vous travaillez sur un projet Python, il est recommandé de créer un environnement virtuel pour isoler les dépendances spécifiques à ce projet. Cela permet de maintenir un environnement de développement propre et évite les conflits entre les différentes versions de packages utilisées dans différents projets.</p>
+
+<p>Voici comment créer un environnement virtuel :</p>
+<pre><code>python -m venv mon_environnement</code></pre>
+
+<p>Cette commande crée un nouveau dossier appelé "mon_environnement" qui contient tous les fichiers nécessaires pour l'environnement virtuel.</p>
+
+<p>Pour activer l'environnement virtuel, utilisez la commande suivante :</p>
+<pre><code>source mon_environnement/bin/activate</code></pre>
+
+<p>Une fois l'environnement virtuel activé, vous pouvez installer les packages spécifiques à votre projet sans affecter l'installation globale de Python.</p>
+
+<h2>Gestion des dépendances avec pip</h2>
+<p>pip est l'outil de gestion de paquets Python qui vous permet d'installer, de mettre à jour et de supprimer des packages Python. Il est recommandé d'utiliser un fichier requirements.txt pour répertorier toutes les dépendances de votre projet.</p>
+
+<p>Voici comment installer un package à partir d'un fichier requirements.txt :</p>
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<p>Cette commande installe toutes les dépendances répertoriées dans le fichier requirements.txt.</p>
+
+<p>Pour ajouter un nouveau package à votre projet, utilisez la commande suivante :</p>
+<pre><code>pip install nom_du_package</code></pre>
+
+<p>Cela installera le package spécifié et mettra à jour le fichier requirements.txt en conséquence.</p>
+
+<h2>Utilisation de Git pour le versionnage</h2>
+<p>Git est un système de contrôle de version largement utilisé dans l'industrie du développement logiciel. Il vous permet de suivre les modifications apportées à votre code, de travailler en collaboration avec d'autres développeurs et de revenir à des versions antérieures si nécessaire.</p>
+
+<p>Voici comment initialiser un dépôt Git pour votre projet :</p>
+<pre><code>git init</code></pre>
+
+<p>Cette commande crée un nouveau dépôt Git dans le répertoire de votre projet.</p>
+
+<p>Une fois que vous avez apporté des modifications à votre code, vous pouvez les enregistrer en utilisant les commandes suivantes :</p>
+<pre><code>git add fichier.py</code></pre>
+<pre><code>git commit -m "Description des modifications"</code></pre>
+
+<p>Ces commandes ajoutent les modifications au dépôt Git et créent un nouveau commit avec un message de description.</p>
+
+<p>Pour travailler avec des dépôts Git distants, vous pouvez utiliser des services d'hébergement tels que GitHub, GitLab ou Bitbucket. Vous pouvez pousser vos modifications vers un dépôt distant en utilisant la commande suivante :</p>
+<pre><code>git push origin master</code></pre>
+
+<p>Cela envoie vos modifications vers la branche principale (master) du dépôt distant (origin).</p>
+
+<h2>Déploiement sur des plateformes cloud</h2>
+<p>Le déploiement de votre projet Python sur une plateforme cloud vous permet de le rendre accessible en ligne. Il existe de nombreuses plateformes cloud populaires telles que Heroku, AWS, Google Cloud, etc.</p>
+
+<p>Voici les étapes générales pour déployer votre projet sur une plateforme cloud :</p>
+<ol>
+  <li>Créez un compte sur la plateforme cloud de votre choix.</li>
+  <li>Créez une nouvelle application ou un nouveau projet.</li>
+  <li>Suivez les instructions spécifiques à la plateforme cloud pour déployer votre projet.</li>
+  <li>Configurez les paramètres de votre application, tels que les variables d'environnement, les autorisations d'accès, etc.</li>
+  <li>Testez votre application en ligne pour vous assurer qu'elle fonctionne correctement.</li>
+</ol>
+
+<p>Chaque plateforme cloud a ses propres spécificités et exigences, il est donc important de consulter la documentation officielle de la plateforme que vous utilisez pour obtenir des instructions détaillées sur le déploiement de votre projet.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

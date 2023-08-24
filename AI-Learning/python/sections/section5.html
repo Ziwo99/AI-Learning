@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Programmation orientée objet en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Classes et objets</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. En Python, tout est un objet, y compris les types de données primitifs tels que les entiers, les chaînes de caractères et les booléens.</p>
+
+<p>Pour créer une classe en Python, utilisez le mot-clé <code>class</code> suivi du nom de la classe. Par exemple :</p>
+
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def dire_bonjour(self):
+        print("Bonjour, je m'appelle", self.nom, "et j'ai", self.age, "ans.")
+
+# Création d'un objet de la classe Personne
+personne1 = Personne("Alice", 25)
+
+# Appel de la méthode dire_bonjour de l'objet personne1
+personne1.dire_bonjour()
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe <code>Personne</code> avec un constructeur <code>__init__</code> qui initialise les attributs <code>nom</code> et <code>age</code> de l'objet. La méthode <code>dire_bonjour</code> affiche un message de salutation en utilisant les attributs de l'objet.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage est un concept clé de la POO qui permet de créer de nouvelles classes en utilisant des classes existantes. Une classe qui hérite d'une autre classe est appelée une classe dérivée ou une sous-classe, tandis que la classe dont elle hérite est appelée une classe de base ou une superclasse.</p>
+
+<p>En Python, l'héritage est réalisé en spécifiant la classe de base entre parenthèses après le nom de la classe dérivée. Par exemple :</p>
+
+<pre><code>class Employe(Personne):
+    def __init__(self, nom, age, salaire):
+        super().__init__(nom, age)
+        self.salaire = salaire
+
+    def dire_bonjour(self):
+        super().dire_bonjour()
+        print("Je suis un employé et je gagne", self.salaire, "euros par mois.")
+
+# Création d'un objet de la classe Employe
+employe1 = Employe("Bob", 30, 2000)
+
+# Appel de la méthode dire_bonjour de l'objet employe1
+employe1.dire_bonjour()
+</code></pre>
+
+<p>Dans cet exemple, la classe <code>Employe</code> hérite de la classe <code>Personne</code>. Le constructeur de la classe <code>Employe</code> utilise la méthode <code>super()</code> pour appeler le constructeur de la classe de base et initialiser les attributs <code>nom</code> et <code>age</code>. La méthode <code>dire_bonjour</code> de la classe <code>Employe</code> utilise également la méthode <code>super()</code> pour appeler la méthode <code>dire_bonjour</code> de la classe de base avant d'afficher des informations supplémentaires propres à la classe <code>Employe</code>.</p>
+
+<p>Le polymorphisme est un autre concept important de la POO qui permet à des objets de différentes classes d'être traités de manière interchangeable. En Python, le polymorphisme est automatiquement pris en charge grâce à la dynamique du typage.</p>
+
+<h2>Encapsulation et abstraction</h2>
+<p>L'encapsulation est un principe de la POO qui consiste à regrouper des données et des méthodes connexes dans une classe, en les rendant inaccessibles depuis l'extérieur de la classe, sauf par le biais de méthodes spécifiques.</p>
+
+<p>En Python, l'encapsulation est réalisée en utilisant des conventions de nommage pour indiquer la visibilité des attributs et des méthodes. Par convention, un attribut ou une méthode dont le nom commence par un seul tiret bas (<code>_</code>) est considéré comme "protégé" et ne doit pas être accédé depuis l'extérieur de la classe. Un attribut ou une méthode dont le nom commence par deux tirets bas (<code>__</code>) est considéré comme "privé" et ne peut être accédé que depuis l'intérieur de la classe.</p>
+
+<p>L'abstraction est un autre principe de la POO qui consiste à cacher les détails d'implémentation complexes derrière une interface simple et facile à utiliser. En Python, l'abstraction est réalisée en utilisant des classes abstraites et des méthodes abstraites.</p>
+
+<p>Une classe abstraite est une classe qui ne peut pas être instanciée directement, mais qui sert de modèle pour d'autres classes. En Python, une classe abstraite peut être créée en dérivant de la classe <code>ABC</code> du module <code>abc</code>. Une méthode abstraite est une méthode qui doit être implémentée par toutes les sous-classes de la classe abstraite. En Python, une méthode abstraite peut être créée en utilisant le décorateur <code>@abstractmethod</code> du module <code>abc</code>.</p>
+
+<pre><code>from abc import ABC, abstractmethod
+
+class Forme(ABC):
+    @abstractmethod
+    def aire(self):
+        pass
+
+class Rectangle(Forme):
+    def __init__(self, longueur, largeur):
+        self.longueur = longueur
+        self.largeur = largeur
+
+    def aire(self):
+        return self.longueur * self.largeur
+
+# Création d'un objet de la classe Rectangle
+rectangle1 = Rectangle(5, 3)
+
+# Appel de la méthode aire de l'objet rectangle1
+print("L'aire du rectangle est", rectangle1.aire())
+</code></pre>
+
+<p>Dans cet exemple, la classe <code>Forme</code> est une classe abstraite qui définit une méthode abstraite <code>aire</code>. La classe <code>Rectangle</code> est une sous-classe de la classe <code>Forme</code> qui implémente la méthode <code>aire</code> en calculant l'aire du rectangle. L'objet <code>rectangle1</code> est créé à partir de la classe <code>Rectangle</code> et la méthode <code>aire</code> est appelée pour afficher l'aire du rectangle.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

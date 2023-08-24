@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Bonnes pratiques et astuces en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Conventions de codage PEP 8</h2>
+<p>Les conventions de codage PEP 8 sont des directives recommandées pour écrire du code Python clair, lisible et cohérent. Elles sont largement utilisées dans la communauté Python pour garantir une meilleure lisibilité du code et faciliter la collaboration entre développeurs. Voici quelques-unes des principales conventions de codage PEP 8 :</p>
+
+<ul>
+  <li>Utilisez des indentations de 4 espaces pour chaque niveau d'indentation.</li>
+  <li>Limitez la longueur des lignes de code à 79 caractères.</li>
+  <li>Utilisez des noms de variables et de fonctions en minuscules, séparés par des underscores (snake_case).</li>
+  <li>Utilisez des commentaires pour expliquer le code complexe ou pour fournir des informations supplémentaires.</li>
+  <li>Importez les modules sur des lignes séparées et placez-les en haut du fichier.</li>
+</ul>
+
+<h2>Utilisation de linters</h2>
+<p>Les linters sont des outils qui analysent le code source pour détecter les erreurs de syntaxe, les problèmes de style et les pratiques non recommandées. Ils aident à maintenir un code propre et cohérent en signalant les problèmes potentiels. Voici quelques-uns des linters populaires utilisés avec Python :</p>
+
+<ul>
+  <li>Flake8 : un linter qui vérifie la conformité aux conventions de codage PEP 8 et signale les erreurs de syntaxe.</li>
+  <li>PyLint : un linter qui analyse le code à la recherche de problèmes de style, d'erreurs de programmation et de mauvaises pratiques.</li>
+  <li>Black : un outil de formatage automatique qui applique les conventions de codage PEP 8 de manière cohérente.</li>
+</ul>
+
+<h2>Tests unitaires</h2>
+<p>Les tests unitaires sont des morceaux de code qui vérifient le bon fonctionnement d'une partie spécifique d'un programme. Ils permettent de s'assurer que chaque composant du code fonctionne correctement, ce qui facilite la détection des erreurs et la maintenance du code. Voici un exemple de test unitaire en Python :</p>
+
+<pre><code>import unittest
+
+class MyTest(unittest.TestCase):
+    def test_addition(self):
+        result = 2 + 2
+        self.assertEqual(result, 4)
+
+if __name__ == '__main__':
+    unittest.main()
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module unittest pour créer une classe de test MyTest. La méthode test_addition vérifie si l'addition de 2 et 2 donne bien 4 en utilisant la méthode assertEqual.</p>
+
+<h2>Optimisation des performances</h2>
+<p>L'optimisation des performances consiste à améliorer l'efficacité et la vitesse d'exécution d'un programme. Voici quelques bonnes pratiques pour optimiser les performances de votre code Python :</p>
+
+<ul>
+  <li>Utilisez des structures de données appropriées pour éviter les boucles et les opérations coûteuses.</li>
+  <li>Évitez les opérations redondantes en utilisant des variables temporaires.</li>
+  <li>Utilisez des fonctions natives de Python plutôt que des boucles pour effectuer des opérations sur des listes ou des dictionnaires.</li>
+  <li>Utilisez des bibliothèques optimisées telles que NumPy pour les calculs numériques intensifs.</li>
+</ul>
+
+<p>Il est important de noter que l'optimisation des performances doit être effectuée de manière ciblée, en identifiant les parties du code qui sont les plus critiques en termes de performances.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

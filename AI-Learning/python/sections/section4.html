@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Manipulation de fichiers et gestion des erreurs</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La manipulation de fichiers est une tâche courante en programmation, et Python offre des fonctionnalités puissantes pour lire et écrire des fichiers. Pour ouvrir un fichier en lecture, vous pouvez utiliser la fonction <code>open()</code> en spécifiant le nom du fichier et le mode d'ouverture. Par exemple, pour ouvrir un fichier texte en lecture :</p>
+
+<pre><code>file = open("mon_fichier.txt", "r")
+</code></pre>
+
+<p>Une fois le fichier ouvert, vous pouvez utiliser différentes méthodes pour lire son contenu. La méthode <code>read()</code> permet de lire tout le contenu du fichier en une seule fois :</p>
+
+<pre><code>content = file.read()
+print(content)
+</code></pre>
+
+<p>Si vous souhaitez lire le contenu ligne par ligne, vous pouvez utiliser la méthode <code>readline()</code> :</p>
+
+<pre><code>line = file.readline()
+while line:
+    print(line)
+    line = file.readline()
+</code></pre>
+
+<p>Pour écrire dans un fichier, vous pouvez ouvrir le fichier en mode écriture (<code>"w"</code>) ou en mode ajout (<code>"a"</code>). Par exemple, pour écrire dans un fichier texte :</p>
+
+<pre><code>file = open("mon_fichier.txt", "w")
+file.write("Contenu à écrire dans le fichier")
+file.close()
+</code></pre>
+
+<p>Il est important de fermer le fichier après avoir terminé de le lire ou de l'écrire en utilisant la méthode <code>close()</code>.</p>
+
+<h2>Gestion des exceptions</h2>
+<p>La gestion des exceptions est une pratique essentielle en programmation pour gérer les erreurs et les situations imprévues. En Python, vous pouvez utiliser des blocs <code>try</code> et <code>except</code> pour capturer et gérer les exceptions.</p>
+
+<p>Voici un exemple de bloc <code>try</code> et <code>except</code> :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    file = open("mon_fichier.txt", "r")
+    content = file.read()
+    print(content)
+    file.close()
+except FileNotFoundError:
+    # Code à exécuter si une exception FileNotFoundError est levée
+    print("Le fichier n'a pas été trouvé.")
+except Exception as e:
+    # Code à exécuter pour toutes les autres exceptions
+    print("Une erreur s'est produite :", str(e))
+</code></pre>
+
+<p>Dans cet exemple, si le fichier "mon_fichier.txt" n'est pas trouvé, une exception de type <code>FileNotFoundError</code> est levée et le code dans le bloc <code>except FileNotFoundError</code> est exécuté. Si une autre exception est levée, le code dans le bloc <code>except Exception as e</code> est exécuté, avec la description de l'exception stockée dans la variable <code>e</code>.</p>
+
+<p>Il est également possible d'utiliser un bloc <code>finally</code> pour exécuter du code qui doit toujours être exécuté, qu'une exception soit levée ou non :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    file = open("mon_fichier.txt", "r")
+    content = file.read()
+    print(content)
+except FileNotFoundError:
+    # Code à exécuter si une exception FileNotFoundError est levée
+    print("Le fichier n'a pas été trouvé.")
+except Exception as e:
+    # Code à exécuter pour toutes les autres exceptions
+    print("Une erreur s'est produite :", str(e))
+finally:
+    # Code à exécuter toujours
+    file.close()
+</code></pre>
+
+<p>Cela garantit que le fichier est toujours fermé, même en cas d'exception.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

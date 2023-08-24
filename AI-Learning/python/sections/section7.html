@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Traitement de données et manipulation de fichiers</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Lecture et écriture de fichiers CSV</h2>
+<p>La manipulation de fichiers CSV est une tâche courante dans le traitement de données en Python. Le format CSV (Comma-Separated Values) est utilisé pour stocker des données tabulaires, où chaque ligne représente un enregistrement et les valeurs sont séparées par des virgules.</p>
+
+<p>Pour lire un fichier CSV, nous pouvons utiliser le module intégré <code>csv</code>. Voici un exemple de code qui lit un fichier CSV et affiche son contenu :</p>
+
+<pre><code>import csv
+
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier CSV en mode lecture ('r') à l'aide de la fonction <code>open()</code>. Ensuite, nous utilisons la fonction <code>csv.reader()</code> pour créer un objet lecteur qui nous permet de parcourir les lignes du fichier. Enfin, nous utilisons une boucle <code>for</code> pour afficher chaque ligne.</p>
+
+<p>Pour écrire dans un fichier CSV, nous pouvons utiliser le module <code>csv</code> de la même manière. Voici un exemple de code qui crée un fichier CSV et y écrit des données :</p>
+
+<pre><code>import csv
+
+data = [
+    ['Nom', 'Âge', 'Ville'],
+    ['Alice', 25, 'Paris'],
+    ['Bob', 30, 'Londres'],
+    ['Charlie', 35, 'New York']
+]
+
+with open('data.csv', 'w') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)
+</code></pre>
+
+<p>Dans cet exemple, nous créons une liste de listes appelée <code>data</code>, où chaque liste représente une ligne du fichier CSV. Ensuite, nous ouvrons le fichier CSV en mode écriture ('w') et utilisons la fonction <code>csv.writer()</code> pour créer un objet écrivain. Enfin, nous utilisons la méthode <code>writerows()</code> pour écrire toutes les lignes dans le fichier.</p>
+
+<h2>Manipulation de données avec Pandas</h2>
+<p>Pandas est une bibliothèque populaire pour la manipulation et l'analyse de données en Python. Elle fournit des structures de données puissantes, telles que les <code>DataFrame</code>, qui permettent de manipuler facilement des données tabulaires.</p>
+
+<p>Voici un exemple de code qui utilise Pandas pour lire un fichier CSV et effectuer des opérations de manipulation de données :</p>
+
+<pre><code>import pandas as pd
+
+data = pd.read_csv('data.csv')
+print(data.head())  # Affiche les premières lignes du DataFrame
+
+# Filtrer les données
+filtered_data = data[data['Âge'] &gt; 30]
+print(filtered_data)
+
+# Calculer la moyenne de l'âge
+mean_age = data['Âge'].mean()
+print(mean_age)
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>read_csv()</code> de Pandas pour lire le fichier CSV et créer un objet <code>DataFrame</code>. Ensuite, nous utilisons la méthode <code>head()</code> pour afficher les premières lignes du DataFrame.</p>
+
+<p>Nous pouvons également filtrer les données en utilisant des conditions, comme dans l'exemple ci-dessus où nous filtrons les personnes dont l'âge est supérieur à 30. Enfin, nous utilisons la méthode <code>mean()</code> pour calculer la moyenne de l'âge.</p>
+
+<h2>Analyse de données avec Pandas</h2>
+<p>Pandas offre également des fonctionnalités avancées pour l'analyse de données. Voici un exemple de code qui utilise Pandas pour effectuer une analyse de données sur un ensemble de données :</p>
+
+<pre><code>import pandas as pd
+
+data = pd.read_csv('data.csv')
+
+# Calculer la somme des âges par ville
+sum_by_city = data.groupby('Ville')['Âge'].sum()
+print(sum_by_city)
+
+# Calculer le nombre de personnes par ville
+count_by_city = data['Ville'].value_counts()
+print(count_by_city)
+
+# Tracer un graphique à barres des âges par ville
+data.groupby('Ville')['Âge'].mean().plot(kind='bar')
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>groupby()</code> pour regrouper les données par ville, puis nous utilisons la méthode <code>sum()</code> pour calculer la somme des âges par ville.</p>
+
+<p>Nous pouvons également utiliser la méthode <code>value_counts()</code> pour compter le nombre de personnes par ville. Enfin, nous utilisons la méthode <code>plot()</code> pour tracer un graphique à barres des âges moyens par ville.</p>
+
+<p>Ces exemples ne représentent qu'une petite partie des fonctionnalités offertes par Pandas pour la manipulation et l'analyse de données. Pour en savoir plus, vous pouvez consulter la documentation officielle de Pandas et explorer les nombreux tutoriels et exemples disponibles en ligne.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
