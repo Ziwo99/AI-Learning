@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Tests et débogage</h2>
+					<a href="/AI-Learning/python/python.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux tests unitaires</h2>
+<p>Les tests unitaires sont une pratique essentielle en développement logiciel. Ils consistent à vérifier le bon fonctionnement des différentes parties d'un programme de manière isolée. En Python, nous utilisons le module <code>unittest</code> pour écrire et exécuter des tests unitaires.</p>
+
+<p>Voici un exemple de test unitaire simple :</p>
+
+<pre><code>import unittest
+
+def add(a, b):
+    return a + b
+
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
+        self.assertEqual(add(-1, 1), 0)
+        self.assertEqual(add(0, 0), 0)
+
+if __name__ == '__main__':
+    unittest.main()
+</code></pre>
+
+<p>Dans cet exemple, nous avons une fonction <code>add</code> qui additionne deux nombres. Nous utilisons la classe <code>unittest.TestCase</code> pour définir notre test. La méthode <code>test_add</code> vérifie si l'addition fonctionne correctement en utilisant la méthode <code>assertEqual</code> pour comparer le résultat attendu avec le résultat réel.</p>
+
+<p>Pour exécuter ce test, nous exécutons le script en tant que programme principal. Le module <code>unittest</code> exécute automatiquement tous les tests définis dans les classes héritant de <code>unittest.TestCase</code>.</p>
+
+<h2>Utilisation de l'outil de débogage</h2>
+<p>L'outil de débogage est un outil puissant pour identifier et corriger les erreurs dans votre code Python. Il vous permet d'exécuter votre programme pas à pas, d'inspecter les valeurs des variables et d'identifier les erreurs de logique.</p>
+
+<p>Voici un exemple d'utilisation de l'outil de débogage avec le module <code>pdb</code> :</p>
+
+<pre><code>import pdb
+
+def divide(a, b):
+    result = a / b
+    return result
+
+pdb.set_trace()
+print(divide(10, 0))
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>pdb.set_trace()</code> pour définir un point d'arrêt dans notre code. Lorsque le programme atteint ce point, il s'arrête et nous pouvons utiliser les commandes de débogage pour inspecter les variables et exécuter le code pas à pas.</p>
+
+<p>En exécutant ce script, nous pouvons voir comment l'outil de débogage nous aide à identifier une division par zéro, ce qui provoque une exception.</p>
+
+<h2>Optimisation des performances</h2>
+<p>L'optimisation des performances est un aspect important du développement logiciel. En Python, il existe plusieurs techniques pour améliorer les performances de votre code.</p>
+
+<p>Voici quelques conseils pour optimiser les performances de votre code Python :</p>
+
+<ul>
+  <li>Utilisez des opérations vectorisées avec des bibliothèques comme NumPy pour éviter les boucles.</li>
+  <li>Utilisez des structures de données appropriées pour minimiser les recherches et les accès aux éléments.</li>
+  <li>Évitez les opérations coûteuses à l'intérieur des boucles.</li>
+  <li>Utilisez des générateurs pour générer des données de manière efficace.</li>
+  <li>Utilisez des outils de profilage pour identifier les parties du code qui consomment le plus de temps.</li>
+</ul>
+
+<p>Il est important de noter que l'optimisation des performances ne doit pas être effectuée prématurément. Il est préférable de mesurer les performances réelles de votre code avant de l'optimiser.</p>
+
+<p>En suivant ces conseils, vous pourrez améliorer les performances de votre code Python et offrir une meilleure expérience utilisateur.</p>
+					<a href="/AI-Learning/python/python.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

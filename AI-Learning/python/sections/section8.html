@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Programmation avancée</h2>
+					<a href="/AI-Learning/python/python.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Gestion des erreurs et exceptions avancées</h2>
+<p>La gestion des erreurs et des exceptions est une partie essentielle de la programmation en Python. Elle permet de gérer les situations où une erreur se produit pendant l'exécution d'un programme. Python fournit un mécanisme puissant pour gérer les erreurs et les exceptions, permettant aux développeurs de contrôler le flux d'exécution du programme et de prendre des mesures appropriées en cas d'erreur.</p>
+
+<p>Les erreurs et les exceptions peuvent être gérées à l'aide de blocs try-except. Le bloc try contient le code qui peut générer une exception, tandis que le bloc except spécifie le code à exécuter en cas d'exception. Voici un exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    result = 10 / 0
+except ZeroDivisionError:
+    # Code à exécuter en cas d'exception ZeroDivisionError
+    print("Erreur : division par zéro")
+</code></pre>
+
+<p>Dans cet exemple, le code à l'intérieur du bloc try tente de diviser 10 par zéro, ce qui génère une exception ZeroDivisionError. Le bloc except spécifie le code à exécuter en cas d'exception ZeroDivisionError, qui affiche un message d'erreur approprié.</p>
+
+<p>En plus des exceptions intégrées telles que ZeroDivisionError, Python permet également aux développeurs de définir leurs propres exceptions personnalisées en créant des classes d'exceptions. Cela permet de gérer des situations spécifiques qui ne sont pas couvertes par les exceptions intégrées. Voici un exemple :</p>
+
+<pre><code>class MonException(Exception):
+    pass
+
+try:
+    # Code susceptible de générer une exception personnalisée
+    raise MonException("Une erreur s'est produite")
+except MonException as e:
+    # Code à exécuter en cas d'exception MonException
+    print("Erreur personnalisée :", str(e))
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une classe d'exception personnalisée appelée MonException en héritant de la classe de base Exception. Ensuite, nous utilisons le mot-clé raise pour générer une instance de cette exception personnalisée. Le bloc except spécifie le code à exécuter en cas d'exception MonException, qui affiche un message d'erreur personnalisé.</p>
+
+<h2>Décorateurs</h2>
+<p>Les décorateurs sont une fonctionnalité avancée de Python qui permet de modifier le comportement d'une fonction existante sans la modifier directement. Les décorateurs sont souvent utilisés pour ajouter des fonctionnalités supplémentaires à une fonction, telles que la journalisation, la mise en cache ou la gestion des autorisations.</p>
+
+<p>Un décorateur est une fonction qui prend une autre fonction en argument et renvoie une nouvelle fonction modifiée. Voici un exemple :</p>
+
+<pre><code>def decorateur(fonction):
+    def fonction_modifiee():
+        # Code à exécuter avant l'appel de la fonction
+        print("Avant l'appel de la fonction")
+        # Appel de la fonction originale
+        fonction()
+        # Code à exécuter après l'appel de la fonction
+        print("Après l'appel de la fonction")
+    return fonction_modifiee
+
+@decorateur
+def ma_fonction():
+    print("Fonction originale")
+
+# Appel de la fonction modifiée
+ma_fonction()
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une fonction décorateur appelée decorateur qui prend une fonction en argument. À l'intérieur de cette fonction, nous définissons une nouvelle fonction fonction_modifiee qui exécute du code avant et après l'appel de la fonction originale. Ensuite, nous utilisons le symbole @ pour appliquer le décorateur à la fonction ma_fonction. Lorsque nous appelons ma_fonction, c'est en réalité la fonction_modifiee qui est exécutée.</p>
+
+<h2>Générateurs et itérateurs</h2>
+<p>Les générateurs et les itérateurs sont des concepts avancés de Python qui permettent de créer des objets itérables et de les parcourir de manière efficace. Les générateurs sont des fonctions spéciales qui renvoient un itérable, tandis que les itérateurs sont des objets qui peuvent être parcourus à l'aide de la boucle for.</p>
+
+<p>Un générateur est une fonction qui utilise le mot-clé yield pour renvoyer une valeur à chaque itération. Voici un exemple :</p>
+
+<pre><code>def generateur():
+    yield 1
+    yield 2
+    yield 3
+
+# Utilisation du générateur dans une boucle for
+for valeur in generateur():
+    print(valeur)
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une fonction générateur qui utilise le mot-clé yield pour renvoyer les valeurs 1, 2 et 3 à chaque itération. Lorsque nous utilisons ce générateur dans une boucle for, chaque valeur est imprimée.</p>
+
+<p>Les itérateurs sont des objets qui implémentent les méthodes spéciales __iter__ et __next__. La méthode __iter__ renvoie l'objet itérable lui-même, tandis que la méthode __next__ renvoie la prochaine valeur de l'itération ou lève une exception StopIteration si toutes les valeurs ont été parcourues. Voici un exemple :</p>
+
+<pre><code>class MonIterateur:
+    def __init__(self, limite):
+        self.limite = limite
+        self.valeur = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.valeur < self.limite:
+            self.valeur += 1
+            return self.valeur
+        else:
+            raise StopIteration
+
+# Utilisation de l'itérateur dans une boucle for
+for valeur in MonIterateur(3):
+    print(valeur)
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une classe MonIterateur qui implémente les méthodes __iter__ et __next__. La méthode __iter__ renvoie l'objet itérable lui-même, tandis que la méthode __next__ renvoie les valeurs de 1 à 3 à chaque itération. Lorsque toutes les valeurs ont été parcourues, l'exception StopIteration est levée.</p>
+
+<h2>Métaclasses</h2>
+<p>Les métaclasses sont des classes qui définissent le comportement des classes. Elles permettent de contrôler la création et le comportement des classes, offrant ainsi une grande flexibilité et un moyen puissant d'étendre le langage Python.</p>
+
+<p>Une métaclass est une classe dont le type est type. Elle peut être utilisée pour définir des méthodes spéciales telles que __new__ et __init__, qui sont appelées lors de la création d'une nouvelle classe. Voici un exemple :</p>
+
+<pre><code>class MaMetaclasse(type):
+    def __new__(cls, nom, bases, attributs):
+        # Code à exécuter avant la création de la classe
+        print("Création de la classe", nom)
+        # Création de la classe avec la métaclass
+        classe = super().__new__(cls, nom, bases, attributs)
+        # Code à exécuter après la création de la classe
+        print("Classe créée :", classe)
+        return classe
+
+class MaClasse(metaclass=MaMetaclasse):
+    pass
+
+# Création d'une instance de la classe
+objet = MaClasse()
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une métaclass MaMetaclasse qui hérite de la classe type. Nous redéfinissons la méthode spéciale __new__ pour exécuter du code avant et après la création de la classe. Ensuite, nous utilisons la métaclass MaMetaclasse pour créer la classe MaClasse. Lorsque nous créons une instance de la classe MaClasse, le code de la métaclass est exécuté.</p>
+
+<p>Les métaclasses sont un concept avancé de Python et sont rarement utilisées dans la programmation quotidienne. Elles sont principalement utilisées pour des tâches avancées telles que la création de frameworks et de bibliothèques.</p>
+					<a href="/AI-Learning/python/python.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

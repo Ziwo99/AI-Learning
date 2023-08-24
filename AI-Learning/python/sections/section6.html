@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Modules et bibliothèques</h2>
+					<a href="/AI-Learning/python/python.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Utilisation des modules standards</h2>
+<p>Les modules standards sont des bibliothèques de code Python pré-installées qui offrent des fonctionnalités supplémentaires prêtes à l'emploi. Ils peuvent être importés dans votre programme à l'aide de l'instruction <code>import</code>. Voici quelques exemples de modules standards couramment utilisés :</p>
+
+<pre><code>import math
+
+# Utilisation du module math pour calculer la racine carrée d'un nombre
+x = math.sqrt(25)
+print(x)
+
+import random
+
+# Utilisation du module random pour générer un nombre aléatoire entre 1 et 10
+y = random.randint(1, 10)
+print(y)
+
+import datetime
+
+# Utilisation du module datetime pour obtenir la date et l'heure actuelles
+current_time = datetime.datetime.now()
+print(current_time)</code></pre>
+
+<h2>Installation et utilisation de bibliothèques externes</h2>
+<p>En plus des modules standards, vous pouvez également utiliser des bibliothèques externes pour étendre les fonctionnalités de Python. Ces bibliothèques doivent être installées avant de pouvoir être utilisées. Voici comment installer une bibliothèque externe à l'aide de l'outil de gestion de paquets pip :</p>
+
+<pre><code>pip install nom_de_la_bibliothèque</code></pre>
+
+<p>Une fois la bibliothèque installée, vous pouvez l'importer dans votre programme et l'utiliser. Voici un exemple d'utilisation de la bibliothèque <code>requests</code> pour effectuer une requête HTTP :</p>
+
+<pre><code>import requests
+
+response = requests.get("https://www.example.com")
+print(response.text)</code></pre>
+
+<h2>Création de modules personnalisés</h2>
+<p>En plus d'utiliser des modules existants, vous pouvez également créer vos propres modules personnalisés pour organiser votre code en fonctionnalités réutilisables. Voici comment créer un module personnalisé :</p>
+
+<p>1. Créez un fichier Python avec l'extension .py, par exemple <code>mon_module.py</code>.</p>
+<p>2. Définissez les fonctions, classes et variables que vous souhaitez inclure dans votre module.</p>
+<p>3. Importez votre module dans un autre programme en utilisant l'instruction <code>import</code>.</p>
+
+<p>Voici un exemple de création d'un module personnalisé :</p>
+
+<pre><code># mon_module.py
+
+def dire_bonjour():
+    print("Bonjour !")
+
+def addition(a, b):
+    return a + b</code></pre>
+
+<p>Vous pouvez ensuite utiliser ce module personnalisé dans un autre programme :</p>
+
+<pre><code>import mon_module
+
+mon_module.dire_bonjour()
+resultat = mon_module.addition(3, 5)
+print(resultat)</code></pre>
+
+<p>En utilisant des modules personnalisés, vous pouvez organiser votre code de manière plus modulaire et réutilisable.</p>
+					<a href="/AI-Learning/python/python.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
