@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les couleurs et les arrière-plans CSS</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les propriétés de couleur</h2>
+<p>Les propriétés de couleur en CSS permettent de définir la couleur du texte, des bordures et des arrière-plans des éléments HTML. Voici quelques-unes des propriétés de couleur les plus couramment utilisées :</p>
+
+<ul>
+  <li><code>color</code> : Cette propriété permet de définir la couleur du texte. Elle accepte différentes valeurs, telles que les noms de couleurs prédéfinis (par exemple, "red" pour rouge), les codes hexadécimaux (par exemple, "#FF0000" pour rouge) et les valeurs RGB (par exemple, "rgb(255, 0, 0)" pour rouge).</li>
+  <li><code>background-color</code> : Cette propriété permet de définir la couleur de l'arrière-plan d'un élément. Elle fonctionne de la même manière que la propriété <code>color</code>.</li>
+  <li><code>border-color</code> : Cette propriété permet de définir la couleur des bordures d'un élément. Elle fonctionne de la même manière que la propriété <code>color</code>.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de ces propriétés :</p>
+
+<pre><code>p {
+  color: red;
+  background-color: yellow;
+  border-color: blue;
+}</code></pre>
+
+<p>Ce code applique une couleur rouge au texte des éléments <code>&lt;p&gt;</code>, une couleur jaune à leur arrière-plan et une couleur bleue à leurs bordures.</p>
+
+<h2>Les propriétés d'arrière-plan</h2>
+<p>Les propriétés d'arrière-plan en CSS permettent de personnaliser l'arrière-plan des éléments HTML. Voici quelques-unes des propriétés d'arrière-plan les plus couramment utilisées :</p>
+
+<ul>
+  <li><code>background-image</code> : Cette propriété permet de définir une image comme arrière-plan d'un élément. Elle accepte l'URL de l'image à utiliser.</li>
+  <li><code>background-repeat</code> : Cette propriété permet de spécifier si l'image d'arrière-plan doit être répétée ou non. Les valeurs possibles sont <code>repeat</code> (répétition horizontale et verticale), <code>repeat-x</code> (répétition horizontale uniquement), <code>repeat-y</code> (répétition verticale uniquement) et <code>no-repeat</code> (pas de répétition).</li>
+  <li><code>background-position</code> : Cette propriété permet de définir la position de l'image d'arrière-plan. Elle accepte des valeurs telles que <code>top left</code>, <code>center center</code> et <code>bottom right</code>.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de ces propriétés :</p>
+
+<pre><code>div {
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}</code></pre>
+
+<p>Ce code applique une image d'arrière-plan à l'élément <code>&lt;div&gt;</code>, sans répétition, et la positionne au centre de l'élément.</p>
+
+<h2>Les propriétés de dégradé</h2>
+<p>Les propriétés de dégradé en CSS permettent de créer des effets de dégradé sur les arrière-plans des éléments HTML. Voici quelques-unes des propriétés de dégradé les plus couramment utilisées :</p>
+
+<ul>
+  <li><code>background-image</code> : Cette propriété permet de définir un dégradé comme arrière-plan d'un élément. Elle accepte différentes valeurs, telles que les dégradés linéaires (par exemple, <code>linear-gradient(red, yellow)</code>) et les dégradés radiaux (par exemple, <code>radial-gradient(red, yellow)</code>).</li>
+  <li><code>background-repeat</code> : Cette propriété permet de spécifier si le dégradé d'arrière-plan doit être répété ou non. Les valeurs possibles sont les mêmes que pour la propriété <code>background-repeat</code> des propriétés d'arrière-plan.</li>
+  <li><code>background-position</code> : Cette propriété permet de définir la position du dégradé d'arrière-plan. Les valeurs possibles sont les mêmes que pour la propriété <code>background-position</code> des propriétés d'arrière-plan.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de ces propriétés :</p>
+
+<pre><code>div {
+  background-image: linear-gradient(red, yellow);
+  background-repeat: no-repeat;
+  background-position: center center;
+}</code></pre>
+
+<p>Ce code applique un dégradé linéaire allant du rouge au jaune à l'arrière-plan de l'élément <code>&lt;div&gt;</code>, sans répétition, et le positionne au centre de l'élément.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

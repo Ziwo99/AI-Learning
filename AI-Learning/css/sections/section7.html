@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les transitions et les animations CSS</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les transitions CSS</h2>
+<p>Les transitions CSS permettent d'animer les changements de propriétés d'un élément HTML de manière fluide. Elles offrent une manière élégante de créer des effets de transition entre les états d'un élément.</p>
+
+<p>Pour définir une transition, il faut utiliser la propriété <code>transition</code> suivie des propriétés que l'on souhaite animer, ainsi que la durée et le type de transition.</p>
+
+<p>Voici un exemple de code CSS pour créer une transition sur la couleur de fond d'un élément :</p>
+
+<pre><code>.element {
+  background-color: blue;
+  transition: background-color 1s ease;
+}
+
+.element:hover {
+  background-color: red;
+}</code></pre>
+
+<p>Dans cet exemple, lorsque l'utilisateur survole l'élément avec la classe "element", la couleur de fond passe de bleu à rouge en une seconde avec une transition de type "ease".</p>
+
+<h2>Les animations CSS</h2>
+<p>Les animations CSS permettent de créer des mouvements et des effets plus complexes que les transitions. Elles permettent de définir des étapes clés (keyframes) pour contrôler précisément le comportement de l'animation.</p>
+
+<p>Pour créer une animation, il faut utiliser la règle <code>@keyframes</code> pour définir les différentes étapes de l'animation, puis utiliser la propriété <code>animation</code> pour spécifier la durée, le type de timing et les étapes clés de l'animation.</p>
+
+<p>Voici un exemple de code CSS pour créer une animation de rotation sur un élément :</p>
+
+<pre><code>@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.element {
+  animation: rotation 2s linear infinite;
+}</code></pre>
+
+<p>Dans cet exemple, l'élément avec la classe "element" effectue une rotation complète sur lui-même en deux secondes, de manière linéaire et en boucle infinie.</p>
+
+<h2>Les transformations CSS</h2>
+<p>Les transformations CSS permettent de modifier la position, la taille, la rotation et l'échelle d'un élément. Elles offrent un moyen puissant de manipuler les éléments HTML sans avoir à modifier leur structure.</p>
+
+<p>Pour appliquer une transformation, il faut utiliser la propriété <code>transform</code> suivie de la transformation souhaitée.</p>
+
+<p>Voici quelques exemples de transformations couramment utilisées :</p>
+
+<pre><code>.element {
+  transform: translate(50px, 50px); /* Déplace l'élément de 50 pixels vers la droite et le bas */
+  transform: rotate(45deg); /* Fait tourner l'élément de 45 degrés */
+  transform: scale(2); /* Double la taille de l'élément */
+}</code></pre>
+
+<p>Dans ces exemples, l'élément avec la classe "element" subit une translation, une rotation ou un agrandissement selon la transformation spécifiée.</p>
+
+<p>Il est également possible de combiner plusieurs transformations en les séparant par des espaces :</p>
+
+<pre><code>.element {
+  transform: translate(50px, 50px) rotate(45deg) scale(2);
+}</code></pre>
+
+<p>Dans cet exemple, l'élément subit une translation, une rotation et un agrandissement simultanément.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

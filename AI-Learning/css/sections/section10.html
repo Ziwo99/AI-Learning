@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Projets pratiques en CSS</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<section>
+  
+
+  <h2>Création d'un site web responsive</h2>
+  <p>
+    Dans cette sous-section, nous allons apprendre à créer un site web responsive en utilisant CSS. Un site web responsive est un site qui s'adapte automatiquement à différents appareils et tailles d'écran, offrant ainsi une expérience utilisateur optimale.
+  </p>
+  <p>
+    Pour commencer, nous allons utiliser les media queries CSS pour définir des règles spécifiques pour chaque taille d'écran. Les media queries nous permettent de cibler des appareils spécifiques ou des plages de tailles d'écran et d'appliquer des styles différents en conséquence.
+  </p>
+  <pre><code>@media screen and (max-width: 600px) {
+  /* Styles spécifiques pour les écrans de moins de 600px de large */
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles spécifiques pour les écrans entre 601px et 1024px de large */
+}
+
+@media screen and (min-width: 1025px) {
+  /* Styles spécifiques pour les écrans de plus de 1025px de large */
+}</code></pre>
+  <p>
+    Ensuite, nous allons utiliser des techniques de mise en page flexbox et/ou en grille pour créer une mise en page flexible et fluide. Ces techniques nous permettent de créer des mises en page adaptatives qui s'ajustent automatiquement en fonction de la taille de l'écran.
+  </p>
+  <pre><code>.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 0 25%;
+}</code></pre>
+  <p>
+    Enfin, nous allons utiliser des images et des médias adaptatifs pour garantir que notre site web s'affiche correctement sur tous les appareils. Les images adaptatives nous permettent de charger des images différentes en fonction de la taille de l'écran, réduisant ainsi le temps de chargement et améliorant les performances.
+  </p>
+  <pre><code>&lt;img src="image-small.jpg" srcset="image-medium.jpg 800w, image-large.jpg 1200w" alt="Une image adaptative"&gt;</code></pre>
+
+  <h2>Création d'une galerie d'images avec effets CSS</h2>
+  <p>
+    Dans cette sous-section, nous allons apprendre à créer une galerie d'images avec des effets CSS. Une galerie d'images est une collection d'images affichées de manière attrayante, souvent avec des effets de transition ou de survol pour améliorer l'expérience utilisateur.
+  </p>
+  <p>
+    Pour commencer, nous allons utiliser des techniques de mise en page en grille pour organiser nos images en une grille régulière. La mise en page en grille nous permet de créer des grilles flexibles et réactives qui s'adaptent automatiquement à la taille de l'écran.
+  </p>
+  <pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}</code></pre>
+  <p>
+    Ensuite, nous allons ajouter des effets de transition CSS pour créer des animations fluides lors du survol des images. Les transitions CSS nous permettent de définir des animations pour les propriétés CSS, telles que la couleur de fond, la taille ou la position, créant ainsi des effets visuels attrayants.
+  </p>
+  <pre><code>.image {
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.1);
+}</code></pre>
+  <p>
+    Enfin, nous allons utiliser des pseudo-classes CSS, telles que :hover ou :focus, pour ajouter des styles supplémentaires lors de l'interaction avec les images. Les pseudo-classes nous permettent de cibler des éléments spécifiques dans des états spécifiques, tels que le survol ou le focus, et d'appliquer des styles correspondants.
+  </p>
+  <pre><code>.image:hover {
+  border: 2px solid red;
+}</code></pre>
+
+  <h2>Création d'un formulaire stylisé avec CSS</h2>
+  <p>
+    Dans cette sous-section, nous allons apprendre à créer un formulaire stylisé avec CSS. Un formulaire est un élément essentiel d'un site web qui permet aux utilisateurs d'envoyer des informations ou de soumettre des actions. En utilisant CSS, nous pouvons personnaliser l'apparence des éléments de formulaire pour les rendre plus attrayants et conviviaux.
+  </p>
+  <p>
+    Pour commencer, nous allons utiliser des sélecteurs CSS pour cibler les différents éléments de formulaire, tels que les champs de texte, les boutons ou les cases à cocher. Les sélecteurs nous permettent de sélectionner des éléments spécifiques dans le DOM et d'appliquer des styles correspondants.
+  </p>
+  <pre><code>input[type="text"] {
+  /* Styles pour les champs de texte */
+}
+
+button {
+  /* Styles pour les boutons */
+}
+
+input[type="checkbox"] {
+  /* Styles pour les cases à cocher */
+}</code></pre>
+  <p>
+    Ensuite, nous allons utiliser des propriétés CSS, telles que border, background ou font, pour personnaliser l'apparence des éléments de formulaire. Les propriétés CSS nous permettent de définir des styles spécifiques pour chaque élément, tels que la couleur de fond, la taille de la police ou la bordure.
+  </p>
+  <pre><code>input[type="text"] {
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}</code></pre>
+  <p>
+    Enfin, nous allons utiliser des pseudo-classes CSS, telles que :focus ou :invalid, pour ajouter des styles supplémentaires lors de l'interaction avec les éléments de formulaire. Les pseudo-classes nous permettent de cibler des éléments spécifiques dans des états spécifiques, tels que le focus ou la validation, et d'appliquer des styles correspondants.
+  </p>
+  <pre><code>input[type="text"]:focus {
+  border-color: #007bff;
+}
+
+input[type="text"]:invalid {
+  border-color: red;
+}</code></pre>
+</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

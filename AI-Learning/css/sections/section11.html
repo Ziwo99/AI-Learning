@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Approfondissement du CSS</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les pseudo-classes et pseudo-éléments</h2>
+<p>Les pseudo-classes et pseudo-éléments sont des sélecteurs CSS spéciaux qui permettent de cibler des éléments dans des états spécifiques ou d'ajouter du contenu supplémentaire à un élément. Ils sont très utiles pour appliquer des styles spécifiques à des éléments lorsqu'ils se trouvent dans certaines conditions.</p>
+
+<p>Les pseudo-classes sont utilisées pour cibler des éléments dans des états spécifiques, tels que :hover pour cibler un élément lorsque le curseur est dessus, :active pour cibler un élément lorsqu'il est activé, ou encore :first-child pour cibler le premier enfant d'un élément parent.</p>
+
+<p>Les pseudo-éléments, quant à eux, permettent d'ajouter du contenu supplémentaire à un élément. Par exemple, ::before et ::after permettent d'ajouter du contenu avant et après un élément respectivement. Ils sont souvent utilisés pour créer des effets visuels tels que des flèches ou des icônes.</p>
+
+<pre><code>p::first-child {
+    color: red;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button:active {
+    background-color: gray;
+}
+
+p::before {
+    content: "Avant";
+}
+
+p::after {
+    content: "Après";
+}
+</code></pre>
+
+<h2>Les variables CSS</h2>
+<p>Les variables CSS, également appelées propriétés personnalisées, permettent de stocker des valeurs réutilisables dans une feuille de style. Elles sont déclarées à l'aide de la syntaxe --nom-variable: valeur; et peuvent être utilisées dans n'importe quelle propriété CSS en utilisant la syntaxe var(--nom-variable).</p>
+
+<p>Les variables CSS sont très pratiques pour définir des valeurs communes à plusieurs éléments, ce qui facilite la maintenance du code. Elles peuvent également être modifiées dynamiquement à l'aide de JavaScript, ce qui permet de créer des thèmes personnalisables.</p>
+
+<pre><code>:root {
+    --couleur-principale: #ff0000;
+}
+
+h1 {
+    color: var(--couleur-principale);
+}
+
+p {
+    background-color: var(--couleur-principale);
+}
+</code></pre>
+
+<h2>Les fonctions CSS</h2>
+<p>Les fonctions CSS sont des outils puissants qui permettent de manipuler les valeurs des propriétés CSS. Elles peuvent être utilisées pour effectuer des calculs, des transformations, des ajustements de couleurs, etc.</p>
+
+<p>Il existe de nombreuses fonctions CSS disponibles, telles que calc() pour effectuer des calculs mathématiques, transform() pour appliquer des transformations 2D ou 3D à un élément, et rgba() pour spécifier une couleur avec une transparence.</p>
+
+<pre><code>p {
+    width: calc(100% - 20px);
+}
+
+img {
+    transform: rotate(45deg);
+}
+
+div {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+</code></pre>
+
+<h2>Les modules CSS avancés (Grid, Flexbox, etc.)</h2>
+<p>Les modules CSS avancés, tels que Grid et Flexbox, sont des outils puissants pour créer des mises en page complexes et réactives.</p>
+
+<p>Flexbox est un module CSS qui permet de créer des mises en page flexibles et réactives. Il utilise un système de conteneurs et d'éléments flexibles pour aligner et distribuer l'espace disponible de manière optimale.</p>
+
+<p>Grid est un autre module CSS qui permet de créer des mises en page en grille. Il utilise un système de lignes et de colonnes pour organiser les éléments de manière précise et flexible.</p>
+
+<pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    flex: 1;
+    margin: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid-item {
+    grid-column: span 2;
+}
+</code></pre>
+
+<p>Avec ces modules CSS avancés, il est possible de créer des mises en page complexes et réactives avec une grande flexibilité.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
