@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les threads en Java</h2>
+					<a href="/AI-Learning/java/java.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les threads et la concurrence en Java</h2>
+<p>En Java, un thread est une unité d'exécution indépendante qui peut être exécutée en parallèle avec d'autres threads. La concurrence est la capacité d'exécuter plusieurs threads simultanément, ce qui permet d'améliorer les performances et la réactivité d'une application.</p>
+<p>Pour créer un thread en Java, vous pouvez soit étendre la classe Thread, soit implémenter l'interface Runnable. Voici un exemple de création d'un thread en étendant la classe Thread :</p>
+<pre><code>public class MyThread extends Thread {
+    public void run() {
+        // Code à exécuter dans le thread
+    }
+}</code></pre>
+<p>Une fois que vous avez créé un thread, vous pouvez le démarrer en appelant la méthode start(). Cela permettra à Java de planifier l'exécution du thread et d'appeler la méthode run() que vous avez définie :</p>
+<pre><code>MyThread myThread = new MyThread();
+myThread.start();</code></pre>
+
+<h2>La synchronisation en Java</h2>
+<p>La synchronisation est un mécanisme qui permet de contrôler l'accès concurrent à des ressources partagées. En Java, vous pouvez utiliser le mot-clé synchronized pour synchroniser des blocs de code ou des méthodes. Cela garantit qu'un seul thread peut accéder à la ressource partagée à la fois, évitant ainsi les problèmes de concurrence.</p>
+<p>Voici un exemple de synchronisation d'une méthode en Java :</p>
+<pre><code>public synchronized void myMethod() {
+    // Code synchronisé
+}</code></pre>
+<p>Vous pouvez également synchroniser des blocs de code en utilisant un objet de verrouillage :</p>
+<pre><code>public void myMethod() {
+    synchronized (lock) {
+        // Code synchronisé
+    }
+}</code></pre>
+
+<h2>Les threads et les ressources partagées en Java</h2>
+<p>Lorsque plusieurs threads accèdent à des ressources partagées, il est important de les synchroniser correctement pour éviter les problèmes de concurrence. En Java, vous pouvez utiliser des mécanismes de synchronisation tels que les verrous, les sémaphores ou les moniteurs pour garantir un accès sûr aux ressources partagées.</p>
+<p>Voici un exemple de synchronisation d'une ressource partagée en utilisant un verrou :</p>
+<pre><code>public class SharedResource {
+    private Object lock = new Object();
+    private int count = 0;
+
+    public void increment() {
+        synchronized (lock) {
+            count++;
+        }
+    }
+
+    public int getCount() {
+        synchronized (lock) {
+            return count;
+        }
+    }
+}</code></pre>
+
+<h2>Les threads et les interruptions en Java</h2>
+<p>En Java, vous pouvez interrompre l'exécution d'un thread en appelant la méthode interrupt(). Cela envoie un signal au thread pour lui demander de s'arrêter. Le thread peut choisir de répondre à cette interruption en arrêtant son exécution ou en continuant à s'exécuter.</p>
+<p>Voici un exemple d'utilisation de l'interruption d'un thread en Java :</p>
+<pre><code>public class MyThread extends Thread {
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            // Code à exécuter dans le thread
+        }
+    }
+}
+
+MyThread myThread = new MyThread();
+myThread.start();
+
+// Interruption du thread
+myThread.interrupt();</code></pre>
+<p>Il est important de noter que l'interruption d'un thread ne garantit pas son arrêt immédiat. Le thread doit vérifier régulièrement s'il a été interrompu et décider de s'arrêter en conséquence.</p>
+					<a href="/AI-Learning/java/java.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de la programmation en Java</h2>
+					<a href="/AI-Learning/java/java.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les opérateurs en Java</h2>
+<p>Les opérateurs en Java sont des symboles spéciaux qui effectuent des opérations sur les variables et les valeurs. Ils peuvent être utilisés pour effectuer des calculs mathématiques, des opérations logiques et des manipulations de bits.</p>
+<p>Voici quelques exemples d'opérateurs couramment utilisés en Java :</p>
+<pre><code>// Opérateurs arithmétiques
+int a = 10 + 5; // Addition
+int b = 10 - 5; // Soustraction
+int c = 10 * 5; // Multiplication
+int d = 10 / 5; // Division
+int e = 10 % 5; // Modulo
+
+// Opérateurs de comparaison
+boolean f = 10 == 5; // Égal à
+boolean g = 10 != 5; // Différent de
+boolean h = 10 &gt; 5; // Supérieur à
+boolean i = 10 &lt; 5; // Inférieur à
+boolean j = 10 &gt;= 5; // Supérieur ou égal à
+boolean k = 10 &lt;= 5; // Inférieur ou égal à
+
+// Opérateurs logiques
+boolean l = true &amp;&amp; false; // ET logique
+boolean m = true || false; // OU logique
+boolean n = !true; // NON logique
+
+// Opérateurs de manipulation de bits
+int o = 10 &amp; 5; // ET binaire
+int p = 10 | 5; // OU binaire
+int q = 10 ^ 5; // OU exclusif binaire
+int r = ~10; // Complément à un binaire
+int s = 10 &lt;&lt; 2; // Décalage à gauche
+int t = 10 &gt;&gt; 2; // Décalage à droite
+</code></pre>
+
+<h2>Les structures de contrôle en Java (boucles, conditions)</h2>
+<p>Les structures de contrôle en Java permettent de contrôler le flux d'exécution d'un programme. Elles permettent d'exécuter certaines parties du code en fonction de conditions ou de répéter des blocs de code plusieurs fois.</p>
+<p>Voici quelques exemples de structures de contrôle couramment utilisées en Java :</p>
+<pre><code>// Structure de contrôle if-else
+int age = 18;
+if (age &gt;= 18) {
+    System.out.println("Vous êtes majeur.");
+} else {
+    System.out.println("Vous êtes mineur.");
+}
+
+// Structure de contrôle switch-case
+int day = 1;
+switch (day) {
+    case 1:
+        System.out.println("Lundi");
+        break;
+    case 2:
+        System.out.println("Mardi");
+        break;
+    case 3:
+        System.out.println("Mercredi");
+        break;
+    default:
+        System.out.println("Autre jour de la semaine");
+}
+
+// Boucle for
+for (int i = 0; i &lt; 5; i++) {
+    System.out.println("Itération " + i);
+}
+
+// Boucle while
+int i = 0;
+while (i &lt; 5) {
+    System.out.println("Itération " + i);
+    i++;
+}
+
+// Boucle do-while
+int j = 0;
+do {
+    System.out.println("Itération " + j);
+    j++;
+} while (j &lt; 5);
+</code></pre>
+
+<h2>Les tableaux en Java</h2>
+<p>Un tableau en Java est une structure de données qui permet de stocker plusieurs valeurs de même type dans une seule variable. Les éléments d'un tableau sont accessibles à l'aide d'un index.</p>
+<p>Voici comment déclarer et utiliser un tableau en Java :</p>
+<pre><code>// Déclaration d'un tableau d'entiers
+int[] numbers = new int[5];
+
+// Initialisation des éléments du tableau
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+numbers[3] = 40;
+numbers[4] = 50;
+
+// Accès aux éléments du tableau
+int firstNumber = numbers[0];
+int lastNumber = numbers[4];
+
+// Parcourir un tableau avec une boucle for
+for (int i = 0; i &lt; numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+// Parcourir un tableau avec une boucle foreach
+for (int number : numbers) {
+    System.out.println(number);
+}
+</code></pre>
+
+<h2>Les fonctions et les méthodes en Java</h2>
+<p>Les fonctions et les méthodes en Java permettent d'organiser le code en le divisant en blocs réutilisables. Ils permettent d'effectuer des actions spécifiques et de retourner des valeurs si nécessaire.</p>
+<p>Voici comment déclarer et utiliser une fonction en Java :</p>
+<pre><code>// Déclaration d'une fonction qui retourne la somme de deux nombres
+public static int sum(int a, int b) {
+    return a + b;
+}
+
+// Appel de la fonction
+int result = sum(10, 20);
+System.out.println(result);
+
+// Déclaration d'une méthode dans une classe
+public class MyClass {
+    public void myMethod() {
+        System.out.println("Hello, World!");
+    }
+}
+
+// Appel de la méthode
+MyClass myObject = new MyClass();
+myObject.myMethod();
+</code></pre>
+
+<h2>La gestion des exceptions en Java</h2>
+<p>Les exceptions en Java sont des événements qui se produisent pendant l'exécution d'un programme et qui interrompent le flux normal d'exécution. La gestion des exceptions permet de détecter et de gérer ces erreurs de manière appropriée.</p>
+<p>Voici comment gérer les exceptions en Java :</p>
+<pre><code>// Utilisation d'un bloc try-catch
+try {
+    // Code susceptible de générer une exception
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    // Gestion de l'exception
+    System.out.println("Une erreur s'est produite : " + e.getMessage());
+}
+
+// Utilisation d'un bloc try-catch-finally
+try {
+    // Code susceptible de générer une exception
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    // Gestion de l'exception
+    System.out.println("Une erreur s'est produite : " + e.getMessage());
+} finally {
+    // Code exécuté toujours, qu'il y ait eu une exception ou non
+    System.out.println("Fin de l'exécution");
+}
+</code></pre>
+					<a href="/AI-Learning/java/java.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
