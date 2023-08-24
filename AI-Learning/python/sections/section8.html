@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: La programmation orientée objet en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code de manière plus modulaire. En POO, on crée des objets qui représentent des entités du monde réel et qui possèdent des caractéristiques (attributs) et des comportements (méthodes).</p>
+
+<p>En Python, tout est un objet. Les types de données de base comme les entiers, les chaînes de caractères et les listes sont des objets, tout comme les classes que nous allons créer.</p>
+
+<h2>Les classes et les objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les attributs et les méthodes que les objets de cette classe auront.</p>
+
+<p>Voici un exemple de classe en Python :</p>
+
+<pre><code>class Voiture:
+    def __init__(self, marque, modele):
+        self.marque = marque
+        self.modele = modele
+
+    def demarrer(self):
+        print("La voiture démarre")
+
+    def arreter(self):
+        print("La voiture s'arrête")</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe "Voiture" avec deux attributs "marque" et "modele", ainsi que deux méthodes "demarrer" et "arreter".</p>
+
+<p>Pour créer un objet à partir de cette classe, nous utilisons le mot-clé "new" :</p>
+
+<pre><code>ma_voiture = Voiture("Renault", "Clio")</code></pre>
+
+<p>Nous pouvons ensuite accéder aux attributs et appeler les méthodes de cet objet :</p>
+
+<pre><code>print(ma_voiture.marque)  # Affiche "Renault"
+ma_voiture.demarrer()  # Affiche "La voiture démarre"</code></pre>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un concept clé de la POO qui permet de créer de nouvelles classes en se basant sur des classes existantes. Une classe qui hérite d'une autre classe est appelée une classe dérivée ou une sous-classe, tandis que la classe dont elle hérite est appelée une classe de base ou une superclasse.</p>
+
+<p>Le polymorphisme est un autre concept important de la POO qui permet à des objets de différentes classes d'être traités de manière similaire. Cela signifie que nous pouvons utiliser une classe dérivée là où une classe de base est attendue.</p>
+
+<p>Voici un exemple d'héritage en Python :</p>
+
+<pre><code>class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def parler(self):
+        raise NotImplementedError("La méthode parler doit être implémentée dans les classes dérivées")
+
+class Chien(Animal):
+    def parler(self):
+        print("Wouaf !")
+
+class Chat(Animal):
+    def parler(self):
+        print("Miaou !")</code></pre>
+
+<p>Dans cet exemple, nous avons une classe de base "Animal" avec une méthode "parler" qui est définie mais lève une exception. Les classes dérivées "Chien" et "Chat" héritent de la classe "Animal" et implémentent leur propre version de la méthode "parler".</p>
+
+<p>Voici comment utiliser ces classes :</p>
+
+<pre><code>mon_chien = Chien("Rex")
+mon_chat = Chat("Minou")
+
+mon_chien.parler()  # Affiche "Wouaf !"
+mon_chat.parler()  # Affiche "Miaou !"</code></pre>
+
+<h2>Les méthodes spéciales</h2>
+<p>En Python, il existe des méthodes spéciales qui commencent et se terminent par deux underscores. Ces méthodes sont utilisées pour effectuer des opérations spécifiques sur les objets, comme l'initialisation, la représentation sous forme de chaîne de caractères, la comparaison, etc.</p>
+
+<p>Voici quelques exemples de méthodes spéciales :</p>
+
+<pre><code>class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y</code></pre>
+
+<p>Dans cet exemple, nous avons une classe "Point" avec une méthode spéciale "__init__" pour l'initialisation, une méthode spéciale "__str__" pour la représentation sous forme de chaîne de caractères et une méthode spéciale "__eq__" pour la comparaison.</p>
+
+<p>Voici comment utiliser ces méthodes :</p>
+
+<pre><code>point1 = Point(1, 2)
+point2 = Point(1, 2)
+
+print(point1)  # Affiche "(1, 2)"
+print(point1 == point2)  # Affiche "True"</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

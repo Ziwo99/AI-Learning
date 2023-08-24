@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Les projets pratiques en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Projet 1 : Création d'un jeu en Python</h2>
+<p>Dans ce projet, vous allez apprendre à créer un jeu simple en utilisant Python. Vous allez découvrir les concepts de base de la programmation orientée objet et comment les appliquer pour créer un jeu interactif.</p>
+
+<p>Voici un exemple de code pour créer un jeu de devinette en Python :</p>
+<pre><code>import random
+
+class GuessingGame:
+    def __init__(self):
+        self.number = random.randint(1, 100)
+        self.guesses_taken = 0
+
+    def play(self):
+        print("Welcome to the Guessing Game!")
+        while True:
+            guess = int(input("Enter your guess: "))
+            self.guesses_taken += 1
+
+            if guess < self.number:
+                print("Too low!")
+            elif guess > self.number:
+                print("Too high!")
+            else:
+                print(f"Congratulations! You guessed the number in {self.guesses_taken} tries.")
+                break
+
+game = GuessingGame()
+game.play()
+</code></pre>
+
+<h2>Projet 2 : Analyse de données avec Pandas</h2>
+<p>Dans ce projet, vous allez apprendre à utiliser la bibliothèque Pandas pour effectuer des analyses de données en Python. Vous allez découvrir comment charger, nettoyer, filtrer et analyser des données à l'aide de Pandas.</p>
+
+<p>Voici un exemple de code pour charger et analyser un fichier CSV avec Pandas :</p>
+<pre><code>import pandas as pd
+
+data = pd.read_csv("data.csv")
+print(data.head())
+
+# Effectuer des opérations d'analyse sur les données
+# ...
+
+</code></pre>
+
+<h2>Projet 3 : Développement d'une application web avec Flask</h2>
+<p>Dans ce projet, vous allez apprendre à développer une application web en utilisant le framework Flask en Python. Vous allez découvrir comment créer des routes, gérer les requêtes HTTP et afficher des pages web dynamiques.</p>
+
+<p>Voici un exemple de code pour créer une application web simple avec Flask :</p>
+<pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+if __name__ == "__main__":
+    app.run()
+</code></pre>
+
+<p>Assurez-vous de suivre les instructions et les exemples donnés pour chaque projet afin de bien comprendre les concepts et les techniques utilisés. Bonne chance dans votre apprentissage de Python !</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

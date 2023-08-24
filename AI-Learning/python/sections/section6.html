@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: La manipulation de fichiers en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>L'ouverture et la fermeture de fichiers</h2>
+<p>L'ouverture et la fermeture de fichiers sont des opérations courantes lors de la manipulation de fichiers en Python. Pour ouvrir un fichier, vous pouvez utiliser la fonction <code>open()</code> en spécifiant le nom du fichier et le mode d'ouverture souhaité.</p>
+
+<p>Voici un exemple d'ouverture d'un fichier en mode lecture :</p>
+<pre><code>fichier = open("mon_fichier.txt", "r")
+</code></pre>
+
+<p>Une fois que vous avez terminé de travailler avec un fichier, il est important de le fermer en utilisant la méthode <code>close()</code>. Cela permet de libérer les ressources système utilisées par le fichier.</p>
+
+<p>Voici un exemple de fermeture d'un fichier :</p>
+<pre><code>fichier.close()
+</code></pre>
+
+<h2>La lecture et l'écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations essentielles lors de la manipulation de fichiers en Python. Pour lire le contenu d'un fichier, vous pouvez utiliser la méthode <code>read()</code> sur l'objet fichier ouvert.</p>
+
+<p>Voici un exemple de lecture du contenu d'un fichier :</p>
+<pre><code>fichier = open("mon_fichier.txt", "r")
+contenu = fichier.read()
+print(contenu)
+fichier.close()
+</code></pre>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la méthode <code>write()</code> sur l'objet fichier ouvert en mode écriture.</p>
+
+<p>Voici un exemple d'écriture dans un fichier :</p>
+<pre><code>fichier = open("mon_fichier.txt", "w")
+fichier.write("Hello, world!")
+fichier.close()
+</code></pre>
+
+<h2>La gestion des erreurs de fichiers</h2>
+<p>La gestion des erreurs de fichiers est importante pour s'assurer que votre programme fonctionne correctement même en cas d'erreur lors de la manipulation de fichiers. Vous pouvez utiliser des blocs <code>try</code> et <code>except</code> pour capturer et gérer les erreurs liées aux fichiers.</p>
+
+<p>Voici un exemple de gestion des erreurs de fichiers :</p>
+<pre><code>try:
+    fichier = open("mon_fichier.txt", "r")
+    contenu = fichier.read()
+    print(contenu)
+    fichier.close()
+except FileNotFoundError:
+    print("Le fichier n'a pas été trouvé.")
+</code></pre>
+
+<p>Dans cet exemple, si le fichier "mon_fichier.txt" n'est pas trouvé, une exception de type <code>FileNotFoundError</code> sera levée. Le bloc <code>except</code> permet de gérer cette exception en affichant un message d'erreur approprié.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

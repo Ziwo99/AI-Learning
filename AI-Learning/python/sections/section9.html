@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Les modules avancés en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les expressions régulières</h2>
+<p>Les expressions régulières sont des séquences de caractères utilisées pour rechercher et manipuler des motifs de texte. En Python, nous utilisons le module <code>re</code> pour travailler avec les expressions régulières.</p>
+
+<p>Voici un exemple simple qui montre comment rechercher un motif de texte spécifique :</p>
+<pre><code>import re
+
+texte = "Bonjour, je m'appelle Alice. Je suis ravie de vous rencontrer."
+
+motif = r"Alice"
+
+resultat = re.search(motif, texte)
+
+if resultat:
+    print("Motif trouvé !")
+else:
+    print("Motif non trouvé.")</code></pre>
+
+<p>Ce code recherche le motif "Alice" dans la variable texte. Si le motif est trouvé, il affiche "Motif trouvé !", sinon il affiche "Motif non trouvé."</p>
+
+<h2>Le traitement des fichiers CSV</h2>
+<p>Le format CSV (Comma-Separated Values) est couramment utilisé pour stocker des données tabulaires. En Python, nous utilisons le module <code>csv</code> pour lire et écrire des fichiers CSV.</p>
+
+<p>Voici un exemple qui montre comment lire un fichier CSV :</p>
+<pre><code>import csv
+
+fichier_csv = open('donnees.csv', 'r')
+lecteur_csv = csv.reader(fichier_csv)
+
+for ligne in lecteur_csv:
+    print(ligne)
+
+fichier_csv.close()</code></pre>
+
+<p>Ce code ouvre le fichier CSV "donnees.csv" en mode lecture, puis utilise le lecteur CSV pour parcourir chaque ligne du fichier et l'afficher.</p>
+
+<h2>L'accès aux bases de données</h2>
+<p>Python offre de nombreuses bibliothèques pour interagir avec des bases de données. L'une des plus populaires est le module <code>sqlite3</code>, qui permet d'accéder à des bases de données SQLite.</p>
+
+<p>Voici un exemple qui montre comment se connecter à une base de données SQLite et exécuter une requête :</p>
+<pre><code>import sqlite3
+
+connexion = sqlite3.connect('ma_base_de_donnees.db')
+curseur = connexion.cursor()
+
+requete = "SELECT * FROM utilisateurs"
+curseur.execute(requete)
+
+resultat = curseur.fetchall()
+
+for ligne in resultat:
+    print(ligne)
+
+connexion.close()</code></pre>
+
+<p>Ce code se connecte à la base de données "ma_base_de_donnees.db", exécute une requête pour sélectionner toutes les lignes de la table "utilisateurs", puis affiche les résultats.</p>
+
+<h2>La manipulation des dates et heures</h2>
+<p>Python offre le module <code>datetime</code> pour travailler avec les dates et heures. Ce module permet de créer, manipuler et formater des objets de date et d'heure.</p>
+
+<p>Voici un exemple qui montre comment afficher la date et l'heure actuelles :</p>
+<pre><code>import datetime
+
+maintenant = datetime.datetime.now()
+
+print(maintenant)</code></pre>
+
+<p>Ce code utilise la fonction <code>now()</code> du module <code>datetime</code> pour obtenir la date et l'heure actuelles, puis les affiche.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les types de données en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les nombres</h2>
+<p>En Python, les nombres sont utilisés pour représenter des valeurs numériques. Il existe deux types de nombres en Python : les entiers (int) et les nombres à virgule flottante (float).</p>
+
+<p>Les entiers sont des nombres entiers sans décimales. Par exemple :</p>
+<pre><code>x = 5
+print(x)  # Affiche 5
+</code></pre>
+
+<p>Les nombres à virgule flottante sont des nombres avec une partie décimale. Par exemple :</p>
+<pre><code>y = 3.14
+print(y)  # Affiche 3.14
+</code></pre>
+
+<h2>Les chaînes de caractères</h2>
+<p>En Python, les chaînes de caractères sont utilisées pour représenter du texte. Elles sont entourées de guillemets simples ('') ou doubles (""). Par exemple :</p>
+<pre><code>message = "Bonjour, monde!"
+print(message)  # Affiche Bonjour, monde!
+</code></pre>
+
+<p>Les chaînes de caractères peuvent être concaténées en utilisant l'opérateur +. Par exemple :</p>
+<pre><code>nom = "Alice"
+age = 25
+message = "Je m'appelle " + nom + " et j'ai " + str(age) + " ans."
+print(message)  # Affiche Je m'appelle Alice et j'ai 25 ans.
+</code></pre>
+
+<h2>Les listes</h2>
+<p>En Python, les listes sont utilisées pour stocker une collection ordonnée d'éléments. Les éléments d'une liste peuvent être de différents types. Par exemple :</p>
+<pre><code>fruits = ["pomme", "banane", "orange"]
+print(fruits)  # Affiche ['pomme', 'banane', 'orange']
+</code></pre>
+
+<p>Les éléments d'une liste peuvent être accédés en utilisant leur indice. L'indice commence à 0 pour le premier élément. Par exemple :</p>
+<pre><code>fruit = fruits[0]
+print(fruit)  # Affiche pomme
+</code></pre>
+
+<h2>Les tuples</h2>
+<p>En Python, les tuples sont similaires aux listes, mais ils sont immuables, ce qui signifie qu'ils ne peuvent pas être modifiés une fois créés. Les tuples sont souvent utilisés pour stocker des collections d'éléments hétérogènes. Par exemple :</p>
+<pre><code>coordonnees = (3, 4)
+print(coordonnees)  # Affiche (3, 4)
+</code></pre>
+
+<p>Les éléments d'un tuple peuvent être accédés de la même manière que ceux d'une liste, en utilisant leur indice. Par exemple :</p>
+<pre><code>x = coordonnees[0]
+print(x)  # Affiche 3
+</code></pre>
+
+<h2>Les dictionnaires</h2>
+<p>En Python, les dictionnaires sont utilisés pour stocker des paires clé-valeur. Chaque clé est associée à une valeur. Les dictionnaires sont utiles lorsque vous avez besoin d'accéder à une valeur en utilisant une clé plutôt qu'un indice. Par exemple :</p>
+<pre><code>personne = {"nom": "Alice", "age": 25, "ville": "Paris"}
+print(personne)  # Affiche {'nom': 'Alice', 'age': 25, 'ville': 'Paris'}
+</code></pre>
+
+<p>Les valeurs d'un dictionnaire peuvent être accédées en utilisant leur clé. Par exemple :</p>
+<pre><code>nom = personne["nom"]
+print(nom)  # Affiche Alice
+</code></pre>
+
+<h2>Les ensembles</h2>
+<p>En Python, les ensembles sont utilisés pour stocker une collection non ordonnée d'éléments uniques. Les ensembles sont utiles lorsque vous avez besoin de vérifier rapidement si un élément est présent ou non. Par exemple :</p>
+<pre><code>fruits = {"pomme", "banane", "orange"}
+print(fruits)  # Affiche {'pomme', 'banane', 'orange'}
+</code></pre>
+
+<p>Les ensembles ne permettent pas d'accéder à leurs éléments par un indice, car ils ne sont pas ordonnés. Cependant, vous pouvez vérifier si un élément est présent dans un ensemble en utilisant l'opérateur in. Par exemple :</p>
+<pre><code>if "pomme" in fruits:
+    print("La pomme est dans l'ensemble.")
+else:
+    print("La pomme n'est pas dans l'ensemble.")
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
