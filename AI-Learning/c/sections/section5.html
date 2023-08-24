@@ -52,69 +52,76 @@
 			<header>
 				<div class="inner">
 					<h2>Section 5 : Les structures de données</h2>
-					<a href="AI-Learning/c/c.html"
-						class="button primary">
+					<a href="/AI-Learning/c/c.html" class="button primary">
 						Retour au cours </a>
 				</div>
 			</header>
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					
 
-<h2>Définition et utilisation des structures</h2>
-<p>Les structures de données sont des types de données personnalisés qui permettent de regrouper plusieurs variables de types différents sous un même nom. Elles sont utilisées pour représenter des objets complexes et peuvent être définies en utilisant le mot-clé <code>struct</code>.</p>
 
-<p>Voici un exemple de définition d'une structure en C :</p>
+					<h2>Définition et utilisation des structures</h2>
+					<p>Les structures de données sont des types de données personnalisés qui permettent de regrouper
+						plusieurs variables de types différents sous un même nom. Elles sont utilisées pour représenter
+						des objets complexes et peuvent être définies en utilisant le mot-clé <code>struct</code>.</p>
 
-<pre><code>struct Person {
+					<p>Voici un exemple de définition d'une structure en C :</p>
+
+					<pre><code>struct Person {
     char name[50];
     int age;
     float height;
 };
 </code></pre>
 
-<p>Une fois la structure définie, nous pouvons créer des variables de ce type :</p>
+					<p>Une fois la structure définie, nous pouvons créer des variables de ce type :</p>
 
-<pre><code>struct Person person1;
+					<pre><code>struct Person person1;
 struct Person person2;
 </code></pre>
 
-<p>Nous pouvons ensuite accéder aux membres de la structure en utilisant l'opérateur <code>.</code> :</p>
+					<p>Nous pouvons ensuite accéder aux membres de la structure en utilisant l'opérateur <code>.</code>
+						:</p>
 
-<pre><code>person1.age = 25;
+					<pre><code>person1.age = 25;
 person2.age = 30;
 </code></pre>
 
-<h2>Les unions et les énumérations</h2>
-<p>Les unions sont des types de données qui permettent de stocker différentes variables de types différents dans la même zone mémoire. Seule une des variables peut être utilisée à la fois. Les unions sont définies en utilisant le mot-clé <code>union</code>.</p>
+					<h2>Les unions et les énumérations</h2>
+					<p>Les unions sont des types de données qui permettent de stocker différentes variables de types
+						différents dans la même zone mémoire. Seule une des variables peut être utilisée à la fois. Les
+						unions sont définies en utilisant le mot-clé <code>union</code>.</p>
 
-<p>Voici un exemple de définition d'une union en C :</p>
+					<p>Voici un exemple de définition d'une union en C :</p>
 
-<pre><code>union Data {
+					<pre><code>union Data {
     int i;
     float f;
     char str[20];
 };
 </code></pre>
 
-<p>Les énumérations sont des types de données qui permettent de définir un ensemble de valeurs constantes. Elles sont définies en utilisant le mot-clé <code>enum</code>.</p>
+					<p>Les énumérations sont des types de données qui permettent de définir un ensemble de valeurs
+						constantes. Elles sont définies en utilisant le mot-clé <code>enum</code>.</p>
 
-<p>Voici un exemple de définition d'une énumération en C :</p>
+					<p>Voici un exemple de définition d'une énumération en C :</p>
 
-<pre><code>enum Color {
+					<pre><code>enum Color {
     RED,
     GREEN,
     BLUE
 };
 </code></pre>
 
-<h2>Les listes chaînées</h2>
-<p>Les listes chaînées sont des structures de données linéaires qui permettent de stocker une séquence d'éléments. Chaque élément de la liste est constitué d'une valeur et d'un pointeur vers l'élément suivant. La liste est représentée par un pointeur vers le premier élément.</p>
+					<h2>Les listes chaînées</h2>
+					<p>Les listes chaînées sont des structures de données linéaires qui permettent de stocker une
+						séquence d'éléments. Chaque élément de la liste est constitué d'une valeur et d'un pointeur vers
+						l'élément suivant. La liste est représentée par un pointeur vers le premier élément.</p>
 
-<p>Voici un exemple de définition d'une liste chaînée en C :</p>
+					<p>Voici un exemple de définition d'une liste chaînée en C :</p>
 
-<pre><code>struct Node {
+					<pre><code>struct Node {
     int data;
     struct Node* next;
 };
@@ -122,20 +129,23 @@ person2.age = 30;
 struct Node* head = NULL;
 </code></pre>
 
-<p>Pour ajouter un nouvel élément à la liste, nous devons allouer de la mémoire pour le nouvel élément et mettre à jour les pointeurs :</p>
+					<p>Pour ajouter un nouvel élément à la liste, nous devons allouer de la mémoire pour le nouvel
+						élément et mettre à jour les pointeurs :</p>
 
-<pre><code>struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+					<pre><code>struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
 newNode->data = 10;
 newNode->next = head;
 head = newNode;
 </code></pre>
 
-<h2>Les arbres binaires</h2>
-<p>Les arbres binaires sont des structures de données hiérarchiques qui permettent de stocker des éléments de manière organisée. Chaque élément de l'arbre est appelé un nœud et peut avoir jusqu'à deux nœuds enfants : un nœud gauche et un nœud droit.</p>
+					<h2>Les arbres binaires</h2>
+					<p>Les arbres binaires sont des structures de données hiérarchiques qui permettent de stocker des
+						éléments de manière organisée. Chaque élément de l'arbre est appelé un nœud et peut avoir
+						jusqu'à deux nœuds enfants : un nœud gauche et un nœud droit.</p>
 
-<p>Voici un exemple de définition d'un nœud d'arbre binaire en C :</p>
+					<p>Voici un exemple de définition d'un nœud d'arbre binaire en C :</p>
 
-<pre><code>struct Node {
+					<pre><code>struct Node {
     int data;
     struct Node* left;
     struct Node* right;
@@ -144,11 +154,12 @@ head = newNode;
 struct Node* root = NULL;
 </code></pre>
 
-<p>Pour insérer un nouvel élément dans l'arbre, nous devons parcourir l'arbre en utilisant des règles spécifiques et trouver l'emplacement approprié pour l'insertion.</p>
+					<p>Pour insérer un nouvel élément dans l'arbre, nous devons parcourir l'arbre en utilisant des
+						règles spécifiques et trouver l'emplacement approprié pour l'insertion.</p>
 
-<p>Voici un exemple d'insertion d'un nouvel élément dans un arbre binaire :</p>
+					<p>Voici un exemple d'insertion d'un nouvel élément dans un arbre binaire :</p>
 
-<pre><code>struct Node* insert(struct Node* node, int data) {
+					<pre><code>struct Node* insert(struct Node* node, int data) {
     if (node == NULL) {
         struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
         newNode->data = data;
@@ -165,9 +176,10 @@ struct Node* root = NULL;
 }
 </code></pre>
 
-<p>Ces exemples illustrent quelques-unes des structures de données les plus couramment utilisées en C. Elles sont essentielles pour la manipulation et l'organisation des données dans les programmes C.</p>
-					<a href="AI-Learning/c/c.html"
-						class="button primary">
+					<p>Ces exemples illustrent quelques-unes des structures de données les plus couramment utilisées en
+						C. Elles sont essentielles pour la manipulation et l'organisation des données dans les
+						programmes C.</p>
+					<a href="/AI-Learning/c/c.html" class="button primary">
 						Retour au cours </a>
 				</div>
 			</div>
