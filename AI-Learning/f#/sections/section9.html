@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Développement web avec F#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction au développement web avec F#</h2>
+<p>
+Le développement web avec F# permet de créer des applications web robustes et performantes en utilisant le langage de programmation F#. Cette section vous guidera à travers les concepts clés du développement web avec F# et vous montrera comment créer des applications web à l'aide de F#.
+</p>
+
+<h2>Utilisation de l'API ASP.NET Core</h2>
+<p>
+L'API ASP.NET Core est un framework web open source qui permet de créer des applications web performantes et évolutives. Dans cette partie, vous apprendrez comment utiliser l'API ASP.NET Core avec F# pour créer des services web RESTful, gérer les requêtes HTTP et les réponses, et mettre en œuvre des fonctionnalités avancées telles que l'authentification et l'autorisation.
+</p>
+
+<h2>Gestion des routes et des contrôleurs</h2>
+<p>
+La gestion des routes et des contrôleurs est essentielle pour le développement web avec F#. Dans cette section, vous apprendrez comment définir des routes pour vos applications web, mapper ces routes à des contrôleurs spécifiques et mettre en œuvre des actions pour gérer les requêtes entrantes. Vous découvrirez également comment utiliser les attributs de routage pour personnaliser le comportement de vos routes.
+</p>
+
+<h2>Utilisation de Razor pour les vues</h2>
+<p>
+Razor est un moteur de modèle puissant qui permet de générer des vues HTML dynamiques dans les applications web F#. Dans cette partie, vous apprendrez comment utiliser Razor pour créer des vues attrayantes et interactives, intégrer des données dynamiques dans vos vues et utiliser les directives Razor pour simplifier le processus de développement.
+</p>
+
+<h2>Interaction avec une base de données</h2>
+<p>
+L'interaction avec une base de données est une partie essentielle du développement web. Dans cette section, vous apprendrez comment utiliser F# pour interagir avec une base de données, exécuter des requêtes SQL, mapper les résultats de requête aux objets F# et mettre en œuvre des opérations CRUD (Create, Read, Update, Delete) pour gérer les données de votre application web.
+</p>
+
+<p>Voici un exemple de code pour exécuter une requête SQL avec F# :</p>
+<pre><code>
+open System.Data.SqlClient
+
+let connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MyDatabase;Integrated Security=True"
+
+let query = "SELECT * FROM Customers"
+
+use connection = new SqlConnection(connectionString)
+use command = new SqlCommand(query, connection)
+
+connection.Open()
+
+use reader = command.ExecuteReader()
+
+while reader.Read() do
+    let customerId = reader.GetGuid(0)
+    let customerName = reader.GetString(1)
+    printfn "Customer ID: %A, Customer Name: %s" customerId customerName
+
+connection.Close()
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Projets pratiques</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Projet 1: Création d'une application de gestion de tâches</h2>
+<p>Dans ce projet, nous allons créer une application de gestion de tâches en utilisant F#. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+
+<p>Voici un exemple de code pour la création d'une tâche :</p>
+<pre><code>type Task = {
+    id: int
+    title: string
+    description: string
+    completed: bool
+}
+
+let createTask id title description =
+    { id = id; title = title; description = description; completed = false }</code></pre>
+
+<p>La fonction <code>createTask</code> prend en paramètre l'identifiant, le titre et la description de la tâche, et renvoie une instance de la structure <code>Task</code> avec la propriété <code>completed</code> initialisée à <code>false</code>.</p>
+
+<p>Vous pouvez ensuite utiliser cette fonction pour créer de nouvelles tâches dans votre application.</p>
+
+<h2>Projet 2: Développement d'un site web de vente en ligne</h2>
+<p>Dans ce projet, nous allons développer un site web de vente en ligne en utilisant F#. Ce site permettra aux utilisateurs de parcourir des produits, de les ajouter à leur panier et de passer des commandes.</p>
+
+<p>Voici un exemple de code pour la récupération des produits :</p>
+<pre><code>type Product = {
+    id: int
+    name: string
+    price: decimal
+}
+
+let getProducts () =
+    [
+        { id = 1; name = "Product 1"; price = 10.99M }
+        { id = 2; name = "Product 2"; price = 19.99M }
+        { id = 3; name = "Product 3"; price = 7.99M }
+    ]</code></pre>
+
+<p>La fonction <code>getProducts</code> renvoie une liste de produits disponibles dans le site. Chaque produit est représenté par une structure <code>Product</code> avec un identifiant, un nom et un prix.</p>
+
+<p>Vous pouvez utiliser cette fonction pour afficher les produits sur votre site et permettre aux utilisateurs de les ajouter à leur panier.</p>
+
+<h2>Projet 3: Création d'un jeu en F#</h2>
+<p>Dans ce projet, nous allons créer un jeu en utilisant F#. Ce jeu sera un jeu de devinettes où les joueurs doivent deviner un nombre aléatoire.</p>
+
+<p>Voici un exemple de code pour la génération d'un nombre aléatoire :</p>
+<pre><code>open System
+
+let generateRandomNumber () =
+    let random = Random()
+    random.Next(1, 101)</code></pre>
+
+<p>La fonction <code>generateRandomNumber</code> utilise la classe <code>Random</code> du namespace <code>System</code> pour générer un nombre aléatoire entre 1 et 100.</p>
+
+<p>Vous pouvez utiliser cette fonction pour générer un nombre aléatoire au début du jeu et demander aux joueurs de deviner ce nombre.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
