@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les concepts avancés en C</h2>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<section>
+  
+
+  <h2>Les pointeurs de fonctions</h2>
+  <p>
+    Les pointeurs de fonctions en C permettent de stocker l'adresse d'une fonction dans une variable. Cela offre une grande flexibilité et permet d'appeler des fonctions de manière dynamique. Voici un exemple d'utilisation des pointeurs de fonctions :
+  </p>
+  <pre><code>
+#include <stdio.h>
+
+void sayHello() {
+    printf("Hello World!\n");
+}
+
+void sayGoodbye() {
+    printf("Goodbye World!\n");
+}
+
+int main() {
+    void (*functionPtr)(); // Déclaration d'un pointeur de fonction
+
+    functionPtr = sayHello; // Assignation de l'adresse de la fonction sayHello
+    functionPtr(); // Appel de la fonction sayHello via le pointeur de fonction
+
+    functionPtr = sayGoodbye; // Assignation de l'adresse de la fonction sayGoodbye
+    functionPtr(); // Appel de la fonction sayGoodbye via le pointeur de fonction
+
+    return 0;
+}
+  </code></pre>
+
+  <h2>Les allocations dynamiques de mémoire</h2>
+  <p>
+    Les allocations dynamiques de mémoire en C permettent de réserver de l'espace mémoire pendant l'exécution du programme. Cela est utile lorsque la taille des données à stocker est inconnue à la compilation ou lorsque la taille peut varier. Voici un exemple d'utilisation des allocations dynamiques de mémoire :
+  </p>
+  <pre><code>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int size;
+    int *dynamicArray;
+
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    dynamicArray = (int*)malloc(size * sizeof(int)); // Allocation dynamique de mémoire
+
+    if (dynamicArray == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < size; i++) {
+        dynamicArray[i] = i; // Assignation de valeurs à l'array dynamique
+    }
+
+    for (int i = 0; i < size; i++) {
+        printf("%d ", dynamicArray[i]); // Affichage des valeurs de l'array dynamique
+    }
+
+    free(dynamicArray); // Libération de la mémoire allouée
+
+    return 0;
+}
+  </code></pre>
+
+  <h2>Les bibliothèques et les modules en C</h2>
+  <p>
+    Les bibliothèques et les modules en C sont des fichiers contenant des fonctions et des définitions qui peuvent être utilisées dans d'autres programmes. Ils permettent de réutiliser du code et de faciliter le développement. Voici un exemple d'utilisation d'une bibliothèque en C :
+  </p>
+  <pre><code>
+#include <stdio.h>
+#include "myLibrary.h" // Inclusion de la bibliothèque personnalisée
+
+int main() {
+    int result = add(2, 3); // Appel de la fonction add() de la bibliothèque
+
+    printf("The result is: %d\n", result);
+
+    return 0;
+}
+  </code></pre>
+
+  <h2>Les threads et la programmation concurrente</h2>
+  <p>
+    Les threads en C permettent d'exécuter plusieurs tâches en parallèle, ce qui améliore les performances et la réactivité des programmes. La programmation concurrente consiste à gérer l'exécution de plusieurs threads de manière synchronisée. Voici un exemple d'utilisation des threads en C :
+  </p>
+  <pre><code>
+#include <stdio.h>
+#include <pthread.h>
+
+void* printMessage(void* arg) {
+    char* message = (char*)arg;
+    printf("%s\n", message);
+    return NULL;
+}
+
+int main() {
+    pthread_t thread1, thread2;
+
+    char* message1 = "Hello from Thread 1!";
+    char* message2 = "Hello from Thread 2!";
+
+    pthread_create(&thread1, NULL, printMessage, (void*)message1); // Création du thread 1
+    pthread_create(&thread2, NULL, printMessage, (void*)message2); // Création du thread 2
+
+    pthread_join(thread1, NULL); // Attente de la fin du thread 1
+    pthread_join(thread2, NULL); // Attente de la fin du thread 2
+
+    return 0;
+}
+  </code></pre>
+</section>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les tableaux et les chaînes de caractères</h2>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Déclaration et utilisation des tableaux</h2>
+<p>Un tableau en langage C est une structure de données qui permet de stocker une collection d'éléments de même type. Pour déclarer un tableau, on utilise la syntaxe suivante :</p>
+
+<pre><code>type nom_tableau[taille];
+</code></pre>
+
+<p>où "type" représente le type des éléments du tableau, "nom_tableau" est le nom que vous donnez au tableau et "taille" est le nombre d'éléments que le tableau peut contenir.</p>
+
+<p>Par exemple, pour déclarer un tableau d'entiers de taille 5, vous pouvez utiliser la déclaration suivante :</p>
+
+<pre><code>int monTableau[5];
+</code></pre>
+
+<p>Pour accéder aux éléments d'un tableau, on utilise l'indice de l'élément. Les indices commencent à 0 pour le premier élément et vont jusqu'à taille-1 pour le dernier élément. Par exemple, pour accéder au troisième élément d'un tableau, vous pouvez utiliser l'expression suivante :</p>
+
+<pre><code>int troisiemeElement = monTableau[2];
+</code></pre>
+
+<h2>Manipulation des tableaux (tri, recherche, etc.)</h2>
+<p>En langage C, il existe plusieurs opérations courantes que l'on peut effectuer sur les tableaux, telles que le tri, la recherche d'un élément, l'insertion d'un nouvel élément, etc.</p>
+
+<p>Pour trier un tableau, vous pouvez utiliser l'algorithme de tri le plus adapté à votre situation, comme le tri à bulles, le tri par insertion ou le tri rapide. Voici un exemple de tri à bulles :</p>
+
+<pre><code>void bubbleSort(int tableau[], int taille) {
+    int i, j;
+    for (i = 0; i &lt; taille-1; i++) {
+        for (j = 0; j &lt; taille-i-1; j++) {
+            if (tableau[j] &gt; tableau[j+1]) {
+                int temp = tableau[j];
+                tableau[j] = tableau[j+1];
+                tableau[j+1] = temp;
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>Pour rechercher un élément dans un tableau, vous pouvez utiliser une boucle pour parcourir tous les éléments du tableau et comparer chaque élément avec la valeur recherchée. Voici un exemple de recherche d'un élément :</p>
+
+<pre><code>int search(int tableau[], int taille, int valeur) {
+    int i;
+    for (i = 0; i &lt; taille; i++) {
+        if (tableau[i] == valeur) {
+            return i;
+        }
+    }
+    return -1; // Retourne -1 si l'élément n'est pas trouvé
+}
+</code></pre>
+
+<h2>Les chaînes de caractères en C</h2>
+<p>En langage C, une chaîne de caractères est une séquence de caractères terminée par le caractère nul ('\0'). Les chaînes de caractères sont généralement utilisées pour représenter du texte.</p>
+
+<p>Pour déclarer une chaîne de caractères, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>char nom_chaine[taille];
+</code></pre>
+
+<p>où "nom_chaine" est le nom que vous donnez à la chaîne de caractères et "taille" est le nombre de caractères que la chaîne peut contenir.</p>
+
+<p>Par exemple, pour déclarer une chaîne de caractères de taille 10, vous pouvez utiliser la déclaration suivante :</p>
+
+<pre><code>char maChaine[10];
+</code></pre>
+
+<p>Les chaînes de caractères peuvent être initialisées lors de leur déclaration en utilisant des guillemets doubles :</p>
+
+<pre><code>char maChaine[] = "Bonjour";
+</code></pre>
+
+<p>Vous pouvez accéder aux caractères individuels d'une chaîne de caractères en utilisant l'indice du caractère. Par exemple, pour accéder au troisième caractère d'une chaîne de caractères, vous pouvez utiliser l'expression suivante :</p>
+
+<pre><code>char troisiemeCaractere = maChaine[2];
+</code></pre>
+
+<h2>Fonctions de manipulation des chaînes de caractères</h2>
+<p>En langage C, il existe plusieurs fonctions prédéfinies qui permettent de manipuler les chaînes de caractères. Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+
+<ul>
+  <li><code>strlen(chaine)</code> : retourne la longueur de la chaîne de caractères</li>
+  <li><code>strcpy(destination, source)</code> : copie la chaîne de caractères source dans la chaîne de caractères destination</li>
+  <li><code>strcat(destination, source)</code> : concatène la chaîne de caractères source à la fin de la chaîne de caractères destination</li>
+  <li><code>strcmp(chaine1, chaine2)</code> : compare les chaînes de caractères chaine1 et chaine2 et retourne un entier négatif, nul ou positif selon que chaine1 est inférieure, égale ou supérieure à chaine2</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+
+<pre><code>#include &lt;string.h&gt;
+
+int main() {
+    char chaine1[20] = "Bonjour";
+    char chaine2[20] = "Monde";
+
+    int longueur = strlen(chaine1);
+    printf("Longueur de chaine1 : %d\n", longueur);
+
+    strcpy(chaine1, chaine2);
+    printf("chaine1 après copie : %s\n", chaine1);
+
+    strcat(chaine1, chaine2);
+    printf("chaine1 après concaténation : %s\n", chaine1);
+
+    int comparaison = strcmp(chaine1, chaine2);
+    printf("Résultat de la comparaison : %d\n", comparaison);
+
+    return 0;
+}
+</code></pre>
+
+<p>Ce code affichera :</p>
+
+<pre><code>Longueur de chaine1 : 7
+chaine1 après copie : Monde
+chaine1 après concaténation : MondeMonde
+Résultat de la comparaison : 0
+</code></pre>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

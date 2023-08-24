@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les fonctions et les pointeurs</h2>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Définition et utilisation des fonctions</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Elles permettent de diviser un programme en parties plus petites et plus gérables. Une fonction est définie en utilisant le mot-clé <code>void</code> suivi du nom de la fonction, suivi de parenthèses qui peuvent contenir des paramètres.</p>
+
+<p>Voici un exemple de définition de fonction :</p>
+
+<pre><code>void printHello() {
+    printf("Bonjour !\n");
+}</code></pre>
+
+<p>Pour utiliser une fonction, il suffit d'appeler son nom suivi de parenthèses. Par exemple :</p>
+
+<pre><code>printHello();</code></pre>
+
+<p>Cela affichera "Bonjour !" à l'écran.</p>
+
+<h2>Passage de paramètres par valeur et par référence</h2>
+<p>Les fonctions peuvent également prendre des paramètres, qui sont des valeurs ou des adresses mémoire passées à la fonction pour qu'elle les utilise. Il existe deux façons de passer des paramètres à une fonction : par valeur et par référence.</p>
+
+<p>Lorsque les paramètres sont passés par valeur, une copie de la valeur est créée et utilisée dans la fonction. Cela signifie que toute modification apportée aux paramètres à l'intérieur de la fonction n'affectera pas les variables d'origine. Voici un exemple :</p>
+
+<pre><code>void addTwoNumbers(int a, int b) {
+    int sum = a + b;
+    printf("La somme est : %d\n", sum);
+}
+
+int main() {
+    int x = 5;
+    int y = 3;
+    addTwoNumbers(x, y);
+    return 0;
+}</code></pre>
+
+<p>Cela affichera "La somme est : 8" à l'écran.</p>
+
+<p>Lorsque les paramètres sont passés par référence, l'adresse mémoire des variables est passée à la fonction. Cela signifie que toute modification apportée aux paramètres à l'intérieur de la fonction affectera également les variables d'origine. Voici un exemple :</p>
+
+<pre><code>void increment(int *num) {
+    (*num)++;
+}
+
+int main() {
+    int x = 5;
+    increment(&x);
+    printf("La valeur de x est : %d\n", x);
+    return 0;
+}</code></pre>
+
+<p>Cela affichera "La valeur de x est : 6" à l'écran.</p>
+
+<h2>Les pointeurs et les adresses mémoire</h2>
+<p>Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable. Il est utilisé pour accéder et manipuler directement la valeur de cette variable. Les pointeurs sont largement utilisés en C, notamment pour la manipulation des tableaux et des chaînes de caractères.</p>
+
+<p>Voici comment déclarer un pointeur :</p>
+
+<pre><code>int *ptr;</code></pre>
+
+<p>Le symbole <code>*</code> indique que la variable <code>ptr</code> est un pointeur vers un entier.</p>
+
+<p>Voici comment obtenir l'adresse mémoire d'une variable :</p>
+
+<pre><code>int num = 10;
+int *ptr = &num;</code></pre>
+
+<p>Le symbole <code>&</code> est utilisé pour obtenir l'adresse mémoire de la variable <code>num</code> et l'assigner au pointeur <code>ptr</code>.</p>
+
+<p>Voici comment accéder à la valeur d'une variable à l'aide d'un pointeur :</p>
+
+<pre><code>int num = 10;
+int *ptr = &num;
+printf("La valeur de num est : %d\n", *ptr);</code></pre>
+
+<p>Cela affichera "La valeur de num est : 10" à l'écran.</p>
+
+<h2>Utilisation des pointeurs pour la manipulation des tableaux et des chaînes de caractères</h2>
+<p>Les pointeurs sont souvent utilisés pour manipuler des tableaux et des chaînes de caractères en C. En utilisant des pointeurs, il est possible d'accéder et de modifier les éléments d'un tableau ou les caractères d'une chaîne de caractères.</p>
+
+<p>Voici un exemple d'utilisation d'un pointeur pour accéder aux éléments d'un tableau :</p>
+
+<pre><code>int numbers[] = {1, 2, 3, 4, 5};
+int *ptr = numbers;
+printf("Le premier élément du tableau est : %d\n", *ptr);</code></pre>
+
+<p>Cela affichera "Le premier élément du tableau est : 1" à l'écran.</p>
+
+<p>Voici un exemple d'utilisation d'un pointeur pour accéder aux caractères d'une chaîne de caractères :</p>
+
+<pre><code>char *message = "Bonjour";
+printf("Le premier caractère de la chaîne est : %c\n", *message);</code></pre>
+
+<p>Cela affichera "Le premier caractère de la chaîne est : B" à l'écran.</p>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

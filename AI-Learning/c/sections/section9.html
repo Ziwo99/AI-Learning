@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Projet pratique en C</h2>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Définition du projet</h2>
+<p>Dans cette sous-section, nous allons définir le projet pratique en C sur lequel vous allez travailler. Le projet consiste à créer un programme qui simule un système de gestion de bibliothèque. Le programme devra permettre aux utilisateurs d'ajouter, supprimer et rechercher des livres dans la bibliothèque, ainsi que de gérer les emprunts et les retours de livres.</p>
+
+<h2>Analyse des besoins et conception</h2>
+<p>Dans cette sous-section, nous allons analyser les besoins du projet et concevoir la structure du programme. Nous allons identifier les fonctionnalités nécessaires, les structures de données à utiliser et les algorithmes à implémenter. Nous allons également définir les interfaces utilisateur et les interactions avec l'utilisateur.</p>
+
+<h2>Implémentation du projet</h2>
+<p>Dans cette sous-section, nous allons passer à l'implémentation du projet. Nous allons coder les différentes fonctionnalités du programme en utilisant le langage C. Nous allons créer les structures de données nécessaires, implémenter les algorithmes de recherche et de gestion des emprunts, et gérer les interactions avec l'utilisateur.</p>
+<pre><code>/* Exemple de code pour l'ajout d'un livre */
+void ajouterLivre() {
+    Livre nouveauLivre;
+    
+    printf("Titre du livre : ");
+    fgets(nouveauLivre.titre, sizeof(nouveauLivre.titre), stdin);
+    
+    printf("Auteur du livre : ");
+    fgets(nouveauLivre.auteur, sizeof(nouveauLivre.auteur), stdin);
+    
+    // Ajouter le livre à la bibliothèque
+    bibliothèque.ajouterLivre(nouveauLivre);
+    
+    printf("Le livre a été ajouté avec succès.\n");
+}
+</code></pre>
+
+<h2>Tests et validation du projet</h2>
+<p>Dans cette sous-section, nous allons tester et valider le projet. Nous allons exécuter différentes séquences d'actions pour vérifier que le programme fonctionne correctement. Nous allons également effectuer des tests de performance pour s'assurer que le programme est efficace et réactif.</p>
+<pre><code>/* Exemple de code pour tester la recherche d'un livre */
+void testerRechercheLivre() {
+    char titreRecherche[100];
+    
+    printf("Titre du livre à rechercher : ");
+    fgets(titreRecherche, sizeof(titreRecherche), stdin);
+    
+    Livre* livreTrouve = bibliothèque.rechercherLivre(titreRecherche);
+    
+    if (livreTrouve != NULL) {
+        printf("Livre trouvé : %s, %s\n", livreTrouve->titre, livreTrouve->auteur);
+    } else {
+        printf("Aucun livre trouvé avec ce titre.\n");
+    }
+}
+</code></pre>
+
+<h2>Conclusion</h2>
+<p>Dans cette section, vous avez appris à concevoir, implémenter et tester un projet pratique en C. Vous avez créé un programme de gestion de bibliothèque qui permet aux utilisateurs d'ajouter, supprimer et rechercher des livres. Vous avez également appris à gérer les emprunts et les retours de livres. Félicitations pour avoir terminé cette formation sur le langage C !</p>
+					<a href="AI-Learning/c/c.html"
+						class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
