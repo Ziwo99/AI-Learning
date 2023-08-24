@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation orientée objet en Javascript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets similaires.</p>
+<p>En POO, les objets sont utilisés pour encapsuler des données et des fonctionnalités connexes. Cela permet de créer du code modulaire, réutilisable et facile à maintenir.</p>
+<p>Voici un exemple de code utilisant la POO en Javascript :</p>
+<pre><code>class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    sayHello() {
+        console.log('Hello, my name is ' + this.name);
+    }
+}
+
+let person1 = new Person('John', 25);
+person1.sayHello(); // Output: Hello, my name is John
+</code></pre>
+
+<h2>Les objets et les classes</h2>
+<p>En POO, les objets sont des instances de classes. Une classe est un modèle ou un plan pour créer des objets similaires. Elle définit les propriétés et les méthodes que les objets de cette classe auront.</p>
+<p>Voici un exemple de code utilisant des objets et des classes en Javascript :</p>
+<pre><code>class Car {
+    constructor(brand, color) {
+        this.brand = brand;
+        this.color = color;
+    }
+
+    startEngine() {
+        console.log('The ' + this.brand + ' car is starting...');
+    }
+}
+
+let car1 = new Car('Toyota', 'red');
+car1.startEngine(); // Output: The Toyota car is starting...
+</code></pre>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un concept clé de la POO qui permet à une classe d'hériter des propriétés et des méthodes d'une autre classe. Cela permet de créer une hiérarchie de classes et de réutiliser du code.</p>
+<p>Le polymorphisme est un autre concept de la POO qui permet à des objets de différentes classes d'être traités de manière interchangeable, en utilisant une interface commune.</p>
+<p>Voici un exemple de code utilisant l'héritage et le polymorphisme en Javascript :</p>
+<pre><code>class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    makeSound() {
+        console.log('The animal makes a sound.');
+    }
+}
+
+class Dog extends Animal {
+    makeSound() {
+        console.log('The dog barks.');
+    }
+}
+
+class Cat extends Animal {
+    makeSound() {
+        console.log('The cat meows.');
+    }
+}
+
+let animal1 = new Animal('Animal');
+let dog1 = new Dog('Dog');
+let cat1 = new Cat('Cat');
+
+animal1.makeSound(); // Output: The animal makes a sound.
+dog1.makeSound(); // Output: The dog barks.
+cat1.makeSound(); // Output: The cat meows.
+</code></pre>
+
+<h2>Les modules et les namespaces</h2>
+<p>Les modules et les namespaces sont des concepts utilisés pour organiser et structurer le code en POO. Ils permettent de regrouper des fonctionnalités connexes et d'éviter les conflits de noms.</p>
+<p>En Javascript, les modules peuvent être créés en utilisant les modules ES6 ou en utilisant des bibliothèques comme CommonJS ou AMD.</p>
+<p>Voici un exemple de code utilisant les modules et les namespaces en Javascript :</p>
+<pre><code>// Module 1
+let module1 = (function() {
+    let privateVariable = 'Private variable';
+
+    function privateFunction() {
+        console.log('Private function');
+    }
+
+    return {
+        publicVariable: 'Public variable',
+        publicFunction: function() {
+            console.log('Public function');
+        }
+    };
+})();
+
+// Module 2
+let module2 = (function() {
+    function privateFunction() {
+        console.log('Private function');
+    }
+
+    return {
+        publicVariable: 'Public variable',
+        publicFunction: function() {
+            console.log('Public function');
+        }
+    };
+})();
+
+module1.publicFunction(); // Output: Public function
+module2.publicFunction(); // Output: Public function
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

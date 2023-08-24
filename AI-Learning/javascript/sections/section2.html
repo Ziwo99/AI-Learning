@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Manipulation du DOM avec Javascript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction au DOM</h2>
+<p>Le Document Object Model (DOM) est une interface de programmation qui permet d'accéder et de manipuler les éléments d'une page HTML. Avec Javascript, vous pouvez utiliser le DOM pour modifier dynamiquement le contenu, la structure et le style d'une page web.</p>
+
+<p>Le DOM représente la structure hiérarchique d'une page web sous forme d'un arbre. Chaque élément HTML est représenté par un nœud dans cet arbre, et vous pouvez accéder à ces nœuds pour effectuer des opérations telles que la modification du contenu, l'ajout ou la suppression d'éléments, etc.</p>
+
+<h2>Sélection des éléments du DOM</h2>
+<p>Pour sélectionner un élément du DOM, vous pouvez utiliser différentes méthodes en fonction de vos besoins. Voici quelques-unes des méthodes les plus couramment utilisées :</p>
+
+<pre><code>// Sélectionner un élément par son ID
+var element = document.getElementById('monElement');
+
+// Sélectionner un élément par sa classe
+var elements = document.getElementsByClassName('maClasse');
+
+// Sélectionner tous les éléments d'un certain type
+var elements = document.getElementsByTagName('div');
+
+// Sélectionner le premier élément correspondant à un sélecteur CSS
+var element = document.querySelector('.maClasse');
+
+// Sélectionner tous les éléments correspondant à un sélecteur CSS
+var elements = document.querySelectorAll('div');
+</code></pre>
+
+<h2>Manipulation des éléments du DOM</h2>
+<p>Une fois que vous avez sélectionné un élément du DOM, vous pouvez le manipuler de différentes manières. Voici quelques-unes des opérations les plus couramment utilisées :</p>
+
+<pre><code>// Modifier le contenu d'un élément
+element.innerHTML = 'Nouveau contenu';
+
+// Modifier l'attribut d'un élément
+element.setAttribute('src', 'image.jpg');
+
+// Ajouter une classe à un élément
+element.classList.add('maClasse');
+
+// Supprimer une classe d'un élément
+element.classList.remove('maClasse');
+
+// Ajouter un nouvel élément à la page
+var newElement = document.createElement('div');
+newElement.innerHTML = 'Nouvel élément';
+document.body.appendChild(newElement);
+
+// Supprimer un élément de la page
+element.parentNode.removeChild(element);
+</code></pre>
+
+<h2>Gestion des événements</h2>
+<p>Les événements sont des actions ou des occurrences qui se produisent dans une page web, comme un clic de souris, une pression de touche, etc. Vous pouvez utiliser Javascript pour gérer ces événements et exécuter du code en réponse à ceux-ci.</p>
+
+<p>Voici comment vous pouvez ajouter un gestionnaire d'événements à un élément du DOM :</p>
+
+<pre><code>// Ajouter un gestionnaire d'événements à un élément
+element.addEventListener('click', function() {
+    // Code à exécuter lorsque l'événement se produit
+});
+</code></pre>
+
+<p>Vous pouvez également utiliser des fonctions nommées comme gestionnaires d'événements :</p>
+
+<pre><code>// Définir une fonction comme gestionnaire d'événements
+function handleClick() {
+    // Code à exécuter lorsque l'événement se produit
+}
+
+// Ajouter le gestionnaire d'événements à l'élément
+element.addEventListener('click', handleClick);
+</code></pre>
+
+<p>En utilisant la manipulation du DOM avec Javascript, vous pouvez créer des pages web interactives et dynamiques. Continuez à explorer et à pratiquer pour maîtriser cette compétence essentielle du développement web.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

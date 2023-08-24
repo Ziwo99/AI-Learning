@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les API Web en Javascript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les API de géolocalisation</h2>
+<p>L'API de géolocalisation permet aux applications web d'accéder à la position géographique de l'utilisateur. Cela peut être utilisé pour fournir des fonctionnalités basées sur la localisation, telles que des services de localisation, des recommandations personnalisées et bien plus encore.</p>
+
+<p>Voici un exemple de code qui utilise l'API de géolocalisation pour obtenir la position de l'utilisateur :</p>
+<pre><code>if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        console.log("Latitude: " + latitude + ", Longitude: " + longitude);
+    });
+} else {
+    console.log("La géolocalisation n'est pas prise en charge par ce navigateur.");
+}</code></pre>
+
+<h2>Les API de caméra et de microphone</h2>
+<p>Les API de caméra et de microphone permettent aux applications web d'accéder aux fonctionnalités de la caméra et du microphone de l'appareil de l'utilisateur. Cela peut être utilisé pour créer des applications de chat vidéo, des enregistreurs audio, des applications de réalité augmentée, etc.</p>
+
+<p>Voici un exemple de code qui utilise l'API de caméra pour prendre une photo :</p>
+<pre><code>var video = document.querySelector('video');
+
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+        video.srcObject = stream;
+        video.play();
+    })
+    .catch(function(error) {
+        console.log("Une erreur s'est produite lors de l'accès à la caméra: " + error);
+    });
+
+var canvas = document.querySelector('canvas');
+var context = canvas.getContext('2d');
+
+document.querySelector('button').addEventListener('click', function() {
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+});</code></pre>
+
+<h2>Les API de stockage local</h2>
+<p>Les API de stockage local permettent aux applications web de stocker des données localement sur l'appareil de l'utilisateur. Cela peut être utilisé pour créer des applications hors ligne, des applications de gestion de données, etc.</p>
+
+<p>Voici un exemple de code qui utilise l'API de stockage local pour enregistrer des données :</p>
+<pre><code>localStorage.setItem('nom', 'John');
+localStorage.setItem('age', 30);
+
+var nom = localStorage.getItem('nom');
+var age = localStorage.getItem('age');
+
+console.log("Nom: " + nom + ", Age: " + age);</code></pre>
+
+<h2>Les API de notifications</h2>
+<p>Les API de notifications permettent aux applications web d'afficher des notifications à l'utilisateur, même lorsque l'application n'est pas ouverte. Cela peut être utilisé pour envoyer des notifications push, des rappels, des mises à jour, etc.</p>
+
+<p>Voici un exemple de code qui utilise l'API de notifications pour afficher une notification :</p>
+<pre><code>if (Notification.permission === 'granted') {
+    var notification = new Notification('Nouvelle notification', {
+        body: 'Ceci est une notification de test.',
+        icon: 'icon.png'
+    });
+} else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function(permission) {
+        if (permission === 'granted') {
+            var notification = new Notification('Nouvelle notification', {
+                body: 'Ceci est une notification de test.',
+                icon: 'icon.png'
+            });
+        }
+    });
+}</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
