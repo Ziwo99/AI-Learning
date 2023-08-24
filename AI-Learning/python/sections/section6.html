@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Programmation orientée objet</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code de manière plus modulaire et réutilisable. En POO, les programmes sont conçus autour d'objets qui représentent des entités du monde réel ou des concepts abstraits.</p>
+
+<p>Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. Les objets ont des attributs (variables) et des méthodes (fonctions) qui leur sont propres.</p>
+
+<p>Voici un exemple simple de classe en Python :</p>
+<pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print("Hello, my name is", self.name)
+
+# Création d'un objet de la classe Person
+person1 = Person("Alice", 25)
+
+# Appel de la méthode greet() de l'objet
+person1.greet()</code></pre>
+
+<h2>Les classes et les objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les attributs et les méthodes communes à tous les objets de cette classe.</p>
+
+<p>Les attributs sont des variables qui stockent des données spécifiques à chaque objet. Les méthodes sont des fonctions qui définissent le comportement des objets de la classe.</p>
+
+<p>Voici un exemple de classe en Python :</p>
+<pre><code>class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+# Création d'un objet de la classe Circle
+circle1 = Circle(5)
+
+# Appel de la méthode area() de l'objet
+print("Area:", circle1.area())</code></pre>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un mécanisme qui permet à une classe d'hériter des attributs et des méthodes d'une autre classe. La classe qui hérite est appelée classe dérivée ou sous-classe, et la classe dont elle hérite est appelée classe de base ou superclasse.</p>
+
+<p>Le polymorphisme est la capacité d'un objet à prendre différentes formes ou à se comporter de différentes manières en fonction du contexte. Il permet d'utiliser une classe dérivée comme si elle était une classe de base.</p>
+
+<p>Voici un exemple d'héritage et de polymorphisme en Python :</p>
+<pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def sound(self):
+        return "Meow!"
+
+# Création d'objets de différentes classes dérivées
+dog1 = Dog("Buddy")
+cat1 = Cat("Whiskers")
+
+# Appel de la méthode sound() des objets
+print(dog1.name, "makes", dog1.sound())
+print(cat1.name, "makes", cat1.sound())</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

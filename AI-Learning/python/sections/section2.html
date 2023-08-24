@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Structures de contrôle</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les conditions : if, else, elif</h2>
+<p>Les conditions permettent d'exécuter certaines parties du code en fonction de l'évaluation d'une expression booléenne. En Python, on utilise les mots-clés <code>if</code>, <code>else</code> et <code>elif</code> pour gérer les conditions.</p>
+
+<p>La structure générale d'une condition est la suivante :</p>
+
+<pre><code>if condition:
+    # Code à exécuter si la condition est vraie
+elif autre_condition:
+    # Code à exécuter si la condition précédente est fausse et cette condition est vraie
+else:
+    # Code à exécuter si toutes les conditions précédentes sont fausses
+</code></pre>
+
+<p>Voici un exemple concret :</p>
+
+<pre><code>age = 18
+
+if age &lt; 18:
+    print("Vous êtes mineur.")
+elif age == 18:
+    print("Vous venez d'atteindre la majorité.")
+else:
+    print("Vous êtes majeur.")
+</code></pre>
+
+<p>Dans cet exemple, le code affiche "Vous venez d'atteindre la majorité." car la variable <code>age</code> est égale à 18.</p>
+
+<h2>Les boucles : for, while</h2>
+<p>Les boucles permettent de répéter l'exécution d'un bloc de code plusieurs fois. En Python, on utilise les boucles <code>for</code> et <code>while</code>.</p>
+
+<p>La boucle <code>for</code> permet de parcourir une séquence (comme une liste, un tuple ou une chaîne de caractères) et d'exécuter le code pour chaque élément de la séquence :</p>
+
+<pre><code>for element in sequence:
+    # Code à exécuter pour chaque élément
+</code></pre>
+
+<p>Voici un exemple :</p>
+
+<pre><code>fruits = ["pomme", "banane", "orange"]
+
+for fruit in fruits:
+    print(fruit)
+</code></pre>
+
+<p>Ce code affiche chaque élément de la liste <code>fruits</code> sur une nouvelle ligne.</p>
+
+<p>La boucle <code>while</code> permet d'exécuter le code tant qu'une condition est vraie :</p>
+
+<pre><code>while condition:
+    # Code à exécuter tant que la condition est vraie
+</code></pre>
+
+<p>Voici un exemple :</p>
+
+<pre><code>i = 0
+
+while i &lt; 5:
+    print(i)
+    i += 1
+</code></pre>
+
+<p>Ce code affiche les nombres de 0 à 4, car la condition <code>i &lt; 5</code> est vérifiée à chaque itération.</p>
+
+<h2>Les instructions de contrôle : break, continue, pass</h2>
+<p>Les instructions de contrôle permettent de modifier le comportement des boucles.</p>
+
+<p>L'instruction <code>break</code> permet de sortir immédiatement de la boucle :</p>
+
+<pre><code>for element in sequence:
+    if condition:
+        break
+    # Code à exécuter pour chaque élément tant que la condition est fausse
+</code></pre>
+
+<p>L'instruction <code>continue</code> permet de passer à l'itération suivante de la boucle :</p>
+
+<pre><code>for element in sequence:
+    if condition:
+        continue
+    # Code à exécuter pour chaque élément sauf ceux qui satisfont la condition
+</code></pre>
+
+<p>L'instruction <code>pass</code> est utilisée comme espace réservé pour un code qui n'a pas encore été écrit :</p>
+
+<pre><code>if condition:
+    pass
+else:
+    # Code à exécuter si la condition est fausse
+</code></pre>
+
+<p>Ces instructions permettent de contrôler le flux d'exécution du code à l'intérieur des boucles.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

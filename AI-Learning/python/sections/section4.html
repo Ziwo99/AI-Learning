@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Fonctions et modules</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les fonctions</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Elles permettent d'organiser le code en le divisant en tâches plus petites et plus gérables. En Python, vous pouvez définir une fonction en utilisant le mot-clé <code>def</code> suivi du nom de la fonction et des paramètres entre parenthèses. Voici un exemple de fonction qui calcule la somme de deux nombres :</p>
+
+<pre><code>def addition(a, b):
+    return a + b
+
+resultat = addition(3, 5)
+print(resultat)  # Output: 8
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>addition</code> prend deux paramètres <code>a</code> et <code>b</code> et renvoie leur somme. La fonction est ensuite appelée avec les arguments <code>3</code> et <code>5</code>, et le résultat est stocké dans la variable <code>resultat</code> et affiché.</p>
+
+<h2>Les modules</h2>
+<p>Les modules sont des fichiers contenant du code Python qui peuvent être importés dans d'autres programmes. Ils permettent d'organiser le code en le divisant en fichiers plus petits et plus spécialisés. Python dispose d'un grand nombre de modules prédéfinis, tels que <code>math</code> pour les opérations mathématiques, <code>random</code> pour la génération de nombres aléatoires, etc. Pour utiliser un module, vous devez l'importer en utilisant le mot-clé <code>import</code>. Voici un exemple d'utilisation du module <code>math</code> :</p>
+
+<pre><code>import math
+
+racine_carree = math.sqrt(16)
+print(racine_carree)  # Output: 4.0
+</code></pre>
+
+<p>Dans cet exemple, le module <code>math</code> est importé et la fonction <code>sqrt</code> est utilisée pour calculer la racine carrée de <code>16</code>. Le résultat est stocké dans la variable <code>racine_carree</code> et affiché.</p>
+
+<h2>Les packages</h2>
+<p>Les packages sont des dossiers contenant des modules Python. Ils permettent d'organiser le code en le divisant en dossiers et sous-dossiers. Un package peut contenir plusieurs modules et sous-packages. Pour utiliser un module d'un package, vous devez spécifier le nom du package suivi du nom du module. Voici un exemple d'utilisation d'un module d'un package :</p>
+
+<pre><code>import numpy as np
+
+liste = [1, 2, 3, 4, 5]
+moyenne = np.mean(liste)
+print(moyenne)  # Output: 3.0
+</code></pre>
+
+<p>Dans cet exemple, le module <code>mean</code> du package <code>numpy</code> est importé en utilisant l'alias <code>np</code>. La fonction <code>mean</code> est utilisée pour calculer la moyenne de la liste <code>[1, 2, 3, 4, 5]</code>. Le résultat est stocké dans la variable <code>moyenne</code> et affiché.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

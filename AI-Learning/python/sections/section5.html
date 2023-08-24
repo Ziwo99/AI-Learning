@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des erreurs et exceptions</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les erreurs courantes en Python</h2>
+<p>En Python, il est courant de rencontrer certaines erreurs lors de l'exécution de notre code. Ces erreurs peuvent être causées par des erreurs de syntaxe, des erreurs de logique ou des erreurs d'exécution. Voici quelques-unes des erreurs courantes en Python :</p>
+
+<p><strong>1. SyntaxError :</strong> Cette erreur se produit lorsque le code ne respecte pas la syntaxe du langage Python. Par exemple, oublier de fermer une parenthèse ou d'utiliser un mot-clé réservé comme nom de variable.</p>
+
+<p><strong>2. NameError :</strong> Cette erreur se produit lorsque Python ne parvient pas à trouver une variable ou une fonction spécifiée. Cela peut être dû à une faute de frappe dans le nom de la variable ou à une variable non définie.</p>
+
+<p><strong>3. TypeError :</strong> Cette erreur se produit lorsque une opération est effectuée sur des types de données incompatibles. Par exemple, additionner une chaîne de caractères avec un entier.</p>
+
+<p><strong>4. IndexError :</strong> Cette erreur se produit lorsque vous essayez d'accéder à un élément d'une liste ou d'un tableau en utilisant un index qui est en dehors de la plage valide.</p>
+
+<p><strong>5. ValueError :</strong> Cette erreur se produit lorsque vous essayez de convertir une valeur dans un type incompatible. Par exemple, convertir une chaîne de caractères en entier alors qu'elle ne contient pas de chiffres.</p>
+
+<h2>Les exceptions et leur gestion</h2>
+<p>En Python, les exceptions sont utilisées pour gérer les erreurs qui se produisent lors de l'exécution du code. Les exceptions permettent de détecter et de gérer les erreurs de manière appropriée, plutôt que de simplement arrêter l'exécution du programme.</p>
+
+<p>Pour gérer les exceptions en Python, nous utilisons les blocs try-except. Le code qui peut générer une exception est placé dans le bloc try, et le code qui gère l'exception est placé dans le bloc except. Voici un exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    result = 10 / 0
+except ZeroDivisionError:
+    # Code de gestion de l'exception
+    print("Erreur : division par zéro")</code></pre>
+
+<p>Dans cet exemple, le code tente de diviser 10 par zéro, ce qui génère une exception de type ZeroDivisionError. Le bloc except spécifie le type d'exception à gérer, et le code à l'intérieur du bloc except est exécuté lorsque cette exception se produit.</p>
+
+<p>Il est également possible d'utiliser plusieurs blocs except pour gérer différents types d'exceptions. Par exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    result = int("abc")
+except ValueError:
+    # Code de gestion de l'exception ValueError
+    print("Erreur : conversion impossible")
+except TypeError:
+    # Code de gestion de l'exception TypeError
+    print("Erreur : type incompatible")</code></pre>
+
+<p>Dans cet exemple, le code tente de convertir la chaîne de caractères "abc" en entier, ce qui génère une exception de type ValueError. Le bloc except ValueError est exécuté dans ce cas, et le bloc except TypeError serait exécuté si une exception de type TypeError se produisait.</p>
+
+<p>Il est également possible d'utiliser un bloc except sans spécifier le type d'exception, ce qui permet de capturer toutes les exceptions. Cependant, cela peut rendre le débogage plus difficile, car vous ne saurez pas quel type d'exception s'est produit.</p>
+
+<p>En plus des blocs try-except, il est possible d'utiliser les blocs try-except-finally pour exécuter du code qui doit être exécuté qu'une exception se produise ou non. Le bloc finally est exécuté après le bloc try et le bloc except, qu'une exception se soit produite ou non.</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    result = 10 / 2
+except ZeroDivisionError:
+    # Code de gestion de l'exception
+    print("Erreur : division par zéro")
+finally:
+    # Code exécuté après le bloc try et le bloc except
+    print("Fin de l'exécution")</code></pre>
+
+<p>Dans cet exemple, le code divise 10 par 2, ce qui ne génère pas d'exception. Le bloc finally est exécuté après le bloc try et le bloc except, et affiche "Fin de l'exécution".</p>
+
+<p>En résumé, la gestion des erreurs et des exceptions en Python permet de détecter et de gérer les erreurs de manière appropriée. Les blocs try-except sont utilisés pour entourer le code susceptible de générer une exception, et les blocs finally sont utilisés pour exécuter du code après le bloc try et le bloc except, qu'une exception se soit produite ou non.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
