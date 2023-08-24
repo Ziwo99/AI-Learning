@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Les fonctions en JavaScript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux fonctions en JavaScript</h2>
+<p>Les fonctions en JavaScript sont des blocs de code réutilisables qui peuvent être appelés pour effectuer une tâche spécifique. Elles permettent d'organiser et de structurer le code, ce qui facilite la maintenance et la réutilisation du code.</p>
+
+<p>Pour déclarer une fonction en JavaScript, utilisez le mot-clé <code>function</code>, suivi du nom de la fonction et des parenthèses. Par exemple:</p>
+
+<pre><code>function maFonction() {
+    // Code à exécuter
+}
+</code></pre>
+
+<p>Pour appeler une fonction, utilisez simplement son nom suivi des parenthèses. Par exemple:</p>
+
+<pre><code>maFonction();
+</code></pre>
+
+<h2>Les fonctions anonymes en JavaScript</h2>
+<p>Les fonctions anonymes en JavaScript sont des fonctions qui n'ont pas de nom. Elles sont souvent utilisées comme arguments pour d'autres fonctions ou pour créer des fonctions auto-exécutables.</p>
+
+<p>Voici un exemple de fonction anonyme utilisée comme argument pour la méthode <code>setTimeout()</code>:</p>
+
+<pre><code>setTimeout(function() {
+    console.log('Cette fonction sera exécutée après 2 secondes.');
+}, 2000);
+</code></pre>
+
+<h2>Les fonctions fléchées en JavaScript</h2>
+<p>Les fonctions fléchées en JavaScript sont une syntaxe plus concise pour déclarer des fonctions. Elles sont souvent utilisées pour les fonctions anonymes.</p>
+
+<p>Voici un exemple de fonction fléchée:</p>
+
+<pre><code>const maFonction = () => {
+    // Code à exécuter
+};
+</code></pre>
+
+<p>Les fonctions fléchées ont une syntaxe plus courte et ne modifient pas la valeur de <code>this</code> lorsqu'elles sont utilisées à l'intérieur d'autres fonctions.</p>
+
+<h2>Les fonctions récursives en JavaScript</h2>
+<p>Les fonctions récursives en JavaScript sont des fonctions qui s'appellent elles-mêmes. Elles sont souvent utilisées pour résoudre des problèmes qui peuvent être divisés en sous-problèmes plus petits.</p>
+
+<p>Voici un exemple de fonction récursive pour calculer le factoriel d'un nombre:</p>
+
+<pre><code>function factoriel(n) {
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * factoriel(n - 1);
+    }
+}
+
+console.log(factoriel(5)); // Affiche 120
+</code></pre>
+
+<h2>Les fonctions de rappel en JavaScript</h2>
+<p>Les fonctions de rappel en JavaScript sont des fonctions qui sont passées en tant qu'arguments à d'autres fonctions. Elles sont souvent utilisées pour exécuter du code après l'exécution d'une opération asynchrone.</p>
+
+<p>Voici un exemple de fonction de rappel utilisée avec la méthode <code>forEach()</code> d'un tableau:</p>
+
+<pre><code>const nombres = [1, 2, 3, 4, 5];
+
+nombres.forEach(function(nombre) {
+    console.log(nombre * 2);
+});
+</code></pre>
+
+<p>Cette fonction de rappel sera exécutée pour chaque élément du tableau <code>nombres</code> et affichera le double de chaque nombre.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les frameworks JavaScript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux frameworks JavaScript</h2>
+<p>Les frameworks JavaScript sont des bibliothèques de code pré-écrites qui facilitent le développement d'applications web. Ils offrent des fonctionnalités prêtes à l'emploi, ce qui permet aux développeurs de gagner du temps et d'améliorer l'efficacité de leur travail. Les frameworks JavaScript sont largement utilisés pour créer des applications web interactives, des interfaces utilisateur dynamiques et des applications à page unique (SPA).</p>
+
+<h2>AngularJS</h2>
+<p>AngularJS est un framework JavaScript développé par Google. Il est principalement utilisé pour créer des applications web à page unique. AngularJS utilise le concept de liaison de données bidirectionnelle, ce qui signifie que les modifications apportées à l'interface utilisateur sont automatiquement reflétées dans le modèle de données et vice versa. Cela permet de créer des applications réactives et dynamiques.</p>
+<pre><code>var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.message = 'Hello, AngularJS!';
+});
+</code></pre>
+
+<h2>ReactJS</h2>
+<p>ReactJS est un framework JavaScript développé par Facebook. Il est utilisé pour créer des interfaces utilisateur réactives et réutilisables. ReactJS utilise un concept appelé "Virtual DOM" qui permet de mettre à jour efficacement les éléments de l'interface utilisateur sans recharger toute la page. Il est également possible de créer des composants réutilisables, ce qui facilite la maintenance et la réutilisation du code.</p>
+<pre><code>class MyComponent extends React.Component {
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;h1&gt;Hello, ReactJS!&lt;/h1&gt;
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre>
+
+<h2>Vue.js</h2>
+<p>Vue.js est un framework JavaScript progressif qui peut être utilisé pour créer des interfaces utilisateur interactives. Il est facile à apprendre et à intégrer dans des projets existants. Vue.js utilise un système de liaison de données bidirectionnelle et offre des fonctionnalités telles que la gestion des états, la composition des composants et la manipulation du DOM. Il est également possible d'utiliser Vue.js pour créer des applications à page unique.</p>
+<pre><code>var app = new Vue({
+    el: '#app',
+    data: {
+        message: 'Hello, Vue.js!'
+    }
+});
+</code></pre>
+
+<h2>Node.js</h2>
+<p>Node.js est un environnement d'exécution JavaScript côté serveur. Il permet d'exécuter du code JavaScript en dehors d'un navigateur web. Node.js est basé sur le moteur JavaScript V8 de Google Chrome. Il est utilisé pour créer des applications web côté serveur, des outils en ligne de commande et des API. Node.js est également compatible avec de nombreux frameworks et bibliothèques JavaScript, ce qui facilite le développement d'applications web robustes et évolutives.</p>
+<pre><code>const http = require('http');
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello, Node.js!');
+});
+
+server.listen(3000, 'localhost', () => {
+    console.log('Server running at http://localhost:3000/');
+});
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

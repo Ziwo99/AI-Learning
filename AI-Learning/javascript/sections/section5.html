@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les tableaux en JavaScript</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux tableaux en JavaScript</h2>
+<p>Un tableau est une structure de données qui permet de stocker et d'organiser plusieurs valeurs dans une seule variable. En JavaScript, un tableau peut contenir des éléments de différents types tels que des nombres, des chaînes de caractères, des objets, etc. Pour créer un tableau, on utilise les crochets [] et on sépare les éléments par des virgules.</p>
+
+<pre><code>var fruits = ['pomme', 'banane', 'orange'];</code></pre>
+
+<p>Dans cet exemple, nous avons créé un tableau appelé "fruits" qui contient trois éléments: 'pomme', 'banane' et 'orange'.</p>
+
+<h2>La manipulation des tableaux en JavaScript</h2>
+<p>Une fois que nous avons créé un tableau, nous pouvons effectuer différentes opérations pour manipuler et accéder à ses éléments. Voici quelques-unes des opérations couramment utilisées :</p>
+
+<ul>
+  <li>Accéder à un élément spécifique : on utilise l'indice de l'élément dans le tableau pour y accéder. Les indices commencent à zéro.</li>
+  <li>Ajouter un élément à la fin du tableau : on utilise la méthode push().</li>
+  <li>Supprimer le dernier élément du tableau : on utilise la méthode pop().</li>
+  <li>Modifier un élément existant : on utilise l'indice pour accéder à l'élément et on le remplace par une nouvelle valeur.</li>
+</ul>
+
+<pre><code>// Accéder à un élément spécifique
+var premierFruit = fruits[0];
+
+// Ajouter un élément à la fin du tableau
+fruits.push('raisin');
+
+// Supprimer le dernier élément du tableau
+fruits.pop();
+
+// Modifier un élément existant
+fruits[1] = 'kiwi';</code></pre>
+
+<h2>Les méthodes des tableaux en JavaScript</h2>
+<p>JavaScript fournit également plusieurs méthodes intégrées pour effectuer des opérations plus avancées sur les tableaux. Voici quelques-unes des méthodes les plus couramment utilisées :</p>
+
+<ul>
+  <li>La méthode length : elle permet de connaître la taille d'un tableau, c'est-à-dire le nombre d'éléments qu'il contient.</li>
+  <li>La méthode forEach : elle permet d'itérer sur tous les éléments d'un tableau et d'effectuer une action spécifique pour chaque élément.</li>
+  <li>La méthode sort : elle permet de trier les éléments d'un tableau dans l'ordre croissant.</li>
+  <li>La méthode reverse : elle permet d'inverser l'ordre des éléments d'un tableau.</li>
+</ul>
+
+<pre><code>// Connaître la taille d'un tableau
+var taille = fruits.length;
+
+// Itérer sur tous les éléments d'un tableau
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+// Trier les éléments d'un tableau
+fruits.sort();
+
+// Inverser l'ordre des éléments d'un tableau
+fruits.reverse();</code></pre>
+
+<h2>Les tableaux multidimensionnels en JavaScript</h2>
+<p>En JavaScript, il est également possible de créer des tableaux multidimensionnels, c'est-à-dire des tableaux qui contiennent d'autres tableaux. Cela peut être utile pour représenter des structures de données plus complexes.</p>
+
+<pre><code>var matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+// Accéder à un élément spécifique dans un tableau multidimensionnel
+var element = matrix[1][2];</code></pre>
+
+<p>Dans cet exemple, nous avons créé un tableau multidimensionnel appelé "matrix" qui contient trois tableaux. Chaque tableau représente une ligne de la matrice. Pour accéder à un élément spécifique, nous utilisons deux indices : le premier pour sélectionner la ligne et le deuxième pour sélectionner la colonne.</p>
+
+<h2>Les tableaux associatifs en JavaScript</h2>
+<p>En JavaScript, les tableaux peuvent également être utilisés comme des tableaux associatifs, où les indices ne sont pas nécessairement des nombres, mais peuvent être des chaînes de caractères.</p>
+
+<pre><code>var person = {
+  name: 'John',
+  age: 30,
+  city: 'Paris'
+};
+
+// Accéder à une propriété spécifique dans un tableau associatif
+var age = person['age'];</code></pre>
+
+<p>Dans cet exemple, nous avons créé un tableau associatif appelé "person" qui contient des propriétés telles que "name", "age" et "city". Pour accéder à une propriété spécifique, nous utilisons la notation entre crochets [] et nous spécifions le nom de la propriété.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
