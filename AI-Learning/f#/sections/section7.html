@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Développement web avec F#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction au développement web avec F#</h2>
+<p>
+Le développement web avec F# permet de créer des applications web robustes et performantes en utilisant le langage de programmation F#. F# est un langage fonctionnel qui offre de nombreux avantages pour le développement web, tels que la concision du code, la sécurité des types et la prise en charge de la programmation asynchrone.
+</p>
+
+<h2>Utilisation de F# pour créer des API REST</h2>
+<p>
+Les API REST (Representational State Transfer) sont un moyen populaire de créer des services web qui permettent aux clients d'interagir avec des ressources via des requêtes HTTP. F# offre une syntaxe concise et expressive pour créer des API REST.
+</p>
+<pre><code>open Microsoft.AspNetCore.Mvc
+
+type ApiController() =
+    inherit ControllerBase()
+
+    [<HttpGet>]
+    member this.Get() =
+        // Logique pour récupérer les données
+        Ok("Résultat de la requête GET")
+
+    [<HttpPost>]
+    member this.Post([<FromBody>] data: string) =
+        // Logique pour traiter les données
+        Ok("Résultat de la requête POST")
+
+    // Autres méthodes pour les autres verbes HTTP (PUT, DELETE, etc.)
+</code></pre>
+
+<h2>Utilisation de F# pour créer des applications web côté serveur</h2>
+<p>
+F# peut également être utilisé pour créer des applications web côté serveur, où le code s'exécute sur le serveur et génère des pages web dynamiques à envoyer aux clients. F# offre des frameworks tels que ASP.NET Core pour faciliter le développement d'applications web côté serveur.
+</p>
+<pre><code>open Microsoft.AspNetCore.Builder
+open Microsoft.AspNetCore.Hosting
+open Microsoft.AspNetCore.Http
+
+let app (env: IWebHostEnvironment) (app: IApplicationBuilder) =
+    app.Run(fun (context: HttpContext) ->
+        async {
+            let mutable response = "Hello, World!"
+
+            // Logique pour générer la réponse en fonction de la requête
+
+            context.Response.ContentType <- "text/plain"
+            return! context.Response.WriteAsync(response)
+        })
+</code></pre>
+
+<h2>Utilisation de F# pour créer des applications web côté client</h2>
+<p>
+F# peut également être utilisé pour créer des applications web côté client, où le code s'exécute dans le navigateur des utilisateurs. F# offre des frameworks tels que Fable pour faciliter le développement d'applications web côté client.
+</p>
+<pre><code>open Fable.React
+open Fable.React.Props
+
+let render() =
+    div [ prop.text "Hello, World!" ]
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons Fable et Fable.React pour créer une application web côté client qui affiche simplement le texte "Hello, World!" dans un élément div.
+</p>
+
+<p>
+En utilisant F# pour le développement web, vous pouvez tirer parti de la puissance de la programmation fonctionnelle pour créer des applications web robustes et performantes. Que ce soit pour créer des API REST, des applications web côté serveur ou des applications web côté client, F# offre une syntaxe concise et expressive qui facilite le développement web.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

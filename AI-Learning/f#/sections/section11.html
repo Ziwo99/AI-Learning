@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Projets pratiques en F#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<section>
+  
+  <h2>Projet 1: Création d'une application de gestion de tâches</h2>
+  <p>Dans ce projet, nous allons créer une application de gestion de tâches en utilisant F#. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+  <p>Voici les étapes pour réaliser ce projet :</p>
+  <ol>
+    <li>Créez une nouvelle solution F# dans votre environnement de développement.</li>
+    <li>Créez un module F# pour gérer les tâches. Ce module devrait inclure des fonctions pour créer une nouvelle tâche, modifier une tâche existante, supprimer une tâche et marquer une tâche comme terminée.</li>
+    <li>Créez une interface utilisateur pour votre application de gestion de tâches. Vous pouvez utiliser une bibliothèque graphique comme WPF ou une interface en ligne de commande.</li>
+    <li>Intégrez votre module de gestion des tâches à votre interface utilisateur. Assurez-vous que les actions effectuées par l'utilisateur (comme la création d'une nouvelle tâche) sont correctement traitées par votre module.</li>
+    <li>Testez votre application en créant plusieurs tâches, en les modifiant et en les supprimant. Assurez-vous que toutes les fonctionnalités de votre application fonctionnent correctement.</li>
+  </ol>
+  <p>Voici un exemple de code pour créer une nouvelle tâche :</p>
+  <pre><code>type Task = {
+    id: int
+    title: string
+    description: string
+    completed: bool
+}
+
+let createTask (id: int) (title: string) (description: string) : Task =
+    {
+        id = id
+        title = title
+        description = description
+        completed = false
+    }</code></pre>
+
+  <h2>Projet 2: Création d'un jeu en F#</h2>
+  <p>Dans ce projet, nous allons créer un jeu en utilisant F#. Le jeu consistera en un défi où le joueur devra deviner un nombre aléatoire généré par l'ordinateur.</p>
+  <p>Voici les étapes pour réaliser ce projet :</p>
+  <ol>
+    <li>Créez une nouvelle solution F# dans votre environnement de développement.</li>
+    <li>Créez une fonction pour générer un nombre aléatoire entre 1 et 100.</li>
+    <li>Créez une fonction pour demander au joueur de deviner un nombre.</li>
+    <li>Comparez le nombre deviné par le joueur avec le nombre aléatoire généré par l'ordinateur et affichez un message indiquant si le joueur a deviné correctement ou non.</li>
+    <li>Permettez au joueur de continuer à deviner jusqu'à ce qu'il trouve le bon nombre.</li>
+  </ol>
+  <p>Voici un exemple de code pour générer un nombre aléatoire :</p>
+  <pre><code>let generateRandomNumber () : int =
+    let random = System.Random()
+    random.Next(1, 101)</code></pre>
+
+  <h2>Projet 3: Création d'un outil d'analyse de données</h2>
+  <p>Dans ce projet, nous allons créer un outil d'analyse de données en utilisant F#. Cet outil permettra aux utilisateurs d'importer des données à partir d'un fichier CSV, de les analyser et de générer des rapports basés sur ces données.</p>
+  <p>Voici les étapes pour réaliser ce projet :</p>
+  <ol>
+    <li>Créez une nouvelle solution F# dans votre environnement de développement.</li>
+    <li>Créez une fonction pour importer les données à partir d'un fichier CSV.</li>
+    <li>Créez des fonctions pour analyser les données importées et générer des rapports basés sur ces données.</li>
+    <li>Permettez aux utilisateurs d'interagir avec votre outil en leur permettant de spécifier les paramètres d'importation des données et de choisir les types de rapports à générer.</li>
+    <li>Testez votre outil en important des données à partir d'un fichier CSV, en les analysant et en générant des rapports basés sur ces données.</li>
+  </ol>
+  <p>Voici un exemple de code pour importer des données à partir d'un fichier CSV :</p>
+  <pre><code>open System.IO
+
+let importData (filePath: string) : string[][] =
+    File.ReadAllLines(filePath)
+    |> Array.map (fun line -> line.Split(','))</code></pre>
+</section>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

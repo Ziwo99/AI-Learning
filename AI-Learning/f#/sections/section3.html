@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation fonctionnelle en F#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Concepts de base de la programmation fonctionnelle</h2>
+<p>La programmation fonctionnelle est un paradigme de programmation qui se concentre sur l'évaluation des fonctions mathématiques et évite les changements d'état et les données mutables. En F#, la programmation fonctionnelle est au cœur du langage et offre de nombreux avantages.</p>
+<p>Les concepts clés de la programmation fonctionnelle en F# sont :</p>
+<ul>
+  <li>Les fonctions sont des valeurs de première classe, ce qui signifie qu'elles peuvent être passées en tant que paramètres, retournées en tant que résultats et stockées dans des variables.</li>
+  <li>Les fonctions sont pures, c'est-à-dire qu'elles ne modifient pas l'état global et produisent toujours le même résultat pour les mêmes entrées.</li>
+  <li>La récursion est largement utilisée pour résoudre des problèmes de manière itérative.</li>
+  <li>Les fonctions peuvent être composées pour créer des pipelines de traitement de données.</li>
+</ul>
+
+<h2>Fonctions d'ordre supérieur</h2>
+<p>En F#, les fonctions d'ordre supérieur sont des fonctions qui prennent d'autres fonctions en tant que paramètres ou retournent des fonctions en tant que résultats. Cela permet de créer des fonctions génériques et réutilisables.</p>
+<p>Voici un exemple de fonction d'ordre supérieur en F# :</p>
+<pre><code>let applyTwice f x = f (f x)</code></pre>
+<p>Cette fonction prend une fonction f et une valeur x en paramètres, puis applique deux fois la fonction f à la valeur x.</p>
+
+<h2>Fonctions récursives</h2>
+<p>La récursion est une technique couramment utilisée en programmation fonctionnelle pour résoudre des problèmes de manière itérative. En F#, les fonctions récursives sont définies en appelant la fonction elle-même dans son corps.</p>
+<p>Voici un exemple de fonction récursive en F# :</p>
+<pre><code>let rec factorial n =
+    if n = 0 then 1
+    else n * factorial (n - 1)</code></pre>
+<p>Cette fonction calcule le factoriel d'un nombre en utilisant la récursion. Si n est égal à zéro, la fonction retourne 1. Sinon, elle multiplie n par le factoriel de (n - 1).</p>
+
+<h2>Listes et opérations sur les listes</h2>
+<p>En F#, les listes sont des collections immuables d'éléments du même type. Elles sont définies à l'aide de la syntaxe [élément1; élément2; ...; élémentN].</p>
+<p>Voici quelques opérations courantes sur les listes en F# :</p>
+<ul>
+  <li>La concaténation de listes : l'opérateur @ permet de concaténer deux listes en une seule.</li>
+  <li>L'ajout d'éléments en tête de liste : l'opérateur :: permet d'ajouter un élément en tête d'une liste.</li>
+  <li>L'accès aux éléments d'une liste : l'opérateur [] permet d'accéder à un élément spécifique d'une liste en utilisant son index.</li>
+  <li>La modification d'éléments d'une liste : les listes étant immuables, il n'est pas possible de modifier directement un élément. Cependant, il est possible de créer une nouvelle liste en remplaçant un élément par un autre.</li>
+</ul>
+
+<h2>Fonctions anonymes (lambda)</h2>
+<p>En F#, les fonctions anonymes, également appelées lambdas, sont des fonctions sans nom qui peuvent être utilisées directement dans une expression. Elles sont définies à l'aide de la syntaxe fun paramètres -> corps.</p>
+<p>Voici un exemple de fonction anonyme en F# :</p>
+<pre><code>let add = fun x y -&gt; x + y</code></pre>
+<p>Cette fonction anonyme prend deux paramètres x et y, puis retourne leur somme.</p>
+
+<h2>Composition de fonctions</h2>
+<p>En F#, il est possible de composer des fonctions en utilisant l'opérateur >>. Cela permet d'enchaîner plusieurs fonctions pour créer un pipeline de traitement de données.</p>
+<p>Voici un exemple de composition de fonctions en F# :</p>
+<pre><code>let square x = x * x
+let addOne x = x + 1
+
+let squareAndAddOne = square >> addOne</code></pre>
+<p>Cette composition de fonctions applique d'abord la fonction square à une valeur, puis applique la fonction addOne au résultat.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

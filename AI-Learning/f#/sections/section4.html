@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Programmation orientée objet en F#</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet en F#</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets qui interagissent les uns avec les autres. F# prend en charge la programmation orientée objet en fournissant des fonctionnalités telles que les classes, les objets, l'héritage et le polymorphisme.</p>
+
+<h2>Définition de classes et d'objets</h2>
+<p>En F#, une classe est une structure de données qui définit les propriétés et les comportements d'un objet. Pour définir une classe, utilisez le mot-clé <code>type</code> suivi du nom de la classe et de ses membres.</p>
+<pre><code>type Person =
+    member val Name : string = ""
+    member val Age : int = 0
+
+    member this.SayHello() =
+        printfn "Hello, my name is %s and I am %d years old." this.Name this.Age
+</code></pre>
+<p>Dans cet exemple, nous avons défini une classe <code>Person</code> avec deux propriétés, <code>Name</code> et <code>Age</code>, ainsi qu'une méthode <code>SayHello</code> qui affiche un message de salutation.</p>
+
+<p>Pour créer un objet à partir d'une classe, utilisez le mot-clé <code>new</code> suivi du nom de la classe et des arguments nécessaires pour initialiser les propriétés.</p>
+<pre><code>let person = new Person(Name = "John", Age = 30)
+person.SayHello()
+</code></pre>
+<p>Cela créera un nouvel objet de type <code>Person</code> avec les valeurs spécifiées pour les propriétés <code>Name</code> et <code>Age</code>, puis appellera la méthode <code>SayHello</code> de cet objet.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>En F#, vous pouvez définir des classes dérivées à partir d'une classe de base existante en utilisant le mot-clé <code>inherit</code>. Cela permet à la classe dérivée d'hériter des propriétés et des comportements de la classe de base.</p>
+<pre><code>type Employee =
+    inherit Person
+
+    member val Salary : decimal = 0.0
+
+    member this.GetSalary() =
+        printfn "My salary is %f." this.Salary
+</code></pre>
+<p>Dans cet exemple, nous avons défini une classe <code>Employee</code> qui hérite de la classe <code>Person</code>. La classe <code>Employee</code> a une propriété supplémentaire <code>Salary</code> et une méthode <code>GetSalary</code> qui affiche le salaire de l'employé.</p>
+
+<p>Vous pouvez également utiliser le polymorphisme en F# en définissant des méthodes virtuelles dans une classe de base et en les remplaçant dans les classes dérivées.</p>
+<pre><code>type Animal =
+    abstract member MakeSound : unit -> unit
+
+type Dog() =
+    inherit Animal()
+
+    override this.MakeSound() =
+        printfn "Woof!"
+
+type Cat() =
+    inherit Animal()
+
+    override this.MakeSound() =
+        printfn "Meow!"
+</code></pre>
+<p>Dans cet exemple, nous avons défini une classe abstraite <code>Animal</code> avec une méthode virtuelle <code>MakeSound</code>. Les classes dérivées <code>Dog</code> et <code>Cat</code> remplacent cette méthode pour produire des sons spécifiques.</p>
+
+<h2>Interfaces et classes abstraites</h2>
+<p>En F#, vous pouvez définir des interfaces et des classes abstraites pour définir des contrats que les classes doivent respecter.</p>
+<pre><code>type IShape =
+    abstract member GetArea : unit -> float
+
+type Circle(radius : float) =
+    interface IShape with
+        member this.GetArea() =
+            Math.PI * radius * radius
+
+type Rectangle(width : float, height : float) =
+    interface IShape with
+        member this.GetArea() =
+            width * height
+</code></pre>
+<p>Dans cet exemple, nous avons défini une interface <code>IShape</code> avec une méthode <code>GetArea</code>. Les classes <code>Circle</code> et <code>Rectangle</code> implémentent cette interface en fournissant une implémentation de la méthode <code>GetArea</code>.</p>
+
+<h2>Gestion des exceptions en F#</h2>
+<p>En F#, vous pouvez gérer les exceptions en utilisant les blocs <code>try/with</code> pour capturer et traiter les exceptions.</p>
+<pre><code>try
+    // Code pouvant générer une exception
+    let result = 10 / 0
+with
+    | :? System.DivideByZeroException as ex -&gt;
+        printfn "Une exception DivideByZeroException s'est produite : %s" ex.Message
+    | ex -&gt;
+        printfn "Une exception s'est produite : %s" ex.Message
+</code></pre>
+<p>Dans cet exemple, nous essayons de diviser 10 par zéro, ce qui génère une exception <code>DivideByZeroException</code>. Nous capturons cette exception en utilisant le motif <code>:? System.DivideByZeroException</code> et affichons un message d'erreur approprié.</p>
+
+<p>Il est également possible de lever des exceptions en utilisant le mot-clé <code>raise</code>.</p>
+<pre><code>let divide x y =
+    if y = 0 then
+        raise (System.DivideByZeroException())
+    else
+        x / y
+</code></pre>
+<p>Dans cet exemple, nous définissons une fonction <code>divide</code> qui lève une exception <code>DivideByZeroException</code> si le diviseur est zéro.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
