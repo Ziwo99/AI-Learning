@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les structures de données en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Listes</h2>
+<p>Les listes sont des structures de données couramment utilisées en Python. Elles permettent de stocker plusieurs éléments dans un ordre spécifique. Pour créer une liste, vous pouvez utiliser des crochets [] et séparer les éléments par des virgules. Voici un exemple :</p>
+
+<pre><code>ma_liste = [1, 2, 3, 4, 5]</code></pre>
+
+<p>Les listes peuvent contenir des éléments de différents types, tels que des entiers, des chaînes de caractères, des booléens, voire même d'autres listes. Vous pouvez également accéder aux éléments d'une liste en utilisant leur indice. Par exemple, pour accéder au premier élément de la liste ma_liste, vous pouvez utiliser ma_liste[0]. Voici un exemple :</p>
+
+<pre><code>ma_liste = [1, 2, 3, 4, 5]
+premier_element = ma_liste[0]
+print(premier_element)  # Affiche 1</code></pre>
+
+<p>Les listes sont également modifiables, ce qui signifie que vous pouvez ajouter, supprimer ou modifier des éléments. Par exemple, pour ajouter un élément à une liste, vous pouvez utiliser la méthode append(). Voici un exemple :</p>
+
+<pre><code>ma_liste = [1, 2, 3, 4, 5]
+ma_liste.append(6)
+print(ma_liste)  # Affiche [1, 2, 3, 4, 5, 6]</code></pre>
+
+<h2>Tuples</h2>
+<p>Les tuples sont similaires aux listes, mais avec une différence importante : ils sont immuables, ce qui signifie qu'une fois créés, leurs éléments ne peuvent pas être modifiés. Pour créer un tuple, vous pouvez utiliser des parenthèses () et séparer les éléments par des virgules. Voici un exemple :</p>
+
+<pre><code>mon_tuple = (1, 2, 3, 4, 5)</code></pre>
+
+<p>Comme les listes, les tuples peuvent contenir des éléments de différents types. Vous pouvez également accéder aux éléments d'un tuple en utilisant leur indice. Par exemple, pour accéder au premier élément du tuple mon_tuple, vous pouvez utiliser mon_tuple[0]. Voici un exemple :</p>
+
+<pre><code>mon_tuple = (1, 2, 3, 4, 5)
+premier_element = mon_tuple[0]
+print(premier_element)  # Affiche 1</code></pre>
+
+<p>Étant donné que les tuples sont immuables, vous ne pouvez pas ajouter, supprimer ou modifier des éléments une fois qu'ils ont été créés. Cependant, vous pouvez effectuer des opérations sur les tuples, telles que la concaténation ou la recherche d'éléments. Voici un exemple :</p>
+
+<pre><code>mon_tuple1 = (1, 2, 3)
+mon_tuple2 = (4, 5, 6)
+concatenation = mon_tuple1 + mon_tuple2
+print(concatenation)  # Affiche (1, 2, 3, 4, 5, 6)</code></pre>
+
+<h2>Dictionnaires</h2>
+<p>Les dictionnaires sont des structures de données qui associent des clés à des valeurs. Ils sont très utiles lorsque vous avez besoin de stocker des informations sous forme de paires clé-valeur. Pour créer un dictionnaire, vous pouvez utiliser des accolades {} et séparer les paires clé-valeur par des virgules. Voici un exemple :</p>
+
+<pre><code>mon_dictionnaire = {"clé1": valeur1, "clé2": valeur2, "clé3": valeur3}</code></pre>
+
+<p>Les clés d'un dictionnaire doivent être uniques, mais les valeurs peuvent être de différents types. Vous pouvez accéder aux valeurs d'un dictionnaire en utilisant leurs clés. Par exemple, pour accéder à la valeur associée à la clé "clé1" dans le dictionnaire mon_dictionnaire, vous pouvez utiliser mon_dictionnaire["clé1"]. Voici un exemple :</p>
+
+<pre><code>mon_dictionnaire = {"nom": "John", "âge": 25, "ville": "Paris"}
+age = mon_dictionnaire["âge"]
+print(age)  # Affiche 25</code></pre>
+
+<p>Vous pouvez également ajouter, supprimer ou modifier des paires clé-valeur dans un dictionnaire. Par exemple, pour ajouter une nouvelle paire clé-valeur, vous pouvez utiliser la syntaxe mon_dictionnaire[nouvelle_clé] = nouvelle_valeur. Voici un exemple :</p>
+
+<pre><code>mon_dictionnaire = {"nom": "John", "âge": 25, "ville": "Paris"}
+mon_dictionnaire["profession"] = "Développeur"
+print(mon_dictionnaire)  # Affiche {"nom": "John", "âge": 25, "ville": "Paris", "profession": "Développeur"}</code></pre>
+
+<h2>Ensembles</h2>
+<p>Les ensembles sont des structures de données qui permettent de stocker des éléments uniques, sans ordre spécifique. Pour créer un ensemble, vous pouvez utiliser la fonction set() ou des accolades {} et séparer les éléments par des virgules. Voici un exemple :</p>
+
+<pre><code>mon_ensemble = set([1, 2, 3, 4, 5])</code></pre>
+
+<p>Les ensembles ne peuvent pas contenir de doublons, ce qui signifie que chaque élément est unique. Vous pouvez effectuer des opérations sur les ensembles, telles que l'union, l'intersection ou la différence. Par exemple, pour effectuer l'union de deux ensembles, vous pouvez utiliser l'opérateur |. Voici un exemple :</p>
+
+<pre><code>ensemble1 = set([1, 2, 3])
+ensemble2 = set([3, 4, 5])
+union = ensemble1 | ensemble2
+print(union)  # Affiche {1, 2, 3, 4, 5}</code></pre>
+
+<p>Les ensembles sont également modifiables, ce qui signifie que vous pouvez ajouter ou supprimer des éléments. Par exemple, pour ajouter un élément à un ensemble, vous pouvez utiliser la méthode add(). Voici un exemple :</p>
+
+<pre><code>mon_ensemble = set([1, 2, 3, 4, 5])
+mon_ensemble.add(6)
+print(mon_ensemble)  # Affiche {1, 2, 3, 4, 5, 6}</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

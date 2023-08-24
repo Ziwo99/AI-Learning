@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : La programmation orientée objet en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. En POO, les objets sont utilisés pour représenter des entités du monde réel, avec leurs attributs (variables) et leurs comportements (méthodes).</p>
+
+<p>En Python, tout est un objet. Les types de données de base tels que les entiers, les flottants, les chaînes de caractères, etc., sont des objets. De plus, vous pouvez créer vos propres classes pour définir de nouveaux types d'objets.</p>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les attributs et les méthodes que les objets de cette classe auront. Pour créer un objet à partir d'une classe, on utilise le mot-clé <code>class</code> suivi du nom de la classe, suivi de parenthèses (facultatives) contenant les classes parentes.</p>
+
+<p>Voici un exemple de classe simple en Python :</p>
+
+<pre><code>class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def say_hello(self):
+        print("Hello, my name is", self.name)
+
+# Création d'un objet de la classe Person
+person1 = Person("Alice", 25)
+
+# Appel de la méthode say_hello de l'objet
+person1.say_hello()</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe <code>Person</code> avec deux attributs : <code>name</code> et <code>age</code>. La méthode spéciale <code>__init__</code> est appelée lors de la création d'un nouvel objet et permet d'initialiser ses attributs. La méthode <code>say_hello</code> affiche un message de salutation avec le nom de la personne.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage est un concept clé de la POO qui permet de créer de nouvelles classes en se basant sur des classes existantes. Une classe qui hérite d'une autre classe est appelée une classe dérivée ou une sous-classe, et la classe dont elle hérite est appelée une classe de base ou une superclasse.</p>
+
+<p>Le polymorphisme est un autre concept important de la POO qui permet à des objets de différentes classes d'être traités de manière uniforme. Cela signifie que vous pouvez utiliser une classe de base pour manipuler des objets de différentes classes dérivées, en appelant les mêmes méthodes sur ces objets.</p>
+
+<p>Voici un exemple d'héritage et de polymorphisme en Python :</p>
+
+<pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def make_sound(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Woof!")
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow!")
+
+# Création d'objets de différentes classes dérivées
+animal1 = Animal("Animal")
+dog1 = Dog("Dog")
+cat1 = Cat("Cat")
+
+# Appel de la méthode make_sound sur les objets
+animal1.make_sound()  # Ne fait rien
+dog1.make_sound()     # Affiche "Woof!"
+cat1.make_sound()     # Affiche "Meow!"</code></pre>
+
+<p>Dans cet exemple, nous avons une classe de base <code>Animal</code> avec une méthode <code>make_sound</code> qui ne fait rien. Les classes dérivées <code>Dog</code> et <code>Cat</code> héritent de la classe <code>Animal</code> et redéfinissent la méthode <code>make_sound</code> pour afficher des sons spécifiques à chaque animal. Les objets <code>animal1</code>, <code>dog1</code> et <code>cat1</code> sont créés et la méthode <code>make_sound</code> est appelée sur chacun d'eux.</p>
+
+<h2>Encapsulation et abstraction</h2>
+<p>L'encapsulation est un principe de la POO qui consiste à regrouper les données et les méthodes qui les manipulent au sein d'une même entité appelée classe. Cela permet de cacher les détails internes de la classe et de fournir une interface publique pour interagir avec les objets de cette classe.</p>
+
+<p>L'abstraction est un autre principe de la POO qui consiste à simplifier la complexité en masquant les détails inutiles et en se concentrant sur les aspects essentiels. En utilisant l'abstraction, vous pouvez créer des classes qui représentent des concepts abstraits plutôt que des entités concrètes.</p>
+
+<p>Voici un exemple d'encapsulation et d'abstraction en Python :</p>
+
+<pre><code>class Car:
+    def __init__(self, brand, model):
+        self.brand = brand
+        self.model = model
+
+    def start_engine(self):
+        print("Engine started")
+
+    def drive(self):
+        print("Driving")
+
+    def stop_engine(self):
+        print("Engine stopped")
+
+# Création d'un objet de la classe Car
+car1 = Car("Toyota", "Corolla")
+
+# Appel des méthodes sur l'objet
+car1.start_engine()
+car1.drive()
+car1.stop_engine()</code></pre>
+
+<p>Dans cet exemple, nous avons une classe <code>Car</code> qui représente une voiture. Les attributs <code>brand</code> et <code>model</code> sont encapsulés à l'intérieur de la classe. Les méthodes <code>start_engine</code>, <code>drive</code> et <code>stop_engine</code> fournissent une interface publique pour interagir avec l'objet. L'utilisateur n'a pas besoin de connaître les détails internes de la classe pour utiliser ces méthodes.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

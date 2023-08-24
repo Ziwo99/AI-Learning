@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : La manipulation de fichiers</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Lecture de fichiers</h2>
+<p>La lecture de fichiers est une opération courante en Python. Elle permet de récupérer le contenu d'un fichier existant pour le traiter dans votre programme. Pour lire un fichier, vous devez suivre les étapes suivantes :</p>
+
+<ol>
+  <li>Ouvrir le fichier en utilisant la fonction <code>open()</code> avec le nom du fichier et le mode d'ouverture (par exemple, "r" pour la lecture).</li>
+  <li>Lire le contenu du fichier en utilisant la méthode <code>read()</code> sur l'objet fichier.</li>
+  <li>Fermer le fichier en utilisant la méthode <code>close()</code> sur l'objet fichier.</li>
+</ol>
+
+<p>Voici un exemple de code qui lit le contenu d'un fichier texte :</p>
+
+<pre><code>file = open("mon_fichier.txt", "r")
+content = file.read()
+file.close()
+
+print(content)</code></pre>
+
+<h2>Ecriture dans des fichiers</h2>
+<p>L'écriture dans des fichiers est une autre opération courante en Python. Elle permet d'écrire du contenu dans un fichier existant ou de créer un nouveau fichier. Pour écrire dans un fichier, vous devez suivre les étapes suivantes :</p>
+
+<ol>
+  <li>Ouvrir le fichier en utilisant la fonction <code>open()</code> avec le nom du fichier et le mode d'ouverture (par exemple, "w" pour l'écriture).</li>
+  <li>Écrire le contenu dans le fichier en utilisant la méthode <code>write()</code> sur l'objet fichier.</li>
+  <li>Fermer le fichier en utilisant la méthode <code>close()</code> sur l'objet fichier.</li>
+</ol>
+
+<p>Voici un exemple de code qui écrit du contenu dans un fichier texte :</p>
+
+<pre><code>file = open("mon_fichier.txt", "w")
+file.write("Bonjour, monde!")
+file.close()</code></pre>
+
+<h2>Gestion des erreurs lors de la manipulation de fichiers</h2>
+<p>Lorsque vous manipulez des fichiers, il est important de gérer les erreurs qui peuvent survenir. Par exemple, si le fichier que vous essayez de lire n'existe pas, une erreur sera levée. Pour gérer ces erreurs, vous pouvez utiliser des blocs <code>try</code> et <code>except</code>.</p>
+
+<p>Voici un exemple de code qui gère une erreur de fichier inexistant :</p>
+
+<pre><code>try:
+    file = open("mon_fichier.txt", "r")
+    content = file.read()
+    file.close()
+    print(content)
+except FileNotFoundError:
+    print("Le fichier n'existe pas.")</code></pre>
+
+<p>En utilisant les blocs <code>try</code> et <code>except</code>, vous pouvez capturer les erreurs et exécuter un code spécifique en cas d'erreur.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
