@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les classes et les objets en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux classes et aux objets</h2>
+<p>Les classes et les objets sont des concepts fondamentaux en programmation orientée objet (POO). En Python, une classe est une structure qui permet de regrouper des variables (appelées attributs) et des fonctions (appelées méthodes) liées à ces variables. Un objet est une instance d'une classe, c'est-à-dire une entité concrète qui possède ses propres valeurs d'attributs et peut exécuter les méthodes définies dans la classe.</p>
+
+<p>Pour définir une classe en Python, utilisez le mot-clé <code>class</code> suivi du nom de la classe. Par convention, le nom de classe commence par une lettre majuscule. Voici un exemple de définition de classe :</p>
+
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def se_presenter(self):
+        print("Je m'appelle", self.nom, "et j'ai", self.age, "ans.")</code></pre>
+
+<p>Dans cet exemple, nous avons défini une classe <code>Personne</code> avec deux attributs (<code>nom</code> et <code>age</code>) et une méthode (<code>se_presenter</code>). La méthode <code>__init__</code> est un constructeur spécial qui est appelé lors de la création d'un nouvel objet de la classe. Elle permet d'initialiser les attributs de l'objet avec les valeurs passées en paramètres.</p>
+
+<h2>Les attributs et les méthodes</h2>
+<p>Les attributs sont des variables associées à une classe ou à un objet. Ils représentent les caractéristiques de la classe ou de l'objet. Les méthodes sont des fonctions associées à une classe ou à un objet. Elles permettent de définir le comportement de la classe ou de l'objet.</p>
+
+<p>Les attributs peuvent être définis à l'intérieur de la classe ou dans le constructeur. Voici un exemple :</p>
+
+<pre><code>class Voiture:
+    marque = "Ford"  # attribut de classe
+
+    def __init__(self, couleur):
+        self.couleur = couleur  # attribut d'instance
+
+    def demarrer(self):
+        print("La voiture démarre.")  # méthode</code></pre>
+
+<p>Dans cet exemple, nous avons un attribut de classe <code>marque</code> qui est partagé par toutes les instances de la classe <code>Voiture</code>. Nous avons également un attribut d'instance <code>couleur</code> qui est spécifique à chaque objet de la classe.</p>
+
+<p>Les méthodes peuvent être appelées sur une instance de la classe. Par exemple :</p>
+
+<pre><code>ma_voiture = Voiture("rouge")
+ma_voiture.demarrer()</code></pre>
+
+<p>Cela affichera "La voiture démarre." car la méthode <code>demarrer</code> est appelée sur l'objet <code>ma_voiture</code>.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un mécanisme qui permet de créer une nouvelle classe (appelée classe dérivée ou sous-classe) à partir d'une classe existante (appelée classe de base ou superclasse). La classe dérivée hérite des attributs et des méthodes de la classe de base, et peut ajouter de nouveaux attributs et méthodes ou modifier ceux existants.</p>
+
+<p>Le polymorphisme est la capacité d'un objet à prendre plusieurs formes. En Python, le polymorphisme est souvent utilisé en conjonction avec l'héritage. Par exemple, une classe dérivée peut redéfinir une méthode héritée de la classe de base pour lui donner un comportement spécifique à la classe dérivée.</p>
+
+<p>Voici un exemple d'utilisation de l'héritage et du polymorphisme :</p>
+
+<pre><code>class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def faire_son_cri(self):
+        pass
+
+class Chien(Animal):
+    def faire_son_cri(self):
+        print("Le chien aboie.")
+
+class Chat(Animal):
+    def faire_son_cri(self):
+        print("Le chat miaule.")</code></pre>
+
+<p>Dans cet exemple, nous avons une classe de base <code>Animal</code> avec une méthode <code>faire_son_cri</code>. Les classes dérivées <code>Chien</code> et <code>Chat</code> redéfinissent cette méthode pour donner un comportement spécifique à chaque classe. Par exemple :</p>
+
+<pre><code>mon_chien = Chien("Rex")
+mon_chien.faire_son_cri()  # affiche "Le chien aboie."</code></pre>
+
+<p>Cela affichera "Le chien aboie." car la méthode <code>faire_son_cri</code> de la classe <code>Chien</code> est appelée sur l'objet <code>mon_chien</code>.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

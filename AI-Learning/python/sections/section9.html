@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Les modules avancés en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les expressions régulières</h2>
+<p>Les expressions régulières sont des séquences de caractères utilisées pour rechercher et manipuler des motifs de texte. Elles sont extrêmement puissantes et flexibles pour effectuer des opérations de recherche et de remplacement dans des chaînes de caractères.</p>
+
+<p>Voici un exemple simple d'utilisation des expressions régulières en Python :</p>
+
+<pre><code>import re
+
+# Recherche d'un motif spécifique dans une chaîne de caractères
+pattern = r"python"
+text = "J'aime programmer en Python."
+match = re.search(pattern, text)
+if match:
+    print("Motif trouvé !")
+else:
+    print("Motif non trouvé.")</code></pre>
+
+<p>Dans cet exemple, nous importons le module <code>re</code> qui fournit les fonctionnalités pour travailler avec les expressions régulières. Nous définissons ensuite un motif à rechercher dans la chaîne de caractères <code>text</code>. La fonction <code>re.search()</code> recherche le motif dans la chaîne de caractères et renvoie un objet de correspondance si le motif est trouvé.</p>
+
+<h2>Le traitement des fichiers CSV</h2>
+<p>Le format CSV (Comma-Separated Values) est couramment utilisé pour stocker des données tabulaires. Python offre des modules intégrés pour lire et écrire des fichiers CSV de manière efficace.</p>
+
+<p>Voici un exemple d'utilisation du module CSV en Python :</p>
+
+<pre><code>import csv
+
+# Lecture d'un fichier CSV
+with open('donnees.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+# Écriture dans un fichier CSV
+with open('resultats.csv', 'w') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Nom', 'Âge'])
+    writer.writerow(['Alice', 25])
+    writer.writerow(['Bob', 30])</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module <code>csv</code> pour lire un fichier CSV existant et afficher chaque ligne. Ensuite, nous utilisons le même module pour créer un nouveau fichier CSV et y écrire des données.</p>
+
+<h2>La manipulation de dates et d'heures</h2>
+<p>Python offre des modules intégrés pour manipuler facilement les dates et les heures. Ces modules fournissent des fonctionnalités pour effectuer des opérations telles que la conversion de formats de date, le calcul de différences de temps et la manipulation de composants de date individuels.</p>
+
+<p>Voici un exemple d'utilisation du module <code>datetime</code> en Python :</p>
+
+<pre><code>from datetime import datetime
+
+# Obtention de la date et de l'heure actuelles
+now = datetime.now()
+print("Date et heure actuelles :", now)
+
+# Conversion d'une chaîne de caractères en objet de date
+date_string = "2022-01-01"
+date_object = datetime.strptime(date_string, "%Y-%m-%d")
+print("Objet de date :", date_object)
+
+# Calcul de la différence entre deux dates
+date1 = datetime(2022, 1, 1)
+date2 = datetime(2023, 1, 1)
+difference = date2 - date1
+print("Différence de temps :", difference)</code></pre>
+
+<p>Dans cet exemple, nous importons le module <code>datetime</code> et utilisons ses fonctionnalités pour obtenir la date et l'heure actuelles, convertir une chaîne de caractères en objet de date et calculer la différence entre deux dates.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

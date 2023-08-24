@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les modules en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux modules</h2>
+<p>Les modules en Python sont des fichiers contenant du code Python qui peuvent être importés et utilisés dans d'autres programmes. Ils permettent d'organiser et de réutiliser du code de manière efficace. Les modules peuvent contenir des fonctions, des classes, des variables et d'autres éléments de code.</p>
+
+<p>Pour créer un module, il suffit de créer un fichier avec l'extension .py et d'y écrire le code Python. Par exemple, pour créer un module nommé "mon_module.py", vous pouvez utiliser un éditeur de texte pour écrire le code suivant :</p>
+
+<pre><code>def ma_fonction():
+    print("Bonjour depuis mon module")
+    
+ma_variable = 42
+</code></pre>
+
+<p>Pour utiliser ce module dans un autre programme Python, vous devez l'importer en utilisant le mot-clé <code>import</code>. Par exemple :</p>
+
+<pre><code>import mon_module
+
+mon_module.ma_fonction()
+print(mon_module.ma_variable)
+</code></pre>
+
+<p>Cela affichera :</p>
+
+<pre><code>Bonjour depuis mon module
+42
+</code></pre>
+
+<h2>Les modules intégrés</h2>
+<p>Python dispose de nombreux modules intégrés qui fournissent des fonctionnalités supplémentaires prêtes à l'emploi. Ces modules sont inclus dans l'installation standard de Python et peuvent être utilisés sans avoir besoin d'installer des bibliothèques supplémentaires.</p>
+
+<p>Par exemple, le module <code>math</code> fournit des fonctions mathématiques telles que <code>sqrt</code> (racine carrée), <code>sin</code> (sinus), <code>cos</code> (cosinus), etc. Pour utiliser ce module, vous devez l'importer :</p>
+
+<pre><code>import math
+
+print(math.sqrt(16))
+print(math.sin(math.pi/2))
+</code></pre>
+
+<p>Cela affichera :</p>
+
+<pre><code>4.0
+1.0
+</code></pre>
+
+<h2>L'importation de modules externes</h2>
+<p>En plus des modules intégrés, vous pouvez également utiliser des modules externes dans vos programmes Python. Ces modules sont développés par la communauté Python et fournissent des fonctionnalités supplémentaires pour des tâches spécifiques.</p>
+
+<p>Pour utiliser un module externe, vous devez d'abord l'installer. Cela peut être fait en utilisant l'outil de gestion de paquets de Python appelé <code>pip</code>. Par exemple, pour installer le module <code>requests</code> qui est utilisé pour effectuer des requêtes HTTP, vous pouvez exécuter la commande suivante dans votre terminal :</p>
+
+<pre><code>pip install requests
+</code></pre>
+
+<p>Une fois le module installé, vous pouvez l'importer dans votre programme Python :</p>
+
+<pre><code>import requests
+
+response = requests.get("https://www.example.com")
+print(response.status_code)
+</code></pre>
+
+<p>Cela affichera le code d'état de la requête HTTP effectuée.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

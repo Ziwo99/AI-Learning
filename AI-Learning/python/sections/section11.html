@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Les interfaces graphiques en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux interfaces graphiques</h2>
+<p>
+Les interfaces graphiques permettent aux utilisateurs d'interagir avec des programmes en utilisant des éléments visuels tels que des boutons, des fenêtres et des boîtes de dialogue. En Python, il existe plusieurs bibliothèques populaires pour créer des interfaces graphiques, dont Tkinter, PyQt et wxPython. Dans cette sous-section, nous nous concentrerons sur Tkinter, qui est inclus par défaut dans la distribution standard de Python.
+</p>
+
+<h2>La création d'une interface graphique avec Tkinter</h2>
+<p>
+Tkinter est une bibliothèque Python simple et facile à utiliser pour créer des interfaces graphiques. Elle offre une grande variété de widgets (éléments d'interface utilisateur) tels que des boutons, des étiquettes, des zones de texte, des listes déroulantes, etc. Dans cette sous-section, nous apprendrons comment créer une interface graphique de base en utilisant Tkinter.
+</p>
+
+<p>Voici un exemple de code pour créer une fenêtre avec un bouton en utilisant Tkinter :</p>
+
+<pre><code>import tkinter as tk
+
+def on_button_click():
+    print("Le bouton a été cliqué!")
+
+# Création de la fenêtre principale
+window = tk.Tk()
+
+# Création d'un bouton
+button = tk.Button(window, text="Cliquez-moi!", command=on_button_click)
+
+# Affichage du bouton
+button.pack()
+
+# Lancement de la boucle principale de l'interface graphique
+window.mainloop()
+</code></pre>
+
+<p>
+Dans cet exemple, nous importons le module Tkinter sous le nom "tk" pour faciliter son utilisation. Nous définissons ensuite une fonction "on_button_click" qui sera appelée lorsque le bouton est cliqué. Ensuite, nous créons une fenêtre principale en utilisant la classe "Tk" de Tkinter. Nous créons également un bouton en utilisant la classe "Button" de Tkinter, en spécifiant le texte du bouton et la fonction à appeler lorsqu'il est cliqué. Enfin, nous affichons le bouton en utilisant la méthode "pack" et lançons la boucle principale de l'interface graphique avec la méthode "mainloop".
+</p>
+
+<p>
+Ceci est juste un exemple simple pour vous montrer comment créer une interface graphique de base avec Tkinter. Vous pouvez explorer davantage les fonctionnalités de Tkinter pour créer des interfaces graphiques plus complexes et interactives.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

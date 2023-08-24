@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les types de données en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les nombres</h2>
+<p>En Python, les nombres sont utilisés pour représenter des valeurs numériques. Il existe deux types de nombres en Python : les entiers (int) et les nombres à virgule flottante (float).</p>
+
+<p>Les entiers sont des nombres entiers sans partie décimale. Par exemple :</p>
+<pre><code>x = 5
+y = -10
+z = 0
+</code></pre>
+
+<p>Les nombres à virgule flottante sont des nombres avec une partie décimale. Par exemple :</p>
+<pre><code>a = 3.14
+b = -2.5
+c = 0.0
+</code></pre>
+
+<p>Python prend également en charge les opérations mathématiques de base sur les nombres, telles que l'addition, la soustraction, la multiplication et la division.</p>
+<pre><code>x = 5 + 3  # x vaut 8
+y = 10 - 2  # y vaut 8
+z = 3 * 4  # z vaut 12
+w = 10 / 2  # w vaut 5.0 (division avec un nombre à virgule flottante)
+</code></pre>
+
+<h2>Les chaînes de caractères</h2>
+<p>En Python, les chaînes de caractères sont utilisées pour représenter du texte. Elles sont entourées de guillemets simples ('') ou doubles (""). Par exemple :</p>
+<pre><code>message = 'Bonjour'
+name = "Alice"
+</code></pre>
+
+<p>Les chaînes de caractères peuvent être concaténées en utilisant l'opérateur +. Par exemple :</p>
+<pre><code>greeting = message + ' ' + name  # greeting vaut 'Bonjour Alice'
+</code></pre>
+
+<p>Python fournit également de nombreuses méthodes pour manipuler les chaînes de caractères, telles que la conversion en majuscules ou en minuscules, la recherche de sous-chaînes, le remplacement de texte, etc.</p>
+<pre><code>text = 'Bonjour tout le monde'
+uppercase_text = text.upper()  # uppercase_text vaut 'BONJOUR TOUT LE MONDE'
+lowercase_text = text.lower()  # lowercase_text vaut 'bonjour tout le monde'
+substring_index = text.find('tout')  # substring_index vaut 8
+replaced_text = text.replace('monde', 'ami')  # replaced_text vaut 'Bonjour tout le ami'
+</code></pre>
+
+<h2>Les listes</h2>
+<p>En Python, les listes sont utilisées pour stocker une collection ordonnée d'éléments. Les éléments d'une liste peuvent être de différents types de données. Par exemple :</p>
+<pre><code>numbers = [1, 2, 3, 4, 5]
+names = ['Alice', 'Bob', 'Charlie']
+mixed_list = [1, 'Alice', 3.14, True]
+</code></pre>
+
+<p>Les éléments d'une liste peuvent être accédés en utilisant leur indice (commençant à 0). Par exemple :</p>
+<pre><code>first_number = numbers[0]  # first_number vaut 1
+second_name = names[1]  # second_name vaut 'Bob'
+</code></pre>
+
+<p>Python fournit également de nombreuses méthodes pour manipuler les listes, telles que l'ajout d'éléments, la suppression d'éléments, le tri, etc.</p>
+<pre><code>numbers.append(6)  # Ajoute 6 à la fin de la liste numbers
+names.remove('Charlie')  # Supprime 'Charlie' de la liste names
+sorted_numbers = sorted(numbers)  # Tri les nombres de la liste numbers dans l'ordre croissant
+</code></pre>
+
+<h2>Les tuples</h2>
+<p>En Python, les tuples sont similaires aux listes, mais ils sont immuables, ce qui signifie qu'ils ne peuvent pas être modifiés une fois créés. Les tuples sont souvent utilisés pour stocker des collections d'éléments hétérogènes.</p>
+<pre><code>person = ('Alice', 25, 'Femme')
+coordinates = (3.14, -2.5)
+</code></pre>
+
+<p>Les éléments d'un tuple peuvent être accédés de la même manière que ceux d'une liste, en utilisant leur indice.</p>
+<pre><code>name = person[0]  # name vaut 'Alice'
+y_coordinate = coordinates[1]  # y_coordinate vaut -2.5
+</code></pre>
+
+<p>Comme les tuples sont immuables, ils ne peuvent pas être modifiés. Cependant, vous pouvez créer de nouveaux tuples en combinant des tuples existants.</p>
+<pre><code>new_person = person + ('Paris',)  # new_person vaut ('Alice', 25, 'Femme', 'Paris')
+</code></pre>
+
+<h2>Les dictionnaires</h2>
+<p>En Python, les dictionnaires sont utilisés pour stocker des paires clé-valeur. Chaque élément d'un dictionnaire est composé d'une clé et d'une valeur associée. Les clés doivent être uniques.</p>
+<pre><code>person = {'name': 'Alice', 'age': 25, 'gender': 'Femme'}
+coordinates = {'x': 3.14, 'y': -2.5}
+</code></pre>
+
+<p>Les valeurs d'un dictionnaire peuvent être accédées en utilisant leurs clés.</p>
+<pre><code>name = person['name']  # name vaut 'Alice'
+y_coordinate = coordinates['y']  # y_coordinate vaut -2.5
+</code></pre>
+
+<p>Vous pouvez également ajouter de nouvelles paires clé-valeur à un dictionnaire ou modifier les valeurs existantes.</p>
+<pre><code>person['city'] = 'Paris'  # Ajoute la paire clé-valeur {'city': 'Paris'} au dictionnaire person
+person['age'] = 26  # Modifie la valeur associée à la clé 'age' dans le dictionnaire person
+</code></pre>
+
+<h2>Les ensembles</h2>
+<p>En Python, les ensembles sont utilisés pour stocker une collection non ordonnée d'éléments uniques. Les ensembles ne peuvent pas contenir de doublons.</p>
+<pre><code>fruits = {'pomme', 'banane', 'orange'}
+</code></pre>
+
+<p>Les ensembles sont souvent utilisés pour effectuer des opérations ensemblistes telles que l'union, l'intersection et la différence.</p>
+<pre><code>vegetables = {'carotte', 'brocoli', 'pomme'}
+all_food = fruits.union(vegetables)  # all_food contient tous les éléments de fruits et de vegetables, sans doublons
+common_food = fruits.intersection(vegetables)  # common_food contient les éléments communs à fruits et vegetables
+unique_fruits = fruits.difference(vegetables)  # unique_fruits contient les éléments de fruits qui ne sont pas dans vegetables
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Les bases de données en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux bases de données</h2>
+<p>
+Une base de données est un outil essentiel pour stocker et organiser de grandes quantités de données de manière structurée. En Python, nous avons plusieurs bibliothèques qui nous permettent de travailler avec des bases de données, telles que SQLite, MySQL et PostgreSQL. Dans cette section, nous allons explorer les bases de données en Python et apprendre comment les utiliser efficacement.
+</p>
+
+<h2>La connexion à une base de données</h2>
+<p>
+Avant de pouvoir interagir avec une base de données, nous devons établir une connexion. La bibliothèque SQLite3 est intégrée à Python, ce qui en fait un excellent choix pour commencer. Voici comment établir une connexion à une base de données SQLite en Python :
+</p>
+
+<pre><code>import sqlite3
+
+# Établir une connexion à la base de données
+conn = sqlite3.connect('ma_base_de_donnees.db')
+
+# Créer un curseur pour exécuter des requêtes
+cur = conn.cursor()
+
+# Fermer la connexion à la base de données
+conn.close()
+</code></pre>
+
+<h2>Les requêtes SQL en Python</h2>
+<p>
+Maintenant que nous avons établi une connexion à notre base de données, nous pouvons exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. Voici quelques exemples de requêtes SQL couramment utilisées en Python :
+</p>
+
+<pre><code># Récupérer toutes les lignes d'une table
+cur.execute("SELECT * FROM ma_table")
+rows = cur.fetchall()
+
+# Insérer une nouvelle ligne dans une table
+cur.execute("INSERT INTO ma_table (colonne1, colonne2) VALUES (?, ?)", (valeur1, valeur2))
+conn.commit()
+
+# Mettre à jour une ligne dans une table
+cur.execute("UPDATE ma_table SET colonne1 = ? WHERE condition", (nouvelle_valeur,))
+
+# Supprimer une ligne d'une table
+cur.execute("DELETE FROM ma_table WHERE condition")
+conn.commit()
+</code></pre>
+
+<p>
+Ces exemples vous donnent une idée de la façon dont vous pouvez interagir avec une base de données en utilisant Python. Assurez-vous de consulter la documentation spécifique à la base de données que vous utilisez pour en savoir plus sur les requêtes SQL disponibles.
+</p>
+
+<p>
+En conclusion, les bases de données sont un élément essentiel de la plupart des applications modernes. En utilisant Python, vous pouvez facilement vous connecter à une base de données, exécuter des requêtes SQL et manipuler les données de manière efficace. Continuez à pratiquer et à explorer les différentes bibliothèques de bases de données disponibles pour devenir un expert en la matière.
+</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

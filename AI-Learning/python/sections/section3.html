@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Les structures de contrôle en Python</h2>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les conditions</h2>
+<p>Les conditions sont utilisées pour prendre des décisions dans un programme Python. Elles permettent d'exécuter certaines parties du code uniquement si une condition spécifique est remplie.</p>
+<p>La syntaxe de base pour une condition en Python est la suivante :</p>
+<pre><code>if condition:
+    # code à exécuter si la condition est vraie
+else:
+    # code à exécuter si la condition est fausse
+</code></pre>
+<p>Voici un exemple qui illustre l'utilisation des conditions en Python :</p>
+<pre><code>a = 10
+
+if a > 5:
+    print("a est supérieur à 5")
+else:
+    print("a est inférieur ou égal à 5")
+</code></pre>
+
+<h2>Les boucles</h2>
+<p>Les boucles permettent de répéter l'exécution d'un bloc de code plusieurs fois. En Python, il existe deux types de boucles : la boucle "for" et la boucle "while".</p>
+<p>La boucle "for" est utilisée lorsque le nombre d'itérations est connu à l'avance :</p>
+<pre><code>for element in sequence:
+    # code à exécuter pour chaque élément de la séquence
+</code></pre>
+<p>Voici un exemple qui montre comment utiliser une boucle "for" en Python :</p>
+<pre><code>fruits = ["pomme", "banane", "orange"]
+
+for fruit in fruits:
+    print(fruit)
+</code></pre>
+<p>La boucle "while" est utilisée lorsque le nombre d'itérations n'est pas connu à l'avance :</p>
+<pre><code>i = 0
+
+while i < 5:
+    print(i)
+    i += 1
+</code></pre>
+
+<h2>Les instructions de contrôle de flux</h2>
+<p>Les instructions de contrôle de flux permettent de modifier le flux d'exécution d'un programme Python. Elles incluent les instructions "break", "continue" et "pass".</p>
+<p>L'instruction "break" est utilisée pour arrêter l'exécution d'une boucle de manière anticipée :</p>
+<pre><code>for i in range(10):
+    if i == 5:
+        break
+    print(i)
+</code></pre>
+<p>L'instruction "continue" est utilisée pour passer à l'itération suivante d'une boucle :</p>
+<pre><code>for i in range(10):
+    if i == 5:
+        continue
+    print(i)
+</code></pre>
+<p>L'instruction "pass" est utilisée comme espace réservé pour du code qui sera implémenté ultérieurement :</p>
+<pre><code>if condition:
+    pass  # code à implémenter plus tard
+else:
+    print("Condition remplie")
+</code></pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
