@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2. Les bases de Javascript</h2>
+					<a href="AI-Learning/{quote(subject.lower())}/{quote(subject.lower())}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Syntaxe de base</h2>
+<p>La syntaxe de base de Javascript est assez similaire à celle des autres langages de programmation. Voici un exemple de code Javascript :</p>
+
+<pre><code>let message = 'Bonjour, monde!';
+console.log(message);
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la déclaration de variable 'let' pour créer une variable appelée 'message' et lui attribuer la valeur 'Bonjour, monde!'. Ensuite, nous utilisons la fonction 'console.log()' pour afficher le contenu de la variable dans la console du navigateur.</p>
+
+<h2>Variables et types de données</h2>
+<p>En Javascript, il existe plusieurs types de données que vous pouvez utiliser pour stocker des informations. Voici quelques-uns des types de données les plus couramment utilisés :</p>
+
+<ul>
+  <li>Nombre : utilisé pour stocker des valeurs numériques, par exemple 42 ou 3.14.</li>
+  <li>Chaîne de caractères : utilisée pour stocker du texte, par exemple 'Bonjour' ou "Javascript".</li>
+  <li>Booléen : utilisé pour stocker des valeurs de vérité, soit true (vrai) soit false (faux).</li>
+  <li>Tableau : utilisé pour stocker une collection ordonnée de valeurs, par exemple [1, 2, 3] ou ['rouge', 'vert', 'bleu'].</li>
+  <li>Objet : utilisé pour stocker des collections de propriétés et de méthodes, par exemple {nom: 'John', age: 30}.</li>
+  <li>Null : utilisé pour représenter l'absence de valeur.</li>
+  <li>Undefined : utilisé pour représenter une variable qui n'a pas été définie.</li>
+</ul>
+
+<p>Pour déclarer une variable en Javascript, vous pouvez utiliser les mots-clés 'var', 'let' ou 'const'. Par exemple :</p>
+
+<pre><code>let age = 25;
+const pi = 3.14;
+var nom = 'John';
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons une variable 'age' avec la valeur 25, une constante 'pi' avec la valeur 3.14, et une variable 'nom' avec la valeur 'John'.</p>
+
+<h2>Opérateurs</h2>
+<p>Les opérateurs en Javascript sont utilisés pour effectuer des opérations sur les variables et les valeurs. Voici quelques-uns des opérateurs les plus couramment utilisés :</p>
+
+<ul>
+  <li>Opérateurs arithmétiques : utilisés pour effectuer des opérations mathématiques, par exemple + (addition), - (soustraction), * (multiplication), / (division).</li>
+  <li>Opérateurs d'affectation : utilisés pour attribuer une valeur à une variable, par exemple = (affectation simple), += (addition et affectation), -= (soustraction et affectation).</li>
+  <li>Opérateurs de comparaison : utilisés pour comparer des valeurs, par exemple == (égal à), != (différent de), > (supérieur à), < (inférieur à).</li>
+  <li>Opérateurs logiques : utilisés pour combiner des expressions logiques, par exemple && (et logique), || (ou logique), ! (non logique).</li>
+</ul>
+
+<p>Voici un exemple d'utilisation des opérateurs en Javascript :</p>
+
+<pre><code>let a = 10;
+let b = 5;
+
+let addition = a + b;
+let soustraction = a - b;
+let multiplication = a * b;
+let division = a / b;
+
+console.log(addition); // Affiche 15
+console.log(soustraction); // Affiche 5
+console.log(multiplication); // Affiche 50
+console.log(division); // Affiche 2
+</code></pre>
+
+<h2>Structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle en Javascript sont utilisées pour contrôler le flux d'exécution du programme. Les boucles et les conditions sont les structures de contrôle les plus couramment utilisées.</p>
+
+<p>Voici un exemple d'utilisation de la boucle 'for' en Javascript :</p>
+
+<pre><code>for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+</code></pre>
+
+<p>Ce code affiche les nombres de 0 à 4 dans la console.</p>
+
+<p>Voici un exemple d'utilisation de la condition 'if' en Javascript :</p>
+
+<pre><code>let age = 18;
+
+if (age >= 18) {
+  console.log('Vous êtes majeur.');
+} else {
+  console.log('Vous êtes mineur.');
+}
+</code></pre>
+
+<p>Ce code affiche 'Vous êtes majeur.' si l'âge est supérieur ou égal à 18, sinon il affiche 'Vous êtes mineur.'.</p>
+
+<h2>Fonctions</h2>
+<p>Les fonctions en Javascript sont utilisées pour regrouper des instructions et les exécuter lorsque cela est nécessaire. Voici un exemple de déclaration de fonction en Javascript :</p>
+
+<pre><code>function direBonjour() {
+  console.log('Bonjour!');
+}
+
+direBonjour(); // Appelle la fonction pour afficher 'Bonjour!' dans la console.
+</code></pre>
+
+<p>Les fonctions peuvent également prendre des paramètres et renvoyer des valeurs. Voici un exemple :</p>
+
+<pre><code>function additionner(a, b) {
+  return a + b;
+}
+
+let resultat = additionner(3, 5);
+console.log(resultat); // Affiche 8
+</code></pre>
+
+<p>Dans cet exemple, la fonction 'additionner' prend deux paramètres 'a' et 'b', et renvoie la somme de ces deux paramètres. Nous stockons ensuite le résultat de l'appel de la fonction dans la variable 'resultat' et l'affichons dans la console.</p>
+
+<h2>Objets et classes</h2>
+<p>Les objets et les classes en Javascript sont utilisés pour créer des structures de données complexes. Voici un exemple de création d'un objet en Javascript :</p>
+
+<pre><code>let personne = {
+  nom: 'John',
+  age: 30,
+  direBonjour: function() {
+    console.log('Bonjour, je m\'appelle ' + this.nom + ' et j\'ai ' + this.age + ' ans.');
+  }
+};
+
+personne.direBonjour(); // Appelle la méthode 'direBonjour' de l'objet pour afficher 'Bonjour, je m'appelle John et j'ai 30 ans.' dans la console.
+</code></pre>
+
+<p>Dans cet exemple, nous créons un objet 'personne' avec deux propriétés 'nom' et 'age', ainsi qu'une méthode 'direBonjour' qui affiche une phrase contenant les valeurs des propriétés.</p>
+
+<p>Les classes en Javascript sont utilisées pour créer des objets similaires. Voici un exemple de création d'une classe en Javascript :</p>
+
+<pre><code>class Personne {
+  constructor(nom, age) {
+    this.nom = nom;
+    this.age = age;
+  }
+
+  direBonjour() {
+    console.log('Bonjour, je m\'appelle ' + this.nom + ' et j\'ai ' + this.age + ' ans.');
+  }
+}
+
+let john = new Personne('John', 30);
+john.direBonjour(); // Appelle la méthode 'direBonjour' de l'objet 'john' pour afficher 'Bonjour, je m'appelle John et j'ai 30 ans.' dans la console.
+</code></pre>
+
+<p>Dans cet exemple, nous créons une classe 'Personne' avec un constructeur qui prend deux paramètres 'nom' et 'age', ainsi qu'une méthode 'direBonjour' similaire à celle de l'exemple précédent. Nous créons ensuite un nouvel objet 'john' à partir de la classe 'Personne' en utilisant le mot-clé 'new', et appelons la méthode 'direBonjour' de cet objet.</p>
+					<a href="AI-Learning/{quote(subject.lower())}/{quote(subject.lower())}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6. Manipulation des données</h2>
+					<a href="AI-Learning/{quote(subject.lower())}/{quote(subject.lower())}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les chaînes de caractères</h2>
+<p>Les chaînes de caractères sont utilisées pour représenter du texte en JavaScript. Elles peuvent être déclarées en utilisant des guillemets simples ('') ou des guillemets doubles (""). Voici un exemple :</p>
+
+<pre><code>let message = 'Bonjour';
+let name = "Alice";
+</code></pre>
+
+<p>Les chaînes de caractères peuvent être concaténées en utilisant l'opérateur de concaténation (+) :</p>
+
+<pre><code>let greeting = 'Bonjour ' + name;
+console.log(greeting); // Affiche "Bonjour Alice"
+</code></pre>
+
+<p>Il est possible d'accéder à des caractères spécifiques dans une chaîne de caractères en utilisant l'index :</p>
+
+<pre><code>let str = 'Hello';
+console.log(str[0]); // Affiche "H"
+console.log(str[1]); // Affiche "e"
+</code></pre>
+
+<p>Les chaînes de caractères ont également de nombreuses méthodes intégrées pour effectuer des opérations telles que la recherche de sous-chaînes, le remplacement de texte, la conversion en majuscules ou en minuscules, etc. :</p>
+
+<pre><code>let str = 'Hello, world!';
+console.log(str.length); // Affiche la longueur de la chaîne (13)
+console.log(str.indexOf('world')); // Affiche l'index de la première occurrence de 'world' (7)
+console.log(str.replace('world', 'JavaScript')); // Remplace 'world' par 'JavaScript' (Hello, JavaScript!)
+console.log(str.toUpperCase()); // Convertit la chaîne en majuscules (HELLO, WORLD!)
+</code></pre>
+
+<h2>Les nombres</h2>
+<p>Les nombres sont utilisés pour représenter des valeurs numériques en JavaScript. Ils peuvent être des nombres entiers ou des nombres à virgule flottante. Voici quelques exemples :</p>
+
+<pre><code>let age = 25;
+let pi = 3.14159;
+</code></pre>
+
+<p>Les nombres peuvent être utilisés dans des opérations mathématiques telles que l'addition, la soustraction, la multiplication et la division :</p>
+
+<pre><code>let x = 10;
+let y = 5;
+let sum = x + y;
+let difference = x - y;
+let product = x * y;
+let quotient = x / y;
+</code></pre>
+
+<p>Il est également possible d'effectuer des opérations plus avancées telles que le calcul de la racine carrée, l'arrondi, etc. en utilisant les méthodes intégrées de l'objet Math :</p>
+
+<pre><code>console.log(Math.sqrt(16)); // Calcule la racine carrée de 16 (4)
+console.log(Math.round(3.7)); // Arrondit 3.7 à l'entier le plus proche (4)
+console.log(Math.floor(3.7)); // Arrondit 3.7 à l'entier inférieur (3)
+console.log(Math.ceil(3.2)); // Arrondit 3.2 à l'entier supérieur (4)
+</code></pre>
+
+<h2>Les dates et heures</h2>
+<p>Les dates et heures sont représentées en JavaScript à l'aide de l'objet Date. Cet objet permet de créer, manipuler et formater des dates et heures. Voici un exemple de création d'une date :</p>
+
+<pre><code>let currentDate = new Date();
+console.log(currentDate); // Affiche la date et l'heure actuelles
+</code></pre>
+
+<p>Il est possible d'accéder à des éléments spécifiques d'une date tels que l'année, le mois, le jour, l'heure, etc. en utilisant les méthodes intégrées de l'objet Date :</p>
+
+<pre><code>console.log(currentDate.getFullYear()); // Affiche l'année actuelle
+console.log(currentDate.getMonth()); // Affiche le mois actuel (0-11)
+console.log(currentDate.getDate()); // Affiche le jour du mois actuel (1-31)
+console.log(currentDate.getHours()); // Affiche l'heure actuelle (0-23)
+console.log(currentDate.getMinutes()); // Affiche les minutes actuelles (0-59)
+console.log(currentDate.getSeconds()); // Affiche les secondes actuelles (0-59)
+</code></pre>
+
+<p>Il est également possible de formater une date en utilisant des méthodes intégrées ou des bibliothèques externes telles que Moment.js :</p>
+
+<pre><code>console.log(currentDate.toLocaleDateString()); // Affiche la date au format local
+console.log(currentDate.toISOString()); // Affiche la date au format ISO (YYYY-MM-DDTHH:mm:ss.sssZ)
+</code></pre>
+
+<h2>Les objets JSON</h2>
+<p>JSON (JavaScript Object Notation) est un format de données largement utilisé pour échanger des données entre un serveur et un client. En JavaScript, les objets JSON peuvent être représentés en utilisant une syntaxe similaire à celle des objets JavaScript :</p>
+
+<pre><code>let person = {
+  "name": "Alice",
+  "age": 25,
+  "city": "Paris"
+};
+
+console.log(person.name); // Affiche le nom de la personne (Alice)
+console.log(person.age); // Affiche l'âge de la personne (25)
+console.log(person.city); // Affiche la ville de la personne (Paris)
+</code></pre>
+
+<p>Il est possible de convertir un objet JavaScript en JSON en utilisant la méthode JSON.stringify() :</p>
+
+<pre><code>let person = {
+  "name": "Alice",
+  "age": 25,
+  "city": "Paris"
+};
+
+let json = JSON.stringify(person);
+console.log(json); // Affiche '{"name":"Alice","age":25,"city":"Paris"}'
+</code></pre>
+
+<p>De même, il est possible de convertir une chaîne JSON en objet JavaScript en utilisant la méthode JSON.parse() :</p>
+
+<pre><code>let json = '{"name":"Alice","age":25,"city":"Paris"}';
+let person = JSON.parse(json);
+console.log(person.name); // Affiche le nom de la personne (Alice)
+console.log(person.age); // Affiche l'âge de la personne (25)
+console.log(person.city); // Affiche la ville de la personne (Paris)
+</code></pre>
+					<a href="AI-Learning/{quote(subject.lower())}/{quote(subject.lower())}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

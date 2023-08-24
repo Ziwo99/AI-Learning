@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5. Programmation asynchrone</h2>
+					<a href="AI-Learning/{quote(subject.lower())}/{quote(subject.lower())}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction à la programmation asynchrone</h2>
+<p>La programmation asynchrone est une approche de programmation qui permet d'exécuter des tâches de manière non bloquante. Contrairement à la programmation synchrone, où chaque tâche est exécutée séquentiellement, la programmation asynchrone permet d'exécuter plusieurs tâches en parallèle.</p>
+<p>En JavaScript, la programmation asynchrone est souvent utilisée pour effectuer des opérations qui prennent du temps, comme les appels réseau, les accès à la base de données ou les opérations sur le système de fichiers. Au lieu de bloquer l'exécution du programme jusqu'à ce que ces opérations soient terminées, la programmation asynchrone permet d'effectuer d'autres tâches pendant l'attente des résultats.</p>
+
+<h2>Les callbacks</h2>
+<p>Les callbacks sont une technique couramment utilisée en JavaScript pour gérer la programmation asynchrone. Un callback est une fonction qui est passée en argument à une autre fonction et qui sera appelée lorsque cette dernière aura terminé son exécution.</p>
+<p>Les callbacks permettent d'effectuer des actions spécifiques une fois qu'une opération asynchrone est terminée. Par exemple, lorsqu'un appel réseau est effectué, un callback peut être utilisé pour traiter les données renvoyées par le serveur une fois qu'elles sont disponibles.</p>
+<pre><code>function fetchData(callback) {
+  // Effectue une opération asynchrone pour récupérer des données
+  // Une fois les données récupérées, appelle le callback avec les données en argument
+  callback(data);
+}
+
+function handleData(data) {
+  // Traite les données récupérées
+}
+
+fetchData(handleData);
+</code></pre>
+
+<h2>Les Promises</h2>
+<p>Les Promises sont une autre approche de la programmation asynchrone en JavaScript. Une Promise représente une valeur qui peut être disponible immédiatement, dans le futur ou jamais. Elle permet de gérer les opérations asynchrones de manière plus lisible et plus expressive.</p>
+<p>Une Promise peut être dans l'un des trois états suivants :</p>
+<ul>
+  <li>Pending : l'opération asynchrone est en cours d'exécution</li>
+  <li>Fulfilled : l'opération asynchrone s'est terminée avec succès et la valeur est disponible</li>
+  <li>Rejected : l'opération asynchrone s'est terminée avec une erreur et la raison de l'erreur est disponible</li>
+</ul>
+<pre><code>function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Effectue une opération asynchrone pour récupérer des données
+    // Une fois les données récupérées, appelle resolve avec les données en argument
+    // En cas d'erreur, appelle reject avec la raison de l'erreur en argument
+  });
+}
+
+fetchData()
+  .then(data => {
+    // Traite les données récupérées
+  })
+  .catch(error => {
+    // Gère l'erreur
+  });
+</code></pre>
+
+<h2>Les fonctions asynchrones (async/await)</h2>
+<p>Les fonctions asynchrones sont une syntaxe plus récente introduite en ECMAScript 2017 pour gérer la programmation asynchrone en JavaScript. Elles permettent d'écrire du code asynchrone de manière plus synchrone, en utilisant les mots-clés <code>async</code> et <code>await</code>.</p>
+<p>Une fonction asynchrone retourne toujours une Promise. Lorsqu'un mot-clé <code>await</code> est utilisé à l'intérieur d'une fonction asynchrone, il met en pause l'exécution de la fonction jusqu'à ce que la Promise soit résolue ou rejetée.</p>
+<pre><code>async function fetchData() {
+  // Effectue une opération asynchrone pour récupérer des données
+  // Une fois les données récupérées, les retourne
+}
+
+async function handleData() {
+  try {
+    const data = await fetchData();
+    // Traite les données récupérées
+  } catch (error) {
+    // Gère l'erreur
+  }
+}
+
+handleData();
+</code></pre>
+
+<h2>Gestion des erreurs</h2>
+<p>La gestion des erreurs est un aspect important de la programmation asynchrone en JavaScript. Lorsqu'une opération asynchrone échoue, il est essentiel de pouvoir détecter et gérer les erreurs de manière appropriée.</p>
+<p>En utilisant les callbacks, les Promises ou les fonctions asynchrones, il est possible de capturer les erreurs et de les traiter de différentes manières. Par exemple, en utilisant les blocs <code>try/catch</code> avec les fonctions asynchrones, il est possible de capturer les erreurs et de les gérer de manière centralisée.</p>
+<pre><code>async function fetchData() {
+  try {
+    // Effectue une opération asynchrone pour récupérer des données
+  } catch (error) {
+    // Gère l'erreur
+  }
+}
+
+fetchData();
+</code></pre>
+
+<p>Avec ces concepts de programmation asynchrone en JavaScript, vous serez en mesure de gérer efficacement les opérations qui prennent du temps et d'améliorer les performances de vos applications.</p>
+					<a href="AI-Learning/{quote(subject.lower())}/{quote(subject.lower())}.html" class="button primary">
+						Retour au cours </a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
