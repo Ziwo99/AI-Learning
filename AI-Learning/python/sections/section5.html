@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les bonnes pratiques de développement en Python</h2>
+					<a href="/AI-Learning/python/python.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					
+
+<h2>Les conventions de codage</h2>
+<p>Les conventions de codage en Python sont des règles et des recommandations qui permettent d'écrire du code lisible, compréhensible et cohérent. Elles facilitent la collaboration entre les développeurs et améliorent la maintenabilité du code. Voici quelques-unes des conventions de codage les plus couramment utilisées en Python :</p>
+
+<pre><code># Utilisez des noms de variables explicites et significatifs
+age = 25
+name = "John"
+
+# Utilisez des commentaires pour expliquer le code
+# Cette fonction calcule la somme de deux nombres
+def add_numbers(a, b):
+    return a + b
+
+# Indentez le code avec des espaces (4 espaces par niveau d'indentation)
+if age &gt;= 18:
+    print("Vous êtes majeur")
+else:
+    print("Vous êtes mineur")
+
+# Utilisez des espaces autour des opérateurs
+result = 10 + 5
+
+# Évitez les lignes de code trop longues (limite recommandée de 79 caractères)
+long_variable_name = "This is a very long variable name that should be shortened"
+
+# Utilisez des majuscules pour les constantes
+PI = 3.14159
+
+# Évitez d'utiliser des caractères spéciaux dans les noms de variables
+my_variable = 10
+
+# Utilisez des noms de fonctions en minuscules avec des mots séparés par des underscores
+def calculate_average(numbers_list):
+    total = sum(numbers_list)
+    average = total / len(numbers_list)
+    return average
+</code></pre>
+
+<h2>La gestion des erreurs et des exceptions</h2>
+<p>La gestion des erreurs et des exceptions est une pratique essentielle en Python pour gérer les situations où une erreur se produit pendant l'exécution du code. Les exceptions permettent de détecter et de gérer les erreurs de manière contrôlée. Voici comment utiliser les blocs try-except pour gérer les exceptions :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    result = 10 / 0
+except ZeroDivisionError:
+    # Code exécuté si une division par zéro se produit
+    print("Erreur : division par zéro")
+</code></pre>
+
+<p>Dans cet exemple, le code à l'intérieur du bloc try est exécuté. Si une exception de type ZeroDivisionError est levée (parce que nous essayons de diviser par zéro), le code à l'intérieur du bloc except est exécuté. Cela permet de gérer l'erreur de manière appropriée et d'éviter que le programme ne se termine de manière inattendue.</p>
+
+<h2>Les tests unitaires</h2>
+<p>Les tests unitaires sont une pratique essentielle en développement logiciel qui consiste à écrire des tests pour vérifier le bon fonctionnement des différentes parties d'un programme. En Python, nous pouvons utiliser le module de test unitaire intégré pour écrire et exécuter des tests unitaires. Voici un exemple de test unitaire :</p>
+
+<pre><code>import unittest
+
+def add_numbers(a, b):
+    return a + b
+
+class TestAddNumbers(unittest.TestCase):
+    def test_add_numbers(self):
+        result = add_numbers(10, 5)
+        self.assertEqual(result, 15)
+
+if __name__ == '__main__':
+    unittest.main()
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe de test TestAddNumbers qui hérite de la classe TestCase du module unittest. Nous avons ensuite défini une méthode de test test_add_numbers qui vérifie si la fonction add_numbers renvoie le résultat attendu. En exécutant ce fichier, les tests unitaires seront exécutés et les résultats seront affichés.</p>
+
+<h2>La documentation du code</h2>
+<p>La documentation du code est une pratique essentielle pour rendre le code compréhensible et utilisable par d'autres développeurs. En Python, nous pouvons utiliser des commentaires et des docstrings pour documenter notre code. Voici un exemple de docstring :</p>
+
+<pre><code>def calculate_average(numbers_list):
+    """
+    Cette fonction calcule la moyenne d'une liste de nombres.
+
+    Args:
+        numbers_list (list): La liste de nombres.
+
+    Returns:
+        float: La moyenne des nombres.
+
+    """
+    total = sum(numbers_list)
+    average = total / len(numbers_list)
+    return average
+</code></pre>
+
+<p>Dans cet exemple, nous avons utilisé une docstring pour décrire ce que fait la fonction calculate_average, les arguments qu'elle prend et la valeur qu'elle renvoie. Cette documentation peut être consultée en utilisant la fonction help() ou en générant une documentation automatique à l'aide d'outils tels que Sphinx.</p>
+
+<h2>L'optimisation du code</h2>
+<p>L'optimisation du code est une pratique qui vise à améliorer les performances et l'efficacité d'un programme. En Python, il existe plusieurs techniques d'optimisation, telles que l'utilisation de structures de données appropriées, l'élimination des boucles inutiles et l'utilisation de fonctions natives optimisées. Voici un exemple d'optimisation du code :</p>
+
+<pre><code># Version non optimisée
+result = 0
+for i in range(1000000):
+    result += i
+
+# Version optimisée
+result = (999999 * 1000000) / 2
+</code></pre>
+
+<p>Dans cet exemple, nous avons optimisé le calcul de la somme des nombres de 0 à 999999 en utilisant une formule mathématique plutôt qu'une boucle. Cela permet d'obtenir le même résultat de manière beaucoup plus rapide.</p>
+
+<h2>Les outils de développement (IDE, débogueur, etc.)</h2>
+<p>Il existe de nombreux outils de développement disponibles pour faciliter le processus de développement en Python. Voici quelques-uns des outils les plus couramment utilisés :</p>
+
+<ul>
+    <li><strong>IDE (Environnement de développement intégré)</strong> : Les IDE tels que PyCharm, Visual Studio Code et Atom offrent des fonctionnalités avancées telles que la coloration syntaxique, l'autocomplétion, le débogage et l'intégration avec des outils de gestion de versions.</li>
+    <li><strong>Débogueur</strong> : Le débogueur intégré de Python permet d'exécuter le code pas à pas, de mettre des points d'arrêt et d'inspecter les variables pour trouver et corriger les erreurs.</li>
+    <li><strong>Outils de gestion de versions</strong> : Des outils tels que Git permettent de gérer les versions du code, de collaborer avec d'autres développeurs et de revenir à des versions précédentes si nécessaire.</li>
+    <li><strong>Outils de documentation</strong> : Des outils tels que Sphinx permettent de générer une documentation automatique à partir des docstrings du code.</li>
+    <li><strong>Outils de test</strong> : Des outils tels que pytest permettent d'écrire et d'exécuter des tests unitaires de manière plus avancée.</li>
+</ul>
+
+<p>Ces outils peuvent grandement faciliter le processus de développement en Python et améliorer la productivité des développeurs.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

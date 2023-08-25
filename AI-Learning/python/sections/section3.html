@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Programmation orientée objet en Python</h2>
+					<a href="/AI-Learning/python/python.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>
+La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO permet de regrouper des données et des fonctionnalités connexes en une seule entité, ce qui facilite la gestion et la réutilisation du code.
+</p>
+<p>
+Python est un langage de programmation qui prend en charge la POO de manière native. Il offre des fonctionnalités telles que l'encapsulation, l'héritage et le polymorphisme, qui sont des concepts clés de la POO.
+</p>
+
+<h2>Les classes et les objets</h2>
+<p>
+En Python, une classe est définie en utilisant le mot-clé "class" suivi du nom de la classe. Une classe peut contenir des attributs (variables) et des méthodes (fonctions) qui définissent le comportement des objets créés à partir de cette classe.
+</p>
+<p>
+Pour créer un objet à partir d'une classe, on utilise le nom de la classe suivi de parenthèses. Par exemple, si nous avons une classe "Personne", nous pouvons créer un objet "personne1" en utilisant la syntaxe suivante : personne1 = Personne().
+</p>
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def se_presenter(self):
+        print("Je m'appelle", self.nom, "et j'ai", self.age, "ans.")
+
+personne1 = Personne("Alice", 25)
+personne1.se_presenter()  # Affiche "Je m'appelle Alice et j'ai 25 ans."</code></pre>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>
+L'héritage est un concept clé de la POO qui permet à une classe d'hériter des attributs et des méthodes d'une autre classe. La classe qui hérite est appelée la classe dérivée ou sous-classe, et la classe dont elle hérite est appelée la classe de base ou superclasse.
+</p>
+<p>
+Le polymorphisme est un autre concept important de la POO qui permet à des objets de différentes classes d'être traités de manière interchangeable. Cela signifie qu'un objet peut être utilisé comme une instance de sa classe de base ou de n'importe quelle classe dérivée.
+</p>
+<pre><code>class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def faire_son_cri(self):
+        pass
+
+class Chien(Animal):
+    def faire_son_cri(self):
+        print("Le chien", self.nom, "aboie.")
+
+class Chat(Animal):
+    def faire_son_cri(self):
+        print("Le chat", self.nom, "miaule.")
+
+chien1 = Chien("Max")
+chat1 = Chat("Minou")
+
+chien1.faire_son_cri()  # Affiche "Le chien Max aboie."
+chat1.faire_son_cri()  # Affiche "Le chat Minou miaule."</code></pre>
+
+<h2>Les méthodes spéciales</h2>
+<p>
+En Python, il existe des méthodes spéciales qui commencent et se terminent par deux traits de soulignement (__). Ces méthodes spéciales sont utilisées pour effectuer des opérations spécifiques sur les objets, telles que l'initialisation, la représentation sous forme de chaîne, la comparaison, etc.
+</p>
+<p>
+Par exemple, la méthode spéciale "__init__" est utilisée pour initialiser un objet lors de sa création. La méthode spéciale "__str__" est utilisée pour représenter un objet sous forme de chaîne.
+</p>
+<pre><code>class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+point1 = Point(2, 3)
+print(point1)  # Affiche "(2, 3)"</code></pre>
+
+<h2>Les modules et les packages</h2>
+<p>
+En Python, un module est un fichier contenant du code Python qui peut être importé et utilisé dans d'autres programmes. Un package est un dossier contenant un ensemble de modules et de sous-packages.
+</p>
+<p>
+Pour utiliser un module ou un package, on utilise l'instruction "import" suivie du nom du module ou du package. On peut également utiliser l'instruction "from" pour importer des parties spécifiques d'un module ou d'un package.
+</p>
+<pre><code>import math
+
+print(math.sqrt(16))  # Affiche 4.0
+
+from datetime import datetime
+
+print(datetime.now())  # Affiche la date et l'heure actuelles</code></pre>
+
+<p>
+Ceci conclut la section sur la programmation orientée objet en Python. Nous avons couvert les concepts de base tels que les classes, les objets, l'héritage, le polymorphisme, les méthodes spéciales, ainsi que l'utilisation des modules et des packages. Ces concepts sont essentiels pour développer des applications Python robustes et réutilisables.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
