@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les concepts avancés de Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section5.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les classes et les objets</h2>
+<p>Les classes et les objets sont des éléments fondamentaux de la programmation orientée objet en Python. Une classe est un modèle ou un plan pour créer des objets, tandis qu'un objet est une instance spécifique d'une classe.</p>
+
+<p>Pour définir une classe en Python, utilisez le mot-clé <code>class</code> suivi du nom de la classe. Par exemple :</p>
+
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def afficher_infos(self):
+        print("Nom :", self.nom)
+        print("Age :", self.age)
+
+personne1 = Personne("Alice", 25)
+personne1.afficher_infos()</code></pre>
+
+<p>Dans cet exemple, nous avons défini une classe <code>Personne</code> avec un constructeur <code>__init__</code> qui initialise les attributs <code>nom</code> et <code>age</code>. La méthode <code>afficher_infos</code> affiche les informations de la personne. Ensuite, nous avons créé un objet <code>personne1</code> de la classe <code>Personne</code> et appelé la méthode <code>afficher_infos</code> pour afficher les informations.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage permet à une classe d'hériter des attributs et des méthodes d'une autre classe. La classe qui hérite est appelée la classe fille ou sous-classe, tandis que la classe dont elle hérite est appelée la classe parent ou superclasse.</p>
+
+<p>Voici un exemple d'héritage en Python :</p>
+
+<pre><code>class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def parler(self):
+        raise NotImplementedError("La méthode parler doit être implémentée par les sous-classes.")
+
+class Chien(Animal):
+    def parler(self):
+        return "Woof!"
+
+class Chat(Animal):
+    def parler(self):
+        return "Meow!"
+
+chien = Chien("Bobby")
+print(chien.parler())
+
+chat = Chat("Minou")
+print(chat.parler())</code></pre>
+
+<p>Dans cet exemple, nous avons une classe parent <code>Animal</code> avec une méthode <code>parler</code> qui est définie mais lève une exception <code>NotImplementedError</code>. Les classes filles <code>Chien</code> et <code>Chat</code> héritent de la classe <code>Animal</code> et implémentent leur propre version de la méthode <code>parler</code>. Lorsque nous créons des objets de ces classes et appelons la méthode <code>parler</code>, nous obtenons la sortie appropriée pour chaque animal.</p>
+
+<h2>Les exceptions et la gestion des erreurs</h2>
+<p>Les exceptions sont des événements qui se produisent lorsqu'une erreur se produit pendant l'exécution d'un programme. En Python, les exceptions sont gérées à l'aide des blocs <code>try</code> et <code>except</code>.</p>
+
+<p>Voici un exemple de gestion d'exception en Python :</p>
+
+<pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Erreur : division par zéro")</code></pre>
+
+<p>Dans cet exemple, nous essayons de diviser 10 par zéro, ce qui provoque une exception <code>ZeroDivisionError</code>. Le bloc <code>try</code> tente d'exécuter le code, et si une exception se produit, le bloc <code>except</code> est exécuté avec le type d'exception spécifié.</p>
+
+<h2>Les générateurs et les itérateurs</h2>
+<p>Les générateurs et les itérateurs sont des concepts importants en Python pour travailler avec des séquences de données.</p>
+
+<p>Un générateur est une fonction spéciale qui retourne un itérable, c'est-à-dire un objet qui peut être itéré (par exemple, une boucle <code>for</code> peut être utilisée pour parcourir ses éléments). Les générateurs sont utilisés pour créer des séquences de données de manière efficace.</p>
+
+<p>Voici un exemple de générateur en Python :</p>
+
+<pre><code>def generateur_carres(n):
+    for i in range(n):
+        yield i ** 2
+
+carres = generateur_carres(5)
+for carre in carres:
+    print(carre)</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction <code>generateur_carres</code> qui utilise le mot-clé <code>yield</code> pour retourner les carrés des nombres de 0 à <code>n</code>. Lorsque nous appelons cette fonction, nous obtenons un générateur qui peut être utilisé pour itérer sur les carrés.</p>
+
+<p>Un itérateur est un objet qui implémente les méthodes spéciales <code>__iter__</code> et <code>__next__</code>. L'itérateur est utilisé pour parcourir les éléments d'un itérable.</p>
+
+<p>Voici un exemple d'itérateur en Python :</p>
+
+<pre><code>class Compteur:
+    def __init__(self, debut, fin):
+        self.debut = debut
+        self.fin = fin
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.debut &lt; self.fin:
+            valeur = self.debut
+            self.debut += 1
+            return valeur
+        else:
+            raise StopIteration
+
+compteur = Compteur(1, 5)
+for nombre in compteur:
+    print(nombre)</code></pre>
+
+<p>Dans cet exemple, nous avons défini une classe <code>Compteur</code> qui implémente les méthodes spéciales <code>__iter__</code> et <code>__next__</code>. Lorsque nous itérons sur un objet <code>Compteur</code>, la méthode <code>__next__</code> est appelée pour obtenir les valeurs suivantes jusqu'à ce que la condition de fin soit atteinte.</p>
+
+<h2>Les décorateurs</h2>
+<p>Les décorateurs sont des fonctions qui prennent une autre fonction en argument et étendent son comportement sans la modifier directement. Les décorateurs sont utilisés pour ajouter des fonctionnalités supplémentaires à une fonction existante.</p>
+
+<p>Voici un exemple de décorateur en Python :</p>
+
+<pre><code>def decorateur(fonction):
+    def fonction_decoree():
+        print("Avant l'appel de la fonction")
+        fonction()
+        print("Après l'appel de la fonction")
+
+    return fonction_decoree
+
+@decorateur
+def ma_fonction():
+    print("Ma fonction")
+
+ma_fonction()</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction <code>decorateur</code> qui prend une autre fonction en argument et renvoie une fonction décorée. La fonction décorée ajoute du code supplémentaire avant et après l'appel de la fonction d'origine. Lorsque nous utilisons le décorateur <code>@decorateur</code> avant la définition de la fonction <code>ma_fonction</code>, la fonction <code>ma_fonction</code> est automatiquement passée à la fonction <code>decorateur</code> et la fonction décorée est utilisée lors de l'appel.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section5.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

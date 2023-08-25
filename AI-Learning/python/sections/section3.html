@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les structures de contrôle</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les conditions et les boucles</h2>
+<p>Les conditions et les boucles sont des éléments essentiels de la programmation en Python. Ils permettent de contrôler l'exécution du code en fonction de certaines conditions ou de répéter des instructions plusieurs fois.</p>
+
+<h3>Les conditions</h3>
+<p>Les conditions sont utilisées pour effectuer des actions différentes en fonction de la véracité d'une expression booléenne. En Python, les conditions sont généralement utilisées avec les instructions <code>if</code>, <code>elif</code> et <code>else</code>.</p>
+
+<pre><code>x = 10
+
+if x &gt; 0:
+    print("x est positif")
+elif x &lt; 0:
+    print("x est négatif")
+else:
+    print("x est nul")
+</code></pre>
+
+<p>Dans cet exemple, si la valeur de <code>x</code> est supérieure à 0, le message "x est positif" sera affiché. Si la valeur de <code>x</code> est inférieure à 0, le message "x est négatif" sera affiché. Sinon, c'est-à-dire si la valeur de <code>x</code> est égale à 0, le message "x est nul" sera affiché.</p>
+
+<h3>Les boucles</h3>
+<p>Les boucles permettent de répéter des instructions plusieurs fois. En Python, il existe deux types de boucles : la boucle <code>while</code> et la boucle <code>for</code>.</p>
+
+<h4>La boucle while</h4>
+<p>La boucle <code>while</code> répète un bloc d'instructions tant qu'une condition est vraie.</p>
+
+<pre><code>i = 0
+
+while i &lt; 5:
+    print("Valeur de i :", i)
+    i += 1
+</code></pre>
+
+<p>Dans cet exemple, le bloc d'instructions sera répété tant que la valeur de <code>i</code> est inférieure à 5. À chaque itération, la valeur de <code>i</code> est affichée, puis incrémentée de 1.</p>
+
+<h4>La boucle for</h4>
+<p>La boucle <code>for</code> permet de parcourir une séquence d'éléments (comme une liste, un tuple ou une chaîne de caractères) et d'exécuter un bloc d'instructions pour chaque élément de la séquence.</p>
+
+<pre><code>liste = [1, 2, 3, 4, 5]
+
+for element in liste:
+    print("Valeur de l'élément :", element)
+</code></pre>
+
+<p>Dans cet exemple, le bloc d'instructions sera exécuté pour chaque élément de la liste. La valeur de chaque élément sera affichée.</p>
+
+<h2>Les instructions de contrôle de flux</h2>
+<p>Les instructions de contrôle de flux permettent de modifier le flux d'exécution du code en sautant des instructions, en sortant d'une boucle ou en passant à l'itération suivante d'une boucle.</p>
+
+<h3>L'instruction break</h3>
+<p>L'instruction <code>break</code> permet de sortir d'une boucle prématurément, sans exécuter les instructions restantes.</p>
+
+<pre><code>for i in range(10):
+    if i == 5:
+        break
+    print("Valeur de i :", i)
+</code></pre>
+
+<p>Dans cet exemple, la boucle <code>for</code> s'arrêtera lorsque la valeur de <code>i</code> sera égale à 5. Les instructions restantes ne seront pas exécutées.</p>
+
+<h3>L'instruction continue</h3>
+<p>L'instruction <code>continue</code> permet de passer à l'itération suivante d'une boucle, sans exécuter les instructions restantes pour l'itération actuelle.</p>
+
+<pre><code>for i in range(10):
+    if i == 5:
+        continue
+    print("Valeur de i :", i)
+</code></pre>
+
+<p>Dans cet exemple, lorsque la valeur de <code>i</code> est égale à 5, l'instruction <code>continue</code> est exécutée, ce qui passe à l'itération suivante de la boucle sans exécuter les instructions restantes.</p>
+
+<h2>Les fonctions et les modules</h2>
+<p>Les fonctions et les modules sont des éléments importants de la programmation en Python. Ils permettent de regrouper des instructions et de les réutiliser, ce qui favorise la modularité et la réutilisabilité du code.</p>
+
+<h3>Les fonctions</h3>
+<p>Une fonction est un bloc d'instructions qui peut être appelé et exécuté à partir d'autres parties du code. Les fonctions permettent de découper le code en morceaux plus petits et plus faciles à gérer.</p>
+
+<pre><code>def addition(a, b):
+    return a + b
+
+resultat = addition(3, 5)
+print("Résultat de l'addition :", resultat)
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>addition</code> prend deux paramètres <code>a</code> et <code>b</code> et retourne leur somme. La fonction est appelée avec les arguments 3 et 5, et le résultat est stocké dans la variable <code>resultat</code>.</p>
+
+<h3>Les modules</h3>
+<p>Un module est un fichier contenant des définitions de fonctions, de variables et d'autres éléments, qui peuvent être importés et utilisés dans d'autres parties du code.</p>
+
+<pre><code>import math
+
+racine_carree = math.sqrt(16)
+print("Racine carrée de 16 :", racine_carree)
+</code></pre>
+
+<p>Dans cet exemple, le module <code>math</code> est importé et la fonction <code>sqrt</code> est utilisée pour calculer la racine carrée de 16. Le résultat est stocké dans la variable <code>racine_carree</code>.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
