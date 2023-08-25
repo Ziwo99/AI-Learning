@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - JavaScript Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les API et les services web en JavaScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les requêtes HTTP et les API REST</h2>
+<p>Les requêtes HTTP sont utilisées pour communiquer avec des serveurs et récupérer des données. En JavaScript, nous pouvons utiliser l'objet XMLHttpRequest pour effectuer des requêtes HTTP de manière asynchrone.</p>
+<pre><code>var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    var response = JSON.parse(xhr.responseText);
+    console.log(response);
+  }
+};
+xhr.send();
+</code></pre>
+<p>Dans cet exemple, nous utilisons la méthode open() pour spécifier le type de requête (GET), l'URL de l'API et si la requête doit être asynchrone (true). Ensuite, nous utilisons la propriété onreadystatechange pour définir une fonction de rappel qui sera appelée lorsque l'état de la requête change. Lorsque l'état est 4 (DONE) et le statut est 200 (OK), nous pouvons accéder à la réponse de la requête à l'aide de la propriété responseText.</p>
+
+<p>Les API REST (Representational State Transfer) sont des interfaces qui permettent d'accéder et de manipuler des ressources à l'aide de requêtes HTTP. Elles utilisent généralement les méthodes GET, POST, PUT et DELETE pour effectuer des opérations de lecture, création, mise à jour et suppression de données.</p>
+<pre><code>// Exemple de requête GET pour récupérer des utilisateurs
+fetch('https://api.example.com/users')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+</code></pre>
+<p>Dans cet exemple, nous utilisons la fonction fetch pour effectuer une requête GET à l'URL de l'API. Ensuite, nous utilisons les méthodes then() pour traiter la réponse de la requête. La première méthode then() convertit la réponse en JSON, tandis que la deuxième méthode then() nous permet d'accéder aux données de la réponse. La méthode catch() est utilisée pour gérer les erreurs éventuelles.</p>
+
+<h2>L'utilisation des API externes (ex: Google Maps)</h2>
+<p>Les API externes sont des interfaces fournies par des services tiers, tels que Google Maps, qui permettent d'accéder à leurs fonctionnalités et à leurs données. Pour utiliser une API externe en JavaScript, nous devons généralement inclure un script fourni par le service dans notre page HTML.</p>
+<pre><code>&lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"&gt;&lt;/script&gt;</code></pre>
+<p>Dans cet exemple, nous incluons le script de l'API Google Maps en spécifiant notre clé d'API. Une fois le script inclus, nous pouvons utiliser les fonctionnalités de l'API, telles que l'affichage de cartes et la recherche d'emplacements.</p>
+<pre><code>var map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 37.7749, lng: -122.4194},
+  zoom: 8
+});
+</code></pre>
+<p>Dans cet exemple, nous créons une nouvelle instance de la classe google.maps.Map pour afficher une carte centrée sur les coordonnées spécifiées.</p>
+
+<h2>La manipulation de données JSON</h2>
+<p>JSON (JavaScript Object Notation) est un format de données largement utilisé pour échanger des données entre un serveur et un client. En JavaScript, nous pouvons facilement manipuler des données JSON à l'aide des méthodes JSON.parse() et JSON.stringify().</p>
+<pre><code>// Conversion d'une chaîne JSON en objet JavaScript
+var json = '{"name":"John","age":30,"city":"New York"}';
+var obj = JSON.parse(json);
+console.log(obj);
+
+// Conversion d'un objet JavaScript en chaîne JSON
+var obj = {name: "John", age: 30, city: "New York"};
+var json = JSON.stringify(obj);
+console.log(json);
+</code></pre>
+<p>Dans cet exemple, nous utilisons la méthode JSON.parse() pour convertir une chaîne JSON en un objet JavaScript. Nous utilisons également la méthode JSON.stringify() pour convertir un objet JavaScript en une chaîne JSON.</p>
+
+<h2>La gestion des erreurs et des exceptions</h2>
+<p>En JavaScript, nous pouvons utiliser les blocs try-catch pour gérer les erreurs et les exceptions. Le bloc try contient le code qui peut générer une erreur, tandis que le bloc catch est utilisé pour attraper et gérer l'erreur.</p>
+<pre><code>try {
+  // Code susceptible de générer une erreur
+  var result = 10 / 0;
+} catch (error) {
+  // Gestion de l'erreur
+  console.log("Une erreur s'est produite : " + error.message);
+}
+</code></pre>
+<p>Dans cet exemple, nous essayons de diviser 10 par 0, ce qui génère une erreur de division par zéro. Le bloc catch attrape l'erreur et affiche un message d'erreur.</p>
+
+<p>Il est également possible de lancer des exceptions personnalisées à l'aide du mot-clé throw.</p>
+<pre><code>function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division par zéro");
+  }
+  return a / b;
+}
+
+try {
+  var result = divide(10, 0);
+  console.log(result);
+} catch (error) {
+  console.log("Une erreur s'est produite : " + error.message);
+}
+</code></pre>
+<p>Dans cet exemple, nous lançons une exception personnalisée si le diviseur est égal à zéro. Le bloc catch attrape l'exception et affiche un message d'erreur.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

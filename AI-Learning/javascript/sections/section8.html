@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - JavaScript Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les outils de développement en JavaScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les outils de débogage</h2>
+<p>Les outils de débogage sont essentiels pour identifier et résoudre les erreurs dans votre code JavaScript. Ils vous permettent de suivre l'exécution de votre code pas à pas, d'inspecter les variables et les valeurs, et de détecter les erreurs de logique.</p>
+<p>Un outil de débogage couramment utilisé est la console JavaScript, qui est intégrée dans les navigateurs modernes. Vous pouvez utiliser des commandes telles que <code>console.log()</code> pour afficher des messages dans la console et vérifier les valeurs des variables à différents points de votre code.</p>
+<p>Un autre outil de débogage populaire est l'extension Chrome DevTools, qui offre une gamme de fonctionnalités avancées pour le débogage JavaScript, telles que le suivi des événements, la surveillance des requêtes réseau et la modification en direct du code.</p>
+
+<h2>Les outils de test (ex: Jasmine)</h2>
+<p>Les outils de test vous aident à vérifier que votre code JavaScript fonctionne correctement en exécutant des tests automatisés. Ils vous permettent de définir des cas de test, d'exécuter ces tests et de vérifier les résultats.</p>
+<p>Un outil de test populaire est Jasmine, un framework de test JavaScript qui offre une syntaxe expressive et facile à lire. Vous pouvez définir des suites de tests avec des descriptions claires et des attentes précises, et exécuter ces tests dans votre navigateur ou via la ligne de commande.</p>
+<p>Voici un exemple de test Jasmine :</p>
+<pre><code>describe('Calculator', function() {
+    it('should add two numbers correctly', function() {
+        var result = Calculator.add(2, 3);
+        expect(result).toBe(5);
+    });
+});</code></pre>
+
+<h2>Les outils de build (ex: Webpack)</h2>
+<p>Les outils de build vous aident à automatiser le processus de construction de votre application JavaScript, en regroupant et en optimisant vos fichiers source. Ils vous permettent également d'utiliser des fonctionnalités avancées telles que la transpilation de code, la gestion des dépendances et la génération de fichiers de production.</p>
+<p>Webpack est un outil de build populaire qui vous permet de créer un graphique de dépendances pour votre application JavaScript. Vous pouvez définir des points d'entrée, des loaders pour traiter différents types de fichiers, des plugins pour effectuer des tâches supplémentaires, et générer un bundle optimisé pour le déploiement.</p>
+<p>Voici un exemple de configuration Webpack :</p>
+<pre><code>const path = require('path');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
+};</code></pre>
+
+<h2>Les outils de déploiement</h2>
+<p>Les outils de déploiement vous aident à publier votre application JavaScript sur un serveur ou à la rendre accessible au public. Ils vous permettent de gérer les tâches de déploiement telles que la compilation des fichiers, la compression des ressources et la configuration des paramètres de déploiement.</p>
+<p>Un outil de déploiement couramment utilisé est Git, un système de contrôle de version qui vous permet de gérer les différentes versions de votre code et de le déployer sur des serveurs distants. Vous pouvez utiliser des commandes telles que <code>git push</code> pour envoyer votre code vers un dépôt distant et le rendre accessible en ligne.</p>
+<p>Il existe également des outils spécifiques au déploiement d'applications JavaScript, tels que Netlify et Vercel, qui offrent des fonctionnalités avancées telles que le déploiement continu, la gestion des domaines et la mise en cache des ressources.</p>
+
+<p>Ce sont là quelques-uns des outils de développement couramment utilisés en JavaScript. Il est important de choisir les outils qui conviennent le mieux à vos besoins et à votre flux de travail. En utilisant ces outils de manière efficace, vous pouvez améliorer votre productivité et la qualité de votre code JavaScript.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

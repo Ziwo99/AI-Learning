@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - JavaScript Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les modules et les bibliothèques en JavaScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Introduction aux modules</h2>
+<p>Les modules sont une fonctionnalité clé de JavaScript qui permet d'organiser et de réutiliser efficacement le code. Un module est essentiellement un fichier JavaScript qui contient des variables, des fonctions et des objets qui peuvent être exportés et importés dans d'autres fichiers.</p>
+<p>Pour créer un module, vous pouvez simplement créer un fichier JavaScript avec une extension .js et y définir vos variables, fonctions et objets. Pour rendre ces éléments accessibles à d'autres fichiers, vous devez les exporter en utilisant le mot-clé <code>export</code>.</p>
+<p>Voici un exemple de module simple :</p>
+<pre><code>// module.js
+export const message = 'Hello, world!';
+
+export function sayHello() {
+  console.log(message);
+}</code></pre>
+<p>Dans ce module, nous exportons une variable <code>message</code> et une fonction <code>sayHello</code>. Ces éléments peuvent maintenant être importés et utilisés dans d'autres fichiers JavaScript.</p>
+
+<h2>Utilisation des modules natifs</h2>
+<p>JavaScript propose également des modules natifs qui sont intégrés dans le langage et peuvent être utilisés sans avoir besoin d'installer des bibliothèques externes. Ces modules natifs sont accessibles via l'objet global <code>window</code> ou <code>global</code> selon l'environnement d'exécution (navigateur ou Node.js).</p>
+<p>Voici quelques exemples de modules natifs couramment utilisés :</p>
+<ul>
+  <li><code>Math</code> : fournit des fonctions mathématiques telles que <code>Math.random()</code> pour générer un nombre aléatoire.</li>
+  <li><code>Date</code> : permet de manipuler des dates et des heures.</li>
+  <li><code>Array</code> : fournit des méthodes pour manipuler des tableaux, telles que <code>Array.map()</code> et <code>Array.filter()</code>.</li>
+</ul>
+<p>Pour utiliser ces modules natifs, vous n'avez pas besoin de les importer explicitement. Ils sont disponibles par défaut dans votre environnement JavaScript.</p>
+
+<h2>Utilisation des bibliothèques externes (ex: jQuery)</h2>
+<p>Les bibliothèques externes sont des ensembles de code JavaScript pré-écrits qui fournissent des fonctionnalités supplémentaires et facilitent le développement d'applications. L'une des bibliothèques les plus populaires est jQuery, qui simplifie la manipulation du DOM, les requêtes AJAX et bien plus encore.</p>
+<p>Pour utiliser une bibliothèque externe, vous devez d'abord la télécharger et l'inclure dans votre projet en utilisant la balise <code>&lt;script&gt;</code> dans votre fichier HTML. Ensuite, vous pouvez utiliser les fonctionnalités de la bibliothèque en appelant les méthodes appropriées.</p>
+<p>Voici un exemple d'utilisation de jQuery pour sélectionner tous les éléments de classe "example" et leur ajouter une classe "highlight" :</p>
+<pre><code>$('example').addClass('highlight');</code></pre>
+<p>Il existe de nombreuses autres bibliothèques externes disponibles pour JavaScript, telles que React, Angular, Vue.js, etc. Chacune de ces bibliothèques a ses propres fonctionnalités et avantages, il est donc important de choisir celle qui convient le mieux à votre projet.</p>
+
+<h2>Création de modules personnalisés</h2>
+<p>En plus d'utiliser des modules natifs et des bibliothèques externes, vous pouvez également créer vos propres modules personnalisés pour organiser et réutiliser votre propre code. La création de modules personnalisés est similaire à la création de modules natifs, mais vous pouvez définir vos propres variables, fonctions et objets selon vos besoins.</p>
+<p>Voici un exemple de module personnalisé qui exporte une fonction pour calculer la somme de deux nombres :</p>
+<pre><code>// sum.js
+export function sum(a, b) {
+  return a + b;
+}</code></pre>
+<p>Vous pouvez ensuite importer ce module dans un autre fichier JavaScript et utiliser la fonction <code>sum</code> :</p>
+<pre><code>// main.js
+import { sum } from './sum.js';
+
+console.log(sum(2, 3)); // Output: 5</code></pre>
+<p>La création de modules personnalisés vous permet de réutiliser facilement votre code dans différents fichiers et de le maintenir de manière modulaire et organisée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
