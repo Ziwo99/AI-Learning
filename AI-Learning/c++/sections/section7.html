@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les avancées récentes du C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Les nouvelles fonctionnalités du C++11, C++14 et C++17</h2>
+  <p>Le C++ a connu plusieurs mises à jour majeures au cours des dernières années, avec les versions C++11, C++14 et C++17. Ces mises à jour ont apporté de nombreuses nouvelles fonctionnalités et améliorations au langage, ce qui a permis aux développeurs de programmer de manière plus efficace et plus expressive.</p>
+
+  <p>Voici quelques-unes des nouvelles fonctionnalités introduites dans ces versions :</p>
+
+  <h3>C++11 :</h3>
+  <ul>
+    <li>Les lambdas : permettent de définir des fonctions anonymes de manière concise.</li>
+    <li>Les fonctions constexpr : permettent d'évaluer des expressions à la compilation.</li>
+    <li>Les types auto et decltype : facilitent la déclaration de variables dont le type est déduit automatiquement.</li>
+    <li>Les itérateurs range-based : simplifient la boucle sur les éléments d'un conteneur.</li>
+    <li>Les threads et la bibliothèque de concurrence : permettent la programmation multithread.</li>
+  </ul>
+
+  <h3>C++14 :</h3>
+  <ul>
+    <li>Les fonctions génériques lambda : permettent de définir des lambdas génériques.</li>
+    <li>Les variables constexpr : permettent de déclarer des variables constantes évaluées à la compilation.</li>
+    <li>Les expressions régulières : facilitent le traitement des chaînes de caractères.</li>
+    <li>Les améliorations de la bibliothèque standard : ajout de nouvelles fonctionnalités et amélioration des performances.</li>
+  </ul>
+
+  <h3>C++17 :</h3>
+  <ul>
+    <li>La déduction de classe template : permet de déduire automatiquement les arguments de template.</li>
+    <li>Les variables inline : permettent de déclarer des variables inline dans les fonctions.</li>
+    <li>Les variables structurées : permettent de déclarer plusieurs variables en une seule instruction.</li>
+    <li>Les améliorations de la bibliothèque standard : ajout de nouvelles fonctionnalités et amélioration des performances.</li>
+  </ul>
+
+  <p>Ces nouvelles fonctionnalités ont considérablement amélioré la productivité des développeurs C++ en leur permettant d'écrire un code plus concis, plus lisible et plus performant.</p>
+
+  <h2>Les concepts de programmation moderne en C++</h2>
+  <p>La programmation moderne en C++ se concentre sur l'utilisation des nouvelles fonctionnalités du langage pour écrire un code plus clair, plus maintenable et plus performant. Voici quelques concepts clés de la programmation moderne en C++ :</p>
+
+  <h3>Utilisation des lambdas :</h3>
+  <p>Les lambdas permettent de définir des fonctions anonymes directement dans le code, ce qui facilite la création de fonctions ad hoc pour des tâches spécifiques.</p>
+  <pre><code>auto sum = [](int a, int b) { return a + b; };
+int result = sum(3, 4); // result vaut 7</code></pre>
+
+  <h3>Utilisation des types auto et decltype :</h3>
+  <p>Les types auto et decltype permettent de déclarer des variables dont le type est déduit automatiquement, ce qui rend le code plus concis et plus lisible.</p>
+  <pre><code>auto x = 42; // x est de type int
+decltype(x) y = x; // y est de type int</code></pre>
+
+  <h3>Utilisation des itérateurs range-based :</h3>
+  <p>Les itérateurs range-based simplifient la boucle sur les éléments d'un conteneur en évitant d'avoir à gérer les indices.</p>
+  <pre><code>std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+for (int number : numbers) {
+    std::cout &lt;&lt; number &lt;&lt; ' ';
+}
+// Affiche : 1 2 3 4 5</code></pre>
+
+  <h2>Les bonnes pratiques de codage en C++</h2>
+  <p>Les bonnes pratiques de codage en C++ sont des règles et des conventions qui permettent d'écrire un code clair, maintenable et performant. Voici quelques bonnes pratiques couramment utilisées en C++ :</p>
+
+  <h3>Utilisation des const et constexpr :</h3>
+  <p>Utiliser le mot-clé const pour déclarer des variables qui ne doivent pas être modifiées et constexpr pour déclarer des constantes évaluées à la compilation.</p>
+  <pre><code>const int MAX_SIZE = 100;
+constexpr double PI = 3.14159;</code></pre>
+
+  <h3>Utilisation de la portée la plus restreinte possible :</h3>
+  <p>Limitez la portée des variables et des fonctions autant que possible pour éviter les conflits et rendre le code plus lisible.</p>
+  <pre><code>void doSomething() {
+    int x = 42;
+    // ...
+}</code></pre>
+
+  <h3>Utilisation de la bibliothèque standard :</h3>
+  <p>Utilisez les fonctionnalités de la bibliothèque standard plutôt que de réinventer la roue. La bibliothèque standard offre de nombreuses classes et fonctions prêtes à l'emploi.</p>
+  <pre><code>#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+std::vector&lt;int&gt; numbers = {3, 1, 4, 1, 5, 9};
+std::sort(numbers.begin(), numbers.end());</code></pre>
+
+  <h2>Conclusion</h2>
+  <p>Cette section a présenté les avancées récentes du langage C++, notamment les nouvelles fonctionnalités introduites dans les versions C++11, C++14 et C++17, ainsi que les concepts de programmation moderne et les bonnes pratiques de codage en C++. Ces connaissances vous permettront de programmer de manière plus efficace et plus expressive en utilisant les fonctionnalités les plus récentes du langage.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

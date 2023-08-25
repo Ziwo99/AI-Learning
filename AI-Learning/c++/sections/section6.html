@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les bonnes pratiques de développement en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La gestion des erreurs et des exceptions</h2>
+<p>La gestion des erreurs et des exceptions est une pratique essentielle en développement C++. Elle permet de détecter et de gérer les erreurs qui peuvent survenir lors de l'exécution d'un programme. Les erreurs peuvent être de différentes natures, telles que des erreurs de syntaxe, des erreurs d'exécution ou des erreurs logiques.</p>
+
+<p>En C++, les erreurs peuvent être gérées à l'aide de la structure try-catch. La structure try est utilisée pour entourer le code qui peut potentiellement générer une exception. Si une exception est levée, le programme passe à la structure catch correspondante qui gère l'exception.</p>
+
+<pre><code>try {
+    // Code pouvant générer une exception
+} catch (ExceptionType1 e) {
+    // Gestion de l'exception de type 1
+} catch (ExceptionType2 e) {
+    // Gestion de l'exception de type 2
+} catch (...) {
+    // Gestion de toutes les autres exceptions
+}</code></pre>
+
+<p>Il est important de choisir le bon type d'exception pour chaque situation afin de pouvoir les gérer de manière appropriée. Il est également recommandé de ne pas capturer toutes les exceptions avec le point de suspension (...) car cela peut masquer des erreurs importantes.</p>
+
+<h2>La documentation et les commentaires de code</h2>
+<p>La documentation et les commentaires de code sont essentiels pour faciliter la compréhension et la maintenance du code. Ils permettent aux développeurs de comprendre rapidement le fonctionnement d'une partie de code et d'identifier les éventuels problèmes ou améliorations.</p>
+
+<p>En C++, la documentation est généralement réalisée à l'aide de commentaires spéciaux appelés Doxygen. Ces commentaires sont placés juste avant une fonction, une classe ou une variable et fournissent des informations sur son utilisation, ses paramètres, sa valeur de retour, etc.</p>
+
+<pre><code>/**
+ * @brief Cette fonction calcule la somme de deux entiers.
+ * 
+ * @param a Le premier entier.
+ * @param b Le deuxième entier.
+ * @return La somme des deux entiers.
+ */
+int sum(int a, int b) {
+    return a + b;
+}</code></pre>
+
+<p>Les commentaires de code sont utilisés pour expliquer le fonctionnement d'une partie spécifique du code. Ils peuvent être placés à côté d'une ligne de code ou sur une ligne séparée. Il est recommandé d'utiliser des commentaires clairs et concis pour faciliter la compréhension du code.</p>
+
+<pre><code>// Cette boucle affiche les nombres de 1 à 10
+for (int i = 1; i <= 10; i++) {
+    cout << i << endl;
+}</code></pre>
+
+<h2>Les tests unitaires et l'assurance qualité</h2>
+<p>Les tests unitaires sont une pratique courante en développement C++. Ils consistent à tester chaque unité de code de manière isolée pour vérifier son bon fonctionnement. Les tests unitaires permettent de détecter rapidement les erreurs et de s'assurer que le code répond aux spécifications.</p>
+
+<p>En C++, les tests unitaires peuvent être réalisés à l'aide de frameworks tels que Google Test ou Boost.Test. Ces frameworks fournissent des outils pour écrire et exécuter des tests unitaires de manière automatisée.</p>
+
+<pre><code>#include &lt;gtest/gtest.h&gt;
+
+TEST(MyTestSuite, MyTestCase) {
+    // Test case code
+    ASSERT_EQ(2, sum(1, 1));
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}</code></pre>
+
+<p>L'assurance qualité est également importante en développement C++. Elle consiste à mettre en place des processus et des outils pour garantir la qualité du code. Cela peut inclure des revues de code, des analyses statiques, des tests de performance, etc.</p>
+
+<h2>Les techniques de débogage et de profilage</h2>
+<p>Les techniques de débogage et de profilage sont utilisées pour identifier et résoudre les problèmes de performance et de comportement du code. Le débogage permet de trouver et de corriger les erreurs de programmation, tandis que le profilage permet d'analyser les performances du code.</p>
+
+<p>En C++, les outils de débogage tels que GDB ou Visual Studio Debugger permettent de suivre l'exécution du code pas à pas, d'inspecter les variables et d'identifier les erreurs. Le profilage peut être réalisé à l'aide d'outils tels que Valgrind ou Intel VTune pour analyser les performances du code et identifier les goulots d'étranglement.</p>
+
+<p>Il est recommandé d'utiliser ces techniques régulièrement pour s'assurer que le code fonctionne correctement et qu'il est optimisé en termes de performances.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
