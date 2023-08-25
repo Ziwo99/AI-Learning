@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les fondamentaux de Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Variables et types de données</h2>
+<p>En Python, les variables sont utilisées pour stocker des valeurs. Elles peuvent être de différents types de données, tels que les entiers, les flottants, les chaînes de caractères, les listes, les tuples, les dictionnaires, etc. Voici quelques exemples :</p>
+
+<pre><code># Exemples de variables et de types de données en Python
+
+# Entier
+age = 25
+
+# Flottant
+prix = 9.99
+
+# Chaîne de caractères
+nom = "John Doe"
+
+# Liste
+fruits = ["pomme", "banane", "orange"]
+
+# Tuple
+coordonnees = (10, 20)
+
+# Dictionnaire
+personne = {"nom": "John", "age": 25}</code></pre>
+
+<p>Il est important de noter que Python est un langage à typage dynamique, ce qui signifie que vous n'avez pas besoin de déclarer explicitement le type d'une variable. Le type est déterminé automatiquement en fonction de la valeur assignée à la variable.</p>
+
+<h2>Opérations arithmétiques et opérateurs logiques</h2>
+<p>Python prend en charge les opérations arithmétiques de base telles que l'addition, la soustraction, la multiplication et la division. Voici quelques exemples :</p>
+
+<pre><code># Exemples d'opérations arithmétiques en Python
+
+a = 10
+b = 5
+
+# Addition
+resultat = a + b
+print(resultat)  # Affiche 15
+
+# Soustraction
+resultat = a - b
+print(resultat)  # Affiche 5
+
+# Multiplication
+resultat = a * b
+print(resultat)  # Affiche 50
+
+# Division
+resultat = a / b
+print(resultat)  # Affiche 2.0</code></pre>
+
+<p>En plus des opérations arithmétiques, Python propose également des opérateurs logiques tels que "et" (and), "ou" (or) et "non" (not) pour effectuer des opérations de comparaison et de logique booléenne. Voici quelques exemples :</p>
+
+<pre><code># Exemples d'opérateurs logiques en Python
+
+a = 10
+b = 5
+
+# Opérateur "et" (and)
+resultat = (a > 0) and (b < 10)
+print(resultat)  # Affiche True
+
+# Opérateur "ou" (or)
+resultat = (a > 0) or (b > 10)
+print(resultat)  # Affiche True
+
+# Opérateur "non" (not)
+resultat = not (a > 0)
+print(resultat)  # Affiche False</code></pre>
+
+<h2>Structures de contrôle (boucles et conditions)</h2>
+<p>Les structures de contrôle permettent d'exécuter des instructions conditionnellement ou de manière répétée. En Python, nous avons les structures de contrôle suivantes :</p>
+
+<h3>Conditions (if-elif-else)</h3>
+<p>La structure de contrôle conditionnelle "if-elif-else" permet d'exécuter des blocs de code en fonction de conditions spécifiques. Voici un exemple :</p>
+
+<pre><code># Exemple de structure de contrôle conditionnelle en Python
+
+age = 18
+
+if age &lt; 18:
+    print("Vous êtes mineur.")
+elif age == 18:
+    print("Vous venez d'atteindre la majorité.")
+else:
+    print("Vous êtes majeur.")</code></pre>
+
+<h3>Boucles (for et while)</h3>
+<p>Les boucles permettent d'exécuter un bloc de code de manière répétée. En Python, nous avons les boucles "for" et "while". Voici des exemples :</p>
+
+<pre><code># Exemple de boucle "for" en Python
+
+fruits = ["pomme", "banane", "orange"]
+
+for fruit in fruits:
+    print(fruit)  # Affiche chaque fruit de la liste
+
+# Exemple de boucle "while" en Python
+
+i = 0
+
+while i &lt; 5:
+    print(i)  # Affiche la valeur de i
+    i += 1</code></pre>
+
+<h2>Fonctions et modules</h2>
+<p>Les fonctions permettent de regrouper des instructions dans un bloc réutilisable. En Python, nous pouvons définir nos propres fonctions à l'aide du mot-clé "def". Voici un exemple :</p>
+
+<pre><code># Exemple de définition de fonction en Python
+
+def dire_bonjour(nom):
+    print("Bonjour, " + nom + "!")
+
+# Appel de la fonction
+dire_bonjour("John")  # Affiche "Bonjour, John!"</code></pre>
+
+<p>Les modules sont des fichiers contenant des définitions de fonctions, de variables et d'autres objets, qui peuvent être importés et utilisés dans d'autres programmes Python. Voici un exemple :</p>
+
+<pre><code># Exemple d'importation de module en Python
+
+import math
+
+# Utilisation de la fonction sqrt() du module math
+resultat = math.sqrt(16)
+print(resultat)  # Affiche 4.0</code></pre>
+
+<p>Il existe de nombreux modules Python disponibles qui offrent des fonctionnalités supplémentaires pour diverses tâches, tels que le calcul scientifique, la manipulation de données, la visualisation de données, etc.</p>
+
+<p>Ceci conclut la section 2 sur les fondamentaux de Python. Nous avons couvert les variables et les types de données, les opérations arithmétiques et les opérateurs logiques, les structures de contrôle, les fonctions et les modules. Continuez à pratiquer ces concepts pour renforcer votre compréhension de Python.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
