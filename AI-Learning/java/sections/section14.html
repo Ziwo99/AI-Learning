@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 14 : Bases de données et JDBC</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux bases de données relationnelles</h2>
+<p>Une base de données relationnelle est un système de gestion de bases de données qui stocke les données dans des tables. Chaque table est composée de lignes et de colonnes, où chaque ligne représente un enregistrement et chaque colonne représente un attribut de l'enregistrement.</p>
+<p>Les bases de données relationnelles utilisent le langage SQL (Structured Query Language) pour interagir avec les données. SQL permet de créer, modifier et interroger les tables d'une base de données.</p>
+
+<h2>Utilisation de JDBC pour la connexion à une base de données</h2>
+<p>JDBC (Java Database Connectivity) est une API Java qui permet d'établir une connexion avec une base de données et d'exécuter des requêtes SQL. Pour utiliser JDBC, il est nécessaire de charger le pilote JDBC approprié pour la base de données utilisée.</p>
+<p>Voici un exemple de code qui montre comment établir une connexion à une base de données MySQL :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connexion réussie à la base de données !");
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de la connexion à la base de données : " + e.getMessage());
+        }
+    }
+}
+</code></pre>
+
+<h2>Requêtes SQL et manipulation des données</h2>
+<p>Une fois connecté à une base de données, il est possible d'exécuter des requêtes SQL pour interagir avec les données. Voici quelques exemples de requêtes SQL couramment utilisées :</p>
+<ul>
+  <li><b>SELECT :</b> permet de récupérer des données à partir d'une table.</li>
+  <li><b>INSERT :</b> permet d'insérer de nouvelles données dans une table.</li>
+  <li><b>UPDATE :</b> permet de mettre à jour des données existantes dans une table.</li>
+  <li><b>DELETE :</b> permet de supprimer des données d'une table.</li>
+</ul>
+<p>Voici un exemple de code qui montre comment exécuter une requête SELECT en utilisant JDBC :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseQuery {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM mytable");
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                System.out.println("ID : " + id + ", Name : " + name);
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de l'exécution de la requête : " + e.getMessage());
+        }
+    }
+}
+</code></pre>
+<p>Ce code récupère toutes les lignes de la table "mytable" et affiche les valeurs des colonnes "id" et "name".</p>
+<p>Il est également possible d'utiliser des requêtes paramétrées pour éviter les attaques par injection SQL. Les requêtes paramétrées utilisent des paramètres qui sont remplacés par des valeurs lors de l'exécution de la requête.</p>
+<p>Voici un exemple de code qui montre comment exécuter une requête paramétrée en utilisant JDBC :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class ParametrizedQuery {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            String sql = "SELECT * FROM mytable WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, 1);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                System.out.println("ID : " + id + ", Name : " + name);
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println("Erreur lors de l'exécution de la requête : " + e.getMessage());
+        }
+    }
+}
+</code></pre>
+<p>Ce code exécute une requête SELECT avec un paramètre "id" et récupère les lignes correspondantes de la table "mytable".</p>
+
+<p>Il est important de noter que la manipulation des données en utilisant JDBC peut être sujette à des erreurs et des exceptions. Il est donc recommandé de gérer correctement les exceptions et de fermer les connexions, les déclarations et les résultats après utilisation.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

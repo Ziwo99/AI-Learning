@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Tableaux et collections</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Tableaux unidimensionnels et multidimensionnels</h2>
+<p>Un tableau est une structure de données qui permet de stocker plusieurs valeurs de même type dans une seule variable. En Java, les tableaux peuvent être unidimensionnels ou multidimensionnels.</p>
+
+<p>Un tableau unidimensionnel est une liste ordonnée d'éléments du même type. Pour déclarer et initialiser un tableau unidimensionnel, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>type[] nomDuTableau = new type[taille];
+</code></pre>
+
+<p>Par exemple, pour créer un tableau unidimensionnel de nombres entiers de taille 5 :</p>
+
+<pre><code>int[] tableauEntiers = new int[5];
+</code></pre>
+
+<p>Un tableau multidimensionnel est un tableau qui contient d'autres tableaux. Il peut être considéré comme une matrice ou un tableau de tableaux. Pour déclarer et initialiser un tableau multidimensionnel, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>type[][] nomDuTableau = new type[taille1][taille2];
+</code></pre>
+
+<p>Par exemple, pour créer un tableau multidimensionnel de nombres entiers de taille 3x3 :</p>
+
+<pre><code>int[][] tableauEntiers = new int[3][3];
+</code></pre>
+
+<h2>Listes, ensembles et maps</h2>
+<p>En plus des tableaux, Java propose des structures de données plus avancées telles que les listes, les ensembles et les maps.</p>
+
+<p>Une liste est une collection ordonnée d'éléments. En Java, vous pouvez utiliser l'interface List pour créer une liste. Voici comment déclarer et initialiser une liste :</p>
+
+<pre><code>List&lt;type&gt; nomDeLaListe = new ArrayList&lt;&gt;();
+</code></pre>
+
+<p>Par exemple, pour créer une liste de nombres entiers :</p>
+
+<pre><code>List&lt;Integer&gt; listeEntiers = new ArrayList&lt;&gt;();
+</code></pre>
+
+<p>Un ensemble est une collection d'éléments uniques, sans ordre spécifique. En Java, vous pouvez utiliser l'interface Set pour créer un ensemble. Voici comment déclarer et initialiser un ensemble :</p>
+
+<pre><code>Set&lt;type&gt; nomDeLensemble = new HashSet&lt;&gt;();
+</code></pre>
+
+<p>Par exemple, pour créer un ensemble de chaînes de caractères :</p>
+
+<pre><code>Set&lt;String&gt; ensembleChaines = new HashSet&lt;&gt;();
+</code></pre>
+
+<p>Une map est une collection d'associations clé-valeur. En Java, vous pouvez utiliser l'interface Map pour créer une map. Voici comment déclarer et initialiser une map :</p>
+
+<pre><code>Map&lt;typeCle, typeValeur&gt; nomDeLaMap = new HashMap&lt;&gt;();
+</code></pre>
+
+<p>Par exemple, pour créer une map de chaînes de caractères associées à des nombres entiers :</p>
+
+<pre><code>Map&lt;String, Integer&gt; mapChainesEntiers = new HashMap&lt;&gt;();
+</code></pre>
+
+<h2>Manipulation de tableaux et collections</h2>
+<p>Une fois que vous avez déclaré et initialisé un tableau ou une collection, vous pouvez effectuer différentes opérations de manipulation.</p>
+
+<p>Pour accéder à un élément spécifique d'un tableau unidimensionnel, vous pouvez utiliser l'indice de l'élément. Par exemple, pour accéder au premier élément du tableauEntiers :</p>
+
+<pre><code>int premierElement = tableauEntiers[0];
+</code></pre>
+
+<p>Pour accéder à un élément spécifique d'un tableau multidimensionnel, vous devez spécifier l'indice de chaque dimension. Par exemple, pour accéder à l'élément à la deuxième ligne et à la troisième colonne du tableauEntiers :</p>
+
+<pre><code>int element = tableauEntiers[1][2];
+</code></pre>
+
+<p>Pour ajouter un élément à une liste, vous pouvez utiliser la méthode add(). Par exemple, pour ajouter un nombre entier à la listeEntiers :</p>
+
+<pre><code>listeEntiers.add(10);
+</code></pre>
+
+<p>Pour supprimer un élément d'une liste, vous pouvez utiliser la méthode remove(). Par exemple, pour supprimer le premier élément de la listeEntiers :</p>
+
+<pre><code>listeEntiers.remove(0);
+</code></pre>
+
+<p>Pour ajouter un élément à un ensemble, vous pouvez utiliser la méthode add(). Par exemple, pour ajouter une chaîne de caractères à l'ensembleChaines :</p>
+
+<pre><code>ensembleChaines.add("exemple");
+</code></pre>
+
+<p>Pour supprimer un élément d'un ensemble, vous pouvez utiliser la méthode remove(). Par exemple, pour supprimer une chaîne de caractères de l'ensembleChaines :</p>
+
+<pre><code>ensembleChaines.remove("exemple");
+</code></pre>
+
+<p>Pour ajouter une association clé-valeur à une map, vous pouvez utiliser la méthode put(). Par exemple, pour ajouter une chaîne de caractères associée à un nombre entier à la mapChainesEntiers :</p>
+
+<pre><code>mapChainesEntiers.put("exemple", 10);
+</code></pre>
+
+<p>Pour supprimer une association clé-valeur d'une map, vous pouvez utiliser la méthode remove(). Par exemple, pour supprimer la chaîne de caractères associée à la clé "exemple" de la mapChainesEntiers :</p>
+
+<pre><code>mapChainesEntiers.remove("exemple");
+</code></pre>
+
+<p>Ces exemples ne couvrent qu'une petite partie des opérations de manipulation possibles avec les tableaux et les collections en Java. Il existe de nombreuses autres méthodes et fonctionnalités disponibles pour répondre à vos besoins spécifiques.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

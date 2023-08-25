@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Types de données et variables</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Types de données primitifs</h2>
+<p>En Java, les types de données primitifs sont les types de base intégrés dans le langage. Ils représentent les valeurs de base et ne sont pas des objets. Voici les types de données primitifs en Java :</p>
+
+<ul>
+  <li><code>byte</code> : un entier signé sur 8 bits</li>
+  <li><code>short</code> : un entier signé sur 16 bits</li>
+  <li><code>int</code> : un entier signé sur 32 bits</li>
+  <li><code>long</code> : un entier signé sur 64 bits</li>
+  <li><code>float</code> : un nombre à virgule flottante sur 32 bits</li>
+  <li><code>double</code> : un nombre à virgule flottante sur 64 bits</li>
+  <li><code>boolean</code> : une valeur booléenne (vrai ou faux)</li>
+  <li><code>char</code> : un caractère Unicode sur 16 bits</li>
+</ul>
+
+<p>Chaque type de données primitif a une taille fixe en mémoire et des limites de valeurs spécifiques.</p>
+
+<h2>Variables et constantes</h2>
+<p>En Java, une variable est un espace de stockage nommé qui peut contenir une valeur. Pour déclarer une variable, vous devez spécifier son type et son nom. Voici un exemple de déclaration de variable :</p>
+
+<pre><code>int age;
+</code></pre>
+
+<p>Une constante, en revanche, est une valeur qui ne peut pas être modifiée une fois qu'elle a été définie. En Java, vous pouvez déclarer une constante en utilisant le mot-clé <code>final</code>. Voici un exemple de déclaration de constante :</p>
+
+<pre><code>final double PI = 3.14159;
+</code></pre>
+
+<p>Les variables et les constantes peuvent être utilisées pour stocker des valeurs et effectuer des opérations dans un programme Java.</p>
+
+<h2>Opérations arithmétiques et opérateurs de comparaison</h2>
+<p>En Java, vous pouvez effectuer des opérations arithmétiques telles que l'addition, la soustraction, la multiplication et la division sur les types de données numériques. Voici quelques exemples d'opérations arithmétiques en Java :</p>
+
+<pre><code>int a = 5;
+int b = 3;
+
+int sum = a + b; // Addition
+int difference = a - b; // Soustraction
+int product = a * b; // Multiplication
+int quotient = a / b; // Division
+int remainder = a % b; // Reste de la division
+</code></pre>
+
+<p>Les opérateurs de comparaison permettent de comparer des valeurs et de renvoyer un résultat booléen (vrai ou faux). Voici quelques exemples d'opérateurs de comparaison en Java :</p>
+
+<pre><code>int a = 5;
+int b = 3;
+
+boolean isEqual = (a == b); // Égalité
+boolean isNotEqual = (a != b); // Différence
+boolean isGreater = (a > b); // Supérieur
+boolean isLess = (a < b); // Inférieur
+boolean isGreaterOrEqual = (a >= b); // Supérieur ou égal
+boolean isLessOrEqual = (a <= b); // Inférieur ou égal
+</code></pre>
+
+<h2>Conversion de types de données</h2>
+<p>En Java, vous pouvez convertir un type de données en un autre type de données compatible. Il existe deux types de conversions : la conversion implicite et la conversion explicite.</p>
+
+<p>La conversion implicite se produit lorsque vous affectez une valeur d'un type de données plus petit à un type de données plus grand. Par exemple :</p>
+
+<pre><code>int a = 5;
+double b = a; // Conversion implicite de int à double
+</code></pre>
+
+<p>La conversion explicite, également appelée "cast", se produit lorsque vous forcez une conversion d'un type de données à un autre type de données. Par exemple :</p>
+
+<pre><code>double a = 3.14;
+int b = (int) a; // Conversion explicite de double à int
+</code></pre>
+
+<p>Il est important de noter que certaines conversions peuvent entraîner une perte de précision ou une erreur si les types de données ne sont pas compatibles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

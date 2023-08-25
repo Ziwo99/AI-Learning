@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 18 : Développement avancé en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section17.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section19.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de bibliothèques externes</h2>
+<p>En tant que développeur Java, vous aurez souvent besoin d'utiliser des bibliothèques externes pour étendre les fonctionnalités de votre application. Les bibliothèques externes sont des collections de classes et de méthodes pré-écrites qui peuvent être utilisées dans votre code.</p>
+<p>Pour utiliser une bibliothèque externe, vous devez d'abord la télécharger et l'ajouter à votre projet. Cela peut être fait en ajoutant le fichier JAR de la bibliothèque à votre projet ou en utilisant un gestionnaire de dépendances tel que Maven ou Gradle.</p>
+<p>Une fois que vous avez ajouté la bibliothèque à votre projet, vous pouvez l'importer dans votre code en utilisant la déclaration d'importation appropriée. Par exemple, si vous utilisez la bibliothèque Apache Commons IO pour manipuler des fichiers, vous pouvez l'importer de la manière suivante :</p>
+<pre><code>import org.apache.commons.io.FileUtils;</code></pre>
+<p>Vous pouvez ensuite utiliser les classes et les méthodes de la bibliothèque dans votre code. Par exemple, si vous voulez copier un fichier en utilisant la bibliothèque Apache Commons IO, vous pouvez utiliser la méthode <code>FileUtils.copyFile()</code> :</p>
+<pre><code>File sourceFile = new File("source.txt");
+File destinationFile = new File("destination.txt");
+
+try {
+    FileUtils.copyFile(sourceFile, destinationFile);
+} catch (IOException e) {
+    e.printStackTrace();
+}</code></pre>
+<p>Il est important de noter que chaque bibliothèque externe a sa propre documentation qui explique comment l'utiliser correctement. Assurez-vous de consulter la documentation de la bibliothèque que vous utilisez pour obtenir des informations détaillées sur ses fonctionnalités et son utilisation.</p>
+
+<h2>Utilisation de JavaFX pour le développement d'interfaces graphiques</h2>
+<p>JavaFX est un framework graphique moderne et puissant qui permet de créer des interfaces utilisateur riches et interactives pour les applications Java. Il offre une grande variété de composants graphiques prêts à l'emploi, tels que des boutons, des champs de texte, des tableaux et des graphiques.</p>
+<p>Pour commencer à utiliser JavaFX, vous devez d'abord ajouter la bibliothèque JavaFX à votre projet. À partir de Java 11, JavaFX n'est plus inclus dans la distribution standard de Java, vous devez donc le télécharger et l'ajouter à votre projet.</p>
+<p>Une fois que vous avez ajouté la bibliothèque JavaFX à votre projet, vous pouvez commencer à créer des interfaces graphiques en utilisant les classes et les méthodes fournies par JavaFX. Par exemple, voici comment créer une fenêtre simple avec un bouton en utilisant JavaFX :</p>
+<pre><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class HelloWorld extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        Button button = new Button("Hello World!");
+
+        StackPane root = new StackPane();
+        root.getChildren().add(button);
+
+        Scene scene = new Scene(root, 300, 200);
+
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}</code></pre>
+<p>Ce code crée une fenêtre avec un bouton affichant le texte "Hello World!". Lorsque le bouton est cliqué, rien ne se passe pour le moment, mais vous pouvez ajouter un gestionnaire d'événements pour effectuer une action spécifique.</p>
+<p>JavaFX offre également la possibilité de styliser vos interfaces graphiques en utilisant des feuilles de style CSS. Vous pouvez définir des styles pour différents composants et les appliquer à votre interface graphique pour lui donner l'apparence souhaitée.</p>
+
+<h2>Utilisation de Java pour le développement Android</h2>
+<p>Java est également utilisé pour le développement d'applications Android. Android est un système d'exploitation mobile populaire qui utilise Java comme langage de programmation principal.</p>
+<p>Pour commencer à développer des applications Android en utilisant Java, vous devez d'abord installer Android Studio, l'environnement de développement officiel pour Android. Android Studio est basé sur IntelliJ IDEA et offre de nombreuses fonctionnalités pour faciliter le développement d'applications Android.</p>
+<p>Une fois que vous avez installé Android Studio, vous pouvez créer un nouveau projet Android et commencer à écrire du code Java pour votre application. Android utilise une architecture basée sur des composants, où chaque composant représente une partie de l'application, telle qu'une activité, un fragment ou un service.</p>
+<p>Voici un exemple simple de code Java pour une activité Android :</p>
+<pre><code>import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        TextView textView = new TextView(this);
+        textView.setText("Hello World!");
+
+        setContentView(textView);
+    }
+}</code></pre>
+<p>Ce code crée une activité Android avec un simple TextView affichant le texte "Hello World!". L'activité est créée lorsque l'application est lancée et le contenu de l'activité est défini sur le TextView.</p>
+<p>Le développement d'applications Android en utilisant Java offre de nombreuses fonctionnalités et possibilités, telles que l'accès aux fonctionnalités du téléphone (comme l'appareil photo ou le GPS), la gestion des événements tactiles et la création d'interfaces utilisateur personnalisées.</p>
+<p>Il est important de noter que Google, la société derrière Android, a annoncé Kotlin comme langage de programmation officiel pour le développement Android. Cependant, Java reste largement utilisé et pris en charge pour le développement d'applications Android.</p>
+
+<p>C'est ainsi que se termine la section 18 sur le développement avancé en Java. Vous avez appris comment utiliser des bibliothèques externes pour étendre les fonctionnalités de votre application, comment créer des interfaces graphiques avec JavaFX et comment développer des applications Android en utilisant Java. Ces connaissances vous aideront à créer des applications Java plus avancées et à explorer davantage les possibilités offertes par ce langage puissant.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section17.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section19.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 16 : Tests et débogage</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section15.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section17.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Techniques de débogage</h2>
+<p>Les techniques de débogage sont essentielles pour identifier et résoudre les erreurs dans un programme Java. Voici quelques-unes des techniques de débogage les plus couramment utilisées :</p>
+
+<ul>
+  <li><strong>Utilisation de points d'arrêt :</strong> Les points d'arrêt permettent de mettre en pause l'exécution du programme à un endroit spécifique. Cela permet d'inspecter les valeurs des variables et de suivre le flux d'exécution du programme.</li>
+  
+  <li><strong>Affichage de messages de débogage :</strong> L'ajout de messages de débogage dans le code permet de suivre l'exécution du programme et de vérifier les valeurs des variables à des points spécifiques.</li>
+  
+  <li><strong>Utilisation de l'outil de débogage :</strong> Les environnements de développement intégrés (IDE) tels que Eclipse, IntelliJ IDEA et NetBeans offrent des outils de débogage puissants. Ces outils permettent de suivre pas à pas l'exécution du programme, d'inspecter les variables et d'identifier les erreurs.</li>
+  
+  <li><strong>Utilisation de journaux de débogage :</strong> Les journaux de débogage sont des fichiers qui enregistrent les informations sur l'exécution du programme. Ils peuvent être utilisés pour identifier les erreurs et les problèmes de performance.</li>
+</ul>
+
+<h2>Tests unitaires avec JUnit</h2>
+<p>Les tests unitaires sont utilisés pour vérifier le bon fonctionnement des différentes parties d'un programme Java. JUnit est un framework de tests unitaires largement utilisé. Voici un exemple de test unitaire avec JUnit :</p>
+
+<pre><code>import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class CalculatorTest {
+
+    @Test
+    public void testAddition() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add(2, 3);
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void testSubtraction() {
+        Calculator calculator = new Calculator();
+        int result = calculator.subtract(5, 3);
+        assertEquals(2, result);
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous utilisons JUnit pour tester les méthodes d'une classe Calculator. Les annotations <code>@Test</code> indiquent que les méthodes suivantes sont des tests unitaires. Les assertions telles que <code>assertEquals</code> sont utilisées pour vérifier les résultats attendus.</p>
+
+<h2>Tests d'intégration et tests fonctionnels</h2>
+<p>Les tests d'intégration et les tests fonctionnels sont utilisés pour vérifier le bon fonctionnement d'une application Java dans son ensemble.</p>
+
+<p>Les tests d'intégration vérifient l'interaction entre les différentes parties d'une application. Ils peuvent inclure des tests de base de données, des tests de services web et des tests d'interface utilisateur.</p>
+
+<p>Les tests fonctionnels vérifient le comportement d'une application en fonction de ses spécifications fonctionnelles. Ils peuvent inclure des tests de scénarios utilisateur, des tests de performance et des tests de sécurité.</p>
+
+<p>Voici un exemple de test d'intégration avec JUnit et Selenium :</p>
+
+<pre><code>import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.Assert.*;
+
+public class LoginTest {
+
+    @Test
+    public void testLogin() {
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://example.com/login");
+
+        WebElement usernameInput = driver.findElement(By.id("username"));
+        WebElement passwordInput = driver.findElement(By.id("password"));
+        WebElement loginButton = driver.findElement(By.id("login-button"));
+
+        usernameInput.sendKeys("john");
+        passwordInput.sendKeys("password");
+        loginButton.click();
+
+        WebElement welcomeMessage = driver.findElement(By.id("welcome-message"));
+        assertEquals("Welcome, John!", welcomeMessage.getText());
+
+        driver.quit();
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous utilisons JUnit et Selenium pour effectuer un test d'intégration d'un formulaire de connexion. Nous utilisons Selenium pour automatiser le navigateur web et effectuer des actions telles que la saisie de texte et le clic sur des boutons. Nous utilisons ensuite les assertions de JUnit pour vérifier le résultat attendu.</p>
+
+<p>Il est important de noter que les tests d'intégration et les tests fonctionnels peuvent être plus complexes que les tests unitaires en raison de leur dépendance à l'égard de l'environnement d'exécution.</p>
+
+<p>Ce contenu détaillé sur les tests et le débogage en Java vous permettra de comprendre et de maîtriser ces concepts essentiels pour le développement d'applications Java de haute qualité.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section15.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section17.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
