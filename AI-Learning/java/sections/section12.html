@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Projets pratiques en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section13.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Projet 1 : Création d'une application de gestion de bibliothèque</h2>
+<p>Dans ce projet, vous allez créer une application de gestion de bibliothèque en Java. Cette application permettra aux utilisateurs de gérer les livres de leur bibliothèque, d'ajouter de nouveaux livres, de les emprunter et de les rendre. Voici les fonctionnalités principales de l'application :</p>
+
+<ul>
+  <li>Affichage de la liste des livres disponibles</li>
+  <li>Ajout d'un nouveau livre à la bibliothèque</li>
+  <li>Emprunt d'un livre</li>
+  <li>Retour d'un livre emprunté</li>
+</ul>
+
+<p>Pour implémenter cette application, vous allez utiliser les concepts de base de la programmation orientée objet en Java. Vous créerez une classe <code>Bibliothèque</code> qui représentera la bibliothèque et une classe <code>Livre</code> qui représentera un livre. Vous utiliserez également des tableaux pour stocker les livres dans la bibliothèque.</p>
+
+<p>Voici un exemple de code pour la classe <code>Bibliothèque</code> :</p>
+
+<pre><code>public class Bibliothèque {
+    private Livre[] livres;
+
+    public Bibliothèque() {
+        livres = new Livre[100];
+    }
+
+    public void ajouterLivre(Livre livre) {
+        // Ajouter le livre à la bibliothèque
+    }
+
+    public void emprunterLivre(int index) {
+        // Emprunter le livre à l'index spécifié
+    }
+
+    public void rendreLivre(int index) {
+        // Rendre le livre à l'index spécifié
+    }
+
+    public void afficherLivresDisponibles() {
+        // Afficher la liste des livres disponibles
+    }
+}</code></pre>
+
+<p>Vous devrez également implémenter la classe <code>Livre</code> avec les attributs appropriés tels que le titre, l'auteur, etc., ainsi que les méthodes nécessaires pour accéder à ces attributs.</p>
+
+<h2>Projet 2 : Développement d'un jeu en Java</h2>
+<p>Dans ce projet, vous allez développer un jeu en Java. Le jeu sera un jeu de devinettes où l'utilisateur devra deviner un nombre choisi aléatoirement par l'ordinateur. Voici les fonctionnalités principales du jeu :</p>
+
+<ul>
+  <li>Génération d'un nombre aléatoire</li>
+  <li>Demande à l'utilisateur de deviner le nombre</li>
+  <li>Comparaison de la réponse de l'utilisateur avec le nombre généré</li>
+  <li>Affichage d'un message indiquant si la réponse est correcte ou non</li>
+</ul>
+
+<p>Pour implémenter ce jeu, vous utiliserez les structures de contrôle en Java telles que les boucles et les conditions. Vous utiliserez également des fonctions pour générer le nombre aléatoire et pour comparer la réponse de l'utilisateur avec le nombre généré.</p>
+
+<p>Voici un exemple de code pour la fonction de comparaison :</p>
+
+<pre><code>public void comparerReponse(int reponseUtilisateur, int nombreGenere) {
+    if (reponseUtilisateur == nombreGenere) {
+        System.out.println("Bravo, vous avez deviné le nombre !");
+    } else if (reponseUtilisateur &lt; nombreGenere) {
+        System.out.println("Le nombre à deviner est plus grand.");
+    } else {
+        System.out.println("Le nombre à deviner est plus petit.");
+    }
+}</code></pre>
+
+<p>Vous devrez également ajouter une boucle pour permettre à l'utilisateur de continuer à deviner jusqu'à ce qu'il trouve la bonne réponse.</p>
+
+<h2>Projet 3 : Création d'un site web dynamique en Java</h2>
+<p>Dans ce projet, vous allez créer un site web dynamique en Java. Le site web affichera une liste de produits et permettra aux utilisateurs de les ajouter à leur panier. Voici les fonctionnalités principales du site web :</p>
+
+<ul>
+  <li>Affichage de la liste des produits</li>
+  <li>Ajout d'un produit au panier</li>
+  <li>Affichage du contenu du panier</li>
+</ul>
+
+<p>Pour implémenter ce site web, vous utiliserez les concepts de base du développement web en Java tels que les servlets et les JSP (JavaServer Pages). Vous créerez une servlet pour gérer les requêtes des utilisateurs et une JSP pour afficher les pages web.</p>
+
+<p>Voici un exemple de code pour la servlet :</p>
+
+<pre><code>public class PanierServlet extends HttpServlet {
+    private List&lt;Produit&gt; produits;
+    private List&lt;Produit&gt; panier;
+
+    public void init() {
+        // Initialiser la liste des produits et le panier
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Afficher la liste des produits
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Ajouter un produit au panier
+    }
+}</code></pre>
+
+<p>Vous devrez également créer une JSP pour afficher la liste des produits et une autre JSP pour afficher le contenu du panier.</p>
+
+<p>Ce projet vous permettra de mettre en pratique vos connaissances en développement web en Java et de créer un site web interactif.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section13.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

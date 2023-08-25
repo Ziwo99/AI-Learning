@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les collections en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les listes en Java</h2>
+<p>En Java, une liste est une collection ordonnée d'éléments. Chaque élément est identifié par un index, qui commence à 0 pour le premier élément. Les listes en Java sont implémentées par l'interface <code>List</code> et ont plusieurs classes d'implémentation, telles que <code>ArrayList</code> et <code>LinkedList</code>.</p>
+
+<p>Voici un exemple de création d'une liste en Java :</p>
+<pre><code>List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("pomme");
+fruits.add("banane");
+fruits.add("orange");
+</code></pre>
+
+<p>Vous pouvez accéder aux éléments d'une liste en utilisant leur index :</p>
+<pre><code>String premierFruit = fruits.get(0);
+System.out.println(premierFruit); // Affiche "pomme"
+</code></pre>
+
+<p>Les listes en Java offrent également des méthodes pour ajouter, supprimer et rechercher des éléments :</p>
+<pre><code>fruits.add("kiwi"); // Ajoute "kiwi" à la fin de la liste
+fruits.remove(1); // Supprime l'élément à l'index 1 (ici "banane")
+int indexOrange = fruits.indexOf("orange"); // Recherche l'index de l'élément "orange"
+</code></pre>
+
+<h2>Les ensembles en Java</h2>
+<p>En Java, un ensemble est une collection d'éléments uniques, sans ordre spécifique. Les ensembles en Java sont implémentés par l'interface <code>Set</code> et ont plusieurs classes d'implémentation, telles que <code>HashSet</code> et <code>TreeSet</code>.</p>
+
+<p>Voici un exemple de création d'un ensemble en Java :</p>
+<pre><code>Set&lt;String&gt; pays = new HashSet&lt;&gt;();
+pays.add("France");
+pays.add("Espagne");
+pays.add("Italie");
+</code></pre>
+
+<p>Les ensembles en Java offrent des méthodes pour ajouter, supprimer et rechercher des éléments, tout comme les listes :</p>
+<pre><code>pays.add("Allemagne"); // Ajoute "Allemagne" à l'ensemble
+pays.remove("Espagne"); // Supprime l'élément "Espagne"
+boolean contientItalie = pays.contains("Italie"); // Vérifie si l'ensemble contient "Italie"
+</code></pre>
+
+<h2>Les cartes en Java</h2>
+<p>En Java, une carte est une collection d'associations clé-valeur. Chaque élément de la carte est identifié par une clé unique. Les cartes en Java sont implémentées par l'interface <code>Map</code> et ont plusieurs classes d'implémentation, telles que <code>HashMap</code> et <code>TreeMap</code>.</p>
+
+<p>Voici un exemple de création d'une carte en Java :</p>
+<pre><code>Map&lt;String, Integer&gt; population = new HashMap&lt;&gt;();
+population.put("Paris", 2200000);
+population.put("Madrid", 3200000);
+population.put("Rome", 2800000);
+</code></pre>
+
+<p>Vous pouvez accéder aux valeurs d'une carte en utilisant leur clé :</p>
+<pre><code>int populationParis = population.get("Paris");
+System.out.println(populationParis); // Affiche 2200000
+</code></pre>
+
+<p>Les cartes en Java offrent des méthodes pour ajouter, supprimer et rechercher des éléments, tout comme les listes et les ensembles :</p>
+<pre><code>population.put("Berlin", 3500000); // Ajoute l'association clé-valeur "Berlin" - 3500000 à la carte
+population.remove("Madrid"); // Supprime l'association avec la clé "Madrid"
+boolean contientRome = population.containsKey("Rome"); // Vérifie si la carte contient la clé "Rome"
+</code></pre>
+
+<h2>Les itérations et les filtres en Java</h2>
+<p>En Java, les collections offrent des fonctionnalités d'itération et de filtrage pour parcourir et manipuler les éléments de manière efficace.</p>
+
+<p>Voici un exemple d'itération sur une liste en Java :</p>
+<pre><code>for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+</code></pre>
+
+<p>Vous pouvez également utiliser des filtres pour sélectionner uniquement les éléments qui répondent à certaines conditions :</p>
+<pre><code>List&lt;String&gt; fruitsAvecA = fruits.stream()
+                                .filter(fruit -&gt; fruit.contains("a"))
+                                .collect(Collectors.toList());
+</code></pre>
+
+<p>Cet exemple crée une nouvelle liste contenant uniquement les fruits qui contiennent la lettre "a".</p>
+
+<p>Les itérations et les filtres en Java sont des fonctionnalités puissantes pour manipuler les collections de manière flexible et efficace.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

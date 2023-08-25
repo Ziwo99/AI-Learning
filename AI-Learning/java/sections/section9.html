@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Les bonnes pratiques en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section10.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La documentation en Java</h2>
+<p>La documentation en Java est une pratique essentielle pour rendre votre code compréhensible et utilisable par d'autres développeurs. Elle consiste à fournir des commentaires détaillés sur le fonctionnement de votre code, les paramètres des méthodes, les valeurs de retour, etc.</p>
+<p>Voici un exemple de commentaires de documentation en Java :</p>
+<pre><code>/**
+ * Cette méthode calcule la somme de deux entiers.
+ * 
+ * @param a le premier entier
+ * @param b le deuxième entier
+ * @return la somme des deux entiers
+ */
+public int sum(int a, int b) {
+    return a + b;
+}</code></pre>
+
+<h2>Les tests unitaires en Java</h2>
+<p>Les tests unitaires sont une pratique essentielle pour garantir la qualité de votre code. Ils consistent à écrire des tests automatisés pour vérifier le bon fonctionnement de chaque unité de code (méthodes, classes, etc.).</p>
+<p>Voici un exemple de test unitaire en Java utilisant le framework JUnit :</p>
+<pre><code>import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class CalculatorTest {
+
+    @Test
+    public void testSum() {
+        Calculator calculator = new Calculator();
+        int result = calculator.sum(2, 3);
+        assertEquals(5, result);
+    }
+}</code></pre>
+
+<h2>La gestion des erreurs en Java</h2>
+<p>La gestion des erreurs en Java est une pratique importante pour garantir la robustesse de votre code. Elle consiste à anticiper les erreurs potentielles et à les gérer de manière appropriée, en utilisant des exceptions par exemple.</p>
+<p>Voici un exemple de gestion d'erreur en Java :</p>
+<pre><code>try {
+    // Code susceptible de générer une exception
+    FileReader fileReader = new FileReader("file.txt");
+    // ...
+} catch (FileNotFoundException e) {
+    // Gestion de l'exception
+    System.out.println("Le fichier n'a pas été trouvé.");
+}</code></pre>
+
+<h2>L'optimisation des performances en Java</h2>
+<p>L'optimisation des performances en Java est une pratique importante pour améliorer l'efficacité de votre code. Elle consiste à identifier les parties du code qui consomment le plus de ressources (temps d'exécution, mémoire, etc.) et à les optimiser.</p>
+<p>Voici un exemple d'optimisation des performances en Java :</p>
+<pre><code>public class PerformanceExample {
+
+    public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+
+        // Code à optimiser
+
+        long endTime = System.currentTimeMillis();
+        long executionTime = endTime - startTime;
+        System.out.println("Temps d'exécution : " + executionTime + " ms");
+    }
+}</code></pre>
+
+<h2>La sécurité en Java</h2>
+<p>La sécurité en Java est une pratique essentielle pour protéger votre code et vos données contre les attaques malveillantes. Elle consiste à mettre en place des mesures de sécurité telles que l'authentification, l'autorisation, le chiffrement, etc.</p>
+<p>Voici un exemple de sécurisation d'une connexion à une base de données en Java :</p>
+<pre><code>import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+
+    public static Connection getConnection() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "myusername";
+        String password = "mypassword";
+        return DriverManager.getConnection(url, username, password);
+    }
+}</code></pre>
+
+<p>Ces bonnes pratiques en Java vous aideront à développer un code de qualité, maintenable et performant. Il est important de les appliquer tout au long de votre processus de développement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section10.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

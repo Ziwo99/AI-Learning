@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les concepts avancés en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section9.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les threads en Java</h2>
+<p>Les threads en Java permettent d'exécuter plusieurs tâches simultanément. Un thread est une unité d'exécution indépendante qui peut être exécutée en parallèle avec d'autres threads.</p>
+<p>Voici un exemple de création et d'exécution d'un thread en Java :</p>
+<pre><code>public class MyThread extends Thread {
+    public void run() {
+        // Code à exécuter dans le thread
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start(); // Démarre le thread
+    }
+}</code></pre>
+
+<h2>La concurrence en Java</h2>
+<p>La concurrence en Java concerne la gestion de l'accès simultané à des ressources partagées par plusieurs threads. Java fournit des mécanismes tels que les verrous et les sémaphores pour garantir la cohérence des données partagées.</p>
+<p>Voici un exemple d'utilisation d'un verrou (lock) en Java :</p>
+<pre><code>import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class Counter {
+    private int count = 0;
+    private Lock lock = new ReentrantLock();
+
+    public void increment() {
+        lock.lock();
+        try {
+            count++;
+        } finally {
+            lock.unlock();
+        }
+    }
+}</code></pre>
+
+<h2>Les annotations en Java</h2>
+<p>Les annotations en Java permettent d'ajouter des métadonnées à du code source. Elles peuvent être utilisées pour spécifier des informations supplémentaires sur des classes, des méthodes, des variables, etc. Les annotations peuvent être utilisées par le compilateur ou par d'autres outils de développement.</p>
+<p>Voici un exemple d'utilisation de l'annotation @Override en Java :</p>
+<pre><code>public class MyClass {
+    @Override
+    public String toString() {
+        return "This is my class";
+    }
+}</code></pre>
+
+<h2>Les expressions régulières en Java</h2>
+<p>Les expressions régulières en Java permettent de rechercher et de manipuler des chaînes de caractères en utilisant des motifs spécifiques. Elles sont très utiles pour valider des formats de données, extraire des informations d'une chaîne, etc.</p>
+<p>Voici un exemple d'utilisation d'une expression régulière en Java :</p>
+<pre><code>import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
+public class RegexExample {
+    public static void main(String[] args) {
+        String input = "Hello, my email is example@example.com";
+        String pattern = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b";
+
+        Pattern regex = Pattern.compile(pattern);
+        Matcher matcher = regex.matcher(input);
+
+        while (matcher.find()) {
+            System.out.println("Email found: " + matcher.group());
+        }
+    }
+}</code></pre>
+
+<h2>La programmation fonctionnelle en Java</h2>
+<p>La programmation fonctionnelle en Java permet d'utiliser des fonctions comme des objets de première classe. Elle introduit des concepts tels que les fonctions lambda, les interfaces fonctionnelles et les méthodes de référence.</p>
+<p>Voici un exemple d'utilisation d'une fonction lambda en Java :</p>
+<pre><code>import java.util.Arrays;
+import java.util.List;
+
+public class FunctionalExample {
+    public static void main(String[] args) {
+        List&lt;Integer&gt; numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        numbers.forEach((Integer number) -&gt; {
+            System.out.println(number * 2);
+        });
+    }
+}</code></pre>
+
+<p>Ce code affichera le double de chaque nombre de la liste.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section9.html"
+								class="button primary">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
