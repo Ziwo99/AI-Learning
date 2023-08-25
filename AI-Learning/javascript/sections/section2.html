@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases de Javascript</h2>
+					<a href="/AI-Learning/javascript/javascript.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section3.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					
+
+<h2>Les variables et les types de données</h2>
+<p>En Javascript, les variables sont utilisées pour stocker des valeurs. Elles peuvent contenir différents types de données tels que des nombres, des chaînes de caractères, des booléens, des tableaux, des objets, etc.</p>
+
+<p>Pour déclarer une variable, on utilise le mot-clé <code>var</code>, suivi du nom de la variable et éventuellement de sa valeur initiale :</p>
+
+<pre><code>var age = 25;
+var name = "John";
+var isStudent = true;</code></pre>
+
+<p>Il existe également deux autres mots-clés pour déclarer des variables : <code>let</code> et <code>const</code>. La différence entre ces trois mots-clés réside dans la portée et la mutabilité des variables, mais cela sera expliqué plus en détail dans les sous-sections suivantes.</p>
+
+<p>En Javascript, il existe plusieurs types de données :</p>
+
+<ul>
+  <li><strong>Number</strong> : représente les nombres, qu'ils soient entiers ou à virgule flottante.</li>
+  <li><strong>String</strong> : représente une séquence de caractères.</li>
+  <li><strong>Boolean</strong> : représente une valeur de vérité, soit <code>true</code> (vrai) soit <code>false</code> (faux).</li>
+  <li><strong>Array</strong> : représente une collection ordonnée d'éléments. Les éléments d'un tableau peuvent être de différents types.</li>
+  <li><strong>Object</strong> : représente une collection de propriétés et de valeurs. Les propriétés d'un objet peuvent être de différents types.</li>
+  <li><strong>Null</strong> : représente une valeur nulle ou inexistante.</li>
+  <li><strong>Undefined</strong> : représente une variable qui n'a pas été définie ou à laquelle aucune valeur n'a été attribuée.</li>
+</ul>
+
+<p>Exemple :</p>
+
+<pre><code>var age = 25;
+var name = "John";
+var isStudent = true;
+var fruits = ["apple", "banana", "orange"];
+var person = { firstName: "John", lastName: "Doe", age: 25 };
+var nullValue = null;
+var undefinedValue;</code></pre>
+
+<h2>Les opérateurs et les expressions</h2>
+<p>En Javascript, les opérateurs sont utilisés pour effectuer des opérations sur les variables et les valeurs. Il existe différents types d'opérateurs :</p>
+
+<ul>
+  <li><strong>Opérateurs arithmétiques</strong> : utilisés pour effectuer des opérations mathématiques telles que l'addition, la soustraction, la multiplication, la division, etc.</li>
+  <li><strong>Opérateurs d'assignation</strong> : utilisés pour attribuer une valeur à une variable.</li>
+  <li><strong>Opérateurs de comparaison</strong> : utilisés pour comparer des valeurs et renvoyer un résultat booléen.</li>
+  <li><strong>Opérateurs logiques</strong> : utilisés pour combiner des expressions booléennes et renvoyer un résultat booléen.</li>
+  <li><strong>Opérateurs de concaténation</strong> : utilisés pour concaténer des chaînes de caractères.</li>
+</ul>
+
+<p>Exemple :</p>
+
+<pre><code>var x = 5;
+var y = 10;
+
+var addition = x + y; // 15
+var soustraction = x - y; // -5
+var multiplication = x * y; // 50
+var division = x / y; // 0.5
+
+var a = 5;
+a += 10; // équivalent à a = a + 10, a vaut maintenant 15
+
+var b = 5;
+var c = 10;
+var estSuperieur = b > c; // false
+
+var d = true;
+var e = false;
+var estVrai = d && e; // false
+
+var firstName = "John";
+var lastName = "Doe";
+var fullName = firstName + " " + lastName; // "John Doe"</code></pre>
+
+<h2>Les structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution du code en fonction de certaines conditions. Les structures de contrôle les plus couramment utilisées en Javascript sont les boucles et les conditions.</p>
+
+<p>Les boucles permettent d'exécuter une série d'instructions plusieurs fois. Il existe plusieurs types de boucles en Javascript :</p>
+
+<ul>
+  <li><strong>La boucle <code>for</code></strong> : utilisée pour exécuter une série d'instructions un nombre spécifié de fois.</li>
+  <li><strong>La boucle <code>while</code></strong> : utilisée pour exécuter une série d'instructions tant qu'une condition spécifiée est vraie.</li>
+  <li><strong>La boucle <code>do...while</code></strong> : utilisée pour exécuter une série d'instructions une fois, puis tant qu'une condition spécifiée est vraie.</li>
+</ul>
+
+<p>Exemple :</p>
+
+<pre><code>// Boucle for
+for (var i = 0; i &lt; 5; i++) {
+  console.log(i);
+}
+
+// Boucle while
+var j = 0;
+while (j &lt; 5) {
+  console.log(j);
+  j++;
+}
+
+// Boucle do...while
+var k = 0;
+do {
+  console.log(k);
+  k++;
+} while (k &lt; 5);</code></pre>
+
+<p>Les conditions permettent d'exécuter une série d'instructions uniquement si une condition spécifiée est vraie. Les conditions en Javascript sont généralement exprimées à l'aide des mots-clés <code>if</code>, <code>else if</code> et <code>else</code>.</p>
+
+<pre><code>var age = 18;
+
+if (age &lt; 18) {
+  console.log("Vous êtes mineur.");
+} else if (age &gt;= 18 &amp;&amp; age &lt; 65) {
+  console.log("Vous êtes majeur.");
+} else {
+  console.log("Vous êtes senior.");
+}</code></pre>
+
+<h2>Les fonctions et les paramètres</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui peuvent être appelés à partir d'autres parties du code. Elles permettent d'organiser et de structurer le code en le divisant en tâches plus petites et plus gérables.</p>
+
+<p>En Javascript, les fonctions sont déclarées à l'aide du mot-clé <code>function</code>, suivi du nom de la fonction et de ses paramètres entre parenthèses. Les paramètres sont des variables utilisées pour recevoir des valeurs lors de l'appel de la fonction.</p>
+
+<pre><code>function sayHello(name) {
+  console.log("Hello, " + name + "!");
+}
+
+sayHello("John"); // "Hello, John!"</code></pre>
+
+<p>Les fonctions peuvent également renvoyer une valeur à l'aide du mot-clé <code>return</code>. La valeur renvoyée peut être utilisée dans d'autres parties du code.</p>
+
+<pre><code>function add(a, b) {
+  return a + b;
+}
+
+var result = add(5, 10); // 15</code></pre>
+
+<h2>La gestion des erreurs (try-catch)</h2>
+<p>En Javascript, la gestion des erreurs est réalisée à l'aide du bloc <code>try...catch</code>. Le bloc <code>try</code> est utilisé pour entourer le code susceptible de générer une erreur, tandis que le bloc <code>catch</code> est utilisé pour capturer et gérer l'erreur.</p>
+
+<pre><code>try {
+  // Code susceptible de générer une erreur
+  var result = 10 / 0;
+} catch (error) {
+  // Gestion de l'erreur
+  console.log("Une erreur s'est produite : " + error.message);
+}</code></pre>
+
+<p>Il est également possible d'utiliser les blocs <code>finally</code> et <code>throw</code> pour effectuer des actions spécifiques après l'exécution du bloc <code>try</code> ou pour générer une erreur personnalisée.</p>
+
+<pre><code>try {
+  // Code susceptible de générer une erreur
+  var result = 10 / 0;
+} catch (error) {
+  // Gestion de l'erreur
+  console.log("Une erreur s'est produite : " + error.message);
+} finally {
+  // Actions à effectuer après l'exécution du bloc try
+  console.log("Fin de l'exécution");
+}</code></pre>
+
+<p>Exemple de génération d'une erreur personnalisée :</p>
+
+<pre><code>try {
+  // Code susceptible de générer une erreur
+  throw new Error("Une erreur s'est produite");
+} catch (error) {
+  // Gestion de l'erreur
+  console.log("Une erreur s'est produite : " + error.message);
+}</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section3.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13 : Les nouvelles fonctionnalités de Javascript</h2>
+					<a href="/AI-Learning/javascript/javascript.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section14.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					
+
+<h2>ECMAScript 6 et les versions ultérieures</h2>
+<p>ECMAScript 6, également connu sous le nom d'ES6 ou ES2015, est une version majeure de Javascript qui a été publiée en 2015. Elle introduit de nombreuses nouvelles fonctionnalités et améliorations par rapport aux versions précédentes. Certaines des fonctionnalités les plus importantes incluent :</p>
+
+<ul>
+  <li>Les classes : ES6 introduit une syntaxe de classe plus simple et plus orientée objet pour la création d'objets.</li>
+  <li>Les modules : ES6 introduit un système de modules natif qui permet d'organiser et de réutiliser facilement le code.</li>
+  <li>Les fonctions fléchées : Les fonctions fléchées sont une syntaxe plus concise pour définir des fonctions anonymes.</li>
+  <li>Les promesses : Les promesses sont un moyen de gérer les opérations asynchrones de manière plus lisible et plus facile à comprendre.</li>
+  <li>Les paramètres par défaut : ES6 permet de définir des valeurs par défaut pour les paramètres de fonction.</li>
+  <li>Les destructurations : La destructuration permet d'extraire des valeurs d'objets ou de tableaux de manière plus concise.</li>
+</ul>
+
+<h2>Les modules ES6</h2>
+<p>Les modules sont une fonctionnalité clé d'ES6 qui permet d'organiser et de réutiliser le code de manière plus efficace. Les modules ES6 utilisent une syntaxe simple et intuitive pour exporter et importer des fonctionnalités entre les fichiers.</p>
+
+<p>Pour exporter une fonctionnalité depuis un module, on utilise le mot-clé <code>export</code> suivi du nom de la fonction, de la classe ou de la variable que l'on souhaite exporter :</p>
+
+<pre><code>export function myFunction() {
+  // Code de la fonction
+}</code></pre>
+
+<p>Pour importer une fonctionnalité dans un autre module, on utilise le mot-clé <code>import</code> suivi du nom de la fonctionnalité et du chemin vers le fichier :</p>
+
+<pre><code>import { myFunction } from './monModule.js';</code></pre>
+
+<p>Il est également possible d'importer plusieurs fonctionnalités à la fois en utilisant la syntaxe suivante :</p>
+
+<pre><code>import { fonction1, fonction2 } from './monModule.js';</code></pre>
+
+<h2>Les fonctionnalités avancées (destructuring, spread operator)</h2>
+<p>ES6 introduit également des fonctionnalités avancées telles que la destructuration et l'opérateur de propagation (spread operator) qui permettent de manipuler les objets et les tableaux de manière plus concise.</p>
+
+<p>La destructuration permet d'extraire des valeurs d'objets ou de tableaux et de les assigner à des variables distinctes. Par exemple :</p>
+
+<pre><code>const person = {
+  name: 'John',
+  age: 30,
+  city: 'Paris'
+};
+
+const { name, age } = person;
+
+console.log(name); // Output: John
+console.log(age); // Output: 30</code></pre>
+
+<p>L'opérateur de propagation (spread operator) permet de copier les éléments d'un tableau ou les propriétés d'un objet dans un autre tableau ou objet. Par exemple :</p>
+
+<pre><code>const numbers = [1, 2, 3];
+const moreNumbers = [...numbers, 4, 5, 6];
+
+console.log(moreNumbers); // Output: [1, 2, 3, 4, 5, 6]</code></pre>
+
+<p>Ces fonctionnalités avancées d'ES6 permettent d'écrire un code plus concis et plus expressif.</p>
+
+<p>Ces nouvelles fonctionnalités d'ES6 ont été largement adoptées par la communauté Javascript et sont maintenant prises en charge par tous les navigateurs modernes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section14.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

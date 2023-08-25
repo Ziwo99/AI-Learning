@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les fonctions avancées</h2>
+					<a href="/AI-Learning/javascript/javascript.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Les fonctions anonymes et les fonctions fléchées</h2>
+  <p>Les fonctions anonymes, également appelées fonctions sans nom, sont des fonctions qui ne sont pas déclarées avec un nom spécifique. Elles sont souvent utilisées comme arguments de fonctions ou pour créer des fonctions auto-exécutables.</p>
+  <pre><code>(function() {
+    // Code exécuté immédiatement
+})();
+
+// Fonction anonyme utilisée comme argument
+setTimeout(function() {
+  console.log('Hello, world!');
+}, 1000);
+
+// Fonction anonyme assignée à une variable
+var greet = function() {
+  console.log('Hello!');
+};
+greet();</code></pre>
+
+  <p>Les fonctions fléchées sont une syntaxe plus concise pour définir des fonctions en JavaScript. Elles sont souvent utilisées pour simplifier le code et éviter les problèmes de portée (scope) de <code>this</code>.</p>
+  <pre><code>// Syntaxe de la fonction fléchée
+var add = (a, b) => {
+  return a + b;
+};
+
+// Fonction fléchée avec un seul argument
+var square = x => {
+  return x * x;
+};
+
+// Fonction fléchée sans argument
+var sayHello = () => {
+  console.log('Hello!');
+};</code></pre>
+
+  <h2>Les fonctions récursives</h2>
+  <p>Une fonction récursive est une fonction qui s'appelle elle-même à l'intérieur de sa propre définition. Cela permet de résoudre des problèmes de manière itérative en les divisant en sous-problèmes plus petits.</p>
+  <pre><code>function factorial(n) {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+console.log(factorial(5)); // Résultat: 120</code></pre>
+
+  <h2>Les fonctions de rappel (callbacks)</h2>
+  <p>Une fonction de rappel, ou callback en anglais, est une fonction qui est passée en argument à une autre fonction et qui est appelée ultérieurement. Les fonctions de rappel sont couramment utilisées pour gérer des opérations asynchrones ou des événements.</p>
+  <pre><code>function fetchData(callback) {
+  // Simulation d'une requête asynchrone
+  setTimeout(function() {
+    var data = 'Exemple de données';
+    callback(data);
+  }, 1000);
+}
+
+function processData(data) {
+  console.log('Données traitées:', data);
+}
+
+fetchData(processData);</code></pre>
+
+  <h2>Les fonctions asynchrones (promises, async/await)</h2>
+  <p>Les fonctions asynchrones sont utilisées pour gérer des opérations qui prennent du temps, comme les requêtes réseau ou les accès à la base de données. Elles permettent d'écrire du code de manière synchrone, ce qui le rend plus lisible et plus facile à comprendre.</p>
+  <pre><code>// Utilisation de Promises
+function fetchData() {
+  return new Promise(function(resolve, reject) {
+    // Simulation d'une requête asynchrone réussie
+    setTimeout(function() {
+      var data = 'Exemple de données';
+      resolve(data);
+    }, 1000);
+  });
+}
+
+fetchData()
+  .then(function(data) {
+    console.log('Données récupérées:', data);
+  })
+  .catch(function(error) {
+    console.error('Erreur:', error);
+  });
+
+// Utilisation de async/await
+async function getData() {
+  try {
+    var data = await fetchData();
+    console.log('Données récupérées:', data);
+  } catch (error) {
+    console.error('Erreur:', error);
+  }
+}
+
+getData();</code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

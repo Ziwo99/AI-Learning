@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Manipulation du DOM</h2>
+					<a href="/AI-Learning/javascript/javascript.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					
+
+<h2>Introduction au DOM (Document Object Model)</h2>
+<p>
+Le DOM (Document Object Model) est une interface de programmation qui représente la structure d'un document HTML ou XML. Il permet de manipuler les éléments du document de manière dynamique en utilisant JavaScript.
+</p>
+<p>
+Le DOM est organisé sous forme d'une hiérarchie d'objets, où chaque élément du document est représenté par un nœud. Les nœuds peuvent être des éléments HTML, des attributs, du texte ou d'autres types d'éléments.
+</p>
+<p>
+Pour accéder et manipuler les éléments du DOM, on utilise des méthodes et des propriétés fournies par l'objet global "document". Par exemple, pour sélectionner un élément du DOM, on peut utiliser la méthode "getElementById" ou "querySelector".
+</p>
+
+<h2>Sélection des éléments du DOM</h2>
+<p>
+La sélection des éléments du DOM est une étape importante pour pouvoir les manipuler. Voici quelques méthodes couramment utilisées pour sélectionner des éléments du DOM :
+</p>
+<ul>
+  <li>
+    <code>getElementById(id)</code> : Sélectionne un élément par son attribut "id".
+  </li>
+  <li>
+    <code>getElementsByClassName(className)</code> : Sélectionne tous les éléments qui ont une classe spécifique.
+  </li>
+  <li>
+    <code>getElementsByTagName(tagName)</code> : Sélectionne tous les éléments qui ont une balise HTML spécifique.
+  </li>
+  <li>
+    <code>querySelector(selector)</code> : Sélectionne le premier élément qui correspond à un sélecteur CSS spécifique.
+  </li>
+  <li>
+    <code>querySelectorAll(selector)</code> : Sélectionne tous les éléments qui correspondent à un sélecteur CSS spécifique.
+  </li>
+</ul>
+<p>
+Ces méthodes renvoient des objets NodeList ou HTMLCollection, qui sont des listes d'éléments du DOM. On peut accéder aux éléments individuels en utilisant leur index.
+</p>
+<pre><code>const element = document.getElementById('myElement');
+const elements = document.getElementsByClassName('myClass');
+const elementsByTag = document.getElementsByTagName('div');
+const elementByQuery = document.querySelector('.myClass');
+const elementsByQueryAll = document.querySelectorAll('.myClass');
+</code></pre>
+
+<h2>Modification des éléments du DOM</h2>
+<p>
+Une fois que nous avons sélectionné un élément du DOM, nous pouvons le modifier en utilisant les propriétés et les méthodes disponibles. Voici quelques exemples courants de modifications d'éléments du DOM :
+</p>
+<ul>
+  <li>
+    <code>textContent</code> : Permet de modifier le contenu textuel d'un élément.
+  </li>
+  <li>
+    <code>innerHTML</code> : Permet de modifier le contenu HTML d'un élément.
+  </li>
+  <li>
+    <code>setAttribute(name, value)</code> : Permet de définir la valeur d'un attribut spécifique.
+  </li>
+  <li>
+    <code>style.property = value</code> : Permet de modifier les styles CSS d'un élément.
+  </li>
+</ul>
+<pre><code>const element = document.getElementById('myElement');
+element.textContent = 'Nouveau texte';
+element.innerHTML = '&lt;strong&gt;Texte en gras&lt;/strong&gt;';
+element.setAttribute('class', 'newClass');
+element.style.color = 'red';
+</code></pre>
+
+<h2>Gestion des événements</h2>
+<p>
+Les événements sont des actions ou des occurrences qui se produisent dans le navigateur, comme le clic sur un bouton ou le chargement d'une page. En JavaScript, nous pouvons réagir à ces événements en utilisant des gestionnaires d'événements.
+</p>
+<p>
+Voici quelques exemples courants de gestion des événements :
+</p>
+<ul>
+  <li>
+    <code>addEventListener(event, callback)</code> : Permet d'ajouter un gestionnaire d'événements à un élément spécifique.
+  </li>
+  <li>
+    <code>removeEventListener(event, callback)</code> : Permet de supprimer un gestionnaire d'événements d'un élément spécifique.
+  </li>
+</ul>
+<pre><code>const button = document.getElementById('myButton');
+
+function handleClick() {
+  console.log('Le bouton a été cliqué !');
+}
+
+button.addEventListener('click', handleClick);
+
+// Pour supprimer le gestionnaire d'événements
+button.removeEventListener('click', handleClick);
+</code></pre>
+
+<p>
+Ceci conclut la section sur la manipulation du DOM. Nous avons appris comment sélectionner des éléments du DOM, les modifier et gérer les événements. Ces connaissances sont essentielles pour créer des applications web interactives en utilisant JavaScript.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

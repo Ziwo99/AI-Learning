@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Approfondissement des concepts</h2>
+					<a href="/AI-Learning/javascript/javascript.html" class="button">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+					
+
+<h2>Les closures</h2>
+<p>Les closures sont un concept avancé en JavaScript qui permet de capturer l'état d'une fonction et de le conserver même après que la fonction ait terminé son exécution. Une closure est une fonction interne qui a accès aux variables de sa fonction parente, même après que la fonction parente ait été terminée.</p>
+
+<p>Les closures sont souvent utilisées pour créer des fonctions avec des variables privées. Par exemple :</p>
+
+<pre><code>function createCounter() {
+  let count = 0;
+
+  return function() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = createCounter();
+counter(); // Affiche 1
+counter(); // Affiche 2
+counter(); // Affiche 3
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>createCounter</code> crée une closure qui conserve la variable <code>count</code>. Chaque fois que la fonction interne est appelée, la variable <code>count</code> est incrémentée et affichée.</p>
+
+<h2>Les prototypes avancés</h2>
+<p>Les prototypes sont un mécanisme clé en JavaScript pour la création d'objets et l'héritage. Les prototypes avancés permettent de manipuler les prototypes d'objets de manière plus complexe.</p>
+
+<p>Une des fonctionnalités avancées des prototypes est la possibilité de définir des méthodes sur le prototype d'un objet. Cela permet de partager des méthodes entre plusieurs instances d'objets sans les recréer à chaque fois. Par exemple :</p>
+
+<pre><code>function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.greet = function() {
+  console.log('Hello, my name is ' + this.name);
+};
+
+const person1 = new Person('Alice');
+const person2 = new Person('Bob');
+
+person1.greet(); // Affiche "Hello, my name is Alice"
+person2.greet(); // Affiche "Hello, my name is Bob"
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code>greet</code> est définie sur le prototype de la fonction constructeur <code>Person</code>. Ainsi, toutes les instances de <code>Person</code> auront accès à cette méthode.</p>
+
+<h2>La programmation fonctionnelle en Javascript</h2>
+<p>La programmation fonctionnelle est un paradigme de programmation qui met l'accent sur l'utilisation de fonctions pures et l'évitement des effets de bord. En JavaScript, la programmation fonctionnelle est largement utilisée grâce à la présence de fonctions de première classe et de fonctions d'ordre supérieur.</p>
+
+<p>La programmation fonctionnelle en JavaScript encourage l'utilisation de fonctions pures, qui ne modifient pas l'état global et ne dépendent que de leurs arguments. Les fonctions pures sont prévisibles et faciles à tester. Par exemple :</p>
+
+<pre><code>const numbers = [1, 2, 3, 4, 5];
+
+const doubledNumbers = numbers.map(function(number) {
+  return number * 2;
+});
+
+console.log(doubledNumbers); // Affiche [2, 4, 6, 8, 10]
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code>map</code> est utilisée pour appliquer une fonction de transformation à chaque élément du tableau <code>numbers</code>. La fonction de transformation est une fonction pure qui double chaque nombre.</p>
+
+<p>La programmation fonctionnelle en JavaScript utilise également des fonctions d'ordre supérieur, qui sont des fonctions qui prennent d'autres fonctions en tant qu'arguments ou renvoient des fonctions. Cela permet de créer des fonctions plus génériques et réutilisables. Par exemple :</p>
+
+<pre><code>function multiplyBy(factor) {
+  return function(number) {
+    return number * factor;
+  };
+}
+
+const double = multiplyBy(2);
+const triple = multiplyBy(3);
+
+console.log(double(5)); // Affiche 10
+console.log(triple(5)); // Affiche 15
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>multiplyBy</code> est une fonction d'ordre supérieur qui renvoie une fonction de multiplication par un facteur donné. Les fonctions <code>double</code> et <code>triple</code> sont créées en utilisant <code>multiplyBy</code> avec des facteurs différents.</p>
+
+<p>La programmation fonctionnelle en JavaScript offre de nombreux avantages, tels que la réduction des effets de bord, la facilité de test et la réutilisabilité du code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
