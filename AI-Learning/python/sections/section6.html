@@ -51,7 +51,7 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 6 : Les applications pratiques de Python</h2>
+					<h2>Section 6 : Manipulation de fichiers et dossiers</h2>
 					<ul class="actions stacked">
 						<li><a href="/AI-Learning/python/python.html"
 								class="button">
@@ -68,137 +68,121 @@
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section7.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					
 					
 
-<h2>Le traitement de fichiers et de données</h2>
-<p>Le traitement de fichiers et de données est une application courante de Python. Python offre de nombreuses fonctionnalités pour lire, écrire et manipuler des fichiers et des données.</p>
+<h2>La lecture et l'écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes en programmation Python. Pour lire le contenu d'un fichier, nous utilisons la fonction <code>open()</code> avec le mode de lecture approprié. Voici un exemple :</p>
 
-<p>Pour lire un fichier en Python, vous pouvez utiliser la fonction <code>open()</code> avec le mode de lecture approprié. Par exemple, pour lire un fichier texte, vous pouvez utiliser le mode <code>'r'</code> :</p>
-
-<pre><code>file = open('fichier.txt', 'r')
+<pre><code>file = open("mon_fichier.txt", "r")
 content = file.read()
 file.close()
+
 print(content)</code></pre>
 
-<p>Vous pouvez également lire le contenu d'un fichier ligne par ligne en utilisant la méthode <code>readline()</code> :</p>
+<p>Dans cet exemple, nous ouvrons le fichier "mon_fichier.txt" en mode lecture ("r"). Ensuite, nous utilisons la méthode <code>read()</code> pour lire tout le contenu du fichier et le stocker dans la variable <code>content</code>. Enfin, nous fermons le fichier à l'aide de la méthode <code>close()</code>. Ensuite, nous affichons le contenu du fichier à l'aide de la fonction <code>print()</code>.</p>
 
-<pre><code>file = open('fichier.txt', 'r')
-line = file.readline()
-while line:
-    print(line)
-    line = file.readline()
+<p>Pour écrire dans un fichier, nous utilisons la fonction <code>open()</code> avec le mode d'écriture approprié. Voici un exemple :</p>
+
+<pre><code>file = open("mon_fichier.txt", "w")
+file.write("Bonjour, monde !")
 file.close()</code></pre>
 
-<p>Pour écrire dans un fichier, vous pouvez utiliser le mode d'écriture <code>'w'</code> :</p>
+<p>Dans cet exemple, nous ouvrons le fichier "mon_fichier.txt" en mode écriture ("w"). Ensuite, nous utilisons la méthode <code>write()</code> pour écrire le texte "Bonjour, monde !" dans le fichier. Enfin, nous fermons le fichier à l'aide de la méthode <code>close()</code>.</p>
 
-<pre><code>file = open('fichier.txt', 'w')
-file.write('Contenu à écrire dans le fichier')
-file.close()</code></pre>
+<h2>La manipulation de dossiers</h2>
+<p>La manipulation de dossiers est également une tâche courante en programmation Python. Pour créer un nouveau dossier, nous utilisons la fonction <code>mkdir()</code> du module <code>os</code>. Voici un exemple :</p>
 
-<p>Python offre également des fonctionnalités pour manipuler des données, telles que la lecture et l'écriture de fichiers CSV, JSON, XML, etc. Vous pouvez utiliser des bibliothèques externes telles que <code>csv</code>, <code>json</code> et <code>xml.etree.ElementTree</code> pour cela.</p>
+<pre><code>import os
 
-<h2>Les bases de données et l'accès aux données</h2>
-<p>Python est souvent utilisé pour interagir avec des bases de données. Il existe plusieurs bibliothèques Python populaires pour cela, telles que <code>sqlite3</code>, <code>MySQLdb</code>, <code>psycopg2</code>, etc.</p>
+os.mkdir("nouveau_dossier")</code></pre>
 
-<p>Pour se connecter à une base de données SQLite en utilisant la bibliothèque <code>sqlite3</code>, vous pouvez utiliser le code suivant :</p>
+<p>Dans cet exemple, nous importons le module <code>os</code> et utilisons la fonction <code>mkdir()</code> pour créer un nouveau dossier appelé "nouveau_dossier".</p>
 
-<pre><code>import sqlite3
+<p>Pour supprimer un dossier, nous utilisons la fonction <code>rmdir()</code> du module <code>os</code>. Voici un exemple :</p>
 
-# Connexion à la base de données
-conn = sqlite3.connect('ma_base_de_données.db')
+<pre><code>import os
 
-# Création d'un curseur
-cursor = conn.cursor()
+os.rmdir("ancien_dossier")</code></pre>
 
-# Exécution d'une requête SQL
-cursor.execute("SELECT * FROM ma_table")
+<p>Dans cet exemple, nous importons le module <code>os</code> et utilisons la fonction <code>rmdir()</code> pour supprimer le dossier "ancien_dossier".</p>
 
-# Récupération des résultats
-results = cursor.fetchall()
+<h2>Les opérations sur les fichiers et les dossiers</h2>
+<p>En plus de la lecture, de l'écriture, de la création et de la suppression de fichiers et de dossiers, Python offre de nombreuses autres opérations pour manipuler ces éléments. Voici quelques exemples :</p>
 
-# Fermeture de la connexion
-conn.close()
+<p>Pour vérifier si un fichier ou un dossier existe, nous utilisons la fonction <code>exists()</code> du module <code>os.path</code>. Voici un exemple :</p>
 
-# Affichage des résultats
-for row in results:
-    print(row)</code></pre>
+<pre><code>import os.path
 
-<p>Vous pouvez également utiliser des bibliothèques spécifiques à chaque base de données, telles que <code>MySQLdb</code> pour MySQL ou <code>psycopg2</code> pour PostgreSQL, pour vous connecter à d'autres types de bases de données.</p>
+if os.path.exists("mon_fichier.txt"):
+    print("Le fichier existe.")
+else:
+    print("Le fichier n'existe pas.")</code></pre>
 
-<h2>Les interfaces graphiques</h2>
-<p>Python offre plusieurs bibliothèques pour créer des interfaces graphiques. L'une des bibliothèques les plus populaires est <code>tkinter</code>, qui est incluse dans la distribution standard de Python.</p>
+<p>Dans cet exemple, nous importons le module <code>os.path</code> et utilisons la fonction <code>exists()</code> pour vérifier si le fichier "mon_fichier.txt" existe. Ensuite, nous affichons un message approprié en fonction du résultat.</p>
 
-<p>Voici un exemple simple de création d'une fenêtre avec <code>tkinter</code> :</p>
+<p>Pour renommer un fichier ou un dossier, nous utilisons la fonction <code>rename()</code> du module <code>os</code>. Voici un exemple :</p>
 
-<pre><code>import tkinter as tk
+<pre><code>import os
 
-# Création de la fenêtre
-window = tk.Tk()
+os.rename("ancien_nom.txt", "nouveau_nom.txt")</code></pre>
 
-# Ajout d'un label
-label = tk.Label(window, text="Hello, World!")
-label.pack()
+<p>Dans cet exemple, nous importons le module <code>os</code> et utilisons la fonction <code>rename()</code> pour renommer le fichier "ancien_nom.txt" en "nouveau_nom.txt".</p>
 
-# Affichage de la fenêtre
-window.mainloop()</code></pre>
+<p>Pour copier un fichier, nous utilisons la fonction <code>copy()</code> du module <code>shutil</code>. Voici un exemple :</p>
 
-<p>Vous pouvez également utiliser d'autres bibliothèques pour créer des interfaces graphiques plus avancées, telles que <code>PyQt</code>, <code>wxPython</code> ou <code>Kivy</code>.</p>
+<pre><code>import shutil
 
-<h2>Le développement web avec Python</h2>
-<p>Python est largement utilisé dans le développement web. Il existe plusieurs frameworks web populaires en Python, tels que <code>Django</code>, <code>Flask</code> et <code>Pyramid</code>.</p>
+shutil.copy("source.txt", "destination.txt")</code></pre>
 
-<p>Voici un exemple simple d'une application web avec le framework Flask :</p>
+<p>Dans cet exemple, nous importons le module <code>shutil</code> et utilisons la fonction <code>copy()</code> pour copier le fichier "source.txt" vers "destination.txt".</p>
 
-<pre><code>from flask import Flask
+<h2>Exemple complet :</h2>
 
-# Création de l'application Flask
-app = Flask(__name__)
+<pre><code>import os
+import shutil
 
-# Définition d'une route
-@app.route('/')
-def hello():
-    return 'Hello, World!'
+# Lecture de fichier
+file = open("mon_fichier.txt", "r")
+content = file.read()
+file.close()
 
-# Lancement de l'application
-if __name__ == '__main__':
-    app.run()</code></pre>
+print(content)
 
-<p>Avec Django, vous pouvez créer des applications web plus complexes en utilisant le modèle MVC (Modèle-Vue-Contrôleur).</p>
+# Écriture dans un fichier
+file = open("mon_fichier.txt", "w")
+file.write("Bonjour, monde !")
+file.close()
 
-<h2>L'intelligence artificielle et le machine learning avec Python</h2>
-<p>Python est également largement utilisé dans le domaine de l'intelligence artificielle et du machine learning. Il existe plusieurs bibliothèques Python populaires pour cela, telles que <code>NumPy</code>, <code>SciPy</code>, <code>Pandas</code>, <code>scikit-learn</code>, <code>TensorFlow</code> et <code>Keras</code>.</p>
+# Création d'un dossier
+os.mkdir("nouveau_dossier")
 
-<p>Voici un exemple simple d'utilisation de la bibliothèque <code>scikit-learn</code> pour créer un modèle de régression linéaire :</p>
+# Suppression d'un dossier
+os.rmdir("ancien_dossier")
 
-<pre><code>from sklearn.linear_model import LinearRegression
+# Vérification de l'existence d'un fichier
+if os.path.exists("mon_fichier.txt"):
+    print("Le fichier existe.")
+else:
+    print("Le fichier n'existe pas.")
 
-# Création du modèle
-model = LinearRegression()
+# Renommage d'un fichier
+os.rename("ancien_nom.txt", "nouveau_nom.txt")
 
-# Entraînement du modèle
-X_train = [[1], [2], [3], [4]]
-y_train = [2, 4, 6, 8]
-model.fit(X_train, y_train)
+# Copie d'un fichier
+shutil.copy("source.txt", "destination.txt")</code></pre>
 
-# Prédiction avec le modèle entraîné
-X_test = [[5], [6]]
-y_pred = model.predict(X_test)
-
-# Affichage des prédictions
-print(y_pred)</code></pre>
-
-<p>Avec TensorFlow et Keras, vous pouvez créer des réseaux de neurones et des modèles d'apprentissage profond plus avancés.</p>
+<p>Cet exemple illustre les différentes opérations de manipulation de fichiers et de dossiers en Python. Assurez-vous de comprendre chaque ligne de code et de l'adapter à vos besoins spécifiques.</p>
 					
 					<ul class="actions">
 						<li><a href="/AI-Learning/python/sections/section5.html"
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section7.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					

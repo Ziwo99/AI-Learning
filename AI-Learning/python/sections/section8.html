@@ -51,7 +51,7 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 8 : Les ressources supplémentaires</h2>
+					<h2>Section 8 : Interfaces graphiques</h2>
 					<ul class="actions stacked">
 						<li><a href="/AI-Learning/python/python.html"
 								class="button">
@@ -68,64 +68,73 @@
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section9.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					
 					
 
-<h2>Les sites web et les forums de la communauté Python</h2>
-<p>Il existe de nombreux sites web et forums dédiés à la communauté Python, où vous pouvez trouver des informations, poser des questions et interagir avec d'autres développeurs Python. Voici quelques-uns des sites web et forums les plus populaires :</p>
+<h2>Les bibliothèques graphiques en Python</h2>
+<p>Les bibliothèques graphiques en Python sont des outils puissants qui permettent de créer des interfaces graphiques interactives. Elles offrent une variété de fonctionnalités pour concevoir des fenêtres, des boutons, des menus, des boîtes de dialogue et bien plus encore. Les bibliothèques graphiques les plus populaires en Python sont Tkinter, PyQt, wxPython et Kivy.</p>
 
-<p>- <a href="https://www.python.org/">Le site officiel de Python</a> : Le site officiel de Python est une ressource incontournable pour tout développeur Python. Vous y trouverez la documentation officielle, des tutoriels, des exemples de code et bien plus encore.</p>
+<h2>La création d'interfaces graphiques avec Tkinter</h2>
+<p>Tkinter est la bibliothèque graphique standard de Python. Elle est facile à apprendre et à utiliser, ce qui en fait un choix populaire pour les débutants en programmation d'interfaces graphiques. Pour créer une interface graphique avec Tkinter, vous devez suivre les étapes suivantes :</p>
 
-<p>- <a href="https://stackoverflow.com/questions/tagged/python">Stack Overflow</a> : Stack Overflow est un site de questions-réponses très populaire pour les développeurs. La balise "python" est l'une des plus actives sur le site, ce qui en fait une excellente ressource pour trouver des réponses à vos questions.</p>
+<ol>
+  <li>Importer le module Tkinter : <pre><code>import tkinter as tk</code></pre></li>
+  <li>Créer une instance de la classe Tk : <pre><code>root = tk.Tk()</code></pre></li>
+  <li>Ajouter des widgets à la fenêtre principale : <pre><code>label = tk.Label(root, text="Hello, World!")
+label.pack()</code></pre></li>
+  <li>Lancer la boucle principale de l'interface graphique : <pre><code>root.mainloop()</code></pre></li>
+</ol>
 
-<p>- <a href="https://www.reddit.com/r/Python/">Reddit - r/Python</a> : Reddit est une plateforme de discussion en ligne où vous pouvez trouver de nombreux sous-forums dédiés à Python. Le sous-forum r/Python est un endroit idéal pour discuter de Python, partager des ressources et poser des questions.</p>
+<p>Avec Tkinter, vous pouvez créer des fenêtres, des boutons, des zones de texte, des listes déroulantes et bien d'autres éléments d'interface utilisateur. Vous pouvez également personnaliser l'apparence de votre interface graphique en utilisant des options de configuration et des styles.</p>
 
-<p>- <a href="https://www.pythonanywhere.com/">PythonAnywhere</a> : PythonAnywhere est une plateforme en ligne qui vous permet d'exécuter et de développer des applications Python directement depuis votre navigateur. C'est un excellent outil pour les débutants qui souhaitent essayer Python sans avoir à installer quoi que ce soit sur leur propre machine.</p>
+<h2>La gestion des événements</h2>
+<p>Les événements sont des actions déclenchées par l'utilisateur, tels que le clic d'un bouton ou la saisie de texte dans une zone de texte. Dans Tkinter, vous pouvez associer des fonctions à des événements spécifiques pour y répondre. Voici comment gérer les événements avec Tkinter :</p>
 
-<h2>Les livres et les tutoriels recommandés</h2>
-<p>Il existe de nombreux livres et tutoriels disponibles pour apprendre Python. Voici quelques-uns des livres et tutoriels les plus recommandés :</p>
+<ol>
+  <li>Définir une fonction qui sera exécutée lorsque l'événement se produit : <pre><code>def button_click():
+    print("Button clicked!")</code></pre></li>
+  <li>Créer un widget qui déclenchera l'événement : <pre><code>button = tk.Button(root, text="Click me", command=button_click)
+button.pack()</code></pre></li>
+</ol>
 
-<p>- "Python Crash Course" par Eric Matthes : Ce livre est idéal pour les débutants qui souhaitent apprendre Python de manière pratique. Il couvre les bases du langage Python et propose de nombreux exercices pratiques.</p>
+<p>Dans cet exemple, la fonction <code>button_click</code> sera appelée lorsque le bouton est cliqué. Vous pouvez également utiliser d'autres événements tels que <code>&lt;Enter&gt;</code> pour la souris qui entre dans un widget ou <code>&lt;Key&gt;</code> pour la pression d'une touche.</p>
 
-<p>- "Automate the Boring Stuff with Python" par Al Sweigart : Ce livre est parfait pour ceux qui souhaitent apprendre Python en automatisant des tâches courantes. Il couvre également des sujets avancés tels que le web scraping et la manipulation de fichiers.</p>
+<h2>Les widgets et les conteneurs</h2>
+<p>Les widgets sont les éléments de base d'une interface graphique, tels que les boutons, les zones de texte et les listes déroulantes. Les conteneurs sont des widgets spéciaux qui permettent d'organiser et de grouper d'autres widgets. Tkinter offre une variété de widgets et de conteneurs prédéfinis, tels que :</p>
 
-<p>- <a href="https://docs.python.org/3/tutorial/index.html">Le tutoriel officiel de Python</a> : Le tutoriel officiel de Python est une ressource complète pour apprendre Python. Il couvre tous les aspects du langage et est régulièrement mis à jour pour refléter les dernières fonctionnalités de Python.</p>
+<ul>
+  <li><code>tk.Label</code> : un widget pour afficher du texte ou une image</li>
+  <li><code>tk.Button</code> : un widget cliquable</li>
+  <li><code>tk.Entry</code> : un widget pour saisir du texte</li>
+  <li><code>tk.Text</code> : un widget pour afficher et éditer du texte multiligne</li>
+  <li><code>tk.Frame</code> : un conteneur rectangulaire pour organiser d'autres widgets</li>
+  <li><code>tk.Canvas</code> : un conteneur pour dessiner des formes et des graphiques</li>
+</ul>
 
-<p>- <a href="https://realpython.com/">Real Python</a> : Real Python est un site web qui propose de nombreux tutoriels et articles sur Python. Il couvre une large gamme de sujets, des bases du langage aux sujets avancés tels que le développement web et l'intelligence artificielle.</p>
+<p>Vous pouvez utiliser ces widgets et conteneurs pour créer des interfaces graphiques complexes et interactives. Vous pouvez également personnaliser l'apparence et le comportement des widgets en utilisant des options de configuration.</p>
 
-<h2>Les projets open source en Python</h2>
-<p>Contribuer à des projets open source est un excellent moyen d'améliorer vos compétences en Python et de travailler avec d'autres développeurs. Voici quelques projets open source populaires en Python :</p>
+<h2>Les interfaces graphiques avancées</h2>
+<p>En plus des fonctionnalités de base, Tkinter offre des fonctionnalités avancées pour créer des interfaces graphiques plus complexes. Voici quelques-unes de ces fonctionnalités :</p>
 
-<p>- <a href="https://github.com/django/django">Django</a> : Django est un framework web populaire en Python. Il est utilisé pour développer des applications web robustes et évolutives.</p>
+<ul>
+  <li>Les boîtes de dialogue : Tkinter propose des boîtes de dialogue prédéfinies pour afficher des messages, demander une confirmation ou saisir des données.</li>
+  <li>Les menus : vous pouvez créer des menus déroulants et des barres de menus pour ajouter des fonctionnalités supplémentaires à votre interface graphique.</li>
+  <li>Les images : Tkinter prend en charge l'affichage d'images dans vos interfaces graphiques.</li>
+  <li>Les événements souris et clavier : vous pouvez capturer les événements de la souris et du clavier pour interagir avec l'utilisateur.</li>
+  <li>Les mises en page avancées : Tkinter propose différentes méthodes pour organiser les widgets, telles que la grille, le pack et le placement absolu.</li>
+</ul>
 
-<p>- <a href="https://github.com/tensorflow/tensorflow">TensorFlow</a> : TensorFlow est une bibliothèque open source pour le machine learning et l'intelligence artificielle. Il est largement utilisé dans l'industrie pour développer des modèles d'apprentissage automatique.</p>
-
-<p>- <a href="https://github.com/numpy/numpy">NumPy</a> : NumPy est une bibliothèque Python pour le calcul scientifique. Il fournit des structures de données et des fonctions pour travailler avec des tableaux multidimensionnels.</p>
-
-<p>- <a href="https://github.com/pandas-dev/pandas">Pandas</a> : Pandas est une bibliothèque Python pour la manipulation et l'analyse des données. Il offre des structures de données puissantes et des outils pour travailler avec des données tabulaires.</p>
-
-<h2>Les outils de développement et de test</h2>
-<p>Il existe de nombreux outils de développement et de test disponibles pour les développeurs Python. Voici quelques-uns des outils les plus populaires :</p>
-
-<p>- <a href="https://www.jetbrains.com/pycharm/">PyCharm</a> : PyCharm est un environnement de développement intégré (IDE) très populaire pour Python. Il offre des fonctionnalités avancées telles que la complétion automatique du code, le débogage et la gestion de projets.</p>
-
-<p>- <a href="https://docs.python.org/3/library/unittest.html">unittest</a> : unittest est le module de test unitaire intégré à la bibliothèque standard de Python. Il permet de créer et d'exécuter des tests unitaires pour vérifier le bon fonctionnement de votre code.</p>
-
-<p>- <a href="https://pytest.org/">pytest</a> : pytest est une bibliothèque de test alternative à unittest. Il offre une syntaxe plus simple et des fonctionnalités avancées pour l'écriture de tests.</p>
-
-<p>- <a href="https://www.selenium.dev/">Selenium</a> : Selenium est un outil de test automatisé pour les applications web. Il vous permet de simuler des interactions utilisateur et de vérifier le bon fonctionnement de votre application web.</p>
-
-<p>Assurez-vous de consulter la documentation officielle de chaque outil pour en savoir plus sur leur utilisation et leurs fonctionnalités.</p>
+<p>Avec ces fonctionnalités avancées, vous pouvez créer des interfaces graphiques professionnelles et conviviales.</p>
 					
 					<ul class="actions">
 						<li><a href="/AI-Learning/python/sections/section7.html"
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section9.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					

@@ -51,7 +51,7 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 2 : Les types de données en Python</h2>
+					<h2>Section 2 : Structures de contrôle</h2>
 					<ul class="actions stacked">
 						<li><a href="/AI-Learning/python/python.html"
 								class="button">
@@ -68,198 +68,77 @@
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section3.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					
 					
 
-<h2>Les nombres et les opérations mathématiques</h2>
-<p>
-Les nombres sont des types de données couramment utilisés en programmation. En Python, nous avons différents types de nombres, tels que les entiers (int) et les nombres à virgule flottante (float).
-</p>
-<p>
-Les opérations mathématiques de base peuvent être effectuées sur les nombres en utilisant les opérateurs arithmétiques suivants :
-</p>
-<ul>
-  <li>L'addition (+) : ajoute deux nombres</li>
-  <li>La soustraction (-) : soustrait un nombre d'un autre</li>
-  <li>La multiplication (*) : multiplie deux nombres</li>
-  <li>La division (/) : divise un nombre par un autre</li>
-  <li>Le modulo (%) : renvoie le reste de la division entre deux nombres</li>
-  <li>L'exponentiation (**) : élève un nombre à la puissance d'un autre</li>
-</ul>
-<p>
-Voici un exemple d'utilisation des opérations mathématiques en Python :
-</p>
-<pre><code>a = 5
-b = 2
+<h2>Les conditions et les boucles</h2>
+<p>Les conditions et les boucles sont des structures de contrôle essentielles en Python. Elles permettent d'exécuter certaines parties du code en fonction de conditions spécifiques ou de répéter des blocs de code plusieurs fois.</p>
 
-addition = a + b
-soustraction = a - b
-multiplication = a * b
-division = a / b
-modulo = a % b
-exponentiation = a ** b
+<h2>Les instructions conditionnelles (if, else, elif)</h2>
+<p>Les instructions conditionnelles permettent d'exécuter certaines parties du code en fonction de conditions spécifiques. En Python, les instructions conditionnelles sont réalisées avec les mots-clés <code>if</code>, <code>else</code> et <code>elif</code>.</p>
+<pre><code>x = 10
 
-print("Résultats des opérations mathématiques :")
-print("Addition :", addition)
-print("Soustraction :", soustraction)
-print("Multiplication :", multiplication)
-print("Division :", division)
-print("Modulo :", modulo)
-print("Exponentiation :", exponentiation)
+if x > 0:
+    print("x est positif")
+elif x < 0:
+    print("x est négatif")
+else:
+    print("x est nul")
 </code></pre>
-<p>
-Ce code affichera les résultats des opérations mathématiques effectuées sur les nombres a et b.
-</p>
 
-<h2>Les chaînes de caractères</h2>
-<p>
-Les chaînes de caractères sont utilisées pour représenter du texte en Python. Elles sont définies en utilisant des guillemets simples ('') ou doubles ("").
-</p>
-<p>
-Les opérations courantes sur les chaînes de caractères incluent la concaténation (combinaison de deux chaînes), la longueur d'une chaîne et l'accès aux caractères individuels d'une chaîne.
-</p>
-<p>
-Voici un exemple d'utilisation des opérations sur les chaînes de caractères en Python :
-</p>
-<pre><code>nom = "Alice"
-age = 25
+<h2>Les boucles (for, while)</h2>
+<p>Les boucles permettent de répéter des blocs de code plusieurs fois. En Python, il existe deux types de boucles : la boucle <code>for</code> et la boucle <code>while</code>.</p>
+<pre><code># Boucle for
+for i in range(5):
+    print(i)
 
-# Concaténation de chaînes de caractères
-message = "Bonjour, je m'appelle " + nom + " et j'ai " + str(age) + " ans."
-
-# Longueur d'une chaîne de caractères
-longueur = len(message)
-
-# Accès aux caractères individuels d'une chaîne
-premier_caractere = message[0]
-dernier_caractere = message[-1]
-
-print("Message :", message)
-print("Longueur :", longueur)
-print("Premier caractère :", premier_caractere)
-print("Dernier caractère :", dernier_caractere)
+# Boucle while
+i = 0
+while i < 5:
+    print(i)
+    i += 1
 </code></pre>
-<p>
-Ce code affichera le message, la longueur de la chaîne de caractères, le premier caractère et le dernier caractère de la chaîne.
-</p>
 
-<h2>Les listes, les tuples et les ensembles</h2>
-<p>
-Les listes, les tuples et les ensembles sont des structures de données utilisées pour stocker des collections d'éléments en Python.
-</p>
-<p>
-Une liste est une collection ordonnée et modifiable d'éléments, définie entre crochets ([]). Les éléments d'une liste peuvent être de différents types de données.
-</p>
-<p>
-Un tuple est une collection ordonnée et immuable d'éléments, définie entre parenthèses (()). Les éléments d'un tuple peuvent également être de différents types de données.
-</p>
-<p>
-Un ensemble est une collection non ordonnée et non indexée d'éléments uniques, définie entre accolades ({}). Les éléments d'un ensemble doivent être de type immuable (par exemple, des nombres, des chaînes de caractères ou des tuples).
-</p>
-<p>
-Voici un exemple d'utilisation des listes, des tuples et des ensembles en Python :
-</p>
-<pre><code># Liste
-fruits = ["pomme", "banane", "orange"]
-fruits.append("kiwi")  # Ajoute un élément à la liste
-fruits.remove("banane")  # Supprime un élément de la liste
+<h2>Les instructions de contrôle (break, continue)</h2>
+<p>Les instructions de contrôle permettent de modifier le comportement des boucles. L'instruction <code>break</code> permet de sortir de la boucle prématurément, tandis que l'instruction <code>continue</code> permet de passer à l'itération suivante.</p>
+<pre><code>for i in range(10):
+    if i == 5:
+        break
+    print(i)
 
-# Tuple
-coordonnees = (3, 4)
-x, y = coordonnees  # Décomposition d'un tuple
-
-# Ensemble
-nombres = {1, 2, 3, 4, 5}
-nombres.add(6)  # Ajoute un élément à l'ensemble
-nombres.remove(3)  # Supprime un élément de l'ensemble
-
-print("Fruits :", fruits)
-print("Coordonnées :", coordonnees)
-print("Valeur de x :", x)
-print("Valeur de y :", y)
-print("Nombres :", nombres)
+for i in range(10):
+    if i % 2 == 0:
+        continue
+    print(i)
 </code></pre>
-<p>
-Ce code affichera les éléments de la liste des fruits, les coordonnées, la valeur de x et de y, ainsi que les éléments de l'ensemble des nombres.
-</p>
 
-<h2>Les dictionnaires</h2>
-<p>
-Un dictionnaire est une structure de données utilisée pour stocker des paires clé-valeur en Python. Chaque élément d'un dictionnaire est composé d'une clé et d'une valeur associée.
-</p>
-<p>
-Les clés d'un dictionnaire doivent être uniques et immuables (par exemple, des nombres, des chaînes de caractères ou des tuples). Les valeurs peuvent être de différents types de données.
-</p>
-<p>
-Voici un exemple d'utilisation des dictionnaires en Python :
-</p>
-<pre><code># Dictionnaire
-personne = {
-  "nom": "Alice",
-  "age": 25,
-  "ville": "Paris"
-}
-
-# Accès aux valeurs d'un dictionnaire
-nom = personne["nom"]
-age = personne.get("age")
-
-# Modification des valeurs d'un dictionnaire
-personne["age"] = 26
-personne["profession"] = "Ingénieur"
-
-# Suppression d'une paire clé-valeur d'un dictionnaire
-del personne["ville"]
-
-print("Nom :", nom)
-print("Age :", age)
-print("Personne :", personne)
+<h2>Les exceptions et la gestion des erreurs</h2>
+<p>Les exceptions sont des événements qui se produisent lorsqu'une erreur survient pendant l'exécution du code. En Python, il est possible de gérer ces exceptions à l'aide des blocs <code>try</code> et <code>except</code>.</p>
+<pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Erreur : division par zéro")
 </code></pre>
-<p>
-Ce code affichera le nom, l'âge et les informations de la personne stockées dans le dictionnaire.
-</p>
-
-<h2>Les opérations sur les types de données</h2>
-<p>
-En Python, il existe des opérations spécifiques pour chaque type de données. Par exemple, pour les chaînes de caractères, nous avons des opérations telles que la recherche de sous-chaînes, le remplacement de caractères, la conversion en majuscules ou en minuscules, etc.
-</p>
-<p>
-Il est important de connaître les opérations disponibles pour chaque type de données afin de pouvoir les manipuler efficacement.
-</p>
-<p>
-Voici un exemple d'utilisation des opérations sur les types de données en Python :
-</p>
-<pre><code># Opérations sur les chaînes de caractères
-message = "Bonjour, je m'appelle Alice."
-
-# Recherche de sous-chaînes
-if "Alice" in message:
-  print("Alice est présent dans le message.")
-
-# Remplacement de caractères
-nouveau_message = message.replace("Alice", "Bob")
-
-# Conversion en majuscules ou en minuscules
-message_majuscules = message.upper()
-message_minuscules = message.lower()
-
-print("Nouveau message :", nouveau_message)
-print("Message en majuscules :", message_majuscules)
-print("Message en minuscules :", message_minuscules)
+<p>Il est également possible de capturer des exceptions spécifiques et d'exécuter du code supplémentaire en utilisant les blocs <code>except</code> multiples.</p>
+<pre><code>try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Erreur : division par zéro")
+except ValueError:
+    print("Erreur : valeur incorrecte")
 </code></pre>
-<p>
-Ce code affichera le nouveau message après le remplacement de la sous-chaîne, le message en majuscules et le message en minuscules.
-</p>
+
+<p>Ces structures de contrôle sont essentielles pour maîtriser la programmation en Python. Elles permettent de contrôler le flux d'exécution du code et de gérer les erreurs de manière efficace.</p>
 					
 					<ul class="actions">
 						<li><a href="/AI-Learning/python/sections/section1.html"
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section3.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					

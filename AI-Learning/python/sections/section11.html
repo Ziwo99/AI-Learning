@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Projets pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Retour à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Projet 1 : Création d'un jeu en Python</h2>
+<p>Dans ce projet, vous allez créer un jeu en utilisant Python. Vous apprendrez à concevoir et à développer un jeu interactif en utilisant les concepts que vous avez appris jusqu'à présent.</p>
+<p>Voici un exemple de code pour créer un jeu simple de devinette de nombre :</p>
+<pre><code>import random
+
+number = random.randint(1, 100)
+guess = 0
+tries = 0
+
+print("Bienvenue dans le jeu de devinette de nombre !")
+print("Je pense à un nombre entre 1 et 100. Pouvez-vous le deviner ?")
+
+while guess != number:
+    guess = int(input("Entrez votre estimation : "))
+    tries += 1
+
+    if guess &lt; number:
+        print("Trop bas ! Essayez encore.")
+    elif guess &gt; number:
+        print("Trop haut ! Essayez encore.")
+
+print("Félicitations ! Vous avez deviné le nombre en", tries, "essais.")</code></pre>
+
+<p>Ce code génère un nombre aléatoire entre 1 et 100, puis demande à l'utilisateur de deviner ce nombre. Le jeu fournit des indications pour aider l'utilisateur à trouver le nombre.</p>
+
+<h2>Projet 2 : Développement d'une application web</h2>
+<p>Dans ce projet, vous allez apprendre à développer une application web en utilisant Python. Vous découvrirez les bases du développement web et comment créer des pages web dynamiques.</p>
+<p>Voici un exemple de code pour créer une application web simple en utilisant le framework Flask :</p>
+<pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+
+<p>Ce code utilise le framework Flask pour créer une application web avec deux pages : la page d'accueil ("/") et la page "about" ("/about"). Les fonctions home() et about() renvoient les templates HTML correspondants.</p>
+
+<h2>Projet 3 : Analyse de données avec Python</h2>
+<p>Dans ce projet, vous allez apprendre à utiliser Python pour analyser des données. Vous découvrirez comment manipuler des fichiers de données, effectuer des opérations statistiques et créer des visualisations.</p>
+<p>Voici un exemple de code pour lire un fichier CSV et afficher les données sous forme de graphique à barres :</p>
+<pre><code>import pandas as pd
+import matplotlib.pyplot as plt
+
+data = pd.read_csv('data.csv')
+
+plt.bar(data['Country'], data['Population'])
+plt.xlabel('Pays')
+plt.ylabel('Population')
+plt.title('Population par pays')
+
+plt.show()</code></pre>
+
+<p>Ce code utilise la bibliothèque pandas pour lire un fichier CSV contenant des données sur la population par pays. Il utilise ensuite la bibliothèque matplotlib pour créer un graphique à barres affichant la population de chaque pays.</p>
+
+<h2>Projet 4 : Automatisation de tâches avec Python</h2>
+<p>Dans ce projet, vous allez apprendre à automatiser des tâches répétitives en utilisant Python. Vous découvrirez comment écrire des scripts qui effectuent des actions spécifiques, comme le traitement de fichiers ou l'envoi de courriels.</p>
+<p>Voici un exemple de code pour renommer tous les fichiers d'un dossier en ajoutant un préfixe :</p>
+<pre><code>import os
+
+folder = 'chemin/vers/le/dossier'
+
+for filename in os.listdir(folder):
+    if not filename.startswith('prefixe_'):
+        new_filename = 'prefixe_' + filename
+        os.rename(os.path.join(folder, filename), os.path.join(folder, new_filename))</code></pre>
+
+<p>Ce code utilise le module os pour parcourir tous les fichiers d'un dossier et renommer ceux qui ne commencent pas par "prefixe_". Il ajoute simplement le préfixe "prefixe_" au nom de chaque fichier.</p>
+
+<h2>Projet 5 : Création d'un chatbot en Python</h2>
+<p>Dans ce projet, vous allez apprendre à créer un chatbot en utilisant Python. Vous découvrirez comment utiliser des bibliothèques de traitement du langage naturel pour créer un chatbot capable de comprendre et de répondre aux questions des utilisateurs.</p>
+<p>Voici un exemple de code pour créer un chatbot simple en utilisant la bibliothèque ChatterBot :</p>
+<pre><code>from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
+
+bot = ChatBot('Mon Chatbot')
+
+trainer = ChatterBotCorpusTrainer(bot)
+trainer.train('chatterbot.corpus.french')
+
+while True:
+    user_input = input("Vous : ")
+    response = bot.get_response(user_input)
+    print("Chatbot : ", response)</code></pre>
+
+<p>Ce code utilise la bibliothèque ChatterBot pour créer un chatbot qui utilise des réponses pré-enregistrées. Le chatbot apprend à partir du corpus de formation "chatterbot.corpus.french" et peut répondre aux questions de l'utilisateur en fonction de ses connaissances.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

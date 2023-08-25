@@ -51,7 +51,7 @@
 		<section id="wrapper">
 			<header>
 				<div class="inner">
-					<h2>Section 5 : Les modules et les bibliothèques</h2>
+					<h2>Section 5 : Programmation orientée objet</h2>
 					<ul class="actions stacked">
 						<li><a href="/AI-Learning/python/python.html"
 								class="button">
@@ -68,58 +68,105 @@
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section6.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					
 					
 
-<h2>Les modules standard de Python</h2>
-<p>Python offre une vaste bibliothèque standard qui contient de nombreux modules prêts à l'emploi. Ces modules couvrent divers domaines tels que les opérations mathématiques, la manipulation de fichiers, la gestion des dates et heures, la communication réseau, etc. Ils sont inclus dans l'installation de base de Python, ce qui signifie que vous pouvez les utiliser sans avoir à les installer séparément.</p>
+<h2>Les classes et les objets</h2>
+<p>En Python, la programmation orientée objet (POO) repose sur le concept de classes et d'objets. Une classe est un modèle ou un plan pour créer des objets, tandis qu'un objet est une instance d'une classe. Les objets sont utilisés pour représenter des entités du monde réel ou des concepts abstraits.</p>
 
-<p>Voici quelques exemples de modules standard couramment utilisés :</p>
+<p>Pour définir une classe en Python, utilisez le mot-clé <code>class</code> suivi du nom de la classe. Par exemple, voici comment définir une classe simple appelée "Personne" :</p>
 
-<ul>
-  <li><code>math</code> : Ce module fournit des fonctions mathématiques avancées telles que les fonctions trigonométriques, exponentielles, logarithmiques, etc.</li>
-  <li><code>os</code> : Ce module permet d'interagir avec le système d'exploitation, en fournissant des fonctionnalités telles que la manipulation de fichiers et de répertoires, l'exécution de commandes système, etc.</li>
-  <li><code>datetime</code> : Ce module permet de manipuler des objets de date et d'heure, de les formater et de les convertir selon vos besoins.</li>
-  <li><code>random</code> : Ce module fournit des fonctionnalités pour générer des nombres aléatoires.</li>
-</ul>
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
 
-<h2>L'utilisation de bibliothèques externes</h2>
-<p>En plus des modules standard, Python dispose également d'une vaste collection de bibliothèques externes développées par la communauté. Ces bibliothèques étendent les fonctionnalités de base de Python et permettent de résoudre des problèmes spécifiques dans différents domaines.</p>
+    def dire_bonjour(self):
+        print("Bonjour, je m'appelle", self.nom, "et j'ai", self.age, "ans.")</code></pre>
 
-<p>Pour utiliser une bibliothèque externe, vous devez d'abord l'installer sur votre système. Cela peut être fait à l'aide de l'outil de gestion de paquets de Python, pip. Une fois installée, vous pouvez importer la bibliothèque dans votre code Python et utiliser ses fonctionnalités.</p>
+<p>Dans cet exemple, la méthode spéciale <code>__init__</code> est utilisée pour initialiser les attributs de l'objet lors de sa création. Les méthodes d'une classe sont des fonctions qui peuvent être appelées sur les objets de cette classe.</p>
 
-<p>Voici quelques exemples de bibliothèques externes populaires :</p>
+<p>Pour créer un objet à partir d'une classe, utilisez le nom de la classe suivi de parenthèses. Par exemple :</p>
 
-<ul>
-  <li><code>numpy</code> : Cette bibliothèque fournit des structures de données et des fonctions pour effectuer des calculs scientifiques et mathématiques de manière efficace.</li>
-  <li><code>pandas</code> : Cette bibliothèque offre des structures de données et des outils d'analyse de données puissants, facilitant ainsi la manipulation et l'analyse de grands ensembles de données.</li>
-  <li><code>matplotlib</code> : Cette bibliothèque permet de créer des visualisations graphiques de données, telles que des graphiques, des diagrammes en boîte, des histogrammes, etc.</li>
-  <li><code>requests</code> : Cette bibliothèque facilite l'envoi de requêtes HTTP et la récupération de données à partir de serveurs web.</li>
-</ul>
+<pre><code>personne1 = Personne("Alice", 25)</code></pre>
 
-<h2>Les outils de développement et de test</h2>
-<p>En plus des modules et des bibliothèques, Python propose également des outils de développement et de test qui facilitent le processus de développement et garantissent la qualité du code.</p>
+<p>Une fois que vous avez créé un objet, vous pouvez accéder à ses attributs et appeler ses méthodes. Par exemple :</p>
 
-<p>Voici quelques-uns des outils de développement et de test les plus couramment utilisés :</p>
+<pre><code>print(personne1.nom)  # Affiche "Alice"
+print(personne1.age)  # Affiche 25
+personne1.dire_bonjour()  # Affiche "Bonjour, je m'appelle Alice et j'ai 25 ans."</code></pre>
 
-<ul>
-  <li><code>pip</code> : C'est l'outil de gestion de paquets de Python qui permet d'installer, de mettre à jour et de gérer les bibliothèques externes.</li>
-  <li><code>virtualenv</code> : Cet outil permet de créer des environnements virtuels isolés pour chaque projet Python, ce qui facilite la gestion des dépendances et évite les conflits entre les bibliothèques.</li>
-  <li><code>unittest</code> : Ce module fournit un framework de test unitaire intégré à Python, permettant d'écrire et d'exécuter des tests pour vérifier le bon fonctionnement de votre code.</li>
-  <li><code>pylint</code> : C'est un outil d'analyse statique du code qui vérifie la conformité aux conventions de codage et identifie les erreurs potentielles.</li>
-</ul>
+<h2>Les attributs et les méthodes</h2>
+<p>Les attributs sont des variables associées à un objet. Ils représentent les caractéristiques de l'objet. Les méthodes, quant à elles, sont des fonctions associées à un objet. Elles permettent de définir le comportement de l'objet.</p>
 
-<p>Ces outils sont essentiels pour garantir la qualité du code, faciliter la collaboration entre les développeurs et maintenir un processus de développement efficace.</p>
+<p>Les attributs peuvent être définis à l'intérieur de la méthode <code>__init__</code> ou en dehors de celle-ci. Par exemple :</p>
+
+<pre><code>class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def dire_bonjour(self):
+        print("Bonjour, je m'appelle", self.nom, "et j'ai", self.age, "ans.")
+
+    def changer_nom(self, nouveau_nom):
+        self.nom = nouveau_nom</code></pre>
+
+<p>Dans cet exemple, la méthode <code>changer_nom</code> permet de modifier l'attribut <code>nom</code> d'un objet.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un concept clé de la POO qui permet de créer de nouvelles classes en se basant sur des classes existantes. Une classe qui hérite d'une autre classe est appelée une classe dérivée ou une sous-classe, tandis que la classe dont elle hérite est appelée une classe de base ou une superclasse.</p>
+
+<p>En Python, l'héritage s'effectue en spécifiant la classe de base entre parenthèses après le nom de la classe dérivée. Par exemple :</p>
+
+<pre><code>class Employe(Personne):
+    def __init__(self, nom, age, salaire):
+        super().__init__(nom, age)
+        self.salaire = salaire
+
+    def dire_bonjour(self):
+        super().dire_bonjour()
+        print("Je suis un employé et mon salaire est de", self.salaire, "euros.")</code></pre>
+
+<p>Dans cet exemple, la classe <code>Employe</code> hérite de la classe <code>Personne</code>. Elle ajoute un nouvel attribut <code>salaire</code> et redéfinit la méthode <code>dire_bonjour</code> pour afficher des informations spécifiques aux employés.</p>
+
+<p>Le polymorphisme est un autre concept de la POO qui permet à des objets de différentes classes d'être traités de manière similaire. Cela signifie qu'un objet peut être utilisé comme s'il était de la classe de base, même s'il est en réalité de la classe dérivée.</p>
+
+<h2>Les exceptions personnalisées</h2>
+<p>En Python, vous pouvez créer vos propres exceptions personnalisées en définissant une classe qui hérite de la classe de base <code>Exception</code>. Cela vous permet de gérer des erreurs spécifiques à votre programme.</p>
+
+<p>Voici un exemple de définition d'une exception personnalisée :</p>
+
+<pre><code>class MonException(Exception):
+    pass</code></pre>
+
+<p>Dans cet exemple, la classe <code>MonException</code> hérite de la classe <code>Exception</code>. Vous pouvez ensuite utiliser cette exception personnalisée dans votre code pour signaler des erreurs spécifiques.</p>
+
+<h2>Les modules et les packages orientés objet</h2>
+<p>En Python, vous pouvez organiser votre code orienté objet en utilisant des modules et des packages. Un module est un fichier contenant du code Python, tandis qu'un package est un dossier contenant plusieurs modules.</p>
+
+<p>Pour créer un module, créez simplement un fichier Python avec l'extension <code>.py</code> et placez-y votre code. Vous pouvez ensuite importer ce module dans d'autres fichiers Python pour réutiliser le code.</p>
+
+<p>Pour créer un package, créez un dossier et placez-y plusieurs fichiers Python. Assurez-vous d'inclure un fichier spécial appelé <code>__init__.py</code> dans le dossier pour indiquer à Python qu'il s'agit d'un package.</p>
+
+<p>Voici un exemple de structure de package orienté objet :</p>
+
+<pre><code>mon_package/
+    __init__.py
+    module1.py
+    module2.py</code></pre>
+
+<p>Dans cet exemple, le package <code>mon_package</code> contient deux modules, <code>module1</code> et <code>module2</code>. Vous pouvez ensuite importer ces modules dans d'autres fichiers Python pour utiliser les classes et les objets qu'ils contiennent.</p>
 					
 					<ul class="actions">
 						<li><a href="/AI-Learning/python/sections/section4.html"
 								class="button primary">
 								Section précédente</a></li>
 						<li><a href="/AI-Learning/python/sections/section6.html"
-								class="button primary">
+								class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
 					
