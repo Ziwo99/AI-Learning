@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Les fonctionnalités avancées du C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					<section>
+  
+
+  <h2>Les threads et la programmation concurrente</h2>
+  <p>
+    Les threads permettent d'exécuter plusieurs tâches simultanément dans un programme C++. Cela peut être utile pour améliorer les performances en parallélisant des opérations ou pour gérer des tâches en arrière-plan sans bloquer l'interface utilisateur.
+  </p>
+  <p>
+    Pour créer un thread en C++, vous pouvez utiliser la classe <code>std::thread</code> de la bibliothèque standard. Voici un exemple de création et d'exécution d'un thread :
+  </p>
+  <pre><code>
+#include <iostream>
+#include <thread>
+
+void myFunction() {
+    // Code exécuté par le thread
+    std::cout << "Hello from thread!" << std::endl;
+}
+
+int main() {
+    // Création d'un thread
+    std::thread myThread(myFunction);
+
+    // Attente de la fin du thread
+    myThread.join();
+
+    return 0;
+}
+  </code></pre>
+  <p>
+    Dans cet exemple, la fonction <code>myFunction</code> est exécutée dans un thread séparé. Le programme principal attend la fin du thread avec la fonction <code>join</code>.
+  </p>
+
+  <h2>Les bibliothèques externes et les extensions du langage</h2>
+  <p>
+    En plus des fonctionnalités fournies par la bibliothèque standard du C++, il existe de nombreuses bibliothèques externes qui étendent les capacités du langage. Ces bibliothèques peuvent être utilisées pour des tâches spécifiques telles que le traitement d'images, la manipulation de bases de données, la création d'interfaces graphiques, etc.
+  </p>
+  <p>
+    Pour utiliser une bibliothèque externe en C++, vous devez généralement inclure ses fichiers d'en-tête et lier son fichier de bibliothèque lors de la compilation. Voici un exemple d'utilisation de la bibliothèque externe <code>OpenCV</code> pour le traitement d'images :
+  </p>
+  <pre><code>
+#include <iostream>
+#include <opencv2/opencv.hpp>
+
+int main() {
+    // Code utilisant la bibliothèque OpenCV
+    cv::Mat image = cv::imread("image.jpg", cv::IMREAD_COLOR);
+    cv::imshow("Image", image);
+    cv::waitKey(0);
+
+    return 0;
+}
+  </code></pre>
+  <p>
+    Dans cet exemple, nous utilisons la fonction <code>imread</code> de la bibliothèque OpenCV pour charger une image à partir d'un fichier, puis nous l'affichons à l'aide de la fonction <code>imshow</code>. La fonction <code>waitKey</code> est utilisée pour attendre l'appui d'une touche avant de fermer la fenêtre.
+  </p>
+
+  <h2>Les bonnes pratiques de programmation en C++</h2>
+  <p>
+    Pour écrire du code C++ de qualité, il est important de suivre certaines bonnes pratiques. Cela inclut l'utilisation de conventions de nommage cohérentes, la documentation du code, la gestion appropriée de la mémoire, etc.
+  </p>
+  <p>
+    Voici quelques bonnes pratiques courantes en C++ :
+  </p>
+  <ul>
+    <li>Utilisez des noms de variables et de fonctions significatifs pour améliorer la lisibilité du code.</li>
+    <li>Commentez votre code pour expliquer son fonctionnement et faciliter la compréhension.</li>
+    <li>Utilisez des classes et des objets pour encapsuler la logique et les données.</li>
+    <li>Évitez les fuites de mémoire en libérant correctement les ressources allouées dynamiquement.</li>
+    <li>Utilisez des tests unitaires pour vérifier le bon fonctionnement de votre code.</li>
+  </ul>
+  <p>
+    En suivant ces bonnes pratiques, vous pouvez rendre votre code plus lisible, maintenable et robuste.
+  </p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

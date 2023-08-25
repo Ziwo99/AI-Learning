@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Projets pratiques en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Projet 1: Création d'un jeu simple en C++</h2>
+<p>Dans ce projet, vous allez créer un jeu simple en utilisant le langage C++. Ce jeu sera basé sur la console et vous permettra de mettre en pratique les concepts que vous avez appris jusqu'à présent.</p>
+
+<p>Voici les étapes pour créer ce jeu :</p>
+
+<ol>
+  <li>Définissez les règles du jeu et les objectifs à atteindre.</li>
+  <li>Créez les classes nécessaires pour représenter les différents éléments du jeu, tels que les joueurs, les ennemis, les objets, etc.</li>
+  <li>Implémentez les fonctionnalités du jeu, telles que le déplacement des joueurs, les interactions avec les objets, les combats, etc.</li>
+  <li>Ajoutez des fonctionnalités supplémentaires pour rendre le jeu plus intéressant, telles que des niveaux de difficulté, des bonus, des malus, etc.</li>
+  <li>Testez votre jeu pour vous assurer qu'il fonctionne correctement et qu'il respecte les règles que vous avez définies.</li>
+</ol>
+
+<p>Voici un exemple de code pour vous aider à démarrer :</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+using namespace std;
+
+class Player {
+  public:
+    string name;
+    int health;
+    
+    void attack() {
+      cout &lt;&lt; "Player " &lt;&lt; name &lt;&lt; " is attacking!" &lt;&lt; endl;
+    }
+};
+
+int main() {
+  Player player1;
+  player1.name = "John";
+  player1.health = 100;
+  
+  player1.attack();
+  
+  return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe Player qui représente un joueur dans le jeu. Nous avons défini une fonction attack() qui affiche un message indiquant que le joueur attaque. Ensuite, dans la fonction main(), nous avons créé une instance de la classe Player et appelé la fonction attack().</p>
+
+<h2>Projet 2: Développement d'une application de gestion de données</h2>
+<p>Dans ce projet, vous allez développer une application de gestion de données en utilisant le langage C++. Cette application vous permettra de stocker, modifier et afficher des données dans une base de données.</p>
+
+<p>Voici les étapes pour développer cette application :</p>
+
+<ol>
+  <li>Définissez les types de données que vous souhaitez stocker dans votre base de données.</li>
+  <li>Créez les classes nécessaires pour représenter ces types de données.</li>
+  <li>Implémentez les fonctionnalités de base de votre application, telles que l'ajout, la modification et la suppression de données.</li>
+  <li>Ajoutez des fonctionnalités supplémentaires, telles que la recherche de données, le tri, les filtres, etc.</li>
+  <li>Testez votre application pour vous assurer qu'elle fonctionne correctement et qu'elle répond aux besoins que vous avez définis.</li>
+</ol>
+
+<p>Voici un exemple de code pour vous aider à démarrer :</p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+class Person {
+  public:
+    string name;
+    int age;
+    
+    void display() {
+      cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; ", Age: " &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+  vector&lt;Person&gt; people;
+  
+  Person person1;
+  person1.name = "John";
+  person1.age = 25;
+  
+  people.push_back(person1);
+  
+  for (int i = 0; i &lt; people.size(); i++) {
+    people[i].display();
+  }
+  
+  return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe Person qui représente une personne dans notre base de données. Nous avons défini une fonction display() qui affiche le nom et l'âge de la personne. Ensuite, dans la fonction main(), nous avons créé un vecteur de personnes, ajouté une personne à ce vecteur, puis affiché les informations de chaque personne.</p>
+
+<h2>Projet 3: Création d'une bibliothèque de fonctions utilitaires</h2>
+<p>Dans ce projet, vous allez créer une bibliothèque de fonctions utilitaires en utilisant le langage C++. Cette bibliothèque vous permettra de regrouper des fonctions réutilisables que vous pourrez utiliser dans vos projets futurs.</p>
+
+<p>Voici les étapes pour créer cette bibliothèque :</p>
+
+<ol>
+  <li>Définissez les fonctions utilitaires que vous souhaitez inclure dans votre bibliothèque.</li>
+  <li>Créez un fichier d'en-tête (.h) dans lequel vous déclarerez ces fonctions.</li>
+  <li>Créez un fichier source (.cpp) dans lequel vous implémenterez ces fonctions.</li>
+  <li>Compilez votre bibliothèque pour en faire un fichier binaire (.lib ou .dll).</li>
+  <li>Utilisez votre bibliothèque dans d'autres projets en incluant le fichier d'en-tête et en liant le fichier binaire.</li>
+</ol>
+
+<p>Voici un exemple de code pour vous aider à démarrer :</p>
+
+<pre><code>// mylibrary.h
+
+#ifndef MYLIBRARY_H
+#define MYLIBRARY_H
+
+#include &lt;string&gt;
+
+using namespace std;
+
+void printMessage(string message);
+
+#endif
+</code></pre>
+
+<pre><code>// mylibrary.cpp
+
+#include &lt;iostream&gt;
+#include "mylibrary.h"
+
+void printMessage(string message) {
+  cout &lt;&lt; message &lt;&lt; endl;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction printMessage() dans le fichier d'en-tête mylibrary.h. Ensuite, dans le fichier source mylibrary.cpp, nous avons implémenté cette fonction en utilisant la bibliothèque iostream. Enfin, nous pouvons utiliser cette fonction dans d'autres projets en incluant le fichier d'en-tête et en appelant la fonction.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

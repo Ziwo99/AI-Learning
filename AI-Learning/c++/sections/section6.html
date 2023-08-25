@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Programmation avancée en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les templates et la programmation générique</h2>
+<p>Les templates sont un mécanisme puissant en C++ qui permet de créer des fonctions et des classes génériques. Ils permettent de définir des algorithmes et des structures de données qui peuvent être utilisés avec différents types de données, sans avoir à réécrire le code pour chaque type spécifique.</p>
+
+<p>Un template est défini en utilisant le mot-clé <code>template</code>, suivi d'une liste de paramètres de type entre chevrons (<code>&lt;&gt;</code>). Par exemple, voici comment définir une fonction template qui calcule la somme de deux valeurs :</p>
+
+<pre><code>template &lt;typename T&gt;
+T sum(T a, T b) {
+    return a + b;
+}</code></pre>
+
+<p>Dans cet exemple, <code>T</code> est un paramètre de type générique. Lorsque la fonction est utilisée, le compilateur déduit automatiquement le type approprié en fonction des arguments passés. Par exemple :</p>
+
+<pre><code>int result = sum(5, 10); // result vaut 15
+double result2 = sum(3.14, 2.71); // result2 vaut 5.85</code></pre>
+
+<p>Les templates peuvent également être utilisés pour définir des classes génériques. Par exemple, voici comment définir une classe template <code>Pair</code> qui représente une paire de valeurs de types différents :</p>
+
+<pre><code>template &lt;typename T, typename U&gt;
+class Pair {
+private:
+    T first;
+    U second;
+public:
+    Pair(T a, U b) : first(a), second(b) {}
+    T getFirst() { return first; }
+    U getSecond() { return second; }
+};</code></pre>
+
+<p>La classe <code>Pair</code> peut être instanciée avec différents types de données :</p>
+
+<pre><code>Pair&lt;int, double&gt; p(5, 3.14);
+int a = p.getFirst(); // a vaut 5
+double b = p.getSecond(); // b vaut 3.14</code></pre>
+
+<h2>Les exceptions et la gestion des erreurs</h2>
+<p>Les exceptions sont utilisées en C++ pour gérer les erreurs et les situations exceptionnelles qui peuvent se produire pendant l'exécution d'un programme. Une exception est une valeur ou un objet qui est lancé (throw) par une partie du code et qui peut être attrapé (catch) et géré par une autre partie du code.</p>
+
+<p>Pour lancer une exception, on utilise le mot-clé <code>throw</code> suivi de la valeur ou de l'objet à lancer. Par exemple :</p>
+
+<pre><code>void divide(int a, int b) {
+    if (b == 0) {
+        throw "Division by zero is not allowed!";
+    }
+    int result = a / b;
+}</code></pre>
+
+<p>Dans cet exemple, si la variable <code>b</code> est égale à zéro, une exception de type <code>const char*</code> est lancée avec le message "Division by zero is not allowed!".</p>
+
+<p>Pour attraper une exception, on utilise le bloc <code>try-catch</code>. Le bloc <code>try</code> contient le code qui peut lancer une exception, et le bloc <code>catch</code> contient le code qui gère l'exception. Par exemple :</p>
+
+<pre><code>try {
+    divide(10, 0);
+} catch (const char* message) {
+    std::cout &lt;&lt; "An exception occurred: " &lt;&lt; message &lt;&lt; std::endl;
+}</code></pre>
+
+<p>Dans cet exemple, si l'exception est lancée dans la fonction <code>divide</code>, le bloc <code>catch</code> est exécuté et affiche le message d'erreur.</p>
+
+<h2>Les opérateurs surchargés et les conversions de types</h2>
+<p>En C++, il est possible de surcharger les opérateurs existants pour les types de données personnalisés. Cela permet d'utiliser des opérateurs tels que <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc. avec des objets de ces types personnalisés.</p>
+
+<p>La surcharge des opérateurs se fait en définissant des fonctions spéciales appelées "opérateurs surchargés". Par exemple, voici comment surcharger l'opérateur <code>+</code> pour une classe <code>Vector</code> qui représente un vecteur mathématique :</p>
+
+<pre><code>class Vector {
+private:
+    double x, y, z;
+public:
+    Vector(double a, double b, double c) : x(a), y(b), z(c) {}
+    Vector operator+(const Vector&amp; other) const {
+        return Vector(x + other.x, y + other.y, z + other.z);
+    }
+};</code></pre>
+
+<p>Dans cet exemple, la fonction <code>operator+</code> est définie comme une méthode de la classe <code>Vector</code>. Elle prend un objet <code>Vector</code> en argument et retourne un nouvel objet <code>Vector</code> qui est la somme des deux vecteurs.</p>
+
+<p>Une fois l'opérateur surchargé, il peut être utilisé comme n'importe quel autre opérateur. Par exemple :</p>
+
+<pre><code>Vector v1(1, 2, 3);
+Vector v2(4, 5, 6);
+Vector v3 = v1 + v2; // v3 contient le vecteur (5, 7, 9)</code></pre>
+
+<p>En plus de la surcharge des opérateurs, il est également possible de définir des conversions de types personnalisées en utilisant des fonctions spéciales appelées "constructeurs de conversion" et "opérateurs de conversion". Ces fonctions permettent de convertir un objet d'un type à un autre de manière explicite ou implicite.</p>
+
+<p>Par exemple, voici comment définir un constructeur de conversion pour une classe <code>Point</code> qui représente un point dans un plan cartésien :</p>
+
+<pre><code>class Point {
+private:
+    double x, y;
+public:
+    Point(double a, double b) : x(a), y(b) {}
+    operator Vector() const {
+        return Vector(x, y, 0);
+    }
+};</code></pre>
+
+<p>Dans cet exemple, la fonction <code>operator Vector()</code> est définie comme une méthode de la classe <code>Point</code>. Elle retourne un nouvel objet <code>Vector</code> qui est créé à partir des coordonnées <code>x</code> et <code>y</code> du point, avec une valeur de <code>z</code> égale à zéro.</p>
+
+<p>Une fois le constructeur de conversion défini, un objet de type <code>Point</code> peut être converti en un objet de type <code>Vector</code> de manière implicite :</p>
+
+<pre><code>Point p(1, 2);
+Vector v = p; // p est converti en un vecteur (1, 2, 0)</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

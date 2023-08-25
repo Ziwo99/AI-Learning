@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1: Introduction au C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Historique et évolution du langage C++</h2>
+<p>Le langage de programmation C++ a été créé par Bjarne Stroustrup au début des années 1980. Il s'agit d'une extension du langage C, qui lui-même a été développé dans les années 1970 par Dennis Ritchie. L'objectif de Stroustrup était de créer un langage qui permettrait la programmation orientée objet tout en conservant la performance et l'efficacité du langage C.</p>
+
+<p>Au fil des années, le langage C++ a connu plusieurs versions, avec des améliorations et des ajouts de fonctionnalités. La première norme officielle du langage, appelée C++98, a été publiée en 1998. Depuis lors, plusieurs normes ont été publiées, notamment C++03, C++11, C++14, C++17 et la plus récente, C++20. Chaque nouvelle norme apporte de nouvelles fonctionnalités et améliorations au langage.</p>
+
+<h2>Les avantages et les utilisations du langage C++</h2>
+<p>Le langage C++ présente de nombreux avantages qui en font un choix populaire pour le développement de logiciels. Voici quelques-uns de ces avantages :</p>
+
+<ul>
+  <li><strong>Performance :</strong> Le langage C++ permet un contrôle précis de la mémoire et une gestion efficace des ressources, ce qui le rend particulièrement adapté aux applications nécessitant des performances élevées.</li>
+  <li><strong>Portabilité :</strong> Les programmes écrits en C++ peuvent être exécutés sur différentes plateformes, ce qui en fait un langage portable.</li>
+  <li><strong>Extensibilité :</strong> Le langage C++ permet d'ajouter de nouvelles fonctionnalités et de créer des bibliothèques personnalisées, ce qui facilite la réutilisation du code.</li>
+  <li><strong>Programmation orientée objet :</strong> C++ prend en charge la programmation orientée objet, ce qui permet une meilleure organisation et une meilleure modularité du code.</li>
+</ul>
+
+<p>En raison de ses avantages, le langage C++ est utilisé dans de nombreux domaines, tels que le développement de jeux vidéo, les systèmes embarqués, les applications de bureau, les logiciels de traitement d'image, les simulateurs, etc.</p>
+
+<h2>Les bases du langage C++ (syntaxe, types de données, variables, opérateurs)</h2>
+<p>Le langage C++ utilise une syntaxe similaire à celle du langage C, avec quelques ajouts et modifications. Voici les éléments de base du langage C++ :</p>
+
+<ul>
+  <li><strong>Syntaxe :</strong> Les instructions en C++ sont généralement terminées par un point-virgule (;). Le code est organisé en blocs délimités par des accolades ({})</li>
+  <li><strong>Types de données :</strong> C++ prend en charge différents types de données, tels que les entiers (int), les nombres à virgule flottante (float, double), les caractères (char), les booléens (bool), etc.</li>
+  <li><strong>Variables :</strong> Les variables en C++ sont utilisées pour stocker des valeurs. Elles doivent être déclarées avec leur type et peuvent être initialisées avec une valeur.</li>
+  <li><strong>Opérateurs :</strong> C++ prend en charge différents opérateurs, tels que les opérateurs arithmétiques (+, -, *, /), les opérateurs de comparaison (==, !=, <, >), les opérateurs logiques (&&, ||), etc.</li>
+</ul>
+
+<p>Voici un exemple de code C++ qui illustre l'utilisation de ces concepts :</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+int main() {
+  int a = 5;
+  int b = 3;
+  int sum = a + b;
+
+  std::cout &lt;&lt; "La somme de " &lt;&lt; a &lt;&lt; " et " &lt;&lt; b &lt;&lt; " est " &lt;&lt; sum &lt;&lt; std::endl;
+
+  return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons deux variables entières (a et b) et calculons leur somme. Ensuite, nous utilisons l'opérateur << pour afficher le résultat à l'écran.</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

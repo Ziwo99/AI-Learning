@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion de la mémoire en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les pointeurs et les références</h2>
+<p>En C++, les pointeurs et les références sont des outils puissants pour gérer la mémoire de manière efficace. Un pointeur est une variable qui contient l'adresse mémoire d'une autre variable, tandis qu'une référence est un alias d'une variable existante.</p>
+
+<p>Les pointeurs peuvent être déclarés en utilisant l'opérateur "*" suivi du type de données pointé, suivi du nom du pointeur. Par exemple, pour déclarer un pointeur vers un entier, nous pouvons utiliser la syntaxe suivante :</p>
+
+<pre><code>int* ptr;
+</code></pre>
+
+<p>Les références, quant à elles, sont déclarées en utilisant l'opérateur "&" suivi du type de données référencé, suivi du nom de la référence. Par exemple, pour déclarer une référence à un entier, nous pouvons utiliser la syntaxe suivante :</p>
+
+<pre><code>int&amp; ref = variable;
+</code></pre>
+
+<p>Il est important de noter que les pointeurs peuvent être réassignés pour pointer vers différentes adresses mémoire, tandis que les références sont liées à une variable existante et ne peuvent pas être réassignées.</p>
+
+<p>Les pointeurs et les références sont souvent utilisés pour passer des variables à des fonctions par référence plutôt que par valeur, ce qui permet d'économiser de la mémoire et d'améliorer les performances. Par exemple :</p>
+
+<pre><code>void increment(int&amp; num) {
+    num++;
+}
+
+int main() {
+    int x = 5;
+    increment(x);
+    // Maintenant, x vaut 6
+    return 0;
+}
+</code></pre>
+
+<h2>L'allocation dynamique de mémoire</h2>
+<p>En C++, il est possible d'allouer de la mémoire dynamiquement à l'aide des opérateurs "new" et "delete". Cela permet de créer des objets dont la taille est déterminée à l'exécution du programme.</p>
+
+<p>Pour allouer de la mémoire dynamiquement, nous utilisons l'opérateur "new" suivi du type de données que nous voulons allouer. Par exemple, pour allouer dynamiquement un entier, nous pouvons utiliser la syntaxe suivante :</p>
+
+<pre><code>int* ptr = new int;
+</code></pre>
+
+<p>Cette instruction alloue de la mémoire pour un entier et renvoie l'adresse de cette mémoire. Nous pouvons ensuite accéder à cette mémoire en utilisant le pointeur "ptr".</p>
+
+<p>Une fois que nous avons terminé d'utiliser la mémoire allouée dynamiquement, nous devons la libérer en utilisant l'opérateur "delete". Par exemple :</p>
+
+<pre><code>delete ptr;
+</code></pre>
+
+<p>Cette instruction libère la mémoire allouée précédemment pour l'entier pointé par "ptr". Il est important de noter que l'oubli de libérer la mémoire allouée dynamiquement peut entraîner des fuites de mémoire, ce qui peut provoquer des problèmes de performances et de stabilité du programme.</p>
+
+<h2>La gestion des ressources avec les destructeurs</h2>
+<p>En C++, la gestion des ressources peut être automatisée en utilisant des destructeurs. Un destructeur est une fonction spéciale qui est appelée lorsque l'objet est détruit, ce qui permet de libérer automatiquement les ressources allouées par cet objet.</p>
+
+<p>Pour définir un destructeur, nous utilisons le nom de la classe précédé d'un tilde (~). Par exemple :</p>
+
+<pre><code>class MyClass {
+public:
+    ~MyClass() {
+        // Code de libération des ressources
+    }
+};
+</code></pre>
+
+<p>Lorsque l'objet de la classe "MyClass" est détruit, le destructeur est automatiquement appelé et le code de libération des ressources peut être exécuté.</p>
+
+<p>Il est important de noter que les destructeurs sont appelés dans l'ordre inverse de la construction des objets. Cela signifie que si un objet A est créé avant un objet B, le destructeur de B sera appelé avant celui de A.</p>
+
+<p>Les destructeurs sont particulièrement utiles pour libérer la mémoire allouée dynamiquement à l'aide de l'opérateur "new". Par exemple :</p>
+
+<pre><code>class DynamicArray {
+private:
+    int* data;
+public:
+    DynamicArray(int size) {
+        data = new int[size];
+    }
+    ~DynamicArray() {
+        delete[] data;
+    }
+};
+</code></pre>
+
+<p>Dans cet exemple, le destructeur de la classe "DynamicArray" est responsable de la libération de la mémoire allouée dynamiquement pour le tableau "data". Lorsque l'objet "DynamicArray" est détruit, le destructeur est appelé et la mémoire est libérée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
