@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Intégration avec d'autres technologies</h2>
+					<a href="/AI-Learning/scala/scala.html"
+						class="button primary">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Utilisation de Scala avec Java</h2>
+<p>Scala est compatible avec Java, ce qui signifie que vous pouvez utiliser des bibliothèques Java existantes dans vos projets Scala. Pour utiliser du code Java dans Scala, vous pouvez simplement importer les classes Java et les utiliser comme vous le feriez normalement en Java.</p>
+
+<p>Voici un exemple de l'utilisation de code Java dans Scala :</p>
+<pre><code>import java.util.ArrayList;
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    val list = new ArrayList[String]()
+    list.add("Hello")
+    list.add("World")
+    
+    for (i &lt;- 0 until list.size()) {
+      println(list.get(i))
+    }
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous importons la classe ArrayList de Java et l'utilisons pour créer une liste de chaînes. Nous ajoutons ensuite des éléments à la liste et les parcourons à l'aide d'une boucle for.</p>
+
+<h2>Utilisation de Scala avec les bases de données</h2>
+<p>Scala offre une prise en charge native pour l'accès aux bases de données. Vous pouvez utiliser des bibliothèques comme Slick ou Quill pour interagir avec des bases de données relationnelles, ou des bibliothèques comme ReactiveMongo pour interagir avec des bases de données NoSQL.</p>
+
+<p>Voici un exemple d'utilisation de Slick pour interagir avec une base de données :</p>
+<pre><code>import slick.jdbc.MySQLProfile.api._
+
+object Main {
+  def main(args: Array[String]): Unit = {
+    val db = Database.forConfig("mydb")
+    
+    val users = TableQuery[Users]
+    
+    val query = users.filter(_.age &gt;= 18).result
+    
+    db.run(query).map(_.foreach(println))
+  }
+}
+
+class Users(tag: Tag) extends Table[(Int, String, Int)](tag, "users") {
+  def id = column[Int]("id", O.PrimaryKey)
+  def name = column[String]("name")
+  def age = column[Int]("age")
+  
+  def * = (id, name, age)
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons Slick pour interagir avec une table "users" dans une base de données. Nous définissons une classe Users qui représente la structure de la table, puis nous exécutons une requête pour récupérer tous les utilisateurs dont l'âge est supérieur ou égal à 18.</p>
+
+<h2>Utilisation de Scala avec les frameworks web (Play, Akka HTTP)</h2>
+<p>Scala est largement utilisé avec des frameworks web tels que Play et Akka HTTP pour le développement d'applications web. Ces frameworks offrent des fonctionnalités avancées pour la création de services web robustes et évolutifs.</p>
+
+<p>Voici un exemple d'utilisation de Play Framework pour créer un service web RESTful :</p>
+<pre><code>import play.api.mvc._
+
+class UserController extends Controller {
+  def getUser(id: Long) = Action {
+    // Récupérer l'utilisateur avec l'ID spécifié depuis la base de données
+    val user = User.findById(id)
+    
+    // Retourner une réponse JSON contenant les détails de l'utilisateur
+    Ok(Json.toJson(user))
+  }
+  
+  def createUser = Action(parse.json) { request =>
+    // Récupérer les données JSON de la requête
+    val userJson = request.body
+    
+    // Convertir les données JSON en objet User
+    val user = userJson.as[User]
+    
+    // Enregistrer l'utilisateur dans la base de données
+    User.save(user)
+    
+    // Retourner une réponse JSON indiquant que l'utilisateur a été créé avec succès
+    Ok(Json.obj("message" -&gt; "User created successfully"))
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons Play Framework pour créer un contrôleur UserController qui gère les requêtes liées aux utilisateurs. Nous avons des actions pour récupérer un utilisateur par son ID et pour créer un nouvel utilisateur à partir des données JSON fournies dans la requête.</p>
+
+<p>Avec Akka HTTP, vous pouvez créer des services web asynchrones et réactifs. Voici un exemple :</p>
+<pre><code>import akka.actor.ActorSystem
+import akka.http.scaladsl.Http
+import akka.http.scaladsl.server.Directives._
+import akka.stream.ActorMaterializer
+
+object Main extends App {
+  implicit val system = ActorSystem("my-system")
+  implicit val materializer = ActorMaterializer()
+  implicit val executionContext = system.dispatcher
+  
+  val route = path("hello") {
+    get {
+      complete("Hello, World!")
+    }
+  }
+  
+  val bindingFuture = Http().bindAndHandle(route, "localhost", 8080)
+  
+  println("Server started at http://localhost:8080/")
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons Akka HTTP pour créer un serveur web qui écoute les requêtes sur le chemin "/hello" et renvoie une réponse "Hello, World!".</p>
+
+<p>En utilisant ces frameworks web, vous pouvez créer des applications web puissantes et réactives en Scala.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section7.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

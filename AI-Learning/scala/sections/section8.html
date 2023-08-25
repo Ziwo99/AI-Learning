@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PYTHON Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Projets pratiques en Scala</h2>
+					<a href="/AI-Learning/scala/scala.html"
+						class="button primary">
+						&nbsp;Retour à la fiche du cours&nbsp;</a>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Création d'une application de gestion de tâches en Scala</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application de gestion de tâches en utilisant Scala. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+
+<p>Voici un exemple de code pour créer une classe Task en Scala :</p>
+
+<pre><code>class Task(val id: Int, val description: String, var isCompleted: Boolean) {
+  def markAsCompleted(): Unit = {
+    isCompleted = true
+  }
+}
+
+// Utilisation de la classe Task
+val task1 = new Task(1, "Faire les courses", false)
+println(task1.description) // Affiche "Faire les courses"
+task1.markAsCompleted()
+println(task1.isCompleted) // Affiche true
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe Task avec trois attributs : id, description et isCompleted. La méthode markAsCompleted() permet de marquer une tâche comme terminée en modifiant la valeur de isCompleted à true.</p>
+
+<h2>Développement d'un service web RESTful en Scala</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer un service web RESTful en utilisant Scala. Un service web RESTful permet aux clients d'effectuer des opérations CRUD (Create, Read, Update, Delete) sur des ressources via des requêtes HTTP.</p>
+
+<p>Voici un exemple de code pour créer une route GET pour récupérer toutes les tâches :</p>
+
+<pre><code>import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.server.Route
+
+val getAllTasks: Route = path("tasks") {
+  get {
+    complete {
+      // Récupérer toutes les tâches depuis la base de données
+      val tasks: List[Task] = TaskDAO.getAllTasks()
+      tasks
+    }
+  }
+}
+
+// Utilisation de la route getAllTasks
+val route: Route = getAllTasks
+
+// Exécution du service web
+Http().newServerAt("localhost", 8080).bind(route)
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons Akka HTTP pour créer une route GET qui renvoie toutes les tâches. La méthode complete permet de renvoyer les tâches récupérées depuis la base de données en tant que réponse HTTP.</p>
+
+<h2>Mise en œuvre d'un système de messagerie asynchrone en Scala</h2>
+<p>Dans cette sous-section, nous allons apprendre à mettre en œuvre un système de messagerie asynchrone en utilisant Scala. Un système de messagerie asynchrone permet aux différents composants d'une application de communiquer entre eux de manière asynchrone, c'est-à-dire sans bloquer l'exécution.</p>
+
+<p>Voici un exemple de code pour envoyer un message asynchrone :</p>
+
+<pre><code>import akka.actor.{Actor, ActorRef, ActorSystem, Props}
+
+case class Message(content: String)
+
+class Sender(receiver: ActorRef) extends Actor {
+  def receive: Receive = {
+    case message: Message =>
+      // Envoyer le message au destinataire
+      receiver ! message
+  }
+}
+
+class Receiver extends Actor {
+  def receive: Receive = {
+    case message: Message =>
+      // Traiter le message reçu
+      println("Message reçu : " + message.content)
+  }
+}
+
+// Création du système d'acteurs
+val system: ActorSystem = ActorSystem("MessagingSystem")
+
+// Création des acteurs
+val receiver: ActorRef = system.actorOf(Props[Receiver], "receiver")
+val sender: ActorRef = system.actorOf(Props(new Sender(receiver)), "sender")
+
+// Envoi d'un message asynchrone
+sender ! Message("Bonjour !")
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons Akka Actors pour créer deux acteurs : un acteur Sender et un acteur Receiver. L'acteur Sender envoie un message à l'acteur Receiver en utilisant l'opérateur !. L'acteur Receiver traite le message reçu en affichant son contenu.</p>
+
+<p>Ce sont là quelques exemples de projets pratiques que vous pouvez réaliser en Scala. N'hésitez pas à explorer davantage ces sujets et à développer vos propres projets pour approfondir vos compétences en Scala.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section9.html"
+								class="button primary">
+								Section suivante </a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
