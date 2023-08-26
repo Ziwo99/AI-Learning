@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Programmation orientée objet</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les concepts de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO repose sur quatre principes fondamentaux : l'encapsulation, l'abstraction, l'héritage et le polymorphisme.</p>
+
+<p>L'encapsulation est le mécanisme qui permet de regrouper des données et des méthodes dans une même entité appelée classe. Les données sont représentées par des variables appelées attributs, et les méthodes sont des fonctions qui agissent sur ces attributs. L'encapsulation permet de cacher les détails internes de la classe et de fournir une interface pour interagir avec les objets.</p>
+
+<p>L'abstraction consiste à représenter les objets du monde réel sous forme de classes et d'objets en utilisant uniquement les caractéristiques et les comportements pertinents. Par exemple, pour représenter une voiture, on peut créer une classe "Voiture" avec des attributs tels que la marque, le modèle et la couleur, ainsi que des méthodes telles que "démarrer" et "arrêter". L'abstraction permet de simplifier la complexité en se concentrant sur l'essentiel.</p>
+
+<p>L'héritage est un mécanisme qui permet de créer de nouvelles classes à partir de classes existantes. Une classe qui hérite d'une autre classe est appelée classe dérivée ou sous-classe, et la classe dont elle hérite est appelée classe de base ou superclasse. L'héritage permet de réutiliser le code existant, d'étendre les fonctionnalités d'une classe et de créer des hiérarchies de classes.</p>
+
+<p>Le polymorphisme est la capacité d'un objet à prendre différentes formes ou à se comporter de différentes manières en fonction du contexte. Par exemple, une classe "Animal" peut avoir des sous-classes telles que "Chien" et "Chat", qui ont des méthodes spécifiques à chaque classe. Le polymorphisme permet d'utiliser des objets de différentes classes de manière interchangeable.</p>
+
+<h2>Les classes et les objets en Python</h2>
+<p>En Python, une classe est définie en utilisant le mot-clé "class", suivi du nom de la classe. Par convention, le nom des classes commence par une lettre majuscule. Une classe peut avoir des attributs, des méthodes et des constructeurs.</p>
+
+<p>Les attributs sont des variables qui appartiennent à une classe ou à un objet. Ils sont définis à l'intérieur de la classe et peuvent être utilisés par toutes les instances de la classe. Les attributs peuvent être des variables de données ou des variables de méthode.</p>
+
+<p>Les méthodes sont des fonctions qui appartiennent à une classe ou à un objet. Elles sont définies à l'intérieur de la classe et peuvent être appelées sur les instances de la classe. Les méthodes peuvent prendre des paramètres et retourner des valeurs.</p>
+
+<p>Un constructeur est une méthode spéciale qui est appelée lors de la création d'un nouvel objet à partir d'une classe. En Python, le constructeur est défini en utilisant la méthode spéciale "__init__". Le constructeur peut prendre des paramètres pour initialiser les attributs de l'objet.</p>
+
+<pre><code>class Voiture:
+    def __init__(self, marque, modèle, couleur):
+        self.marque = marque
+        self.modèle = modèle
+        self.couleur = couleur
+
+    def démarrer(self):
+        print("La voiture démarre.")
+
+    def arrêter(self):
+        print("La voiture s'arrête.")
+
+# Création d'un objet à partir de la classe Voiture
+voiture1 = Voiture("Toyota", "Corolla", "bleue")
+
+# Appel des méthodes de l'objet
+voiture1.démarrer()
+voiture1.arrêter()
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe "Voiture" avec des attributs "marque", "modèle" et "couleur", ainsi que des méthodes "démarrer" et "arrêter". Nous avons ensuite créé un objet "voiture1" à partir de la classe "Voiture" et appelé les méthodes de l'objet.</p>
+
+<h2>L'héritage et le polymorphisme en Python</h2>
+<p>En Python, l'héritage est réalisé en spécifiant la classe de base entre parenthèses après le nom de la classe dérivée. La classe dérivée hérite de tous les attributs et méthodes de la classe de base.</p>
+
+<p>Le polymorphisme en Python permet d'utiliser des objets de différentes classes de manière interchangeable. Cela est possible grâce à la notion de méthode virtuelle, qui est une méthode définie dans une classe de base et redéfinie dans une classe dérivée.</p>
+
+<pre><code>class Animal:
+    def __init__(self, nom):
+        self.nom = nom
+
+    def faire_son_cri(self):
+        pass
+
+class Chien(Animal):
+    def faire_son_cri(self):
+        print("Le chien aboie.")
+
+class Chat(Animal):
+    def faire_son_cri(self):
+        print("Le chat miaule.")
+
+# Création d'objets à partir des classes dérivées
+chien1 = Chien("Max")
+chat1 = Chat("Minou")
+
+# Appel de la méthode faire_son_cri sur les objets
+chien1.faire_son_cri()
+chat1.faire_son_cri()
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe de base "Animal" avec un attribut "nom" et une méthode "faire_son_cri" qui est définie comme une méthode virtuelle. Nous avons ensuite créé deux classes dérivées "Chien" et "Chat" qui redéfinissent la méthode "faire_son_cri". Nous avons créé des objets "chien1" et "chat1" à partir des classes dérivées et appelé la méthode "faire_son_cri" sur ces objets.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

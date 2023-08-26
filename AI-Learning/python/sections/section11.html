@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Avancées en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les générateurs et les itérables</h2>
+<p>Les générateurs et les itérables sont des concepts avancés en Python qui permettent de créer des objets qui peuvent être itérés. Un itérable est un objet qui peut être parcouru séquentiellement, tandis qu'un générateur est une fonction spéciale qui produit une séquence de valeurs à la demande.</p>
+
+<p>Les générateurs sont souvent utilisés pour générer des séquences de valeurs de manière efficace, car ils ne calculent les valeurs que lorsque cela est nécessaire. Cela permet d'économiser de la mémoire et d'améliorer les performances.</p>
+
+<p>Voici un exemple de générateur simple qui génère les nombres de 1 à 5 :</p>
+
+<pre><code>def generate_numbers():
+    for i in range(1, 6):
+        yield i
+
+numbers = generate_numbers()
+
+for number in numbers:
+    print(number)
+</code></pre>
+
+<p>Dans cet exemple, la fonction generate_numbers() est un générateur qui utilise le mot-clé yield pour retourner les valeurs une par une. Lorsque la boucle for itère sur l'objet numbers, chaque valeur est générée à la demande.</p>
+
+<p>Les itérables, quant à eux, sont des objets qui implémentent la méthode spéciale __iter__() et qui peuvent être utilisés dans une boucle for. Voici un exemple d'itérable simple qui génère les nombres de 1 à 5 :</p>
+
+<pre><code>class Numbers:
+    def __init__(self):
+        self.start = 1
+        self.end = 6
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.start >= self.end:
+            raise StopIteration
+        else:
+            number = self.start
+            self.start += 1
+            return number
+
+numbers = Numbers()
+
+for number in numbers:
+    print(number)
+</code></pre>
+
+<p>Dans cet exemple, la classe Numbers implémente les méthodes spéciales __iter__() et __next__(), ce qui en fait un itérable. Lorsque la boucle for itère sur l'objet numbers, la méthode __next__() est appelée à chaque itération pour obtenir la prochaine valeur.</p>
+
+<h2>Les décorateurs</h2>
+<p>Les décorateurs sont une fonctionnalité avancée en Python qui permet de modifier le comportement d'une fonction existante en lui ajoutant du code supplémentaire. Les décorateurs sont souvent utilisés pour ajouter des fonctionnalités telles que la journalisation, la gestion des erreurs ou la mesure du temps d'exécution.</p>
+
+<p>Voici un exemple de décorateur simple qui mesure le temps d'exécution d'une fonction :</p>
+
+<pre><code>import time
+
+def measure_time(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        print(f"Execution time: {execution_time} seconds")
+        return result
+    return wrapper
+
+@measure_time
+def calculate_sum(a, b):
+    time.sleep(1)
+    return a + b
+
+result = calculate_sum(5, 10)
+print(result)
+</code></pre>
+
+<p>Dans cet exemple, la fonction measure_time() est un décorateur qui mesure le temps d'exécution de la fonction passée en argument. Le décorateur est appliqué à la fonction calculate_sum() à l'aide de la syntaxe @measure_time, ce qui signifie que la fonction calculate_sum() sera automatiquement enveloppée par le code du décorateur.</p>
+
+<h2>Les métaclasses</h2>
+<p>Les métaclasses sont un concept avancé en Python qui permet de définir le comportement des classes. Une métaclass est une classe dont les instances sont des classes. Les métaclasses sont souvent utilisées pour modifier le comportement de l'héritage, ajouter des attributs ou des méthodes aux classes, ou encore pour créer des classes dynamiquement.</p>
+
+<p>Voici un exemple simple de métaclass qui ajoute un attribut à toutes les classes définies avec cette métaclass :</p>
+
+<pre><code>class MyMeta(type):
+    def __new__(cls, name, bases, attrs):
+        attrs['my_attribute'] = 42
+        return super().__new__(cls, name, bases, attrs)
+
+class MyClass(metaclass=MyMeta):
+    pass
+
+print(MyClass.my_attribute)
+</code></pre>
+
+<p>Dans cet exemple, la classe MyMeta est une métaclass qui redéfinit la méthode spéciale __new__() pour ajouter l'attribut my_attribute à toutes les classes définies avec cette métaclass. La classe MyClass est définie avec la métaclass MyMeta, ce qui fait que l'attribut my_attribute est présent dans la classe MyClass.</p>
+
+<p>Les métaclasses sont un sujet avancé en Python et leur utilisation doit être soigneusement considérée. Elles offrent une grande flexibilité, mais peuvent également rendre le code plus complexe et difficile à comprendre.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

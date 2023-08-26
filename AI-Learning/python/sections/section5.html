@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Manipulation de fichiers et gestion des erreurs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>La lecture et l'écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes en Python. Pour lire le contenu d'un fichier, nous utilisons la fonction <code>open()</code> avec le mode de lecture approprié. Voici un exemple :</p>
+
+<pre><code>file = open('mon_fichier.txt', 'r')
+content = file.read()
+file.close()
+print(content)</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier "mon_fichier.txt" en mode lecture ('r'), nous lisons son contenu avec la méthode <code>read()</code>, puis nous fermons le fichier avec la méthode <code>close()</code>. Ensuite, nous affichons le contenu du fichier.</p>
+
+<p>Pour écrire dans un fichier, nous utilisons la fonction <code>open()</code> avec le mode d'écriture approprié. Voici un exemple :</p>
+
+<pre><code>file = open('mon_fichier.txt', 'w')
+file.write('Contenu à écrire dans le fichier')
+file.close()</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier "mon_fichier.txt" en mode écriture ('w'), nous écrivons le contenu spécifié avec la méthode <code>write()</code>, puis nous fermons le fichier avec la méthode <code>close()</code>.</p>
+
+<h2>La gestion des exceptions et des erreurs</h2>
+<p>La gestion des exceptions et des erreurs est essentielle pour garantir la robustesse de nos programmes. En Python, nous utilisons des blocs <code>try</code> et <code>except</code> pour gérer les exceptions. Voici un exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    file = open('mon_fichier.txt', 'r')
+    content = file.read()
+    file.close()
+    print(content)
+except FileNotFoundError:
+    # Code à exécuter si une exception de type FileNotFoundError est levée
+    print("Le fichier n'a pas été trouvé")
+except:
+    # Code à exécuter si une exception de tout autre type est levée
+    print("Une erreur s'est produite")</code></pre>
+
+<p>Dans cet exemple, nous essayons d'ouvrir le fichier "mon_fichier.txt" en mode lecture. Si le fichier n'est pas trouvé, une exception de type FileNotFoundError est levée et le code dans le bloc <code>except FileNotFoundError</code> est exécuté. Si une exception de tout autre type est levée, le code dans le bloc <code>except</code> est exécuté.</p>
+
+<p>Il est également possible d'utiliser un bloc <code>finally</code> pour exécuter du code quel que soit le résultat du bloc <code>try</code>. Voici un exemple :</p>
+
+<pre><code>try:
+    # Code susceptible de générer une exception
+    file = open('mon_fichier.txt', 'r')
+    content = file.read()
+    file.close()
+    print(content)
+except FileNotFoundError:
+    # Code à exécuter si une exception de type FileNotFoundError est levée
+    print("Le fichier n'a pas été trouvé")
+except:
+    # Code à exécuter si une exception de tout autre type est levée
+    print("Une erreur s'est produite")
+finally:
+    # Code à exécuter quel que soit le résultat du bloc try
+    print("Fin du programme")</code></pre>
+
+<p>Dans cet exemple, le code dans le bloc <code>finally</code> est exécuté après l'exécution du bloc <code>try</code> ou du bloc <code>except</code>.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

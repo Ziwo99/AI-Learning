@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Fonctions et modules</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les fonctions et leurs paramètres</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Elles permettent d'organiser et de structurer le code en le divisant en tâches plus petites et plus gérables. En Python, une fonction est définie à l'aide du mot-clé "def" suivi du nom de la fonction et de ses paramètres entre parenthèses.</p>
+
+<p>Voici un exemple de fonction simple qui affiche un message :</p>
+
+<pre><code>def say_hello():
+    print("Bonjour !")
+
+say_hello()  # Appel de la fonction</code></pre>
+
+<p>Les paramètres sont des valeurs que l'on peut passer à une fonction pour qu'elle les utilise dans son exécution. Les paramètres sont définis entre parenthèses lors de la définition de la fonction.</p>
+
+<p>Voici un exemple de fonction qui prend un paramètre :</p>
+
+<pre><code>def say_hello(name):
+    print("Bonjour", name)
+
+say_hello("Alice")  # Appel de la fonction avec un argument</code></pre>
+
+<p>Il est également possible de définir des valeurs par défaut pour les paramètres d'une fonction. Cela permet de rendre ces paramètres optionnels lors de l'appel de la fonction.</p>
+
+<p>Voici un exemple de fonction avec un paramètre ayant une valeur par défaut :</p>
+
+<pre><code>def say_hello(name=""):
+    if name:
+        print("Bonjour", name)
+    else:
+        print("Bonjour à tous")
+
+say_hello()  # Appel de la fonction sans argument
+say_hello("Alice")  # Appel de la fonction avec un argument</code></pre>
+
+<h2>Les fonctions récursives</h2>
+<p>Une fonction récursive est une fonction qui s'appelle elle-même dans son propre corps. Cela permet de résoudre des problèmes en les divisant en sous-problèmes plus petits.</p>
+
+<p>Voici un exemple de fonction récursive qui calcule la factorielle d'un nombre :</p>
+
+<pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+result = factorial(5)
+print("Le résultat est", result)</code></pre>
+
+<p>La fonction "factorial" s'appelle elle-même avec un argument plus petit à chaque itération, jusqu'à atteindre le cas de base où n est égal à zéro.</p>
+
+<h2>Les modules et l'importation de modules externes</h2>
+<p>Un module est un fichier contenant du code Python qui peut être importé et utilisé dans d'autres programmes. Les modules permettent d'organiser le code en regroupant des fonctionnalités similaires.</p>
+
+<p>Pour importer un module, on utilise le mot-clé "import" suivi du nom du module :</p>
+
+<pre><code>import math
+
+result = math.sqrt(16)
+print("La racine carrée de 16 est", result)</code></pre>
+
+<p>Il est également possible d'importer uniquement certaines fonctions ou classes d'un module :</p>
+
+<pre><code>from math import sqrt
+
+result = sqrt(16)
+print("La racine carrée de 16 est", result)</code></pre>
+
+<p>Il est également possible de renommer un module lors de l'importation :</p>
+
+<pre><code>import math as m
+
+result = m.sqrt(16)
+print("La racine carrée de 16 est", result)</code></pre>
+
+<p>Il existe de nombreux modules disponibles dans la bibliothèque standard de Python, qui offrent des fonctionnalités supplémentaires telles que la manipulation de dates, la génération de nombres aléatoires, etc.</p>
+
+<p>Il est également possible d'installer des modules externes à l'aide de l'outil "pip". Par exemple, pour installer le module "requests", on peut exécuter la commande suivante dans le terminal :</p>
+
+<pre><code>pip install requests</code></pre>
+
+<p>Une fois le module installé, on peut l'importer et l'utiliser dans notre programme.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

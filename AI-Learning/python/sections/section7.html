@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Manipulation de données avec Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+
+<h2>Les opérations sur les chaînes de caractères</h2>
+<p>Les chaînes de caractères sont des séquences de caractères, et Python offre de nombreuses fonctionnalités pour les manipuler.</p>
+<p>Voici quelques opérations courantes sur les chaînes de caractères :</p>
+<pre><code># Création d'une chaîne de caractères
+texte = "Bonjour, comment ça va ?"
+
+# Longueur d'une chaîne de caractères
+longueur = len(texte)
+print("La longueur de la chaîne de caractères est :", longueur)
+
+# Concaténation de chaînes de caractères
+nom = "John"
+prenom = "Doe"
+nom_complet = prenom + " " + nom
+print("Le nom complet est :", nom_complet)
+
+# Accès à un caractère spécifique
+premier_caractere = texte[0]
+print("Le premier caractère est :", premier_caractere)
+
+# Recherche d'un mot dans une chaîne de caractères
+mot = "comment"
+if mot in texte:
+    print("Le mot", mot, "a été trouvé dans la chaîne de caractères.")
+else:
+    print("Le mot", mot, "n'a pas été trouvé dans la chaîne de caractères.")
+
+# Remplacement d'un mot dans une chaîne de caractères
+nouveau_texte = texte.replace("comment", "quel")
+print("Le nouveau texte est :", nouveau_texte)</code></pre>
+
+<h2>Les expressions régulières</h2>
+<p>Les expressions régulières sont des motifs utilisés pour rechercher et manipuler des chaînes de caractères selon des règles spécifiques.</p>
+<p>Voici comment utiliser les expressions régulières en Python :</p>
+<pre><code>import re
+
+# Recherche d'un motif dans une chaîne de caractères
+texte = "Bonjour, je m'appelle John Doe."
+motif = r"John Doe"
+resultat = re.search(motif, texte)
+if resultat:
+    print("Le motif a été trouvé dans la chaîne de caractères.")
+else:
+    print("Le motif n'a pas été trouvé dans la chaîne de caractères.")
+
+# Remplacement d'un motif dans une chaîne de caractères
+nouveau_texte = re.sub(motif, "Jane Smith", texte)
+print("Le nouveau texte est :", nouveau_texte)</code></pre>
+
+<h2>Les opérations sur les fichiers CSV et JSON</h2>
+<p>Python offre des fonctionnalités intégrées pour lire et écrire des fichiers CSV et JSON.</p>
+<p>Voici comment manipuler des fichiers CSV et JSON en Python :</p>
+<pre><code># Lecture d'un fichier CSV
+import csv
+
+with open('fichier.csv', 'r') as fichier:
+    lecteur_csv = csv.reader(fichier)
+    for ligne in lecteur_csv:
+        print(ligne)
+
+# Écriture dans un fichier CSV
+donnees = [['Nom', 'Âge'], ['John Doe', '30'], ['Jane Smith', '25']]
+with open('nouveau_fichier.csv', 'w') as fichier:
+    ecrivain_csv = csv.writer(fichier)
+    ecrivain_csv.writerows(donnees)
+
+# Lecture d'un fichier JSON
+import json
+
+with open('fichier.json', 'r') as fichier:
+    donnees_json = json.load(fichier)
+    print(donnees_json)
+
+# Écriture dans un fichier JSON
+donnees = {'nom': 'John Doe', 'age': 30}
+with open('nouveau_fichier.json', 'w') as fichier:
+    json.dump(donnees, fichier)</code></pre>
+
+<h2>Les bases de données et l'accès aux bases de données avec Python</h2>
+<p>Python offre une variété de bibliothèques pour interagir avec des bases de données, telles que SQLite, MySQL, PostgreSQL, etc.</p>
+<p>Voici comment accéder à une base de données et effectuer des opérations courantes en Python :</p>
+<pre><code># Connexion à une base de données SQLite
+import sqlite3
+
+connexion = sqlite3.connect('ma_base_de_donnees.db')
+curseur = connexion.cursor()
+
+# Création d'une table
+curseur.execute("CREATE TABLE IF NOT EXISTS utilisateurs (id INTEGER PRIMARY KEY, nom TEXT, age INTEGER)")
+
+# Insertion de données dans la table
+curseur.execute("INSERT INTO utilisateurs (nom, age) VALUES (?, ?)", ('John Doe', 30))
+curseur.execute("INSERT INTO utilisateurs (nom, age) VALUES (?, ?)", ('Jane Smith', 25))
+connexion.commit()
+
+# Sélection de données dans la table
+curseur.execute("SELECT * FROM utilisateurs")
+resultat = curseur.fetchall()
+for ligne in resultat:
+    print(ligne)
+
+# Fermeture de la connexion à la base de données
+connexion.close()</code></pre>
+
+<h2>Conclusion</h2>
+<p>Dans cette section, nous avons exploré différentes techniques de manipulation de données avec Python. Nous avons appris à effectuer des opérations sur les chaînes de caractères, à utiliser des expressions régulières, à manipuler des fichiers CSV et JSON, ainsi qu'à accéder et interagir avec des bases de données.</p>
+<p>Ces compétences sont essentielles pour travailler avec des données dans de nombreux domaines, tels que l'analyse de données, le développement web et bien d'autres.</p>
+<p>Continuez à pratiquer ces techniques et à explorer d'autres fonctionnalités de Python pour devenir un expert en manipulation de données.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
