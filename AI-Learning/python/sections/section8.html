@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Traitement des données et analyse avec Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la bibliothèque NumPy</h2>
+<p>
+La bibliothèque NumPy est l'une des bibliothèques les plus populaires en Python pour le traitement des données numériques. Elle fournit des structures de données de tableau multidimensionnel, ainsi que des fonctions mathématiques pour manipuler ces tableaux. NumPy est largement utilisé dans le domaine de l'analyse de données, de l'apprentissage automatique et de la science des données.
+</p>
+<p>
+Pour utiliser NumPy, vous devez d'abord l'installer. Vous pouvez le faire en exécutant la commande suivante dans votre terminal :
+</p>
+<pre><code>pip install numpy</code></pre>
+<p>
+Une fois installé, vous pouvez importer NumPy dans votre code Python en utilisant l'instruction suivante :
+</p>
+<pre><code>import numpy as np</code></pre>
+
+<h2>Manipulation de tableaux multidimensionnels</h2>
+<p>
+NumPy offre une structure de données appelée "ndarray" (n-dimensional array) pour représenter des tableaux multidimensionnels. Ces tableaux peuvent avoir une ou plusieurs dimensions et peuvent contenir des éléments de même type de données.
+</p>
+<p>
+Pour créer un tableau NumPy, vous pouvez utiliser la fonction "array" en passant une liste ou un tuple contenant les éléments du tableau. Par exemple, pour créer un tableau à une dimension, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>arr = np.array([1, 2, 3, 4, 5])</code></pre>
+<p>
+Vous pouvez également créer des tableaux multidimensionnels en passant une liste de listes ou un tuple de tuples. Par exemple, pour créer un tableau à deux dimensions, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>arr = np.array([[1, 2, 3], [4, 5, 6]])</code></pre>
+<p>
+Une fois que vous avez créé un tableau NumPy, vous pouvez accéder à ses éléments en utilisant des indices. Par exemple, pour accéder au premier élément d'un tableau à une dimension, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>print(arr[0])</code></pre>
+<p>
+Pour accéder à un élément spécifique d'un tableau à deux dimensions, vous pouvez utiliser des indices séparés par des virgules. Par exemple, pour accéder à l'élément à la deuxième ligne et à la troisième colonne d'un tableau à deux dimensions, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>print(arr[1, 2])</code></pre>
+
+<h2>Calculs mathématiques et statistiques</h2>
+<p>
+NumPy offre de nombreuses fonctions mathématiques pour effectuer des calculs sur les tableaux. Vous pouvez effectuer des opérations arithmétiques de base, telles que l'addition, la soustraction, la multiplication et la division, sur les tableaux NumPy. Par exemple, pour ajouter deux tableaux ensemble, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+result = arr1 + arr2
+print(result)</code></pre>
+<p>
+NumPy offre également des fonctions mathématiques avancées, telles que la racine carrée, le logarithme, le sinus, le cosinus, etc. Vous pouvez utiliser ces fonctions en passant le tableau sur lequel vous souhaitez effectuer le calcul. Par exemple, pour calculer la racine carrée de chaque élément d'un tableau, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>arr = np.array([1, 4, 9])
+result = np.sqrt(arr)
+print(result)</code></pre>
+
+<h2>Visualisation de données avec Matplotlib</h2>
+<p>
+Matplotlib est une bibliothèque de visualisation de données en Python. Elle permet de créer des graphiques, des diagrammes et des visualisations à partir des données. Matplotlib est souvent utilisé en conjonction avec NumPy pour visualiser les résultats d'analyses de données.
+</p>
+<p>
+Pour utiliser Matplotlib, vous devez d'abord l'installer. Vous pouvez le faire en exécutant la commande suivante dans votre terminal :
+</p>
+<pre><code>pip install matplotlib</code></pre>
+<p>
+Une fois installé, vous pouvez importer Matplotlib dans votre code Python en utilisant l'instruction suivante :
+</p>
+<pre><code>import matplotlib.pyplot as plt</code></pre>
+<p>
+Pour créer un graphique avec Matplotlib, vous devez d'abord créer des données à visualiser. Vous pouvez ensuite utiliser les fonctions de Matplotlib pour créer différents types de graphiques, tels que des graphiques linéaires, des graphiques à barres, des graphiques circulaires, etc. Par exemple, pour créer un graphique linéaire à partir de deux tableaux NumPy, vous pouvez utiliser le code suivant :
+</p>
+<pre><code>x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 6, 8, 10])
+plt.plot(x, y)
+plt.show()</code></pre>
+<p>
+Ce code créera un graphique linéaire avec les valeurs de "x" sur l'axe des abscisses et les valeurs de "y" sur l'axe des ordonnées.
+</p>
+<p>
+Il existe de nombreuses autres fonctionnalités et options de personnalisation disponibles dans Matplotlib pour créer des visualisations de données plus avancées. Vous pouvez consulter la documentation officielle de Matplotlib pour en savoir plus sur ces fonctionnalités.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

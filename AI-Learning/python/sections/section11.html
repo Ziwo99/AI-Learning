@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Projets pratiques en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un jeu simple</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un jeu simple en utilisant Python. Nous allons utiliser les concepts que nous avons appris jusqu'à présent pour créer un jeu interactif.</p>
+
+<p>Voici un exemple de code pour créer un jeu simple de devinettes :</p>
+
+<pre><code>import random
+
+number = random.randint(1, 10)
+guess = 0
+tries = 0
+
+print("Bienvenue dans le jeu de devinettes !")
+print("Je pense à un nombre entre 1 et 10. Pouvez-vous le deviner ?")
+
+while guess != number:
+    guess = int(input("Entrez votre estimation : "))
+    tries += 1
+
+    if guess < number:
+        print("Trop bas ! Essayez encore.")
+    elif guess > number:
+        print("Trop haut ! Essayez encore.")
+
+print("Félicitations ! Vous avez deviné le nombre en", tries, "essais.")</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module random pour générer un nombre aléatoire entre 1 et 10. Ensuite, nous demandons à l'utilisateur de deviner le nombre en utilisant la fonction input(). Nous comparons ensuite la supposition de l'utilisateur avec le nombre généré et fournissons des indications appropriées. Le jeu continue jusqu'à ce que l'utilisateur devine correctement le nombre.</p>
+
+<h2>Développement d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer une application de gestion de tâches en utilisant Python. Cette application nous permettra de créer, afficher, mettre à jour et supprimer des tâches.</p>
+
+<p>Voici un exemple de code pour développer une application de gestion de tâches :</p>
+
+<pre><code>tasks = []
+
+def add_task():
+    task = input("Entrez la tâche : ")
+    tasks.append(task)
+    print("Tâche ajoutée avec succès !")
+
+def view_tasks():
+    if len(tasks) == 0:
+        print("Aucune tâche trouvée.")
+    else:
+        print("Liste des tâches :")
+        for task in tasks:
+            print(task)
+
+def update_task():
+    task_index = int(input("Entrez l'index de la tâche à mettre à jour : "))
+    if task_index < len(tasks):
+        new_task = input("Entrez la nouvelle tâche : ")
+        tasks[task_index] = new_task
+        print("Tâche mise à jour avec succès !")
+    else:
+        print("Index de tâche invalide.")
+
+def delete_task():
+    task_index = int(input("Entrez l'index de la tâche à supprimer : "))
+    if task_index < len(tasks):
+        tasks.pop(task_index)
+        print("Tâche supprimée avec succès !")
+    else:
+        print("Index de tâche invalide.")
+
+while True:
+    print("Que souhaitez-vous faire ?")
+    print("1. Ajouter une tâche")
+    print("2. Afficher les tâches")
+    print("3. Mettre à jour une tâche")
+    print("4. Supprimer une tâche")
+    print("5. Quitter")
+
+    choice = int(input("Entrez votre choix : "))
+
+    if choice == 1:
+        add_task()
+    elif choice == 2:
+        view_tasks()
+    elif choice == 3:
+        update_task()
+    elif choice == 4:
+        delete_task()
+    elif choice == 5:
+        break
+    else:
+        print("Choix invalide. Veuillez réessayer.")</code></pre>
+
+<p>Dans cet exemple, nous utilisons une liste pour stocker les tâches. L'utilisateur peut ajouter une tâche, afficher toutes les tâches, mettre à jour une tâche existante ou supprimer une tâche. Le programme continue à afficher un menu jusqu'à ce que l'utilisateur choisisse de quitter.</p>
+
+<h2>Création d'un site web dynamique</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un site web dynamique en utilisant Python. Nous utiliserons un framework web tel que Django ou Flask pour faciliter le processus de développement.</p>
+
+<p>Voici un exemple de code pour créer un site web dynamique en utilisant Flask :</p>
+
+<pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+
+<p>Dans cet exemple, nous utilisons le framework Flask pour créer un site web avec trois pages : index, about et contact. Chaque page est associée à une fonction qui renvoie un modèle HTML correspondant. Les modèles HTML peuvent être créés en utilisant des fichiers séparés et rendus à l'aide de la fonction render_template(). Le serveur web est démarré en exécutant le fichier Python.</p>
+
+<p>Ce sont quelques exemples de projets pratiques que vous pouvez réaliser en utilisant Python. N'hésitez pas à explorer davantage et à développer vos propres projets en utilisant les connaissances que vous avez acquises.</p>
+
+<h1>Section 12 : Ressources supplémentaires et communauté Python</h1>
+
+<h2>Sous-section 1: Sites web et forums de référence</h2>
+<p>Voici quelques sites web et forums de référence pour approfondir vos connaissances en Python :</p>
+<ul>
+  <li><a href="https://www.python.org/">Site officiel de Python</a></li>
+  <li><a href="https://docs.python.org/">Documentation officielle de Python</a></li>
+  <li><a href="https://stackoverflow.com/questions/tagged/python">Stack Overflow - Questions et réponses Python</a></li>
+  <li><a href="https://www.reddit.com/r/Python/">Reddit - Communauté Python</a></li>
+</ul>
+
+<h2>Sous-section 2: Livres et tutoriels recommandés</h2>
+<p>Voici quelques livres et tutoriels recommandés pour approfondir vos connaissances en Python :</p>
+<ul>
+  <li>"Apprenez à programmer avec Python" de Gérard Swinnen</li>
+  <li>"Python Crash Course" d'Eric Matthes</li>
+  <li>"Automate the Boring Stuff with Python" d'Al Sweigart</li>
+  <li><a href="https://realpython.com/">Real Python - Tutoriels Python</a></li>
+</ul>
+
+<h2>Sous-section 3: Participation à des projets open source</h2>
+<p>La participation à des projets open source est un excellent moyen d'améliorer vos compétences en Python et de contribuer à la communauté. Voici quelques projets open source populaires en Python :</p>
+<ul>
+  <li><a href="https://github.com/django/django">Django - Framework web</a></li>
+  <li><a href="https://github.com/pallets/flask">Flask - Framework web</a></li>
+  <li><a href="https://github.com/numpy/numpy">NumPy - Bibliothèque pour le calcul scientifique</a></li>
+  <li><a href="https://github.com/pandas-dev/pandas">Pandas - Bibliothèque pour la manipulation de données</a></li>
+</ul>
+
+<h2>Sous-section 4: Événements et conférences Python</h2>
+<p>Les événements et conférences Python sont d'excellentes occasions de rencontrer d'autres développeurs Python et d'en apprendre davantage sur les dernières tendances et avancées dans le domaine. Voici quelques événements et conférences Python populaires :</p>
+<ul>
+  <li><a href="https://www.pycon.org/">PyCon</a></li>
+  <li><a href="https://www.europython.eu/">EuroPython</a></li>
+  <li><a href="https://www.python.org/community/workshops/">Ateliers Python</a></li>
+</ul>
+
+<p>Utilisez ces ressources supplémentaires pour continuer à développer vos compétences en Python et rester à jour avec les dernières nouveautés de la communauté.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

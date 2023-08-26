@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Développement web avec Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux frameworks web (Django, Flask)</h2>
+<p>
+Les frameworks web sont des outils puissants qui facilitent le développement d'applications web en utilisant Python. Deux des frameworks web les plus populaires en Python sont Django et Flask.
+</p>
+<p>
+Django est un framework web complet qui suit le principe du "batteries included". Il fournit une structure solide pour le développement d'applications web, avec des fonctionnalités telles que la gestion des bases de données, l'authentification des utilisateurs, la gestion des formulaires, etc. Django suit le modèle MVC (Modèle-Vue-Contrôleur) et est largement utilisé pour le développement d'applications web complexes.
+</p>
+<p>
+Flask, quant à lui, est un micro-framework web qui est plus minimaliste et flexible. Il offre une plus grande liberté aux développeurs pour choisir les composants qu'ils souhaitent utiliser dans leur application. Flask suit le modèle MV (Modèle-Vue) et est souvent utilisé pour le développement d'applications web plus légères et plus simples.
+</p>
+
+<h2>Création d'une application web simple</h2>
+<p>
+Pour créer une application web simple en utilisant Python, nous pouvons utiliser Flask comme exemple. Voici les étapes de base pour créer une application web simple avec Flask :
+</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<p>
+Dans cet exemple, nous importons la classe Flask du module flask, puis nous créons une instance de l'application Flask. Ensuite, nous utilisons le décorateur @app.route('/') pour définir une route pour l'URL racine de notre application. Lorsque cette route est accédée, la fonction hello() est appelée et renvoie la chaîne de caractères "Hello, World!".
+</p>
+<p>
+Pour exécuter notre application, nous utilisons la condition if __name__ == '__main__' pour nous assurer que le script est exécuté directement et non importé en tant que module. Ensuite, nous appelons la méthode run() de notre instance d'application Flask pour lancer le serveur web intégré.
+</p>
+
+<h2>Gestion des formulaires et des bases de données</h2>
+<p>
+La gestion des formulaires et des bases de données est une partie essentielle du développement d'applications web. Les frameworks web Python tels que Django et Flask offrent des fonctionnalités intégrées pour faciliter cette gestion.
+</p>
+<p>
+Pour la gestion des formulaires, Django propose un module appelé "forms" qui permet de créer facilement des formulaires HTML et de les valider côté serveur. Il fournit également des fonctionnalités pour gérer les erreurs de validation et afficher des messages d'erreur appropriés aux utilisateurs.
+</p>
+<p>
+Flask, quant à lui, offre une extension appelée "Flask-WTF" qui facilite la création de formulaires et leur validation. Cette extension utilise la bibliothèque WTForms pour gérer les formulaires et offre des fonctionnalités similaires à celles de Django.
+</p>
+<p>
+En ce qui concerne la gestion des bases de données, Django propose un ORM (Object-Relational Mapping) intégré qui permet de manipuler les données de la base de données en utilisant des objets Python. Il prend en charge plusieurs bases de données populaires telles que MySQL, PostgreSQL, SQLite, etc.
+</p>
+<p>
+Flask, d'autre part, n'a pas d'ORM intégré, mais il est compatible avec plusieurs ORM populaires tels que SQLAlchemy et Peewee. Ces ORM offrent des fonctionnalités similaires à celles de Django pour la manipulation des données de la base de données.
+</p>
+
+<h2>Sécurité et authentification</h2>
+<p>
+La sécurité et l'authentification sont des aspects critiques du développement d'applications web. Les frameworks web Python offrent des fonctionnalités intégrées pour aider à sécuriser les applications et à gérer l'authentification des utilisateurs.
+</p>
+<p>
+Django propose un système d'authentification complet qui gère l'inscription des utilisateurs, la connexion, la déconnexion, la réinitialisation des mots de passe, etc. Il prend en charge différentes méthodes d'authentification telles que l'authentification par nom d'utilisateur/mot de passe, l'authentification par e-mail, l'authentification par réseaux sociaux, etc.
+</p>
+<p>
+Flask, d'autre part, n'a pas de système d'authentification intégré, mais il est compatible avec des extensions telles que Flask-Login qui facilitent la gestion de l'authentification des utilisateurs. Ces extensions offrent des fonctionnalités similaires à celles de Django pour l'authentification des utilisateurs.
+</p>
+
+<p>
+Ceci conclut la section 7 sur le développement web avec Python. Dans cette section, nous avons exploré les frameworks web Django et Flask, appris à créer une application web simple, à gérer les formulaires et les bases de données, ainsi qu'à sécuriser nos applications et à gérer l'authentification des utilisateurs. Dans la prochaine section, nous aborderons le traitement des données et l'analyse avec Python.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
