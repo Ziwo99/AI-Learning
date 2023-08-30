@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Bonnes pratiques et astuces pour l'utilisation de Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Bonnes pratiques de gestion des images et des conteneurs Docker</h2>
+<p>Lors de la gestion des images et des conteneurs Docker, il est important de suivre certaines bonnes pratiques pour assurer une utilisation efficace et sécurisée de Docker.</p>
+
+<p>1. Utilisez des noms significatifs pour vos images et conteneurs Docker afin de faciliter leur identification et leur gestion. Évitez d'utiliser des noms génériques ou des noms par défaut.</p>
+
+<p>2. Évitez d'utiliser des images Docker obsolètes ou non maintenues. Assurez-vous de toujours utiliser des images Docker officielles ou des images provenant de sources fiables et régulièrement mises à jour.</p>
+
+<p>3. Limitez le nombre d'images et de conteneurs inutilisés sur votre système. Supprimez régulièrement les images et les conteneurs qui ne sont plus nécessaires pour libérer de l'espace et améliorer les performances.</p>
+
+<p>4. Utilisez des tags pour versionner vos images Docker. Cela vous permettra de gérer facilement les différentes versions de vos images et de revenir à une version antérieure si nécessaire.</p>
+
+<p>5. Évitez d'exposer des ports inutiles dans vos conteneurs Docker. Limitez l'exposition des ports uniquement aux services nécessaires et utilisez des mécanismes de sécurité supplémentaires, tels que les règles de pare-feu, pour protéger vos conteneurs.</p>
+
+<p>6. Utilisez des volumes Docker pour stocker les données persistantes générées par vos conteneurs. Évitez de stocker des données importantes à l'intérieur des conteneurs eux-mêmes, car cela peut entraîner une perte de données en cas de suppression ou de mise à jour de l'image.</p>
+
+<p>7. Utilisez des outils de gestion des images et des conteneurs Docker, tels que Docker Compose, pour faciliter le déploiement et la gestion de vos applications multi-conteneurs.</p>
+
+<h2>Astuces pour optimiser les performances des conteneurs Docker</h2>
+<p>Pour optimiser les performances de vos conteneurs Docker, vous pouvez suivre ces astuces :</p>
+
+<p>1. Limitez les ressources allouées à chaque conteneur Docker en utilisant les options de limitation de mémoire et de CPU. Cela permettra d'éviter les problèmes de performances liés à une utilisation excessive des ressources.</p>
+
+<p>2. Utilisez des images Docker légères et optimisées pour réduire la taille des conteneurs et améliorer les temps de démarrage.</p>
+
+<p>3. Évitez d'exécuter des processus inutiles à l'intérieur des conteneurs Docker. Limitez les services et les applications en cours d'exécution pour réduire la charge sur le système.</p>
+
+<p>4. Utilisez des réseaux Docker internes pour communiquer entre les conteneurs plutôt que d'utiliser des connexions réseau externes. Cela réduira la latence et améliorera les performances.</p>
+
+<p>5. Utilisez des outils de surveillance des performances, tels que cAdvisor, pour suivre les métriques des conteneurs Docker et identifier les goulots d'étranglement potentiels.</p>
+
+<h2>Utilisation de Docker dans un environnement de développement</h2>
+<p>Docker peut être utilisé de manière efficace dans un environnement de développement pour faciliter la configuration et la gestion des environnements de développement.</p>
+
+<p>1. Utilisez des images Docker pour créer des environnements de développement reproductibles. Vous pouvez définir les dépendances et les configurations requises dans un fichier Dockerfile, ce qui permet à toute l'équipe de développement de travailler avec le même environnement.</p>
+
+<p>2. Utilisez Docker Compose pour définir et gérer des environnements de développement multi-conteneurs. Cela facilite la configuration et la gestion des services interdépendants.</p>
+
+<p>3. Utilisez des volumes Docker pour partager des fichiers entre votre machine hôte et les conteneurs Docker. Cela vous permettra de modifier facilement le code source sans avoir à reconstruire l'image Docker.</p>
+
+<p>4. Utilisez des outils de développement intégrés à Docker, tels que Docker CLI et Docker SDK, pour automatiser les tâches de développement courantes, telles que la création, le démarrage et l'arrêt des conteneurs.</p>
+
+<p>5. Utilisez des outils de débogage spécifiques à Docker, tels que Docker logs et Docker exec, pour faciliter le débogage des applications exécutées dans des conteneurs Docker.</p>
+
+<p>En suivant ces bonnes pratiques et astuces, vous pourrez utiliser Docker de manière efficace et optimisée dans vos projets de développement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

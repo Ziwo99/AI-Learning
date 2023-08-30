@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des conteneurs Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Démarrage et arrêt des conteneurs Docker</h2>
+<p>Les conteneurs Docker peuvent être démarrés et arrêtés à l'aide de la commande <code>docker start</code> et <code>docker stop</code>. Par exemple, pour démarrer un conteneur nommé "my_container", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker start my_container
+</code></pre>
+
+<p>De même, pour arrêter le conteneur, vous pouvez utiliser la commande :</p>
+
+<pre><code>docker stop my_container
+</code></pre>
+
+<p>Il est également possible de démarrer et arrêter plusieurs conteneurs en même temps en spécifiant leurs noms séparés par des espaces.</p>
+
+<h2>Gestion des ressources des conteneurs Docker</h2>
+<p>Les ressources des conteneurs Docker, telles que la mémoire et le CPU, peuvent être gérées à l'aide de la commande <code>docker run</code>. Vous pouvez spécifier les limites de ressources en utilisant les options <code>--memory</code> et <code>--cpus</code>. Par exemple, pour limiter un conteneur à 1 Go de mémoire et 2 CPU, vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker run --memory=1g --cpus=2 my_image
+</code></pre>
+
+<p>Il est également possible de limiter les ressources d'un conteneur en cours d'exécution à l'aide de la commande <code>docker update</code>. Par exemple, pour limiter un conteneur nommé "my_container" à 512 Mo de mémoire, vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker update --memory=512m my_container
+</code></pre>
+
+<h2>Gestion des volumes Docker</h2>
+<p>Les volumes Docker permettent de stocker des données persistantes en dehors des conteneurs. Ils peuvent être utilisés pour partager des fichiers entre les conteneurs ou pour stocker des données de base de données. Pour créer un volume Docker, vous pouvez utiliser la commande <code>docker volume create</code>. Par exemple, pour créer un volume nommé "my_volume", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker volume create my_volume
+</code></pre>
+
+<p>Une fois le volume créé, vous pouvez le monter dans un conteneur en utilisant l'option <code>--volume</code> de la commande <code>docker run</code>. Par exemple, pour monter le volume "my_volume" dans un conteneur nommé "my_container", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker run --volume=my_volume:/path/in/container my_image
+</code></pre>
+
+<p>Les volumes Docker peuvent également être utilisés pour partager des fichiers entre l'hôte et les conteneurs. Pour monter un répertoire de l'hôte dans un conteneur, vous pouvez utiliser l'option <code>--volume</code> avec le chemin absolu du répertoire sur l'hôte. Par exemple, pour monter le répertoire "/path/on/host" dans un conteneur nommé "my_container", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker run --volume=/path/on/host:/path/in/container my_image
+</code></pre>
+
+<h2>Gestion du réseau des conteneurs Docker</h2>
+<p>Les conteneurs Docker peuvent être connectés à différents réseaux pour permettre la communication entre eux. Par défaut, les conteneurs sont connectés au réseau par défaut de Docker. Vous pouvez créer vos propres réseaux en utilisant la commande <code>docker network create</code>. Par exemple, pour créer un réseau nommé "my_network", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker network create my_network
+</code></pre>
+
+<p>Une fois le réseau créé, vous pouvez connecter un conteneur à ce réseau en utilisant l'option <code>--network</code> de la commande <code>docker run</code>. Par exemple, pour connecter un conteneur nommé "my_container" au réseau "my_network", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker run --network=my_network my_image
+</code></pre>
+
+<p>Les conteneurs connectés au même réseau peuvent communiquer entre eux en utilisant les noms de conteneurs comme noms d'hôtes. Par exemple, si vous avez deux conteneurs nommés "container1" et "container2" connectés au même réseau, vous pouvez utiliser les noms "container1" et "container2" pour la communication entre les conteneurs.</p>
+
+<h2>Surveillance et journalisation des conteneurs Docker</h2>
+<p>Les conteneurs Docker peuvent être surveillés à l'aide de la commande <code>docker stats</code>. Cette commande affiche des informations en temps réel sur l'utilisation des ressources des conteneurs, telles que la mémoire, le CPU et le réseau. Par exemple, pour surveiller tous les conteneurs en cours d'exécution, vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker stats
+</code></pre>
+
+<p>Les journaux des conteneurs Docker peuvent être consultés à l'aide de la commande <code>docker logs</code>. Cette commande affiche les journaux de sortie des conteneurs, ce qui peut être utile pour le débogage et la surveillance. Par exemple, pour afficher les journaux d'un conteneur nommé "my_container", vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>docker logs my_container
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

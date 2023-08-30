@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Déploiement de conteneurs Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Déploiement sur un serveur local</h2>
+<p>Le déploiement de conteneurs Docker sur un serveur local est une étape essentielle pour tester et développer des applications. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Assurez-vous d'avoir Docker installé sur votre serveur local en suivant les étapes de la Section 2.</li>
+  <li>Vérifiez que Docker est installé en exécutant la commande suivante :</li>
+  <pre><code class="hljs bash">docker version</code></pre>
+  <li>Créez une image Docker pour votre application en utilisant un Dockerfile. Le Dockerfile contient les instructions pour construire l'image.</li>
+  <pre><code class="hljs dockerfile"><span class="hljs-keyword">FROM</span> python:<span class="hljs-number">3.8</span>
+  WORKDIR /app
+  <span class="hljs-keyword">COPY</span> requirements.txt .
+  RUN pip install -r requirements.txt
+  <span class="hljs-keyword">COPY</span> . .
+  CMD ["python", "app.py"]</code></pre>
+  <li>Construisez l'image en exécutant la commande suivante dans le répertoire contenant le Dockerfile :</li>
+  <pre><code class="hljs bash">docker build -t mon_application .</code></pre>
+  <li>Une fois l'image construite, exécutez un conteneur à partir de cette image :</li>
+  <pre><code class="hljs bash">docker run -d -p 8080:80 mon_application</code></pre>
+  <li>Accédez à votre application en utilisant l'URL suivante dans votre navigateur :</li>
+  <pre><code class="hljs bash">http://localhost:8080</code></pre>
+</ol>
+
+<h2>Déploiement sur un serveur distant</h2>
+<p>Le déploiement de conteneurs Docker sur un serveur distant est couramment utilisé pour héberger des applications en production. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Assurez-vous d'avoir Docker installé sur votre serveur distant en suivant les étapes de la Section 2.</li>
+  <li>Vérifiez que Docker est installé en exécutant la commande suivante :</li>
+  <pre><code class="hljs bash">docker version</code></pre>
+  <li>Créez une image Docker pour votre application en utilisant un Dockerfile, comme expliqué précédemment.</li>
+  <li>Construisez l'image en exécutant la commande suivante dans le répertoire contenant le Dockerfile :</li>
+  <pre><code class="hljs bash">docker build -t mon_application .</code></pre>
+  <li>Ensuite, vous devez pousser l'image vers un registre Docker public ou privé. Si vous utilisez un registre Docker public, vous pouvez utiliser la commande suivante :</li>
+  <pre><code class="hljs bash">docker push mon_application</code></pre>
+  <li>Sur votre serveur distant, exécutez la commande suivante pour tirer l'image à partir du registre :</li>
+  <pre><code class="hljs bash">docker pull mon_application</code></pre>
+  <li>Enfin, exécutez un conteneur à partir de l'image :</li>
+  <pre><code class="hljs bash">docker run -d -p 8080:80 mon_application</code></pre>
+  <li>Accédez à votre application en utilisant l'URL suivante dans votre navigateur :</li>
+  <pre><code class="hljs bash">http://adresse_ip_du_serveur:8080</code></pre>
+</ol>
+
+<h2>Utilisation de Kubernetes pour le déploiement de conteneurs Docker</h2>
+<p>Kubernetes est un système open-source de gestion de conteneurs qui facilite le déploiement, la mise à l'échelle et la gestion des applications conteneurisées. Voici comment déployer des conteneurs Docker à l'aide de Kubernetes :</p>
+
+<ol>
+  <li>Assurez-vous d'avoir Kubernetes installé sur votre serveur en suivant les instructions officielles.</li>
+  <li>Créez un fichier de configuration Kubernetes, appelé "deployment.yaml", qui décrit votre application et les ressources nécessaires.</li>
+  <pre><code class="hljs yaml">apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: mon-application
+  spec:
+    replicas: 3
+    selector:
+      matchLabels:
+        app: mon-application
+    template:
+      metadata:
+        labels:
+          app: mon-application
+      spec:
+        containers:
+        - name: mon-application
+          image: mon_application
+          ports:
+          - containerPort: 8080</code></pre>
+  <li>Déployez votre application en exécutant la commande suivante :</li>
+  <pre><code class="hljs bash">kubectl apply -f deployment.yaml</code></pre>
+  <li>Vérifiez que votre application est en cours d'exécution en utilisant la commande suivante :</li>
+  <pre><code class="hljs bash">kubectl get pods</code></pre>
+  <li>Accédez à votre application en utilisant l'URL suivante dans votre navigateur :</li>
+  <pre><code class="hljs bash">http://adresse_ip_du_serveur:8080</code></pre>
+</ol>
+
+<p>Avec ces différentes méthodes de déploiement, vous pouvez facilement déployer vos conteneurs Docker sur différents environnements, que ce soit en local, sur un serveur distant ou à l'aide de Kubernetes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
