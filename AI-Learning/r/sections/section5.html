@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5. Data Science avec R</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la Data Science</h2>
+<p>La Data Science est un domaine qui combine des compétences en statistiques, en programmation et en analyse de données pour extraire des informations utiles à partir de grandes quantités de données. R est un langage de programmation largement utilisé dans le domaine de la Data Science en raison de sa puissance et de sa flexibilité.</p>
+
+<h2>Préparation des données</h2>
+<p>Avant de pouvoir effectuer des analyses et des modélisations, il est essentiel de préparer les données de manière appropriée. Cela comprend l'importation des données, le nettoyage des données manquantes ou erronées, la transformation des variables et la normalisation des données. R offre de nombreuses fonctionnalités et packages pour faciliter cette étape cruciale.</p>
+
+<h2>Modélisation prédictive</h2>
+<p>La modélisation prédictive est une technique qui utilise des modèles statistiques pour prédire des résultats futurs en fonction des données historiques. R propose une variété de packages et de fonctions pour construire et évaluer des modèles prédictifs, tels que la régression linéaire, la régression logistique, les arbres de décision, les forêts aléatoires, etc.</p>
+
+<h2>Apprentissage automatique (Machine Learning)</h2>
+<p>L'apprentissage automatique, également connu sous le nom de Machine Learning, est une branche de la Data Science qui utilise des algorithmes pour permettre aux ordinateurs d'apprendre à partir des données et de prendre des décisions ou de faire des prédictions sans être explicitement programmés. R offre de nombreux packages et fonctions pour l'apprentissage automatique, tels que caret, randomForest, e1071, etc.</p>
+
+<h2>Deep Learning avec R</h2>
+<p>Le Deep Learning est une sous-branche de l'apprentissage automatique qui utilise des réseaux de neurones artificiels pour modéliser et comprendre des données complexes. R propose des packages tels que Keras et TensorFlow pour implémenter des modèles de Deep Learning et effectuer des tâches telles que la classification d'images, la reconnaissance de la parole, la traduction automatique, etc.</p>
+
+<h2>Visualisation avancée des données</h2>
+<p>La visualisation des données est un moyen puissant de communiquer des informations et des idées à partir de données complexes. R offre une large gamme de packages et de fonctions pour créer des graphiques et des visualisations interactives, tels que ggplot2, plotly, shiny, etc. Ces outils permettent de créer des visualisations avancées et personnalisées pour explorer et présenter les données de manière efficace.</p>
+
+<p>Voici un exemple de code pour créer un graphique à barres avec ggplot2 :</p>
+<pre><code>library(ggplot2)
+
+data <- read.csv("data.csv")
+ggplot(data, aes(x = category, y = value)) +
+  geom_bar(stat = "identity", fill = "blue") +
+  labs(title = "Distribution des valeurs par catégorie",
+       x = "Catégorie",
+       y = "Valeur")</code></pre>
+
+<p>Ce code utilise la fonction ggplot() pour créer un objet de graphique, puis ajoute une couche de barres avec la fonction geom_bar(). Les fonctions labs() sont utilisées pour ajouter des titres aux axes et au graphique lui-même. Le résultat est un graphique à barres qui affiche la distribution des valeurs par catégorie.</p>
+
+<p>Il est important de noter que cet exemple est simplifié et qu'il existe de nombreuses autres options et personnalisations possibles avec ggplot2.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

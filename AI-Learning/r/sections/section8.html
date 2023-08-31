@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8. Bonnes pratiques et astuces en R</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Optimisation des performances</h2>
+<p>L'optimisation des performances est un aspect important lors de la programmation en R. Voici quelques bonnes pratiques et astuces pour améliorer les performances de votre code :</p>
+
+<p><strong>1. Utilisez des vecteurs au lieu de boucles :</strong></p>
+<pre><code># Mauvaise pratique
+for (i in 1:1000) {
+  x[i] = i^2
+}
+
+# Bonne pratique
+x = (1:1000)^2
+</code></pre>
+
+<p><strong>2. Évitez les objets temporaires :</strong></p>
+<pre><code># Mauvaise pratique
+x = a + b
+y = x * c
+
+# Bonne pratique
+y = (a + b) * c
+</code></pre>
+
+<p><strong>3. Utilisez des fonctions vectorisées :</strong></p>
+<pre><code># Mauvaise pratique
+for (i in 1:length(x)) {
+  y[i] = sqrt(x[i])
+}
+
+# Bonne pratique
+y = sqrt(x)
+</code></pre>
+
+<p><strong>4. Utilisez des packages optimisés :</strong></p>
+<pre><code># Mauvaise pratique
+for (i in 1:length(x)) {
+  y[i] = sin(x[i])
+}
+
+# Bonne pratique
+library("fastmath")
+y = fastsin(x)
+</code></pre>
+
+<h2>Gestion des erreurs et débogage</h2>
+<p>La gestion des erreurs et le débogage sont des compétences essentielles pour résoudre les problèmes dans votre code R. Voici quelques astuces pour vous aider :</p>
+
+<p><strong>1. Utilisez des messages d'erreur explicites :</strong></p>
+<pre><code>if (x &lt; 0) {
+  stop("La valeur de x ne peut pas être négative.")
+}
+</code></pre>
+
+<p><strong>2. Utilisez des fonctions de débogage :</strong></p>
+<pre><code># Utilisez la fonction browser() pour mettre en pause l'exécution du code à un certain point
+for (i in 1:length(x)) {
+  browser()
+  y[i] = sqrt(x[i])
+}
+</code></pre>
+
+<p><strong>3. Utilisez des outils de débogage :</strong></p>
+<pre><code># Utilisez l'outil de débogage RStudio pour suivre l'exécution du code ligne par ligne et inspecter les variables
+debug(my_function)
+</code></pre>
+
+<h2>Collaboration avec Git et GitHub</h2>
+<p>La collaboration avec Git et GitHub est essentielle pour travailler efficacement sur des projets R en équipe. Voici quelques astuces pour vous aider :</p>
+
+<p><strong>1. Initialisez un dépôt Git :</strong></p>
+<pre><code># Initialisez un nouveau dépôt Git dans votre projet R
+git init
+</code></pre>
+
+<p><strong>2. Ajoutez et validez vos modifications :</strong></p>
+<pre><code># Ajoutez tous les fichiers modifiés à l'index
+git add .
+
+# Validez les modifications avec un message descriptif
+git commit -m "Ajout de nouvelles fonctionnalités"
+</code></pre>
+
+<p><strong>3. Partagez votre code sur GitHub :</strong></p>
+<pre><code># Créez un nouveau dépôt sur GitHub
+# Ajoutez le dépôt distant à votre dépôt local
+git remote add origin https://github.com/votre_utilisateur/votre_depot.git
+
+# Poussez vos modifications vers GitHub
+git push origin master
+</code></pre>
+
+<h2>Documentation et commentaires de code</h2>
+<p>La documentation et les commentaires de code sont essentiels pour rendre votre code R compréhensible et maintenable. Voici quelques bonnes pratiques :</p>
+
+<p><strong>1. Utilisez des commentaires pour expliquer votre code :</strong></p>
+<pre><code># Calcule la moyenne des valeurs dans un vecteur
+mean_value = mean(x)
+</code></pre>
+
+<p><strong>2. Utilisez des roxygen2 pour générer une documentation automatique :</strong></p>
+<pre><code>#' Calcule la moyenne des valeurs dans un vecteur
+#'
+#' @param x Vecteur numérique
+#' @return Moyenne des valeurs dans le vecteur
+#'
+#' @examples
+#' mean_value = calculate_mean(c(1, 2, 3))
+#' print(mean_value)
+#'
+calculate_mean = function(x) {
+  mean(x)
+}
+</code></pre>
+
+<p><strong>3. Utilisez des noms de variables et de fonctions explicites :</strong></p>
+<pre><code># Mauvaise pratique
+a = c(1, 2, 3)
+b = sum(a)
+
+# Bonne pratique
+numbers = c(1, 2, 3)
+sum_of_numbers = sum(numbers)
+</code></pre>
+
+<p>En suivant ces bonnes pratiques et astuces, vous pourrez améliorer la qualité et la maintenabilité de votre code R.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

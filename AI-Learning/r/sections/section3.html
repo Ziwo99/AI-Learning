@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3. Programmation en R</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base en R</h2>
+<p>La syntaxe de base en R est relativement simple et intuitive. Voici quelques éléments clés à connaître :</p>
+
+<p>1. Les objets : en R, vous pouvez stocker des valeurs dans des objets. Par exemple, vous pouvez créer un objet appelé "x" et lui attribuer la valeur 5 en utilisant l'opérateur d'affectation "<code>&lt;-</code>".</p>
+<pre><code>x &lt;- 5</code></pre>
+
+<p>2. Les opérations mathématiques : R prend en charge les opérations mathématiques de base telles que l'addition, la soustraction, la multiplication et la division. Par exemple, vous pouvez ajouter deux nombres en utilisant l'opérateur "+".</p>
+<pre><code>resultat &lt;- 2 + 3</code></pre>
+
+<p>3. Les fonctions : R dispose d'un large éventail de fonctions intégrées qui peuvent être utilisées pour effectuer des opérations spécifiques. Par exemple, la fonction "<code>mean()</code>" peut être utilisée pour calculer la moyenne d'un vecteur de nombres.</p>
+<pre><code>vecteur &lt;- c(1, 2, 3, 4, 5)
+moyenne &lt;- mean(vecteur)</code></pre>
+
+<h2>Structures de contrôle</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un programme en fonction de certaines conditions. Voici quelques structures de contrôle couramment utilisées en R :</p>
+
+<p>1. Les boucles : les boucles permettent de répéter une série d'instructions plusieurs fois. La boucle "<code>for</code>" est couramment utilisée pour itérer sur une séquence de valeurs.</p>
+<pre><code>for (i in 1:5) {
+  print(i)
+}</code></pre>
+
+<p>2. Les instructions conditionnelles : les instructions conditionnelles permettent d'exécuter certaines instructions uniquement si une condition spécifiée est vraie. L'instruction "<code>if</code>" est couramment utilisée pour cela.</p>
+<pre><code>x &lt;- 10
+if (x &gt; 5) {
+  print("x est supérieur à 5")
+}</code></pre>
+
+<h2>Fonctions et packages</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. R dispose d'un grand nombre de fonctions intégrées, mais vous pouvez également créer vos propres fonctions. Voici comment définir une fonction en R :</p>
+<pre><code>maFonction &lt;- function(parametre1, parametre2) {
+  # Instructions de la fonction
+}</code></pre>
+
+<p>Les packages sont des ensembles de fonctions et de données supplémentaires qui étendent les fonctionnalités de base de R. Vous pouvez installer des packages à partir du référentiel CRAN à l'aide de la fonction "<code>install.packages()</code>". Une fois installé, vous pouvez charger un package à l'aide de la fonction "<code>library()</code>".</p>
+<pre><code>install.packages("nom_du_package")
+library(nom_du_package)</code></pre>
+
+<h2>Programmation orientée objet en R</h2>
+<p>R prend également en charge la programmation orientée objet (POO), qui permet de structurer le code en utilisant des objets et des classes. Voici comment créer une classe en R :</p>
+<pre><code>MaClasse &lt;- setClass("MaClasse",
+                   slots = list(
+                     attribut1 = "numeric",
+                     attribut2 = "character"
+                   ),
+                   prototype = list(
+                     attribut1 = 0,
+                     attribut2 = ""
+                   ))</code></pre>
+
+<p>Une fois que vous avez défini une classe, vous pouvez créer des objets de cette classe en utilisant la fonction "<code>new()</code>".</p>
+<pre><code>monObjet &lt;- new(MaClasse)</code></pre>
+
+<p>Ce sont là quelques-uns des concepts de base de la programmation en R. En comprenant ces concepts, vous serez en mesure de créer des programmes R plus avancés et de tirer pleinement parti de la puissance de ce langage.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

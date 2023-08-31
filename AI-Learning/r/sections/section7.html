@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7. Développement d'applications avec R</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Shiny : création d'applications interactives</h2>
+<p>
+Shiny est un package R qui permet de créer des applications web interactives directement à partir de R. Avec Shiny, vous pouvez facilement transformer votre code R en une application web interactive sans avoir à apprendre des langages de programmation web tels que HTML, CSS ou JavaScript.
+</p>
+<p>
+Pour commencer à utiliser Shiny, vous devez d'abord installer le package en utilisant la fonction <code>install.packages("shiny")</code>. Une fois le package installé, vous pouvez le charger dans votre environnement R en utilisant la fonction <code>library(shiny)</code>.
+</p>
+<p>
+Une application Shiny est composée de deux parties principales : l'interface utilisateur (UI) et le serveur. L'UI définit la mise en page et les éléments interactifs de l'application, tandis que le serveur contient le code R qui contrôle le comportement de l'application.
+</p>
+<p>
+Voici un exemple simple d'une application Shiny qui affiche un histogramme interactif :
+</p>
+<pre><code>library(shiny)
+
+# Définition de l'interface utilisateur (UI)
+ui &lt;- fluidPage(
+  titlePanel("Mon application Shiny"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("bins",
+                  "Nombre de bins:",
+                  min = 1,
+                  max = 50,
+                  value = 30)
+    ),
+    mainPanel(
+      plotOutput("histogram")
+    )
+  )
+)
+
+# Définition du serveur
+server &lt;- function(input, output) {
+  output$histogram &lt;- renderPlot({
+    hist(rnorm(1000, mean = 0, sd = 1), 
+         breaks = input$bins, 
+         col = 'steelblue', 
+         border = 'white')
+  })
+}
+
+# Lancement de l'application
+shinyApp(ui = ui, server = server)
+</code></pre>
+<p>
+Dans cet exemple, l'interface utilisateur (UI) est définie à l'aide de la fonction <code>fluidPage()</code>, qui crée une mise en page réactive qui s'adapte automatiquement à la taille de l'écran. Nous avons ajouté un titre à l'application avec la fonction <code>titlePanel()</code> et un panneau latéral avec un curseur pour ajuster le nombre de bins dans l'histogramme avec la fonction <code>sliderInput()</code>. Le panneau principal affiche l'histogramme avec la fonction <code>plotOutput()</code>.
+</p>
+<p>
+Dans le serveur, nous avons utilisé la fonction <code>renderPlot()</code> pour générer l'histogramme en utilisant la fonction <code>hist()</code> de base de R. Nous avons également utilisé la variable <code>input$bins</code> pour récupérer la valeur du curseur dans le panneau latéral.
+</p>
+<p>
+Pour lancer l'application Shiny, vous pouvez utiliser la fonction <code>shinyApp()</code> en spécifiant l'interface utilisateur (UI) et le serveur. L'application sera alors exécutée dans votre navigateur web par défaut.
+</p>
+
+<h2>R Markdown : création de rapports dynamiques</h2>
+<p>
+R Markdown est une extension du langage Markdown qui permet d'intégrer du code R et de générer des rapports dynamiques à partir de ce code. Avec R Markdown, vous pouvez facilement combiner du texte, des graphiques et du code R dans un seul document, ce qui en fait un outil puissant pour la création de rapports reproductibles et personnalisables.
+</p>
+<p>
+Pour commencer à utiliser R Markdown, vous devez d'abord installer le package en utilisant la fonction <code>install.packages("rmarkdown")</code>. Une fois le package installé, vous pouvez le charger dans votre environnement R en utilisant la fonction <code>library(rmarkdown)</code>.
+</p>
+<p>
+Un document R Markdown est composé de plusieurs sections, y compris une section d'en-tête YAML, une section de texte et des sections de code R. Vous pouvez utiliser des balises Markdown pour formater le texte et insérer des images, des liens, des tableaux, etc.
+</p>
+<p>
+Voici un exemple simple d'un document R Markdown qui génère un rapport avec un graphique :
+</p>
+<pre><code>---
+title: "Mon rapport R Markdown"
+output: html_document
+---
+
+# Introduction
+
+Ce rapport présente une analyse exploratoire des données.
+
+## Chargement des données
+
+```{r}
+data &lt;- read.csv("data.csv")
+```
+
+## Visualisation des données
+
+```{r}
+plot(data$variable)
+```
+
+## Conclusion
+
+Ce rapport montre l'évolution de la variable au fil du temps.
+
+</code></pre>
+<p>
+Dans cet exemple, la section d'en-tête YAML spécifie le titre du rapport et le format de sortie (dans ce cas, un document HTML). La section de texte utilise des balises Markdown pour créer des titres et des sous-titres, ainsi que pour insérer du texte descriptif.
+</p>
+<p>
+Les sections de code R sont délimitées par des balises <code>```{r}</code> et <code>```</code>. Le code R à l'intérieur de ces balises sera exécuté et les résultats seront affichés dans le rapport final. Dans cet exemple, nous avons chargé les données à partir d'un fichier CSV avec la fonction <code>read.csv()</code> et nous avons tracé un graphique avec la fonction <code>plot()</code>.
+</p>
+<p>
+Pour générer le rapport R Markdown, vous pouvez utiliser la fonction <code>rmarkdown::render()</code> en spécifiant le nom du fichier R Markdown en entrée et le format de sortie souhaité. Le rapport sera alors généré dans le répertoire de travail actuel.
+</p>
+
+<h2>Package development : création de packages R</h2>
+<p>
+La création de packages R est un moyen efficace d'organiser et de distribuer du code R réutilisable. Un package R est une collection de fonctions, de données et de documentation qui peut être facilement installée et chargée dans un environnement R.
+</p>
+<p>
+Pour créer un package R, vous devez d'abord installer le package <code>devtools</code> en utilisant la fonction <code>install.packages("devtools")</code>. Une fois le package installé, vous pouvez le charger dans votre environnement R en utilisant la fonction <code>library(devtools)</code>.
+</p>
+<p>
+La création d'un package R implique plusieurs étapes, notamment la création de la structure du package, la définition des fonctions et des données, la documentation des fonctions et la génération d'un fichier de description du package.
+</p>
+<p>
+Voici un exemple simple de création d'un package R avec une fonction qui calcule la moyenne d'un vecteur :
+</p>
+<pre><code># Création de la structure du package
+create_package("monpackage")
+
+# Définition de la fonction
+monpackage::mean_vector &lt;- function(x) {
+  mean(x)
+}
+
+# Documentation de la fonction
+?monpackage::mean_vector
+
+# Génération du fichier de description du package
+devtools::document("monpackage")
+</code></pre>
+<p>
+Dans cet exemple, nous avons utilisé la fonction <code>create_package()</code> du package <code>devtools</code> pour créer la structure de base du package. Cela crée un répertoire avec les fichiers nécessaires pour le package, y compris un fichier de description du package.
+</p>
+<p>
+Ensuite, nous avons défini une fonction <code>mean_vector()</code> qui calcule la moyenne d'un vecteur en utilisant la fonction <code>mean()</code> de base de R. Nous avons également documenté la fonction en utilisant la syntaxe <code>?monpackage::mean_vector</code>.
+</p>
+<p>
+Enfin, nous avons utilisé la fonction <code>devtools::document()</code> pour générer le fichier de description du package à partir des fichiers de documentation et des fonctions définies.
+</p>
+<p>
+Une fois que vous avez créé votre package R, vous pouvez l'installer en utilisant la fonction <code>devtools::install()</code>. Une fois installé, vous pouvez le charger dans votre environnement R en utilisant la fonction <code>library(monpackage)</code>.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

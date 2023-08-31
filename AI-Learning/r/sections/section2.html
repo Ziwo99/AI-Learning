@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2. Manipulation des données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Importation de données</h2>
+<p>L'importation de données est une étape essentielle dans l'analyse de données avec R. Elle permet de charger des données externes dans l'environnement R afin de les manipuler et de les analyser. R propose plusieurs méthodes pour importer des données, notamment :</p>
+<ul>
+  <li>La fonction <code>read.csv()</code> pour importer des fichiers CSV</li>
+  <li>La fonction <code>read.table()</code> pour importer des fichiers texte</li>
+  <li>La fonction <code>read.xlsx()</code> du package "readxl" pour importer des fichiers Excel</li>
+</ul>
+<p>Voici un exemple d'importation d'un fichier CSV :</p>
+<pre><code>data &lt;- read.csv("chemin/vers/fichier.csv")</code></pre>
+
+<h2>Exploration des données</h2>
+<p>L'exploration des données est une étape cruciale pour comprendre la structure et les caractéristiques des données importées. R propose de nombreuses fonctions pour explorer les données, telles que :</p>
+<ul>
+  <li><code>head()</code> : affiche les premières lignes du jeu de données</li>
+  <li><code>summary()</code> : fournit un résumé statistique des variables</li>
+  <li><code>str()</code> : affiche la structure des données</li>
+  <li><code>dim()</code> : donne les dimensions (nombre de lignes et de colonnes) du jeu de données</li>
+</ul>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code># Afficher les premières lignes du jeu de données
+head(data)
+
+# Obtenir un résumé statistique des variables
+summary(data)
+
+# Afficher la structure des données
+str(data)
+
+# Obtenir les dimensions du jeu de données
+dim(data)</code></pre>
+
+<h2>Nettoyage des données</h2>
+<p>Le nettoyage des données est une étape cruciale pour éliminer les valeurs manquantes, les valeurs aberrantes et les erreurs dans les données importées. R propose plusieurs fonctions pour nettoyer les données, notamment :</p>
+<ul>
+  <li><code>is.na()</code> : vérifie si une valeur est manquante</li>
+  <li><code>na.omit()</code> : supprime les lignes contenant des valeurs manquantes</li>
+  <li><code>complete.cases()</code> : identifie les lignes complètes (sans valeurs manquantes)</li>
+  <li><code>outlier()</code> : détecte les valeurs aberrantes</li>
+</ul>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code># Vérifier si une valeur est manquante
+is.na(data$variable)
+
+# Supprimer les lignes contenant des valeurs manquantes
+data_clean &lt;- na.omit(data)
+
+# Identifier les lignes complètes
+complete_rows &lt;- complete.cases(data)
+
+# Détecter les valeurs aberrantes
+outliers &lt;- outlier(data$variable)</code></pre>
+
+<h2>Transformation des données</h2>
+<p>La transformation des données permet de modifier la structure ou les valeurs des données pour les rendre plus adaptées à l'analyse. R propose de nombreuses fonctions pour transformer les données, telles que :</p>
+<ul>
+  <li><code>mutate()</code> : ajoute de nouvelles variables calculées à partir des variables existantes</li>
+  <li><code>filter()</code> : filtre les lignes en fonction de certaines conditions</li>
+  <li><code>select()</code> : sélectionne les variables à inclure dans le jeu de données</li>
+  <li><code>arrange()</code> : trie les lignes en fonction d'une ou plusieurs variables</li>
+</ul>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code># Ajouter une nouvelle variable calculée
+data_transformed &lt;- mutate(data, nouvelle_variable = variable1 + variable2)
+
+# Filtrer les lignes en fonction d'une condition
+data_filtered &lt;- filter(data, variable &gt; 10)
+
+# Sélectionner les variables à inclure dans le jeu de données
+data_selected &lt;- select(data, variable1, variable2)
+
+# Trier les lignes en fonction d'une variable
+data_sorted &lt;- arrange(data, variable)</code></pre>
+
+<h2>Visualisation des données</h2>
+<p>La visualisation des données est une étape essentielle pour comprendre les relations et les tendances dans les données. R propose de nombreuses bibliothèques pour créer des graphiques et des visualisations, notamment :</p>
+<ul>
+  <li>ggplot2 : une bibliothèque populaire pour créer des graphiques élégants</li>
+  <li>plotly : une bibliothèque interactive pour créer des graphiques interactifs</li>
+  <li>ggvis : une bibliothèque pour créer des graphiques interactifs basés sur ggplot2</li>
+</ul>
+<p>Voici un exemple de création d'un graphique à l'aide de ggplot2 :</p>
+<pre><code># Charger la bibliothèque ggplot2
+library(ggplot2)
+
+# Créer un graphique à barres
+ggplot(data, aes(x = variable1, y = variable2)) +
+  geom_bar(stat = "identity")</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

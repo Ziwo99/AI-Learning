@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4. Analyse statistique avec R</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Statistiques descriptives</h2>
+<p>Les statistiques descriptives sont utilisées pour résumer et décrire les caractéristiques principales d'un ensemble de données. Elles fournissent des mesures telles que la moyenne, la médiane, l'écart-type, etc., qui permettent de comprendre la distribution et les tendances des données.</p>
+
+<p>Voici un exemple de code pour calculer la moyenne et l'écart-type d'un vecteur de données :</p>
+
+<pre><code># Création d'un vecteur de données
+data <- c(10, 15, 20, 25, 30)
+
+# Calcul de la moyenne
+mean_value <- mean(data)
+print(mean_value)
+
+# Calcul de l'écart-type
+sd_value <- sd(data)
+print(sd_value)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé un vecteur de données appelé "data" contenant les valeurs 10, 15, 20, 25 et 30. En utilisant les fonctions mean() et sd(), nous avons calculé la moyenne et l'écart-type de ce vecteur respectivement. Les résultats sont ensuite affichés à l'aide de la fonction print().</p>
+
+<h2>Tests statistiques</h2>
+<p>Les tests statistiques sont utilisés pour évaluer l'hypothèse nulle selon laquelle il n'y a pas de différence significative entre les groupes ou les variables. Ils permettent de prendre des décisions basées sur des preuves statistiques.</p>
+
+<p>Voici un exemple de code pour effectuer un test t de Student sur deux échantillons :</p>
+
+<pre><code># Création de deux échantillons
+sample1 <- c(10, 15, 20, 25, 30)
+sample2 <- c(12, 18, 22, 28, 32)
+
+# Test t de Student
+t_test <- t.test(sample1, sample2)
+print(t_test)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé deux échantillons, "sample1" et "sample2", contenant des valeurs numériques. En utilisant la fonction t.test(), nous avons effectué un test t de Student pour comparer les moyennes des deux échantillons. Les résultats du test, y compris la statistique t, la valeur p et l'intervalle de confiance, sont affichés à l'aide de la fonction print().</p>
+
+<h2>Régression linéaire</h2>
+<p>La régression linéaire est utilisée pour modéliser la relation entre une variable dépendante et une ou plusieurs variables indépendantes. Elle permet de prédire la valeur de la variable dépendante en fonction des valeurs des variables indépendantes.</p>
+
+<p>Voici un exemple de code pour effectuer une régression linéaire simple :</p>
+
+<pre><code># Création des variables indépendante et dépendante
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+
+# Régression linéaire
+lm_model <- lm(y ~ x)
+print(lm_model)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé deux vecteurs, "x" et "y", représentant respectivement les variables indépendante et dépendante. En utilisant la fonction lm(), nous avons ajusté un modèle de régression linéaire simple en utilisant la formule "y ~ x". Le modèle ajusté est ensuite affiché à l'aide de la fonction print().</p>
+
+<h2>Modèles de régression avancés</h2>
+<p>En plus de la régression linéaire simple, R offre également des fonctionnalités pour ajuster des modèles de régression plus avancés, tels que la régression linéaire multiple, la régression logistique, la régression polynomiale, etc. Ces modèles permettent de prendre en compte des relations plus complexes entre les variables.</p>
+
+<p>Voici un exemple de code pour effectuer une régression linéaire multiple :</p>
+
+<pre><code># Création des variables indépendantes et dépendante
+x1 <- c(1, 2, 3, 4, 5)
+x2 <- c(2, 4, 6, 8, 10)
+y <- c(3, 6, 9, 12, 15)
+
+# Régression linéaire multiple
+lm_model <- lm(y ~ x1 + x2)
+print(lm_model)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé trois vecteurs, "x1", "x2" et "y", représentant respectivement les variables indépendantes et dépendante. En utilisant la fonction lm(), nous avons ajusté un modèle de régression linéaire multiple en utilisant la formule "y ~ x1 + x2". Le modèle ajusté est ensuite affiché à l'aide de la fonction print().</p>
+
+<h2>Analyse de variance (ANOVA)</h2>
+<p>L'analyse de variance (ANOVA) est utilisée pour comparer les moyennes de plusieurs groupes et déterminer s'il existe des différences significatives entre eux. Elle permet de tester l'hypothèse nulle selon laquelle les moyennes sont égales pour tous les groupes.</p>
+
+<p>Voici un exemple de code pour effectuer une ANOVA à un facteur :</p>
+
+<pre><code># Création des groupes
+group1 <- c(10, 15, 20, 25, 30)
+group2 <- c(12, 18, 22, 28, 32)
+group3 <- c(8, 16, 24, 32, 40)
+
+# ANOVA à un facteur
+anova_result <- aov(c(group1, group2, group3) ~ c(rep("Group 1", 5), rep("Group 2", 5), rep("Group 3", 5)))
+print(anova_result)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé trois vecteurs, "group1", "group2" et "group3", représentant respectivement les données des trois groupes. En utilisant la fonction aov(), nous avons effectué une ANOVA à un facteur en utilisant la formule "group ~ factor", où "group" est un vecteur contenant toutes les données des groupes et "factor" est un vecteur indiquant l'appartenance à chaque groupe. Les résultats de l'ANOVA sont ensuite affichés à l'aide de la fonction print().</p>
+
+<h2>Analyse de données multivariées</h2>
+<p>L'analyse de données multivariées est utilisée pour étudier les relations entre plusieurs variables simultanément. Elle permet de réduire la dimensionnalité des données, d'identifier des structures cachées et de visualiser les relations entre les variables.</p>
+
+<p>Voici un exemple de code pour effectuer une analyse en composantes principales (PCA) :</p>
+
+<pre><code># Création des variables
+x1 <- c(1, 2, 3, 4, 5)
+x2 <- c(2, 4, 6, 8, 10)
+x3 <- c(3, 6, 9, 12, 15)
+
+# PCA
+pca_result <- prcomp(data.frame(x1, x2, x3))
+print(pca_result)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé trois vecteurs, "x1", "x2" et "x3", représentant respectivement les variables. En utilisant la fonction prcomp(), nous avons effectué une analyse en composantes principales (PCA) en utilisant les données sous forme de data frame. Les résultats de la PCA, y compris les valeurs propres, les vecteurs propres et les coordonnées des individus, sont ensuite affichés à l'aide de la fonction print().</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

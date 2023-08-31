@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - R Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6. Applications pratiques en R</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/r/r.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Analyse de données financières</h2>
+<p>L'analyse de données financières est l'une des applications les plus courantes de R. Avec R, vous pouvez effectuer une variété de tâches liées à l'analyse financière, telles que la gestion de portefeuille, l'évaluation des risques, l'analyse de séries chronologiques financières, etc.</p>
+<p>Voici un exemple de code pour calculer le rendement quotidien d'une action :</p>
+<pre><code># Importer les données
+data &lt;- read.csv("donnees_financieres.csv")
+
+# Calculer le rendement quotidien
+returns &lt;- diff(log(data$close))
+
+# Afficher les rendements
+print(returns)
+</code></pre>
+
+<h2>Analyse de données marketing</h2>
+<p>L'analyse de données marketing est essentielle pour comprendre les comportements des consommateurs, évaluer l'efficacité des campagnes publicitaires, segmenter les clients, etc. R offre de nombreuses fonctionnalités pour analyser les données marketing et prendre des décisions éclairées.</p>
+<p>Voici un exemple de code pour créer un graphique de dispersion entre les dépenses publicitaires et les ventes :</p>
+<pre><code># Importer les données
+data &lt;- read.csv("donnees_marketing.csv")
+
+# Créer un graphique de dispersion
+plot(data$advertising, data$sales, xlab = "Dépenses publicitaires", ylab = "Ventes")
+</code></pre>
+
+<h2>Analyse de données médicales</h2>
+<p>L'analyse de données médicales est cruciale pour la recherche médicale, l'évaluation des traitements, la prédiction des résultats cliniques, etc. R propose de nombreuses techniques statistiques et de visualisation pour analyser les données médicales et en tirer des conclusions significatives.</p>
+<p>Voici un exemple de code pour effectuer une régression logistique sur des données médicales :</p>
+<pre><code># Importer les données
+data &lt;- read.csv("donnees_medicales.csv")
+
+# Effectuer une régression logistique
+model &lt;- glm(outcome ~ age + bmi + blood_pressure, data = data, family = binomial)
+
+# Afficher les résultats
+summary(model)
+</code></pre>
+
+<h2>Analyse de données géospatiales</h2>
+<p>L'analyse de données géospatiales est utilisée pour étudier les phénomènes liés à la géographie, tels que la cartographie, l'analyse de l'utilisation des terres, la modélisation des risques naturels, etc. R propose des packages spécialisés pour manipuler et analyser les données géospatiales.</p>
+<p>Voici un exemple de code pour créer une carte choroplèthe des taux de chômage par département :</p>
+<pre><code># Importer les données géospatiales
+shapefile &lt;- readOGR("donnees_geospatiales.shp")
+
+# Créer une carte choroplèthe
+plot(shapefile, col = "red", main = "Taux de chômage par département")
+</code></pre>
+
+<h2>Analyse de données textuelles</h2>
+<p>L'analyse de données textuelles est utilisée pour extraire des informations à partir de documents textuels, tels que les réseaux sociaux, les critiques de produits, les articles de presse, etc. R propose des packages spécialisés pour effectuer des analyses de texte, telles que l'analyse de sentiment, la classification de texte, etc.</p>
+<p>Voici un exemple de code pour effectuer une analyse de sentiment sur des tweets :</p>
+<pre><code># Importer les données
+data &lt;- read.csv("tweets.csv")
+
+# Effectuer une analyse de sentiment
+sentiment &lt;- sentimentr::sentiment(data$text)
+
+# Afficher les résultats
+print(sentiment)
+</code></pre>
+
+<h2>Analyse de données temporelles</h2>
+<p>L'analyse de données temporelles est utilisée pour étudier les séries chronologiques, telles que les données météorologiques, les données financières, les données de trafic, etc. R propose des packages spécialisés pour modéliser et prévoir les données temporelles.</p>
+<p>Voici un exemple de code pour ajuster un modèle ARIMA à des données temporelles :</p>
+<pre><code># Importer les données temporelles
+data &lt;- read.csv("donnees_temporelles.csv")
+
+# Ajuster un modèle ARIMA
+model &lt;- forecast::auto.arima(data)
+
+# Afficher les prévisions
+print(forecast(model))
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/r/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/r/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
