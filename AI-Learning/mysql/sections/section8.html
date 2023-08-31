@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Utilisation avancée de MySQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Triggers et événements</h2>
+<p>Les triggers et les événements sont des fonctionnalités avancées de MySQL qui permettent d'automatiser certaines tâches et de réagir à des événements spécifiques.</p>
+<p>Un trigger est un bloc de code qui est exécuté automatiquement lorsque certaines actions sont effectuées sur une table, telles que l'insertion, la mise à jour ou la suppression de données. Les triggers peuvent être utilisés pour effectuer des validations, des calculs ou des actions supplémentaires lorsqu'une modification est apportée à une table.</p>
+<p>Un événement est une tâche planifiée qui est exécutée automatiquement à des moments spécifiques. Les événements peuvent être utilisés pour effectuer des sauvegardes régulières, des mises à jour de données ou d'autres actions planifiées.</p>
+<p>Voici un exemple de création d'un trigger qui met à jour une colonne "dernière modification" chaque fois qu'une ligne est mise à jour dans une table :</p>
+<pre><code>CREATE TRIGGER update_last_modified
+AFTER UPDATE ON ma_table
+FOR EACH ROW
+BEGIN
+    SET NEW.last_modified = NOW();
+END;
+</code></pre>
+
+<h2>Stored Procedures et Functions</h2>
+<p>Les procédures stockées (stored procedures) et les fonctions (functions) sont des objets de base de données qui contiennent des blocs de code SQL réutilisables.</p>
+<p>Une procédure stockée est un ensemble d'instructions SQL qui peut être appelé et exécuté à partir de n'importe où dans une application. Les procédures stockées peuvent prendre des paramètres en entrée et retourner des résultats.</p>
+<p>Une fonction est similaire à une procédure stockée, mais elle retourne une valeur et peut être utilisée dans des expressions SQL.</p>
+<p>Voici un exemple de création d'une procédure stockée qui retourne le nombre total de clients dans une table :</p>
+<pre><code>CREATE PROCEDURE get_total_clients()
+BEGIN
+    SELECT COUNT(*) FROM clients;
+END;
+</code></pre>
+
+<h2>Transactions et verrouillage des données</h2>
+<p>Les transactions sont utilisées pour regrouper plusieurs opérations de base de données en une seule unité logique. Les transactions garantissent l'intégrité des données en assurant que toutes les opérations sont exécutées avec succès ou qu'elles sont toutes annulées en cas d'erreur.</p>
+<p>Le verrouillage des données est une fonctionnalité qui permet de contrôler l'accès concurrentiel aux données. Les verrous sont utilisés pour empêcher les conflits d'accès et garantir la cohérence des données.</p>
+<p>Voici un exemple d'utilisation de transactions pour transférer de l'argent entre deux comptes :</p>
+<pre><code>START TRANSACTION;
+
+UPDATE compte1 SET solde = solde - 100 WHERE id = 1;
+UPDATE compte2 SET solde = solde + 100 WHERE id = 2;
+
+COMMIT;
+</code></pre>
+
+<h2>Utilisation de MySQL avec d'autres langages de programmation</h2>
+<p>MySQL peut être utilisé avec de nombreux langages de programmation, tels que PHP, Python, Java, C#, etc. Pour interagir avec MySQL à partir d'un autre langage de programmation, vous devez utiliser un pilote (driver) spécifique à ce langage.</p>
+<p>Chaque pilote fournit des méthodes et des fonctions pour se connecter à la base de données, exécuter des requêtes SQL et récupérer les résultats.</p>
+<p>Voici un exemple d'utilisation de MySQL avec PHP :</p>
+<pre><code>&lt;?php
+// Connexion à la base de données
+$mysqli = new mysqli("localhost", "utilisateur", "mot_de_passe", "ma_base_de_donnees");
+
+// Vérification de la connexion
+if ($mysqli->connect_errno) {
+    echo "Échec de la connexion à MySQL : " . $mysqli->connect_error;
+    exit();
+}
+
+// Exécution d'une requête
+$resultat = $mysqli->query("SELECT * FROM ma_table");
+
+// Récupération des résultats
+while ($row = $resultat->fetch_assoc()) {
+    echo $row["colonne"];
+}
+
+// Fermeture de la connexion
+$mysqli->close();
+?&gt;
+</code></pre>
+
+<h2>Conclusion</h2>
+<p>Dans cette section, nous avons exploré les fonctionnalités avancées de MySQL, telles que les triggers, les événements, les procédures stockées, les fonctions, les transactions, le verrouillage des données et l'utilisation de MySQL avec d'autres langages de programmation. Ces fonctionnalités vous permettent d'aller au-delà des requêtes SQL de base et d'automatiser des tâches complexes, d'améliorer les performances et d'intégrer MySQL dans des applications plus larges.</p>
+<p>En comprenant et en maîtrisant ces concepts, vous serez en mesure de tirer le meilleur parti de MySQL et de l'utiliser de manière avancée dans vos projets.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

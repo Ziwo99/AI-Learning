@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Bonnes pratiques et recommandations</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Optimisation du schéma de base de données</h2>
+<p>L'optimisation du schéma de base de données est essentielle pour garantir des performances optimales de votre système MySQL. Voici quelques bonnes pratiques à suivre :</p>
+
+<p><strong>1. Normalisation des tables :</strong> La normalisation consiste à organiser les données en les répartissant dans différentes tables pour éviter la redondance et garantir l'intégrité des données. Il est recommandé de suivre les règles de normalisation jusqu'à la troisième forme normale (3NF) pour éviter les anomalies de mise à jour et les incohérences.</p>
+
+<p><strong>2. Indexation appropriée :</strong> Les index permettent d'accélérer les opérations de recherche et de tri des données. Cependant, il est important de choisir judicieusement les colonnes à indexer, car un excès d'index peut ralentir les opérations d'écriture. Identifiez les colonnes fréquemment utilisées dans les clauses WHERE et JOIN et créez des index sur ces colonnes pour améliorer les performances.</p>
+
+<p><strong>3. Utilisation de types de données appropriés :</strong> Choisissez les types de données les plus appropriés pour chaque colonne en fonction des besoins de votre application. Utilisez des types de données plus petits lorsque cela est possible pour économiser de l'espace de stockage et améliorer les performances.</p>
+
+<p><strong>4. Éviter les colonnes NULL :</strong> Les colonnes NULL peuvent entraîner des problèmes de performance lorsqu'elles sont utilisées dans des opérations de recherche et de tri. Si une colonne peut avoir une valeur NULL, assurez-vous de la gérer correctement dans votre schéma de base de données.</p>
+
+<p><strong>5. Partitionnement de tables :</strong> Si vous avez des tables volumineuses, envisagez de les partitionner en fonction de critères tels que la plage de valeurs d'une colonne ou la valeur de hachage d'une colonne. Cela peut améliorer les performances des requêtes en répartissant les données sur plusieurs disques.</p>
+
+<h2>Sécurité des données sensibles</h2>
+<p>La sécurité des données est une préoccupation majeure dans tout système de gestion de base de données. Voici quelques bonnes pratiques pour assurer la sécurité de vos données sensibles :</p>
+
+<p><strong>1. Utilisation de mots de passe forts :</strong> Assurez-vous d'utiliser des mots de passe forts pour les comptes d'utilisateur MySQL. Un mot de passe fort doit contenir une combinaison de lettres majuscules et minuscules, de chiffres et de caractères spéciaux. Évitez d'utiliser des mots de passe faciles à deviner ou des informations personnelles.</p>
+
+<p><strong>2. Gestion des privilèges d'utilisateur :</strong> Accordez uniquement les privilèges nécessaires aux utilisateurs MySQL. Limitez l'accès aux bases de données et aux tables spécifiques en fonction des besoins de chaque utilisateur. Évitez d'accorder des privilèges excessifs qui pourraient compromettre la sécurité de votre système.</p>
+
+<p><strong>3. Chiffrement des données sensibles :</strong> Si vous stockez des données sensibles dans votre base de données, telles que des informations personnelles ou des mots de passe, envisagez de les chiffrer pour renforcer la sécurité. Utilisez des algorithmes de chiffrement forts et assurez-vous de protéger les clés de chiffrement.</p>
+
+<p><strong>4. Mises à jour régulières :</strong> Assurez-vous de maintenir votre système MySQL à jour en installant les dernières mises à jour de sécurité. Les mises à jour régulières peuvent corriger les vulnérabilités connues et renforcer la sécurité de votre système.</p>
+
+<h2>Maintenance régulière de la base de données</h2>
+<p>La maintenance régulière de la base de données est essentielle pour garantir des performances optimales et éviter les problèmes de corruption des données. Voici quelques bonnes pratiques de maintenance :</p>
+
+<p><strong>1. Sauvegarde régulière :</strong> Effectuez des sauvegardes régulières de votre base de données pour prévenir la perte de données en cas de défaillance du système ou de corruption des données. Planifiez des sauvegardes automatiques et vérifiez régulièrement l'intégrité des sauvegardes.</p>
+
+<p><strong>2. Vérification de l'intégrité des données :</strong> Utilisez des outils tels que CHECK TABLE pour vérifier régulièrement l'intégrité de vos tables. Cela permet de détecter les éventuelles erreurs de corruption des données et de les corriger rapidement.</p>
+
+<p><strong>3. Optimisation des performances :</strong> Surveillez les performances de votre système MySQL et effectuez des optimisations régulières pour améliorer les temps de réponse des requêtes. Analysez les requêtes lentes, identifiez les goulots d'étranglement et apportez les ajustements nécessaires au schéma de base de données ou aux requêtes elles-mêmes.</p>
+
+<p><strong>4. Gestion de l'espace de stockage :</strong> Surveillez l'utilisation de l'espace de stockage de votre base de données et effectuez des opérations de nettoyage régulières pour supprimer les données inutiles ou archivées. Cela permet de libérer de l'espace et d'améliorer les performances.</p>
+
+<p>Avec ces bonnes pratiques et recommandations, vous serez en mesure de créer et de gérer efficacement votre base de données MySQL, en garantissant des performances optimales, une sécurité renforcée et une maintenance régulière.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

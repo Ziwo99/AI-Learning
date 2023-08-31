@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Sécurité et gestion des utilisateurs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des utilisateurs et des privilèges</h2>
+<p>La gestion des utilisateurs et des privilèges est essentielle pour assurer la sécurité de votre base de données MySQL. Dans cette sous-section, nous allons explorer les différentes tâches liées à la gestion des utilisateurs et des privilèges.</p>
+
+<p>Pour créer un nouvel utilisateur, vous pouvez utiliser la commande suivante :</p>
+<pre><code>CREATE USER 'nom_utilisateur'@'localhost' IDENTIFIED BY 'mot_de_passe';</code></pre>
+
+<p>Remplacez 'nom_utilisateur' par le nom de l'utilisateur que vous souhaitez créer et 'mot_de_passe' par le mot de passe correspondant.</p>
+
+<p>Pour accorder des privilèges à un utilisateur, vous pouvez utiliser la commande suivante :</p>
+<pre><code>GRANT privilèges ON base_de_données.table TO 'nom_utilisateur'@'localhost';</code></pre>
+
+<p>Remplacez 'privilèges' par les privilèges que vous souhaitez accorder, 'base_de_données' par le nom de la base de données concernée, 'table' par le nom de la table concernée et 'nom_utilisateur' par le nom de l'utilisateur auquel vous souhaitez accorder les privilèges.</p>
+
+<p>Pour révoquer des privilèges à un utilisateur, vous pouvez utiliser la commande suivante :</p>
+<pre><code>REVOKE privilèges ON base_de_données.table FROM 'nom_utilisateur'@'localhost';</code></pre>
+
+<p>Remplacez 'privilèges', 'base_de_données', 'table' et 'nom_utilisateur' par les valeurs correspondantes.</p>
+
+<h2>Sécurité des données</h2>
+<p>La sécurité des données est un aspect crucial de la gestion d'une base de données MySQL. Dans cette sous-section, nous allons explorer les différentes mesures de sécurité que vous pouvez mettre en place pour protéger vos données.</p>
+
+<p>Une des mesures de sécurité les plus importantes est de s'assurer que les mots de passe des utilisateurs sont suffisamment forts. Vous pouvez utiliser la commande suivante pour définir un mot de passe fort pour un utilisateur :</p>
+<pre><code>ALTER USER 'nom_utilisateur'@'localhost' IDENTIFIED BY 'nouveau_mot_de_passe';</code></pre>
+
+<p>Remplacez 'nom_utilisateur' par le nom de l'utilisateur concerné et 'nouveau_mot_de_passe' par le nouveau mot de passe.</p>
+
+<p>Il est également recommandé de limiter l'accès à la base de données en utilisant des connexions sécurisées. Vous pouvez configurer MySQL pour utiliser SSL en suivant les étapes décrites dans la documentation officielle de MySQL.</p>
+
+<h2>Sauvegarde et restauration des bases de données</h2>
+<p>La sauvegarde et la restauration des bases de données sont des tâches essentielles pour assurer la disponibilité et l'intégrité de vos données. Dans cette sous-section, nous allons explorer les différentes méthodes de sauvegarde et de restauration disponibles dans MySQL.</p>
+
+<p>Pour sauvegarder une base de données, vous pouvez utiliser la commande suivante :</p>
+<pre><code>mysqldump -u utilisateur -p nom_base_de_données &gt; chemin/vers/fichier.sql</code></pre>
+
+<p>Remplacez 'utilisateur' par le nom de l'utilisateur ayant les privilèges nécessaires, 'nom_base_de_données' par le nom de la base de données que vous souhaitez sauvegarder et 'chemin/vers/fichier.sql' par le chemin où vous souhaitez enregistrer le fichier de sauvegarde.</p>
+
+<p>Pour restaurer une base de données à partir d'une sauvegarde, vous pouvez utiliser la commande suivante :</p>
+<pre><code>mysql -u utilisateur -p nom_base_de_données &lt; chemin/vers/fichier.sql</code></pre>
+
+<p>Remplacez 'utilisateur' par le nom de l'utilisateur ayant les privilèges nécessaires, 'nom_base_de_données' par le nom de la base de données dans laquelle vous souhaitez restaurer les données et 'chemin/vers/fichier.sql' par le chemin vers le fichier de sauvegarde.</p>
+
+<p>Assurez-vous de sauvegarder régulièrement vos bases de données et de tester la restauration à partir des sauvegardes pour vous assurer qu'elles sont fonctionnelles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

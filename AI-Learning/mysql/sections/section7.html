@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Administration de MySQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration avancée de MySQL</h2>
+<p>La configuration avancée de MySQL permet de personnaliser le comportement du serveur en fonction des besoins spécifiques de votre application. Voici quelques paramètres de configuration couramment utilisés :</p>
+
+<p><strong>max_connections :</strong> Ce paramètre détermine le nombre maximal de connexions simultanées autorisées sur le serveur MySQL. Il est important de définir cette valeur en fonction de la charge prévue sur le serveur.</p>
+
+<p><strong>innodb_buffer_pool_size :</strong> Cette option définit la taille du cache InnoDB utilisé pour stocker les données et les index en mémoire. Une valeur plus élevée peut améliorer les performances en réduisant les accès au disque.</p>
+
+<p><strong>query_cache_size :</strong> Cette option active le cache de requêtes, qui stocke les résultats des requêtes récurrentes en mémoire. Cela peut accélérer l'exécution des requêtes identiques, mais peut également consommer beaucoup de mémoire si le cache est trop grand.</p>
+
+<p>Il est important de noter que la configuration avancée de MySQL peut varier en fonction de la version du serveur et des besoins spécifiques de votre application. Il est recommandé de consulter la documentation officielle de MySQL pour obtenir des informations détaillées sur les options de configuration disponibles.</p>
+
+<h2>Surveillance et optimisation des performances</h2>
+<p>La surveillance et l'optimisation des performances sont essentielles pour garantir des temps de réponse rapides et une utilisation efficace des ressources du serveur. Voici quelques outils et techniques couramment utilisés :</p>
+
+<p><strong>Explain :</strong> L'instruction EXPLAIN permet d'analyser le plan d'exécution d'une requête SQL et d'identifier les éventuels problèmes de performance. Elle affiche des informations telles que l'ordre d'accès aux tables, l'utilisation des index et les opérations de tri.</p>
+
+<p><strong>Indexation :</strong> L'indexation des tables peut considérablement améliorer les performances des requêtes en accélérant la recherche et le tri des données. Il est important de choisir judicieusement les colonnes à indexer en fonction des requêtes les plus fréquentes de votre application.</p>
+
+<p><strong>Optimisation des requêtes :</strong> L'optimisation des requêtes consiste à réécrire les requêtes SQL de manière à les rendre plus efficaces. Cela peut impliquer l'utilisation de jointures plus appropriées, l'ajout de clauses WHERE supplémentaires pour filtrer les données ou la réorganisation des opérations de tri.</p>
+
+<p>Il existe de nombreux autres outils et techniques disponibles pour surveiller et optimiser les performances de MySQL. Il est recommandé de se familiariser avec ces outils et de les utiliser régulièrement pour maintenir des performances optimales.</p>
+
+<h2>Réplication et haute disponibilité</h2>
+<p>La réplication est un mécanisme qui permet de créer des copies exactes d'une base de données MySQL sur plusieurs serveurs. Cela permet d'améliorer la disponibilité et la résilience de votre application en cas de défaillance d'un serveur. Voici les principaux concepts liés à la réplication :</p>
+
+<p><strong>Maître :</strong> Le serveur maître est le serveur source qui envoie les mises à jour de la base de données aux serveurs esclaves.</p>
+
+<p><strong>Esclave :</strong> Les serveurs esclaves sont des copies du serveur maître qui reçoivent les mises à jour de la base de données et les appliquent localement.</p>
+
+<p><strong>Binlog :</strong> Le journal binaire (binlog) est un fichier de journal qui enregistre toutes les modifications apportées à la base de données sur le serveur maître. Les serveurs esclaves utilisent le binlog pour reproduire les modifications.</p>
+
+<p>La réplication peut être configurée de différentes manières en fonction de vos besoins spécifiques. Il est recommandé de consulter la documentation officielle de MySQL pour obtenir des instructions détaillées sur la configuration de la réplication.</p>
+
+<h2>Sauvegarde et récupération des données</h2>
+<p>La sauvegarde régulière des données est essentielle pour prévenir la perte de données en cas de défaillance matérielle ou de catastrophe. Voici quelques méthodes couramment utilisées pour sauvegarder et récupérer les données :</p>
+
+<p><strong>mysqldump :</strong> L'utilitaire mysqldump permet de sauvegarder une base de données MySQL dans un fichier texte. Cette sauvegarde peut ensuite être utilisée pour restaurer la base de données en cas de besoin.</p>
+
+<p><strong>Binary log :</strong> Le journal binaire (binlog) peut également être utilisé pour récupérer les données en cas de défaillance du serveur. Les fichiers binlog enregistrent toutes les modifications apportées à la base de données, ce qui permet de les rejouer pour restaurer les données.</p>
+
+<p><strong>RAID :</strong> L'utilisation d'un système RAID (Redundant Array of Independent Disks) peut également améliorer la résilience des données en répartissant les données sur plusieurs disques durs. Cela permet de continuer à fonctionner même en cas de défaillance d'un disque dur.</p>
+
+<p>Il est recommandé de mettre en place une stratégie de sauvegarde régulière et de tester régulièrement la procédure de récupération pour vous assurer qu'elle fonctionne correctement en cas de besoin.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

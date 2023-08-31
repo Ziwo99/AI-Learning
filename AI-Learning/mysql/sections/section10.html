@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Cas pratiques et exemples</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Exemples de requêtes complexes</h2>
+<p>Dans cette sous-section, nous allons explorer quelques exemples de requêtes complexes que vous pouvez utiliser pour interroger votre base de données MySQL. Ces requêtes vous permettront d'obtenir des informations spécifiques à partir de vos données.</p>
+
+<pre><code>SELECT * FROM employees WHERE salary > 50000;</code></pre>
+<p>Cette requête sélectionne tous les employés dont le salaire est supérieur à 50 000.</p>
+
+<pre><code>SELECT customers.customer_name, orders.order_date, products.product_name
+FROM customers
+JOIN orders ON customers.customer_id = orders.customer_id
+JOIN order_details ON orders.order_id = order_details.order_id
+JOIN products ON order_details.product_id = products.product_id
+WHERE customers.country = 'France';</code></pre>
+<p>Cette requête récupère le nom du client, la date de commande et le nom du produit pour toutes les commandes passées par des clients en France.</p>
+
+<h2>Cas pratiques de modélisation de données</h2>
+<p>Dans cette sous-section, nous allons explorer quelques cas pratiques de modélisation de données avec MySQL. La modélisation de données est un processus essentiel pour concevoir une base de données efficace et bien structurée.</p>
+
+<p>Exemple 1 : Modélisation d'une base de données pour une librairie</p>
+<p>Pour une librairie, nous pouvons modéliser les entités suivantes :</p>
+<ul>
+  <li>Livre</li>
+  <li>Auteur</li>
+  <li>Éditeur</li>
+  <li>Genre</li>
+  <li>Client</li>
+  <li>Commande</li>
+</ul>
+
+<p>Exemple 2 : Modélisation d'une base de données pour un site de commerce électronique</p>
+<p>Pour un site de commerce électronique, nous pouvons modéliser les entités suivantes :</p>
+<ul>
+  <li>Produit</li>
+  <li>Catégorie</li>
+  <li>Client</li>
+  <li>Commande</li>
+  <li>Paiement</li>
+  <li>Livraison</li>
+</ul>
+
+<h2>Utilisation de MySQL dans des projets réels</h2>
+<p>Dans cette sous-section, nous allons explorer comment MySQL est utilisé dans des projets réels. MySQL est largement utilisé dans de nombreux domaines, tels que les sites web, les applications mobiles, les systèmes de gestion de contenu, etc.</p>
+
+<p>Exemple 1 : Utilisation de MySQL dans un site web de commerce électronique</p>
+<p>MySQL est souvent utilisé comme base de données pour stocker les informations des produits, des clients, des commandes, etc. dans un site web de commerce électronique.</p>
+
+<p>Exemple 2 : Utilisation de MySQL dans un système de gestion de contenu</p>
+<p>MySQL est également utilisé dans les systèmes de gestion de contenu tels que WordPress, Joomla, Drupal, etc. pour stocker les articles, les pages, les commentaires, etc.</p>
+
+<p>Exemple 3 : Utilisation de MySQL dans une application mobile</p>
+<p>MySQL peut également être utilisé comme base de données pour stocker les données d'une application mobile, telles que les profils d'utilisateurs, les messages, les photos, etc.</p>
+
+<p>Ces exemples illustrent comment MySQL est utilisé dans des projets réels et démontrent la polyvalence de cette technologie.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Indexation et optimisation des requêtes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Indexation des tables</h2>
+<p>L'indexation des tables est une technique utilisée pour améliorer les performances des requêtes en accélérant la recherche et la récupération des données. Un index est une structure de données qui permet de localiser rapidement les enregistrements dans une table en fonction des valeurs de certaines colonnes. Voici comment créer un index sur une table :</p>
+
+<pre><code>CREATE INDEX index_name ON table_name (column1, column2, ...);
+</code></pre>
+
+<p>Il est important de choisir les colonnes appropriées pour l'indexation, en fonction des requêtes fréquemment exécutées. Les colonnes utilisées dans les clauses WHERE, JOIN et ORDER BY sont généralement de bons candidats pour l'indexation.</p>
+
+<h2>Optimisation des requêtes</h2>
+<p>L'optimisation des requêtes est le processus d'amélioration des performances des requêtes en réorganisant ou en réécrivant les requêtes de manière plus efficace. Voici quelques techniques couramment utilisées pour optimiser les requêtes :</p>
+
+<ul>
+  <li>Utiliser des jointures appropriées : choisir le type de jointure le plus approprié (INNER JOIN, LEFT JOIN, etc.) en fonction des données et des conditions de la requête.</li>
+  <li>Utiliser des sous-requêtes : les sous-requêtes peuvent être utilisées pour simplifier les requêtes complexes en les divisant en étapes plus petites.</li>
+  <li>Utiliser des index : comme mentionné précédemment, l'utilisation d'index peut considérablement améliorer les performances des requêtes.</li>
+  <li>Éviter les opérations coûteuses : certaines opérations, telles que les opérations de tri ou de regroupement, peuvent être coûteuses en termes de performances. Si possible, évitez-les ou trouvez des alternatives plus efficaces.</li>
+</ul>
+
+<h2>Utilisation des index pour améliorer les performances</h2>
+<p>Les index peuvent être utilisés pour améliorer les performances des requêtes de différentes manières :</p>
+
+<ul>
+  <li>Accélération de la recherche : en utilisant un index, la recherche d'enregistrements spécifiques dans une table devient beaucoup plus rapide.</li>
+  <li>Optimisation des jointures : les index peuvent être utilisés pour accélérer les opérations de jointure en évitant les balayages de table complets.</li>
+  <li>Amélioration du tri et du regroupement : les index peuvent également être utilisés pour accélérer les opérations de tri et de regroupement en évitant les opérations de tri sur les colonnes indexées.</li>
+</ul>
+
+<p>Il est important de noter que l'utilisation d'index peut également avoir des effets négatifs sur les performances, notamment lors de la modification des données dans une table. Les index doivent être utilisés avec prudence et en fonction des besoins spécifiques de chaque requête.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

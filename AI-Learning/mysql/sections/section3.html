@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Requêtes SQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux requêtes SQL</h2>
+<p>
+Les requêtes SQL (Structured Query Language) sont utilisées pour interagir avec une base de données relationnelle. Elles permettent de récupérer, modifier, supprimer ou insérer des données dans une base de données. SQL est un langage standardisé et largement utilisé dans l'industrie pour gérer les données.
+</p>
+
+<h2>Sélection des données avec SELECT</h2>
+<p>
+La clause SELECT est utilisée pour récupérer des données spécifiques à partir d'une table ou d'une vue dans une base de données. Elle permet de spécifier les colonnes à récupérer et les critères de filtrage des données. Voici un exemple de requête SELECT pour récupérer toutes les colonnes d'une table "users" :
+</p>
+
+<pre><code>SELECT * FROM users;</code></pre>
+
+<p>
+Cette requête récupérera toutes les lignes de la table "users" et affichera toutes les colonnes.
+</p>
+
+<h2>Filtrage des données avec WHERE</h2>
+<p>
+La clause WHERE est utilisée pour filtrer les données lors de l'exécution d'une requête SELECT. Elle permet de spécifier des conditions pour sélectionner uniquement les lignes qui répondent à ces conditions. Voici un exemple de requête SELECT avec une clause WHERE pour récupérer les utilisateurs dont l'âge est supérieur à 18 ans :
+</p>
+
+<pre><code>SELECT * FROM users WHERE age > 18;</code></pre>
+
+<p>
+Cette requête récupérera toutes les lignes de la table "users" où la colonne "age" est supérieure à 18.
+</p>
+
+<h2>Tri des données avec ORDER BY</h2>
+<p>
+La clause ORDER BY est utilisée pour trier les résultats d'une requête SELECT selon une ou plusieurs colonnes. Elle peut trier les données par ordre croissant (ASC) ou décroissant (DESC). Voici un exemple de requête SELECT avec une clause ORDER BY pour trier les utilisateurs par ordre alphabétique de leur nom :
+</p>
+
+<pre><code>SELECT * FROM users ORDER BY name ASC;</code></pre>
+
+<p>
+Cette requête récupérera toutes les lignes de la table "users" et les triera par ordre alphabétique croissant du nom.
+</p>
+
+<h2>Jointures de tables</h2>
+<p>
+Les jointures de tables permettent de combiner les données de plusieurs tables en fonction de leurs relations. Elles sont utilisées pour récupérer des données qui sont réparties sur plusieurs tables. Voici un exemple de requête SELECT avec une jointure de tables pour récupérer les utilisateurs et leurs commandes associées :
+</p>
+
+<pre><code>SELECT users.name, orders.order_date
+FROM users
+JOIN orders ON users.id = orders.user_id;</code></pre>
+
+<p>
+Cette requête récupérera les noms des utilisateurs et les dates de leurs commandes en combinant les données des tables "users" et "orders" en fonction de la correspondance entre les colonnes "id" de la table "users" et "user_id" de la table "orders".
+</p>
+
+<h2>Agrégation des données avec GROUP BY</h2>
+<p>
+La clause GROUP BY est utilisée pour regrouper les données en fonction de certaines colonnes et d'effectuer des opérations d'agrégation sur ces groupes de données. Elle est souvent utilisée avec des fonctions d'agrégation telles que COUNT, SUM, AVG, etc. Voici un exemple de requête SELECT avec une clause GROUP BY pour compter le nombre de commandes par utilisateur :
+</p>
+
+<pre><code>SELECT users.name, COUNT(orders.id) as total_orders
+FROM users
+JOIN orders ON users.id = orders.user_id
+GROUP BY users.name;</code></pre>
+
+<p>
+Cette requête récupérera les noms des utilisateurs et le nombre total de leurs commandes en utilisant la fonction COUNT pour compter les identifiants des commandes, puis en regroupant les données par nom d'utilisateur.
+</p>
+
+<h2>Manipulation des données avec INSERT, UPDATE et DELETE</h2>
+<p>
+Les requêtes INSERT, UPDATE et DELETE sont utilisées pour manipuler les données dans une base de données. INSERT est utilisée pour insérer de nouvelles lignes dans une table, UPDATE est utilisée pour mettre à jour des lignes existantes et DELETE est utilisée pour supprimer des lignes. Voici des exemples de requêtes INSERT, UPDATE et DELETE :
+</p>
+
+<pre><code>INSERT INTO users (name, age) VALUES ('John Doe', 25);
+
+UPDATE users SET age = 30 WHERE name = 'John Doe';
+
+DELETE FROM users WHERE name = 'John Doe';</code></pre>
+
+<p>
+La première requête insérera une nouvelle ligne dans la table "users" avec le nom "John Doe" et l'âge de 25 ans. La deuxième requête mettra à jour l'âge de l'utilisateur "John Doe" à 30 ans. La troisième requête supprimera toutes les lignes de la table "users" où le nom est "John Doe".
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

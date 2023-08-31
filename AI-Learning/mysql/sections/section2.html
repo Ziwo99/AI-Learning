@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Bases de données relationnelles</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Concepts de base des bases de données relationnelles</h2>
+<p>Les bases de données relationnelles sont des systèmes de gestion de bases de données qui stockent et organisent les données sous forme de tables. Chaque table est composée de lignes et de colonnes, où chaque ligne représente un enregistrement et chaque colonne représente un attribut ou une caractéristique de cet enregistrement.</p>
+
+<p>Les bases de données relationnelles utilisent des clés primaires et des clés étrangères pour établir des relations entre les tables. Une clé primaire est un attribut unique qui identifie de manière unique chaque enregistrement dans une table. Une clé étrangère est un attribut qui fait référence à la clé primaire d'une autre table, établissant ainsi une relation entre les deux tables.</p>
+
+<p>Les bases de données relationnelles offrent de nombreux avantages, tels que la flexibilité, la facilité de manipulation des données, la possibilité de gérer des volumes importants de données et la capacité à effectuer des requêtes complexes pour extraire des informations spécifiques.</p>
+
+<h2>Modélisation des données</h2>
+<p>La modélisation des données est le processus de conception d'une structure de base de données relationnelle. Elle implique l'identification des entités, des attributs et des relations entre les entités.</p>
+
+<p>Une entité représente un objet du monde réel, tel qu'un client, un produit ou une commande. Les attributs sont les caractéristiques de ces entités, tels que le nom du client, le prix du produit ou la date de la commande. Les relations définissent comment les entités sont liées les unes aux autres, par exemple, un client passe une commande, un produit est inclus dans une commande, etc.</p>
+
+<p>La modélisation des données utilise généralement le langage de modélisation UML (Unified Modeling Language) pour représenter graphiquement la structure de la base de données. Les diagrammes de classes et les diagrammes de relations sont couramment utilisés pour visualiser les entités, les attributs et les relations.</p>
+
+<h2>Création et gestion des tables</h2>
+<p>La création et la gestion des tables sont des opérations essentielles dans une base de données relationnelle. Pour créer une table, vous devez spécifier le nom de la table, les noms et les types de données des colonnes, ainsi que les contraintes telles que les clés primaires et les clés étrangères.</p>
+
+<p>Voici un exemple de création d'une table "clients" avec les colonnes "id" (clé primaire), "nom" et "email" :</p>
+
+<pre><code>CREATE TABLE clients (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    email VARCHAR(100)
+);</code></pre>
+
+<p>Une fois la table créée, vous pouvez effectuer des opérations de gestion telles que l'insertion de nouveaux enregistrements, la mise à jour des enregistrements existants et la suppression des enregistrements.</p>
+
+<p>Voici un exemple d'insertion d'un nouvel enregistrement dans la table "clients" :</p>
+
+<pre><code>INSERT INTO clients (id, nom, email)
+VALUES (1, 'John Doe', 'john.doe@example.com');</code></pre>
+
+<p>Vous pouvez également modifier les enregistrements existants en utilisant la commande UPDATE :</p>
+
+<pre><code>UPDATE clients
+SET email = 'johndoe@example.com'
+WHERE id = 1;</code></pre>
+
+<p>Et supprimer des enregistrements avec la commande DELETE :</p>
+
+<pre><code>DELETE FROM clients
+WHERE id = 1;</code></pre>
+
+<p>La gestion des tables comprend également des opérations telles que l'ajout de nouvelles colonnes, la modification des types de données des colonnes existantes et la suppression de colonnes.</p>
+
+<p>Voici un exemple d'ajout d'une nouvelle colonne "adresse" à la table "clients" :</p>
+
+<pre><code>ALTER TABLE clients
+ADD adresse VARCHAR(200);</code></pre>
+
+<p>La gestion des tables est essentielle pour maintenir l'intégrité et la cohérence des données dans une base de données relationnelle.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

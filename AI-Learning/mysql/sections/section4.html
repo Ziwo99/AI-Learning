@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MySQL Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Fonctions et opérations avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mysql/mysql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Fonctions de manipulation de chaînes de caractères</h2>
+<p>Les fonctions de manipulation de chaînes de caractères permettent de manipuler et de modifier les valeurs de type chaîne de caractères dans MySQL. Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+
+<pre><code>SELECT CONCAT('Hello', ' ', 'World') AS ConcatenatedString;
+-- Résultat : 'Hello World'
+
+SELECT UPPER('hello') AS UppercaseString;
+-- Résultat : 'HELLO'
+
+SELECT LOWER('WORLD') AS LowercaseString;
+-- Résultat : 'world'
+
+SELECT LENGTH('MySQL') AS StringLength;
+-- Résultat : 5
+
+SELECT SUBSTRING('Hello World', 7) AS Substring;
+-- Résultat : 'World'
+
+SELECT REPLACE('Hello World', 'World', 'MySQL') AS ReplacedString;
+-- Résultat : 'Hello MySQL'</code></pre>
+
+<h2>Fonctions mathématiques et statistiques</h2>
+<p>Les fonctions mathématiques et statistiques permettent d'effectuer des opérations mathématiques et statistiques sur les valeurs numériques dans MySQL. Voici quelques exemples de fonctions couramment utilisées :</p>
+
+<pre><code>SELECT ABS(-10) AS AbsoluteValue;
+-- Résultat : 10
+
+SELECT ROUND(3.14159, 2) AS RoundedValue;
+-- Résultat : 3.14
+
+SELECT CEILING(4.5) AS CeilingValue;
+-- Résultat : 5
+
+SELECT FLOOR(4.5) AS FloorValue;
+-- Résultat : 4
+
+SELECT AVG(salary) AS AverageSalary FROM employees;
+-- Résultat : Moyenne des salaires de tous les employés
+
+SELECT SUM(sales) AS TotalSales FROM orders;
+-- Résultat : Somme des ventes de toutes les commandes</code></pre>
+
+<h2>Fonctions de date et heure</h2>
+<p>Les fonctions de date et heure permettent de manipuler et de formater les valeurs de type date et heure dans MySQL. Voici quelques exemples de fonctions couramment utilisées :</p>
+
+<pre><code>SELECT CURDATE() AS CurrentDate;
+-- Résultat : Date actuelle
+
+SELECT CURTIME() AS CurrentTime;
+-- Résultat : Heure actuelle
+
+SELECT NOW() AS CurrentDateTime;
+-- Résultat : Date et heure actuelles
+
+SELECT DATE_FORMAT(order_date, '%Y-%m-%d') AS FormattedDate FROM orders;
+-- Résultat : Date formatée selon le modèle spécifié</code></pre>
+
+<h2>Opérations sur les données NULL</h2>
+<p>Les opérations sur les données NULL permettent de gérer les valeurs NULL dans MySQL. Voici quelques exemples d'opérations couramment utilisées :</p>
+
+<pre><code>SELECT column1 IS NULL AS IsNull FROM table;
+-- Résultat : Vrai si la valeur de column1 est NULL, sinon faux
+
+SELECT column1 IS NOT NULL AS IsNotNull FROM table;
+-- Résultat : Vrai si la valeur de column1 n'est pas NULL, sinon faux
+
+SELECT COALESCE(column1, column2, column3) AS CoalescedValue FROM table;
+-- Résultat : Première valeur non NULL parmi column1, column2 et column3</code></pre>
+
+<h2>Sous-requêtes</h2>
+<p>Les sous-requêtes permettent d'inclure une requête à l'intérieur d'une autre requête dans MySQL. Voici un exemple de sous-requête :</p>
+
+<pre><code>SELECT column1 FROM table1 WHERE column2 IN (SELECT column3 FROM table2);
+-- Résultat : Sélectionne les valeurs de column1 dans table1 où column2 est présent dans les valeurs de column3 dans table2</code></pre>
+
+<h2>Vues</h2>
+<p>Les vues permettent de créer des vues virtuelles basées sur les résultats d'une requête dans MySQL. Voici un exemple de création de vue :</p>
+
+<pre><code>CREATE VIEW view_name AS
+SELECT column1, column2
+FROM table
+WHERE condition;</code></pre>
+
+<p>Une fois la vue créée, vous pouvez l'utiliser comme une table normale dans vos requêtes.</p>
+
+<p>Ces fonctions et opérations avancées vous permettent de manipuler et de traiter les données de manière plus avancée dans MySQL. Elles sont essentielles pour des tâches telles que la transformation des données, les calculs complexes et l'optimisation des requêtes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mysql/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mysql/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
