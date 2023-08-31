@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Projet final</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réalisation d'une application complète en Dart</h2>
+
+<p>Dans cette dernière section, nous allons mettre en pratique tout ce que nous avons appris jusqu'à présent en réalisant une application complète en Dart. Cette application sera un gestionnaire de tâches simple, où les utilisateurs pourront créer, modifier et supprimer des tâches.</p>
+
+<p>Pour commencer, nous allons créer une classe Task qui représentera une tâche dans notre application. Voici à quoi ressemblera notre classe :</p>
+
+<pre><code>class Task {
+  String title;
+  bool isCompleted;
+
+  Task(this.title, this.isCompleted);
+}
+</code></pre>
+
+<p>Nous avons défini deux propriétés pour notre classe Task : le titre de la tâche (title) et un indicateur pour savoir si la tâche est terminée ou non (isCompleted). Nous avons également créé un constructeur qui nous permettra de créer des instances de la classe Task en spécifiant le titre et l'état initial de la tâche.</p>
+
+<p>Maintenant que nous avons notre classe Task, nous allons créer une liste de tâches dans notre application. Voici comment nous pouvons déclarer et initialiser notre liste :</p>
+
+<pre><code>List&lt;Task&gt; tasks = [
+  Task('Faire les courses', false),
+  Task('Faire du sport', true),
+  Task('Lire un livre', false)
+];
+</code></pre>
+
+<p>Nous avons créé une liste tasks qui contient trois instances de la classe Task. Chaque instance représente une tâche avec un titre et un état initial.</p>
+
+<p>Ensuite, nous allons créer une fonction pour afficher toutes les tâches de notre liste. Voici comment nous pouvons le faire :</p>
+
+<pre><code>void displayTasks() {
+  for (var task in tasks) {
+    print('Titre: ${task.title}');
+    print('Terminée: ${task.isCompleted}');
+    print('----------------------');
+  }
+}
+</code></pre>
+
+<p>Cette fonction parcourt la liste des tâches et affiche le titre et l'état de chaque tâche. Nous utilisons la syntaxe ${} pour insérer les valeurs des propriétés dans la chaîne de caractères.</p>
+
+<p>Maintenant, nous allons ajouter une fonction pour ajouter une nouvelle tâche à notre liste :</p>
+
+<pre><code>void addTask(String title) {
+  tasks.add(Task(title, false));
+}
+</code></pre>
+
+<p>Cette fonction prend un titre en paramètre et crée une nouvelle instance de la classe Task avec le titre spécifié et un état initial de non terminé. Ensuite, elle ajoute cette nouvelle tâche à la liste des tâches.</p>
+
+<p>Ensuite, nous allons ajouter une fonction pour marquer une tâche comme terminée :</p>
+
+<pre><code>void completeTask(int index) {
+  tasks[index].isCompleted = true;
+}
+</code></pre>
+
+<p>Cette fonction prend un index en paramètre et modifie l'état de la tâche correspondante dans la liste des tâches pour la marquer comme terminée.</p>
+
+<p>Enfin, nous allons ajouter une fonction pour supprimer une tâche de notre liste :</p>
+
+<pre><code>void deleteTask(int index) {
+  tasks.removeAt(index);
+}
+</code></pre>
+
+<p>Cette fonction prend un index en paramètre et supprime la tâche correspondante de la liste des tâches.</p>
+
+<p>Maintenant que nous avons toutes ces fonctions, nous pouvons les utiliser pour créer une interface utilisateur pour notre application. Nous pourrions utiliser une bibliothèque de widgets comme Flutter pour cela, mais pour simplifier, nous allons simplement utiliser la console pour afficher et interagir avec notre application.</p>
+
+<p>Voici comment nous pouvons créer une boucle principale pour notre application :</p>
+
+<pre><code>void main() {
+  bool isRunning = true;
+
+  while (isRunning) {
+    print('Que voulez-vous faire ?');
+    print('1. Afficher les tâches');
+    print('2. Ajouter une tâche');
+    print('3. Marquer une tâche comme terminée');
+    print('4. Supprimer une tâche');
+    print('5. Quitter');
+
+    String choice = stdin.readLineSync();
+
+    switch (choice) {
+      case '1':
+        displayTasks();
+        break;
+      case '2':
+        print('Entrez le titre de la tâche :');
+        String title = stdin.readLineSync();
+        addTask(title);
+        break;
+      case '3':
+        print('Entrez l\'index de la tâche à marquer comme terminée :');
+        int index = int.parse(stdin.readLineSync());
+        completeTask(index);
+        break;
+      case '4':
+        print('Entrez l\'index de la tâche à supprimer :');
+        int index = int.parse(stdin.readLineSync());
+        deleteTask(index);
+        break;
+      case '5':
+        isRunning = false;
+        break;
+      default:
+        print('Choix invalide');
+    }
+  }
+}
+</code></pre>
+
+<p>Cette boucle principale affiche un menu à l'utilisateur et lui demande de choisir une option. En fonction de son choix, elle appelle la fonction appropriée pour effectuer l'action correspondante. L'utilisateur peut également choisir l'option 5 pour quitter l'application.</p>
+
+<p>Voilà, nous avons maintenant une application de gestion de tâches fonctionnelle en Dart ! Vous pouvez l'exécuter et l'essayer vous-même en utilisant l'interpréteur Dart ou en la compilant en JavaScript et en l'exécutant dans un navigateur.</p>
+
+<p>C'est ainsi que se termine notre formation e-learning sur Dart. J'espère que vous avez apprécié d'apprendre ce langage de programmation et que vous vous sentez maintenant à l'aise pour créer vos propres applications en Dart.</p>
+
+<p>Merci d'avoir suivi cette formation et bonne continuation dans votre parcours de développement en Dart !</p>
+
+<h2>Ressources supplémentaires</h2>
+
+<p>Pour aller plus loin dans votre apprentissage de Dart, voici quelques ressources supplémentaires que vous pouvez consulter :</p>
+
+<h3>Livres recommandés</h3>
+
+<ul>
+  <li>"Dart in Action" par Chris Buckett</li>
+  <li>"Learning Dart" par Ivo Balbaert</li>
+  <li>"Dart for Absolute Beginners" par David Kopec</li>
+</ul>
+
+<h3>Sites web et forums</h3>
+
+<ul>
+  <li><a href="https://dart.dev/">Site officiel de Dart</a></li>
+  <li><a href="https://stackoverflow.com/questions/tagged/dart">Stack Overflow - Questions sur Dart</a></li>
+  <li><a href="https://dartlang.slack.com/">Slack - Communauté Dart</a></li>
+</ul>
+
+<h3>Communautés et événements</h3>
+
+<ul>
+  <li><a href="https://www.meetup.com/topics/dart/">Meetup - Groupes Dart</a></li>
+  <li><a href="https://www.dartlang.org/events/">Événements Dart</a></li>
+</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

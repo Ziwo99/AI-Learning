@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Déploiement d'applications Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Compilation en JavaScript</h2>
+<p>La compilation en JavaScript est une étape importante dans le déploiement d'applications Dart, car elle permet d'exécuter du code Dart dans un navigateur web. Dart est un langage de programmation qui est compilé en JavaScript pour être exécuté dans les navigateurs qui ne prennent pas en charge directement Dart.</p>
+
+<p>Pour compiler votre code Dart en JavaScript, vous pouvez utiliser l'outil de ligne de commande Dart Compiler (dart2js). Voici comment procéder :</p>
+
+<pre><code>dart2js -o main.js main.dart</code></pre>
+
+<p>Cette commande compile le fichier main.dart en JavaScript et génère un fichier main.js. Vous pouvez ensuite inclure ce fichier JavaScript dans votre page HTML pour exécuter votre application Dart.</p>
+
+<h2>Utilisation de Flutter pour le développement mobile</h2>
+<p>Flutter est un framework de développement d'applications mobiles multiplateformes créé par Google. Il permet de développer des applications mobiles pour iOS et Android en utilisant le langage Dart.</p>
+
+<p>Pour commencer à développer des applications mobiles avec Flutter, vous devez d'abord installer Flutter sur votre machine. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Téléchargez Flutter à partir du site officiel de Flutter.</li>
+  <li>Décompressez le fichier téléchargé dans un répertoire de votre choix.</li>
+  <li>Ajoutez le chemin du répertoire Flutter à votre variable d'environnement PATH.</li>
+  <li>Exécutez la commande suivante pour vérifier que Flutter est correctement installé :</li>
+</ol>
+
+<pre><code>flutter doctor</code></pre>
+
+<p>Une fois que Flutter est installé, vous pouvez créer un nouveau projet Flutter en utilisant la commande suivante :</p>
+
+<pre><code>flutter create mon_projet</code></pre>
+
+<p>Cette commande crée un nouveau projet Flutter avec le nom "mon_projet". Vous pouvez ensuite ouvrir ce projet dans votre éditeur de code préféré et commencer à développer votre application mobile en Dart.</p>
+
+<p>Flutter offre de nombreuses fonctionnalités pour le développement d'applications mobiles, telles que des widgets personnalisables, des animations fluides et une performance élevée. Il est largement utilisé dans l'industrie du développement d'applications mobiles.</p>
+
+<p>Voici un exemple de code Dart utilisant Flutter pour créer une application mobile simple :</p>
+
+<pre><code>import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Mon application',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Accueil'),
+      ),
+      body: Center(
+        child: Text('Bienvenue dans mon application Flutter!'),
+      ),
+    );
+  }
+}</code></pre>
+
+<p>Cet exemple crée une application Flutter avec une seule page contenant un texte de bienvenue. Vous pouvez personnaliser cette application en ajoutant d'autres widgets et en modifiant le thème.</p>
+
+<p>Une fois que vous avez développé votre application Flutter, vous pouvez la déployer sur les appareils iOS et Android en utilisant les outils fournis par Flutter. Vous pouvez également publier votre application sur les app stores respectifs pour permettre aux utilisateurs de la télécharger et de l'installer sur leurs appareils.</p>
+
+<p>Flutter simplifie le processus de développement d'applications mobiles multiplateformes en utilisant Dart, ce qui en fait un choix populaire parmi les développeurs d'applications mobiles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

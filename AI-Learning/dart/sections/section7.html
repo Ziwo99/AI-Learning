@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Manipulation de fichiers en Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+
+<p>La manipulation de fichiers est une tâche courante dans le développement d'applications Dart. Dart fournit des fonctionnalités intégrées pour lire et écrire des fichiers de manière synchrone et asynchrone.</p>
+
+<p>Pour lire un fichier de manière synchrone, vous pouvez utiliser la classe <code>File</code> du package <code>dart:io</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() {
+  var file = File('mon_fichier.txt');
+  var contents = file.readAsStringSync();
+  print(contents);
+}
+</code></pre>
+
+<p>Dans cet exemple, nous importons le package <code>dart:io</code> qui fournit des fonctionnalités d'entrée/sortie. Nous créons ensuite une instance de la classe <code>File</code> en spécifiant le chemin du fichier à lire. Ensuite, nous utilisons la méthode <code>readAsStringSync()</code> pour lire le contenu du fichier de manière synchrone et stocker le résultat dans la variable <code>contents</code>. Enfin, nous affichons le contenu du fichier à l'aide de la fonction <code>print()</code>.</p>
+
+<p>Pour écrire dans un fichier de manière synchrone, vous pouvez utiliser la méthode <code>writeAsStringSync()</code> de la classe <code>File</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() {
+  var file = File('mon_fichier.txt');
+  file.writeAsStringSync('Contenu à écrire dans le fichier');
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>writeAsStringSync()</code> pour écrire le contenu spécifié dans le fichier. Si le fichier n'existe pas, il sera créé. Si le fichier existe déjà, son contenu sera remplacé par le nouveau contenu.</p>
+
+<p>Pour lire un fichier de manière asynchrone, vous pouvez utiliser la méthode <code>readAsString()</code> de la classe <code>File</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() async {
+  var file = File('mon_fichier.txt');
+  var contents = await file.readAsString();
+  print(contents);
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le mot-clé <code>async</code> pour déclarer la fonction <code>main()</code> comme une fonction asynchrone. Ensuite, nous utilisons le mot-clé <code>await</code> pour attendre que la méthode <code>readAsString()</code> se termine avant de continuer l'exécution du programme.</p>
+
+<p>Pour écrire dans un fichier de manière asynchrone, vous pouvez utiliser la méthode <code>writeAsString()</code> de la classe <code>File</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() async {
+  var file = File('mon_fichier.txt');
+  await file.writeAsString('Contenu à écrire dans le fichier');
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le mot-clé <code>await</code> pour attendre que la méthode <code>writeAsString()</code> se termine avant de continuer l'exécution du programme.</p>
+
+<h2>Gestion des répertoires</h2>
+
+<p>En plus de la manipulation de fichiers, Dart permet également de gérer les répertoires. Vous pouvez créer, supprimer et lister les fichiers et répertoires d'un répertoire spécifique.</p>
+
+<p>Pour créer un répertoire, vous pouvez utiliser la méthode <code>create()</code> de la classe <code>Directory</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() {
+  var directory = Directory('mon_repertoire');
+  directory.createSync();
+}
+</code></pre>
+
+<p>Dans cet exemple, nous créons une instance de la classe <code>Directory</code> en spécifiant le chemin du répertoire à créer. Ensuite, nous utilisons la méthode <code>createSync()</code> pour créer le répertoire de manière synchrone.</p>
+
+<p>Pour supprimer un répertoire, vous pouvez utiliser la méthode <code>delete()</code> de la classe <code>Directory</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() {
+  var directory = Directory('mon_repertoire');
+  directory.deleteSync(recursive: true);
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>deleteSync()</code> pour supprimer le répertoire spécifié de manière synchrone. L'argument <code>recursive: true</code> indique à Dart de supprimer récursivement tous les fichiers et sous-répertoires contenus dans le répertoire.</p>
+
+<p>Pour lister les fichiers et répertoires d'un répertoire, vous pouvez utiliser la méthode <code>list()</code> de la classe <code>Directory</code>. Voici un exemple :</p>
+
+<pre><code>import 'dart:io';
+
+void main() {
+  var directory = Directory('mon_repertoire');
+  var contents = directory.listSync();
+  
+  for (var entity in contents) {
+    print(entity.path);
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>listSync()</code> pour obtenir une liste des fichiers et répertoires contenus dans le répertoire spécifié. Ensuite, nous parcourons la liste à l'aide d'une boucle <code>for</code> et affichons le chemin de chaque entité à l'aide de la fonction <code>print()</code>.</p>
+
+<p>Il est également possible de gérer les répertoires de manière asynchrone en utilisant les méthodes <code>create()</code>, <code>delete()</code> et <code>list()</code> avec le mot-clé <code>await</code>.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

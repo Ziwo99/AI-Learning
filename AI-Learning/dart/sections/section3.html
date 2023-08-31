@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation orientée objet en Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Encapsulation</h2>
+<p>L'encapsulation est un concept clé de la programmation orientée objet (POO) qui permet de regrouper des données et des méthodes associées dans une seule entité appelée classe. En Dart, l'encapsulation est réalisée en déclarant des variables et des méthodes comme étant privées, protégées ou publiques.</p>
+
+<p>Les variables privées sont accessibles uniquement à l'intérieur de la classe qui les définit. Elles sont déclarées en utilisant le mot-clé "var" ou "final" avec un underscore (_) devant leur nom. Par exemple :</p>
+
+<pre><code>class Person {
+  var _name;
+  
+  void _privateMethod() {
+    // Code du méthode privée
+  }
+}
+</code></pre>
+
+<p>Les variables protégées sont accessibles à l'intérieur de la classe qui les définit et de ses sous-classes. Elles sont déclarées en utilisant le mot-clé "var" ou "final" avec un underscore (_) devant leur nom. Par exemple :</p>
+
+<pre><code>class Person {
+  var _name;
+  
+  void _privateMethod() {
+    // Code du méthode privée
+  }
+}
+
+class Employee extends Person {
+  var _salary;
+  
+  void _protectedMethod() {
+    // Code du méthode protégée
+  }
+}
+</code></pre>
+
+<p>Les variables publiques sont accessibles à partir de n'importe où dans le programme. Elles sont déclarées en utilisant le mot-clé "var" ou "final" sans underscore (_) devant leur nom. Par exemple :</p>
+
+<pre><code>class Person {
+  var name;
+  
+  void publicMethod() {
+    // Code du méthode publique
+  }
+}
+</code></pre>
+
+<h2>Héritage</h2>
+<p>L'héritage est un autre concept clé de la POO qui permet à une classe d'hériter des propriétés et des méthodes d'une autre classe appelée classe parent. En Dart, l'héritage est réalisé en utilisant le mot-clé "extends". Par exemple :</p>
+
+<pre><code>class Animal {
+  void eat() {
+    print('L'animal mange.');
+  }
+}
+
+class Dog extends Animal {
+  void bark() {
+    print('Le chien aboie.');
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "Dog" hérite de la classe "Animal" et a accès à la méthode "eat()". Elle ajoute également sa propre méthode "bark()".</p>
+
+<h2>Polymorphisme</h2>
+<p>Le polymorphisme est un concept qui permet à une classe d'être utilisée comme une instance de sa classe parent ou de l'une de ses sous-classes. En Dart, le polymorphisme est réalisé en utilisant des classes abstraites et des méthodes abstraites.</p>
+
+<p>Une classe abstraite est une classe qui ne peut pas être instanciée directement, mais qui peut être utilisée comme type de données. Elle est déclarée en utilisant le mot-clé "abstract". Par exemple :</p>
+
+<pre><code>abstract class Animal {
+  void makeSound();
+}
+
+class Dog extends Animal {
+  void makeSound() {
+    print('Le chien aboie.');
+  }
+}
+
+class Cat extends Animal {
+  void makeSound() {
+    print('Le chat miaule.');
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "Animal" est une classe abstraite avec une méthode abstraite "makeSound()". Les classes "Dog" et "Cat" héritent de la classe "Animal" et implémentent la méthode "makeSound()".</p>
+
+<h2>Interfaces</h2>
+<p>Les interfaces sont un moyen de définir un contrat que les classes doivent respecter. En Dart, les interfaces sont réalisées en utilisant des classes abstraites avec des méthodes abstraites.</p>
+
+<p>Une classe abstraite avec des méthodes abstraites est utilisée comme une interface. Les classes qui implémentent cette interface doivent fournir une implémentation pour toutes les méthodes abstraites. Par exemple :</p>
+
+<pre><code>abstract class Animal {
+  void makeSound();
+}
+
+class Dog implements Animal {
+  void makeSound() {
+    print('Le chien aboie.');
+  }
+}
+
+class Cat implements Animal {
+  void makeSound() {
+    print('Le chat miaule.');
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "Animal" est utilisée comme une interface avec une méthode abstraite "makeSound()". Les classes "Dog" et "Cat" implémentent cette interface en fournissant une implémentation pour la méthode "makeSound()".</p>
+
+<h2>Mixins</h2>
+<p>Les mixins sont un moyen de réutiliser du code entre différentes classes sans utiliser l'héritage. En Dart, les mixins sont réalisés en utilisant le mot-clé "with".</p>
+
+<p>Un mixin est une classe qui fournit des fonctionnalités supplémentaires à d'autres classes. Il est utilisé en l'incluant avec le mot-clé "with" dans une classe. Par exemple :</p>
+
+<pre><code>mixin Swim {
+  void swim() {
+    print('L'animal nage.');
+  }
+}
+
+class Dolphin extends Animal with Swim {
+  // Code de la classe Dolphin
+}
+</code></pre>
+
+<p>Dans cet exemple, le mixin "Swim" fournit la méthode "swim()" à la classe "Dolphin". La classe "Dolphin" peut maintenant utiliser la méthode "swim()" sans hériter de la classe "Swim".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

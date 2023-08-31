@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Programmation asynchrone en Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation asynchrone</h2>
+<p>La programmation asynchrone est une approche de programmation qui permet d'exécuter des tâches en parallèle, sans bloquer l'exécution du programme principal. Cela est particulièrement utile lorsque vous devez effectuer des opérations longues ou des appels à des services externes, tels que des requêtes réseau ou des accès à des bases de données.</p>
+
+<p>En Dart, la programmation asynchrone est basée sur deux concepts clés : les futures et les streams. Les futures représentent une valeur qui sera disponible à un moment donné, tandis que les streams sont des flux de valeurs qui peuvent être écoutés en continu.</p>
+
+<h2>Utilisation des futures</h2>
+<p>Les futures sont utilisés pour représenter une valeur qui sera disponible à un moment donné dans le futur. Ils sont souvent utilisés pour effectuer des opérations asynchrones, telles que des requêtes réseau ou des accès à des bases de données.</p>
+
+<p>Voici un exemple d'utilisation d'un future en Dart :</p>
+
+<pre><code>Future<String> fetchData() {
+  return Future.delayed(Duration(seconds: 2), () => 'Données récupérées');
+}
+
+void main() {
+  print('Début du programme');
+  
+  fetchData().then((data) {
+    print(data);
+  });
+  
+  print('Fin du programme');
+}
+</code></pre>
+
+<p>Dans cet exemple, la fonction fetchData() retourne un future qui sera résolu après un délai de 2 secondes. La fonction main() affiche "Début du programme", puis appelle fetchData() et utilise la méthode then() pour spécifier une fonction de rappel qui sera exécutée lorsque le future sera résolu. Enfin, "Fin du programme" est affiché.</p>
+
+<p>Le résultat de l'exécution de ce programme sera :</p>
+
+<pre><code>Début du programme
+Fin du programme
+Données récupérées
+</code></pre>
+
+<p>Comme vous pouvez le voir, le programme ne bloque pas l'exécution pendant les 2 secondes d'attente du future. Au lieu de cela, il continue à s'exécuter et affiche "Fin du programme" avant que le future ne soit résolu.</p>
+
+<h2>Utilisation des streams</h2>
+<p>Les streams sont utilisés pour représenter un flux continu de valeurs. Ils sont souvent utilisés pour écouter des événements ou pour traiter des données en continu.</p>
+
+<p>Voici un exemple d'utilisation d'un stream en Dart :</p>
+
+<pre><code>Stream<int> countStream(int max) async* {
+  for (int i = 1; i <= max; i++) {
+    yield i;
+  }
+}
+
+void main() {
+  print('Début du programme');
+  
+  countStream(5).listen((count) {
+    print(count);
+  });
+  
+  print('Fin du programme');
+}
+</code></pre>
+
+<p>Dans cet exemple, la fonction countStream() retourne un stream qui émet les nombres de 1 à max. La fonction main() affiche "Début du programme", puis appelle countStream() et utilise la méthode listen() pour spécifier une fonction de rappel qui sera exécutée chaque fois qu'une nouvelle valeur est émise par le stream. Enfin, "Fin du programme" est affiché.</p>
+
+<p>Le résultat de l'exécution de ce programme sera :</p>
+
+<pre><code>Début du programme
+1
+2
+3
+4
+5
+Fin du programme
+</code></pre>
+
+<p>Comme vous pouvez le voir, le programme continue à s'exécuter et affiche "Fin du programme" avant que toutes les valeurs du stream ne soient émises. Les valeurs sont émises de manière asynchrone, à mesure qu'elles deviennent disponibles.</p>
+
+<p>Il est également possible de combiner les futures et les streams pour effectuer des opérations asynchrones plus complexes. Par exemple, vous pouvez utiliser un future pour effectuer une requête réseau, puis utiliser un stream pour traiter les données reçues en continu.</p>
+
+<p>C'est ainsi que la programmation asynchrone en Dart vous permet de créer des applications réactives et performantes, en évitant les blocages de l'interface utilisateur et en optimisant l'utilisation des ressources.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

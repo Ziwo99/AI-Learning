@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Collections en Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Listes</h2>
+<p>Une liste est une collection ordonnée d'éléments. En Dart, les listes peuvent contenir des éléments de n'importe quel type de données, y compris des types primitifs tels que les entiers et les chaînes de caractères, ainsi que des objets personnalisés.</p>
+
+<p>Pour créer une liste en Dart, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>List&lt;Type&gt; nomDeLaListe = [élément1, élément2, ..., élémentN];</code></pre>
+
+<p>Par exemple, pour créer une liste de nombres entiers, vous pouvez utiliser :</p>
+
+<pre><code>List&lt;int&gt; nombres = [1, 2, 3, 4, 5];</code></pre>
+
+<p>Vous pouvez accéder aux éléments d'une liste en utilisant leur index. L'index du premier élément est 0, le deuxième élément a un index de 1, et ainsi de suite. Pour accéder à un élément spécifique, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>nomDeLaListe[index];</code></pre>
+
+<p>Par exemple, pour accéder au troisième élément de la liste "nombres", vous pouvez utiliser :</p>
+
+<pre><code>int troisiemeNombre = nombres[2];</code></pre>
+
+<p>Les listes en Dart sont également modifiables. Vous pouvez ajouter des éléments à une liste existante en utilisant la méthode "add". Par exemple :</p>
+
+<pre><code>nombres.add(6);</code></pre>
+
+<p>Cela ajoutera le nombre 6 à la fin de la liste "nombres".</p>
+
+<h2>Maps</h2>
+<p>Une map est une collection d'associations clé-valeur. Chaque élément de la map est composé d'une clé et d'une valeur correspondante. En Dart, les clés et les valeurs peuvent être de n'importe quel type de données.</p>
+
+<p>Pour créer une map en Dart, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>Map&lt;TypeDeLaCle, TypeDeLaValeur&gt; nomDeLaMap = {
+  cle1: valeur1,
+  cle2: valeur2,
+  ...
+  cleN: valeurN
+};</code></pre>
+
+<p>Par exemple, pour créer une map de noms et d'âges, vous pouvez utiliser :</p>
+
+<pre><code>Map&lt;String, int&gt; personnes = {
+  'Alice': 25,
+  'Bob': 30,
+  'Charlie': 35
+};</code></pre>
+
+<p>Vous pouvez accéder à la valeur associée à une clé spécifique en utilisant la syntaxe suivante :</p>
+
+<pre><code>nomDeLaMap[cle];</code></pre>
+
+<p>Par exemple, pour accéder à l'âge de Bob dans la map "personnes", vous pouvez utiliser :</p>
+
+<pre><code>int ageDeBob = personnes['Bob'];</code></pre>
+
+<p>Les maps en Dart sont également modifiables. Vous pouvez ajouter de nouvelles associations clé-valeur en utilisant la syntaxe suivante :</p>
+
+<pre><code>nomDeLaMap[cle] = valeur;</code></pre>
+
+<p>Par exemple, pour ajouter une nouvelle personne à la map "personnes", vous pouvez utiliser :</p>
+
+<pre><code>personnes['Dave'] = 40;</code></pre>
+
+<h2>Sets</h2>
+<p>Un set est une collection d'éléments uniques, sans ordre spécifique. En Dart, les sets peuvent contenir des éléments de n'importe quel type de données, mais chaque élément doit être unique.</p>
+
+<p>Pour créer un set en Dart, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>Set&lt;Type&gt; nomDuSet = {élément1, élément2, ..., élémentN};</code></pre>
+
+<p>Par exemple, pour créer un set de nombres, vous pouvez utiliser :</p>
+
+<pre><code>Set&lt;int&gt; nombresUniques = {1, 2, 3, 4, 5};</code></pre>
+
+<p>Les sets en Dart sont également modifiables. Vous pouvez ajouter de nouveaux éléments à un set existant en utilisant la méthode "add". Par exemple :</p>
+
+<pre><code>nombresUniques.add(6);</code></pre>
+
+<p>Cela ajoutera le nombre 6 au set "nombresUniques". Si vous essayez d'ajouter un élément qui est déjà présent dans le set, il ne sera pas ajouté car les sets ne peuvent pas contenir d'éléments en double.</p>
+
+<p>Vous pouvez également supprimer des éléments d'un set en utilisant la méthode "remove". Par exemple :</p>
+
+<pre><code>nombresUniques.remove(5);</code></pre>
+
+<p>Cela supprimera le nombre 5 du set "nombresUniques".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

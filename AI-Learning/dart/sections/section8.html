@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Tests unitaires en Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux tests unitaires</h2>
+<p>Les tests unitaires sont une pratique essentielle dans le développement logiciel. Ils permettent de vérifier le bon fonctionnement des différentes parties d'un programme de manière isolée, en testant chaque unité de code de manière indépendante.</p>
+<p>En Dart, les tests unitaires sont réalisés à l'aide de la bibliothèque de tests intégrée, appelée "test". Cette bibliothèque fournit des fonctionnalités pour écrire et exécuter des tests unitaires de manière efficace.</p>
+<p>Pour écrire des tests unitaires en Dart, il est recommandé de créer un fichier séparé pour les tests, généralement nommé "nom_du_fichier_test.dart". Dans ce fichier, vous pouvez définir des fonctions de test qui vérifient le comportement attendu de vos unités de code.</p>
+<p>Les tests unitaires sont généralement organisés en suites de tests, qui regroupent des tests liés entre eux. Chaque suite de tests peut contenir plusieurs fonctions de test.</p>
+<p>Voici un exemple de code pour écrire un test unitaire en Dart :</p>
+<pre><code>import 'package:test/test.dart';
+
+void main() {
+  test('Exemple de test', () {
+    // Arrange (Préparation des données)
+
+    // Act (Exécution du code à tester)
+
+    // Assert (Vérification des résultats attendus)
+  });
+}
+</code></pre>
+
+<h2>Utilisation de la bibliothèque de tests</h2>
+<p>La bibliothèque de tests "test" fournit de nombreuses fonctionnalités pour faciliter l'écriture et l'exécution des tests unitaires en Dart.</p>
+<p>Voici quelques-unes des fonctionnalités les plus couramment utilisées :</p>
+<ul>
+  <li><strong>test()</strong> : Cette fonction permet de définir un test unitaire. Elle prend en paramètre une chaîne de caractères qui décrit le test, ainsi qu'une fonction anonyme qui contient le code du test.</li>
+  <li><strong>expect()</strong> : Cette fonction permet de vérifier si une condition est vraie. Elle prend en paramètre une valeur ou une expression à tester, ainsi qu'une valeur attendue. Si la valeur ou l'expression est égale à la valeur attendue, le test réussit. Sinon, le test échoue.</li>
+  <li><strong>setUp()</strong> et <strong>tearDown()</strong> : Ces fonctions permettent d'exécuter du code avant et après chaque test d'une suite de tests. Elles sont utiles pour initialiser des données ou nettoyer l'environnement de test.</li>
+  <li><strong>group()</strong> : Cette fonction permet de regrouper des tests liés entre eux dans une suite de tests. Elle prend en paramètre une chaîne de caractères qui décrit la suite de tests, ainsi qu'une fonction anonyme qui contient les tests.</li>
+</ul>
+<p>Voici un exemple de code qui utilise ces fonctionnalités :</p>
+<pre><code>import 'package:test/test.dart';
+
+void main() {
+  group('Exemple de suite de tests', () {
+    setUp(() {
+      // Code exécuté avant chaque test
+    });
+
+    tearDown(() {
+      // Code exécuté après chaque test
+    });
+
+    test('Test 1', () {
+      // Arrange
+
+      // Act
+
+      // Assert
+    });
+
+    test('Test 2', () {
+      // Arrange
+
+      // Act
+
+      // Assert
+    });
+  });
+}
+</code></pre>
+<p>Avec ces fonctionnalités, vous pouvez écrire des tests unitaires complets et précis pour vérifier le bon fonctionnement de vos unités de code en Dart.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

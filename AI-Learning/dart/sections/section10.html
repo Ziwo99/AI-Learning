@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Dart Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Bonnes pratiques en Dart</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/dart/dart.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Conventions de codage</h2>
+<p>Les conventions de codage sont des règles et des normes qui permettent de rendre le code plus lisible et compréhensible. En suivant ces conventions, vous facilitez la collaboration avec d'autres développeurs et améliorez la maintenabilité de votre code.</p>
+
+<p>Voici quelques bonnes pratiques de codage en Dart :</p>
+
+<ul>
+  <li>Utilisez des noms de variables et de fonctions significatifs et descriptifs. Évitez les noms génériques ou abrégés.</li>
+  <li>Utilisez la casse camel pour nommer vos variables et fonctions. Par exemple, utilisez "maVariable" au lieu de "ma_variable" ou "MaVariable".</li>
+  <li>Indentation : utilisez des espaces pour indenter votre code. Par convention, utilisez 2 ou 4 espaces pour chaque niveau d'indentation.</li>
+  <li>Utilisez des commentaires pour expliquer votre code et rendre votre intention claire. Les commentaires aident également les autres développeurs à comprendre votre code plus facilement.</li>
+  <li>Évitez les lignes de code trop longues. Si une ligne de code dépasse généralement 80 caractères, vous pouvez la diviser en plusieurs lignes pour améliorer la lisibilité.</li>
+</ul>
+
+<h2>Utilisation des packages</h2>
+<p>Les packages sont des bibliothèques de code réutilisables qui peuvent être utilisées pour ajouter des fonctionnalités supplémentaires à votre application Dart. L'utilisation de packages peut vous faire gagner du temps et améliorer la qualité de votre code.</p>
+
+<p>Voici comment utiliser les packages en Dart :</p>
+
+<ol>
+  <li>Recherchez le package dont vous avez besoin sur le site pub.dev, qui est le référentiel officiel des packages Dart.</li>
+  <li>Ajoutez le package à votre fichier pubspec.yaml en spécifiant la version souhaitée.</li>
+  <li>Exécutez la commande "pub get" pour télécharger et installer le package dans votre projet.</li>
+  <li>Importez le package dans votre code en utilisant la directive "import" suivie du nom du package.</li>
+  <li>Utilisez les fonctionnalités du package dans votre code.</li>
+</ol>
+
+<p>Il est important de noter que vous devez vérifier régulièrement les mises à jour des packages que vous utilisez et les mettre à jour si nécessaire pour bénéficier des dernières fonctionnalités et corrections de bugs.</p>
+
+<h2>Documentation du code</h2>
+<p>La documentation du code est essentielle pour rendre votre code compréhensible et utilisable par d'autres développeurs. Une bonne documentation permet de comprendre rapidement le fonctionnement d'une classe, d'une fonction ou d'une méthode, ainsi que les paramètres et les valeurs de retour attendus.</p>
+
+<p>Voici quelques bonnes pratiques pour documenter votre code en Dart :</p>
+
+<ul>
+  <li>Utilisez des commentaires pour expliquer le but et le fonctionnement de votre code.</li>
+  <li>Documentez les classes, les fonctions et les méthodes en utilisant des commentaires de documentation spéciaux, appelés "doc comments". Ces commentaires doivent être placés juste avant la déclaration de l'élément à documenter.</li>
+  <li>Utilisez des annotations spéciales pour documenter les paramètres, les valeurs de retour et les exceptions éventuelles.</li>
+  <li>Utilisez un style de documentation cohérent dans l'ensemble de votre projet.</li>
+</ul>
+
+<p>Une bonne pratique consiste également à générer automatiquement la documentation de votre code à l'aide d'outils tels que DartDoc. Cela permet de créer une documentation HTML facilement consultable.</p>
+
+<p>Voici un exemple de commentaires de documentation pour une méthode en Dart :</p>
+
+<pre><code>/// Cette méthode calcule la somme de deux nombres entiers.
+///
+/// [a] est le premier nombre entier.
+/// [b] est le deuxième nombre entier.
+/// La valeur de retour est la somme des deux nombres.
+int sum(int a, int b) {
+  return a + b;
+}
+</code></pre>
+
+<p>En suivant ces bonnes pratiques, vous pouvez rendre votre code plus compréhensible, maintenable et réutilisable.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/dart/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/dart/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
