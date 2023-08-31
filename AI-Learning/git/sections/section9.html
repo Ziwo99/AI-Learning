@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Dépannage et résolution des problèmes avec Git</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Résolution des erreurs courantes de Git</h2>
+<p>Lors de l'utilisation de Git, il est courant de rencontrer des erreurs. Voici quelques-unes des erreurs les plus courantes que vous pourriez rencontrer et comment les résoudre :</p>
+
+<h3>Erreur : "fatal: not a git repository (or any of the parent directories): .git"</h3>
+<p>Cette erreur se produit lorsque vous exécutez une commande Git en dehors d'un dépôt Git. Assurez-vous d'être dans le répertoire racine de votre dépôt Git avant d'exécuter des commandes Git.</p>
+
+<h3>Erreur : "error: failed to push some refs to 'remote'"</h3>
+<p>Cette erreur se produit lorsque vous essayez de pousser vos modifications vers un dépôt distant, mais que vous n'avez pas les autorisations nécessaires pour le faire. Vérifiez vos autorisations et assurez-vous d'avoir les droits d'accès appropriés pour le dépôt distant.</p>
+
+<h3>Erreur : "error: Your local changes to the following files would be overwritten by merge"</h3>
+<p>Cette erreur se produit lorsque vous essayez de fusionner des branches, mais que vous avez des modifications locales non validées dans les fichiers concernés. Vous devez d'abord valider ou annuler vos modifications locales avant de pouvoir effectuer la fusion.</p>
+
+<h2>Restauration de versions précédentes avec Git</h2>
+<p>Git offre la possibilité de restaurer des versions précédentes de votre code. Voici quelques commandes utiles pour restaurer des versions précédentes :</p>
+
+<h3>Commande : git checkout</h3>
+<p>La commande "git checkout" vous permet de passer à une version précédente de votre code. Par exemple, si vous souhaitez revenir à la version précédente d'un fichier spécifique, vous pouvez utiliser la commande suivante :</p>
+<pre><code>git checkout <commit_hash> -- <file_path></code></pre>
+<p>Remplacez "<commit_hash>" par le hash du commit de la version précédente et "<file_path>" par le chemin du fichier que vous souhaitez restaurer.</p>
+
+<h3>Commande : git revert</h3>
+<p>La commande "git revert" vous permet d'annuler les modifications apportées par un commit spécifique. Par exemple, si vous souhaitez annuler les modifications apportées par le commit avec le hash "<commit_hash>", vous pouvez utiliser la commande suivante :</p>
+<pre><code>git revert <commit_hash></code></pre>
+<p>Cela créera un nouveau commit qui annule les modifications apportées par le commit spécifié.</p>
+
+<h2>Utilisation des commandes de débogage de Git</h2>
+<p>Git propose également des commandes de débogage pour vous aider à résoudre les problèmes éventuels. Voici quelques-unes des commandes de débogage les plus couramment utilisées :</p>
+
+<h3>Commande : git log</h3>
+<p>La commande "git log" vous permet de visualiser l'historique des commits dans votre dépôt Git. Cela peut être utile pour identifier les problèmes ou les erreurs introduits par des commits spécifiques.</p>
+<pre><code>git log</code></pre>
+
+<h3>Commande : git diff</h3>
+<p>La commande "git diff" vous permet de voir les différences entre les modifications non validées et la dernière version validée de votre code. Cela peut vous aider à identifier les modifications qui pourraient causer des problèmes.</p>
+<pre><code>git diff</code></pre>
+
+<h3>Commande : git bisect</h3>
+<p>La commande "git bisect" vous permet de rechercher le commit qui a introduit un bug ou un problème spécifique. Elle utilise une recherche binaire pour vous aider à identifier le commit fautif.</p>
+<p>Voici les étapes pour utiliser la commande "git bisect" :</p>
+<ol>
+  <li>Marquez un commit connu comme étant bon :</li>
+  <pre><code>git bisect good <commit_hash></code></pre>
+  <li>Marquez un commit connu comme étant mauvais :</li>
+  <pre><code>git bisect bad <commit_hash></code></pre>
+  <li>Git effectuera une recherche binaire en vous demandant de marquer chaque commit comme bon ou mauvais jusqu'à ce qu'il identifie le commit fautif.</li>
+  <li>Une fois que le commit fautif est identifié, vous pouvez utiliser la commande "git bisect reset" pour revenir à l'état initial de votre dépôt.</li>
+</ol>
+
+<p>Utilisez ces commandes de débogage de manière appropriée pour résoudre les problèmes et les erreurs que vous pourriez rencontrer lors de l'utilisation de Git.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Git et les plateformes de développement</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Git avec GitHub</h2>
+<p>
+GitHub est une plateforme de développement collaboratif basée sur Git. Elle offre des fonctionnalités avancées pour la gestion de projets, la collaboration et le suivi des problèmes. Voici comment utiliser Git avec GitHub :
+</p>
+
+<h3>Cloner un dépôt GitHub</h3>
+<p>
+Pour cloner un dépôt GitHub, utilisez la commande suivante :
+</p>
+<pre><code>git clone https://github.com/utilisateur/nom-du-depot.git</code></pre>
+<p>
+Cela créera une copie locale du dépôt sur votre machine.
+</p>
+
+<h3>Ajouter et supprimer des dépôts distants</h3>
+<p>
+Pour ajouter un dépôt distant à votre projet Git, utilisez la commande suivante :
+</p>
+<pre><code>git remote add origin https://github.com/utilisateur/nom-du-depot.git</code></pre>
+<p>
+Cela ajoutera un alias "origin" pour le dépôt distant spécifié. Vous pouvez ensuite pousser vos modifications vers ce dépôt en utilisant la commande "git push origin".
+</p>
+<p>
+Pour supprimer un dépôt distant de votre projet Git, utilisez la commande suivante :
+</p>
+<pre><code>git remote remove origin</code></pre>
+<p>
+Cela supprimera l'alias "origin" du dépôt distant.
+</p>
+
+<h3>Synchronisation avec des dépôts distants</h3>
+<p>
+Pour récupérer les dernières modifications d'un dépôt distant dans votre dépôt local, utilisez la commande suivante :
+</p>
+<pre><code>git pull origin</code></pre>
+<p>
+Cela fusionnera les modifications du dépôt distant dans votre branche locale.
+</p>
+<p>
+Pour pousser vos modifications locales vers un dépôt distant, utilisez la commande suivante :
+</p>
+<pre><code>git push origin</code></pre>
+<p>
+Cela enverra vos modifications vers le dépôt distant spécifié.
+</p>
+
+<h3>Utilisation des branches distantes</h3>
+<p>
+Les branches distantes sont des branches qui existent dans le dépôt distant. Pour afficher les branches distantes disponibles, utilisez la commande suivante :
+</p>
+<pre><code>git branch -r</code></pre>
+<p>
+Pour créer une branche locale à partir d'une branche distante, utilisez la commande suivante :
+</p>
+<pre><code>git checkout -b nom-de-branche origin/nom-de-branche</code></pre>
+<p>
+Cela créera une nouvelle branche locale basée sur la branche distante spécifiée.
+</p>
+
+<h2>Utilisation de Git avec GitLab</h2>
+<p>
+GitLab est une autre plateforme de développement collaboratif basée sur Git. Elle offre des fonctionnalités similaires à GitHub, mais peut être auto-hébergée. Voici comment utiliser Git avec GitLab :
+</p>
+
+<h3>Cloner un dépôt GitLab</h3>
+<p>
+Pour cloner un dépôt GitLab, utilisez la commande suivante :
+</p>
+<pre><code>git clone https://gitlab.com/utilisateur/nom-du-depot.git</code></pre>
+<p>
+Cela créera une copie locale du dépôt sur votre machine.
+</p>
+
+<h3>Ajouter et supprimer des dépôts distants</h3>
+<p>
+Pour ajouter un dépôt distant à votre projet Git, utilisez la commande suivante :
+</p>
+<pre><code>git remote add origin https://gitlab.com/utilisateur/nom-du-depot.git</code></pre>
+<p>
+Cela ajoutera un alias "origin" pour le dépôt distant spécifié. Vous pouvez ensuite pousser vos modifications vers ce dépôt en utilisant la commande "git push origin".
+</p>
+<p>
+Pour supprimer un dépôt distant de votre projet Git, utilisez la commande suivante :
+</p>
+<pre><code>git remote remove origin</code></pre>
+<p>
+Cela supprimera l'alias "origin" du dépôt distant.
+</p>
+
+<h3>Synchronisation avec des dépôts distants</h3>
+<p>
+Pour récupérer les dernières modifications d'un dépôt distant dans votre dépôt local, utilisez la commande suivante :
+</p>
+<pre><code>git pull origin</code></pre>
+<p>
+Cela fusionnera les modifications du dépôt distant dans votre branche locale.
+</p>
+<p>
+Pour pousser vos modifications locales vers un dépôt distant, utilisez la commande suivante :
+</p>
+<pre><code>git push origin</code></pre>
+<p>
+Cela enverra vos modifications vers le dépôt distant spécifié.
+</p>
+
+<h3>Utilisation des branches distantes</h3>
+<p>
+Les branches distantes sont des branches qui existent dans le dépôt distant. Pour afficher les branches distantes disponibles, utilisez la commande suivante :
+</p>
+<pre><code>git branch -r</code></pre>
+<p>
+Pour créer une branche locale à partir d'une branche distante, utilisez la commande suivante :
+</p>
+<pre><code>git checkout -b nom-de-branche origin/nom-de-branche</code></pre>
+<p>
+Cela créera une nouvelle branche locale basée sur la branche distante spécifiée.
+</p>
+
+<h2>Utilisation de Git avec Bitbucket</h2>
+<p>
+Bitbucket est une autre plateforme de développement collaboratif basée sur Git. Elle offre des fonctionnalités similaires à GitHub et GitLab, mais est souvent utilisée par les équipes travaillant sur des projets privés. Voici comment utiliser Git avec Bitbucket :
+</p>
+
+<h3>Cloner un dépôt Bitbucket</h3>
+<p>
+Pour cloner un dépôt Bitbucket, utilisez la commande suivante :
+</p>
+<pre><code>git clone https://bitbucket.org/utilisateur/nom-du-depot.git</code></pre>
+<p>
+Cela créera une copie locale du dépôt sur votre machine.
+</p>
+
+<h3>Ajouter et supprimer des dépôts distants</h3>
+<p>
+Pour ajouter un dépôt distant à votre projet Git, utilisez la commande suivante :
+</p>
+<pre><code>git remote add origin https://bitbucket.org/utilisateur/nom-du-depot.git</code></pre>
+<p>
+Cela ajoutera un alias "origin" pour le dépôt distant spécifié. Vous pouvez ensuite pousser vos modifications vers ce dépôt en utilisant la commande "git push origin".
+</p>
+<p>
+Pour supprimer un dépôt distant de votre projet Git, utilisez la commande suivante :
+</p>
+<pre><code>git remote remove origin</code></pre>
+<p>
+Cela supprimera l'alias "origin" du dépôt distant.
+</p>
+
+<h3>Synchronisation avec des dépôts distants</h3>
+<p>
+Pour récupérer les dernières modifications d'un dépôt distant dans votre dépôt local, utilisez la commande suivante :
+</p>
+<pre><code>git pull origin</code></pre>
+<p>
+Cela fusionnera les modifications du dépôt distant dans votre branche locale.
+</p>
+<p>
+Pour pousser vos modifications locales vers un dépôt distant, utilisez la commande suivante :
+</p>
+<pre><code>git push origin</code></pre>
+<p>
+Cela enverra vos modifications vers le dépôt distant spécifié.
+</p>
+
+<h3>Utilisation des branches distantes</h3>
+<p>
+Les branches distantes sont des branches qui existent dans le dépôt distant. Pour afficher les branches distantes disponibles, utilisez la commande suivante :
+</p>
+<pre><code>git branch -r</code></pre>
+<p>
+Pour créer une branche locale à partir d'une branche distante, utilisez la commande suivante :
+</p>
+<pre><code>git checkout -b nom-de-branche origin/nom-de-branche</code></pre>
+<p>
+Cela créera une nouvelle branche locale basée sur la branche distante spécifiée.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

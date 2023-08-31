@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases de Git</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Initialisation d'un dépôt Git</h2>
+<p>L'initialisation d'un dépôt Git est la première étape pour commencer à utiliser Git. Cela permet de créer un dépôt Git vide dans un répertoire existant.</p>
+<p>Pour initialiser un dépôt Git, utilisez la commande suivante :</p>
+<pre><code>git init</code></pre>
+<p>Cette commande créera un nouveau répertoire .git dans le répertoire actuel, qui contiendra tous les fichiers et les informations nécessaires pour gérer les versions de votre projet.</p>
+
+<h2>Les commandes de base de Git (add, commit, push, pull)</h2>
+<p>Les commandes de base de Git sont essentielles pour gérer les versions de votre projet. Voici les principales commandes :</p>
+
+<h3>git add</h3>
+<p>La commande <code>git add</code> permet d'ajouter des fichiers à l'index de Git. Cela signifie que les modifications apportées à ces fichiers seront prises en compte lors du prochain commit.</p>
+<p>Par exemple, pour ajouter tous les fichiers modifiés à l'index, utilisez la commande suivante :</p>
+<pre><code>git add .</code></pre>
+
+<h3>git commit</h3>
+<p>La commande <code>git commit</code> permet de créer un nouveau commit, qui enregistre les modifications apportées aux fichiers de votre projet.</p>
+<p>Pour créer un commit avec un message descriptif, utilisez la commande suivante :</p>
+<pre><code>git commit -m "Message descriptif du commit"</code></pre>
+
+<h3>git push</h3>
+<p>La commande <code>git push</code> permet d'envoyer les commits locaux vers un dépôt distant, tel que GitHub ou GitLab.</p>
+<p>Pour pousser vos commits vers un dépôt distant, utilisez la commande suivante :</p>
+<pre><code>git push origin nom_de_la_branche</code></pre>
+
+<h3>git pull</h3>
+<p>La commande <code>git pull</code> permet de récupérer les derniers commits d'un dépôt distant et de les fusionner avec votre branche locale.</p>
+<p>Pour récupérer les derniers commits d'une branche distante, utilisez la commande suivante :</p>
+<pre><code>git pull origin nom_de_la_branche</code></pre>
+
+<h2>Gestion des branches</h2>
+<p>Les branches sont un élément clé de Git, car elles permettent de travailler sur des fonctionnalités ou des correctifs isolés, sans affecter la branche principale du projet.</p>
+<p>Voici les principales commandes pour gérer les branches :</p>
+
+<h3>git branch</h3>
+<p>La commande <code>git branch</code> permet de lister toutes les branches de votre dépôt Git.</p>
+<p>Pour afficher toutes les branches de votre dépôt, utilisez la commande suivante :</p>
+<pre><code>git branch</code></pre>
+
+<h3>git checkout</h3>
+<p>La commande <code>git checkout</code> permet de basculer entre les branches de votre dépôt Git.</p>
+<p>Pour basculer vers une autre branche, utilisez la commande suivante :</p>
+<pre><code>git checkout nom_de_la_branche</code></pre>
+
+<h3>git merge</h3>
+<p>La commande <code>git merge</code> permet de fusionner une branche avec une autre branche.</p>
+<p>Pour fusionner une branche avec la branche actuelle, utilisez la commande suivante :</p>
+<pre><code>git merge nom_de_la_branche</code></pre>
+
+<h2>Fusionner des branches avec Git</h2>
+<p>La fusion de branches est une opération courante dans Git, qui permet de combiner les modifications apportées à une branche avec une autre branche.</p>
+<p>Voici les étapes pour fusionner une branche avec Git :</p>
+<ol>
+  <li>Assurez-vous d'être sur la branche dans laquelle vous souhaitez fusionner les modifications.</li>
+  <li>Utilisez la commande <code>git merge nom_de_la_branche</code> pour fusionner la branche spécifiée avec la branche actuelle.</li>
+  <li>Résolvez les éventuels conflits de fusion qui peuvent survenir.</li>
+  <li>Validez la fusion en créant un nouveau commit.</li>
+</ol>
+
+<h2>Résolution des conflits</h2>
+<p>Les conflits surviennent lorsque Git ne peut pas fusionner automatiquement les modifications apportées à une branche avec une autre branche. Dans ce cas, il est nécessaire de résoudre manuellement les conflits.</p>
+<p>Voici les étapes pour résoudre les conflits avec Git :</p>
+<ol>
+  <li>Utilisez la commande <code>git status</code> pour afficher les fichiers en conflit.</li>
+  <li>Ouvrez les fichiers en conflit et recherchez les sections marquées avec "<<<<<<<", "=======" et ">>>>>>>".</li>
+  <li>Modifiez les fichiers en conflit pour résoudre les différences entre les versions.</li>
+  <li>Utilisez la commande <code>git add nom_du_fichier</code> pour marquer les fichiers comme résolus.</li>
+  <li>Utilisez la commande <code>git commit</code> pour créer un nouveau commit qui valide la résolution des conflits.</li>
+</ol>
+
+Ceci conclut la section 2 sur les bases de Git. Dans cette section, nous avons appris à initialiser un dépôt Git, à utiliser les commandes de base de Git, à gérer les branches, à fusionner des branches et à résoudre des conflits. Dans la prochaine section, nous aborderons le travail avec des dépôts distants.
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

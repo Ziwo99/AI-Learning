@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Bonnes pratiques avec Git</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Organisation du dépôt Git</h2>
+<p>L'organisation de votre dépôt Git est essentielle pour maintenir un flux de travail efficace et faciliter la collaboration avec d'autres développeurs. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li><strong>Structure des dossiers :</strong> Organisez vos fichiers et dossiers de manière logique et cohérente. Utilisez des dossiers pour regrouper les fichiers liés à des fonctionnalités spécifiques ou à des parties distinctes de votre projet.</li>
+  <li><strong>Nommage des branches :</strong> Utilisez des noms de branches descriptifs pour faciliter la compréhension de leur objectif. Évitez les noms génériques comme "feature" ou "fix" et préférez des noms plus spécifiques tels que "add-login-page" ou "fix-bug-123".</li>
+  <li><strong>Ignorer les fichiers inutiles :</strong> Utilisez un fichier .gitignore pour spécifier les fichiers et dossiers que vous ne souhaitez pas inclure dans votre dépôt Git. Cela peut inclure des fichiers de configuration locaux, des fichiers de compilation ou des fichiers temporaires.</li>
+</ul>
+
+<h2>Commentaires de commit significatifs</h2>
+<p>Les commentaires de commit sont importants pour comprendre les modifications apportées à un dépôt Git. Voici quelques conseils pour rédiger des commentaires de commit significatifs :</p>
+
+<ul>
+  <li><strong>Soyez clair et concis :</strong> Écrivez des commentaires de commit courts mais informatifs. Expliquez brièvement les modifications apportées et pourquoi elles ont été effectuées.</li>
+  <li><strong>Utilisez un langage clair :</strong> Évitez les acronymes ou les abréviations peu connus. Utilisez un langage clair et compréhensible par tous les membres de l'équipe.</li>
+  <li><strong>Référencez les problèmes ou les fonctionnalités :</strong> Si votre projet utilise un système de suivi des problèmes ou des fonctionnalités, référencez-les dans vos commentaires de commit. Cela permettra de retracer facilement les modifications apportées à une fonctionnalité ou de résoudre des problèmes spécifiques.</li>
+</ul>
+
+<h2>Utilisation des branches pour les fonctionnalités et les correctifs</h2>
+<p>L'utilisation de branches est une pratique courante dans Git pour travailler sur des fonctionnalités ou des correctifs de manière isolée. Voici comment utiliser les branches de manière efficace :</p>
+
+<ul>
+  <li><strong>Créez une branche pour chaque fonctionnalité ou correctif :</strong> Au lieu de travailler directement sur la branche principale (généralement "master" ou "main"), créez une nouvelle branche pour chaque fonctionnalité ou correctif que vous souhaitez implémenter.</li>
+  <li><strong>Donnez des noms descriptifs aux branches :</strong> Utilisez des noms de branches clairs et descriptifs pour indiquer l'objectif de la branche. Cela facilitera la compréhension de son contenu et permettra de la retrouver plus facilement.</li>
+  <li><strong>Mergez les branches une fois terminées :</strong> Une fois que vous avez terminé de travailler sur une fonctionnalité ou un correctif, fusionnez la branche avec la branche principale. Assurez-vous de résoudre les éventuels conflits de fusion avant de finaliser la fusion.</li>
+</ul>
+
+<h2>Révision du code avec Git</h2>
+<p>La révision du code est une étape importante pour garantir la qualité et la cohérence du code source d'un projet. Git offre plusieurs fonctionnalités pour faciliter la révision du code :</p>
+
+<ul>
+  <li><strong>Utilisation des pull requests :</strong> Les pull requests sont un moyen courant de soumettre du code pour révision. Ils permettent à d'autres membres de l'équipe de passer en revue les modifications, de laisser des commentaires et de suggérer des modifications avant de fusionner le code dans la branche principale.</li>
+  <li><strong>Utilisation des branches de fonctionnalités :</strong> Comme mentionné précédemment, l'utilisation de branches de fonctionnalités permet de travailler sur du code de manière isolée. Cela facilite la révision du code, car chaque fonctionnalité peut être examinée individuellement.</li>
+  <li><strong>Utilisation d'outils de révision du code :</strong> Il existe de nombreux outils de révision du code qui peuvent être intégrés à Git. Ces outils facilitent la détection des erreurs, des problèmes de style et des vulnérabilités potentielles dans le code.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pourrez maintenir un dépôt Git bien organisé, des commentaires de commit significatifs, des branches bien gérées et une révision du code efficace. Ces pratiques contribueront à améliorer la collaboration au sein de votre équipe et à garantir la qualité de votre projet.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

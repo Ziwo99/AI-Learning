@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Collaborer avec Git</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Git en équipe</h2>
+<p>Lorsque vous travaillez sur un projet avec une équipe, Git est un outil essentiel pour faciliter la collaboration. Voici quelques bonnes pratiques pour utiliser Git en équipe :</p>
+
+<ul>
+  <li>Chaque membre de l'équipe doit cloner le dépôt Git sur sa machine locale en utilisant la commande <code>git clone</code>. Cela permet à chaque membre d'avoir une copie complète du projet sur sa propre machine.</li>
+  <li>Il est important de créer des branches distinctes pour chaque fonctionnalité ou correctif que vous développez. Cela permet à chaque membre de l'équipe de travailler sur sa propre branche sans interférer avec le travail des autres.</li>
+  <li>Avant de commencer à travailler sur une nouvelle fonctionnalité ou un correctif, assurez-vous de vous mettre à jour avec la dernière version du dépôt distant en utilisant la commande <code>git pull</code>. Cela évite les conflits potentiels avec les modifications apportées par d'autres membres de l'équipe.</li>
+  <li>Lorsque vous avez terminé de travailler sur une fonctionnalité ou un correctif, vous pouvez fusionner votre branche avec la branche principale (généralement appelée "master" ou "main") en utilisant la commande <code>git merge</code>. Assurez-vous de résoudre tous les conflits éventuels avant de fusionner les branches.</li>
+  <li>Il est recommandé d'utiliser des outils de gestion de projet tels que Trello, Jira ou Asana pour suivre les tâches assignées à chaque membre de l'équipe. Vous pouvez également utiliser des balises Git pour marquer les commits liés à une tâche spécifique.</li>
+</ul>
+
+<h2>Les workflows Git (GitFlow, GitHub Flow)</h2>
+<p>Il existe plusieurs workflows Git populaires qui peuvent être utilisés pour organiser le flux de travail d'une équipe. Deux des workflows les plus couramment utilisés sont GitFlow et GitHub Flow.</p>
+
+<p>GitFlow est un modèle de workflow qui utilise deux branches principales : "master" et "develop". Les fonctionnalités sont développées dans des branches de fonctionnalités distinctes, puis fusionnées dans la branche "develop" une fois terminées. Lorsqu'une version stable est prête à être publiée, elle est fusionnée dans la branche "master". Ce workflow est adapté aux projets avec des cycles de développement longs et des versions publiques régulières.</p>
+
+<p>GitHub Flow est un modèle de workflow simplifié qui utilise une seule branche principale : "master" ou "main". Les fonctionnalités sont développées dans des branches de fonctionnalités distinctes, puis fusionnées dans la branche principale une fois terminées. Ce workflow est adapté aux projets avec des cycles de développement courts et des déploiements fréquents.</p>
+
+<h2>Gestion des conflits lors de la collaboration</h2>
+<p>Lorsque plusieurs membres de l'équipe travaillent sur le même fichier ou la même partie du code, il peut y avoir des conflits lors de la fusion des branches. Git offre des outils pour résoudre ces conflits de manière efficace.</p>
+
+<p>La première étape pour résoudre un conflit est de comprendre la nature du conflit. Vous pouvez utiliser la commande <code>git status</code> pour voir les fichiers en conflit. Les fichiers en conflit auront des sections de code entourées de balises spéciales qui indiquent les modifications apportées par chaque branche.</p>
+
+<p>Pour résoudre un conflit, vous pouvez ouvrir le fichier en conflit dans un éditeur de texte et modifier manuellement les sections en conflit pour les fusionner correctement. Une fois que vous avez résolu tous les conflits, vous pouvez utiliser la commande <code>git add</code> pour marquer les fichiers comme résolus.</p>
+
+<p>Après avoir résolu tous les conflits, vous pouvez continuer le processus de fusion en utilisant la commande <code>git commit</code>. Assurez-vous de fournir un message de commit clair et précis pour décrire les modifications apportées.</p>
+
+<h2>Utilisation des pull requests</h2>
+<p>Les pull requests sont un mécanisme de collaboration couramment utilisé sur les plateformes de développement telles que GitHub, GitLab et Bitbucket. Une pull request permet à un membre de l'équipe de proposer des modifications à une branche principale et d'inviter les autres membres de l'équipe à examiner et à commenter les modifications avant de les fusionner.</p>
+
+<p>Pour créer une pull request, vous devez d'abord pousser votre branche de fonctionnalité ou de correctif sur le dépôt distant. Ensuite, vous pouvez ouvrir une pull request sur la plateforme de développement en fournissant une description détaillée des modifications apportées.</p>
+
+<p>Les autres membres de l'équipe peuvent alors examiner les modifications, ajouter des commentaires et suggérer des modifications supplémentaires. Une fois que toutes les modifications ont été examinées et approuvées, la pull request peut être fusionnée dans la branche principale.</p>
+
+<p>Les pull requests sont un excellent moyen de faciliter la collaboration et de garantir que toutes les modifications sont examinées avant d'être fusionnées dans le projet principal.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

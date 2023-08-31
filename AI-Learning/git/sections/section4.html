@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Fonctionnalités avancées de Git</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les tags</h2>
+<p>Les tags sont des références statiques qui pointent vers des versions spécifiques de votre dépôt Git. Ils sont utilisés pour marquer des points importants dans l'historique du projet, tels que les versions stables ou les versions de publication.</p>
+<p>Pour créer un tag, vous pouvez utiliser la commande suivante :</p>
+<pre><code>git tag &lt;tag_name&gt;</code></pre>
+<p>Par exemple, pour créer un tag pour la version 1.0 de votre projet, vous pouvez utiliser la commande :</p>
+<pre><code>git tag v1.0</code></pre>
+<p>Les tags peuvent également être annotés, ce qui signifie qu'ils peuvent contenir des informations supplémentaires telles que le nom de l'auteur et un message de description. Pour créer un tag annoté, vous pouvez utiliser la commande suivante :</p>
+<pre><code>git tag -a &lt;tag_name&gt; -m "Description du tag"</code></pre>
+<p>Par exemple, pour créer un tag annoté pour la version 1.0 avec une description, vous pouvez utiliser la commande :</p>
+<pre><code>git tag -a v1.0 -m "Version 1.0 - Release"</code></pre>
+<p>Les tags peuvent être poussés vers un dépôt distant à l'aide de la commande :</p>
+<pre><code>git push origin &lt;tag_name&gt;</code></pre>
+<p>Par exemple, pour pousser le tag v1.0 vers le dépôt distant, vous pouvez utiliser la commande :</p>
+<pre><code>git push origin v1.0</code></pre>
+
+<h2>Les sous-modules</h2>
+<p>Les sous-modules sont utilisés pour inclure un autre dépôt Git en tant que sous-dossier de votre dépôt principal. Cela permet d'inclure des bibliothèques ou des modules externes dans votre projet sans avoir à les copier manuellement.</p>
+<p>Pour ajouter un sous-module à votre dépôt, vous pouvez utiliser la commande suivante :</p>
+<pre><code>git submodule add &lt;repository_url&gt; &lt;path_to_submodule&gt;</code></pre>
+<p>Par exemple, pour ajouter un sous-module à votre projet à partir du dépôt "https://github.com/example/submodule.git" dans le dossier "submodule", vous pouvez utiliser la commande :</p>
+<pre><code>git submodule add https://github.com/example/submodule.git submodule</code></pre>
+<p>Après avoir ajouté un sous-module, vous devez l'initialiser et le mettre à jour en utilisant les commandes suivantes :</p>
+<pre><code>git submodule init
+git submodule update</code></pre>
+<p>Cela récupérera les fichiers du sous-module et les placera dans le dossier spécifié.</p>
+
+<h2>Les hooks Git</h2>
+<p>Les hooks Git sont des scripts personnalisés qui sont exécutés automatiquement à des moments spécifiques dans le cycle de vie de Git, tels que la validation d'un commit ou la réception de nouvelles modifications d'un dépôt distant.</p>
+<p>Les hooks Git sont stockés dans le dossier ".git/hooks" de votre dépôt et peuvent être des scripts shell, des scripts Python ou tout autre type de script exécutable.</p>
+<p>Voici quelques exemples de hooks Git couramment utilisés :</p>
+<ul>
+  <li>pre-commit : exécuté avant la validation d'un commit. Il peut être utilisé pour effectuer des vérifications de style, des tests unitaires ou d'autres tâches de pré-validation.</li>
+  <li>post-commit : exécuté après la validation d'un commit. Il peut être utilisé pour envoyer des notifications, générer de la documentation ou effectuer d'autres tâches post-validation.</li>
+  <li>pre-push : exécuté avant de pousser des modifications vers un dépôt distant. Il peut être utilisé pour effectuer des vérifications supplémentaires avant de partager vos modifications.</li>
+</ul>
+<p>Pour activer un hook Git, vous devez le rendre exécutable en utilisant la commande suivante :</p>
+<pre><code>chmod +x &lt;hook_name&gt;</code></pre>
+<p>Par exemple, pour rendre le hook "pre-commit" exécutable, vous pouvez utiliser la commande :</p>
+<pre><code>chmod +x .git/hooks/pre-commit</code></pre>
+
+<h2>Les alias Git</h2>
+<p>Les alias Git sont des raccourcis personnalisés pour les commandes Git couramment utilisées. Ils permettent d'économiser du temps et de la frappe en définissant des commandes plus courtes et plus faciles à retenir.</p>
+<p>Pour créer un alias Git, vous pouvez utiliser la commande suivante :</p>
+<pre><code>git config --global alias.&lt;alias_name&gt; &lt;command&gt;</code></pre>
+<p>Par exemple, pour créer un alias "co" pour la commande "checkout", vous pouvez utiliser la commande :</p>
+<pre><code>git config --global alias.co checkout</code></pre>
+<p>Une fois l'alias créé, vous pouvez l'utiliser comme une commande Git normale. Par exemple, au lieu de taper "git checkout", vous pouvez simplement taper "git co".</p>
+
+<h2>Les fichiers .gitignore</h2>
+<p>Les fichiers .gitignore sont utilisés pour spécifier les fichiers et les dossiers que Git doit ignorer lors de l'ajout et de la validation des modifications. Cela permet d'éviter d'inclure des fichiers temporaires, des fichiers de configuration sensibles ou d'autres fichiers non pertinents dans votre dépôt Git.</p>
+<p>Pour créer un fichier .gitignore, vous pouvez simplement créer un fichier nommé ".gitignore" à la racine de votre dépôt et y ajouter les règles d'ignorance.</p>
+<p>Voici quelques exemples de règles couramment utilisées dans un fichier .gitignore :</p>
+<pre><code># Ignorer tous les fichiers .txt
+*.txt
+
+# Ignorer le dossier "build"
+/build
+
+# Ignorer les fichiers de configuration sensibles
+config.ini
+
+# Ignorer les fichiers de sauvegarde
+*.bak</code></pre>
+<p>Les règles dans un fichier .gitignore peuvent utiliser des caractères génériques tels que "*" pour représenter plusieurs caractères ou "?" pour représenter un seul caractère.</p>
+<p>Il est important de noter que les fichiers déjà suivis par Git ne seront pas ignorés même s'ils correspondent à une règle dans le fichier .gitignore. Pour ignorer ces fichiers, vous devrez les supprimer de l'historique Git à l'aide de la commande "git rm --cached".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

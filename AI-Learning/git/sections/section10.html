@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Git Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Utilisation avancée de Git</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/git/git.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des rebases interactifs</h2>
+<p>Le rebase interactif est une fonctionnalité puissante de Git qui permet de réorganiser et de modifier l'historique des commits. Il est utile pour fusionner des branches, réorganiser l'ordre des commits, supprimer des commits indésirables, modifier des messages de commit, etc.</p>
+
+<p>Voici comment utiliser le rebase interactif :</p>
+
+<pre><code>$ git rebase -i &lt;commit&gt;</code></pre>
+
+<p>Remplacez &lt;commit&gt; par le commit à partir duquel vous souhaitez commencer le rebase interactif. Cela ouvrira votre éditeur de texte par défaut avec une liste des commits à modifier.</p>
+
+<p>Dans l'éditeur de texte, vous pouvez spécifier les actions à effectuer sur chaque commit :</p>
+
+<ul>
+  <li><strong>pick</strong> : conserve le commit tel quel</li>
+  <li><strong>reword</strong> : modifie le message de commit</li>
+  <li><strong>edit</strong> : permet de modifier le contenu du commit</li>
+  <li><strong>squash</strong> : fusionne le commit avec le commit précédent</li>
+  <li><strong>fixup</strong> : fusionne le commit avec le commit précédent sans conserver le message de commit</li>
+  <li><strong>drop</strong> : supprime le commit</li>
+</ul>
+
+<p>Après avoir enregistré et fermé l'éditeur de texte, Git appliquera les modifications spécifiées lors du rebase interactif.</p>
+
+<h2>Utilisation des reflog</h2>
+<p>Le reflog (log des références) est un outil utile pour récupérer des commits perdus ou supprimés accidentellement. Il enregistre tous les mouvements de pointeurs de Git, tels que les commits, les branches, les tags, etc.</p>
+
+<p>Voici comment utiliser le reflog :</p>
+
+<pre><code>$ git reflog</code></pre>
+
+<p>Cette commande affiche une liste chronologique de tous les mouvements de pointeurs enregistrés dans le reflog.</p>
+
+<p>Pour restaurer un commit perdu ou supprimé, vous pouvez utiliser la commande <code>git cherry-pick</code> en spécifiant le hash du commit :</p>
+
+<pre><code>$ git cherry-pick &lt;commit-hash&gt;</code></pre>
+
+<p>Cela appliquera le commit spécifié à la branche actuelle.</p>
+
+<h2>Utilisation des commandes de recherche dans l'historique Git</h2>
+<p>Git propose plusieurs commandes pour rechercher des informations dans l'historique des commits :</p>
+
+<ul>
+  <li><code>git log</code> : affiche l'historique des commits</li>
+  <li><code>git grep &lt;pattern&gt;</code> : recherche un motif dans les fichiers de l'historique des commits</li>
+  <li><code>git bisect</code> : permet de rechercher le commit introduisant un bogue en utilisant une recherche binaire</li>
+</ul>
+
+<p>Par exemple, pour rechercher un motif spécifique dans les fichiers de l'historique des commits, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>$ git grep &lt;pattern&gt;</code></pre>
+
+<p>Cela affichera les fichiers contenant le motif spécifié, ainsi que les lignes correspondantes.</p>
+
+<p>La commande <code>git bisect</code> est utile pour trouver le commit introduisant un bogue en effectuant une recherche binaire. Elle nécessite de spécifier un commit "bon" et un commit "mauvais" :</p>
+
+<pre><code>$ git bisect start
+$ git bisect good &lt;commit-good&gt;
+$ git bisect bad &lt;commit-bad&gt;</code></pre>
+
+<p>Git effectuera ensuite une recherche binaire en vous demandant de marquer chaque commit comme "bon" ou "mauvais" jusqu'à ce qu'il trouve le commit introduisant le bogue.</p>
+
+<p>Ces commandes de recherche dans l'historique Git sont très utiles pour retrouver des informations spécifiques ou pour déboguer des problèmes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/git/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/git/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
