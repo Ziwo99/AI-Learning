@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Concepts de base de Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Images Docker</h2>
+<p>Une image Docker est un modèle de base utilisé pour créer des conteneurs Docker. Elle contient tous les fichiers nécessaires pour exécuter une application, y compris le système d'exploitation, les bibliothèques, les dépendances et le code de l'application elle-même.</p>
+<p>Pour créer une image Docker, vous pouvez utiliser un fichier appelé Dockerfile, qui contient les instructions pour construire l'image. Le Dockerfile spécifie les étapes nécessaires pour installer les dépendances, copier les fichiers de l'application et configurer l'environnement.</p>
+<p>Voici un exemple de Dockerfile pour une application Node.js :</p>
+<pre><code>FROM node:12
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+CMD ["npm", "start"]</code></pre>
+
+<h2>Création d'une image Docker</h2>
+<p>Pour créer une image Docker à partir d'un Dockerfile, vous pouvez utiliser la commande <code>docker build</code>. Cette commande va lire le Dockerfile, exécuter les instructions et créer une nouvelle image Docker.</p>
+<p>Voici un exemple de commande pour créer une image Docker :</p>
+<pre><code>docker build -t monapp:1.0 .</code></pre>
+<p>Cette commande crée une nouvelle image Docker avec le tag "monapp:1.0" en utilisant le Dockerfile situé dans le répertoire courant.</p>
+
+<h2>Utilisation d'images Docker existantes</h2>
+<p>Vous pouvez également utiliser des images Docker existantes pour exécuter des conteneurs. Docker Hub est un registre public qui contient de nombreuses images Docker prêtes à l'emploi.</p>
+<p>Pour utiliser une image Docker existante, vous pouvez utiliser la commande <code>docker run</code>. Cette commande va télécharger l'image si elle n'est pas déjà présente sur votre système, puis exécuter un conteneur basé sur cette image.</p>
+<p>Voici un exemple de commande pour exécuter un conteneur à partir d'une image Docker :</p>
+<pre><code>docker run -d -p 8080:80 nginx</code></pre>
+<p>Cette commande exécute un conteneur basé sur l'image "nginx" et le relie au port 8080 de votre machine hôte.</p>
+
+<h2>Gestion des images Docker</h2>
+<p>Pour gérer les images Docker sur votre système, vous pouvez utiliser différentes commandes Docker.</p>
+<p>Voici quelques commandes utiles :</p>
+<ul>
+  <li><code>docker images</code> : affiche la liste des images Docker présentes sur votre système.</li>
+  <li><code>docker rmi &lt;image_id&gt;</code> : supprime une image Docker spécifique.</li>
+  <li><code>docker prune</code> : supprime toutes les images Docker inutilisées.</li>
+</ul>
+
+<h2>Conteneurs Docker</h2>
+<p>Un conteneur Docker est une instance en cours d'exécution d'une image Docker. Il s'agit d'un environnement isolé qui contient tous les fichiers et dépendances nécessaires pour exécuter une application.</p>
+<p>Pour créer un conteneur Docker, vous pouvez utiliser la commande <code>docker run</code>. Cette commande va exécuter un nouveau conteneur basé sur une image Docker spécifique.</p>
+<p>Voici un exemple de commande pour exécuter un conteneur Docker :</p>
+<pre><code>docker run -d -p 8080:80 nginx</code></pre>
+<p>Cette commande exécute un conteneur basé sur l'image "nginx" et le relie au port 8080 de votre machine hôte.</p>
+
+<h2>Création d'un conteneur Docker</h2>
+<p>Pour créer un conteneur Docker, vous pouvez utiliser la commande <code>docker run</code> avec des options supplémentaires pour spécifier le nom de l'image, les ports à exposer, les volumes à monter, etc.</p>
+<p>Voici un exemple de commande pour créer un conteneur Docker :</p>
+<pre><code>docker run -d -p 8080:80 -v /chemin/vers/dossier:/app nginx</code></pre>
+<p>Cette commande crée un conteneur basé sur l'image "nginx", relie le port 8080 de votre machine hôte au port 80 du conteneur, et monte le dossier "/chemin/vers/dossier" du système hôte dans le dossier "/app" du conteneur.</p>
+
+<h2>Gestion des conteneurs Docker</h2>
+<p>Pour gérer les conteneurs Docker sur votre système, vous pouvez utiliser différentes commandes Docker.</p>
+<p>Voici quelques commandes utiles :</p>
+<ul>
+  <li><code>docker ps</code> : affiche la liste des conteneurs Docker en cours d'exécution.</li>
+  <li><code>docker stop &lt;container_id&gt;</code> : arrête un conteneur Docker spécifique.</li>
+  <li><code>docker rm &lt;container_id&gt;</code> : supprime un conteneur Docker spécifique.</li>
+  <li><code>docker logs &lt;container_id&gt;</code> : affiche les logs d'un conteneur Docker spécifique.</li>
+</ul>
+
+<h2>Communication entre les conteneurs Docker</h2>
+<p>Les conteneurs Docker peuvent communiquer entre eux en utilisant des réseaux Docker. Chaque conteneur peut être connecté à un ou plusieurs réseaux Docker, ce qui leur permet de se parler et de partager des ressources.</p>
+<p>Pour créer un réseau Docker, vous pouvez utiliser la commande <code>docker network create</code>. Cette commande va créer un nouveau réseau Docker.</p>
+<p>Voici un exemple de commande pour créer un réseau Docker :</p>
+<pre><code>docker network create monreseau</code></pre>
+<p>Cette commande crée un nouveau réseau Docker appelé "monreseau".</p>
+
+<h2>Registres Docker</h2>
+<p>Un registre Docker est un service qui stocke et distribue des images Docker. Il existe des registres publics, tels que Docker Hub, qui contiennent de nombreuses images prêtes à l'emploi, ainsi que des registres privés que vous pouvez configurer pour stocker vos propres images.</p>
+<p>Pour utiliser un registre Docker, vous pouvez utiliser la commande <code>docker pull</code> pour télécharger une image à partir du registre, et la commande <code>docker push</code> pour envoyer une image vers le registre.</p>
+<p>Voici un exemple de commande pour télécharger une image à partir d'un registre Docker :</p>
+<pre><code>docker pull nginx</code></pre>
+<p>Cette commande télécharge l'image "nginx" à partir du registre Docker par défaut (Docker Hub).</p>
+
+<h2>Utilisation des registres Docker publics</h2>
+<p>Pour utiliser un registre Docker public, vous pouvez simplement spécifier le nom de l'image avec le nom du registre. Par exemple, pour télécharger une image à partir de Docker Hub, vous pouvez utiliser la commande <code>docker pull</code> suivie du nom de l'image :</p>
+<pre><code>docker pull nginx</code></pre>
+<p>Cette commande télécharge l'image "nginx" à partir de Docker Hub.</p>
+
+<h2>Configuration d'un registre Docker privé</h2>
+<p>Pour configurer un registre Docker privé, vous pouvez utiliser le logiciel open-source Docker Registry. Vous pouvez installer Docker Registry sur votre propre infrastructure et le configurer pour stocker vos propres images Docker.</p>
+<p>Voici les étapes générales pour configurer un registre Docker privé :</p>
+<ol>
+  <li>Installez Docker Registry sur votre serveur.</li>
+  <li>Configurez Docker Registry pour utiliser un certificat SSL (facultatif mais recommandé pour la sécurité).</li>
+  <li>Configurez Docker pour qu'il utilise votre registre privé en ajoutant l'option <code>--insecure-registry</code> à la configuration Docker.</li>
+  <li>Créez une image Docker et poussez-la vers votre registre privé en utilisant la commande <code>docker push</code>.</li>
+</ol>
+
+<p>Une fois que votre registre privé est configuré, vous pouvez utiliser la commande <code>docker pull</code> pour télécharger des images à partir de votre registre, en spécifiant le nom de l'image avec le nom de votre registre privé.</p>
+<pre><code>docker pull monregistre/nginx</code></pre>
+<p>Cette commande télécharge l'image "nginx" à partir de votre registre privé.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

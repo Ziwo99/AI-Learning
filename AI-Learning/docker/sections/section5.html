@@ -1,0 +1,250 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Déploiement d'applications avec Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Déploiement d'une application simple avec Docker</h2>
+<p>Dans cette sous-section, nous allons apprendre comment déployer une application simple à l'aide de Docker. Le déploiement d'une application avec Docker est un processus simple et efficace qui permet de créer un environnement isolé pour exécuter votre application.</p>
+
+<p>Pour commencer, vous devez d'abord créer une image Docker de votre application. Une image Docker est un package léger et autonome qui contient tout ce dont votre application a besoin pour s'exécuter, y compris le code source, les dépendances et les configurations.</p>
+
+<p>Une fois que vous avez créé votre image Docker, vous pouvez la déployer en tant que conteneur Docker. Un conteneur Docker est une instance en cours d'exécution d'une image Docker. Il s'agit d'un environnement isolé qui exécute votre application de manière cohérente, quel que soit l'environnement hôte.</p>
+
+<p>Pour déployer votre application, vous devez exécuter la commande suivante dans votre terminal :</p>
+
+<pre><code>docker run -d --name mon_application mon_image</code></pre>
+
+<p>Cette commande crée un nouveau conteneur Docker à partir de l'image spécifiée et lui attribue le nom "mon_application". L'option "-d" indique à Docker de lancer le conteneur en arrière-plan.</p>
+
+<p>Une fois que votre application est déployée, vous pouvez accéder à celle-ci en utilisant l'adresse IP du conteneur Docker. Vous pouvez obtenir l'adresse IP en exécutant la commande suivante :</p>
+
+<pre><code>docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' mon_application</code></pre>
+
+<p>Cette commande affiche l'adresse IP du conteneur Docker "mon_application". Vous pouvez utiliser cette adresse IP pour accéder à votre application dans un navigateur web.</p>
+
+<h2>Utilisation de Docker Compose pour le déploiement d'applications multi-conteneurs</h2>
+<p>Docker Compose est un outil qui permet de définir et de gérer des applications multi-conteneurs. Il utilise un fichier YAML pour décrire les services, les réseaux et les volumes nécessaires à votre application.</p>
+
+<p>Pour utiliser Docker Compose, vous devez d'abord créer un fichier "docker-compose.yml" dans le répertoire de votre projet. Ce fichier contient la configuration de votre application, y compris les images Docker à utiliser, les ports à exposer et les volumes à monter.</p>
+
+<p>Voici un exemple de fichier "docker-compose.yml" pour une application web avec un serveur backend et une base de données :</p>
+
+<pre><code>version: '3'
+services:
+  backend:
+    image: mon_image_backend
+    ports:
+      - 8080:8080
+    volumes:
+      - ./backend:/app
+  database:
+    image: mon_image_database
+    ports:
+      - 3306:3306
+    volumes:
+      - ./database:/data
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini deux services : "backend" et "database". Chaque service utilise une image Docker spécifique, expose des ports et monte des volumes.</p>
+
+<p>Pour déployer votre application avec Docker Compose, vous devez exécuter la commande suivante dans votre terminal :</p>
+
+<pre><code>docker-compose up -d</code></pre>
+
+<p>Cette commande lance tous les services définis dans votre fichier "docker-compose.yml" en arrière-plan. L'option "-d" indique à Docker Compose de lancer les conteneurs en arrière-plan.</p>
+
+<p>Une fois que votre application est déployée, vous pouvez accéder à celle-ci en utilisant l'adresse IP de votre machine hôte et le port spécifié dans votre fichier "docker-compose.yml". Par exemple, si vous avez exposé le port 8080 pour le service "backend", vous pouvez accéder à votre application en utilisant l'URL suivante : http://localhost:8080.</p>
+
+<h2>Orchestration de conteneurs avec Docker Swarm</h2>
+<p>Docker Swarm est un outil intégré à Docker qui permet de créer et de gérer des clusters de conteneurs. Il permet de déployer et de mettre à l'échelle des applications sur plusieurs hôtes Docker.</p>
+
+<p>Pour utiliser Docker Swarm, vous devez d'abord initialiser un nœud Swarm sur votre machine hôte principale. Vous pouvez le faire en exécutant la commande suivante :</p>
+
+<pre><code>docker swarm init</code></pre>
+
+<p>Cette commande initialise un nœud Swarm sur votre machine hôte principale et génère un jeton d'adhésion. Vous pouvez utiliser ce jeton pour rejoindre d'autres machines hôtes à votre cluster Swarm.</p>
+
+<p>Une fois que vous avez initialisé un nœud Swarm, vous pouvez déployer des services sur votre cluster en utilisant un fichier "docker-compose.yml" similaire à celui que nous avons vu précédemment. La seule différence est que vous devez spécifier le nombre de réplicas pour chaque service.</p>
+
+<p>Voici un exemple de fichier "docker-compose.yml" pour une application web avec un service backend et un service frontend, chacun avec trois réplicas :</p>
+
+<pre><code>version: '3'
+services:
+  backend:
+    image: mon_image_backend
+    ports:
+      - 8080:8080
+    replicas: 3
+  frontend:
+    image: mon_image_frontend
+    ports:
+      - 80:80
+    replicas: 3
+</code></pre>
+
+<p>Pour déployer votre application sur votre cluster Swarm, vous devez exécuter la commande suivante :</p>
+
+<pre><code>docker stack deploy -c docker-compose.yml mon_application</code></pre>
+
+<p>Cette commande déploie tous les services définis dans votre fichier "docker-compose.yml" sur votre cluster Swarm. L'option "-c" spécifie le fichier de configuration à utiliser et "mon_application" est le nom de votre pile de services.</p>
+
+<p>Une fois que votre application est déployée, Docker Swarm répartit automatiquement les réplicas des services sur les différents nœuds de votre cluster. Vous pouvez accéder à votre application en utilisant l'adresse IP de l'un des nœuds de votre cluster et le port spécifié dans votre fichier "docker-compose.yml".</p>
+
+<h2>Déploiement d'applications sur des clusters Kubernetes</h2>
+<p>Kubernetes est une plateforme open-source de gestion et d'orchestration de conteneurs. Il permet de déployer, de mettre à l'échelle et de gérer des applications conteneurisées sur des clusters de machines.</p>
+
+<p>Pour déployer des applications avec Kubernetes, vous devez d'abord créer un fichier de configuration YAML appelé "deployment.yaml". Ce fichier contient la description de votre application, y compris les images Docker à utiliser, les ports à exposer et les volumes à monter.</p>
+
+<p>Voici un exemple de fichier "deployment.yaml" pour une application web avec un service backend et un service frontend :</p>
+
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon_application
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mon_application
+  template:
+    metadata:
+      labels:
+        app: mon_application
+    spec:
+      containers:
+        - name: backend
+          image: mon_image_backend
+          ports:
+            - containerPort: 8080
+        - name: frontend
+          image: mon_image_frontend
+          ports:
+            - containerPort: 80
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini deux conteneurs : "backend" et "frontend". Chaque conteneur utilise une image Docker spécifique et expose un port.</p>
+
+<p>Pour déployer votre application avec Kubernetes, vous devez exécuter la commande suivante :</p>
+
+<pre><code>kubectl apply -f deployment.yaml</code></pre>
+
+<p>Cette commande déploie votre application en utilisant le fichier de configuration "deployment.yaml". Kubernetes crée automatiquement les réplicas des conteneurs spécifiés et les répartit sur les nœuds de votre cluster.</p>
+
+<p>Une fois que votre application est déployée, vous pouvez accéder à celle-ci en utilisant l'adresse IP d'un des nœuds de votre cluster et le port spécifié dans votre fichier "deployment.yaml".</p>
+
+<h2>Conclusion</h2>
+<p>Dans cette section, nous avons appris comment déployer des applications avec Docker. Nous avons vu comment déployer une application simple avec Docker, utiliser Docker Compose pour le déploiement d'applications multi-conteneurs, orchestrer des conteneurs avec Docker Swarm et déployer des applications sur des clusters Kubernetes.</p>
+
+<p>Le déploiement d'applications avec Docker offre de nombreux avantages, tels que la portabilité, la scalabilité et la facilité de gestion. En utilisant les outils et les techniques que nous avons vus, vous pouvez déployer vos applications de manière efficace et fiable.</p>
+
+<p>Dans la prochaine section, nous approfondirons nos connaissances en Docker en abordant des sujets avancés tels que la sécurité, la gestion des erreurs, les bonnes pratiques et l'optimisation.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

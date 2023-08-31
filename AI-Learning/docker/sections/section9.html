@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Cas d'utilisation avancés de Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Docker pour le déploiement de microservices</h2>
+<p>
+Docker est largement utilisé pour le déploiement de microservices. Les microservices sont une architecture logicielle qui divise une application en petits services indépendants, chacun exécutant une fonction spécifique. Docker facilite le déploiement et la gestion de ces services en les encapsulant dans des conteneurs isolés.
+</p>
+<p>
+L'utilisation de Docker pour le déploiement de microservices présente de nombreux avantages. Tout d'abord, chaque microservice peut être développé, testé et déployé indépendamment des autres. Cela permet une plus grande flexibilité et facilite les mises à jour et les déploiements continus. De plus, les conteneurs Docker offrent une isolation complète, ce qui signifie que chaque microservice s'exécute dans son propre environnement, sans interférence avec les autres services.
+</p>
+<p>
+Pour déployer des microservices avec Docker, vous pouvez créer un conteneur Docker pour chaque service. Chaque conteneur contient tous les éléments nécessaires à l'exécution du service, tels que les dépendances, les fichiers de configuration et le code source. Vous pouvez ensuite utiliser des outils d'orchestration tels que Docker Compose ou Kubernetes pour gérer et coordonner les différents conteneurs.
+</p>
+<pre><code>
+# Exemple de fichier docker-compose.yml pour le déploiement de microservices
+
+version: '3'
+services:
+  service1:
+    build: ./service1
+    ports:
+      - 8080:8080
+  service2:
+    build: ./service2
+    ports:
+      - 8081:8081
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons Docker Compose pour déployer deux microservices, "service1" et "service2". Chaque service est construit à partir d'un répertoire spécifié et exposé sur un port spécifique. Vous pouvez personnaliser davantage la configuration en spécifiant des variables d'environnement, des volumes, des réseaux, etc.
+</p>
+
+<h2>Utilisation de Docker pour les architectures sans serveur (serverless)</h2>
+<p>
+Docker peut également être utilisé pour les architectures sans serveur, également connues sous le nom de serverless. Les architectures sans serveur permettent d'exécuter du code sans avoir à gérer directement les serveurs sous-jacents. Docker facilite la création et le déploiement de fonctions sans serveur en encapsulant le code dans des conteneurs légers et portables.
+</p>
+<p>
+L'utilisation de Docker pour les architectures sans serveur offre de nombreux avantages. Tout d'abord, les conteneurs Docker offrent une isolation complète, ce qui garantit que chaque fonction s'exécute dans son propre environnement, sans interférence avec les autres fonctions. De plus, Docker permet de créer des images reproductibles et portables, ce qui facilite le déploiement de fonctions sur différentes plates-formes et infrastructures.
+</p>
+<p>
+Pour utiliser Docker dans une architecture sans serveur, vous pouvez créer des conteneurs Docker pour chaque fonction. Chaque conteneur contient le code source de la fonction, ainsi que toutes les dépendances nécessaires à son exécution. Vous pouvez ensuite utiliser des services d'orchestration sans serveur tels que AWS Lambda ou Azure Functions pour gérer et exécuter les fonctions.
+</p>
+<pre><code>
+# Exemple de fichier Dockerfile pour une fonction sans serveur
+
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app.py .
+
+CMD [ "python", "app.py" ]
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons un fichier Dockerfile pour créer une image Docker pour une fonction sans serveur écrite en Python. Nous utilisons une image de base Python, installons les dépendances spécifiées dans le fichier requirements.txt, puis copions le code source de l'application. Enfin, nous définissons la commande à exécuter lorsque le conteneur démarre.
+</p>
+
+<h2>Utilisation de Docker pour les environnements de développement isolés</h2>
+<p>
+Docker est également très utile pour la création d'environnements de développement isolés. Les environnements de développement isolés permettent aux développeurs de travailler sur des projets sans se soucier des conflits de dépendances ou des problèmes de configuration liés à d'autres projets. Docker facilite la création et la gestion de ces environnements en encapsulant toutes les dépendances et les outils nécessaires dans des conteneurs isolés.
+</p>
+<p>
+L'utilisation de Docker pour les environnements de développement isolés offre de nombreux avantages. Tout d'abord, chaque projet peut avoir son propre environnement de développement, avec ses propres versions de langages, de bibliothèques et d'outils. Cela permet aux développeurs de travailler sur plusieurs projets simultanément sans se soucier des conflits de dépendances. De plus, les environnements de développement Docker sont reproductibles, ce qui signifie que vous pouvez facilement partager et reproduire l'environnement de développement avec d'autres développeurs.
+</p>
+<p>
+Pour créer un environnement de développement isolé avec Docker, vous pouvez utiliser un fichier Dockerfile pour définir l'image de base et les dépendances nécessaires. Vous pouvez également utiliser des volumes Docker pour monter le code source du projet dans le conteneur, ce qui permet de modifier le code en temps réel sans avoir à reconstruire l'image à chaque modification.
+</p>
+<pre><code>
+# Exemple de fichier Dockerfile pour un environnement de développement isolé
+
+FROM node:14
+
+WORKDIR /app
+
+COPY package.json .
+RUN npm install
+
+COPY . .
+
+CMD [ "npm", "start" ]
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons un fichier Dockerfile pour créer une image Docker pour un environnement de développement Node.js isolé. Nous utilisons une image de base Node.js, installons les dépendances spécifiées dans le fichier package.json, puis copions le code source du projet. Enfin, nous définissons la commande à exécuter lorsque le conteneur démarre.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Bonnes pratiques et optimisation avec Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Bonnes pratiques pour la création d'images Docker</h2>
+<p>La création d'images Docker de haute qualité est essentielle pour garantir des déploiements stables et efficaces. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li><strong>Utiliser des images de base légères :</strong> Il est recommandé d'utiliser des images de base légères, telles que Alpine Linux, pour réduire la taille de l'image finale.</li>
+  <li><strong>Minimiser le nombre de couches :</strong> Moins il y a de couches dans une image, plus elle sera efficace. Essayez de regrouper les commandes similaires dans un seul RUN pour réduire le nombre de couches.</li>
+  <li><strong>Utiliser des fichiers .dockerignore :</strong> Créez un fichier .dockerignore pour exclure les fichiers et répertoires inutiles de l'image, tels que les fichiers de configuration locaux ou les fichiers temporaires.</li>
+  <li><strong>Éviter les privilèges root :</strong> Par mesure de sécurité, il est recommandé d'exécuter les conteneurs en tant qu'utilisateur non privilégié plutôt qu'en tant que root.</li>
+  <li><strong>Utiliser des variables d'environnement :</strong> Utilisez des variables d'environnement pour rendre votre image plus flexible et configurable. Cela permet aux utilisateurs de personnaliser le comportement de l'image sans avoir à modifier le Dockerfile.</li>
+</ul>
+
+<h2>Optimisation des performances des conteneurs Docker</h2>
+<p>Pour optimiser les performances des conteneurs Docker, voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li><strong>Limitez les ressources :</strong> Utilisez les options de limitation des ressources, telles que --cpus et --memory, pour contrôler la quantité de CPU et de mémoire utilisée par les conteneurs. Cela permet d'éviter les problèmes de surutilisation des ressources.</li>
+  <li><strong>Utilisez des volumes plutôt que des bind mounts :</strong> Les volumes Docker sont généralement plus performants que les bind mounts, car ils utilisent des mécanismes de stockage sous-jacents plus efficaces.</li>
+  <li><strong>Utilisez des réseaux internes :</strong> Lorsque vous avez plusieurs conteneurs qui ont besoin de communiquer entre eux, utilisez des réseaux internes plutôt que des ponts Docker par défaut. Cela permet d'optimiser les performances et la sécurité.</li>
+  <li><strong>Utilisez des images optimisées :</strong> Recherchez des images Docker optimisées spécifiquement pour les performances, telles que les images officielles de certaines technologies populaires.</li>
+</ul>
+
+<h2>Mise à l'échelle des applications avec Docker</h2>
+<p>La mise à l'échelle des applications avec Docker permet de gérer efficacement les charges de travail élevées. Voici quelques pratiques courantes pour mettre à l'échelle vos applications :</p>
+
+<ul>
+  <li><strong>Utilisez Docker Swarm ou Kubernetes :</strong> Ces outils d'orchestration de conteneurs permettent de mettre à l'échelle automatiquement les applications en fonction de la demande.</li>
+  <li><strong>Utilisez des équilibreurs de charge :</strong> Configurez des équilibreurs de charge pour distribuer le trafic entre les instances mises à l'échelle de votre application.</li>
+  <li><strong>Utilisez des stratégies de mise à l'échelle automatique :</strong> Configurez des stratégies de mise à l'échelle automatique pour augmenter ou réduire le nombre d'instances de votre application en fonction de la charge.</li>
+  <li><strong>Optimisez les performances de votre application :</strong> Assurez-vous que votre application est optimisée pour fonctionner efficacement à grande échelle. Cela peut inclure l'utilisation de caches, l'optimisation des requêtes de base de données, etc.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pourrez créer des images Docker de haute qualité, optimiser les performances de vos conteneurs et mettre à l'échelle vos applications de manière efficace.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

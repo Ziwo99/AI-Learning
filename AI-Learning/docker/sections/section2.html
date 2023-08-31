@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Installation et configuration de Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Prérequis pour l'installation de Docker</h2>
+<p>Avant d'installer Docker, assurez-vous que votre système répond aux exigences minimales suivantes :</p>
+<ul>
+  <li>Système d'exploitation : Docker est compatible avec les systèmes d'exploitation suivants : Windows 10, macOS, Linux (kernel version 3.10 ou supérieure).</li>
+  <li>Processeur : architecture x86_64 (64-bit).</li>
+  <li>Mémoire : au moins 2 Go de RAM.</li>
+  <li>Espace disque : au moins 20 Go d'espace disque disponible.</li>
+</ul>
+
+<h2>Installation de Docker sur différents systèmes d'exploitation</h2>
+<p>Les étapes d'installation de Docker varient en fonction du système d'exploitation que vous utilisez. Voici les instructions pour chaque système :</p>
+
+<h3>Windows</h3>
+<p>Pour installer Docker sur Windows, suivez les étapes suivantes :</p>
+<ol>
+  <li>Téléchargez l'installateur Docker pour Windows à partir du site officiel de Docker.</li>
+  <li>Double-cliquez sur le fichier d'installation téléchargé pour lancer l'installation.</li>
+  <li>Suivez les instructions de l'assistant d'installation pour terminer le processus d'installation.</li>
+  <li>Une fois l'installation terminée, Docker sera prêt à être utilisé sur votre système Windows.</li>
+</ol>
+
+<h3>macOS</h3>
+<p>Pour installer Docker sur macOS, suivez les étapes suivantes :</p>
+<ol>
+  <li>Téléchargez l'installateur Docker pour macOS à partir du site officiel de Docker.</li>
+  <li>Ouvrez le fichier d'installation téléchargé.</li>
+  <li>Glissez-déposez l'icône Docker dans le dossier Applications.</li>
+  <li>Ouvrez Docker à partir du dossier Applications.</li>
+  <li>Vous serez invité à autoriser Docker à s'exécuter sur votre système. Cliquez sur "Ouvrir" pour continuer.</li>
+  <li>Une fois l'installation terminée, Docker sera prêt à être utilisé sur votre système macOS.</li>
+</ol>
+
+<h3>Linux</h3>
+<p>Pour installer Docker sur Linux, suivez les étapes suivantes :</p>
+<ol>
+  <li>Ouvrez un terminal.</li>
+  <li>Exécutez la commande suivante pour installer Docker :</li>
+  <pre><code>sudo apt-get update
+sudo apt-get install docker-ce</code></pre>
+  <li>Attendez que l'installation soit terminée.</li>
+  <li>Exécutez la commande suivante pour vérifier que Docker est correctement installé :</li>
+  <pre><code>docker --version</code></pre>
+  <li>Vous devriez voir la version de Docker s'afficher à l'écran, ce qui signifie que l'installation a réussi.</li>
+</ol>
+
+<h2>Configuration initiale de Docker</h2>
+<p>Une fois Docker installé, vous devez effectuer quelques configurations initiales avant de pouvoir l'utiliser pleinement. Voici les étapes à suivre :</p>
+<ol>
+  <li>Ouvrez un terminal ou une invite de commande.</li>
+  <li>Exécutez la commande suivante pour démarrer le service Docker :</li>
+  <pre><code>sudo systemctl start docker</code></pre>
+  <li>Si vous souhaitez que Docker démarre automatiquement au démarrage de votre système, exécutez la commande suivante :</li>
+  <pre><code>sudo systemctl enable docker</code></pre>
+  <li>Vous pouvez également ajouter votre utilisateur au groupe "docker" pour pouvoir exécuter des commandes Docker sans utiliser "sudo". Exécutez la commande suivante :</li>
+  <pre><code>sudo usermod -aG docker votre_utilisateur</code></pre>
+  <li>Remplacez "votre_utilisateur" par votre nom d'utilisateur réel.</li>
+  <li>Déconnectez-vous de votre session utilisateur et reconnectez-vous pour que les modifications prennent effet.</li>
+</ol>
+
+<p>Une fois ces étapes terminées, Docker sera correctement configuré sur votre système et prêt à être utilisé.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

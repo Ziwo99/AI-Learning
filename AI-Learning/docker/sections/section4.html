@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des ressources avec Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réseaux Docker</h2>
+<p>Les réseaux Docker permettent aux conteneurs de communiquer entre eux et avec le monde extérieur. Chaque conteneur Docker peut être connecté à un ou plusieurs réseaux Docker.</p>
+
+<h2>Configuration des réseaux Docker</h2>
+<p>Pour configurer un réseau Docker, vous pouvez utiliser la commande suivante :</p>
+<pre><code>docker network create nom_du_reseau</code></pre>
+<p>Cela créera un nouveau réseau Docker avec le nom spécifié.</p>
+
+<h2>Communication entre les conteneurs sur différents réseaux</h2>
+<p>Pour permettre la communication entre les conteneurs sur différents réseaux Docker, vous pouvez utiliser la fonctionnalité de liaison de réseaux Docker. Voici comment le faire :</p>
+<pre><code>docker network connect nom_du_reseau1 nom_du_conteneur2</code></pre>
+<p>Cela connectera le conteneur2 au réseau1, permettant ainsi la communication entre les conteneurs sur ces deux réseaux.</p>
+
+<h2>Volumes Docker</h2>
+<p>Les volumes Docker permettent de stocker des données persistantes en dehors des conteneurs. Ils sont utilisés pour partager des données entre les conteneurs ou pour stocker des données qui doivent survivre à la suppression d'un conteneur.</p>
+
+<h2>Création et utilisation de volumes Docker</h2>
+<p>Pour créer un volume Docker, vous pouvez utiliser la commande suivante :</p>
+<pre><code>docker volume create nom_du_volume</code></pre>
+<p>Cela créera un nouveau volume Docker avec le nom spécifié.</p>
+<p>Pour utiliser un volume Docker dans un conteneur, vous pouvez spécifier le volume lors de la création du conteneur :</p>
+<pre><code>docker run -v nom_du_volume:chemin_du_volume nom_de_l_image</code></pre>
+<p>Cela montera le volume spécifié dans le chemin spécifié à l'intérieur du conteneur.</p>
+
+<h2>Partage de volumes entre les conteneurs</h2>
+<p>Pour partager un volume entre plusieurs conteneurs, vous pouvez spécifier le même volume lors de la création de chaque conteneur :</p>
+<pre><code>docker run -v nom_du_volume:chemin_du_volume1 nom_de_l_image1</code></pre>
+<pre><code>docker run -v nom_du_volume:chemin_du_volume2 nom_de_l_image2</code></pre>
+<p>Cela permettra aux deux conteneurs d'accéder aux mêmes données stockées dans le volume.</p>
+
+<h2>Gestion des ressources système avec Docker</h2>
+<p>Docker permet de limiter les ressources CPU et mémoire utilisées par les conteneurs. Cela permet de garantir que les conteneurs ne monopolisent pas toutes les ressources du système.</p>
+
+<h2>Limiter les ressources CPU et mémoire des conteneurs</h2>
+<p>Pour limiter les ressources CPU et mémoire d'un conteneur, vous pouvez utiliser les options suivantes lors de la création du conteneur :</p>
+<pre><code>docker run --cpus=nombre_de_cpus --memory=quantité_de_mémoire nom_de_l_image</code></pre>
+<p>Cela limitera le conteneur à utiliser le nombre de CPUs spécifié et la quantité de mémoire spécifiée.</p>
+
+<h2>Surveillance des ressources système</h2>
+<p>Pour surveiller les ressources système utilisées par les conteneurs Docker, vous pouvez utiliser la commande suivante :</p>
+<pre><code>docker stats</code></pre>
+<p>Cela affichera les statistiques en temps réel de tous les conteneurs en cours d'exécution, y compris l'utilisation de la CPU, de la mémoire et du réseau.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

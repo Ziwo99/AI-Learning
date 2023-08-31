@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Sécurité et gestion des erreurs avec Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Sécurité des conteneurs Docker</h2>
+<p>La sécurité des conteneurs Docker est un aspect essentiel lors de l'utilisation de Docker dans un environnement de production. Voici quelques bonnes pratiques pour assurer la sécurité des conteneurs Docker :</p>
+<ul>
+  <li><strong>Utilisation d'images officielles :</strong> Il est recommandé d'utiliser des images officielles provenant du référentiel Docker officiel. Ces images sont régulièrement mises à jour et bénéficient d'un suivi de sécurité.</li>
+  <li><strong>Mise à jour régulière :</strong> Assurez-vous de mettre à jour régulièrement les images et les conteneurs Docker pour bénéficier des dernières corrections de sécurité.</li>
+  <li><strong>Isolation des conteneurs :</strong> Utilisez des fonctionnalités telles que les namespaces et les cgroup pour isoler les conteneurs les uns des autres et du système hôte.</li>
+  <li><strong>Limitation des privilèges :</strong> Limitez les privilèges accordés aux conteneurs Docker en utilisant les options appropriées lors de la création des conteneurs.</li>
+  <li><strong>Utilisation de l'authentification :</strong> Utilisez des mécanismes d'authentification tels que les jetons d'accès ou les clés d'API pour sécuriser l'accès aux registres Docker et aux conteneurs.</li>
+</ul>
+
+<h2>Isolation des conteneurs</h2>
+<p>L'isolation des conteneurs est une fonctionnalité clé de Docker qui permet d'assurer la sécurité et la séparation des ressources entre les conteneurs. Voici quelques points importants à connaître :</p>
+<ul>
+  <li><strong>Namespaces :</strong> Docker utilise les namespaces Linux pour isoler les ressources système entre les conteneurs. Les namespaces permettent d'isoler les processus, les utilisateurs, les réseaux, les systèmes de fichiers, etc.</li>
+  <li><strong>Cgroups :</strong> Docker utilise les cgroups (control groups) pour limiter les ressources utilisées par les conteneurs, telles que le CPU, la mémoire, le réseau, etc. Cela permet d'éviter qu'un conteneur n'accapare toutes les ressources du système.</li>
+  <li><strong>Isolation des systèmes de fichiers :</strong> Chaque conteneur Docker a son propre système de fichiers isolé. Cela signifie que les modifications apportées à un système de fichiers dans un conteneur n'affectent pas les autres conteneurs ou le système hôte.</li>
+</ul>
+
+<h2>Gestion des utilisateurs et des autorisations</h2>
+<p>Docker permet de gérer les utilisateurs et les autorisations pour contrôler l'accès aux conteneurs et aux ressources Docker. Voici quelques points importants à prendre en compte :</p>
+<ul>
+  <li><strong>Utilisateurs et groupes :</strong> Docker utilise les utilisateurs et les groupes du système d'exploitation hôte pour gérer les autorisations. Vous pouvez spécifier l'utilisateur et le groupe à utiliser lors de l'exécution d'un conteneur Docker.</li>
+  <li><strong>Contrôle des autorisations :</strong> Vous pouvez définir des autorisations spécifiques pour les fichiers et les répertoires à l'intérieur d'un conteneur Docker en utilisant les options appropriées lors de la création du conteneur.</li>
+  <li><strong>Contrôle d'accès :</strong> Utilisez des mécanismes de contrôle d'accès tels que les règles de pare-feu pour limiter l'accès aux ports exposés par les conteneurs Docker.</li>
+</ul>
+
+<h2>Gestion des erreurs et des logs avec Docker</h2>
+<p>Docker offre des fonctionnalités pour gérer les erreurs et les logs des conteneurs. Voici quelques points importants à connaître :</p>
+<ul>
+  <li><strong>Logs Docker :</strong> Docker enregistre les logs des conteneurs, ce qui permet de diagnostiquer les problèmes et de surveiller l'exécution des conteneurs. Les logs peuvent être consultés à l'aide de la commande <code>docker logs</code>.</li>
+  <li><strong>Configuration des logs :</strong> Vous pouvez configurer la façon dont les logs sont enregistrés en utilisant les options appropriées lors de la création des conteneurs. Par exemple, vous pouvez spécifier le format des logs, le niveau de détail, etc.</li>
+  <li><strong>Analyse des logs :</strong> Vous pouvez utiliser des outils d'analyse de logs tels que ELK Stack (Elasticsearch, Logstash, Kibana) pour agréger, filtrer et visualiser les logs des conteneurs Docker.</li>
+</ul>
+
+<h2>Configuration des logs Docker</h2>
+<p>La configuration des logs Docker vous permet de spécifier comment les logs des conteneurs doivent être enregistrés. Voici quelques options de configuration courantes :</p>
+<ul>
+  <li><strong>Driver de logs :</strong> Docker prend en charge plusieurs drivers de logs, tels que json-file, syslog, fluentd, etc. Vous pouvez spécifier le driver à utiliser en utilisant l'option <code>--log-driver</code> lors de la création des conteneurs.</li>
+  <li><strong>Options de logs :</strong> Vous pouvez spécifier des options supplémentaires pour la configuration des logs en utilisant l'option <code>--log-opt</code>. Par exemple, vous pouvez spécifier le niveau de détail des logs, le format des logs, etc.</li>
+  <li><strong>Redirection des logs :</strong> Vous pouvez rediriger les logs des conteneurs vers des fichiers ou des services externes en utilisant les options appropriées lors de la création des conteneurs.</li>
+</ul>
+
+<h2>Analyse des logs Docker</h2>
+<p>L'analyse des logs Docker vous permet de tirer des informations utiles à partir des logs des conteneurs. Voici quelques outils et techniques couramment utilisés :</p>
+<ul>
+  <li><strong>ELK Stack :</strong> ELK Stack (Elasticsearch, Logstash, Kibana) est un ensemble d'outils qui permet d'agréger, de filtrer et de visualiser les logs des conteneurs Docker. Elasticsearch est utilisé pour le stockage des logs, Logstash pour l'agrégation et la transformation des logs, et Kibana pour la visualisation des logs.</li>
+  <li><strong>Recherche et filtrage :</strong> Vous pouvez utiliser des expressions de recherche et des filtres pour extraire des informations spécifiques à partir des logs des conteneurs. Par exemple, vous pouvez rechercher des erreurs, filtrer par date, etc.</li>
+  <li><strong>Alertes :</strong> Vous pouvez configurer des alertes pour être averti en cas de conditions spécifiques dans les logs des conteneurs. Par exemple, vous pouvez configurer une alerte pour être averti en cas d'erreur critique.</li>
+</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

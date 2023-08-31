@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Docker Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Utilisation avancée de Docker</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/docker/docker.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Docker pour le développement local</h2>
+<p>
+L'utilisation de Docker pour le développement local est devenue très populaire car elle permet aux développeurs de créer un environnement de développement cohérent et isolé. Cela signifie que chaque développeur peut travailler sur son propre environnement, sans avoir à se soucier des dépendances ou des conflits avec d'autres applications.
+</p>
+<p>
+Pour utiliser Docker pour le développement local, vous devez d'abord créer une image Docker contenant tous les outils et les dépendances nécessaires pour votre projet. Vous pouvez le faire en créant un fichier Dockerfile qui spécifie les étapes nécessaires pour construire l'image. Par exemple :
+</p>
+<pre><code>FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app.py"]
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons une image de base Python 3.9 et nous copions le fichier requirements.txt dans le répertoire de travail /app. Ensuite, nous installons les dépendances à partir de ce fichier et nous copions le reste des fichiers de l'application. Enfin, nous définissons la commande par défaut pour exécuter l'application.
+</p>
+<p>
+Une fois que vous avez créé votre image Docker, vous pouvez lancer un conteneur à partir de cette image en utilisant la commande suivante :
+</p>
+<pre><code>docker run -it -v /path/to/your/code:/app your-image-name
+</code></pre>
+<p>
+Cette commande lance un conteneur à partir de l'image spécifiée et monte le répertoire local /path/to/your/code dans le répertoire /app du conteneur. Cela signifie que vous pouvez modifier votre code localement et voir les changements immédiatement dans le conteneur.
+</p>
+<p>
+L'utilisation de Docker pour le développement local présente de nombreux avantages. Tout d'abord, cela garantit que tous les développeurs travaillent dans le même environnement, ce qui facilite la collaboration et la résolution des problèmes. Deuxièmement, cela permet d'isoler les dépendances de votre projet, évitant ainsi les conflits avec d'autres applications sur votre machine. Enfin, cela facilite le déploiement de votre application, car vous pouvez utiliser la même image Docker pour le développement et la production.
+</p>
+
+<h2>Utilisation de Docker pour les tests automatisés</h2>
+<p>
+Docker est également très utile pour les tests automatisés, car il permet de créer des environnements de test cohérents et reproductibles. Vous pouvez créer une image Docker contenant tous les outils et les dépendances nécessaires pour exécuter vos tests, puis lancer des conteneurs à partir de cette image pour exécuter les tests.
+</p>
+<p>
+Pour utiliser Docker pour les tests automatisés, vous devez d'abord créer une image Docker contenant vos tests et les dépendances nécessaires. Vous pouvez le faire en créant un fichier Dockerfile similaire à celui utilisé pour le développement local. Par exemple :
+</p>
+<pre><code>FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["pytest"]
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons à nouveau une image de base Python 3.9 et nous copions les fichiers de test et les dépendances dans le répertoire de travail /app. Ensuite, nous installons les dépendances à partir du fichier requirements.txt et nous exécutons les tests en utilisant la commande pytest.
+</p>
+<p>
+Une fois que vous avez créé votre image Docker, vous pouvez lancer des conteneurs à partir de cette image pour exécuter vos tests. Par exemple :
+</p>
+<pre><code>docker run your-image-name
+</code></pre>
+<p>
+Cette commande lance un conteneur à partir de l'image spécifiée et exécute les tests définis dans le fichier Dockerfile.
+</p>
+<p>
+L'utilisation de Docker pour les tests automatisés présente de nombreux avantages. Tout d'abord, cela garantit que les tests sont exécutés dans un environnement cohérent et reproductible, ce qui facilite la détection des erreurs et la résolution des problèmes. Deuxièmement, cela permet d'isoler les tests des autres composants de votre application, évitant ainsi les interférences et les conflits. Enfin, cela facilite l'intégration continue, car vous pouvez exécuter vos tests dans des conteneurs Docker sur des serveurs d'intégration continue.
+</p>
+
+<h2>Utilisation de Docker pour la production</h2>
+<p>
+Docker est devenu un outil très populaire pour le déploiement d'applications en production. Il permet de créer des images Docker contenant toutes les dépendances et les configurations nécessaires pour exécuter votre application, puis de lancer des conteneurs à partir de ces images sur des serveurs de production.
+</p>
+<p>
+Pour utiliser Docker pour la production, vous devez d'abord créer une image Docker contenant votre application et toutes les dépendances nécessaires. Vous pouvez le faire en créant un fichier Dockerfile similaire à celui utilisé pour le développement local et les tests automatisés. Par exemple :
+</p>
+<pre><code>FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD ["python", "app.py"]
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons à nouveau une image de base Python 3.9 et nous copions les fichiers de l'application et les dépendances dans le répertoire de travail /app. Ensuite, nous installons les dépendances à partir du fichier requirements.txt et nous définissons la commande par défaut pour exécuter l'application.
+</p>
+<p>
+Une fois que vous avez créé votre image Docker, vous pouvez la pousser vers un registre Docker, comme Docker Hub, afin de la rendre accessible aux serveurs de production. Ensuite, vous pouvez lancer des conteneurs à partir de cette image sur les serveurs de production en utilisant la commande suivante :
+</p>
+<pre><code>docker run -d your-image-name
+</code></pre>
+<p>
+Cette commande lance un conteneur à partir de l'image spécifiée en mode détaché, ce qui signifie que le conteneur s'exécute en arrière-plan. Vous pouvez également spécifier des options supplémentaires, telles que les ports à exposer ou les variables d'environnement à définir.
+</p>
+<p>
+L'utilisation de Docker pour la production présente de nombreux avantages. Tout d'abord, cela facilite le déploiement de votre application, car vous pouvez utiliser la même image Docker pour le développement, les tests et la production. Deuxièmement, cela permet de créer des environnements de production cohérents et reproductibles, ce qui facilite la gestion des mises à jour et des correctifs. Enfin, cela facilite la mise à l'échelle de votre application, car vous pouvez lancer plusieurs conteneurs à partir de la même image sur différents serveurs.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/docker/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/docker/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
