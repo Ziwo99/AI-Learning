@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Emacs Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion de projets avec Emacs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/emacs/emacs.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Organisation des fichiers et des répertoires</h2>
+<p>Lorsque vous travaillez sur des projets avec Emacs, il est important d'organiser vos fichiers et répertoires de manière efficace. Cela facilite la navigation et la gestion de votre projet.</p>
+
+<p>Une bonne pratique consiste à créer un répertoire principal pour votre projet, dans lequel vous pouvez stocker tous les fichiers et sous-répertoires associés. Par exemple, vous pouvez créer un répertoire appelé "mon_projet" :</p>
+
+<pre><code>mkdir mon_projet
+cd mon_projet
+</code></pre>
+
+<p>À l'intérieur de ce répertoire, vous pouvez créer des sous-répertoires pour organiser différents types de fichiers. Par exemple, vous pouvez créer un répertoire "src" pour les fichiers source, un répertoire "tests" pour les fichiers de test, et ainsi de suite :</p>
+
+<pre><code>mkdir src
+mkdir tests
+</code></pre>
+
+<p>Vous pouvez également créer des sous-répertoires supplémentaires pour organiser davantage vos fichiers. Par exemple, vous pouvez créer un répertoire "src/controllers" pour les fichiers de contrôleurs, un répertoire "src/models" pour les fichiers de modèles, etc. :</p>
+
+<pre><code>mkdir src/controllers
+mkdir src/models
+</code></pre>
+
+<p>Cette structure de répertoires vous permet de garder vos fichiers bien organisés et de les retrouver facilement lorsque vous travaillez sur votre projet.</p>
+
+<h2>Utilisation des projets dans Emacs</h2>
+<p>Emacs propose des fonctionnalités intégrées pour gérer vos projets. Vous pouvez utiliser ces fonctionnalités pour ouvrir rapidement des fichiers, naviguer entre les fichiers du projet et effectuer des opérations spécifiques au projet.</p>
+
+<p>Pour commencer, vous devez déclarer votre projet à Emacs en créant un fichier ".projectile" à la racine de votre projet :</p>
+
+<pre><code>cd mon_projet
+touch .projectile
+</code></pre>
+
+<p>Ensuite, vous pouvez utiliser les commandes suivantes pour interagir avec votre projet :</p>
+
+<ul>
+  <li><code>M-x projectile-find-file</code> : Cette commande vous permet d'ouvrir rapidement un fichier dans votre projet en saisissant son nom.</li>
+  <li><code>M-x projectile-switch-project</code> : Cette commande vous permet de basculer entre différents projets enregistrés dans Emacs.</li>
+  <li><code>M-x projectile-compile-project</code> : Cette commande vous permet de compiler votre projet.</li>
+  <li><code>M-x projectile-test-project</code> : Cette commande vous permet d'exécuter les tests de votre projet.</li>
+</ul>
+
+<p>Ces commandes vous aident à naviguer et à effectuer des opérations spécifiques à votre projet de manière efficace.</p>
+
+<h2>Gestion des versions avec Git</h2>
+<p>Emacs offre une intégration étroite avec Git, un système de contrôle de version populaire. Vous pouvez utiliser Git pour gérer les versions de votre projet et Emacs vous permet d'interagir avec Git directement depuis l'éditeur.</p>
+
+<p>Pour commencer à utiliser Git avec votre projet Emacs, vous devez initialiser un dépôt Git à la racine de votre projet :</p>
+
+<pre><code>cd mon_projet
+git init
+</code></pre>
+
+<p>Une fois que vous avez initialisé le dépôt Git, vous pouvez utiliser les commandes suivantes dans Emacs :</p>
+
+<ul>
+  <li><code>M-x magit-status</code> : Cette commande ouvre une interface Magit qui vous permet de visualiser l'état de votre dépôt Git, de valider vos modifications, de créer des branches, de fusionner des branches, etc.</li>
+  <li><code>M-x magit-blame</code> : Cette commande vous permet de visualiser les annotations de la responsabilité pour un fichier donné.</li>
+  <li><code>M-x magit-log</code> : Cette commande vous permet de visualiser l'historique des commits de votre projet.</li>
+</ul>
+
+<p>Avec ces commandes, vous pouvez gérer les versions de votre projet directement depuis Emacs, ce qui facilite le suivi des modifications et la collaboration avec d'autres développeurs.</p>
+
+<h2>Intégration avec d'autres outils de développement</h2>
+<p>Emacs peut être intégré à d'autres outils de développement pour améliorer votre flux de travail. Vous pouvez utiliser des outils tels que linter, le débogueur, les outils de construction, etc., directement depuis Emacs.</p>
+
+<p>Pour intégrer ces outils à Emacs, vous pouvez utiliser des packages tels que Flycheck, GDB, Compilation, etc. Ces packages fournissent des fonctionnalités avancées pour l'intégration avec différents outils de développement.</p>
+
+<p>Par exemple, vous pouvez utiliser Flycheck pour vérifier la syntaxe de votre code en temps réel et afficher des avertissements et des erreurs directement dans Emacs. Vous pouvez également utiliser le package Compilation pour exécuter des commandes de construction et afficher les résultats dans une fenêtre dédiée.</p>
+
+<p>En utilisant ces outils d'intégration, vous pouvez améliorer votre productivité et votre efficacité lors du développement de projets avec Emacs.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

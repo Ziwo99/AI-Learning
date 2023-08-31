@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Emacs Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Les bases d'Emacs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/emacs/emacs.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Interface utilisateur d'Emacs</h2>
+<p>L'interface utilisateur d'Emacs est composée de plusieurs éléments clés qui vous permettent d'interagir avec le logiciel de manière efficace. Voici les principaux éléments de l'interface utilisateur d'Emacs :</p>
+<ul>
+  <li>La barre de menu : elle contient des options pour accéder aux différentes fonctionnalités d'Emacs.</li>
+  <li>La barre d'outils : elle contient des icônes pour les commandes couramment utilisées.</li>
+  <li>La fenêtre principale : elle affiche le contenu du fichier que vous éditez.</li>
+  <li>Les fenêtres secondaires : elles affichent d'autres fichiers ou informations utiles.</li>
+  <li>Le minibuffer : il affiche des messages et vous permet de saisir des commandes.</li>
+</ul>
+
+<h2>Navigation dans les fichiers</h2>
+<p>Emacs offre de nombreuses fonctionnalités pour naviguer dans les fichiers de manière efficace. Voici quelques commandes utiles :</p>
+<ul>
+  <li><code>C-x C-f</code> : ouvre un fichier dans une nouvelle fenêtre.</li>
+  <li><code>C-x C-s</code> : enregistre le fichier en cours.</li>
+  <li><code>C-x C-w</code> : enregistre le fichier sous un nouveau nom.</li>
+  <li><code>C-x C-v</code> : ouvre un autre fichier dans la fenêtre en cours.</li>
+  <li><code>C-x b</code> : bascule entre les fichiers ouverts.</li>
+</ul>
+
+<h2>Manipulation de texte</h2>
+<p>Emacs offre de nombreuses commandes pour manipuler le texte de manière efficace. Voici quelques commandes couramment utilisées :</p>
+<ul>
+  <li><code>C-a</code> : déplace le curseur au début de la ligne.</li>
+  <li><code>C-e</code> : déplace le curseur à la fin de la ligne.</li>
+  <li><code>C-k</code> : supprime le texte de la position actuelle du curseur jusqu'à la fin de la ligne.</li>
+  <li><code>C-y</code> : insère le texte précédemment supprimé ou copié.</li>
+  <li><code>M-d</code> : supprime le mot suivant.</li>
+  <li><code>M-backspace</code> : supprime le mot précédent.</li>
+</ul>
+
+<h2>Gestion des fenêtres et des tampons</h2>
+<p>Emacs vous permet de travailler avec plusieurs fenêtres et tampons simultanément. Voici quelques commandes pour gérer les fenêtres et les tampons :</p>
+<ul>
+  <li><code>C-x 2</code> : divise la fenêtre en deux fenêtres verticales.</li>
+  <li><code>C-x 3</code> : divise la fenêtre en deux fenêtres horizontales.</li>
+  <li><code>C-x o</code> : bascule entre les fenêtres.</li>
+  <li><code>C-x 0</code> : ferme la fenêtre en cours.</li>
+  <li><code>C-x 1</code> : ferme toutes les autres fenêtres et garde la fenêtre en cours.</li>
+  <li><code>C-x b</code> : bascule entre les tampons.</li>
+</ul>
+
+<h2>Utilisation des raccourcis clavier</h2>
+<p>Emacs est connu pour ses nombreux raccourcis clavier qui vous permettent d'accéder rapidement aux fonctionnalités. Voici quelques raccourcis clavier couramment utilisés :</p>
+<ul>
+  <li><code>C-x</code> : préfixe pour les commandes.</li>
+  <li><code>C-c</code> : préfixe pour les raccourcis clavier définis par l'utilisateur.</li>
+  <li><code>C-g</code> : annule la commande en cours.</li>
+  <li><code>C-s</code> : recherche du texte vers l'avant.</li>
+  <li><code>C-r</code> : recherche du texte vers l'arrière.</li>
+  <li><code>M-x</code> : exécute une commande spécifique.</li>
+</ul>
+
+<p>Utilisez ces commandes et raccourcis clavier pour naviguer, manipuler le texte, gérer les fenêtres et les tampons, et accéder rapidement aux fonctionnalités d'Emacs.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

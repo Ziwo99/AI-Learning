@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Emacs Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Installation et configuration d'Emacs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/emacs/emacs.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Téléchargement et installation d'Emacs</h2>
+<p>Pour commencer à utiliser Emacs, vous devez d'abord le télécharger et l'installer sur votre système. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Rendez-vous sur le site officiel d'Emacs à l'adresse suivante : <a href="https://www.gnu.org/software/emacs/">https://www.gnu.org/software/emacs/</a></li>
+  <li>Téléchargez la dernière version stable d'Emacs pour votre système d'exploitation (Windows, macOS, Linux, etc.).</li>
+  <li>Une fois le téléchargement terminé, exécutez le fichier d'installation.</li>
+  <li>Suivez les instructions de l'assistant d'installation pour configurer Emacs sur votre système.</li>
+  <li>Une fois l'installation terminée, vous pouvez lancer Emacs en utilisant l'icône correspondante sur votre bureau ou en le recherchant dans le menu de démarrage de votre système d'exploitation.</li>
+</ol>
+
+<h2>Configuration initiale d'Emacs</h2>
+<p>Après avoir installé Emacs, vous pouvez effectuer quelques configurations initiales pour personnaliser votre environnement de travail. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Ouvrez Emacs en cliquant sur son icône ou en le lançant à partir du menu de démarrage.</li>
+  <li>Une fois Emacs ouvert, vous verrez une fenêtre divisée en deux parties : la fenêtre principale et la barre de menu en haut.</li>
+  <li>Pour commencer la configuration, vous devez éditer le fichier de configuration d'Emacs appelé ".emacs". Ce fichier se trouve généralement dans votre répertoire personnel.</li>
+  <li>Pour ouvrir le fichier ".emacs", vous pouvez utiliser la combinaison de touches "Ctrl + x" suivi de "Ctrl + f". Cela ouvrira une fenêtre vous permettant de spécifier le chemin du fichier.</li>
+  <li>Une fois le fichier ".emacs" ouvert, vous pouvez y ajouter vos configurations personnalisées. Par exemple, vous pouvez définir des raccourcis clavier, activer ou désactiver des fonctionnalités, etc.</li>
+  <li>Après avoir effectué vos modifications, enregistrez le fichier et redémarrez Emacs pour que les changements prennent effet.</li>
+</ol>
+
+<h2>Personnalisation d'Emacs</h2>
+<p>Emacs offre de nombreuses options de personnalisation pour adapter l'éditeur à vos besoins. Voici quelques exemples de personnalisation couramment utilisés :</p>
+
+<ol>
+  <li>Pour personnaliser les raccourcis clavier, vous pouvez utiliser la fonction "global-set-key". Par exemple, pour définir la combinaison de touches "Ctrl + s" pour enregistrer un fichier, vous pouvez ajouter la ligne suivante dans votre fichier ".emacs" :</li>
+</ol>
+
+<pre><code>(global-set-key (kbd "C-s") 'save-buffer)</code></pre>
+
+<ol start="2">
+  <li>Pour activer ou désactiver des modes spécifiques, vous pouvez utiliser la fonction "add-hook". Par exemple, pour activer le mode "org-mode" lorsque vous ouvrez un fichier avec l'extension ".org", vous pouvez ajouter la ligne suivante :</li>
+</ol>
+
+<pre><code>(add-hook 'org-mode-hook 'turn-on-org-mode)</code></pre>
+
+<ol start="3">
+  <li>Pour modifier les couleurs et le thème d'Emacs, vous pouvez utiliser la fonction "load-theme". Par exemple, pour charger le thème "solarized-dark", vous pouvez ajouter la ligne suivante :</li>
+</ol>
+
+<pre><code>(load-theme 'solarized-dark)</code></pre>
+
+<p>Il existe de nombreuses autres options de personnalisation disponibles dans Emacs. N'hésitez pas à explorer la documentation officielle pour en savoir plus.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

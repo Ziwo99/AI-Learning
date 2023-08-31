@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Emacs Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Programmation avec Emacs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/emacs/emacs.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Support pour différents langages de programmation</h2>
+<p>Emacs offre un support complet pour de nombreux langages de programmation populaires tels que C, C++, Python, Java, Ruby, etc. Grâce à ses modes majeurs spécifiques à chaque langage, Emacs fournit des fonctionnalités avancées pour faciliter le développement dans ces langages.</p>
+
+<p>Par exemple, pour activer le mode C dans Emacs, vous pouvez utiliser la commande <code>M-x c-mode</code>. Cela activera les fonctionnalités spécifiques au langage C, telles que la coloration syntaxique, l'indentation automatique, la complétion de code, la navigation entre les fonctions, etc.</p>
+
+<h2>Débogage de code</h2>
+<p>Emacs propose également des fonctionnalités de débogage intégrées pour vous aider à identifier et à corriger les erreurs dans votre code. Vous pouvez utiliser le mode débogueur de GDB (GNU Debugger) pour exécuter votre programme pas à pas, inspecter les variables, définir des points d'arrêt, etc.</p>
+
+<p>Pour démarrer le débogueur GDB dans Emacs, vous pouvez utiliser la commande <code>M-x gdb</code>. Cela ouvrira une fenêtre dédiée au débogage où vous pourrez exécuter vos commandes GDB et visualiser les résultats.</p>
+
+<h2>Gestion de projets de programmation</h2>
+<p>Emacs facilite également la gestion de projets de programmation en vous permettant d'organiser vos fichiers et répertoires de manière logique. Vous pouvez créer des projets Emacs pour regrouper tous les fichiers liés à un projet spécifique.</p>
+
+<p>Pour créer un projet Emacs, vous pouvez utiliser la commande <code>M-x projectile-create-project</code>. Cela créera un fichier de configuration de projet dans le répertoire racine de votre projet, ce qui vous permettra d'accéder facilement à tous les fichiers du projet, de naviguer entre eux et de les éditer.</p>
+
+<h2>Utilisation des outils de compilation et de test</h2>
+<p>Emacs offre une intégration transparente avec les outils de compilation et de test couramment utilisés. Vous pouvez configurer Emacs pour exécuter des commandes de compilation spécifiques à votre projet et afficher les résultats directement dans une fenêtre Emacs.</p>
+
+<p>Par exemple, pour compiler un programme C dans Emacs, vous pouvez utiliser la commande <code>M-x compile</code>. Cela vous permettra de spécifier la commande de compilation à exécuter et de voir les erreurs et les avertissements dans la fenêtre de compilation Emacs.</p>
+
+<p>De même, vous pouvez configurer Emacs pour exécuter des tests unitaires automatiquement à l'aide d'outils tels que JUnit, pytest, etc. Cela vous permettra de vérifier rapidement si votre code fonctionne correctement.</p>
+
+<p>Voici un exemple de configuration pour exécuter des tests Python avec pytest dans Emacs :</p>
+
+<pre><code>(setq python-shell-interpreter "python3")
+(setq python-shell-interpreter-args "-m pytest -v")
+</code></pre>
+
+<p>Avec cette configuration, vous pouvez exécuter vos tests Python en utilisant la commande <code>M-x python-shell-run-tests</code> dans Emacs.</p>
+
+<p>Ces fonctionnalités avancées d'Emacs pour la programmation en font un choix populaire parmi les développeurs professionnels.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

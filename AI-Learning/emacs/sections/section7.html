@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Emacs Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Personnalisation avancée d'Emacs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/emacs/emacs.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Configuration avancée d'Emacs</h2>
+  <p>
+    Emacs offre une grande flexibilité en termes de personnalisation. Vous pouvez configurer de nombreux aspects du comportement d'Emacs en modifiant le fichier de configuration initiale, appelé <code>.emacs</code> ou <code>init.el</code>. Ce fichier est généralement situé dans votre répertoire personnel.
+  </p>
+  <p>
+    Pour ouvrir votre fichier de configuration, vous pouvez utiliser la commande <code>M-x find-file</code> suivie du chemin du fichier. Par exemple, pour ouvrir le fichier <code>.emacs</code>, vous pouvez exécuter <code>M-x find-file ~/.emacs</code>.
+  </p>
+  <p>
+    Une fois le fichier de configuration ouvert, vous pouvez y ajouter des lignes de code Emacs Lisp pour personnaliser votre environnement Emacs. Par exemple, vous pouvez définir des raccourcis clavier personnalisés, activer ou désactiver des fonctionnalités spécifiques, modifier l'apparence d'Emacs, etc.
+  </p>
+  <pre><code>(setq-default indent-tabs-mode nil) ; Utiliser des espaces pour l'indentation
+(setq-default tab-width 4) ; Définir la largeur des tabulations à 4 espaces
+(setq-default fill-column 80) ; Définir la largeur maximale des lignes à 80 caractères
+(setq-default show-trailing-whitespace t) ; Afficher les espaces en fin de ligne
+</code></pre>
+
+  <h2>Création de nouveaux modes</h2>
+  <p>
+    Emacs permet de créer de nouveaux modes pour différents types de fichiers. Un mode est un ensemble de règles et de fonctionnalités spécifiques à un langage ou à un type de fichier particulier. Par exemple, Emacs dispose de modes pour la programmation en C, en Python, en HTML, etc.
+  </p>
+  <p>
+    Pour créer un nouveau mode, vous devez définir un fichier de configuration spécifique pour ce mode. Ce fichier peut contenir des règles de coloration syntaxique, des raccourcis clavier personnalisés, des commandes spécifiques au langage, etc.
+  </p>
+  <p>
+    Par exemple, pour créer un mode pour le langage de programmation XYZ, vous pouvez créer un fichier nommé <code>xyz-mode.el</code> et y définir les règles spécifiques à ce langage. Ensuite, vous pouvez charger ce mode dans Emacs en ajoutant la ligne suivante à votre fichier de configuration :
+  </p>
+  <pre><code>(load "xyz-mode")
+</code></pre>
+
+  <h2>Utilisation des packages et des extensions</h2>
+  <p>
+    Emacs dispose d'un système de gestion de packages qui vous permet d'installer et de gérer des extensions pour étendre les fonctionnalités d'Emacs. Ces extensions sont généralement développées par la communauté Emacs et peuvent être téléchargées à partir de dépôts en ligne.
+  </p>
+  <p>
+    Pour utiliser les packages, vous devez d'abord configurer le gestionnaire de packages d'Emacs. Par exemple, vous pouvez utiliser le package <code>package.el</code> inclus avec Emacs pour installer et mettre à jour les packages.
+  </p>
+  <p>
+    Une fois le gestionnaire de packages configuré, vous pouvez rechercher et installer des packages à l'aide de la commande <code>M-x package-install</code>. Vous pouvez également ajouter des lignes de code à votre fichier de configuration pour charger automatiquement les packages lors du démarrage d'Emacs.
+  </p>
+  <pre><code>(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+</code></pre>
+
+  <h2>Utilisation des hooks pour personnaliser le comportement</h2>
+  <p>
+    Les hooks sont des points d'entrée dans le code Emacs où vous pouvez exécuter du code personnalisé pour modifier le comportement d'Emacs. Les hooks sont utilisés pour réagir à des événements spécifiques, tels que l'ouverture d'un fichier, le changement de mode, etc.
+  </p>
+  <p>
+    Pour utiliser un hook, vous devez ajouter une fonction à la liste correspondante. Par exemple, pour exécuter une fonction personnalisée lorsque vous ouvrez un fichier, vous pouvez ajouter la ligne suivante à votre fichier de configuration :
+  </p>
+  <pre><code>(add-hook 'find-file-hook 'my-custom-function)
+</code></pre>
+  <p>
+    Dans cet exemple, <code>my-custom-function</code> est le nom de votre fonction personnalisée. Cette fonction sera exécutée chaque fois que vous ouvrez un fichier.
+  </p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

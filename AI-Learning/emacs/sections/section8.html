@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Emacs Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Collaboration et partage avec Emacs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/emacs/emacs.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation d'Emacs pour la collaboration en temps réel</h2>
+<p>Emacs offre plusieurs fonctionnalités qui facilitent la collaboration en temps réel avec d'autres utilisateurs. L'une de ces fonctionnalités est le mode "Tramp" (Transparent Remote Access, Multiple Protocols), qui permet d'éditer des fichiers à distance via SSH, FTP, etc. Pour utiliser Tramp, vous pouvez ouvrir un fichier distant en utilisant la syntaxe suivante :</p>
+
+<pre><code>/ssh:user@host:/path/to/file</code></pre>
+
+<p>Une fois que vous avez ouvert un fichier distant, vous pouvez l'éditer comme n'importe quel autre fichier dans Emacs. Les modifications que vous apportez seront automatiquement synchronisées avec le fichier distant.</p>
+
+<p>Emacs propose également un mode de partage d'écran appelé "Emacs Server". Ce mode vous permet de partager votre session Emacs avec d'autres utilisateurs, ce qui facilite la collaboration en temps réel. Pour démarrer le serveur Emacs, vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>M-x server-start</code></pre>
+
+<p>Une fois le serveur démarré, vous pouvez inviter d'autres utilisateurs à se connecter à votre session Emacs en leur donnant l'adresse du serveur. Ils pourront alors voir et modifier le même contenu que vous en temps réel.</p>
+
+<h2>Partage de configurations Emacs</h2>
+<p>Emacs permet de partager facilement vos configurations personnalisées avec d'autres utilisateurs. Pour cela, vous pouvez créer un fichier appelé ".emacs" dans votre répertoire personnel. Ce fichier contient toutes les configurations spécifiques que vous souhaitez partager.</p>
+
+<p>Une fois que vous avez créé votre fichier ".emacs", vous pouvez le partager avec d'autres utilisateurs en le plaçant dans un dépôt Git ou en l'envoyant directement à d'autres utilisateurs. Ils peuvent ensuite utiliser votre configuration en copiant le fichier ".emacs" dans leur propre répertoire personnel.</p>
+
+<p>Il est également possible de partager des configurations spécifiques pour certains modes ou packages Emacs. Pour cela, vous pouvez créer des fichiers ".el" dans le répertoire ".emacs.d" de votre répertoire personnel. Ces fichiers contiennent les configurations spécifiques pour chaque mode ou package.</p>
+
+<h2>Utilisation d'Emacs pour la documentation et la prise de notes</h2>
+<p>Emacs offre des fonctionnalités puissantes pour la documentation et la prise de notes. L'une de ces fonctionnalités est le mode "Org Mode", qui permet de créer et de gérer des documents structurés avec des fonctionnalités avancées telles que l'exportation vers différents formats (HTML, PDF, etc.), la gestion des tâches, les tableaux, les formules mathématiques, etc.</p>
+
+<p>Pour activer le mode Org, vous pouvez ajouter la ligne suivante à votre fichier ".emacs" :</p>
+
+<pre><code>(require 'org)</code></pre>
+
+<p>Une fois le mode Org activé, vous pouvez créer un nouveau document Org en utilisant l'extension de fichier ".org". Vous pouvez ensuite utiliser les différentes fonctionnalités d'Org pour structurer votre document, ajouter des tâches, des notes, des liens, etc.</p>
+
+<p>Emacs propose également un mode "Markdown" qui permet d'éditer des fichiers Markdown. Le mode Markdown offre des fonctionnalités telles que la mise en forme du texte, la création de listes, l'insertion d'images, etc.</p>
+
+<p>Pour activer le mode Markdown, vous pouvez ajouter la ligne suivante à votre fichier ".emacs" :</p>
+
+<pre><code>(require 'markdown-mode)</code></pre>
+
+<p>Une fois le mode Markdown activé, vous pouvez ouvrir un fichier Markdown en utilisant l'extension de fichier ".md". Vous pouvez ensuite éditer le fichier en utilisant les fonctionnalités du mode Markdown.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/emacs/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/emacs/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
