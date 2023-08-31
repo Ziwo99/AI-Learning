@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Excel Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les macros et la programmation VBA</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/excel/excel.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/excel/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/excel/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux macros</h2>
+<p>Les macros sont des enregistrements d'actions effectuées dans Excel, qui peuvent être joués automatiquement pour automatiser des tâches répétitives. Elles permettent d'économiser du temps et d'augmenter l'efficacité dans l'utilisation d'Excel.</p>
+
+<p>Pour enregistrer une macro, suivez les étapes suivantes :</p>
+<ol>
+  <li>Ouvrez Excel et cliquez sur l'onglet "Développeur" dans le ruban.</li>
+  <li>Cliquez sur le bouton "Enregistrer une macro" dans le groupe "Code".</li>
+  <li>Donnez un nom à votre macro et choisissez l'endroit où vous souhaitez l'enregistrer.</li>
+  <li>Cliquez sur le bouton "OK" pour commencer l'enregistrement de la macro.</li>
+  <li>Effectuez les actions que vous souhaitez enregistrer dans la macro.</li>
+  <li>Cliquez sur le bouton "Arrêter l'enregistrement" dans le groupe "Code" pour terminer l'enregistrement de la macro.</li>
+</ol>
+
+<h2>Enregistrement et exécution de macros</h2>
+<p>Pour exécuter une macro enregistrée, suivez les étapes suivantes :</p>
+<ol>
+  <li>Ouvrez Excel et cliquez sur l'onglet "Développeur" dans le ruban.</li>
+  <li>Cliquez sur le bouton "Macros" dans le groupe "Code".</li>
+  <li>Sélectionnez la macro que vous souhaitez exécuter dans la liste des macros disponibles.</li>
+  <li>Cliquez sur le bouton "Exécuter" pour exécuter la macro.</li>
+</ol>
+
+<h2>Personnalisation des macros</h2>
+<p>Une fois que vous avez enregistré une macro, vous pouvez la personnaliser en modifiant le code VBA associé. Voici comment procéder :</p>
+<ol>
+  <li>Ouvrez Excel et cliquez sur l'onglet "Développeur" dans le ruban.</li>
+  <li>Cliquez sur le bouton "Macros" dans le groupe "Code".</li>
+  <li>Sélectionnez la macro que vous souhaitez personnaliser dans la liste des macros disponibles.</li>
+  <li>Cliquez sur le bouton "Modifier" pour ouvrir l'éditeur VBA.</li>
+  <li>Modifiez le code VBA selon vos besoins.</li>
+  <li>Fermez l'éditeur VBA pour enregistrer les modifications apportées à la macro.</li>
+</ol>
+
+<h2>Introduction à la programmation VBA</h2>
+<p>La programmation VBA (Visual Basic for Applications) est un langage de programmation utilisé pour automatiser des tâches dans Excel. Il permet de créer des macros personnalisées et d'effectuer des opérations plus avancées.</p>
+
+<p>Voici un exemple de code VBA qui utilise une boucle pour trier un jeu de cartes :</p>
+<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';
+</code></pre>
+
+<h2>Utilisation des objets et des méthodes VBA</h2>
+<p>En VBA, les objets représentent des éléments d'Excel tels que les feuilles de calcul, les cellules, les graphiques, etc. Les méthodes sont des actions que vous pouvez effectuer sur ces objets.</p>
+
+<p>Voici un exemple de code VBA qui utilise l'objet Range pour sélectionner une plage de cellules et appliquer une mise en forme :</p>
+<pre><code>Dim rng As Range
+Set rng = Worksheets("Feuil1").Range("A1:B10")
+
+rng.Font.Bold = True
+rng.Interior.Color = RGB(255, 0, 0)
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons une variable rng de type Range et lui attribuons la plage de cellules A1:B10 de la feuille de calcul "Feuil1". Ensuite, nous appliquons une mise en forme en mettant le texte en gras et en changeant la couleur de fond en rouge.</p>
+
+<p>Il est important de noter que la programmation VBA offre de nombreuses autres possibilités, telles que la manipulation de données, la création de fonctions personnalisées, l'interaction avec d'autres applications Office, etc.</p>
+
+<p>Il est recommandé de consulter la documentation officielle d'Excel et de pratiquer régulièrement pour maîtriser pleinement la programmation VBA.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/excel/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/excel/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
