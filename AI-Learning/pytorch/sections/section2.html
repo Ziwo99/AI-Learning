@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Manipulation de données avec PyTorch</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Chargement de données</h2>
+<p>La première étape pour travailler avec des données dans PyTorch est de les charger. PyTorch offre plusieurs méthodes pour charger différents types de données, tels que des images, des fichiers texte, des fichiers CSV, etc.</p>
+
+<p>Pour charger des données à partir d'un fichier CSV, vous pouvez utiliser la classe <code>torch.utils.data.Dataset</code>. Cette classe vous permet de définir votre propre dataset personnalisé en héritant de la classe de base et en implémentant les méthodes <code>__len__</code> et <code>__getitem__</code>.</p>
+
+<pre><code>import torch
+from torch.utils.data import Dataset
+
+class CustomDataset(Dataset):
+    def __init__(self, file_path):
+        self.data = torch.load(file_path)
+    
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, index):
+        return self.data[index]</code></pre>
+
+<p>Une fois que vous avez défini votre dataset personnalisé, vous pouvez l'utiliser avec la classe <code>torch.utils.data.DataLoader</code> pour charger les données en mini-batchs. Le DataLoader prend en charge le chargement parallèle des données, ce qui peut accélérer le processus de chargement.</p>
+
+<pre><code>dataset = CustomDataset('data.csv')
+dataloader = torch.utils.data.DataLoader(dataset, batch_size=32, shuffle=True)</code></pre>
+
+<h2>Prétraitement des données</h2>
+<p>Avant de pouvoir utiliser les données pour l'entraînement d'un modèle, il est souvent nécessaire de les prétraiter. Le prétraitement des données peut inclure des opérations telles que la normalisation, le redimensionnement, le codage des étiquettes, etc.</p>
+
+<p>Pour effectuer le prétraitement des données, vous pouvez utiliser les fonctionnalités de transformation de données de PyTorch. PyTorch offre une classe appelée <code>torchvision.transforms</code> qui contient de nombreuses transformations couramment utilisées pour le prétraitement des données d'images.</p>
+
+<pre><code>import torchvision.transforms as transforms
+
+transform = transforms.Compose([
+    transforms.Resize((256, 256)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+])
+
+preprocessed_data = transform(data)</code></pre>
+
+<p>Dans cet exemple, nous utilisons la transformation <code>Resize</code> pour redimensionner l'image en 256x256 pixels, la transformation <code>ToTensor</code> pour convertir l'image en un tenseur PyTorch, et la transformation <code>Normalize</code> pour normaliser les valeurs des pixels de l'image.</p>
+
+<h2>Création de jeux de données et de dataloaders</h2>
+<p>En plus de charger et de prétraiter les données, il est souvent nécessaire de diviser les données en jeux d'entraînement, de validation et de test. PyTorch offre des fonctionnalités pour faciliter cette tâche.</p>
+
+<p>Pour diviser les données en jeux d'entraînement, de validation et de test, vous pouvez utiliser la classe <code>torch.utils.data.random_split</code>. Cette classe prend en entrée le dataset et les proportions souhaitées pour chaque jeu de données, et renvoie les jeux de données divisés en fonction de ces proportions.</p>
+
+<pre><code>dataset = CustomDataset('data.csv')
+train_size = int(0.8 * len(dataset))
+val_size = int(0.1 * len(dataset))
+test_size = len(dataset) - train_size - val_size
+
+train_dataset, val_dataset, test_dataset = torch.utils.data.random_split(dataset, [train_size, val_size, test_size])</code></pre>
+
+<p>Une fois que vous avez divisé les données en jeux de données, vous pouvez les charger en utilisant des dataloaders, tout comme nous l'avons fait précédemment.</p>
+
+<pre><code>train_dataloader = torch.utils.data.DataLoader(train_dataset, batch_size=32, shuffle=True)
+val_dataloader = torch.utils.data.DataLoader(val_dataset, batch_size=32, shuffle=False)
+test_dataloader = torch.utils.data.DataLoader(test_dataset, batch_size=32, shuffle=False)</code></pre>
+
+<p>Les dataloaders vous permettent de charger les données en mini-batchs, ce qui est essentiel pour l'entraînement de modèles sur de grandes quantités de données.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

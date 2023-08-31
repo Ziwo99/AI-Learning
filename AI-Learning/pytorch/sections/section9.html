@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Techniques avancées en PyTorch</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de GPU avec PyTorch</h2>
+<p>PyTorch offre une prise en charge native de l'utilisation des GPU pour accélérer les calculs. L'utilisation de GPU peut grandement améliorer les performances de vos modèles, en particulier pour les tâches qui nécessitent des calculs intensifs, tels que l'entraînement de réseaux de neurones profonds.</p>
+
+<p>Pour utiliser un GPU avec PyTorch, vous devez d'abord vérifier si un GPU est disponible sur votre système :</p>
+
+<pre><code>import torch
+
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+    print("GPU disponible")
+else:
+    device = torch.device("cpu")
+    print("GPU non disponible, utilisation du CPU")
+</code></pre>
+
+<p>Une fois que vous avez vérifié la disponibilité du GPU, vous pouvez déplacer vos tenseurs et modèles sur le GPU en utilisant la méthode <code>to()</code> :</p>
+
+<pre><code>model.to(device)
+inputs = inputs.to(device)
+labels = labels.to(device)
+</code></pre>
+
+<p>En déplaçant vos données et modèles sur le GPU, vous pouvez profiter de l'accélération matérielle offerte par le GPU pour accélérer vos calculs.</p>
+
+<h2>Parallélisation de l'entraînement de modèles</h2>
+<p>PyTorch permet également de paralléliser l'entraînement de modèles sur plusieurs GPU, ce qui peut encore accélérer les calculs. La parallélisation de l'entraînement de modèles est particulièrement utile lorsque vous avez accès à plusieurs GPU sur votre système.</p>
+
+<p>Pour paralléliser l'entraînement de votre modèle, vous devez d'abord définir un objet de type <code>DataParallel</code> :</p>
+
+<pre><code>model = nn.DataParallel(model)
+</code></pre>
+
+<p>En utilisant <code>DataParallel</code>, PyTorch répartira automatiquement les calculs sur les différents GPU disponibles, ce qui permet d'accélérer l'entraînement de votre modèle.</p>
+
+<h2>Utilisation de techniques de régularisation</h2>
+<p>Les techniques de régularisation sont utilisées pour prévenir le surapprentissage (overfitting) et améliorer la généralisation des modèles. PyTorch propose plusieurs techniques de régularisation couramment utilisées, telles que la régularisation L1 et L2, le dropout et la normalisation par lot (batch normalization).</p>
+
+<p>La régularisation L1 et L2 peuvent être appliquées aux poids des couches de votre modèle en utilisant les paramètres <code>weight_decay</code> et <code>l1_decay</code> respectivement lors de la définition de l'optimiseur :</p>
+
+<pre><code>optimizer = torch.optim.SGD(model.parameters(), lr=0.01, weight_decay=0.001, l1_decay=0.001)
+</code></pre>
+
+<p>Le dropout est une technique de régularisation qui consiste à désactiver aléatoirement certains neurones pendant l'entraînement pour éviter la dépendance excessive entre les neurones. PyTorch propose un module <code>nn.Dropout</code> qui peut être utilisé pour appliquer le dropout à votre modèle :</p>
+
+<pre><code>dropout = nn.Dropout(p=0.5)
+output = dropout(input)
+</code></pre>
+
+<p>La normalisation par lot (batch normalization) est une autre technique de régularisation qui normalise les activations des couches intermédiaires de votre modèle. PyTorch propose un module <code>nn.BatchNorm1d</code> qui peut être utilisé pour appliquer la normalisation par lot :</p>
+
+<pre><code>batch_norm = nn.BatchNorm1d(num_features)
+output = batch_norm(input)
+</code></pre>
+
+<p>En utilisant ces techniques de régularisation, vous pouvez améliorer la capacité de généralisation de vos modèles et réduire le risque de surapprentissage.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

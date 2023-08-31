@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Entraînement de modèles avec PyTorch</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Fonctions de coût et optimiseurs</h2>
+<p>Les fonctions de coût et les optimiseurs sont des éléments essentiels de l'entraînement des modèles avec PyTorch. La fonction de coût mesure l'écart entre les prédictions du modèle et les valeurs réelles de l'ensemble de données. L'optimiseur est responsable de la mise à jour des poids du modèle afin de minimiser la fonction de coût.</p>
+
+<p>PyTorch offre une variété de fonctions de coût prédéfinies, telles que la fonction de coût quadratique moyenne (MSE) pour la régression et la fonction de coût de la log-vraisemblance négative (NLL) pour la classification. Vous pouvez également définir vos propres fonctions de coût personnalisées en utilisant la classe nn.Module de PyTorch.</p>
+
+<p>Voici un exemple d'utilisation de la fonction de coût MSE :</p>
+
+<pre><code>import torch
+import torch.nn as nn
+
+# Définition des prédictions du modèle et des valeurs réelles
+predictions = torch.tensor([0.5, 0.8, 0.2])
+labels = torch.tensor([1.0, 0.9, 0.4])
+
+# Calcul de la fonction de coût MSE
+criterion = nn.MSELoss()
+loss = criterion(predictions, labels)
+
+print(loss)
+</code></pre>
+
+<p>En ce qui concerne les optimiseurs, PyTorch propose une large gamme d'options, telles que l'optimiseur stochastique du gradient (SGD), l'optimiseur Adam et l'optimiseur Adagrad. Chaque optimiseur a ses propres paramètres, tels que le taux d'apprentissage et le moment.</p>
+
+<p>Voici un exemple d'utilisation de l'optimiseur SGD :</p>
+
+<pre><code>import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# Définition du modèle et de la fonction de coût
+model = nn.Linear(10, 1)
+criterion = nn.MSELoss()
+
+# Définition de l'optimiseur SGD avec un taux d'apprentissage de 0.01
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+# Boucle d'entraînement
+for epoch in range(100):
+    # Calcul des prédictions du modèle
+    predictions = model(inputs)
+    
+    # Calcul de la fonction de coût
+    loss = criterion(predictions, labels)
+    
+    # Mise à zéro des gradients
+    optimizer.zero_grad()
+    
+    # Rétropropagation et mise à jour des poids
+    loss.backward()
+    optimizer.step()
+</code></pre>
+
+<h2>Entraînement d'un modèle</h2>
+<p>L'entraînement d'un modèle avec PyTorch implique généralement les étapes suivantes :</p>
+
+<ol>
+  <li>Préparation des données d'entraînement et de validation</li>
+  <li>Définition du modèle</li>
+  <li>Définition de la fonction de coût et de l'optimiseur</li>
+  <li>Boucle d'entraînement :</li>
+  <ul>
+    <li>Calcul des prédictions du modèle</li>
+    <li>Calcul de la fonction de coût</li>
+    <li>Mise à zéro des gradients</li>
+    <li>Rétropropagation et mise à jour des poids</li>
+  </ul>
+  <li>Évaluation du modèle sur l'ensemble de validation</li>
+</ol>
+
+<p>Voici un exemple complet d'entraînement d'un modèle de régression linéaire avec PyTorch :</p>
+
+<pre><code>import torch
+import torch.nn as nn
+import torch.optim as optim
+
+# Préparation des données d'entraînement et de validation
+train_data = torch.tensor([[1.0], [2.0], [3.0], [4.0]])
+train_labels = torch.tensor([[2.0], [4.0], [6.0], [8.0]])
+
+val_data = torch.tensor([[5.0], [6.0], [7.0], [8.0]])
+val_labels = torch.tensor([[10.0], [12.0], [14.0], [16.0]])
+
+# Définition du modèle
+model = nn.Linear(1, 1)
+
+# Définition de la fonction de coût et de l'optimiseur
+criterion = nn.MSELoss()
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+# Boucle d'entraînement
+for epoch in range(100):
+    # Calcul des prédictions du modèle
+    train_predictions = model(train_data)
+    
+    # Calcul de la fonction de coût
+    train_loss = criterion(train_predictions, train_labels)
+    
+    # Mise à zéro des gradients
+    optimizer.zero_grad()
+    
+    # Rétropropagation et mise à jour des poids
+    train_loss.backward()
+    optimizer.step()
+    
+    # Évaluation du modèle sur l'ensemble de validation
+    val_predictions = model(val_data)
+    val_loss = criterion(val_predictions, val_labels)
+    
+    print(f"Epoch {epoch+1}: Train Loss = {train_loss.item()}, Val Loss = {val_loss.item()}")
+</code></pre>
+
+<h2>Validation et évaluation des modèles</h2>
+<p>La validation et l'évaluation des modèles sont des étapes cruciales pour mesurer leurs performances et leur capacité à généraliser sur de nouvelles données. PyTorch offre plusieurs méthodes pour effectuer ces tâches.</p>
+
+<p>La validation consiste à évaluer les performances du modèle sur un ensemble de données distinct, généralement appelé ensemble de validation. Cela permet de détecter le surapprentissage et d'ajuster les hyperparamètres du modèle si nécessaire.</p>
+
+<p>Voici un exemple d'utilisation de la validation avec PyTorch :</p>
+
+<pre><code>import torch
+import torch.nn as nn
+
+# Définition du modèle et de la fonction de coût
+model = nn.Linear(10, 1)
+criterion = nn.MSELoss()
+
+# Boucle d'entraînement
+for epoch in range(100):
+    # Entraînement du modèle
+    
+    # Validation du modèle
+    with torch.no_grad():
+        val_predictions = model(val_data)
+        val_loss = criterion(val_predictions, val_labels)
+        
+        print(f"Epoch {epoch+1}: Val Loss = {val_loss.item()}")
+</code></pre>
+
+<p>L'évaluation des modèles consiste à mesurer leurs performances sur un ensemble de données de test indépendant. Cela permet de fournir une estimation impartiale de la performance du modèle.</p>
+
+<p>Voici un exemple d'utilisation de l'évaluation avec PyTorch :</p>
+
+<pre><code>import torch
+import torch.nn as nn
+
+# Définition du modèle et de la fonction de coût
+model = nn.Linear(10, 1)
+criterion = nn.MSELoss()
+
+# Évaluation du modèle
+with torch.no_grad():
+    test_predictions = model(test_data)
+    test_loss = criterion(test_predictions, test_labels)
+    
+    print(f"Test Loss = {test_loss.item()}")
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

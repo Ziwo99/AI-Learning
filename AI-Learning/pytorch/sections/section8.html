@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Déploiement de modèles PyTorch</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Exportation de modèles entraînés</h2>
+<p>L'exportation de modèles entraînés est une étape cruciale dans le déploiement de modèles PyTorch. Une fois que vous avez entraîné votre modèle et que vous êtes satisfait de ses performances, vous pouvez l'exporter pour une utilisation ultérieure. PyTorch offre plusieurs options pour exporter des modèles :</p>
+
+<ul>
+  <li>La méthode <code>torch.save()</code> : Cette méthode vous permet de sauvegarder le modèle complet, y compris ses paramètres et son architecture, dans un fichier. Par exemple :</li>
+</ul>
+
+<pre><code>torch.save(model, 'mon_modele.pt')</code></pre>
+
+<ul>
+  <li>La méthode <code>torch.onnx.export()</code> : Cette méthode vous permet d'exporter votre modèle au format ONNX (Open Neural Network Exchange), qui est un format standard pour représenter les modèles d'apprentissage automatique. Par exemple :</li>
+</ul>
+
+<pre><code>torch.onnx.export(model, input, 'mon_modele.onnx')</code></pre>
+
+<h2>Utilisation de modèles PyTorch dans d'autres frameworks</h2>
+<p>PyTorch offre la possibilité d'utiliser des modèles entraînés dans d'autres frameworks d'apprentissage automatique tels que TensorFlow. Pour cela, vous pouvez convertir votre modèle PyTorch en un format compatible avec le framework cible. Voici comment vous pouvez procéder :</p>
+
+<ul>
+  <li>Convertir un modèle PyTorch en un modèle TensorFlow : Vous pouvez utiliser la bibliothèque <code>tf2onnx</code> pour convertir votre modèle PyTorch en un modèle TensorFlow. Par exemple :</li>
+</ul>
+
+<pre><code>import torch
+import tf2onnx
+
+model = torch.load('mon_modele.pt')
+onnx_model = torch.onnx.export(model, input, 'mon_modele.onnx')
+
+tf_model = tf2onnx.convert.from_onnx(onnx_model)
+tf_model.save('mon_modele.pb')</code></pre>
+
+<h2>Déploiement de modèles PyTorch sur des serveurs</h2>
+<p>Pour déployer des modèles PyTorch sur des serveurs, vous pouvez utiliser des frameworks tels que Flask ou Django pour créer une API Web qui expose votre modèle. Voici les étapes générales pour déployer un modèle PyTorch sur un serveur :</p>
+
+<ol>
+  <li>Créez une API Web en utilisant un framework tel que Flask ou Django.</li>
+  <li>Chargez votre modèle PyTorch préalablement exporté.</li>
+  <li>Définissez une route dans votre API pour recevoir les requêtes contenant les données d'entrée.</li>
+  <li>Prétraitez les données d'entrée si nécessaire.</li>
+  <li>Passez les données d'entrée à votre modèle PyTorch pour obtenir les prédictions.</li>
+  <li>Retournez les prédictions en tant que réponse à la requête.</li>
+</ol>
+
+<p>Voici un exemple simplifié d'une API Flask qui déploie un modèle PyTorch :</p>
+
+<pre><code>from flask import Flask, request
+import torch
+
+app = Flask(__name__)
+model = torch.load('mon_modele.pt')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.json['data']
+    # Prétraitement des données si nécessaire
+    input = preprocess(data)
+    output = model(input)
+    # Post-traitement des prédictions si nécessaire
+    predictions = postprocess(output)
+    return {'predictions': predictions}
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+
+<p>Ce code crée une API Flask qui écoute les requêtes POST sur la route '/predict'. Les données d'entrée sont extraites de la requête JSON, prétraitées, passées au modèle PyTorch et les prédictions sont renvoyées en tant que réponse JSON.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

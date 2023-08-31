@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Cas d'utilisation et exemples pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  
+  <h2>Classification d'images avec PyTorch</h2>
+  <p>
+    La classification d'images est l'une des tâches les plus courantes en vision par ordinateur. PyTorch offre des fonctionnalités puissantes pour construire des modèles de classification d'images. Dans cette sous-section, nous allons explorer comment utiliser PyTorch pour classer des images.
+  </p>
+  
+  <p>
+    Pour commencer, nous devons préparer notre jeu de données. Nous pouvons utiliser des bibliothèques comme torchvision pour charger des ensembles de données populaires tels que CIFAR-10 ou ImageNet. Ensuite, nous devons prétraiter les images en les redimensionnant, en les normalisant, etc.
+  </p>
+  
+  <pre><code>
+import torch
+import torchvision
+from torchvision.transforms import transforms
+
+# Charger l'ensemble de données CIFAR-10
+train_dataset = torchvision.datasets.CIFAR10(root='./data', train=True, transform=transforms.ToTensor(), download=True)
+test_dataset = torchvision.datasets.CIFAR10(root='./data', train=False, transform=transforms.ToTensor(), download=True)
+
+# Prétraitement des images
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
+test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=64, shuffle=False)
+  </code></pre>
+  
+  <p>
+    Une fois que nous avons préparé notre jeu de données, nous pouvons construire notre modèle de classification d'images. PyTorch propose différentes architectures de modèles pré-entrainés que nous pouvons utiliser, comme ResNet, VGG, etc. Nous pouvons également construire notre propre modèle personnalisé en utilisant les modules nn de PyTorch.
+  </p>
+  
+  <pre><code>
+import torch.nn as nn
+import torch.optim as optim
+
+# Définir l'architecture du modèle
+model = torchvision.models.resnet18(pretrained=True)
+num_classes = 10
+model.fc = nn.Linear(model.fc.in_features, num_classes)
+
+# Définir la fonction de perte et l'optimiseur
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+  </code></pre>
+  
+  <p>
+    Maintenant que nous avons notre modèle, nous pouvons procéder à l'entraînement. Nous itérons sur les mini-lots de notre jeu de données d'entraînement, calculons les prédictions du modèle, calculons la perte à l'aide de la fonction de perte définie précédemment, puis effectuons la rétropropagation pour mettre à jour les poids du modèle.
+  </p>
+  
+  <pre><code>
+# Entraînement du modèle
+num_epochs = 10
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model.to(device)
+
+for epoch in range(num_epochs):
+    for images, labels in train_loader:
+        images = images.to(device)
+        labels = labels.to(device)
+        
+        # Calcul des prédictions
+        outputs = model(images)
+        
+        # Calcul de la perte
+        loss = criterion(outputs, labels)
+        
+        # Rétropropagation et mise à jour des poids
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+  </code></pre>
+  
+  <p>
+    Une fois que notre modèle est entraîné, nous pouvons l'évaluer sur notre jeu de données de test pour mesurer ses performances. Nous pouvons calculer des métriques telles que la précision, le rappel, la courbe ROC, etc.
+  </p>
+  
+  <pre><code>
+# Évaluation du modèle
+model.eval()
+total_correct = 0
+total_samples = 0
+
+with torch.no_grad():
+    for images, labels in test_loader:
+        images = images.to(device)
+        labels = labels.to(device)
+        
+        outputs = model(images)
+        _, predicted = torch.max(outputs, 1)
+        
+        total_samples += labels.size(0)
+        total_correct += (predicted == labels).sum().item()
+
+accuracy = total_correct / total_samples
+print('Accuracy: {:.2f}%'.format(accuracy * 100))
+  </code></pre>
+  
+  <h2>Reconnaissance de la parole avec PyTorch</h2>
+  <p>
+    La reconnaissance de la parole est une autre application courante du deep learning. PyTorch offre des fonctionnalités pour construire des modèles de reconnaissance de la parole en utilisant des réseaux de neurones récurrents (RNN) tels que les LSTM ou les GRU. Dans cette sous-section, nous allons explorer comment utiliser PyTorch pour la reconnaissance de la parole.
+  </p>
+  
+  <p>
+    Pour commencer, nous devons préparer notre jeu de données audio. Nous pouvons utiliser des bibliothèques comme torchaudio pour charger des enregistrements audio et leurs transcriptions correspondantes. Ensuite, nous devons prétraiter les données audio en les convertissant en spectrogrammes, en normalisant les amplitudes, etc.
+  </p>
+  
+  <pre><code>
+import torch
+import torchaudio
+from torchaudio.transforms import MelSpectrogram
+
+# Charger l'ensemble de données de reconnaissance de la parole
+train_dataset = torchaudio.datasets.LIBRISPEECH('./data', url='train-clean-100', download=True)
+test_dataset = torchaudio.datasets.LIBRISPEECH('./data', url='test-clean', download=True)
+
+# Prétraitement des données audio
+transform = MelSpectrogram()
+train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle=True)
+test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=64, shuffle=False)
+  </code></pre>
+  
+  <p>
+    Une fois que nous avons préparé notre jeu de données, nous pouvons construire notre modèle de reconnaissance de la parole. Nous pouvons utiliser des RNN tels que les LSTM ou les GRU pour capturer les dépendances temporelles dans les données audio. Nous pouvons également utiliser des couches d'attention pour améliorer les performances du modèle.
+  </p>
+  
+  <pre><code>
+import torch.nn as nn
+import torch.optim as optim
+
+# Définir l'architecture du modèle
+class SpeechRecognitionModel(nn.Module):
+    def __init__(self, input_size, hidden_size, num_classes):
+        super(SpeechRecognitionModel, self).__init__()
+        self.rnn = nn.LSTM(input_size, hidden_size, num_layers=2, batch_first=True)
+        self.fc = nn.Linear(hidden_size, num_classes)
+        
+    def forward(self, x):
+        output, _ = self.rnn(x)
+        output = self.fc(output[:, -1, :])
+        return output
+
+input_size = 40 # Nombre de coefficients MFCC
+hidden_size = 256
+num_classes = 30 # Nombre de phonèmes
+model = SpeechRecognitionModel(input_size, hidden_size, num_classes)
+
+# Définir la fonction de perte et l'optimiseur
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+  </code></pre>
+  
+  <p>
+    Maintenant que nous avons notre modèle, nous pouvons procéder à l'entraînement. Nous itérons sur les mini-lots de notre jeu de données d'entraînement, calculons les prédictions du modèle, calculons la perte à l'aide de la fonction de perte définie précédemment, puis effectuons la rétropropagation pour mettre à jour les poids du modèle.
+  </p>
+  
+  <pre><code>
+# Entraînement du modèle
+num_epochs = 10
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model.to(device)
+
+for epoch in range(num_epochs):
+    for spectrograms, labels in train_loader:
+        spectrograms = spectrograms.to(device)
+        labels = labels.to(device)
+        
+        # Calcul des prédictions
+        outputs = model(spectrograms)
+        
+        # Calcul de la perte
+        loss = criterion(outputs, labels)
+        
+        # Rétropropagation et mise à jour des poids
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+  </code></pre>
+  
+  <p>
+    Une fois que notre modèle est entraîné, nous pouvons l'évaluer sur notre jeu de données de test pour mesurer ses performances. Nous pouvons calculer des métriques telles que le taux d'erreur de phonème (PER), le taux de reconnaissance de mot (WRR), etc.
+  </p>
+  
+  <pre><code>
+# Évaluation du modèle
+model.eval()
+total_correct = 0
+total_samples = 0
+
+with torch.no_grad():
+    for spectrograms, labels in test_loader:
+        spectrograms = spectrograms.to(device)
+        labels = labels.to(device)
+        
+        outputs = model(spectrograms)
+        _, predicted = torch.max(outputs, 1)
+        
+        total_samples += labels.size(0)
+        total_correct += (predicted == labels).sum().item()
+
+accuracy = total_correct / total_samples
+print('Accuracy: {:.2f}%'.format(accuracy * 100))
+  </code></pre>
+  
+  <h2>Traduction automatique avec PyTorch</h2>
+  <p>
+    La traduction automatique est une autre application populaire du deep learning. PyTorch offre des fonctionnalités pour construire des modèles de traduction automatique en utilisant des réseaux de neurones récurrents (RNN) tels que les LSTM ou les GRU. Dans cette sous-section, nous allons explorer comment utiliser PyTorch pour la traduction automatique.
+  </p>
+  
+  <p>
+    Pour commencer, nous devons préparer notre jeu de données de traduction. Nous pouvons utiliser des bibliothèques comme torchtext pour charger des ensembles de données de traduction populaires tels que WMT, IWSLT, etc. Ensuite, nous devons prétraiter les phrases en les tokenisant, en construisant un vocabulaire, etc.
+  </p>
+  
+  <pre><code>
+import torch
+import torchtext
+from torchtext.data import Field, BucketIterator
+
+# Charger l'ensemble de données de traduction automatique
+SRC = Field(tokenize='spacy', tokenizer_language='fr', init_token='<sos>', eos_token='<eos>', lower=True)
+TRG = Field(tokenize='spacy', tokenizer_language='en', init_token='<sos>', eos_token='<eos>', lower=True)
+train_data, valid_data, test_data = torchtext.datasets.TranslationDataset.splits(
+    path='./data', train='train', validation='valid', test='test', exts=('.fr', '.en'), fields=(SRC, TRG))
+
+# Construire le vocabulaire
+SRC.build_vocab(train_data, min_freq=2)
+TRG.build_vocab(train_data, min_freq=2)
+
+# Créer les itérateurs de données
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data), batch_size=64, device=torch.device('cuda' if torch.cuda.is_available() else 'cpu'))
+  </code></pre>
+  
+  <p>
+    Une fois que nous avons préparé notre jeu de données, nous pouvons construire notre modèle de traduction automatique. Nous pouvons utiliser des RNN tels que les LSTM ou les GRU pour capturer les dépendances temporelles dans les phrases. Nous pouvons également utiliser des couches d'attention pour améliorer les performances du modèle.
+  </p>
+  
+  <pre><code>
+import torch.nn as nn
+import torch.optim as optim
+
+# Définir l'architecture du modèle
+class TranslationModel(nn.Module):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(TranslationModel, self).__init__()
+        self.embedding = nn.Embedding(input_size, hidden_size)
+        self.rnn = nn.GRU(hidden_size, hidden_size, batch_first=True)
+        self.fc = nn.Linear(hidden_size, output_size)
+        
+    def forward(self, x):
+        embedded = self.embedding(x)
+        output, _ = self.rnn(embedded)
+        output = self.fc(output)
+        return output
+
+input_size = len(SRC.vocab)
+hidden_size = 256
+output_size = len(TRG.vocab)
+model = TranslationModel(input_size, hidden_size, output_size)
+
+# Définir la fonction de perte et l'optimiseur
+criterion = nn.CrossEntropyLoss(ignore_index=TRG.vocab.stoi[TRG.pad_token])
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+  </code></pre>
+  
+  <p>
+    Maintenant que nous avons notre modèle, nous pouvons procéder à l'entraînement. Nous itérons sur les mini-lots de notre jeu de données d'entraînement, calculons les prédictions du modèle, calculons la perte à l'aide de la fonction de perte définie précédemment, puis effectuons la rétropropagation pour mettre à jour les poids du modèle.
+  </p>
+  
+  <pre><code>
+# Entraînement du modèle
+num_epochs = 10
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model.to(device)
+
+for epoch in range(num_epochs):
+    for batch in train_iterator:
+        src = batch.src.to(device)
+        trg = batch.trg.to(device)
+        
+        # Calcul des prédictions
+        output = model(src)
+        
+        # Calcul de la perte
+        output = output[:, 1:].reshape(-1, output.shape[-1])
+        trg = trg[:, 1:].reshape(-1)
+        loss = criterion(output, trg)
+        
+        # Rétropropagation et mise à jour des poids
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+  </code></pre>
+  
+  <p>
+    Une fois que notre modèle est entraîné, nous pouvons l'utiliser pour traduire de nouvelles phrases. Nous alimentons une phrase source dans le modèle et obtenons une séquence de mots en sortie. Nous pouvons utiliser des techniques telles que le beam search pour améliorer la qualité des traductions.
+  </p>
+  
+  <pre><code>
+# Traduction avec le modèle entraîné
+model.eval()
+
+def translate_sentence(sentence):
+    tokens = SRC.tokenize(sentence)
+    tokens = [SRC.init_token] + tokens + [SRC.eos_token]
+    indices = [SRC.vocab.stoi[token] for token in tokens]
+    input_tensor = torch.LongTensor(indices).unsqueeze(0).to(device)
+    
+    with torch.no_grad():
+        output = model(input_tensor)
+    
+    output = output.argmax(dim=-1).squeeze(0)
+    translated_tokens = [TRG.vocab.itos[token] for token in output]
+    translated_sentence = ' '.join(translated_tokens)
+    return translated_sentence
+
+source_sentence = 'Je suis heureux.'
+translated_sentence = translate_sentence(source_sentence)
+print('Source sentence:', source_sentence)
+print('Translated sentence:', translated_sentence)
+  </code></pre>
+  
+  <h2>Récapitulatif de la formation</h2>
+  <p>
+    Félicitations ! Vous avez maintenant acquis une solide compréhension de PyTorch et de ses applications dans le domaine de l'apprentissage automatique. Au cours de cette formation, nous avons exploré les bases de PyTorch, la manipulation de données, la construction de modèles, l'entraînement de modèles, les réseaux de neurones profonds, le traitement du langage naturel, la vision par ordinateur, le déploiement de modèles, les techniques avancées et les cas d'utilisation pratiques.
+  </p>
+  
+  <h2>Ressources supplémentaires pour approfondir PyTorch</h2>
+  <p>
+    Si vous souhaitez approfondir vos connaissances sur PyTorch, voici quelques ressources supplémentaires que vous pouvez consulter :
+  </p>
+  <ul>
+    <li>Documentation officielle de PyTorch : <a href="https://pytorch.org/docs/stable/">https://pytorch.org/docs/stable/</a></li>
+    <li>Tutoriels PyTorch sur le site officiel : <a href="https://pytorch.org/tutorials/">https://pytorch.org/tutorials/</a></li>
+    <li>PyTorch Forums : <a href="https://discuss.pytorch.org/">https://discuss.pytorch.org/</a></li>
+    <li>PyTorch GitHub Repository : <a href="https://github.com/pytorch/pytorch">https://github.com/pytorch/pytorch</a></li>
+  </ul>
+  
+  <h2>Perspectives d'évolution de PyTorch</h2>
+  <p>
+    PyTorch est une bibliothèque en constante évolution avec de nouvelles fonctionnalités et améliorations qui sont régulièrement ajoutées. Voici quelques-unes des perspectives d'évolution de PyTorch :
+  </p>
+  <ul>
+    <li>Amélioration des performances et de l'efficacité</li>
+    <li>Intégration de nouvelles architectures de modèles</li>
+    <li>Support pour le calcul distribué sur plusieurs GPU et sur des clusters de calcul</li>
+    <li>Intégration de nouvelles fonctionnalités pour le traitement du langage naturel et la vision par ordinateur</li>
+    <li>Amélioration de l'expérience de développement et de débogage</li>
+  </ul>
+  
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

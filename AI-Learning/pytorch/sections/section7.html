@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Vision par ordinateur avec PyTorch</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la vision par ordinateur</h2>
+<p>La vision par ordinateur est une discipline de l'intelligence artificielle qui vise à permettre aux ordinateurs de comprendre et d'interpréter les images et les vidéos de la même manière que les humains. Grâce à la vision par ordinateur, les machines peuvent effectuer des tâches telles que la reconnaissance d'objets, la détection de visages, la segmentation d'images et bien plus encore.</p>
+
+<p>Pour utiliser la vision par ordinateur avec PyTorch, nous avons besoin de comprendre les concepts de base et les techniques utilisées dans ce domaine. Dans cette sous-section, nous explorerons les fondamentaux de la vision par ordinateur et les principaux problèmes auxquels elle est confrontée.</p>
+
+<h2>Prétraitement des images</h2>
+<p>Avant de pouvoir utiliser des images dans des modèles de vision par ordinateur, il est souvent nécessaire de les prétraiter. Le prétraitement des images comprend des étapes telles que le redimensionnement, la normalisation, la conversion en niveaux de gris, la suppression du bruit, etc.</p>
+
+<p>Dans cette sous-section, nous apprendrons comment prétraiter les images à l'aide de PyTorch. Nous explorerons les différentes techniques de prétraitement d'images et nous verrons comment les appliquer à nos données.</p>
+
+<h2>Construction de modèles de vision par ordinateur avec PyTorch</h2>
+<p>Une fois que nous avons prétraité nos images, nous pouvons construire des modèles de vision par ordinateur à l'aide de PyTorch. Les modèles de vision par ordinateur sont généralement basés sur des réseaux de neurones convolutifs (CNN) qui sont spécialement conçus pour traiter les données d'image.</p>
+
+<p>Dans cette sous-section, nous apprendrons comment construire des modèles de vision par ordinateur à l'aide de PyTorch. Nous explorerons les différentes architectures de CNN, telles que LeNet, AlexNet, VGG, etc., et nous verrons comment les implémenter avec PyTorch.</p>
+
+<p>Voici un exemple de code pour construire un modèle de vision par ordinateur avec PyTorch :</p>
+
+<pre><code>import torch
+import torch.nn as nn
+
+class CNN(nn.Module):
+    def __init__(self):
+        super(CNN, self).__init__()
+        self.conv1 = nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1)
+        self.relu = nn.ReLU()
+        self.maxpool = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.fc = nn.Linear(16 * 14 * 14, 10)
+    
+    def forward(self, x):
+        x = self.conv1(x)
+        x = self.relu(x)
+        x = self.maxpool(x)
+        x = x.view(x.size(0), -1)
+        x = self.fc(x)
+        return x
+
+model = CNN()
+</code></pre>
+
+<p>Ce code définit une classe CNN qui hérite de la classe nn.Module de PyTorch. Le modèle est composé de couches de convolution, de fonctions d'activation ReLU, de couches de pooling et d'une couche entièrement connectée pour la classification.</p>
+
+<h2>Entraînement de modèles de vision par ordinateur avec PyTorch</h2>
+<p>Une fois que nous avons construit notre modèle de vision par ordinateur, nous devons l'entraîner sur des données d'apprentissage. L'entraînement d'un modèle de vision par ordinateur consiste à ajuster les poids du modèle afin qu'il puisse prédire avec précision les étiquettes des images.</p>
+
+<p>Dans cette sous-section, nous apprendrons comment entraîner des modèles de vision par ordinateur avec PyTorch. Nous explorerons les fonctions de coût, les optimiseurs et les techniques d'entraînement utilisées dans ce domaine.</p>
+
+<h2>Validation et évaluation des modèles de vision par ordinateur</h2>
+<p>Une fois que notre modèle de vision par ordinateur est entraîné, nous devons le valider et l'évaluer pour mesurer ses performances. La validation consiste à évaluer le modèle sur un ensemble de données distinct de celui utilisé pour l'entraînement, tandis que l'évaluation consiste à mesurer les performances du modèle sur un ensemble de données inconnu.</p>
+
+<p>Dans cette sous-section, nous apprendrons comment valider et évaluer des modèles de vision par ordinateur avec PyTorch. Nous explorerons les métriques d'évaluation couramment utilisées, telles que la précision, le rappel, la courbe ROC, etc., et nous verrons comment les calculer à l'aide de PyTorch.</p>
+
+<p>Ce sont les principales sous-sections de la section "Vision par ordinateur avec PyTorch". En comprenant ces concepts et en les mettant en pratique, vous serez en mesure de construire et d'entraîner des modèles de vision par ordinateur performants à l'aide de PyTorch.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

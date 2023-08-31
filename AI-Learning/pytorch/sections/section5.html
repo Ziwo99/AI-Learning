@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PyTorch Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Réseaux de neurones profonds avec PyTorch</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pytorch/pytorch.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux réseaux de neurones profonds</h2>
+<p>Les réseaux de neurones profonds, également appelés réseaux de neurones profonds, sont une forme avancée de modèles de machine learning qui sont capables d'apprendre des représentations hiérarchiques de données complexes. Ils sont particulièrement adaptés à des tâches telles que la vision par ordinateur et le traitement du langage naturel.</p>
+<p>Les réseaux de neurones profonds sont composés de plusieurs couches de neurones, appelées couches cachées, qui permettent au modèle d'apprendre des caractéristiques de plus en plus abstraites à mesure que l'information se propage à travers le réseau. Ces caractéristiques abstraites sont ensuite utilisées pour prendre des décisions ou effectuer des prédictions.</p>
+<p>PyTorch est un framework populaire pour la construction et l'entraînement de réseaux de neurones profonds. Il offre une interface conviviale et flexible pour la création de modèles, ainsi qu'une prise en charge intégrée de l'optimisation et de l'entraînement des modèles.</p>
+
+<h2>Construction de réseaux de neurones profonds avec PyTorch</h2>
+<p>Pour construire un réseau de neurones profond avec PyTorch, nous devons d'abord définir l'architecture du réseau en spécifiant le nombre de couches et le nombre de neurones dans chaque couche. Ensuite, nous devons définir comment les données se propagent à travers le réseau en spécifiant les opérations à effectuer à chaque couche.</p>
+<p>PyTorch offre une variété de modules et de fonctions qui facilitent la construction de réseaux de neurones profonds. Par exemple, nous pouvons utiliser la classe <code>nn.Module</code> pour définir notre propre classe de modèle personnalisé, en spécifiant les couches et les opérations à effectuer dans la méthode <code>forward</code>.</p>
+<pre><code>import torch
+import torch.nn as nn
+
+class DeepNeuralNetwork(nn.Module):
+    def __init__(self):
+        super(DeepNeuralNetwork, self).__init__()
+        self.layer1 = nn.Linear(784, 256)
+        self.layer2 = nn.Linear(256, 128)
+        self.layer3 = nn.Linear(128, 10)
+
+    def forward(self, x):
+        x = torch.relu(self.layer1(x))
+        x = torch.relu(self.layer2(x))
+        x = self.layer3(x)
+        return x
+
+model = DeepNeuralNetwork()
+</code></pre>
+<p>Dans cet exemple, nous construisons un réseau de neurones profond avec trois couches linéaires. La première couche a 784 neurones en entrée et 256 neurones en sortie, la deuxième couche a 256 neurones en entrée et 128 neurones en sortie, et la dernière couche a 128 neurones en entrée et 10 neurones en sortie.</p>
+<p>Nous utilisons la fonction d'activation ReLU (Rectified Linear Unit) pour introduire de la non-linéarité dans notre modèle. La méthode <code>forward</code> spécifie comment les données se propagent à travers le réseau en appliquant les opérations nécessaires à chaque couche.</p>
+
+<h2>Entraînement de réseaux de neurones profonds</h2>
+<p>Une fois que nous avons construit notre réseau de neurones profond, nous devons l'entraîner sur des données d'apprentissage pour qu'il puisse apprendre à effectuer des prédictions précises. L'entraînement d'un réseau de neurones profond implique deux étapes principales : la propagation avant (forward propagation) et la rétropropagation (backpropagation).</p>
+<p>Lors de la propagation avant, les données sont introduites dans le réseau et les prédictions sont calculées. Ces prédictions sont ensuite comparées aux valeurs réelles pour calculer une mesure de l'erreur, également appelée fonction de coût. La rétropropagation est utilisée pour ajuster les poids du réseau afin de minimiser cette fonction de coût.</p>
+<p>PyTorch facilite l'entraînement de réseaux de neurones profonds en fournissant des fonctions d'optimisation telles que la descente de gradient stochastique (SGD) et l'algorithme Adam. Nous pouvons également spécifier une fonction de coût appropriée pour notre tâche, telle que la perte de log vraisemblance négative (negative log likelihood loss) pour la classification.</p>
+<pre><code>import torch.optim as optim
+
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+# Boucle d'entraînement
+for epoch in range(num_epochs):
+    # Propagation avant
+    outputs = model(inputs)
+    loss = criterion(outputs, labels)
+
+    # Rétropropagation et mise à jour des poids
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+</code></pre>
+<p>Dans cet exemple, nous utilisons la fonction de coût <code>nn.CrossEntropyLoss</code> pour calculer l'erreur entre les prédictions du modèle et les étiquettes réelles. Nous utilisons l'optimiseur SGD avec un taux d'apprentissage de 0,01 pour ajuster les poids du modèle lors de la rétropropagation.</p>
+<p>Nous itérons ensuite sur les données d'entraînement pour effectuer la propagation avant, calculer l'erreur, effectuer la rétropropagation et mettre à jour les poids du modèle à chaque itération.</p>
+
+<p>Il est important de noter que l'entraînement d'un réseau de neurones profond peut prendre du temps et nécessite souvent une grande quantité de données d'entraînement. Il est également important de régulariser le modèle pour éviter le surapprentissage. Cela peut être fait en utilisant des techniques telles que l'abandon (dropout) ou la régularisation L1/L2.</p>
+
+<p>En résumé, les réseaux de neurones profonds sont des modèles avancés de machine learning qui sont capables d'apprendre des représentations hiérarchiques de données complexes. PyTorch offre une interface conviviale pour la construction et l'entraînement de ces modèles. En utilisant les modules et les fonctions appropriés, nous pouvons construire des réseaux de neurones profonds, les entraîner sur des données d'apprentissage et les utiliser pour effectuer des prédictions précises.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pytorch/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pytorch/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
