@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Tests et débogage en Kotlin</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Écriture de tests unitaires en Kotlin</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité et la fiabilité de votre code Kotlin. Ils permettent de vérifier le bon fonctionnement des différentes parties de votre application de manière isolée. En Kotlin, vous pouvez utiliser le framework de test intégré, appelé <code>JUnit</code>, pour écrire et exécuter vos tests unitaires.</p>
+
+<p>Voici un exemple de test unitaire en Kotlin :</p>
+<pre><code>import org.junit.Test
+import org.junit.Assert.*
+
+class MyUnitTest {
+
+    @Test
+    fun addition_isCorrect() {
+        val calculator = Calculator()
+        val result = calculator.add(2, 3)
+        assertEquals(5, result)
+    }
+}
+
+class Calculator {
+    fun add(a: Int, b: Int): Int {
+        return a + b
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous avons une classe <code>Calculator</code> avec une méthode <code>add</code> qui effectue une addition simple. Le test unitaire vérifie si l'addition est correcte en utilisant la méthode <code>assertEquals</code> de <code>JUnit</code>.</p>
+
+<h2>Utilisation d'outils de débogage pour Kotlin</h2>
+<p>Le débogage est un processus essentiel pour identifier et résoudre les erreurs dans votre code Kotlin. Kotlin est compatible avec les outils de débogage standard tels que <code>IntelliJ IDEA</code> et <code>Android Studio</code>.</p>
+
+<p>Voici comment utiliser l'outil de débogage dans <code>IntelliJ IDEA</code> :</p>
+<ol>
+  <li>Ouvrez votre projet Kotlin dans <code>IntelliJ IDEA</code>.</li>
+  <li>Placez des points d'arrêt (<em>breakpoints</em>) dans votre code en cliquant à gauche de la ligne de code où vous souhaitez arrêter l'exécution.</li>
+  <li>Exécutez votre application en mode débogage en cliquant sur le bouton de débogage.</li>
+  <li>Lorsque votre application atteint un point d'arrêt, l'exécution s'arrête et vous pouvez inspecter les valeurs des variables, exécuter du code pas à pas, etc.</li>
+  <li>Utilisez les fonctionnalités de débogage telles que les points d'arrêt conditionnels, les montres (<em>watches</em>), les évaluations d'expressions, etc., pour faciliter le processus de débogage.</li>
+</ol>
+
+<p>Il est également possible d'utiliser des outils de débogage tiers tels que <code>ddms</code> pour le débogage d'applications Android en Kotlin.</p>
+
+<p>En utilisant ces outils de débogage, vous pouvez facilement identifier et résoudre les erreurs dans votre code Kotlin, ce qui améliore la qualité et la fiabilité de votre application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

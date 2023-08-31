@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Kotlin avancé</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réflexion et annotations en Kotlin</h2>
+<p>La réflexion en Kotlin permet d'inspecter et de manipuler les types, les propriétés et les fonctions à l'exécution. Elle offre une grande flexibilité et peut être utilisée dans divers scénarios, tels que la création de frameworks, la génération de code ou la mise en œuvre de fonctionnalités avancées.</p>
+
+<p>Les annotations en Kotlin permettent d'ajouter des métadonnées aux éléments du code, tels que les classes, les propriétés ou les fonctions. Elles peuvent être utilisées pour fournir des informations supplémentaires aux outils de développement ou pour activer des fonctionnalités spécifiques lors de la compilation ou de l'exécution.</p>
+
+<p>Voici un exemple d'utilisation de la réflexion en Kotlin :</p>
+<pre><code>val obj = MyClass()
+val clazz = obj::class
+val properties = clazz.memberProperties
+val functions = clazz.memberFunctions
+
+for (property in properties) {
+    println("Property: ${property.name}")
+}
+
+for (function in functions) {
+    println("Function: ${function.name}")
+}</code></pre>
+
+<p>Et voici un exemple d'utilisation des annotations en Kotlin :</p>
+<pre><code>@Serializable
+data class Person(val name: String, val age: Int)
+
+fun main() {
+    val person = Person("John Doe", 30)
+    val json = Json.encodeToString(person)
+    println(json)
+}</code></pre>
+
+<h2>Utilisation de bibliothèques externes en Kotlin</h2>
+<p>En Kotlin, il est possible d'utiliser des bibliothèques externes pour étendre les fonctionnalités de base du langage. Ces bibliothèques peuvent être utilisées pour diverses tâches, telles que la manipulation de fichiers, l'accès aux bases de données, la communication réseau, etc.</p>
+
+<p>Pour utiliser une bibliothèque externe en Kotlin, il faut d'abord l'ajouter comme dépendance dans le fichier de configuration du projet (généralement build.gradle ou pom.xml). Ensuite, il suffit d'importer les classes et les fonctions nécessaires dans le code et de les utiliser comme n'importe quelle autre fonction ou classe Kotlin.</p>
+
+<p>Voici un exemple d'utilisation d'une bibliothèque externe pour la manipulation de fichiers :</p>
+<pre><code>import java.io.File
+
+fun main() {
+    val file = File("example.txt")
+    val content = file.readText()
+    println(content)
+}</code></pre>
+
+<h2>Utilisation avancée des coroutines</h2>
+<p>Les coroutines sont une fonctionnalité avancée de Kotlin qui permet de gérer de manière asynchrone les tâches concurrentes. Elles offrent une alternative légère et efficace aux threads traditionnels, en permettant une gestion plus flexible et plus intuitive des opérations asynchrones.</p>
+
+<p>En utilisant les coroutines, il est possible d'écrire du code asynchrone de manière séquentielle, en utilisant des suspensions pour marquer les points où une opération asynchrone est en attente. Cela permet de simplifier la gestion des tâches concurrentes et d'améliorer la lisibilité du code.</p>
+
+<p>Voici un exemple d'utilisation avancée des coroutines :</p>
+<pre><code>import kotlinx.coroutines.*
+
+fun main() = runBlocking {
+    val job = launch {
+        val result1 = async { fetchDataFromApi1() }
+        val result2 = async { fetchDataFromApi2() }
+        val combinedResult = result1.await() + result2.await()
+        println(combinedResult)
+    }
+    
+    job.join()
+}
+
+suspend fun fetchDataFromApi1(): String {
+    delay(1000)
+    return "Data from API 1"
+}
+
+suspend fun fetchDataFromApi2(): String {
+    delay(2000)
+    return "Data from API 2"
+}</code></pre>
+
+<p>Ce code utilise les coroutines pour effectuer deux appels asynchrones à des API et combiner les résultats. Les fonctions <code>fetchDataFromApi1</code> et <code>fetchDataFromApi2</code> sont des suspensions qui simulent des appels asynchrones en utilisant la fonction <code>delay</code> pour introduire une pause.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

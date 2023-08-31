@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Fondamentaux de Kotlin</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base et structure d'un programme Kotlin</h2>
+<p>La syntaxe de base de Kotlin est similaire à celle d'autres langages de programmation tels que Java. Un programme Kotlin est composé de fonctions, de classes et d'expressions.</p>
+<p>Voici un exemple de structure de base d'un programme Kotlin :</p>
+<pre><code>fun main() {
+    // Code principal du programme
+}
+</code></pre>
+<p>Dans cet exemple, la fonction <code>main()</code> est la fonction principale du programme. C'est le point d'entrée de l'exécution du programme.</p>
+
+<h2>Types de données et variables</h2>
+<p>Kotlin prend en charge différents types de données tels que les entiers, les nombres à virgule flottante, les chaînes de caractères, les booléens, etc.</p>
+<p>Voici quelques exemples de déclaration de variables avec des types de données différents :</p>
+<pre><code>val age: Int = 25
+val name: String = "John Doe"
+var balance: Double = 100.50
+</code></pre>
+<p>Dans cet exemple, <code>age</code> est une variable immuable (déclarée avec <code>val</code>) de type entier (<code>Int</code>), <code>name</code> est une variable immuable de type chaîne de caractères (<code>String</code>), et <code>balance</code> est une variable mutable (déclarée avec <code>var</code>) de type nombre à virgule flottante (<code>Double</code>).</p>
+
+<h2>Opérateurs et expressions</h2>
+<p>Kotlin prend en charge différents opérateurs tels que les opérateurs arithmétiques, les opérateurs de comparaison, les opérateurs logiques, etc.</p>
+<p>Voici quelques exemples d'utilisation d'opérateurs en Kotlin :</p>
+<pre><code>val a = 10
+val b = 5
+
+val sum = a + b
+val difference = a - b
+val product = a * b
+val quotient = a / b
+
+val isGreater = a > b
+val isEqual = a == b
+
+val logicalAnd = (a > 0) && (b > 0)
+val logicalOr = (a > 0) || (b > 0)
+</code></pre>
+<p>Dans cet exemple, nous utilisons différents opérateurs pour effectuer des opérations arithmétiques, des comparaisons et des opérations logiques.</p>
+
+<h2>Structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un programme. Kotlin prend en charge les structures de contrôle telles que les boucles et les conditions.</p>
+<p>Voici quelques exemples d'utilisation de structures de contrôle en Kotlin :</p>
+<pre><code>// Boucle while
+var i = 0
+while (i < 10) {
+    println(i)
+    i++
+}
+
+// Boucle for
+for (i in 1..10) {
+    println(i)
+}
+
+// Condition if
+val x = 5
+if (x > 0) {
+    println("Positive")
+} else if (x < 0) {
+    println("Negative")
+} else {
+    println("Zero")
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons une boucle <code>while</code> pour afficher les nombres de 0 à 9, une boucle <code>for</code> pour afficher les nombres de 1 à 10, et une condition <code>if</code> pour afficher si un nombre est positif, négatif ou nul.</p>
+
+<h2>Fonctions et lambdas</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Kotlin prend en charge la déclaration de fonctions et l'utilisation de fonctions anonymes appelées lambdas.</p>
+<p>Voici un exemple de déclaration de fonction en Kotlin :</p>
+<pre><code>fun greet(name: String) {
+    println("Hello, $name!")
+}
+
+// Appel de la fonction
+greet("John")
+</code></pre>
+<p>Dans cet exemple, nous déclarons une fonction <code>greet()</code> qui prend un paramètre <code>name</code> de type chaîne de caractères. La fonction affiche un message de salutation en utilisant le nom passé en argument.</p>
+<p>Voici un exemple d'utilisation de lambda en Kotlin :</p>
+<pre><code>val numbers = listOf(1, 2, 3, 4, 5)
+
+numbers.forEach { number ->
+    println(number)
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons la fonction <code>forEach()</code> pour itérer sur les éléments d'une liste et afficher chaque élément à l'aide d'une lambda.</p>
+
+<h2>Gestion des exceptions</h2>
+<p>La gestion des exceptions permet de gérer les erreurs qui se produisent pendant l'exécution d'un programme. Kotlin prend en charge la gestion des exceptions à l'aide des blocs <code>try</code>, <code>catch</code> et <code>finally</code>.</p>
+<p>Voici un exemple de gestion des exceptions en Kotlin :</p>
+<pre><code>fun divide(a: Int, b: Int): Int {
+    try {
+        return a / b
+    } catch (e: ArithmeticException) {
+        println("Division by zero is not allowed")
+    } finally {
+        println("Division operation completed")
+    }
+    
+    return 0
+}
+
+// Appel de la fonction
+val result = divide(10, 0)
+</code></pre>
+<p>Dans cet exemple, nous définissons une fonction <code>divide()</code> qui effectue une division entre deux nombres. Si une exception <code>ArithmeticException</code> se produit (division par zéro), nous affichons un message d'erreur. Le bloc <code>finally</code> est exécuté quel que soit le résultat de la division.</p>
+
+Ceci est un exemple de contenu pour la section 2: Fondamentaux de Kotlin de votre formation e-learning Kotlin. Il fournit des informations détaillées sur la syntaxe de base, les types de données, les opérateurs, les structures de contrôle, les fonctions, les lambdas et la gestion des exceptions en Kotlin.
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

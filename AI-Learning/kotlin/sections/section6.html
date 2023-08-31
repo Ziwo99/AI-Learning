@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Manipulation des données en Kotlin</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La manipulation de fichiers est une tâche courante dans le développement d'applications. Kotlin offre des fonctionnalités puissantes pour lire et écrire des fichiers.</p>
+
+<p>Pour lire un fichier, vous pouvez utiliser la classe <code>File</code> de Kotlin. Voici un exemple de lecture d'un fichier texte :</p>
+
+<pre><code>import java.io.File
+
+fun main() {
+    val file = File("chemin/vers/le/fichier.txt")
+    val lines = file.readLines()
+    
+    for (line in lines) {
+        println(line)
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>readLines()</code> de la classe <code>File</code> pour lire toutes les lignes du fichier. Ensuite, nous parcourons les lignes et les imprimons à la console.</p>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la classe <code>FileWriter</code>. Voici un exemple d'écriture dans un fichier texte :</p>
+
+<pre><code>import java.io.FileWriter
+
+fun main() {
+    val file = FileWriter("chemin/vers/le/fichier.txt")
+    file.write("Contenu à écrire dans le fichier")
+    file.close()
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la classe <code>FileWriter</code> pour créer un fichier et écrire du contenu à l'intérieur. La méthode <code>write()</code> est utilisée pour écrire le contenu spécifié dans le fichier. N'oubliez pas de fermer le fichier avec la méthode <code>close()</code> une fois que vous avez terminé d'écrire.</p>
+
+<h2>Utilisation de bases de données avec Kotlin</h2>
+<p>Kotlin offre une prise en charge native pour interagir avec des bases de données. Vous pouvez utiliser la bibliothèque SQLite pour manipuler des bases de données relationnelles dans vos applications Kotlin.</p>
+
+<p>Pour utiliser SQLite avec Kotlin, vous devez ajouter la dépendance appropriée dans votre fichier de configuration de projet. Voici un exemple d'ajout de la dépendance dans un fichier build.gradle :</p>
+
+<pre><code>dependencies {
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-sqlite:0.2.1'
+}
+</code></pre>
+
+<p>Une fois la dépendance ajoutée, vous pouvez utiliser la classe <code>SqliteConnection</code> pour vous connecter à une base de données SQLite et exécuter des requêtes. Voici un exemple :</p>
+
+<pre><code>import kotlinx.coroutines.runBlocking
+import org.jetbrains.exposed.sql.Database
+import org.jetbrains.exposed.sql.SchemaUtils
+import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.selectAll
+
+fun main() {
+    Database.connect("jdbc:sqlite:chemin/vers/la/base/de/donnees.db")
+    
+    runBlocking {
+        SchemaUtils.create(Users)
+        
+        Users.insert {
+            it[name] = "John Doe"
+            it[age] = 30
+        }
+        
+        val users = Users.selectAll()
+        for (user in users) {
+            println("Nom: ${user[Users.name]}, Age: ${user[Users.age]}")
+        }
+    }
+}
+
+object Users : Table() {
+    val id = integer("id").autoIncrement().primaryKey()
+    val name = varchar("name", 50)
+    val age = integer("age")
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la bibliothèque Exposed pour simplifier l'interaction avec la base de données SQLite. Nous créons une table "Users" avec des colonnes "id", "name" et "age". Ensuite, nous insérons un nouvel utilisateur dans la table et récupérons tous les utilisateurs enregistrés pour les afficher à la console.</p>
+
+<h2>Utilisation d'APIs REST avec Kotlin</h2>
+<p>Kotlin facilite l'utilisation d'APIs REST pour communiquer avec des services web. Vous pouvez utiliser la bibliothèque Ktor pour effectuer des requêtes HTTP et traiter les réponses.</p>
+
+<p>Pour utiliser Ktor, vous devez ajouter la dépendance appropriée dans votre fichier de configuration de projet. Voici un exemple d'ajout de la dépendance dans un fichier build.gradle :</p>
+
+<pre><code>dependencies {
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-json:$ktor_version"
+    implementation "io.ktor:ktor-client-serialization:$ktor_version"
+}
+</code></pre>
+
+<p>Une fois la dépendance ajoutée, vous pouvez utiliser la classe <code>HttpClient</code> pour effectuer des requêtes HTTP. Voici un exemple d'utilisation de Ktor pour récupérer des données à partir d'une API REST :</p>
+
+<pre><code>import io.ktor.client.HttpClient
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.request.get
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class User(val id: Int, val name: String, val age: Int)
+
+suspend fun main() {
+    val client = HttpClient {
+        install(JsonFeature) {
+            serializer = KotlinxSerializer()
+        }
+    }
+    
+    val response = client.get<List<User>>("https://api.example.com/users")
+    
+    for (user in response) {
+        println("Nom: ${user.name}, Age: ${user.age}")
+    }
+    
+    client.close()
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la bibliothèque de sérialisation Kotlinx pour désérialiser les données JSON renvoyées par l'API REST. Nous effectuons une requête GET pour récupérer une liste d'utilisateurs à partir de l'URL spécifiée, puis nous parcourons la liste et affichons les noms et les âges des utilisateurs.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

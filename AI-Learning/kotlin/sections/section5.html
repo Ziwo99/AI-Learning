@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Programmation asynchrone en Kotlin</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux coroutines</h2>
+<p>Les coroutines sont une fonctionnalité clé de Kotlin pour la programmation asynchrone. Elles permettent d'écrire du code asynchrone de manière séquentielle, ce qui facilite la gestion des tâches concurrentes. Les coroutines sont légères et peuvent être utilisées pour exécuter des opérations longues sans bloquer le thread principal.</p>
+
+<p>En Kotlin, les coroutines sont créées à l'aide de la fonction <code>suspend</code> et peuvent être exécutées à l'aide de <code>launch</code> ou <code>async</code>. La fonction <code>suspend</code> indique que la coroutine peut être mise en pause et reprise ultérieurement.</p>
+
+<h2>Utilisation des coroutines pour la programmation asynchrone</h2>
+<p>Pour utiliser les coroutines, il est nécessaire d'importer la bibliothèque <code>kotlinx.coroutines</code>. Une fois importée, vous pouvez créer une coroutine en utilisant la fonction <code>launch</code> ou <code>async</code>.</p>
+
+<p>La fonction <code>launch</code> est utilisée pour exécuter une coroutine de manière asynchrone sans retour de valeur. Par exemple :</p>
+
+<pre><code>launch {
+    // Code de la coroutine
+    println("Coroutine lancée")
+    delay(1000)
+    println("Coroutine terminée")
+}</code></pre>
+
+<p>La fonction <code>async</code> est utilisée pour exécuter une coroutine de manière asynchrone avec un retour de valeur. Par exemple :</p>
+
+<pre><code>val result: Deferred&lt;String&gt; = async {
+    // Code de la coroutine
+    delay(1000)
+    return@async "Résultat de la coroutine"
+}
+
+launch {
+    // Utilisation du résultat de la coroutine
+    val value: String = result.await()
+    println(value)
+}</code></pre>
+
+<p>La fonction <code>delay</code> est utilisée pour mettre en pause l'exécution de la coroutine pendant un certain laps de temps.</p>
+
+<h2>Gestion des threads et des tâches concurrentes</h2>
+<p>Les coroutines en Kotlin sont exécutées sur des threads de manière transparente. Kotlin gère automatiquement la création et la gestion des threads pour vous. Cela permet d'écrire du code asynchrone de manière plus simple et plus lisible.</p>
+
+<p>Par défaut, les coroutines sont exécutées sur un pool de threads appelé <code>Dispatchers.Default</code>. Ce pool de threads est optimisé pour les opérations intensives en CPU. Cependant, vous pouvez également spécifier d'autres dispatchers, tels que <code>Dispatchers.IO</code> pour les opérations d'entrée/sortie ou <code>Dispatchers.Main</code> pour les mises à jour de l'interface utilisateur.</p>
+
+<p>Voici un exemple d'utilisation d'un dispatcher différent :</p>
+
+<pre><code>launch(Dispatchers.IO) {
+    // Code de la coroutine exécuté sur le dispatcher IO
+    val result = performLongRunningTask()
+    withContext(Dispatchers.Main) {
+        // Mise à jour de l'interface utilisateur sur le dispatcher Main
+        updateUI(result)
+    }
+}</code></pre>
+
+<p>La fonction <code>withContext</code> est utilisée pour spécifier le dispatcher sur lequel le code doit être exécuté.</p>
+
+<p>Il est important de noter que les coroutines ne créent pas de nouveaux threads à chaque fois qu'elles sont lancées. Au lieu de cela, elles utilisent des threads existants de manière efficace, ce qui permet d'économiser des ressources système.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation orientée objet en Kotlin</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Classes et objets</h2>
+<p>En Kotlin, la programmation orientée objet est basée sur le concept de classes et d'objets. Une classe est un modèle ou un plan pour créer des objets, tandis qu'un objet est une instance spécifique d'une classe. Les objets sont utilisés pour encapsuler des données et des fonctionnalités connexes.</p>
+
+<p>La syntaxe pour déclarer une classe en Kotlin est la suivante :</p>
+
+<pre><code>class MaClasse {
+    // Propriétés (variables) de la classe
+    
+    // Méthodes (fonctions) de la classe
+}
+</code></pre>
+
+<p>Par exemple, voici comment déclarer une classe simple en Kotlin :</p>
+
+<pre><code>class Personne {
+    var nom: String = ""
+    var age: Int = 0
+    
+    fun direBonjour() {
+        println("Bonjour, je m'appelle $nom et j'ai $age ans.")
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "Personne" a deux propriétés : "nom" de type String et "age" de type Int. La classe a également une méthode "direBonjour()" qui imprime un message de salutation avec le nom et l'âge de la personne.</p>
+
+<p>Pour créer une instance de la classe "Personne" et utiliser ses propriétés et méthodes, vous pouvez faire ce qui suit :</p>
+
+<pre><code>val personne = Personne()
+personne.nom = "Alice"
+personne.age = 25
+personne.direBonjour()
+</code></pre>
+
+<p>Cela créera une instance de la classe "Personne" appelée "personne" avec le nom "Alice" et l'âge "25". Ensuite, la méthode "direBonjour()" sera appelée sur cette instance, ce qui affichera le message "Bonjour, je m'appelle Alice et j'ai 25 ans."</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>En Kotlin, vous pouvez utiliser l'héritage pour créer des classes dérivées à partir d'une classe de base existante. La classe dérivée hérite des propriétés et des méthodes de la classe de base et peut également ajouter de nouvelles propriétés et méthodes ou modifier celles héritées.</p>
+
+<p>La syntaxe pour déclarer une classe dérivée en Kotlin est la suivante :</p>
+
+<pre><code>class MaClasseDerivee : MaClasseDeBase() {
+    // Propriétés et méthodes supplémentaires
+}
+</code></pre>
+
+<p>Par exemple, voici comment déclarer une classe dérivée "Etudiant" à partir de la classe de base "Personne" :</p>
+
+<pre><code>class Etudiant : Personne() {
+    var numeroEtudiant: String = ""
+    
+    fun etudier() {
+        println("L'étudiant $nom étudie.")
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "Etudiant" hérite de la classe "Personne" et ajoute une nouvelle propriété "numeroEtudiant" de type String et une nouvelle méthode "etudier()".</p>
+
+<p>Pour créer une instance de la classe "Etudiant" et utiliser ses propriétés et méthodes, vous pouvez faire ce qui suit :</p>
+
+<pre><code>val etudiant = Etudiant()
+etudiant.nom = "Bob"
+etudiant.age = 20
+etudiant.numeroEtudiant = "12345"
+etudiant.direBonjour()
+etudiant.etudier()
+</code></pre>
+
+<p>Cela créera une instance de la classe "Etudiant" appelée "etudiant" avec le nom "Bob", l'âge "20" et le numéro d'étudiant "12345". Les méthodes héritées de la classe "Personne" peuvent être appelées sur cette instance, ainsi que les méthodes spécifiques à la classe "Etudiant".</p>
+
+<h2>Interfaces et classes abstraites</h2>
+<p>En Kotlin, vous pouvez utiliser des interfaces pour définir un contrat que les classes doivent suivre. Une interface peut déclarer des méthodes abstraites (sans implémentation) et des propriétés abstraites (sans valeur par défaut).</p>
+
+<p>La syntaxe pour déclarer une interface en Kotlin est la suivante :</p>
+
+<pre><code>interface MonInterface {
+    // Méthodes abstraites
+    
+    // Propriétés abstraites
+}
+</code></pre>
+
+<p>Par exemple, voici comment déclarer une interface "Vehicule" :</p>
+
+<pre><code>interface Vehicule {
+    fun demarrer()
+    fun arreter()
+    
+    val vitesse: Int
+}
+</code></pre>
+
+<p>Dans cet exemple, l'interface "Vehicule" déclare deux méthodes abstraites "demarrer()" et "arreter()" ainsi qu'une propriété abstraite "vitesse" de type Int.</p>
+
+<p>Une classe peut implémenter une ou plusieurs interfaces en utilisant le mot-clé "implements".</p>
+
+<pre><code>class Voiture : Vehicule {
+    override fun demarrer() {
+        println("La voiture démarre.")
+    }
+    
+    override fun arreter() {
+        println("La voiture s'arrête.")
+    }
+    
+    override val vitesse: Int = 0
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "Voiture" implémente l'interface "Vehicule" et fournit une implémentation des méthodes abstraites "demarrer()", "arreter()" et de la propriété abstraite "vitesse".</p>
+
+<h2>Encapsulation et modificateurs d'accès</h2>
+<p>En Kotlin, vous pouvez utiliser des modificateurs d'accès pour contrôler l'accès aux propriétés et aux méthodes d'une classe. Les modificateurs d'accès disponibles sont "public", "private", "protected" et "internal".</p>
+
+<p>Par défaut, toutes les propriétés et méthodes d'une classe sont "public", ce qui signifie qu'elles sont accessibles depuis n'importe où dans le code.</p>
+
+<p>Le modificateur "private" limite l'accès à la classe elle-même. Les propriétés et méthodes marquées comme "private" ne peuvent être utilisées que dans la classe où elles sont déclarées.</p>
+
+<p>Le modificateur "protected" limite l'accès à la classe elle-même et à ses classes dérivées. Les propriétés et méthodes marquées comme "protected" peuvent être utilisées dans la classe où elles sont déclarées ainsi que dans les classes dérivées de cette classe.</p>
+
+<p>Le modificateur "internal" limite l'accès à un module spécifique. Les propriétés et méthodes marquées comme "internal" peuvent être utilisées dans le même module, mais pas en dehors de celui-ci.</p>
+
+<p>Voici un exemple qui montre comment utiliser les modificateurs d'accès en Kotlin :</p>
+
+<pre><code>class MaClasse {
+    private var maProprietePrivee: String = "Valeur privée"
+    protected var maProprieteProtegee: String = "Valeur protégée"
+    internal var maProprieteInterne: String = "Valeur interne"
+    var maProprietePublique: String = "Valeur publique"
+    
+    private fun maMethodePrivee() {
+        println("Méthode privée")
+    }
+    
+    protected fun maMethodeProtegee() {
+        println("Méthode protégée")
+    }
+    
+    internal fun maMethodeInterne() {
+        println("Méthode interne")
+    }
+    
+    fun maMethodePublique() {
+        println("Méthode publique")
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe "MaClasse" a quatre propriétés avec différents modificateurs d'accès et quatre méthodes avec différents modificateurs d'accès.</p>
+
+<p>Il est important de noter que les modificateurs d'accès ne sont pas seulement utilisés pour contrôler l'accès depuis l'extérieur de la classe, mais aussi pour organiser et structurer le code à l'intérieur de la classe.</p>
+
+<h2>Gestion de la mémoire et du garbage collector</h2>
+<p>En Kotlin, la gestion de la mémoire est automatique grâce au garbage collector. Le garbage collector est responsable de la libération de la mémoire occupée par les objets qui ne sont plus référencés.</p>
+
+<p>En général, vous n'avez pas à vous soucier de la gestion de la mémoire en Kotlin, car le garbage collector s'occupe de cette tâche pour vous. Cependant, il est important de comprendre comment fonctionne le garbage collector et comment éviter les fuites de mémoire.</p>
+
+<p>Le garbage collector fonctionne en identifiant les objets qui ne sont plus référencés par le programme et en libérant la mémoire occupée par ces objets. Pour qu'un objet soit considéré comme non référencé, il ne doit plus être accessible à partir d'aucune variable ou structure de données du programme.</p>
+
+<p>Voici quelques bonnes pratiques pour éviter les fuites de mémoire :</p>
+
+<ul>
+    <li>Évitez de conserver des références à des objets plus longtemps que nécessaire.</li>
+    <li>Libérez les ressources (comme les fichiers ou les connexions réseau) dès que vous n'en avez plus besoin.</li>
+    <li>Utilisez des structures de données appropriées pour éviter les références circulaires.</li>
+    <li>Évitez d'utiliser des objets volumineux ou des objets qui consomment beaucoup de mémoire si vous n'en avez pas vraiment besoin.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pouvez minimiser les problèmes de gestion de la mémoire et garantir des performances optimales de votre application Kotlin.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Kotlin côté serveur</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction au développement côté serveur avec Kotlin</h2>
+<p>
+Le développement côté serveur avec Kotlin permet de créer des applications web et des services backend robustes et performants. Kotlin offre une syntaxe concise et expressive, ainsi qu'une interopérabilité transparente avec Java, ce qui en fait un choix populaire pour le développement côté serveur.
+</p>
+<p>
+Dans cette sous-section, nous explorerons les bases du développement côté serveur avec Kotlin, y compris la mise en place de l'environnement de développement, la création d'un serveur web et la gestion des requêtes et des réponses.
+</p>
+
+<h2>Création d'APIs REST avec Kotlin</h2>
+<p>
+Les APIs REST (Representational State Transfer) sont un moyen courant de créer des services web qui permettent aux clients de communiquer avec le serveur en utilisant des requêtes HTTP. Kotlin offre des fonctionnalités puissantes pour créer des APIs REST de manière simple et efficace.
+</p>
+<p>
+Dans cette sous-section, nous apprendrons comment créer des APIs REST en utilisant Kotlin, en utilisant des frameworks tels que Ktor ou Spring Boot. Nous explorerons également les bonnes pratiques pour la conception d'APIs REST, y compris la gestion des routes, des paramètres et des réponses.
+</p>
+
+<h2>Utilisation de frameworks web avec Kotlin</h2>
+<p>
+Les frameworks web sont des outils puissants qui simplifient le développement d'applications web en fournissant des fonctionnalités prêtes à l'emploi, telles que la gestion des routes, la gestion des sessions et la gestion des modèles. Kotlin est compatible avec de nombreux frameworks web populaires, tels que Ktor, Spring Boot et Vert.x.
+</p>
+<p>
+Dans cette sous-section, nous explorerons l'utilisation de frameworks web avec Kotlin, en mettant l'accent sur les fonctionnalités offertes par les différents frameworks et sur la façon de les utiliser pour créer des applications web robustes et évolutives.
+</p>
+
+<p>Voici un exemple de code pour créer un serveur web simple en utilisant le framework Ktor :</p>
+<pre><code>import io.ktor.application.*
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.StatusPages
+import io.ktor.http.HttpStatusCode
+import io.ktor.jackson.jackson
+import io.ktor.request.receive
+import io.ktor.response.respond
+import io.ktor.routing.*
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+
+data class User(val id: Int, val name: String)
+
+fun Application.module() {
+    install(ContentNegotiation) {
+        jackson {
+            // Configuration de Jackson pour la sérialisation/désérialisation JSON
+        }
+    }
+
+    install(StatusPages) {
+        exception<Throwable> { cause ->
+            call.respond(HttpStatusCode.InternalServerError, cause.localizedMessage)
+        }
+    }
+
+    routing {
+        route("/users") {
+            get {
+                val users = // Récupérer les utilisateurs depuis la base de données
+                call.respond(users)
+            }
+            post {
+                val user = call.receive<User>()
+                // Enregistrer l'utilisateur dans la base de données
+                call.respond(HttpStatusCode.Created)
+            }
+        }
+    }
+}
+
+fun main() {
+    embeddedServer(Netty, port = 8080, module = Application::module).start(wait = true)
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons le framework Ktor pour créer un serveur web qui expose deux routes : "/users" pour récupérer tous les utilisateurs et "/users" pour créer un nouvel utilisateur. Le serveur utilise Jackson pour la sérialisation et la désérialisation JSON, et renvoie les réponses au format JSON.
+</p>
+
+<p>
+Ce n'est qu'un exemple simple pour vous montrer comment créer un serveur web avec Kotlin et le framework Ktor. Dans la pratique, vous pouvez ajouter de nombreuses fonctionnalités supplémentaires, telles que l'authentification, la gestion des erreurs et la validation des données.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

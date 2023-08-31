@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kotlin Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Programmation fonctionnelle en Kotlin</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kotlin/kotlin.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Fonctions de première classe et fonctions d'ordre supérieur</h2>
+<p>En Kotlin, les fonctions sont des éléments de première classe, ce qui signifie qu'elles peuvent être assignées à des variables, passées en tant que paramètres à d'autres fonctions et retournées comme résultats d'autres fonctions. Les fonctions de première classe permettent de traiter les fonctions comme n'importe quelle autre valeur.</p>
+
+<p>Les fonctions d'ordre supérieur sont des fonctions qui prennent d'autres fonctions en tant que paramètres ou qui retournent des fonctions. Elles permettent de créer des fonctions plus génériques et réutilisables.</p>
+
+<h2>Lambdas et expressions lambda</h2>
+<p>Les lambdas sont des fonctions anonymes qui peuvent être utilisées comme expressions. Elles sont souvent utilisées pour définir des comportements spécifiques à un endroit précis du code. Les lambdas sont définies entre accolades ({}) et peuvent prendre des paramètres et retourner une valeur.</p>
+
+<p>Les expressions lambda sont une forme concise d'une fonction anonyme. Elles sont souvent utilisées en combinaison avec les fonctions d'ordre supérieur pour fournir une syntaxe plus concise et expressive.</p>
+
+<h2>Fonctions d'extension</h2>
+<p>Les fonctions d'extension permettent d'ajouter de nouvelles fonctionnalités à une classe existante sans avoir à la modifier. Elles sont définies en dehors de la classe cible et peuvent être appelées comme des méthodes normales de cette classe.</p>
+
+<p>Les fonctions d'extension sont utiles pour étendre les fonctionnalités d'une classe sans avoir à la modifier directement. Elles permettent également d'améliorer la lisibilité du code en regroupant des fonctionnalités liées dans une seule fonction.</p>
+
+<h2>Collections et opérations fonctionnelles</h2>
+<p>Les collections sont des structures de données qui permettent de stocker et de manipuler des groupes d'objets. Kotlin offre une variété de collections, telles que les listes, les ensembles et les maps, qui peuvent être utilisées pour effectuer des opérations fonctionnelles sur les données.</p>
+
+<p>Les opérations fonctionnelles, telles que map, filter et reduce, permettent de manipuler les collections de manière déclarative et expressive. Elles permettent d'effectuer des transformations, des filtrages et des réductions sur les éléments de la collection de manière concise.</p>
+
+<pre><code>val numbers = listOf(1, 2, 3, 4, 5)
+
+val doubledNumbers = numbers.map { it * 2 }
+
+val evenNumbers = numbers.filter { it % 2 == 0 }
+
+val sum = numbers.reduce { acc, num -> acc + num }
+</code></pre>
+
+<p>Dans cet exemple, la fonction map est utilisée pour doubler chaque élément de la liste numbers, la fonction filter est utilisée pour filtrer les nombres pairs, et la fonction reduce est utilisée pour calculer la somme de tous les éléments de la liste.</p>
+
+<p>Les opérations fonctionnelles permettent d'écrire un code plus concis et lisible en évitant l'utilisation de boucles explicites.</p>
+
+<p>Ces opérations fonctionnelles peuvent être utilisées avec toutes les collections Kotlin, ce qui facilite la manipulation des données de manière fonctionnelle.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kotlin/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kotlin/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
