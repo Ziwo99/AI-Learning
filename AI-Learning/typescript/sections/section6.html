@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - TypeScript Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Les applications pratiques en TypeScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/typescript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'une application web en TypeScript</h2>
+<p>
+L'une des principales utilisations de TypeScript est le développement d'applications web. TypeScript offre des fonctionnalités avancées qui permettent de créer des applications web robustes et évolutives. Dans cette sous-section, nous allons explorer les étapes pour créer une application web en TypeScript.
+</p>
+
+<p>
+Pour commencer, vous devez configurer votre environnement de développement TypeScript. Assurez-vous d'avoir Node.js et npm (Node Package Manager) installés sur votre machine. Ensuite, vous pouvez créer un nouveau projet TypeScript en utilisant la commande suivante dans votre terminal :
+</p>
+
+<pre><code>npx tsc --init</code></pre>
+
+<p>
+Cela va créer un fichier de configuration <code>tsconfig.json</code> qui vous permettra de spécifier les paramètres de compilation pour votre projet TypeScript.
+</p>
+
+<p>
+Ensuite, vous pouvez créer un fichier TypeScript principal, par exemple <code>app.ts</code>, où vous écrirez votre code TypeScript. Vous pouvez utiliser des frameworks web populaires tels que Angular, React ou Vue.js pour développer votre application web en TypeScript. Ces frameworks offrent des fonctionnalités supplémentaires et facilitent le développement d'applications web complexes.
+</p>
+
+<p>
+Dans votre fichier <code>app.ts</code>, vous pouvez commencer par importer les dépendances nécessaires, définir vos classes et fonctions, et écrire votre logique métier. Voici un exemple simple d'une application web en TypeScript qui affiche un message dans la console du navigateur :
+</p>
+
+<pre><code>class App {
+    constructor() {
+        console.log("Hello, world!");
+    }
+}
+
+const app = new App();</code></pre>
+
+<p>
+Une fois que vous avez écrit votre code TypeScript, vous devez le compiler en JavaScript pour qu'il puisse être exécuté dans le navigateur. Utilisez la commande suivante pour compiler votre code TypeScript :
+</p>
+
+<pre><code>npx tsc</code></pre>
+
+<p>
+Cela va générer un fichier JavaScript correspondant à votre fichier TypeScript. Vous pouvez ensuite inclure ce fichier JavaScript dans votre fichier HTML pour exécuter votre application web.
+</p>
+
+<p>
+En résumé, pour créer une application web en TypeScript, vous devez configurer votre environnement de développement, écrire votre code TypeScript en utilisant des frameworks web populaires si nécessaire, compiler votre code en JavaScript, et enfin exécuter votre application web dans le navigateur.
+</p>
+
+<h2>Utilisation de TypeScript dans le développement mobile</h2>
+<p>
+TypeScript peut également être utilisé dans le développement d'applications mobiles. Il existe plusieurs frameworks et outils qui permettent de développer des applications mobiles en utilisant TypeScript, tels que Ionic, NativeScript et React Native.
+</p>
+
+<p>
+Ionic est un framework open-source basé sur Angular qui permet de créer des applications mobiles multiplateformes en utilisant TypeScript. Il offre une interface utilisateur riche et des fonctionnalités avancées pour le développement d'applications mobiles.
+</p>
+
+<p>
+NativeScript est un autre framework open-source qui permet de développer des applications mobiles natives en utilisant TypeScript. Il offre une expérience de développement similaire à celle du développement web, en utilisant des technologies web telles que HTML, CSS et JavaScript.
+</p>
+
+<p>
+React Native est un framework développé par Facebook qui permet de créer des applications mobiles natives en utilisant React et TypeScript. Il permet de partager du code entre les plateformes iOS et Android, ce qui facilite le développement d'applications mobiles multiplateformes.
+</p>
+
+<p>
+Pour utiliser TypeScript dans le développement mobile, vous devez d'abord configurer votre environnement de développement en installant les dépendances nécessaires pour le framework que vous avez choisi. Ensuite, vous pouvez créer un nouveau projet mobile en utilisant les commandes spécifiques au framework.
+</p>
+
+<p>
+Une fois que vous avez créé votre projet mobile, vous pouvez écrire votre code TypeScript en utilisant les fonctionnalités offertes par le framework. Vous pouvez créer des interfaces utilisateur, gérer les événements, accéder aux fonctionnalités du périphérique, etc.
+</p>
+
+<p>
+Enfin, vous devez compiler votre code TypeScript en JavaScript et exécuter votre application mobile sur un émulateur ou un appareil réel. Chaque framework a sa propre méthode pour compiler et exécuter l'application, veuillez donc vous référer à la documentation spécifique au framework pour plus de détails.
+</p>
+
+<p>
+En conclusion, TypeScript peut être utilisé dans le développement d'applications mobiles en utilisant des frameworks tels que Ionic, NativeScript et React Native. Vous devez configurer votre environnement de développement, écrire votre code TypeScript en utilisant les fonctionnalités offertes par le framework, compiler votre code en JavaScript, et enfin exécuter votre application mobile sur un émulateur ou un appareil réel.
+</p>
+
+<h2>Utilisation de TypeScript dans le développement de jeux vidéo</h2>
+<p>
+TypeScript peut également être utilisé dans le développement de jeux vidéo. Il existe plusieurs frameworks et bibliothèques qui permettent de développer des jeux vidéo en utilisant TypeScript, tels que Phaser, Babylon.js et Pixi.js.
+</p>
+
+<p>
+Phaser est un framework open-source qui permet de créer des jeux vidéo en utilisant TypeScript. Il offre une large gamme de fonctionnalités pour le développement de jeux 2D et 3D, telles que la gestion des sprites, la détection de collisions, l'animation, etc.
+</p>
+
+<p>
+Babylon.js est une bibliothèque open-source qui permet de créer des jeux vidéo en 3D en utilisant TypeScript. Elle offre des fonctionnalités avancées pour la création d'environnements 3D réalistes, la gestion des caméras, les effets spéciaux, etc.
+</p>
+
+<p>
+Pixi.js est une autre bibliothèque open-source qui permet de créer des jeux vidéo en 2D en utilisant TypeScript. Elle offre des fonctionnalités pour le rendu graphique rapide, la gestion des sprites, les animations, etc.
+</p>
+
+<p>
+Pour utiliser TypeScript dans le développement de jeux vidéo, vous devez d'abord configurer votre environnement de développement en installant les dépendances nécessaires pour le framework ou la bibliothèque que vous avez choisi. Ensuite, vous pouvez créer un nouveau projet de jeu en utilisant les commandes spécifiques au framework ou à la bibliothèque.
+</p>
+
+<p>
+Une fois que vous avez créé votre projet de jeu, vous pouvez écrire votre code TypeScript en utilisant les fonctionnalités offertes par le framework ou la bibliothèque. Vous pouvez créer des sprites, gérer les animations, détecter les collisions, etc.
+</p>
+
+<p>
+Enfin, vous devez compiler votre code TypeScript en JavaScript et exécuter votre jeu dans un navigateur ou un moteur de jeu spécifique. Chaque framework ou bibliothèque a sa propre méthode pour compiler et exécuter le jeu, veuillez donc vous référer à la documentation spécifique pour plus de détails.
+</p>
+
+<p>
+En résumé, TypeScript peut être utilisé dans le développement de jeux vidéo en utilisant des frameworks tels que Phaser, Babylon.js et Pixi.js. Vous devez configurer votre environnement de développement, écrire votre code TypeScript en utilisant les fonctionnalités offertes par le framework ou la bibliothèque, compiler votre code en JavaScript, et enfin exécuter votre jeu dans un navigateur ou un moteur de jeu spécifique.
+</p>
+
+<h2>Utilisation de TypeScript dans le développement backend</h2>
+<p>
+TypeScript peut également être utilisé dans le développement backend, c'est-à-dire pour créer des serveurs et des API. Il existe plusieurs frameworks et bibliothèques qui permettent de développer des applications backend en utilisant TypeScript, tels que Express, NestJS et TypeORM.
+</p>
+
+<p>
+Express est un framework web minimaliste et flexible qui permet de créer des applications backend en utilisant TypeScript. Il offre des fonctionnalités pour la gestion des routes, la gestion des requêtes et des réponses, la gestion des middlewares, etc.
+</p>
+
+<p>
+NestJS est un framework backend basé sur TypeScript qui permet de créer des applications backend évolutives et modulaires. Il offre une architecture basée sur les modules, l'injection de dépendances, la gestion des middlewares, etc.
+</p>
+
+<p>
+TypeORM est une bibliothèque ORM (Object-Relational Mapping) qui permet de gérer la persistance des données dans les applications backend en utilisant TypeScript. Elle offre des fonctionnalités pour la création de schémas de base de données, la gestion des requêtes SQL, la gestion des relations entre les entités, etc.
+</p>
+
+<p>
+Pour utiliser TypeScript dans le développement backend, vous devez d'abord configurer votre environnement de développement en installant les dépendances nécessaires pour le framework ou la bibliothèque que vous avez choisi. Ensuite, vous pouvez créer un nouveau projet backend en utilisant les commandes spécifiques au framework ou à la bibliothèque.
+</p>
+
+<p>
+Une fois que vous avez créé votre projet backend, vous pouvez écrire votre code TypeScript en utilisant les fonctionnalités offertes par le framework ou la bibliothèque. Vous pouvez définir vos routes, gérer les requêtes et les réponses, accéder à la base de données, etc.
+</p>
+
+<p>
+Enfin, vous devez compiler votre code TypeScript en JavaScript et exécuter votre application backend. Chaque framework ou bibliothèque a sa propre méthode pour compiler et exécuter l'application, veuillez donc vous référer à la documentation spécifique pour plus de détails.
+</p>
+
+<p>
+En conclusion, TypeScript peut être utilisé dans le développement backend en utilisant des frameworks tels que Express, NestJS et des bibliothèques telles que TypeORM. Vous devez configurer votre environnement de développement, écrire votre code TypeScript en utilisant les fonctionnalités offertes par le framework ou la bibliothèque, compiler votre code en JavaScript, et enfin exécuter votre application backend.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

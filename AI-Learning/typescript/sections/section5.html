@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - TypeScript Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les concepts avancés en TypeScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/typescript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les types avancés (Type guards, Type assertions, Type inference, etc.)</h2>
+<p>Les types avancés en TypeScript permettent de manipuler les types de données de manière plus précise et de faciliter la vérification des types lors de l'exécution du code. Voici quelques-uns des types avancés les plus couramment utilisés :</p>
+
+<h3>Type guards</h3>
+<p>Les type guards sont des expressions qui permettent de vérifier le type d'une variable à l'exécution. Ils permettent d'effectuer des opérations spécifiques en fonction du type de la variable. Voici un exemple :</p>
+<pre><code>function processValue(value: string | number) {
+    if (typeof value === 'string') {
+        // Traiter la valeur comme une chaîne de caractères
+    } else {
+        // Traiter la valeur comme un nombre
+    }
+}</code></pre>
+
+<h3>Type assertions</h3>
+<p>Les type assertions permettent de forcer le compilateur TypeScript à considérer une variable comme ayant un certain type, même si le compilateur ne peut pas le déduire automatiquement. Voici un exemple :</p>
+<pre><code>let value: any = 'Hello World';
+let length: number = (value as string).length;</code></pre>
+
+<h3>Type inference</h3>
+<p>La type inference est la capacité du compilateur TypeScript à déduire automatiquement le type d'une variable en fonction de sa valeur. Cela permet d'écrire du code plus concis et de réduire les erreurs de typage. Voici un exemple :</p>
+<pre><code>let value = 10; // TypeScript infère que value est de type number</code></pre>
+
+<h2>Les modules avancés (Dynamic imports, Namespace, etc.)</h2>
+<p>Les modules avancés en TypeScript permettent d'organiser et de réutiliser efficacement le code. Voici quelques fonctionnalités avancées des modules en TypeScript :</p>
+
+<h3>Dynamic imports</h3>
+<p>Les dynamic imports permettent de charger dynamiquement des modules à l'exécution du code. Cela peut être utile pour charger des modules en fonction de conditions spécifiques. Voici un exemple :</p>
+<pre><code>async function loadModule() {
+    const module = await import('./module');
+    module.doSomething();
+}</code></pre>
+
+<h3>Namespace</h3>
+<p>Les namespaces permettent d'encapsuler le code dans des espaces de noms distincts, évitant ainsi les conflits de noms entre différentes parties du code. Voici un exemple :</p>
+<pre><code>namespace MyNamespace {
+    export function doSomething() {
+        // Code here
+    }
+}</code></pre>
+
+<h2>Les décorateurs avancés (Decorator factories, Metadata reflection, etc.)</h2>
+<p>Les décorateurs avancés en TypeScript permettent d'ajouter des fonctionnalités supplémentaires aux classes, aux méthodes et aux propriétés. Voici quelques fonctionnalités avancées des décorateurs en TypeScript :</p>
+
+<h3>Decorator factories</h3>
+<p>Les decorator factories sont des fonctions qui retournent des décorateurs. Cela permet de paramétrer les décorateurs en leur passant des arguments. Voici un exemple :</p>
+<pre><code>function myDecoratorFactory(arg1: string, arg2: number) {
+    return function(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+        // Code here
+    };
+}</code></pre>
+
+<h3>Metadata reflection</h3>
+<p>La metadata reflection permet d'accéder aux métadonnées associées à une classe, une méthode ou une propriété à l'exécution du code. Cela peut être utile pour implémenter des fonctionnalités avancées telles que la sérialisation et la désérialisation d'objets. Voici un exemple :</p>
+<pre><code>import 'reflect-metadata';
+
+class MyClass {
+    @Reflect.metadata('custom:annotation', 'value')
+    myMethod() {
+        // Code here
+    }
+}</code></pre>
+
+<h2>Les techniques de manipulation du DOM en TypeScript</h2>
+<p>Les techniques de manipulation du DOM en TypeScript permettent d'interagir avec les éléments HTML d'une page web de manière plus sûre et plus facile. Voici quelques exemples de techniques couramment utilisées :</p>
+
+<h3>Sélection d'éléments</h3>
+<p>Pour sélectionner un élément du DOM, vous pouvez utiliser les méthodes de la classe <code>document</code> :</p>
+<pre><code>const element = document.getElementById('myElement');</code></pre>
+
+<h3>Modification du contenu</h3>
+<p>Pour modifier le contenu d'un élément du DOM, vous pouvez utiliser la propriété <code>innerHTML</code> :</p>
+<pre><code>element.innerHTML = 'Nouveau contenu';</code></pre>
+
+<h3>Écoute d'événements</h3>
+<p>Pour écouter un événement sur un élément du DOM, vous pouvez utiliser la méthode <code>addEventListener</code> :</p>
+<pre><code>element.addEventListener('click', () => {
+    // Code à exécuter lorsque l'événement est déclenché
+});</code></pre>
+
+<h3>Création d'éléments</h3>
+<p>Pour créer un nouvel élément du DOM, vous pouvez utiliser la méthode <code>createElement</code> :</p>
+<pre><code>const newElement = document.createElement('div');</code></pre>
+
+<h3>Modification des attributs</h3>
+<p>Pour modifier les attributs d'un élément du DOM, vous pouvez utiliser les propriétés correspondantes :</p>
+<pre><code>element.setAttribute('class', 'myClass');
+element.removeAttribute('class');</code></pre>
+
+<h3>Ajout et suppression de classes</h3>
+<p>Pour ajouter ou supprimer des classes d'un élément du DOM, vous pouvez utiliser les méthodes <code>classList.add</code> et <code>classList.remove</code> :</p>
+<pre><code>element.classList.add('myClass');
+element.classList.remove('myClass');</code></pre>
+
+<h3>Manipulation des styles</h3>
+<p>Pour manipuler les styles d'un élément du DOM, vous pouvez utiliser la propriété <code>style</code> :</p>
+<pre><code>element.style.backgroundColor = 'red';</code></pre>
+
+<h3>Insertion d'éléments</h3>
+<p>Pour insérer un élément dans le DOM, vous pouvez utiliser les méthodes <code>appendChild</code> ou <code>insertBefore</code> :</p>
+<pre><code>parentElement.appendChild(newElement);
+parentElement.insertBefore(newElement, referenceElement);</code></pre>
+
+<h3>Suppression d'éléments</h3>
+<p>Pour supprimer un élément du DOM, vous pouvez utiliser la méthode <code>remove</code> :</p>
+<pre><code>element.remove();</code></pre>
+
+<h2>Conclusion</h2>
+<p>Cette section a couvert les concepts avancés en TypeScript, tels que les types avancés, les modules avancés, les décorateurs avancés et les techniques de manipulation du DOM. En comprenant et en maîtrisant ces concepts, vous serez en mesure de développer des applications TypeScript plus avancées et plus puissantes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

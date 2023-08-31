@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - TypeScript Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Les fonctionnalités avancées de TypeScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/typescript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les modules et la gestion des dépendances</h2>
+<p>Les modules sont une fonctionnalité clé de TypeScript qui permet d'organiser et de réutiliser du code. Ils permettent de diviser le code en plusieurs fichiers, ce qui facilite la maintenance et la collaboration entre développeurs.</p>
+<p>Pour créer un module en TypeScript, il suffit d'utiliser le mot-clé <code>export</code> devant les éléments que l'on souhaite rendre accessibles depuis d'autres fichiers. Par exemple :</p>
+<pre><code>// fichier module.ts
+export function add(a: number, b: number): number {
+  return a + b;
+}
+
+export const PI = 3.14;
+</code></pre>
+<p>Dans un autre fichier, on peut ensuite importer et utiliser les éléments exportés :</p>
+<pre><code>// fichier main.ts
+import { add, PI } from './module';
+
+console.log(add(2, 3)); // affiche 5
+console.log(PI); // affiche 3.14
+</code></pre>
+<p>Il est également possible d'importer tous les éléments exportés d'un module en utilisant l'étoile (*) :</p>
+<pre><code>// fichier main.ts
+import * as module from './module';
+
+console.log(module.add(2, 3)); // affiche 5
+console.log(module.PI); // affiche 3.14
+</code></pre>
+<p>En ce qui concerne la gestion des dépendances, TypeScript utilise le gestionnaire de paquets npm. Pour installer une dépendance, il suffit d'exécuter la commande <code>npm install nom-de-la-dependance</code>. Par exemple :</p>
+<pre><code>npm install lodash
+</code></pre>
+<p>Une fois la dépendance installée, on peut l'importer et l'utiliser dans notre code TypeScript :</p>
+<pre><code>// fichier main.ts
+import * as _ from 'lodash';
+
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = _.map(numbers, n => n * 2);
+
+console.log(doubledNumbers); // affiche [2, 4, 6, 8, 10]
+</code></pre>
+
+<h2>Les génériques en TypeScript</h2>
+<p>Les génériques sont une fonctionnalité puissante de TypeScript qui permet de créer des composants réutilisables et flexibles. Ils permettent de définir des types de données génériques qui peuvent être utilisés avec différents types de données spécifiques.</p>
+<p>Pour déclarer une fonction ou une classe générique, on utilise le symbole <code>&lt;T&gt;</code> après le nom de la fonction ou de la classe. Par exemple :</p>
+<pre><code>function identity&lt;T&gt;(arg: T): T {
+  return arg;
+}
+
+const result = identity&lt;number&gt;(5);
+console.log(result); // affiche 5
+</code></pre>
+<p>Ici, la fonction <code>identity</code> prend un argument de type <code>T</code> et renvoie une valeur du même type. Lorsque l'on appelle la fonction, on spécifie le type de données souhaité entre les chevrons (<code>&lt;&gt;</code>).</p>
+<p>Les génériques peuvent également être utilisés avec les classes :</p>
+<pre><code>class Box&lt;T&gt; {
+  private value: T;
+
+  constructor(value: T) {
+    this.value = value;
+  }
+
+  getValue(): T {
+    return this.value;
+  }
+}
+
+const box = new Box&lt;string&gt;('Hello');
+console.log(box.getValue()); // affiche 'Hello'
+</code></pre>
+<p>Ici, la classe <code>Box</code> est générique et peut être utilisée avec n'importe quel type de données. Lorsque l'on crée une instance de la classe, on spécifie le type de données souhaité entre les chevrons (<code>&lt;&gt;</code>).</p>
+
+<h2>Les décorateurs</h2>
+<p>Les décorateurs sont une fonctionnalité avancée de TypeScript qui permet d'ajouter des métadonnées et de modifier le comportement des classes, des méthodes, des propriétés, etc. Ils sont utilisés dans des frameworks populaires tels que Angular.</p>
+<p>Pour utiliser un décorateur, on utilise le symbole <code>@</code> suivi du nom du décorateur. Par exemple :</p>
+<pre><code>@log
+class MyClass {
+  // ...
+}
+
+function log(target: any) {
+  console.log('Class logged:', target);
+}
+</code></pre>
+<p>Ici, le décorateur <code>@log</code> est appliqué à la classe <code>MyClass</code>. Lorsque la classe est définie, le décorateur est exécuté et affiche le message 'Class logged:' suivi de la cible (la classe).</p>
+<p>Les décorateurs peuvent également prendre des paramètres :</p>
+<pre><code>@log('debug')
+class MyClass {
+  // ...
+}
+
+function log(level: string) {
+  return function(target: any) {
+    console.log('Class logged with level', level + ':', target);
+  }
+}
+</code></pre>
+<p>Ici, le décorateur <code>@log('debug')</code> est appliqué à la classe <code>MyClass</code> avec le paramètre 'debug'. Lorsque la classe est définie, le décorateur est exécuté avec le paramètre et affiche le message 'Class logged with level debug:' suivi de la cible (la classe).</p>
+
+<h2>Les types avancés (Union types, Intersection types, Literal types, etc.)</h2>
+<p>TypeScript propose plusieurs types avancés qui permettent de définir des types de données plus complexes et précis.</p>
+<p>Les <strong>Union types</strong> permettent de définir un type qui peut être l'un des types spécifiés. Par exemple :</p>
+<pre><code>function printId(id: number | string) {
+  console.log('ID:', id);
+}
+
+printId(1); // affiche ID: 1
+printId('abc'); // affiche ID: abc
+</code></pre>
+<p>Ici, la fonction <code>printId</code> peut prendre un argument de type <code>number</code> ou <code>string</code>.</p>
+<p>Les <strong>Intersection types</strong> permettent de combiner plusieurs types en un seul. Par exemple :</p>
+<pre><code>type Person = {
+  name: string;
+  age: number;
+};
+
+type Employee = {
+  company: string;
+};
+
+type EmployeePerson = Person & Employee;
+
+const employee: EmployeePerson = {
+  name: 'John Doe',
+  age: 30,
+  company: 'Acme Corp'
+};
+</code></pre>
+<p>Ici, le type <code>EmployeePerson</code> est une intersection des types <code>Person</code> et <code>Employee</code>. L'objet <code>employee</code> doit donc avoir les propriétés définies dans les deux types.</p>
+<p>Les <strong>Literal types</strong> permettent de définir des types qui ne peuvent prendre que des valeurs spécifiques. Par exemple :</p>
+<pre><code>type Direction = 'left' | 'right' | 'up' | 'down';
+
+function move(direction: Direction) {
+  console.log('Moving', direction);
+}
+
+move('left'); // affiche Moving left
+move('up'); // affiche Moving up
+move('diagonal'); // erreur de compilation, la valeur 'diagonal' n'est pas autorisée
+</code></pre>
+<p>Ici, le type <code>Direction</code> ne peut prendre que les valeurs 'left', 'right', 'up' ou 'down'.</p>
+<p>Il existe d'autres types avancés tels que les <strong>Conditional types</strong>, les <strong>Mapped types</strong>, les <strong>Index types</strong>, etc. qui permettent de manipuler et de transformer les types de données de manière avancée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

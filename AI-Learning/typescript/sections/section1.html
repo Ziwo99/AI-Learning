@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - TypeScript Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1: Introduction à TypeScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/typescript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Qu'est-ce que TypeScript ?</h2>
+<p>TypeScript est un langage de programmation open-source développé par Microsoft. Il s'agit d'un sur-ensemble de JavaScript qui ajoute des fonctionnalités supplémentaires et des améliorations à ce dernier. TypeScript permet de développer des applications JavaScript de grande taille et complexes en ajoutant des fonctionnalités de typage statique, de programmation orientée objet et de compilation avancée.</p>
+
+<p>Le principal objectif de TypeScript est d'améliorer la productivité des développeurs en leur permettant de détecter et de corriger les erreurs de code plus rapidement grâce à un système de typage statique. Il offre également une meilleure prise en charge des fonctionnalités avancées de JavaScript, telles que les classes, les modules et les interfaces.</p>
+
+<p>En résumé, TypeScript est un langage qui permet aux développeurs de créer des applications JavaScript plus robustes, maintenables et évolutives.</p>
+
+<h2>Avantages de l'utilisation de TypeScript</h2>
+<p>L'utilisation de TypeScript présente de nombreux avantages par rapport à JavaScript pur :</p>
+
+<ul>
+  <li><strong>Typage statique :</strong> TypeScript permet de définir des types pour les variables, les paramètres de fonction et les valeurs de retour, ce qui permet de détecter les erreurs de type à la compilation plutôt qu'à l'exécution. Cela permet de réduire les bugs et d'améliorer la qualité du code.</li>
+  <li><strong>Programmation orientée objet :</strong> TypeScript prend en charge les concepts de la programmation orientée objet tels que les classes, les interfaces, l'héritage et les modules. Cela facilite la structuration et la réutilisation du code.</li>
+  <li><strong>Meilleure prise en charge des outils de développement :</strong> TypeScript est intégré à de nombreux outils de développement populaires tels que Visual Studio Code, WebStorm et Sublime Text. Il offre une meilleure prise en charge de l'autocomplétion, de la navigation dans le code et du refactoring.</li>
+  <li><strong>Compatibilité avec JavaScript :</strong> TypeScript est compatible avec JavaScript, ce qui signifie que vous pouvez utiliser du code JavaScript existant dans vos projets TypeScript. Cela facilite la migration progressive d'un projet JavaScript vers TypeScript.</li>
+  <li><strong>Compilation avancée :</strong> TypeScript compile le code en JavaScript standard, ce qui signifie qu'il peut être exécuté sur n'importe quel navigateur ou plateforme prenant en charge JavaScript. De plus, TypeScript offre des fonctionnalités de compilation avancées telles que la génération de fichiers d'index, la concaténation de fichiers et la minification.</li>
+</ul>
+
+<h2>Installation et configuration de l'environnement de développement TypeScript</h2>
+<p>Pour commencer à développer en TypeScript, vous devez suivre les étapes suivantes pour installer et configurer votre environnement de développement :</p>
+
+<ol>
+  <li>Téléchargez et installez Node.js à partir du site officiel (https://nodejs.org).</li>
+  <li>Ouvrez une fenêtre de terminal ou de ligne de commande et exécutez la commande suivante pour installer TypeScript via npm (Node Package Manager) :</li>
+</ol>
+
+<pre><code>npm install -g typescript</code></pre>
+
+<p>Cette commande installe TypeScript de manière globale sur votre système.</p>
+
+<ol start="3">
+  <li>Créez un nouveau dossier pour votre projet TypeScript.</li>
+  <li>Ouvrez une fenêtre de terminal ou de ligne de commande et accédez au dossier de votre projet.</li>
+  <li>Exécutez la commande suivante pour initialiser un nouveau projet TypeScript :</li>
+</ol>
+
+<pre><code>tsc --init</code></pre>
+
+<p>Cette commande crée un fichier de configuration <code>tsconfig.json</code> qui spécifie les paramètres de compilation pour votre projet TypeScript.</p>
+
+<p>Vous êtes maintenant prêt à commencer à écrire du code TypeScript dans votre projet. Vous pouvez utiliser n'importe quel éditeur de texte ou IDE de votre choix pour écrire du code TypeScript.</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

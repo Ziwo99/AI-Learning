@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - TypeScript Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Les outils et les bonnes pratiques en TypeScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/typescript/typescript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de TypeScript avec des frameworks populaires (Angular, React, Vue.js)</h2>
+<p>Typescript est largement utilisé avec des frameworks populaires tels que Angular, React et Vue.js pour développer des applications web robustes et évolutives. Ces frameworks offrent une intégration native avec TypeScript, ce qui facilite le développement et la maintenance du code.</p>
+<p>Pour utiliser TypeScript avec Angular, il suffit de créer un nouveau projet Angular en utilisant la commande suivante :</p>
+<pre><code>ng new my-app --strict</code></pre>
+<p>Cela créera un nouveau projet Angular avec une configuration stricte pour TypeScript.</p>
+<p>Pour React, vous pouvez créer un nouveau projet React en utilisant Create React App avec TypeScript :</p>
+<pre><code>npx create-react-app my-app --template typescript</code></pre>
+<p>Cela créera un nouveau projet React avec une configuration TypeScript préconfigurée.</p>
+<p>Pour Vue.js, vous pouvez utiliser Vue CLI pour créer un nouveau projet Vue.js avec TypeScript :</p>
+<pre><code>vue create my-app</code></pre>
+<p>Lorsque vous êtes invité à choisir un preset, sélectionnez "Manually select features" et cochez l'option "TypeScript". Cela configurera le projet Vue.js pour utiliser TypeScript.</p>
+
+<h2>Les tests unitaires en TypeScript</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité du code TypeScript. Ils permettent de vérifier le bon fonctionnement des différentes parties de l'application et de détecter les erreurs ou les régressions.</p>
+<p>Il existe plusieurs frameworks de tests unitaires populaires pour TypeScript, tels que Jest, Mocha et Jasmine. Ces frameworks offrent des fonctionnalités avancées pour écrire et exécuter des tests unitaires.</p>
+<p>Voici un exemple de test unitaire en TypeScript utilisant Jest :</p>
+<pre><code>import { sum } from './math';
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});</code></pre>
+<p>Ce test vérifie que la fonction "sum" retourne la somme de deux nombres.</p>
+
+<h2>Les outils de compilation et de transpilation</h2>
+<p>Les outils de compilation et de transpilation sont utilisés pour convertir le code TypeScript en code JavaScript compatible avec les navigateurs et les environnements d'exécution.</p>
+<p>Le compilateur TypeScript (tsc) est l'outil principal utilisé pour compiler le code TypeScript en JavaScript. Il peut être utilisé en ligne de commande ou intégré dans des outils de build tels que Webpack ou Gulp.</p>
+<p>Voici un exemple d'utilisation du compilateur TypeScript en ligne de commande :</p>
+<pre><code>tsc app.ts</code></pre>
+<p>Cela compilera le fichier "app.ts" en JavaScript et générera un fichier "app.js".</p>
+<p>En plus du compilateur TypeScript, il existe également des outils de transpilation tels que Babel, qui permettent de transpiler le code TypeScript en JavaScript compatible avec les anciennes versions de navigateurs.</p>
+
+<h2>Les bonnes pratiques de codage en TypeScript</h2>
+<p>Voici quelques bonnes pratiques de codage à suivre lors du développement en TypeScript :</p>
+<ul>
+  <li>Utilisez des types forts pour améliorer la lisibilité et la maintenabilité du code.</li>
+  <li>Utilisez des interfaces pour définir des contrats entre les différentes parties de l'application.</li>
+  <li>Utilisez des annotations de type pour documenter le code et faciliter la détection d'erreurs.</li>
+  <li>Utilisez des noms de variables et de fonctions explicites pour améliorer la compréhension du code.</li>
+  <li>Évitez les any types autant que possible, car ils peuvent masquer des erreurs potentielles.</li>
+  <li>Utilisez des outils d'analyse statique tels que TSLint ou ESLint pour détecter les erreurs et les problèmes de style.</li>
+  <li>Divisez le code en modules réutilisables pour faciliter la maintenance et la réutilisation du code.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pouvez développer du code TypeScript de haute qualité, facile à lire, à maintenir et à étendre.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/typescript/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/typescript/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
