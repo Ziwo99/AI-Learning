@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Les fonctionnalités avancées de Django</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les vues génériques</h2>
+<p>Les vues génériques sont des classes fournies par Django qui facilitent le développement en fournissant des fonctionnalités communes. Elles permettent de réduire la duplication de code et d'accélérer le processus de développement.</p>
+<p>Les vues génériques peuvent être utilisées pour des opérations courantes telles que l'affichage de listes d'objets, la création, la mise à jour et la suppression d'objets, ainsi que pour la gestion des formulaires.</p>
+<p>Par exemple, pour afficher une liste d'objets, vous pouvez utiliser la vue générique ListView. Cette vue prend en charge la récupération des objets à afficher à partir de la base de données et le rendu d'un template pour les afficher.</p>
+<pre><code>from django.views.generic import ListView
+from .models import Article
+
+class ArticleListView(ListView):
+    model = Article
+    template_name = 'article_list.html'
+    context_object_name = 'articles'
+</code></pre>
+<p>Dans cet exemple, la classe ArticleListView hérite de la vue générique ListView. Le modèle spécifié est Article, le template utilisé est 'article_list.html' et le contexte est nommé 'articles'.</p>
+
+<h2>Les mixins</h2>
+<p>Les mixins sont des classes qui fournissent des fonctionnalités supplémentaires aux vues génériques. Elles permettent d'étendre les fonctionnalités de base des vues génériques sans avoir à réécrire tout le code.</p>
+<p>Par exemple, si vous souhaitez ajouter une fonctionnalité de pagination à une vue générique, vous pouvez utiliser le mixin PaginationMixin. Ce mixin ajoute les fonctionnalités nécessaires pour paginer les résultats de la vue.</p>
+<pre><code>from django.views.generic import ListView
+from django.core.paginator import Paginator
+from .models import Article
+
+class PaginatedArticleListView(PaginationMixin, ListView):
+    model = Article
+    template_name = 'article_list.html'
+    context_object_name = 'articles'
+    paginate_by = 10
+</code></pre>
+<p>Dans cet exemple, la classe PaginatedArticleListView utilise à la fois le mixin PaginationMixin et la vue générique ListView. Le modèle, le template et le contexte sont spécifiés de la même manière que dans l'exemple précédent. La propriété paginate_by est utilisée pour spécifier le nombre d'objets à afficher par page.</p>
+
+<h2>Les signaux</h2>
+<p>Les signaux sont des mécanismes permettant de déclencher des actions en réponse à des événements spécifiques dans une application Django. Ils permettent de coupler des actions à des événements sans avoir à modifier directement le code source.</p>
+<p>Par exemple, vous pouvez utiliser un signal pour effectuer une action chaque fois qu'un nouvel utilisateur est enregistré dans votre application. Vous pouvez créer une fonction de réception du signal qui sera exécutée chaque fois que l'événement se produit.</p>
+<pre><code>from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+</code></pre>
+<p>Dans cet exemple, la fonction create_user_profile est décorée avec le décorateur @receiver, qui spécifie le signal à écouter (post_save) et le modèle associé (User). La fonction est exécutée chaque fois qu'un nouvel utilisateur est enregistré et crée un profil utilisateur associé.</p>
+
+<h2>Les middlewares</h2>
+<p>Les middlewares sont des composants qui s'exécutent avant et après le traitement de chaque requête dans une application Django. Ils permettent de modifier ou d'ajouter des fonctionnalités au flux de traitement des requêtes.</p>
+<p>Par exemple, vous pouvez utiliser un middleware pour ajouter des en-têtes personnalisés à chaque réponse de votre application. Vous pouvez créer une classe de middleware qui définit les en-têtes à ajouter et les ajouter à la configuration de votre application.</p>
+<pre><code>class CustomHeaderMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        response = self.get_response(request)
+        response['X-Custom-Header'] = 'Custom Value'
+        return response
+</code></pre>
+<p>Dans cet exemple, la classe CustomHeaderMiddleware définit un middleware qui ajoute l'en-tête personnalisé 'X-Custom-Header' avec la valeur 'Custom Value' à chaque réponse.</p>
+
+<h2>Les tests unitaires</h2>
+<p>Les tests unitaires sont utilisés pour vérifier le bon fonctionnement des différentes parties d'une application Django. Ils permettent de s'assurer que chaque composant fonctionne correctement de manière isolée.</p>
+<p>Par exemple, vous pouvez écrire des tests unitaires pour vérifier le comportement d'une vue générique. Vous pouvez utiliser la classe TestCase fournie par Django pour écrire des tests qui vérifient le rendu du template, les redirections, les messages de succès, etc.</p>
+<pre><code>from django.test import TestCase
+from django.urls import reverse
+from .models import Article
+
+class ArticleListViewTest(TestCase):
+    def setUp(self):
+        self.url = reverse('article_list')
+        self.article = Article.objects.create(title='Test Article', content='Lorem ipsum')
+
+    def test_article_list_view(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.article.title)
+</code></pre>
+<p>Dans cet exemple, la classe ArticleListViewTest hérite de la classe TestCase. La méthode setUp est utilisée pour configurer les données de test, notamment en créant un objet Article. La méthode test_article_list_view vérifie que la vue générique ListView affiche correctement l'article créé.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

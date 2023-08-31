@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Intégration avec d'autres technologies</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de bases de données externes</h2>
+<p>Django offre la possibilité d'intégrer des bases de données externes à votre application. Cela peut être utile si vous avez déjà une base de données existante que vous souhaitez utiliser avec Django. Pour cela, vous devez configurer les paramètres de connexion à la base de données externe dans le fichier de configuration de votre projet Django.</p>
+
+<p>Voici un exemple de configuration pour une base de données externe MySQL :</p>
+
+<pre><code>DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nom_de_la_base_de_donnees',
+        'USER': 'utilisateur',
+        'PASSWORD': 'mot_de_passe',
+        'HOST': 'adresse_ip',
+        'PORT': 'port',
+    }
+}
+</code></pre>
+
+<p>Une fois la configuration effectuée, vous pouvez utiliser les modèles Django pour interagir avec la base de données externe de la même manière que vous le feriez avec une base de données locale.</p>
+
+<h2>Intégration avec des services web</h2>
+<p>Django facilite l'intégration avec des services web externes. Vous pouvez utiliser des bibliothèques Python telles que Requests pour effectuer des requêtes HTTP vers des API externes et récupérer les données.</p>
+
+<p>Voici un exemple de code qui utilise la bibliothèque Requests pour récupérer des données à partir d'une API externe :</p>
+
+<pre><code>import requests
+
+def get_data_from_api():
+    response = requests.get('https://api.example.com/data')
+    data = response.json()
+    return data
+</code></pre>
+
+<p>Vous pouvez ensuite utiliser les données récupérées dans votre application Django selon vos besoins.</p>
+
+<h2>Utilisation de Django REST Framework</h2>
+<p>Django REST Framework est une extension de Django qui facilite la création d'API RESTful. Il fournit des outils pour la sérialisation des données, la gestion des autorisations, la validation des données et bien plus encore.</p>
+
+<p>Voici un exemple de configuration d'une API REST avec Django REST Framework :</p>
+
+<pre><code># serializers.py
+from rest_framework import serializers
+from .models import Article
+
+class ArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ['title', 'content']
+
+# views.py
+from rest_framework import viewsets
+from .models import Article
+from .serializers import ArticleSerializer
+
+class ArticleViewSet(viewsets.ModelViewSet):
+    queryset = Article.objects.all()
+    serializer_class = ArticleSerializer
+
+# urls.py
+from django.urls import include, path
+from rest_framework import routers
+from .views import ArticleViewSet
+
+router = routers.DefaultRouter()
+router.register(r'articles', ArticleViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),
+]
+</code></pre>
+
+<p>Avec Django REST Framework, vous pouvez facilement créer des API RESTful pour votre application Django, ce qui facilite l'intégration avec d'autres services et applications.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Aller plus loin avec Django</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de packages et d'extensions Django</h2>
+<p>
+L'un des avantages de Django est sa vaste communauté de développeurs qui ont créé de nombreux packages et extensions pour étendre les fonctionnalités de base du framework. Ces packages peuvent être utilisés pour ajouter des fonctionnalités spécifiques à votre application Django sans avoir à les développer vous-même.
+</p>
+
+<p>
+Pour utiliser un package ou une extension Django, vous devez d'abord l'installer dans votre environnement virtuel. Vous pouvez le faire en utilisant l'outil de gestion de paquets de Python, pip. Par exemple, pour installer le package "django-crispy-forms" qui facilite la création de formulaires dans Django, vous pouvez exécuter la commande suivante dans votre terminal :
+</p>
+
+<pre><code>pip install django-crispy-forms</code></pre>
+
+<p>
+Une fois le package installé, vous devez l'ajouter à la liste des applications installées dans le fichier "settings.py" de votre projet Django. Vous pouvez le faire en ajoutant le nom du package à la liste "INSTALLED_APPS". Par exemple :
+</p>
+
+<pre><code>INSTALLED_APPS = [
+    ...
+    'crispy_forms',
+    ...
+]</code></pre>
+
+<p>
+Après avoir ajouté le package à la liste des applications installées, vous pouvez l'utiliser dans votre code Django. Par exemple, si vous souhaitez utiliser le package "django-crispy-forms" pour rendre un formulaire plus esthétique, vous pouvez l'importer dans votre fichier de vue et l'appliquer au formulaire. Voici un exemple :
+</p>
+
+<pre><code>from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
+
+class MyForm(forms.Form):
+    name = forms.CharField(label='Name')
+    email = forms.EmailField(label='Email')
+    
+    def __init__(self, *args, **kwargs):
+        super(MyForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.add_input(Submit('submit', 'Submit'))</code></pre>
+
+<p>
+Dans cet exemple, nous avons importé les classes nécessaires du package "django-crispy-forms" et les avons utilisées pour personnaliser l'apparence du formulaire "MyForm". Le formulaire sera maintenant affiché avec un bouton de soumission stylisé.
+</p>
+
+<h2>Contribution à la communauté Django</h2>
+<p>
+La communauté Django est très active et accueille favorablement les contributions des développeurs. Contribuer à la communauté Django peut être une excellente façon d'améliorer vos compétences en Django, de vous faire connaître et de participer au développement d'un framework open source populaire.
+</p>
+
+<p>
+Il existe de nombreuses façons de contribuer à la communauté Django. Vous pouvez commencer par signaler des bugs, proposer des améliorations ou soumettre des demandes de fonctionnalités sur le dépôt officiel de Django sur GitHub. Vous pouvez également participer à la discussion sur les listes de diffusion Django et aider les autres développeurs en répondant à leurs questions.
+</p>
+
+<p>
+Si vous êtes prêt à contribuer du code, vous pouvez le faire en soumettant des pull requests sur GitHub. Avant de soumettre une pull request, assurez-vous de lire les directives de contribution de Django et de suivre les meilleures pratiques de développement. Vous pouvez également participer à des sprints de développement Django, qui sont des événements où les développeurs se réunissent pour travailler sur des problèmes spécifiques et contribuer au code de Django.
+</p>
+
+<p>
+Contribuer à la communauté Django est une excellente façon d'apprendre des autres développeurs, de partager vos connaissances et de faire partie d'une communauté dynamique. Cela peut également être un excellent moyen de renforcer votre CV et de vous démarquer en tant que développeur Django.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

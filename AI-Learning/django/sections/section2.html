@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de Django</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structure d'un projet Django</h2>
+<p>Un projet Django est composé de plusieurs applications qui travaillent ensemble pour créer un site web. Chaque application est un module autonome qui peut être réutilisé dans d'autres projets Django.</p>
+<p>Pour créer un projet Django, vous pouvez utiliser la commande suivante :</p>
+<pre><code>django-admin startproject nom_du_projet</code></pre>
+<p>Cela créera un répertoire contenant tous les fichiers nécessaires pour votre projet Django.</p>
+<p>Voici la structure de base d'un projet Django :</p>
+<pre><code>nom_du_projet/
+    manage.py
+    nom_du_projet/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+</code></pre>
+<p>Le fichier <code>manage.py</code> est un script qui vous permet d'interagir avec votre projet Django. Vous pouvez l'utiliser pour lancer le serveur de développement, exécuter des commandes de gestion de base de données, etc.</p>
+<p>Le fichier <code>settings.py</code> contient les paramètres de configuration de votre projet Django. Vous pouvez y définir des variables telles que la base de données à utiliser, les fichiers statiques, les modèles de sécurité, etc.</p>
+<p>Le fichier <code>urls.py</code> contient les URL de votre projet Django. Vous pouvez y définir les correspondances entre les URL et les vues de votre application.</p>
+<p>Le fichier <code>wsgi.py</code> est utilisé pour déployer votre projet Django sur un serveur web compatible avec WSGI.</p>
+
+<h2>Les modèles</h2>
+<p>Les modèles sont des classes Python qui définissent la structure et le comportement des données dans votre application Django. Ils sont utilisés pour créer des tables dans la base de données et pour effectuer des opérations de lecture et d'écriture sur ces tables.</p>
+<p>Voici un exemple de modèle Django :</p>
+<pre><code>from django.db import models
+
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+</code></pre>
+<p>Dans cet exemple, nous avons défini un modèle <code>Article</code> avec trois champs : <code>title</code>, <code>content</code> et <code>pub_date</code>. Le champ <code>title</code> est un champ de texte court, le champ <code>content</code> est un champ de texte long et le champ <code>pub_date</code> est un champ de date et d'heure qui est automatiquement défini lors de la création de l'article.</p>
+<p>Une fois que vous avez défini vos modèles, vous pouvez les utiliser pour effectuer des opérations de base de données, telles que la création, la lecture, la mise à jour et la suppression d'objets. Django fournit une API ORM (Object-Relational Mapping) qui vous permet d'interagir avec la base de données en utilisant des objets Python plutôt que des requêtes SQL brutes.</p>
+
+<h2>Les vues</h2>
+<p>Les vues sont des fonctions ou des classes Python qui définissent la logique de traitement des requêtes HTTP dans votre application Django. Elles sont responsables de la récupération des données nécessaires à partir des modèles, de la génération de réponses HTTP et de la redirection des utilisateurs vers d'autres vues.</p>
+<p>Voici un exemple de vue Django :</p>
+<pre><code>from django.shortcuts import render
+from django.http import HttpResponse
+
+def hello(request):
+    return HttpResponse("Hello, world!")
+</code></pre>
+<p>Dans cet exemple, nous avons défini une vue <code>hello</code> qui renvoie une réponse HTTP contenant le texte "Hello, world!". Cette vue peut être associée à une URL spécifique dans le fichier <code>urls.py</code> de votre projet Django.</p>
+<p>Les vues peuvent également prendre des paramètres de requête, accéder aux données de session, effectuer des opérations de base de données, etc. Elles offrent une grande flexibilité pour traiter les requêtes HTTP de manière personnalisée.</p>
+
+<h2>Les templates</h2>
+<p>Les templates sont des fichiers HTML qui définissent la structure et le contenu des pages web dans votre application Django. Ils sont utilisés pour générer des réponses HTTP dynamiques en insérant des données provenant des modèles et des vues.</p>
+<p>Voici un exemple de template Django :</p>
+<pre><code>&lt;h1&gt;{{ article.title }}&lt;/h1&gt;
+&lt;p&gt;{{ article.content }}&lt;/p&gt;
+&lt;p&gt;Publié le {{ article.pub_date }}&lt;/p&gt;
+</code></pre>
+<p>Dans cet exemple, nous avons utilisé des balises spéciales entourées de doubles accolades pour insérer les valeurs des champs du modèle <code>Article</code>. Lorsque ce template est rendu, les balises spéciales seront remplacées par les valeurs réelles des champs.</p>
+<p>Les templates peuvent également inclure des boucles, des conditions, des filtres et d'autres fonctionnalités pour rendre la génération de contenu plus flexible et dynamique.</p>
+
+<h2>Les URL patterns</h2>
+<p>Les URL patterns sont des expressions régulières qui définissent les correspondances entre les URL et les vues dans votre application Django. Ils sont utilisés pour diriger les requêtes HTTP vers les vues appropriées en fonction de l'URL demandée.</p>
+<p>Voici un exemple de fichier <code>urls.py</code> avec des URL patterns :</p>
+<pre><code>from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    path('hello/', views.hello),
+    path('articles/', views.article_list),
+    path('articles/&lt;int:article_id&gt;/', views.article_detail),
+]
+</code></pre>
+<p>Dans cet exemple, nous avons défini trois URL patterns :</p>
+<ul>
+    <li><code>hello/</code> correspond à la vue <code>hello</code> que nous avons définie précédemment.</li>
+    <li><code>articles/</code> correspond à la vue <code>article_list</code> qui affiche une liste d'articles.</li>
+    <li><code>articles/&lt;int:article_id&gt;/</code> correspond à la vue <code>article_detail</code> qui affiche les détails d'un article spécifique en utilisant son identifiant.</li>
+</ul>
+<p>Les URL patterns peuvent également prendre des paramètres de requête, des expressions régulières personnalisées et d'autres fonctionnalités pour rendre la gestion des URL plus flexible.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

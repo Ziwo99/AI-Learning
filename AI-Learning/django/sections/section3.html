@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Gestion des données avec Django</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les migrations</h2>
+<p>Les migrations sont un mécanisme intégré à Django qui permet de gérer les modifications de schéma de base de données de manière incrémentielle. Elles permettent de garder la base de données synchronisée avec les modèles de l'application.</p>
+
+<p>Pour créer une migration, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>python manage.py makemigrations</code></pre>
+
+<p>Cette commande va analyser les modèles de votre application et générer un fichier de migration correspondant à chaque modification détectée.</p>
+
+<p>Une fois les migrations créées, vous pouvez les appliquer à la base de données en utilisant la commande :</p>
+
+<pre><code>python manage.py migrate</code></pre>
+
+<p>Cette commande va exécuter les migrations enregistrées dans la base de données, en les appliquant dans l'ordre chronologique.</p>
+
+<h2>Les requêtes avec Django ORM</h2>
+<p>Django ORM (Object-Relational Mapping) est une couche d'abstraction qui permet d'interagir avec la base de données en utilisant des objets Python plutôt que des requêtes SQL brutes.</p>
+
+<p>Pour effectuer des requêtes avec Django ORM, vous pouvez utiliser la classe QuerySet, qui représente une requête sur une table de la base de données.</p>
+
+<p>Par exemple, pour récupérer tous les objets d'un modèle, vous pouvez utiliser la méthode all() :</p>
+
+<pre><code>Model.objects.all()</code></pre>
+
+<p>Vous pouvez également filtrer les objets en utilisant la méthode filter() :</p>
+
+<pre><code>Model.objects.filter(attribute=value)</code></pre>
+
+<p>Il est également possible d'effectuer des opérations plus complexes, telles que des jointures, des regroupements ou des tris, en utilisant les méthodes appropriées de la classe QuerySet.</p>
+
+<h2>Les formulaires</h2>
+<p>Les formulaires sont un élément clé de la gestion des données dans Django. Ils permettent de créer des interfaces utilisateur pour saisir et valider les données avant de les enregistrer dans la base de données.</p>
+
+<p>Pour créer un formulaire dans Django, vous devez définir une classe héritant de la classe Form ou ModelForm, en fonction de vos besoins.</p>
+
+<p>Par exemple, pour créer un formulaire basé sur un modèle, vous pouvez utiliser la classe ModelForm :</p>
+
+<pre><code>from django import forms
+from .models import MyModel
+
+class MyModelForm(forms.ModelForm):
+    class Meta:
+        model = MyModel
+        fields = '__all__'</code></pre>
+
+<p>Une fois le formulaire défini, vous pouvez l'utiliser dans vos vues pour afficher le formulaire à l'utilisateur, récupérer les données saisies et les valider.</p>
+
+<h2>Les gestionnaires d'administration</h2>
+<p>Le gestionnaire d'administration de Django est un outil puissant qui permet de gérer les données de l'application via une interface d'administration générée automatiquement.</p>
+
+<p>Pour activer le gestionnaire d'administration, vous devez enregistrer vos modèles dans le fichier admin.py de votre application :</p>
+
+<pre><code>from django.contrib import admin
+from .models import MyModel
+
+admin.site.register(MyModel)</code></pre>
+
+<p>Une fois les modèles enregistrés, vous pouvez accéder à l'interface d'administration en utilisant l'URL "/admin" de votre application.</p>
+
+<p>Le gestionnaire d'administration offre de nombreuses fonctionnalités, telles que la recherche, le filtrage, le tri, l'édition en masse, etc. Il est également possible de personnaliser l'interface d'administration en utilisant les classes ModelAdmin.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

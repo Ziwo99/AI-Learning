@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Projets pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Création d'un blog avec Django</h2>
+  <p>Dans cette sous-section, nous allons apprendre à créer un blog fonctionnel en utilisant Django. Un blog est une application web populaire qui permet aux utilisateurs de publier des articles, de les commenter et de les partager avec d'autres utilisateurs.</p>
+  <p>Pour commencer, nous allons créer un modèle de données pour notre blog. Le modèle représentera un article de blog avec des champs tels que le titre, le contenu, la date de publication, etc. Nous utiliserons Django ORM pour interagir avec la base de données et effectuer des opérations CRUD (Create, Read, Update, Delete) sur nos articles.</p>
+  <pre><code>from django.db import models
+
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    pub_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title</code></pre>
+  <p>Une fois que nous avons défini notre modèle, nous pouvons créer des vues pour notre blog. Les vues sont responsables de la logique métier de notre application. Par exemple, nous aurons une vue pour afficher la liste des articles, une autre pour afficher les détails d'un article spécifique, etc.</p>
+  <pre><code>from django.shortcuts import render, get_object_or_404
+from .models import Article
+
+def article_list(request):
+    articles = Article.objects.all()
+    return render(request, 'blog/article_list.html', {'articles': articles})
+
+def article_detail(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    return render(request, 'blog/article_detail.html', {'article': article})</code></pre>
+  <p>Nous utiliserons également des templates pour rendre notre contenu HTML dynamique. Les templates sont des fichiers HTML avec des balises spéciales qui nous permettent d'insérer des données provenant de notre base de données ou de nos vues.</p>
+  <pre><code>&lt;!-- article_list.html --&gt;
+&lt;h1&gt;Liste des articles&lt;/h1&gt;
+&lt;ul&gt;
+  {% for article in articles %}
+    &lt;li&gt;&lt;a href="{% url 'article_detail' article.id %}"&gt;{{ article.title }}&lt;/a&gt;&lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;
+
+&lt;!-- article_detail.html --&gt;
+&lt;h1&gt;{{ article.title }}&lt;/h1&gt;
+&lt;p&gt;{{ article.content }}&lt;/p&gt;</code></pre>
+  <p>Ensuite, nous ajouterons des fonctionnalités telles que la création, la modification et la suppression d'articles. Nous utiliserons des formulaires Django pour gérer les entrées utilisateur et effectuer des validations côté serveur.</p>
+  <pre><code>from django.shortcuts import render, redirect, get_object_or_404
+from .forms import ArticleForm
+from .models import Article
+
+def create_article(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('article_list')
+    else:
+        form = ArticleForm()
+    return render(request, 'blog/create_article.html', {'form': form})
+
+def edit_article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    if request.method == 'POST':
+        form = ArticleForm(request.POST, instance=article)
+        if form.is_valid():
+            form.save()
+            return redirect('article_detail', article_id=article.id)
+    else:
+        form = ArticleForm(instance=article)
+    return render(request, 'blog/edit_article.html', {'form': form, 'article': article})
+
+def delete_article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    if request.method == 'POST':
+        article.delete()
+        return redirect('article_list')
+    return render(request, 'blog/delete_article.html', {'article': article})</code></pre>
+  <p>Enfin, nous ajouterons des fonctionnalités telles que la pagination des articles, la recherche d'articles, les commentaires d'utilisateurs, etc. Ces fonctionnalités avancées peuvent être implémentées en utilisant les fonctionnalités intégrées de Django ou en installant des packages tiers.</p>
+  <p>Avec ces étapes, vous serez en mesure de créer un blog fonctionnel avec Django. N'hésitez pas à explorer davantage les fonctionnalités de Django et à personnaliser votre blog selon vos besoins.</p>
+
+  <h2>Développement d'une application e-commerce avec Django</h2>
+  <p>Dans cette sous-section, nous allons apprendre à développer une application e-commerce avec Django. Une application e-commerce est une plateforme en ligne qui permet aux utilisateurs d'acheter et de vendre des produits.</p>
+  <p>Pour commencer, nous allons créer un modèle de données pour nos produits. Le modèle représentera un produit avec des champs tels que le nom, la description, le prix, etc. Nous utiliserons Django ORM pour interagir avec la base de données et effectuer des opérations CRUD sur nos produits.</p>
+  <pre><code>from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.name</code></pre>
+  <p>Ensuite, nous allons créer des vues pour notre application e-commerce. Les vues seront responsables de la logique métier de notre application, telles que l'affichage des produits, l'ajout de produits au panier, le passage de commandes, etc.</p>
+  <pre><code>from django.shortcuts import render, redirect, get_object_or_404
+from .models import Product
+from .forms import AddToCartForm
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'ecommerce/product_list.html', {'products': products})
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    form = AddToCartForm()
+    return render(request, 'ecommerce/product_detail.html', {'product': product, 'form': form})
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = AddToCartForm(request.POST)
+        if form.is_valid():
+            quantity = form.cleaned_data['quantity']
+            # Ajouter le produit au panier
+            return redirect('cart')
+    else:
+        form = AddToCartForm()
+    return render(request, 'ecommerce/add_to_cart.html', {'product': product, 'form': form})
+
+def cart(request):
+    # Afficher le contenu du panier
+    return render(request, 'ecommerce/cart.html')</code></pre>
+  <p>Nous utiliserons également des templates pour rendre notre contenu HTML dynamique. Les templates nous permettront d'afficher les produits, le panier, les détails de la commande, etc.</p>
+  <pre><code>&lt;!-- product_list.html --&gt;
+&lt;h1&gt;Liste des produits&lt;/h1&gt;
+&lt;ul&gt;
+  {% for product in products %}
+    &lt;li&gt;&lt;a href="{% url 'product_detail' product.id %}"&gt;{{ product.name }}&lt;/a&gt;&lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;
+
+&lt;!-- product_detail.html --&gt;
+&lt;h1&gt;{{ product.name }}&lt;/h1&gt;
+&lt;p&gt;{{ product.description }}&lt;/p&gt;
+&lt;p&gt;Prix: {{ product.price }}&lt;/p&gt;
+&lt;form action="{% url 'add_to_cart' product.id %}" method="post"&gt;
+  {% csrf_token %}
+  {{ form }}
+  &lt;button type="submit"&gt;Ajouter au panier&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;!-- cart.html --&gt;
+&lt;h1&gt;Panier&lt;/h1&gt;
+&lt;p&gt;Contenu du panier&lt;/p&gt;</code></pre>
+  <p>Nous ajouterons également des fonctionnalités telles que la gestion des utilisateurs, le paiement en ligne, la gestion des stocks, etc. Ces fonctionnalités avancées peuvent être implémentées en utilisant les fonctionnalités intégrées de Django ou en installant des packages tiers.</p>
+  <p>Avec ces étapes, vous serez en mesure de développer une application e-commerce avec Django. N'hésitez pas à explorer davantage les fonctionnalités de Django et à personnaliser votre application selon vos besoins.</p>
+
+  <h2>Création d'une API REST avec Django</h2>
+  <p>Dans cette sous-section, nous allons apprendre à créer une API REST (Representational State Transfer) avec Django. Une API REST est une interface qui permet aux applications de communiquer entre elles en utilisant des requêtes HTTP.</p>
+  <p>Pour commencer, nous allons créer un modèle de données pour notre API. Le modèle représentera une ressource avec des champs tels que le nom, la description, etc. Nous utiliserons Django ORM pour interagir avec la base de données et effectuer des opérations CRUD sur nos ressources.</p>
+  <pre><code>from django.db import models
+
+class Resource(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.name</code></pre>
+  <p>Ensuite, nous allons créer des vues pour notre API. Les vues seront responsables de la logique métier de notre API, telles que l'affichage des ressources, la création de nouvelles ressources, la mise à jour des ressources existantes, etc.</p>
+  <pre><code>from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+from .models import Resource
+from .serializers import ResourceSerializer
+
+def resource_list(request):
+    resources = Resource.objects.all()
+    serializer = ResourceSerializer(resources, many=True)
+    return JsonResponse(serializer.data, safe=False)
+
+def resource_detail(request, resource_id):
+    resource = get_object_or_404(Resource, pk=resource_id)
+    serializer = ResourceSerializer(resource)
+    return JsonResponse(serializer.data)
+
+def create_resource(request):
+    # Créer une nouvelle ressource
+    return JsonResponse(serializer.data)
+
+def update_resource(request, resource_id):
+    # Mettre à jour une ressource existante
+    return JsonResponse(serializer.data)
+
+def delete_resource(request, resource_id):
+    # Supprimer une ressource existante
+    return JsonResponse(serializer.data)</code></pre>
+  <p>Nous utiliserons également des sérialiseurs pour convertir nos modèles de données en JSON et vice versa. Les sérialiseurs nous permettront de spécifier les champs que nous voulons inclure dans notre réponse JSON.</p>
+  <pre><code>from rest_framework import serializers
+from .models import Resource
+
+class ResourceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Resource
+        fields = '__all__'</code></pre>
+  <p>Enfin, nous ajouterons des fonctionnalités telles que l'authentification, l'autorisation, la pagination, etc. Ces fonctionnalités avancées peuvent être implémentées en utilisant les fonctionnalités intégrées de Django REST Framework ou en installant des packages tiers.</p>
+  <p>Avec ces étapes, vous serez en mesure de créer une API REST avec Django. N'hésitez pas à explorer davantage les fonctionnalités de Django REST Framework et à personnaliser votre API selon vos besoins.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

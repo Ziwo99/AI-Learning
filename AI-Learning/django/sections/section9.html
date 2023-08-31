@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Bonnes pratiques de développement Django</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Organisation du code</h2>
+<p>L'organisation du code est essentielle pour maintenir un projet Django propre et facile à comprendre. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li><strong>Séparation des responsabilités :</strong> Divisez votre code en modules et applications Django distincts pour séparer les différentes fonctionnalités. Cela facilite la maintenance et la réutilisation du code.</li>
+  <li><strong>Utilisation de packages :</strong> Utilisez des packages Python pour regrouper des fonctionnalités connexes et les rendre facilement distribuables et réutilisables.</li>
+  <li><strong>Utilisation de modules Django :</strong> Django fournit de nombreux modules intégrés pour des tâches courantes telles que l'authentification, la gestion des formulaires, etc. Utilisez-les au lieu de réinventer la roue.</li>
+  <li><strong>Utilisation de conventions :</strong> Suivez les conventions de dénomination et de structure de Django pour faciliter la compréhension du code par d'autres développeurs.</li>
+</ul>
+
+<h2>Utilisation de Git pour le versionnement</h2>
+<p>Git est un système de contrôle de version populaire qui vous permet de suivre les modifications apportées à votre code source. Voici comment utiliser Git pour le versionnement de votre projet Django :</p>
+
+<ol>
+  <li><strong>Initialisation du dépôt :</strong> Dans le répertoire racine de votre projet Django, exécutez la commande <code>git init</code> pour initialiser un nouveau dépôt Git.</li>
+  <li><strong>Création de branches :</strong> Utilisez des branches Git pour travailler sur des fonctionnalités ou des correctifs de manière isolée. Vous pouvez créer une nouvelle branche avec la commande <code>git branch nom_de_branche</code> et passer à une branche avec <code>git checkout nom_de_branche</code>.</li>
+  <li><strong>Commit des modifications :</strong> Une fois que vous avez apporté des modifications à votre code, utilisez la commande <code>git add nom_fichier</code> pour ajouter les fichiers modifiés à l'index, puis exécutez <code>git commit -m "message_de_commit"</code> pour enregistrer les modifications dans le dépôt Git.</li>
+  <li><strong>Push vers un dépôt distant :</strong> Si vous souhaitez partager votre code avec d'autres développeurs ou déployer votre application, vous pouvez pousser votre dépôt local vers un dépôt distant en utilisant la commande <code>git push origin nom_de_branche</code>.</li>
+</ol>
+
+<h2>Documentation et tests</h2>
+<p>La documentation et les tests sont des éléments essentiels du développement Django. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li><strong>Documentation du code :</strong> Commentez votre code de manière claire et concise pour expliquer son fonctionnement et faciliter la compréhension par d'autres développeurs. Utilisez des outils de documentation tels que Sphinx pour générer une documentation lisible par les humains.</li>
+  <li><strong>Tests unitaires :</strong> Écrivez des tests unitaires pour chaque fonctionnalité de votre application Django. Les tests unitaires garantissent que votre code fonctionne correctement et permettent de détecter les erreurs plus rapidement.</li>
+  <li><strong>Tests d'intégration :</strong> En plus des tests unitaires, effectuez également des tests d'intégration pour vérifier que toutes les parties de votre application fonctionnent correctement ensemble.</li>
+  <li><strong>Tests de performance :</strong> Si votre application Django nécessite des performances élevées, effectuez des tests de charge pour identifier les goulots d'étranglement et optimiser les performances.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques de développement Django, vous serez en mesure de créer des applications robustes, maintenables et évolutives.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

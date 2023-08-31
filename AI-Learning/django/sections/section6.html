@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Django Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Déploiement d'une application Django</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/django/django.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration du serveur</h2>
+<p>Lorsque vous êtes prêt à déployer votre application Django, vous devez configurer votre serveur pour qu'il puisse exécuter correctement votre application. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Assurez-vous que votre serveur dispose des prérequis nécessaires pour exécuter Django, tels que Python et les bibliothèques requises.</li>
+  <li>Installez Django sur votre serveur en utilisant la même version que celle utilisée lors du développement de votre application.</li>
+  <li>Configurez votre serveur web pour qu'il puisse servir votre application Django. Cela peut impliquer la configuration d'un serveur web tel que Apache ou Nginx, ainsi que la configuration des fichiers de configuration appropriés.</li>
+  <li>Assurez-vous que votre serveur est correctement configuré pour gérer les requêtes HTTP et les rediriger vers votre application Django.</li>
+</ol>
+
+<h2>Gestion des fichiers statiques</h2>
+<p>Les fichiers statiques tels que les feuilles de style CSS, les images et les fichiers JavaScript sont nécessaires pour que votre application Django s'affiche correctement dans le navigateur des utilisateurs. Voici comment gérer les fichiers statiques dans votre application Django :</p>
+
+<ol>
+  <li>Créez un répertoire dans votre projet Django pour stocker vos fichiers statiques.</li>
+  <li>Définissez les paramètres appropriés dans votre fichier de configuration Django pour indiquer à Django où trouver les fichiers statiques.</li>
+  <li>Utilisez la balise {% load static %} dans vos templates pour charger les fichiers statiques.</li>
+  <li>Utilisez la balise {% static 'nom_du_fichier' %} dans vos templates pour référencer les fichiers statiques.</li>
+</ol>
+
+<h2>Utilisation de serveurs de cache</h2>
+<p>Les serveurs de cache peuvent améliorer les performances de votre application Django en stockant en mémoire les résultats des requêtes fréquemment effectuées. Voici comment utiliser des serveurs de cache dans votre application Django :</p>
+
+<ol>
+  <li>Installez et configurez un serveur de cache tel que Memcached ou Redis.</li>
+  <li>Définissez les paramètres appropriés dans votre fichier de configuration Django pour indiquer à Django d'utiliser le serveur de cache.</li>
+  <li>Utilisez les décorateurs de cache fournis par Django pour mettre en cache les résultats des vues ou des requêtes fréquemment utilisées.</li>
+</ol>
+
+<h2>Gestion des environnements de production et de développement</h2>
+<p>Lorsque vous développez une application Django, il est important de différencier votre environnement de développement de votre environnement de production. Voici comment gérer ces environnements dans votre application Django :</p>
+
+<ol>
+  <li>Créez des fichiers de configuration distincts pour votre environnement de développement et votre environnement de production.</li>
+  <li>Définissez les paramètres appropriés dans chaque fichier de configuration pour refléter les différences entre les deux environnements.</li>
+  <li>Utilisez des variables d'environnement pour stocker des informations sensibles telles que les clés d'API ou les informations de connexion à la base de données.</li>
+  <li>Utilisez des outils de gestion de configuration tels que Ansible ou Puppet pour automatiser le déploiement de votre application dans différents environnements.</li>
+</ol>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/django/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/django/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
