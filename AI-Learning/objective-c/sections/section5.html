@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Objective-C Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les frameworks et les bibliothèques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/objective-c/objective-c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des frameworks de base (Foundation, UIKit, etc.)</h2>
+<p>Les frameworks de base sont des ensembles de classes et de fonctions prédéfinies qui fournissent des fonctionnalités de base pour le développement d'applications Objective-C. Ils sont inclus dans le SDK iOS et offrent des fonctionnalités telles que la gestion des chaînes de caractères, les opérations sur les tableaux, la gestion des dates et heures, la gestion des fichiers, etc.</p>
+<p>Par exemple, le framework Foundation fournit des classes telles que NSString pour la manipulation des chaînes de caractères, NSArray et NSMutableArray pour la gestion des tableaux, NSDate pour la gestion des dates et heures, etc.</p>
+<p>Le framework UIKit, quant à lui, fournit des classes pour la création d'interfaces utilisateur, telles que UIView pour la gestion des vues, UIButton pour la création de boutons, UILabel pour l'affichage de texte, etc.</p>
+<p>Pour utiliser un framework de base dans votre application Objective-C, vous devez importer l'en-tête correspondant dans votre fichier source. Par exemple, pour utiliser les classes du framework Foundation, vous devez ajouter la ligne suivante en haut de votre fichier source :</p>
+<pre><code>#import &lt;Foundation/Foundation.h&gt;</code></pre>
+
+<h2>Intégration de bibliothèques tierces</h2>
+<p>En plus des frameworks de base, vous pouvez également intégrer des bibliothèques tierces dans votre application Objective-C. Les bibliothèques tierces sont des ensembles de classes et de fonctions développées par des développeurs tiers pour fournir des fonctionnalités supplémentaires à votre application.</p>
+<p>Pour intégrer une bibliothèque tierce, vous devez d'abord télécharger les fichiers de la bibliothèque et les ajouter à votre projet Xcode. Ensuite, vous devez configurer les paramètres de compilation et de liaison de votre projet pour inclure la bibliothèque.</p>
+<p>Une fois la bibliothèque intégrée, vous pouvez utiliser les classes et les fonctions fournies par la bibliothèque dans votre application Objective-C.</p>
+
+<h2>Utilisation de CocoaPods pour gérer les dépendances</h2>
+<p>CocoaPods est un gestionnaire de dépendances pour les projets Objective-C. Il vous permet de gérer facilement les bibliothèques tierces et leurs dépendances dans votre projet.</p>
+<p>Pour utiliser CocoaPods, vous devez d'abord installer CocoaPods sur votre machine. Ensuite, vous devez créer un fichier Podfile dans le répertoire racine de votre projet et y spécifier les bibliothèques que vous souhaitez utiliser.</p>
+<p>Une fois que vous avez configuré votre Podfile, vous devez exécuter la commande "pod install" dans le répertoire de votre projet pour installer les bibliothèques spécifiées.</p>
+<p>Après l'installation, CocoaPods génère un fichier .xcworkspace pour votre projet. Vous devez ouvrir ce fichier dans Xcode pour travailler sur votre projet.</p>
+<p>Une fois que vous avez configuré CocoaPods, il se charge de télécharger les bibliothèques spécifiées, de les intégrer à votre projet et de gérer les dépendances entre les bibliothèques.</p>
+<p>Vous pouvez également mettre à jour les bibliothèques installées en exécutant la commande "pod update" dans le répertoire de votre projet.</p>
+
+<h2>Exemple d'utilisation d'un framework de base :</h2>
+<pre><code>#import &lt;Foundation/Foundation.h&gt;
+
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        // Création d'une chaîne de caractères
+        NSString *message = @"Bonjour, monde!";
+        
+        // Affichage de la chaîne de caractères
+        NSLog(@"%@", message);
+        
+        // Création d'un tableau
+        NSArray *array = @[@"Objet 1", @"Objet 2", @"Objet 3"];
+        
+        // Parcours du tableau
+        for (NSString *object in array) {
+            NSLog(@"%@", object);
+        }
+    }
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons le framework Foundation pour créer une chaîne de caractères et un tableau, puis nous les affichons à l'aide de la fonction NSLog.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

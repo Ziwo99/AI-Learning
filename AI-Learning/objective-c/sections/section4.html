@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Objective-C Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Programmation orientée objet avancée</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/objective-c/objective-c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les propriétés et les accesseurs</h2>
+<p>Les propriétés et les accesseurs sont des éléments clés de la programmation orientée objet en Objective-C. Ils permettent d'encapsuler les données et de contrôler l'accès à celles-ci.</p>
+
+<p>Une propriété est une variable associée à une classe ou à un objet. Elle peut être définie avec différents attributs tels que "strong", "weak", "readonly", etc. Ces attributs définissent le comportement de la propriété.</p>
+
+<p>Les accesseurs, également appelés "getters" et "setters", permettent d'accéder aux valeurs d'une propriété et de les modifier. En Objective-C, les accesseurs sont générés automatiquement par le compilateur lors de la déclaration d'une propriété.</p>
+
+<p>Voici un exemple de déclaration d'une propriété avec ses accesseurs :</p>
+
+<pre><code>@interface MyClass : NSObject
+
+@property (strong, nonatomic) NSString *name;
+
+@end
+
+@implementation MyClass
+
+@end
+</code></pre>
+
+<p>Dans cet exemple, la classe MyClass possède une propriété "name" de type NSString. L'attribut "strong" indique que la propriété est une référence forte, ce qui signifie que l'objet auquel elle est associée ne sera pas libéré tant qu'il y aura une référence active.</p>
+
+<p>Les accesseurs générés automatiquement permettent d'accéder à la valeur de la propriété et de la modifier :</p>
+
+<pre><code>MyClass *myObject = [[MyClass alloc] init];
+myObject.name = @"John"; // Utilisation du setter
+NSString *name = myObject.name; // Utilisation du getter
+</code></pre>
+
+<p>Il est également possible de personnaliser les accesseurs en les redéfinissant manuellement :</p>
+
+<pre><code>@interface MyClass : NSObject
+
+@property (strong, nonatomic) NSString *name;
+
+- (void)setName:(NSString *)name;
+- (NSString *)name;
+
+@end
+
+@implementation MyClass
+
+- (void)setName:(NSString *)name {
+    _name = [name uppercaseString]; // Modification de la valeur avant l'assignation
+}
+
+- (NSString *)name {
+    return [_name lowercaseString]; // Modification de la valeur avant la récupération
+}
+
+@end
+</code></pre>
+
+<p>Dans cet exemple, les accesseurs ont été redéfinis pour modifier la valeur de la propriété avant l'assignation et avant la récupération.</p>
+
+<h2>Les protocoles et les délégués</h2>
+<p>Les protocoles et les délégués sont des concepts importants en Objective-C pour la communication entre objets.</p>
+
+<p>Un protocole est une liste de méthodes déclarées sans implémentation. Il définit un ensemble de comportements que les objets peuvent adopter. Un objet qui adopte un protocole doit implémenter toutes les méthodes déclarées dans ce protocole.</p>
+
+<p>Voici un exemple de déclaration d'un protocole :</p>
+
+<pre><code>@protocol MyProtocol
+
+- (void)doSomething;
+- (void)doSomethingElse;
+
+@end
+</code></pre>
+
+<p>Dans cet exemple, le protocole MyProtocol définit deux méthodes : "doSomething" et "doSomethingElse". Les objets qui adoptent ce protocole doivent implémenter ces deux méthodes.</p>
+
+<p>Un délégué est un objet qui implémente les méthodes d'un protocole et qui est chargé de réaliser certaines tâches pour un autre objet. L'objet qui utilise le délégué peut appeler les méthodes du protocole pour communiquer avec le délégué.</p>
+
+<p>Voici un exemple d'utilisation d'un délégué :</p>
+
+<pre><code>@interface MyObject : NSObject
+
+@property (weak, nonatomic) id&lt;MyProtocol&gt; delegate;
+
+- (void)performTask;
+
+@end
+
+@implementation MyObject
+
+- (void)performTask {
+    // Faire quelque chose
+    [self.delegate doSomething];
+    // Faire autre chose
+    [self.delegate doSomethingElse];
+}
+
+@end
+</code></pre>
+
+<p>Dans cet exemple, la classe MyObject possède une propriété "delegate" de type id<MyProtocol>. L'objet qui utilise MyObject peut assigner un délégué à cette propriété et appeler les méthodes du protocole pour communiquer avec le délégué.</p>
+
+<h2>Les catégories et les extensions</h2>
+<p>Les catégories et les extensions permettent d'ajouter des méthodes à une classe existante sans avoir à la sous-classer.</p>
+
+<p>Une catégorie est une déclaration supplémentaire d'une classe existante qui permet d'ajouter de nouvelles méthodes. Les méthodes ajoutées par une catégorie sont disponibles pour toutes les instances de la classe.</p>
+
+<p>Voici un exemple de déclaration d'une catégorie :</p>
+
+<pre><code>@interface NSString (MyCategory)
+
+- (NSString *)reversedString;
+
+@end
+
+@implementation NSString (MyCategory)
+
+- (NSString *)reversedString {
+    NSMutableString *reversedString = [NSMutableString string];
+    NSInteger length = [self length];
+    
+    for (NSInteger i = length - 1; i >= 0; i--) {
+        [reversedString appendString:[NSString stringWithFormat:@"%C", [self characterAtIndex:i]]];
+    }
+    
+    return reversedString;
+}
+
+@end
+</code></pre>
+
+<p>Dans cet exemple, une catégorie MyCategory est ajoutée à la classe NSString. La catégorie ajoute une méthode "reversedString" qui permet de renvoyer une version inversée de la chaîne de caractères.</p>
+
+<p>Une extension est similaire à une catégorie, mais elle est utilisée pour ajouter des méthodes privées à une classe existante. Les méthodes ajoutées par une extension ne sont pas visibles à l'extérieur de la classe.</p>
+
+<p>Voici un exemple de déclaration d'une extension :</p>
+
+<pre><code>@interface MyClass ()
+
+- (void)privateMethod;
+
+@end
+
+@implementation MyClass
+
+- (void)privateMethod {
+    // Faire quelque chose
+}
+
+@end
+</code></pre>
+
+<p>Dans cet exemple, une extension est ajoutée à la classe MyClass. L'extension ajoute une méthode "privateMethod" qui peut être utilisée uniquement à l'intérieur de la classe.</p>
+
+<h2>Les blocs et la programmation fonctionnelle</h2>
+<p>Les blocs sont des éléments de programmation fonctionnelle qui permettent de regrouper du code et de le traiter comme une valeur.</p>
+
+<p>Un bloc est une structure de données qui contient un ensemble de code et qui peut être exécuté à un moment ultérieur. Les blocs peuvent être utilisés pour définir des callbacks, des itérations, des animations, etc.</p>
+
+<p>Voici un exemple de déclaration et d'utilisation d'un bloc :</p>
+
+<pre><code>void (^myBlock)(void) = ^{
+    NSLog(@"Hello, world!");
+};
+
+myBlock(); // Exécute le bloc
+</code></pre>
+
+<p>Dans cet exemple, un bloc est déclaré avec la syntaxe "void (^)(void)". Le bloc ne prend aucun argument et ne renvoie aucune valeur. Le code à exécuter est défini entre les accolades.</p>
+
+<p>Les blocs peuvent également prendre des arguments et renvoyer des valeurs :</p>
+
+<pre><code>int (^add)(int, int) = ^(int a, int b) {
+    return a + b;
+};
+
+int result = add(2, 3); // Appelle le bloc et récupère le résultat
+</code></pre>
+
+<p>Dans cet exemple, un bloc est déclaré avec la syntaxe "int (^)(int, int)". Le bloc prend deux arguments de type int et renvoie un résultat de type int.</p>
+
+<p>Les blocs peuvent être utilisés dans de nombreux contextes, tels que les méthodes de tri, les animations, les opérations asynchrones, etc. Ils offrent une flexibilité et une expressivité accrues dans la programmation en Objective-C.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

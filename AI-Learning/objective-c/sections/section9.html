@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Objective-C Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Projets pratiques et études de cas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/objective-c/objective-c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Développement d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons développer une application de gestion de tâches en Objective-C. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+
+<p>Voici un exemple de code pour créer une classe Task qui représente une tâche :</p>
+
+<pre><code>@interface Task : NSObject
+
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSDate *dueDate;
+@property (nonatomic, assign) BOOL isCompleted;
+
+@end
+
+@implementation Task
+
+// Implémentation des méthodes de la classe Task
+
+@end
+</code></pre>
+
+<p>Dans cette classe, nous utilisons des propriétés pour stocker les informations de la tâche, telles que le titre, la description, la date d'échéance et l'état de complétion. Nous pouvons ensuite créer des instances de cette classe pour représenter chaque tâche dans notre application.</p>
+
+<p>Ensuite, nous pouvons créer une classe TaskManager qui gère la liste des tâches :</p>
+
+<pre><code>@interface TaskManager : NSObject
+
+@property (nonatomic, strong) NSMutableArray *tasks;
+
+- (void)addTask:(Task *)task;
+- (void)removeTask:(Task *)task;
+- (NSArray *)getAllTasks;
+- (NSArray *)getCompletedTasks;
+- (NSArray *)getIncompleteTasks;
+
+@end
+
+@implementation TaskManager
+
+// Implémentation des méthodes de la classe TaskManager
+
+@end
+</code></pre>
+
+<p>Cette classe utilise un tableau mutable pour stocker les tâches. Nous pouvons ajouter, supprimer et récupérer des tâches à l'aide des méthodes appropriées.</p>
+
+<p>Enfin, nous pouvons créer une interface utilisateur (UI) pour notre application de gestion de tâches en utilisant les contrôles fournis par UIKit. Par exemple, nous pouvons utiliser une UITableView pour afficher la liste des tâches et permettre aux utilisateurs d'interagir avec elles.</p>
+
+<h2>Création d'un jeu simple en Objective-C</h2>
+<p>Dans cette sous-section, nous allons créer un jeu simple en Objective-C. Le jeu consistera à deviner un nombre aléatoire généré par l'ordinateur.</p>
+
+<p>Voici un exemple de code pour implémenter ce jeu :</p>
+
+<pre><code>@interface GuessingGame : NSObject
+
+@property (nonatomic, assign) NSInteger targetNumber;
+@property (nonatomic, assign) NSInteger numberOfGuesses;
+
+- (void)startGame;
+- (void)makeGuess:(NSInteger)guess;
+
+@end
+
+@implementation GuessingGame
+
+// Implémentation des méthodes de la classe GuessingGame
+
+@end
+</code></pre>
+
+<p>Dans cette classe, nous utilisons des propriétés pour stocker le nombre cible et le nombre de tentatives. La méthode startGame initialise le jeu en générant un nombre aléatoire. La méthode makeGuess permet aux joueurs de faire une supposition et vérifie si elle est correcte.</p>
+
+<p>Nous pouvons ensuite créer une interface utilisateur (UI) pour notre jeu en utilisant les contrôles fournis par UIKit. Par exemple, nous pouvons utiliser un UITextField pour permettre aux joueurs de saisir leurs suppositions et un UILabel pour afficher le résultat.</p>
+
+<h2>Intégration d'une API tierce dans une application</h2>
+<p>Dans cette sous-section, nous allons apprendre à intégrer une API tierce dans une application Objective-C. Nous utiliserons l'API OpenWeatherMap pour obtenir les prévisions météorologiques en temps réel.</p>
+
+<p>Voici un exemple de code pour effectuer une requête à l'API OpenWeatherMap :</p>
+
+<pre><code>NSURL *url = [NSURL URLWithString:@"https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=YOUR_API_KEY"];
+NSURLRequest *request = [NSURLRequest requestWithURL:url];
+
+NSURLSession *session = [NSURLSession sharedSession];
+NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    if (error) {
+        NSLog(@"Error: %@", error);
+    } else {
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"Weather: %@", json);
+    }
+}];
+
+[dataTask resume];
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons NSURLSession pour effectuer une requête HTTP à l'API OpenWeatherMap. Nous spécifions l'URL de l'API et notre clé d'API pour obtenir les prévisions météorologiques de Paris. Une fois la réponse reçue, nous utilisons NSJSONSerialization pour convertir les données JSON en un dictionnaire que nous pouvons utiliser dans notre application.</p>
+
+<p>Nous pouvons ensuite utiliser les données de l'API pour afficher les prévisions météorologiques dans notre interface utilisateur (UI) en utilisant les contrôles fournis par UIKit.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Objective-C Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Syntaxe et concepts fondamentaux</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/objective-c/objective-c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structure d'un programme Objective-C</h2>
+<p>Un programme Objective-C est composé de plusieurs éléments, notamment des classes, des méthodes et des variables. Voici un exemple de structure de base d'un programme Objective-C :</p>
+
+<pre><code>#import &lt;Foundation/Foundation.h&gt;
+
+// Déclaration de la classe
+@interface MaClasse : NSObject
+
+// Déclaration des propriétés et des méthodes
+
+@end
+
+// Implémentation de la classe
+@implementation MaClasse
+
+// Implémentation des méthodes
+
+@end
+
+// Fonction principale
+int main(int argc, const char * argv[]) {
+    @autoreleasepool {
+        // Code principal
+        return 0;
+    }
+}
+</code></pre>
+
+<h2>Variables et types de données</h2>
+<p>En Objective-C, les variables doivent être déclarées avec un type spécifique. Voici quelques types de données couramment utilisés :</p>
+
+<ul>
+  <li><strong>int</strong> : pour les entiers</li>
+  <li><strong>float</strong> : pour les nombres à virgule flottante</li>
+  <li><strong>double</strong> : pour les nombres à virgule flottante avec une précision supérieure</li>
+  <li><strong>BOOL</strong> : pour les valeurs booléennes (true ou false)</li>
+  <li><strong>NSString</strong> : pour les chaînes de caractères</li>
+  <li><strong>NSArray</strong> : pour les tableaux</li>
+  <li><strong>NSDictionary</strong> : pour les dictionnaires</li>
+</ul>
+
+<p>Voici un exemple de déclaration de variables :</p>
+
+<pre><code>int age = 25;
+float pi = 3.14;
+BOOL isTrue = YES;
+NSString *name = @"John Doe";
+NSArray *myArray = @[@"apple", @"banana", @"orange"];
+NSDictionary *myDictionary = @{@"key1": @"value1", @"key2": @"value2"};
+</code></pre>
+
+<h2>Opérateurs et expressions</h2>
+<p>Objective-C prend en charge différents types d'opérateurs, tels que les opérateurs arithmétiques, les opérateurs de comparaison et les opérateurs logiques. Voici quelques exemples d'opérateurs couramment utilisés :</p>
+
+<ul>
+  <li><strong>+</strong> : addition</li>
+  <li><strong>-</strong> : soustraction</li>
+  <li><strong>*</strong> : multiplication</li>
+  <li><strong>/</strong> : division</li>
+  <li><strong>==</strong> : égalité</li>
+  <li><strong>!=</strong> : inégalité</li>
+  <li><strong>&lt;</strong> : inférieur</li>
+  <li><strong>&gt;</strong> : supérieur</li>
+  <li><strong>&amp;&amp;</strong> : ET logique</li>
+  <li><strong>||</strong> : OU logique</li>
+</ul>
+
+<p>Voici un exemple d'utilisation d'opérateurs :</p>
+
+<pre><code>int a = 5;
+int b = 10;
+int c = a + b; // c vaut 15
+
+BOOL isTrue = (a &gt; b) || (b &gt; 0); // isTrue vaut YES
+</code></pre>
+
+<h2>Les boucles et les conditions</h2>
+<p>Les boucles et les conditions permettent de contrôler le flux d'exécution d'un programme. Voici quelques exemples de boucles et de conditions couramment utilisées en Objective-C :</p>
+
+<p><strong>La boucle for :</strong></p>
+
+<pre><code>for (int i = 0; i &lt; 10; i++) {
+    NSLog(@"%d", i);
+}
+</code></pre>
+
+<p><strong>La boucle while :</strong></p>
+
+<pre><code>int i = 0;
+while (i &lt; 10) {
+    NSLog(@"%d", i);
+    i++;
+}
+</code></pre>
+
+<p><strong>La condition if-else :</strong></p>
+
+<pre><code>int age = 25;
+if (age &gt;= 18) {
+    NSLog(@"Vous êtes majeur");
+} else {
+    NSLog(@"Vous êtes mineur");
+}
+</code></pre>
+
+<h2>Les tableaux et les collections</h2>
+<p>Les tableaux et les collections permettent de stocker et de manipuler des ensembles de données. Voici quelques exemples d'utilisation de tableaux et de collections en Objective-C :</p>
+
+<p><strong>Les tableaux :</strong></p>
+
+<pre><code>NSArray *myArray = @[@"apple", @"banana", @"orange"];
+NSLog(@"%@", myArray[0]); // Affiche "apple"
+
+NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:myArray];
+[mutableArray addObject:@"grape"];
+NSLog(@"%@", mutableArray); // Affiche "apple, banana, orange, grape"
+</code></pre>
+
+<p><strong>Les dictionnaires :</strong></p>
+
+<pre><code>NSDictionary *myDictionary = @{@"key1": @"value1", @"key2": @"value2"};
+NSLog(@"%@", myDictionary[@"key1"]); // Affiche "value1"
+
+NSMutableDictionary *mutableDictionary = [NSMutableDictionary dictionaryWithDictionary:myDictionary];
+[mutableDictionary setObject:@"value3" forKey:@"key3"];
+NSLog(@"%@", mutableDictionary); // Affiche "key1=value1, key2=value2, key3=value3"
+</code></pre>
+
+<h2>Les fonctions et les méthodes</h2>
+<p>Les fonctions et les méthodes permettent d'organiser et de réutiliser du code. Voici un exemple de déclaration et d'utilisation d'une méthode en Objective-C :</p>
+
+<pre><code>// Déclaration de la méthode
+- (void)sayHello {
+    NSLog(@"Hello!");
+}
+
+// Utilisation de la méthode
+MaClasse *myObject = [[MaClasse alloc] init];
+[myObject sayHello]; // Affiche "Hello!"
+</code></pre>
+
+<h2>Les classes et les objets</h2>
+<p>Les classes et les objets sont les éléments fondamentaux de la programmation orientée objet en Objective-C. Voici un exemple de déclaration et d'utilisation d'une classe et d'un objet :</p>
+
+<pre><code>// Déclaration de la classe
+@interface MaClasse : NSObject
+
+@property (nonatomic, strong) NSString *name;
+
+- (void)sayHello;
+
+@end
+
+// Implémentation de la classe
+@implementation MaClasse
+
+- (void)sayHello {
+    NSLog(@"Hello, %@", self.name);
+}
+
+@end
+
+// Utilisation de la classe et de l'objet
+MaClasse *myObject = [[MaClasse alloc] init];
+myObject.name = @"John Doe";
+[myObject sayHello]; // Affiche "Hello, John Doe"
+</code></pre>
+
+<h2>L'héritage et la polymorphie</h2>
+<p>L'héritage permet de créer de nouvelles classes basées sur des classes existantes, tandis que la polymorphie permet à un objet d'être traité comme un objet de n'importe quelle classe parente. Voici un exemple d'utilisation de l'héritage et de la polymorphie en Objective-C :</p>
+
+<pre><code>// Classe parente
+@interface Animal : NSObject
+
+- (void)sayHello;
+
+@end
+
+@implementation Animal
+
+- (void)sayHello {
+    NSLog(@"Hello, I'm an animal");
+}
+
+@end
+
+// Classe enfant
+@interface Dog : Animal
+
+@end
+
+@implementation Dog
+
+- (void)sayHello {
+    NSLog(@"Hello, I'm a dog");
+}
+
+@end
+
+// Utilisation de l'héritage et de la polymorphie
+Animal *animal = [[Animal alloc] init];
+[animal sayHello]; // Affiche "Hello, I'm an animal"
+
+Dog *dog = [[Dog alloc] init];
+[dog sayHello]; // Affiche "Hello, I'm a dog"
+</code></pre>
+
+<p>Ceci conclut la section sur la syntaxe et les concepts fondamentaux d'Objective-C. Dans la prochaine section, nous aborderons la gestion de la mémoire en Objective-C.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

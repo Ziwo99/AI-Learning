@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Objective-C Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Gestion de la mémoire</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/objective-c/objective-c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la gestion de la mémoire en Objective-C</h2>
+<p>
+La gestion de la mémoire est un aspect crucial de la programmation en Objective-C. Contrairement à certains autres langages de programmation, Objective-C ne dispose pas d'un ramasse-miettes automatique pour gérer la mémoire. Cela signifie que le développeur est responsable de l'allocation et de la libération de la mémoire utilisée par les objets.
+</p>
+
+<p>
+En Objective-C, la gestion de la mémoire est basée sur le modèle de comptage de références. Chaque objet possède un compteur de références qui indique combien de fois il est référencé par d'autres objets. Lorsque le compteur de références atteint zéro, cela signifie qu'il n'y a plus de références à l'objet et il peut être libéré de la mémoire.
+</p>
+
+<h2>Les références et les pointeurs</h2>
+<p>
+En Objective-C, les objets sont manipulés à l'aide de références, qui sont des pointeurs vers des objets. Un pointeur est une variable qui contient l'adresse mémoire d'un objet. Lorsque vous créez un objet, vous obtenez un pointeur vers cet objet.
+</p>
+
+<p>
+Par exemple, pour créer un objet de la classe NSString, vous pouvez utiliser la syntaxe suivante :
+</p>
+
+<pre><code>NSString *myString = [[NSString alloc] initWithString:@"Hello World"];
+</code></pre>
+
+<p>
+Dans cet exemple, la variable "myString" est un pointeur vers l'objet NSString créé. Vous pouvez accéder aux méthodes et aux propriétés de l'objet en utilisant la flèche "->" :
+</p>
+
+<pre><code>[myString length]; // Appelle la méthode "length" de l'objet NSString
+</code></pre>
+
+<h2>L'allocation et la libération de mémoire</h2>
+<p>
+En Objective-C, vous devez explicitement allouer de la mémoire pour les objets que vous créez et libérer cette mémoire lorsque vous n'en avez plus besoin. Pour allouer de la mémoire, vous utilisez la méthode "alloc" de la classe correspondante, suivie d'une initialisation appropriée.
+</p>
+
+<p>
+Par exemple, pour allouer de la mémoire pour un objet NSString, vous pouvez utiliser la syntaxe suivante :
+</p>
+
+<pre><code>NSString *myString = [[NSString alloc] initWithString:@"Hello World"];
+</code></pre>
+
+<p>
+Lorsque vous avez terminé d'utiliser un objet et que vous ne voulez plus qu'il occupe de la mémoire, vous devez le libérer en utilisant la méthode "release" :
+</p>
+
+<pre><code>[myString release];
+</code></pre>
+
+<p>
+Il est important de noter que vous devez libérer la mémoire pour chaque objet que vous allouez. Si vous ne le faites pas, cela peut entraîner des fuites de mémoire et des problèmes de performance dans votre application.
+</p>
+
+<h2>Les cycles de rétention et l'utilisation d'ARC (Automatic Reference Counting)</h2>
+<p>
+L'un des défis de la gestion de la mémoire en Objective-C est la gestion des cycles de rétention. Un cycle de rétention se produit lorsqu'un groupe d'objets se référence mutuellement, ce qui empêche le compteur de références d'atteindre zéro et donc la libération de mémoire.
+</p>
+
+<p>
+Pour résoudre ce problème, Objective-C propose une fonctionnalité appelée ARC (Automatic Reference Counting). Avec ARC, le compilateur gère automatiquement le comptage des références pour vous, en ajoutant et en supprimant les appels à "retain" et "release" lorsque cela est nécessaire.
+</p>
+
+<p>
+Pour activer ARC dans votre projet Objective-C, vous pouvez utiliser l'option correspondante dans les paramètres de compilation. Une fois activé, vous n'avez plus besoin d'appeler explicitement les méthodes "retain" et "release" pour gérer la mémoire.
+</p>
+
+<p>
+Il est important de noter que l'utilisation d'ARC ne signifie pas que vous n'avez plus à vous soucier de la gestion de la mémoire. Vous devez toujours comprendre les concepts de base de la gestion de la mémoire et éviter les cycles de rétention, même lorsque vous utilisez ARC.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/objective-c/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/objective-c/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
