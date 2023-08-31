@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C# Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Projets pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%23/c%23.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réalisation d'un projet de gestion de contacts</h2>
+<p>Dans cette sous-section, nous allons réaliser un projet de gestion de contacts en utilisant C#. Ce projet permettra de créer, afficher, modifier et supprimer des contacts.</p>
+
+<p>Voici les fonctionnalités principales du projet :</p>
+<ul>
+  <li>Création d'un nouveau contact en saisissant les informations telles que le nom, le prénom, l'adresse, le numéro de téléphone, etc.</li>
+  <li>Affichage de la liste des contacts existants avec la possibilité de les trier par ordre alphabétique ou par date d'ajout.</li>
+  <li>Modification des informations d'un contact existant.</li>
+  <li>Suppression d'un contact de la liste.</li>
+</ul>
+
+<p>Voici un exemple de code pour la classe Contact :</p>
+<pre><code>public class Contact
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Address { get; set; }
+    public string PhoneNumber { get; set; }
+    
+    public Contact(string firstName, string lastName, string address, string phoneNumber)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        Address = address;
+        PhoneNumber = phoneNumber;
+    }
+}</code></pre>
+
+<p>Voici un exemple de code pour la classe ContactManager :</p>
+<pre><code>public class ContactManager
+{
+    private List<Contact> contacts;
+    
+    public ContactManager()
+    {
+        contacts = new List<Contact>();
+    }
+    
+    public void AddContact(Contact contact)
+    {
+        contacts.Add(contact);
+    }
+    
+    public void RemoveContact(Contact contact)
+    {
+        contacts.Remove(contact);
+    }
+    
+    public List<Contact> GetContacts()
+    {
+        return contacts;
+    }
+}</code></pre>
+
+<p>Vous pouvez utiliser ces classes comme point de départ pour implémenter le projet de gestion de contacts. N'hésitez pas à ajouter d'autres fonctionnalités ou à personnaliser le projet selon vos besoins.</p>
+
+<h2>Réalisation d'un projet de gestion de stock</h2>
+<p>Dans cette sous-section, nous allons réaliser un projet de gestion de stock en utilisant C#. Ce projet permettra de gérer les produits d'un magasin, y compris leur ajout, leur modification, leur suppression et leur affichage.</p>
+
+<p>Voici les fonctionnalités principales du projet :</p>
+<ul>
+  <li>Ajout d'un nouveau produit en saisissant les informations telles que le nom, la quantité, le prix, etc.</li>
+  <li>Affichage de la liste des produits existants avec la possibilité de les trier par nom, par quantité ou par prix.</li>
+  <li>Modification des informations d'un produit existant.</li>
+  <li>Suppression d'un produit de la liste.</li>
+</ul>
+
+<p>Voici un exemple de code pour la classe Product :</p>
+<pre><code>public class Product
+{
+    public string Name { get; set; }
+    public int Quantity { get; set; }
+    public decimal Price { get; set; }
+    
+    public Product(string name, int quantity, decimal price)
+    {
+        Name = name;
+        Quantity = quantity;
+        Price = price;
+    }
+}</code></pre>
+
+<p>Voici un exemple de code pour la classe StockManager :</p>
+<pre><code>public class StockManager
+{
+    private List<Product> products;
+    
+    public StockManager()
+    {
+        products = new List<Product>();
+    }
+    
+    public void AddProduct(Product product)
+    {
+        products.Add(product);
+    }
+    
+    public void RemoveProduct(Product product)
+    {
+        products.Remove(product);
+    }
+    
+    public List<Product> GetProducts()
+    {
+        return products;
+    }
+}</code></pre>
+
+<p>Vous pouvez utiliser ces classes comme point de départ pour implémenter le projet de gestion de stock. N'hésitez pas à ajouter d'autres fonctionnalités ou à personnaliser le projet selon vos besoins.</p>
+
+<h2>Réalisation d'un projet de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons réaliser un projet de gestion de tâches en utilisant C#. Ce projet permettra de créer, afficher, modifier et supprimer des tâches.</p>
+
+<p>Voici les fonctionnalités principales du projet :</p>
+<ul>
+  <li>Création d'une nouvelle tâche en saisissant les informations telles que le titre, la description, la date d'échéance, etc.</li>
+  <li>Affichage de la liste des tâches existantes avec la possibilité de les trier par date d'échéance ou par statut (en cours, terminée, en attente).</li>
+  <li>Modification des informations d'une tâche existante.</li>
+  <li>Suppression d'une tâche de la liste.</li>
+</ul>
+
+<p>Voici un exemple de code pour la classe Task :</p>
+<pre><code>public class Task
+{
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public DateTime DueDate { get; set; }
+    public TaskStatus Status { get; set; }
+    
+    public Task(string title, string description, DateTime dueDate)
+    {
+        Title = title;
+        Description = description;
+        DueDate = dueDate;
+        Status = TaskStatus.InProgress;
+    }
+}
+
+public enum TaskStatus
+{
+    InProgress,
+    Completed,
+    Pending
+}</code></pre>
+
+<p>Voici un exemple de code pour la classe TaskManager :</p>
+<pre><code>public class TaskManager
+{
+    private List<Task> tasks;
+    
+    public TaskManager()
+    {
+        tasks = new List<Task>();
+    }
+    
+    public void AddTask(Task task)
+    {
+        tasks.Add(task);
+    }
+    
+    public void RemoveTask(Task task)
+    {
+        tasks.Remove(task);
+    }
+    
+    public List<Task> GetTasks()
+    {
+        return tasks;
+    }
+}</code></pre>
+
+<p>Vous pouvez utiliser ces classes comme point de départ pour implémenter le projet de gestion de tâches. N'hésitez pas à ajouter d'autres fonctionnalités ou à personnaliser le projet selon vos besoins.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C# Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Programmation orientée objet en C#</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%23/c%23.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO repose sur quatre principes fondamentaux : l'encapsulation, l'héritage, le polymorphisme et l'abstraction.</p>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les propriétés (attributs) et les comportements (méthodes) des objets qui en sont créés. Pour créer un objet à partir d'une classe, on utilise le mot-clé "new". Les objets sont des instances de classe et peuvent interagir entre eux en utilisant leurs méthodes et leurs attributs.</p>
+<pre><code>public class Person {
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void SayHello() {
+        Console.WriteLine("Hello, my name is " + Name + " and I am " + Age + " years old.");
+    }
+}
+
+Person person = new Person();
+person.Name = "John";
+person.Age = 25;
+person.SayHello(); // Output: Hello, my name is John and I am 25 years old.
+</code></pre>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage est un mécanisme qui permet à une classe d'hériter des propriétés et des comportements d'une autre classe appelée classe de base ou classe parent. La classe qui hérite est appelée classe dérivée ou classe enfant. Le polymorphisme permet à un objet d'une classe dérivée d'être traité comme un objet de sa classe de base. Cela permet d'utiliser des objets de différentes classes de manière interchangeable.</p>
+<pre><code>public class Animal {
+    public virtual void MakeSound() {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+public class Dog : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+public class Cat : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("The cat meows.");
+    }
+}
+
+Animal animal1 = new Animal();
+Animal animal2 = new Dog();
+Animal animal3 = new Cat();
+
+animal1.MakeSound(); // Output: The animal makes a sound.
+animal2.MakeSound(); // Output: The dog barks.
+animal3.MakeSound(); // Output: The cat meows.
+</code></pre>
+
+<h2>Encapsulation et abstraction</h2>
+<p>L'encapsulation est un mécanisme qui permet de regrouper des données et des méthodes dans une classe, en limitant l'accès direct aux données depuis l'extérieur de la classe. Cela permet de protéger les données et de contrôler leur utilisation. L'abstraction est un mécanisme qui permet de définir des classes abstraites et des méthodes abstraites, qui ne sont pas implémentées dans la classe abstraite mais doivent être implémentées dans les classes dérivées.</p>
+<pre><code>public abstract class Shape {
+    public abstract double CalculateArea();
+}
+
+public class Rectangle : Shape {
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public override double CalculateArea() {
+        return Width * Height;
+    }
+}
+
+public class Circle : Shape {
+    public double Radius { get; set; }
+
+    public override double CalculateArea() {
+        return Math.PI * Radius * Radius;
+    }
+}
+
+Shape shape1 = new Rectangle();
+shape1.Width = 5;
+shape1.Height = 3;
+Console.WriteLine("Area of rectangle: " + shape1.CalculateArea()); // Output: Area of rectangle: 15
+
+Shape shape2 = new Circle();
+shape2.Radius = 2;
+Console.WriteLine("Area of circle: " + shape2.CalculateArea()); // Output: Area of circle: 12.566370614359172
+</code></pre>
+
+<h2>Interfaces et classes abstraites</h2>
+<p>Une interface est un contrat qui définit un ensemble de méthodes et de propriétés que les classes qui l'implémentent doivent fournir. Une classe abstraite est une classe qui ne peut pas être instanciée et qui peut contenir des méthodes abstraites et des méthodes concrètes. Les classes qui héritent d'une classe abstraite doivent implémenter les méthodes abstraites.</p>
+<pre><code>public interface IPlayable {
+    void Play();
+    void Pause();
+    void Stop();
+}
+
+public abstract class MediaPlayer {
+    public abstract void Play();
+    public abstract void Pause();
+    public abstract void Stop();
+}
+
+public class VideoPlayer : MediaPlayer {
+    public override void Play() {
+        Console.WriteLine("Playing video...");
+    }
+
+    public override void Pause() {
+        Console.WriteLine("Pausing video...");
+    }
+
+    public override void Stop() {
+        Console.WriteLine("Stopping video...");
+    }
+}
+
+public class AudioPlayer : IPlayable {
+    public void Play() {
+        Console.WriteLine("Playing audio...");
+    }
+
+    public void Pause() {
+        Console.WriteLine("Pausing audio...");
+    }
+
+    public void Stop() {
+        Console.WriteLine("Stopping audio...");
+    }
+}
+
+MediaPlayer mediaPlayer = new VideoPlayer();
+mediaPlayer.Play(); // Output: Playing video...
+
+IPlayable playable = new AudioPlayer();
+playable.Play(); // Output: Playing audio...
+</code></pre>
+
+<h2>Gestion de la mémoire (garbage collection)</h2>
+<p>La gestion de la mémoire est un processus automatique qui consiste à allouer et à libérer de la mémoire pour les objets. En C#, la mémoire est gérée par le garbage collector, qui recherche les objets qui ne sont plus référencés et les libère automatiquement. Cela permet d'éviter les fuites de mémoire et de simplifier la gestion de la mémoire pour les développeurs.</p>
+<p>Il n'est généralement pas nécessaire de se préoccuper de la gestion de la mémoire en C#, car le garbage collector s'en occupe automatiquement. Cependant, il est important de comprendre comment fonctionne le garbage collector et d'éviter les pratiques qui pourraient entraîner des problèmes de performance ou de mémoire.</p>
+
+<h1>Section 4: Programmation orientée objet en C#</h1>
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO repose sur quatre principes fondamentaux : l'encapsulation, l'héritage, le polymorphisme et l'abstraction.</p>
+
+<h2>Classes et objets</h2>
+<p>Une classe est un modèle ou un plan pour créer des objets. Elle définit les propriétés (attributs) et les comportements (méthodes) des objets qui en sont créés. Pour créer un objet à partir d'une classe, on utilise le mot-clé "new". Les objets sont des instances de classe et peuvent interagir entre eux en utilisant leurs méthodes et leurs attributs.</p>
+<pre><code>public class Person {
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void SayHello() {
+        Console.WriteLine("Hello, my name is " + Name + " and I am " + Age + " years old.");
+    }
+}
+
+Person person = new Person();
+person.Name = "John";
+person.Age = 25;
+person.SayHello(); // Output: Hello, my name is John and I am 25 years old.
+</code></pre>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage est un mécanisme qui permet à une classe d'hériter des propriétés et des comportements d'une autre classe appelée classe de base ou classe parent. La classe qui hérite est appelée classe dérivée ou classe enfant. Le polymorphisme permet à un objet d'une classe dérivée d'être traité comme un objet de sa classe de base. Cela permet d'utiliser des objets de différentes classes de manière interchangeable.</p>
+<pre><code>public class Animal {
+    public virtual void MakeSound() {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+public class Dog : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+public class Cat : Animal {
+    public override void MakeSound() {
+        Console.WriteLine("The cat meows.");
+    }
+}
+
+Animal animal1 = new Animal();
+Animal animal2 = new Dog();
+Animal animal3 = new Cat();
+
+animal1.MakeSound(); // Output: The animal makes a sound.
+animal2.MakeSound(); // Output: The dog barks.
+animal3.MakeSound(); // Output: The cat meows.
+</code></pre>
+
+<h2>Encapsulation et abstraction</h2>
+<p>L'encapsulation est un mécanisme qui permet de regrouper des données et des méthodes dans une classe, en limitant l'accès direct aux données depuis l'extérieur de la classe. Cela permet de protéger les données et de contrôler leur utilisation. L'abstraction est un mécanisme qui permet de définir des classes abstraites et des méthodes abstraites, qui ne sont pas implémentées dans la classe abstraite mais doivent être implémentées dans les classes dérivées.</p>
+<pre><code>public abstract class Shape {
+    public abstract double CalculateArea();
+}
+
+public class Rectangle : Shape {
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public override double CalculateArea() {
+        return Width * Height;
+    }
+}
+
+public class Circle : Shape {
+    public double Radius { get; set; }
+
+    public override double CalculateArea() {
+        return Math.PI * Radius * Radius;
+    }
+}
+
+Shape shape1 = new Rectangle();
+shape1.Width = 5;
+shape1.Height = 3;
+Console.WriteLine("Area of rectangle: " + shape1.CalculateArea()); // Output: Area of rectangle: 15
+
+Shape shape2 = new Circle();
+shape2.Radius = 2;
+Console.WriteLine("Area of circle: " + shape2.CalculateArea()); // Output: Area of circle: 12.566370614359172
+</code></pre>
+
+<h2>Interfaces et classes abstraites</h2>
+<p>Une interface est un contrat qui définit un ensemble de méthodes et de propriétés que les classes qui l'implémentent doivent fournir. Une classe abstraite est une classe qui ne peut pas être instanciée et qui peut contenir des méthodes abstraites et des méthodes concrètes. Les classes qui héritent d'une classe abstraite doivent implémenter les méthodes abstraites.</p>
+<pre><code>public interface IPlayable {
+    void Play();
+    void Pause();
+    void Stop();
+}
+
+public abstract class MediaPlayer {
+    public abstract void Play();
+    public abstract void Pause();
+    public abstract void Stop();
+}
+
+public class VideoPlayer : MediaPlayer {
+    public override void Play() {
+        Console.WriteLine("Playing video...");
+    }
+
+    public override void Pause() {
+        Console.WriteLine("Pausing video...");
+    }
+
+    public override void Stop() {
+        Console.WriteLine("Stopping video...");
+    }
+}
+
+public class AudioPlayer : IPlayable {
+    public void Play() {
+        Console.WriteLine("Playing audio...");
+    }
+
+    public void Pause() {
+        Console.WriteLine("Pausing audio...");
+    }
+
+    public void Stop() {
+        Console.WriteLine("Stopping audio...");
+    }
+}
+
+MediaPlayer mediaPlayer = new VideoPlayer();
+mediaPlayer.Play(); // Output: Playing video...
+
+IPlayable playable = new AudioPlayer();
+playable.Play(); // Output: Playing audio...
+</code></pre>
+
+<h2>Gestion de la mémoire (garbage collection)</h2>
+<p>La gestion de la mémoire est un processus automatique qui consiste à allouer et à libérer de la mémoire pour les objets. En C#, la mémoire est gérée par le garbage collector, qui recherche les objets qui ne sont plus référencés et les libère automatiquement. Cela permet d'éviter les fuites de mémoire et de simplifier la gestion de la mémoire pour les développeurs.</p>
+<p>Il n'est généralement pas nécessaire de se préoccuper de la gestion de la mémoire en C#, car le garbage collector s'en occupe automatiquement. Cependant, il est important de comprendre comment fonctionne le garbage collector et d'éviter les pratiques qui pourraient entraîner des problèmes de performance ou de mémoire.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

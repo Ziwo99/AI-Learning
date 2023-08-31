@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C# Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Bonnes pratiques de développement en C#</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%23/c%23.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de la documentation</h2>
+<p>La documentation est un élément essentiel du développement en C#. Elle fournit des informations détaillées sur les fonctionnalités, les classes, les méthodes et les propriétés de C#. Il est important de consulter la documentation officielle de Microsoft pour obtenir des informations précises et à jour.</p>
+<p>La documentation peut être consultée en ligne sur le site web de Microsoft ou être téléchargée sous forme de fichiers CHM (Compiled HTML Help) pour une consultation hors ligne.</p>
+<p>Il est recommandé de consulter la documentation lors de la recherche de fonctionnalités spécifiques, de comprendre les paramètres d'une méthode ou d'explorer les exemples de code fournis.</p>
+<p>Voici un exemple de consultation de la documentation pour la méthode <code>Console.WriteLine()</code>:</p>
+<pre><code>// Affiche "Hello World" dans la console
+Console.WriteLine("Hello World");
+</code></pre>
+
+<h2>Utilisation de bibliothèques externes</h2>
+<p>Les bibliothèques externes sont des ensembles de code précompilé qui peuvent être utilisés pour étendre les fonctionnalités de base de C#. Elles peuvent être téléchargées à partir de sources fiables et ajoutées à un projet C#.</p>
+<p>Il est important de choisir des bibliothèques externes réputées et maintenues activement par la communauté. Les bibliothèques populaires sont généralement bien documentées et offrent un support communautaire.</p>
+<p>Voici un exemple d'utilisation de la bibliothèque externe Newtonsoft.Json pour la sérialisation d'objets en JSON :</p>
+<pre><code>using Newtonsoft.Json;
+
+// Classe à sérialiser en JSON
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+// Objet à sérialiser
+var person = new Person { Name = "John Doe", Age = 30 };
+
+// Sérialisation en JSON
+string json = JsonConvert.SerializeObject(person);
+Console.WriteLine(json);
+</code></pre>
+
+<h2>Utilisation de tests unitaires</h2>
+<p>Les tests unitaires sont des morceaux de code qui vérifient le bon fonctionnement d'une partie spécifique d'un programme. Ils permettent de s'assurer que les différentes parties d'un projet C# fonctionnent correctement et de détecter les erreurs rapidement.</p>
+<p>Il existe plusieurs frameworks de tests unitaires populaires en C#, tels que NUnit, xUnit et MSTest. Ces frameworks fournissent des fonctionnalités pour écrire et exécuter des tests unitaires de manière efficace.</p>
+<p>Voici un exemple d'utilisation du framework NUnit pour écrire un test unitaire simple :</p>
+<pre><code>using NUnit.Framework;
+
+// Classe à tester
+public class Calculator
+{
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+
+// Test unitaire
+[TestFixture]
+public class CalculatorTests
+{
+    [Test]
+    public void Add_WhenCalled_ReturnsSum()
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        int result = calculator.Add(2, 3);
+
+        // Assert
+        Assert.AreEqual(5, result);
+    }
+}
+</code></pre>
+
+<h2>Utilisation de contrôle de version (Git)</h2>
+<p>Le contrôle de version est un système qui permet de gérer les modifications apportées à un projet au fil du temps. Git est l'un des systèmes de contrôle de version les plus populaires utilisés dans le développement de logiciels.</p>
+<p>Git permet de suivre les modifications, de créer des branches pour travailler sur des fonctionnalités séparées, de fusionner les modifications de différentes branches et de revenir à des versions antérieures du code si nécessaire.</p>
+<p>Il est recommandé d'utiliser des outils de gestion de version graphique tels que GitKraken ou SourceTree pour faciliter l'utilisation de Git.</p>
+<p>Voici un exemple de commandes Git pour cloner un dépôt, créer une branche, effectuer des modifications, valider les modifications et pousser les modifications vers le dépôt distant :</p>
+<pre><code>// Cloner un dépôt
+git clone https://github.com/utilisateur/mon-projet.git
+
+// Créer une branche
+git checkout -b ma-branche
+
+// Effectuer des modifications
+
+// Valider les modifications
+git add .
+git commit -m "Ajouter une nouvelle fonctionnalité"
+
+// Pousser les modifications vers le dépôt distant
+git push origin ma-branche
+</code></pre>
+
+<h2>Collaboration en équipe</h2>
+<p>La collaboration en équipe est essentielle dans le développement en C#. Travailler avec d'autres développeurs permet de partager des connaissances, de résoudre des problèmes plus rapidement et de créer des logiciels de meilleure qualité.</p>
+<p>Il est important de suivre les bonnes pratiques de collaboration en équipe, telles que l'utilisation d'un système de contrôle de version, la communication régulière, la documentation du code, la revue de code et la planification des tâches.</p>
+<p>Il est également recommandé d'utiliser des outils de collaboration en équipe tels que Microsoft Teams, Slack ou Trello pour faciliter la communication et la coordination entre les membres de l'équipe.</p>
+
+<h2>Conclusion</h2>
+<p>La section "Bonnes pratiques de développement en C#" de cette formation e-learning C# a couvert plusieurs aspects importants du développement en C#. En suivant ces bonnes pratiques, vous serez en mesure de développer des applications de haute qualité, maintenables et évolutives en utilisant C#.</p>
+<p>Il est recommandé de continuer à explorer et à approfondir ces sujets, ainsi que d'explorer d'autres bonnes pratiques spécifiques à vos besoins et à vos projets.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

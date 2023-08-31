@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C# Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Manipulation des données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%23/c%23.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux bases de données</h2>
+<p>
+Une base de données est un système de stockage organisé et structuré qui permet de stocker, gérer et récupérer des données de manière efficace. Les bases de données sont utilisées dans de nombreux domaines, tels que les applications web, les systèmes de gestion de contenu, les systèmes de gestion de stock, etc. En utilisant une base de données, vous pouvez stocker et manipuler de grandes quantités de données de manière efficace et sécurisée.
+</p>
+
+<h2>Connexion à une base de données</h2>
+<p>
+Pour interagir avec une base de données dans C#, vous devez établir une connexion avec celle-ci. Cela implique de fournir les informations de connexion, telles que le nom du serveur, le nom de la base de données, le nom d'utilisateur et le mot de passe. Vous pouvez utiliser la classe SqlConnection de l'espace de noms System.Data.SqlClient pour établir une connexion à une base de données SQL Server.
+</p>
+<pre><code>string connectionString = "Data Source=nom_du_serveur;Initial Catalog=nom_de_la_base_de_données;User ID=nom_d'utilisateur;Password=mot_de_passe";
+SqlConnection connection = new SqlConnection(connectionString);
+connection.Open();
+</code></pre>
+
+<h2>Requêtes SQL en C#</h2>
+<p>
+Une fois que vous avez établi une connexion à une base de données, vous pouvez exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. Vous pouvez utiliser la classe SqlCommand de l'espace de noms System.Data.SqlClient pour exécuter des requêtes SQL.
+</p>
+<pre><code>string query = "SELECT * FROM table";
+SqlCommand command = new SqlCommand(query, connection);
+SqlDataReader reader = command.ExecuteReader();
+
+while (reader.Read())
+{
+    // Traitez les données récupérées ici
+}
+
+reader.Close();
+</code></pre>
+
+<h2>Utilisation d'ORM (Object-Relational Mapping)</h2>
+<p>
+L'ORM (Object-Relational Mapping) est une technique qui permet de mapper les objets d'une application aux tables d'une base de données relationnelle. Cela facilite la manipulation des données en utilisant des objets plutôt que des requêtes SQL. Entity Framework est un ORM populaire pour le développement d'applications C#.
+</p>
+<pre><code>// Exemple d'utilisation d'Entity Framework
+using (var context = new MyDbContext())
+{
+    var customers = context.Customers.ToList();
+
+    foreach (var customer in customers)
+    {
+        // Traitez les objets Customer ici
+    }
+}
+</code></pre>
+
+<h2>Manipulation de fichiers et dossiers</h2>
+<p>
+En plus de manipuler des données dans une base de données, vous pouvez également manipuler des fichiers et des dossiers dans vos applications C#. Vous pouvez utiliser les classes de l'espace de noms System.IO pour effectuer des opérations telles que la création, la suppression, la lecture et l'écriture de fichiers et de dossiers.
+</p>
+<pre><code>// Exemple de lecture d'un fichier
+string filePath = "chemin_du_fichier";
+string content = File.ReadAllText(filePath);
+Console.WriteLine(content);
+</code></pre>
+
+<h2>Sérialisation et désérialisation de données</h2>
+<p>
+La sérialisation est le processus de conversion d'un objet en une représentation qui peut être stockée ou transmise, telle qu'un fichier XML ou JSON. La désérialisation est le processus inverse, qui consiste à convertir une représentation stockée ou transmise en un objet. C# offre des fonctionnalités intégrées pour la sérialisation et la désérialisation d'objets en utilisant les classes de l'espace de noms System.Xml.Serialization et System.Runtime.Serialization.Json.
+</p>
+<pre><code>// Exemple de sérialisation d'un objet en XML
+Person person = new Person { Name = "John", Age = 30 };
+XmlSerializer serializer = new XmlSerializer(typeof(Person));
+using (TextWriter writer = new StreamWriter("person.xml"))
+{
+    serializer.Serialize(writer, person);
+}
+
+// Exemple de désérialisation d'un fichier XML en objet
+using (TextReader reader = new StreamReader("person.xml"))
+{
+    Person deserializedPerson = (Person)serializer.Deserialize(reader);
+    Console.WriteLine(deserializedPerson.Name);
+    Console.WriteLine(deserializedPerson.Age);
+}
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%23/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%23/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
