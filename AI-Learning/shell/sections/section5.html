@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Shell Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les outils et les techniques avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/shell/shell.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Les expressions régulières</h2>
+  <p>Les expressions régulières sont des motifs de recherche utilisés pour trouver des correspondances dans du texte. Elles sont très puissantes et flexibles, permettant de rechercher des motifs spécifiques, de valider des formats de données et d'effectuer des remplacements.</p>
+  <p>Voici un exemple d'utilisation d'une expression régulière pour trouver tous les mots commençant par "cat" dans un texte :</p>
+  <pre><code>import re
+
+text = "I have a cat, a dog, and a parrot."
+pattern = r"cat\w+"
+
+matches = re.findall(pattern, text)
+for match in matches:
+    print(match)</code></pre>
+  <p>Ce code affichera tous les mots commençant par "cat" dans le texte, dans cet exemple "cat" sera affiché.</p>
+
+  <h2>Les commandes de gestion des fichiers et des répertoires</h2>
+  <p>Le Shell offre de nombreuses commandes pour gérer les fichiers et les répertoires. Voici quelques-unes des commandes les plus couramment utilisées :</p>
+  <ul>
+    <li><code>ls</code> : liste les fichiers et les répertoires dans le répertoire courant</li>
+    <li><code>cd</code> : change le répertoire courant</li>
+    <li><code>mkdir</code> : crée un nouveau répertoire</li>
+    <li><code>rm</code> : supprime un fichier ou un répertoire</li>
+    <li><code>cp</code> : copie un fichier ou un répertoire</li>
+    <li><code>mv</code> : déplace ou renomme un fichier ou un répertoire</li>
+  </ul>
+  <p>Voici un exemple d'utilisation de la commande <code>ls</code> :</p>
+  <pre><code>ls -l</code></pre>
+  <p>Cette commande affiche une liste détaillée des fichiers et des répertoires dans le répertoire courant, y compris les permissions, les propriétaires et les dates de modification.</p>
+
+  <h2>Les commandes de gestion des réseaux</h2>
+  <p>Le Shell offre également des commandes pour gérer les réseaux. Ces commandes permettent de vérifier la connectivité, de résoudre des noms de domaine, de transférer des fichiers et bien plus encore.</p>
+  <p>Voici quelques-unes des commandes de gestion des réseaux les plus couramment utilisées :</p>
+  <ul>
+    <li><code>ping</code> : vérifie la connectivité avec une adresse IP ou un nom de domaine</li>
+    <li><code>nslookup</code> : résout un nom de domaine en une adresse IP</li>
+    <li><code>scp</code> : transfère des fichiers entre des machines distantes de manière sécurisée</li>
+    <li><code>ssh</code> : se connecte à une machine distante via SSH</li>
+  </ul>
+  <p>Voici un exemple d'utilisation de la commande <code>ping</code> :</p>
+  <pre><code>ping google.com</code></pre>
+  <p>Cette commande vérifie la connectivité avec le site web de Google en envoyant des paquets ICMP et en affichant les résultats.</p>
+
+  <h2>Les commandes de gestion des archives</h2>
+  <p>Les commandes de gestion des archives permettent de créer, extraire et manipuler des fichiers compressés. Elles sont très utiles pour économiser de l'espace de stockage et pour transférer des fichiers plus rapidement.</p>
+  <p>Voici quelques-unes des commandes de gestion des archives les plus couramment utilisées :</p>
+  <ul>
+    <li><code>tar</code> : crée une archive ou extrait des fichiers d'une archive</li>
+    <li><code>gzip</code> : compresse un fichier</li>
+    <li><code>gunzip</code> : décompresse un fichier compressé avec gzip</li>
+    <li><code>zip</code> : crée une archive ZIP</li>
+    <li><code>unzip</code> : extrait des fichiers d'une archive ZIP</li>
+  </ul>
+  <p>Voici un exemple d'utilisation de la commande <code>tar</code> :</p>
+  <pre><code>tar -cvf archive.tar file1 file2</code></pre>
+  <p>Cette commande crée une archive tar contenant les fichiers "file1" et "file2".</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

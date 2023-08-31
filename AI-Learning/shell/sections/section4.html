@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Shell Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les scripts Shell</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/shell/shell.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux scripts Shell</h2>
+<p>Un script Shell est un programme informatique qui utilise le langage de script Shell pour automatiser des tâches sur un système d'exploitation Unix ou Linux. Les scripts Shell sont largement utilisés dans l'administration système, l'automatisation de tâches et le développement d'applications.</p>
+<p>Le langage de script Shell est un langage de programmation interprété qui permet d'exécuter des commandes système, de manipuler des fichiers et des répertoires, de gérer des processus et bien plus encore. Il est basé sur les commandes du Shell et utilise une syntaxe simple et intuitive.</p>
+
+<h2>Les variables et les opérateurs</h2>
+<p>Les variables sont utilisées pour stocker des valeurs dans un script Shell. Elles peuvent être de différents types, tels que des chaînes de caractères, des nombres entiers ou des tableaux. Les variables sont déclarées en utilisant le signe égal (=) et peuvent être utilisées pour stocker des résultats intermédiaires, des paramètres d'entrée ou des valeurs calculées.</p>
+<p>Les opérateurs sont utilisés pour effectuer des opérations sur les variables. Les opérateurs arithmétiques permettent d'effectuer des calculs mathématiques, tels que l'addition, la soustraction, la multiplication et la division. Les opérateurs de comparaison permettent de comparer des valeurs et de prendre des décisions en fonction du résultat de la comparaison.</p>
+<pre><code>#!/bin/bash
+
+# Déclaration d'une variable
+name="John Doe"
+
+# Utilisation de la variable
+echo "Bonjour, $name!"
+
+# Opérations arithmétiques
+a=10
+b=5
+sum=$((a + b))
+echo "La somme de $a et $b est $sum"
+
+# Opérateurs de comparaison
+if [ $a -gt $b ]; then
+    echo "$a est supérieur à $b"
+else
+    echo "$a est inférieur ou égal à $b"
+fi
+</code></pre>
+
+<h2>Les structures de contrôle</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un script Shell en fonction de certaines conditions. Les structures de contrôle les plus couramment utilisées sont les boucles et les instructions conditionnelles.</p>
+<p>Les boucles permettent de répéter une série d'instructions tant qu'une condition est vraie ou jusqu'à ce qu'une condition soit vraie. Les boucles les plus couramment utilisées sont la boucle "while" et la boucle "for".</p>
+<p>Les instructions conditionnelles permettent d'exécuter certaines instructions uniquement si une condition est vraie. L'instruction "if" est utilisée pour cela et peut être combinée avec les instructions "else" et "elif" pour gérer plusieurs conditions.</p>
+<pre><code>#!/bin/bash
+
+# Boucle while
+i=0
+while [ $i -lt 5 ]; do
+    echo "Iteration $i"
+    i=$((i + 1))
+done
+
+# Boucle for
+for i in {1..5}; do
+    echo "Iteration $i"
+done
+
+# Instruction if
+a=10
+b=5
+if [ $a -gt $b ]; then
+    echo "$a est supérieur à $b"
+else
+    echo "$a est inférieur ou égal à $b"
+fi
+</code></pre>
+
+<h2>Les fonctions</h2>
+<p>Les fonctions permettent de regrouper des instructions dans un bloc réutilisable. Elles sont utilisées pour organiser le code, améliorer la lisibilité et faciliter la maintenance. Les fonctions peuvent prendre des paramètres en entrée et retourner des valeurs en sortie.</p>
+<pre><code>#!/bin/bash
+
+# Déclaration d'une fonction
+function say_hello {
+    echo "Bonjour, $1!"
+}
+
+# Utilisation de la fonction
+say_hello "John"
+say_hello "Jane"
+
+# Fonction avec retour de valeur
+function add_numbers {
+    sum=$(( $1 + $2 ))
+    return $sum
+}
+
+# Utilisation de la fonction avec retour de valeur
+add_numbers 10 5
+result=$?
+echo "La somme est $result"
+</code></pre>
+
+<h2>Les bonnes pratiques de programmation en Shell</h2>
+<p>Voici quelques bonnes pratiques à suivre lors de la programmation en Shell :</p>
+<ul>
+  <li>Utilisez des noms de variables significatifs pour améliorer la lisibilité du code.</li>
+  <li>Commentez votre code pour expliquer son fonctionnement et faciliter la compréhension.</li>
+  <li>Utilisez des indentations pour organiser le code et le rendre plus lisible.</li>
+  <li>Effectuez des tests et des validations pour vous assurer que votre code fonctionne correctement.</li>
+  <li>Utilisez des fonctions pour regrouper des instructions réutilisables.</li>
+</ul>
+<p>En suivant ces bonnes pratiques, vous pouvez développer des scripts Shell plus fiables, maintenables et faciles à comprendre.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Shell Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les commandes avancées du Shell</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/shell/shell.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les commandes de recherche et de filtrage</h2>
+<p>Les commandes de recherche et de filtrage permettent de rechercher des informations spécifiques dans les fichiers ou les résultats de commandes, et de filtrer ces informations selon certains critères.</p>
+
+<p>La commande <code>grep</code> est l'une des commandes les plus utilisées pour la recherche de motifs dans les fichiers. Elle permet de rechercher une expression régulière dans un ou plusieurs fichiers. Par exemple, pour rechercher le mot "hello" dans un fichier nommé "file.txt", on peut utiliser la commande suivante :</p>
+
+<pre><code>grep "hello" file.txt</code></pre>
+
+<p>La commande <code>sed</code> est une commande de traitement de texte qui permet de modifier le contenu d'un fichier en utilisant des expressions régulières. Par exemple, pour remplacer toutes les occurrences du mot "apple" par le mot "orange" dans un fichier nommé "file.txt", on peut utiliser la commande suivante :</p>
+
+<pre><code>sed 's/apple/orange/g' file.txt</code></pre>
+
+<p>La commande <code>awk</code> est une commande puissante pour le traitement de fichiers texte. Elle permet de rechercher et de manipuler des données en utilisant des motifs et des actions spécifiques. Par exemple, pour afficher la deuxième colonne d'un fichier CSV nommé "data.csv", on peut utiliser la commande suivante :</p>
+
+<pre><code>awk -F ',' '{print $2}' data.csv</code></pre>
+
+<h2>Les commandes de manipulation de texte</h2>
+<p>Les commandes de manipulation de texte permettent de manipuler le contenu des fichiers texte de différentes manières, comme la suppression de lignes vides, la suppression de caractères spécifiques, la concaténation de fichiers, etc.</p>
+
+<p>La commande <code>cut</code> permet de découper les lignes d'un fichier en utilisant un délimiteur spécifique. Par exemple, pour extraire la deuxième colonne d'un fichier CSV nommé "data.csv", en utilisant la virgule comme délimiteur, on peut utiliser la commande suivante :</p>
+
+<pre><code>cut -d ',' -f 2 data.csv</code></pre>
+
+<p>La commande <code>sort</code> permet de trier les lignes d'un fichier selon un ordre spécifique. Par exemple, pour trier les lignes d'un fichier nommé "file.txt" par ordre alphabétique, on peut utiliser la commande suivante :</p>
+
+<pre><code>sort file.txt</code></pre>
+
+<p>La commande <code>uniq</code> permet de supprimer les lignes en double d'un fichier. Par exemple, pour supprimer les lignes en double d'un fichier nommé "file.txt", on peut utiliser la commande suivante :</p>
+
+<pre><code>uniq file.txt</code></pre>
+
+<h2>Les commandes de gestion des processus</h2>
+<p>Les commandes de gestion des processus permettent de gérer les processus en cours d'exécution sur le système, comme les démarrer, les arrêter, les mettre en pause, etc.</p>
+
+<p>La commande <code>ps</code> permet d'afficher les processus en cours d'exécution sur le système. Par exemple, pour afficher tous les processus en cours d'exécution, on peut utiliser la commande suivante :</p>
+
+<pre><code>ps aux</code></pre>
+
+<p>La commande <code>kill</code> permet d'arrêter un processus en utilisant son identifiant de processus (PID). Par exemple, pour arrêter un processus avec le PID 1234, on peut utiliser la commande suivante :</p>
+
+<pre><code>kill 1234</code></pre>
+
+<p>La commande <code>top</code> permet d'afficher les processus en cours d'exécution en temps réel, triés par utilisation des ressources. Elle est souvent utilisée pour surveiller les performances du système. Pour lancer la commande <code>top</code>, il suffit de l'exécuter dans le terminal :</p>
+
+<pre><code>top</code></pre>
+
+<h2>Les commandes de gestion des utilisateurs et des permissions</h2>
+<p>Les commandes de gestion des utilisateurs et des permissions permettent de gérer les utilisateurs et les groupes sur le système, ainsi que les permissions d'accès aux fichiers et aux répertoires.</p>
+
+<p>La commande <code>useradd</code> permet de créer un nouvel utilisateur sur le système. Par exemple, pour créer un utilisateur nommé "john", on peut utiliser la commande suivante :</p>
+
+<pre><code>useradd john</code></pre>
+
+<p>La commande <code>passwd</code> permet de changer le mot de passe d'un utilisateur. Par exemple, pour changer le mot de passe de l'utilisateur "john", on peut utiliser la commande suivante :</p>
+
+<pre><code>passwd john</code></pre>
+
+<p>La commande <code>chmod</code> permet de modifier les permissions d'accès aux fichiers et aux répertoires. Par exemple, pour donner les permissions de lecture, d'écriture et d'exécution à l'utilisateur, et les permissions de lecture aux autres utilisateurs, sur un fichier nommé "file.txt", on peut utiliser la commande suivante :</p>
+
+<pre><code>chmod u=rwx,g=r,o=r file.txt</code></pre>
+
+<p>La commande <code>chown</code> permet de changer le propriétaire d'un fichier ou d'un répertoire. Par exemple, pour changer le propriétaire d'un fichier nommé "file.txt" en "john", on peut utiliser la commande suivante :</p>
+
+<pre><code>chown john file.txt</code></pre>
+
+<p>La commande <code>chgrp</code> permet de changer le groupe d'un fichier ou d'un répertoire. Par exemple, pour changer le groupe d'un fichier nommé "file.txt" en "users", on peut utiliser la commande suivante :</p>
+
+<pre><code>chgrp users file.txt</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Shell Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les cas d'utilisation avancés</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/shell/shell.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'automatisation de tâches</h2>
+<p>L'automatisation de tâches est l'un des cas d'utilisation les plus courants du Shell. Il permet d'économiser du temps et des efforts en exécutant des tâches répétitives de manière automatisée.</p>
+
+<p>Par exemple, supposons que vous ayez un ensemble de fichiers dans un répertoire et que vous souhaitiez les renommer en ajoutant une extension spécifique à chacun d'eux. Vous pouvez utiliser un script Shell pour automatiser cette tâche :</p>
+
+<pre><code>#!/bin/bash
+
+for file in *; do
+    mv "$file" "$file.txt"
+done
+</code></pre>
+
+<p>Dans cet exemple, le script parcourt tous les fichiers du répertoire et ajoute l'extension ".txt" à chacun d'eux.</p>
+
+<h2>La gestion des sauvegardes</h2>
+<p>La gestion des sauvegardes est un autre cas d'utilisation important du Shell. Il permet de sauvegarder des données importantes de manière régulière et fiable.</p>
+
+<p>Par exemple, vous pouvez créer un script Shell qui effectue une sauvegarde quotidienne de votre répertoire de travail :</p>
+
+<pre><code>#!/bin/bash
+
+backup_dir="/chemin/vers/le/repertoire/de/sauvegarde"
+source_dir="/chemin/vers/votre/repertoire/de/travail"
+
+tar -czvf "$backup_dir/backup_$(date +%Y%m%d).tar.gz" "$source_dir"
+</code></pre>
+
+<p>Dans cet exemple, le script crée une archive compressée (.tar.gz) de votre répertoire de travail et la stocke dans un répertoire de sauvegarde spécifié. L'archive est nommée avec la date actuelle pour faciliter l'identification des sauvegardes.</p>
+
+<h2>L'administration système avec le Shell</h2>
+<p>Le Shell est également utilisé pour effectuer des tâches d'administration système. Il permet de gérer et de configurer divers aspects du système d'exploitation.</p>
+
+<p>Par exemple, vous pouvez utiliser des commandes Shell pour créer et gérer des utilisateurs, modifier les autorisations des fichiers, surveiller les ressources système, etc.</p>
+
+<p>Voici un exemple de script Shell qui crée un nouvel utilisateur et lui attribue des autorisations spécifiques :</p>
+
+<pre><code>#!/bin/bash
+
+username="nouvel_utilisateur"
+password="mot_de_passe"
+
+useradd "$username"
+echo "$username:$password" | chpasswd
+chmod 755 /home/"$username"
+</code></pre>
+
+<p>Dans cet exemple, le script crée un nouvel utilisateur avec le nom spécifié et lui attribue un mot de passe. Il définit également les autorisations appropriées pour le répertoire personnel de l'utilisateur.</p>
+
+<h2>Les scripts de déploiement</h2>
+<p>Les scripts de déploiement sont utilisés pour automatiser le processus de déploiement d'applications ou de configurations sur des serveurs ou des machines distantes.</p>
+
+<p>Par exemple, vous pouvez créer un script Shell qui déploie une application web sur un serveur distant :</p>
+
+<pre><code>#!/bin/bash
+
+app_dir="/chemin/vers/le/repertoire/de/l/application"
+server="adresse_du_serveur"
+
+rsync -avz "$app_dir" "$server:/chemin/vers/le/repertoire/de/destination"
+ssh "$server" "service apache2 restart"
+</code></pre>
+
+<p>Dans cet exemple, le script utilise la commande rsync pour copier l'application web du répertoire local vers le serveur distant. Ensuite, il redémarre le service Apache sur le serveur pour prendre en compte les modifications.</p>
+
+<p>Les scripts de déploiement peuvent être personnalisés en fonction des besoins spécifiques de votre environnement et de votre application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/shell/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/shell/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
