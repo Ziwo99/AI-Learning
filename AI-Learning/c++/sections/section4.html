@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les bibliothèques et les frameworks</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La bibliothèque standard du C++</h2>
+<p>La bibliothèque standard du C++ est une collection de classes et de fonctions prédéfinies qui fournissent des fonctionnalités de base pour le développement en C++. Elle est incluse dans tous les compilateurs C++ et offre un large éventail de fonctionnalités, telles que la gestion de la mémoire, les opérations sur les chaînes de caractères, les entrées/sorties, les conteneurs de données et les algorithmes.</p>
+
+<p>Voici un exemple d'utilisation de la bibliothèque standard du C++ pour afficher un message à l'écran :</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la classe <code>std::cout</code> pour afficher le message "Hello, World!" à l'écran, suivi de <code>std::endl</code> pour passer à la ligne. La bibliothèque standard du C++ offre de nombreuses autres classes et fonctions utiles pour le développement en C++, et nous les explorerons plus en détail tout au long de cette formation.</p>
+
+<h2>Les bibliothèques tierces populaires (Boost, Qt, etc.)</h2>
+<p>En plus de la bibliothèque standard du C++, il existe de nombreuses bibliothèques tierces populaires qui étendent les fonctionnalités du langage et facilitent le développement de logiciels en C++. Parmi les bibliothèques tierces les plus utilisées, on trouve Boost, Qt, OpenCV, PCL, et bien d'autres.</p>
+
+<p>Par exemple, Boost est une bibliothèque C++ très populaire qui fournit des fonctionnalités avancées telles que les expressions régulières, la programmation concurrente, la manipulation de fichiers, les structures de données, etc. Voici un exemple d'utilisation de Boost pour effectuer une recherche dans une chaîne de caractères :</p>
+
+<pre><code>#include &lt;boost/algorithm/string.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string str = "Hello, World!";
+    boost::to_upper(str);
+    std::cout &lt;&lt; str &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>boost::to_upper</code> pour convertir la chaîne de caractères en majuscules. Boost offre de nombreuses autres fonctionnalités utiles pour le développement en C++, et nous les explorerons plus en détail tout au long de cette formation.</p>
+
+<h2>Les frameworks de développement (MFC, wxWidgets, etc.)</h2>
+<p>En plus des bibliothèques tierces, il existe également des frameworks de développement qui facilitent la création d'applications en C++. Ces frameworks fournissent une structure et des fonctionnalités prédéfinies pour le développement d'applications graphiques, d'applications web, etc.</p>
+
+<p>Par exemple, MFC (Microsoft Foundation Classes) est un framework de développement pour les applications Windows. Il fournit des classes et des fonctionnalités pour la création d'interfaces utilisateur, la gestion des événements, la gestion des fenêtres, etc. Voici un exemple d'utilisation de MFC pour créer une fenêtre :</p>
+
+<pre><code>#include &lt;afxwin.h&gt;
+
+class CMainWindow : public CFrameWnd {
+public:
+    CMainWindow() {
+        Create(NULL, _T("Hello, World!"));
+    }
+};
+
+class CMyApp : public CWinApp {
+public:
+    virtual BOOL InitInstance() {
+        m_pMainWnd = new CMainWindow();
+        m_pMainWnd->ShowWindow(SW_SHOW);
+        m_pMainWnd->UpdateWindow();
+        return TRUE;
+    }
+};
+
+CMyApp theApp;
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons les classes fournies par MFC pour créer une fenêtre principale avec le titre "Hello, World!". MFC offre de nombreuses autres fonctionnalités pour le développement d'applications Windows, et nous les explorerons plus en détail tout au long de cette formation.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

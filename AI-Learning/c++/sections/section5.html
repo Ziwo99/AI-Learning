@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les bonnes pratiques de programmation en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La gestion de la mémoire et la gestion des ressources</h2>
+<p>La gestion de la mémoire est un aspect crucial de la programmation en C++. Il est important de comprendre comment allouer et libérer la mémoire de manière appropriée pour éviter les fuites de mémoire et les erreurs de segmentation.</p>
+
+<p>En C++, vous pouvez allouer de la mémoire dynamiquement à l'aide de l'opérateur <code>new</code> et libérer cette mémoire avec l'opérateur <code>delete</code>. Par exemple :</p>
+
+<pre><code>int* p = new int;
+*p = 5;
+delete p;</code></pre>
+
+<p>Cependant, il est recommandé d'utiliser des classes de gestion de la mémoire telles que les pointeurs intelligents (smart pointers) pour faciliter la gestion automatique de la mémoire. Les pointeurs intelligents, tels que <code>std::unique_ptr</code> et <code>std::shared_ptr</code>, s'occupent automatiquement de la libération de la mémoire lorsque l'objet n'est plus utilisé.</p>
+
+<pre><code>std::unique_ptr&lt;int&gt; p = std::make_unique&lt;int&gt;(5);
+</code></pre>
+
+<p>De plus, il est important de libérer les ressources autres que la mémoire, telles que les fichiers ouverts, les connexions réseau, etc. Pour cela, vous pouvez utiliser des classes de gestion des ressources, telles que les classes de gestion de fichiers de la bibliothèque standard C++.</p>
+
+<h2>Les conventions de nommage et le style de code</h2>
+<p>Les conventions de nommage et le style de code sont importants pour rendre votre code lisible et compréhensible par les autres développeurs. Il est recommandé de suivre les conventions de nommage et le style de code largement acceptés par la communauté C++.</p>
+
+<p>Voici quelques conventions de nommage courantes en C++ :</p>
+
+<ul>
+  <li>Utilisez des noms significatifs pour les variables, les fonctions et les classes.</li>
+  <li>Utilisez la notation en camel case pour les noms de variables et de fonctions (par exemple, <code>myVariable</code>, <code>myFunction</code>).</li>
+  <li>Utilisez la notation en Pascal case pour les noms de classes (par exemple, <code>MyClass</code>).</li>
+  <li>Évitez les noms de variables ou de fonctions trop courts ou trop longs.</li>
+</ul>
+
+<p>En ce qui concerne le style de code, voici quelques recommandations :</p>
+
+<ul>
+  <li>Utilisez une indentation cohérente pour rendre votre code plus lisible.</li>
+  <li>Utilisez des commentaires pour expliquer le code complexe ou pour fournir des informations supplémentaires.</li>
+  <li>Utilisez des espaces pour séparer les opérateurs et les mots-clés.</li>
+  <li>Évitez les lignes de code trop longues, généralement plus de 80 caractères.</li>
+</ul>
+
+<h2>La documentation et les commentaires</h2>
+<p>La documentation et les commentaires sont essentiels pour rendre votre code compréhensible et maintenable. La documentation consiste à fournir des informations sur l'utilisation de votre code, tandis que les commentaires sont utilisés pour expliquer le code lui-même.</p>
+
+<p>Il est recommandé d'utiliser des outils de génération de documentation tels que Doxygen pour générer automatiquement la documentation à partir de votre code source. Vous pouvez ajouter des commentaires spéciaux dans votre code pour indiquer les sections de documentation.</p>
+
+<pre><code>/**
+ * Cette fonction calcule la somme de deux entiers.
+ * @param a Le premier entier.
+ * @param b Le deuxième entier.
+ * @return La somme des deux entiers.
+ */
+int sum(int a, int b) {
+    return a + b;
+}
+</code></pre>
+
+<p>En plus des commentaires de documentation, il est également recommandé d'ajouter des commentaires explicatifs pour expliquer le code complexe ou pour fournir des informations supplémentaires aux autres développeurs.</p>
+
+<h2>Les tests unitaires et la validation du code</h2>
+<p>Les tests unitaires sont essentiels pour vérifier le bon fonctionnement de votre code et pour détecter les erreurs avant qu'elles ne deviennent des problèmes plus importants. Les tests unitaires consistent à écrire des petits morceaux de code qui vérifient le comportement attendu d'une fonction ou d'une classe.</p>
+
+<p>En C++, vous pouvez utiliser des frameworks de tests unitaires tels que Google Test pour écrire et exécuter vos tests unitaires.</p>
+
+<pre><code>#include &lt;gtest/gtest.h&gt;
+
+int sum(int a, int b) {
+    return a + b;
+}
+
+TEST(SumTest, PositiveNumbers) {
+    EXPECT_EQ(sum(2, 3), 5);
+}
+
+int main(int argc, char** argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
+</code></pre>
+
+<p>En plus des tests unitaires, il est également recommandé d'utiliser des outils de validation du code tels que l'analyse statique pour détecter les erreurs potentielles, les fuites de mémoire et les problèmes de performance.</p>
+
+<p>En suivant ces bonnes pratiques de programmation en C++, vous pouvez améliorer la qualité de votre code, le rendre plus lisible et plus maintenable, et réduire les erreurs potentielles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

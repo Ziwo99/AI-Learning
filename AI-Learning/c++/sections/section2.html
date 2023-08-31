@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases du C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les types de données et les variables</h2>
+<p>En C++, les types de données sont utilisés pour définir le type de valeur qu'une variable peut contenir. Voici les types de données les plus couramment utilisés :</p>
+<ul>
+  <li><code>int</code> : pour représenter les nombres entiers</li>
+  <li><code>float</code> : pour représenter les nombres à virgule flottante</li>
+  <li><code>double</code> : pour représenter les nombres à virgule flottante avec une précision supérieure</li>
+  <li><code>char</code> : pour représenter les caractères</li>
+  <li><code>bool</code> : pour représenter les valeurs booléennes (vrai ou faux)</li>
+</ul>
+
+<p>Pour déclarer une variable, utilisez la syntaxe suivante :</p>
+<pre><code>type_de_données nom_de_variable;</code></pre>
+
+<p>Par exemple, pour déclarer une variable entière nommée <code>age</code>, vous pouvez écrire :</p>
+<pre><code>int age;</code></pre>
+
+<p>Vous pouvez également initialiser une variable lors de sa déclaration :</p>
+<pre><code>int nombre = 42;</code></pre>
+
+<h2>Les opérateurs et les expressions</h2>
+<p>Les opérateurs sont utilisés pour effectuer des opérations sur les variables et les valeurs. Voici quelques-uns des opérateurs les plus couramment utilisés :</p>
+<ul>
+  <li><code>+</code> : pour l'addition</li>
+  <li><code>-</code> : pour la soustraction</li>
+  <li><code>*</code> : pour la multiplication</li>
+  <li><code>/</code> : pour la division</li>
+  <li><code>%</code> : pour le modulo (reste de la division)</li>
+  <li><code>++</code> : pour l'incrémentation</li>
+  <li><code>--</code> : pour la décrémentation</li>
+  <li><code>=</code> : pour l'assignation</li>
+</ul>
+
+<p>Les expressions sont des combinaisons d'opérateurs et de variables qui produisent une valeur. Par exemple :</p>
+<pre><code>int a = 5;
+int b = 3;
+int c = a + b; // c contient maintenant la valeur 8</code></pre>
+
+<h2>Les structures de contrôle (boucles et conditions)</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un programme. Voici les structures de contrôle les plus couramment utilisées :</p>
+<ul>
+  <li>La boucle <code>while</code> : exécute un bloc de code tant qu'une condition est vraie</li>
+  <li>La boucle <code>for</code> : exécute un bloc de code un certain nombre de fois</li>
+  <li>La structure <code>if</code> : exécute un bloc de code si une condition est vraie</li>
+  <li>La structure <code>else</code> : exécute un bloc de code si une condition est fausse</li>
+  <li>La structure <code>switch</code> : exécute un bloc de code en fonction de la valeur d'une variable</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de la boucle <code>while</code> :</p>
+<pre><code>int i = 0;
+
+while (i &lt; 10) {
+  std::cout &lt;&lt; "Iteration " &lt;&lt; i &lt;&lt; std::endl;
+  i++;
+}</code></pre>
+
+<h2>Les fonctions et les paramètres</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Les paramètres sont des valeurs que vous pouvez passer à une fonction pour qu'elle les utilise. Voici comment déclarer une fonction :</p>
+<pre><code>type_de_retour nom_de_fonction(type_paramètre1 nom_paramètre1, type_paramètre2 nom_paramètre2, ...) {
+  // bloc de code
+}</code></pre>
+
+<p>Par exemple, voici une fonction qui calcule la somme de deux nombres :</p>
+<pre><code>int somme(int a, int b) {
+  return a + b;
+}</code></pre>
+
+<p>Vous pouvez ensuite appeler cette fonction en lui passant des arguments :</p>
+<pre><code>int resultat = somme(3, 5); // resultat contient maintenant la valeur 8</code></pre>
+
+<h2>Les tableaux et les pointeurs</h2>
+<p>Les tableaux sont des structures de données qui permettent de stocker plusieurs valeurs du même type. Les pointeurs sont des variables qui contiennent l'adresse mémoire d'une autre variable. Voici comment déclarer un tableau :</p>
+<pre><code>type_de_données nom_tableau[taille];</code></pre>
+
+<p>Par exemple, voici comment déclarer un tableau d'entiers de taille 5 :</p>
+<pre><code>int tableau[5];</code></pre>
+
+<p>Vous pouvez accéder aux éléments d'un tableau en utilisant des indices :</p>
+<pre><code>tableau[0] = 42; // assigne la valeur 42 au premier élément du tableau</code></pre>
+
+<p>Les pointeurs peuvent être utilisés pour manipuler des tableaux. Voici comment déclarer un pointeur :</p>
+<pre><code>type_de_données *nom_pointeur;</code></pre>
+
+<p>Par exemple, voici comment déclarer un pointeur vers un tableau d'entiers :</p>
+<pre><code>int *pointeur;</code></pre>
+
+<p>Vous pouvez ensuite utiliser le pointeur pour accéder aux éléments du tableau :</p>
+<pre><code>pointeur = tableau; // pointe vers le premier élément du tableau
+int premier_element = *pointeur; // premier_element contient maintenant la valeur 42</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

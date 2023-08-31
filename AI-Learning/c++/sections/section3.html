@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les concepts avancés du C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les classes et les objets</h2>
+<p>Les classes et les objets sont des concepts fondamentaux en programmation orientée objet (POO) en C++. Une classe est un modèle ou un plan pour créer des objets, tandis qu'un objet est une instance spécifique d'une classe.</p>
+
+<p>Une classe est définie en utilisant le mot-clé <code>class</code>, suivi du nom de la classe et d'un bloc de code entre accolades. Les membres d'une classe, tels que les attributs et les méthodes, sont définis à l'intérieur de ce bloc de code.</p>
+
+<pre><code>class Person {
+    // Attributs
+    string name;
+    int age;
+    
+    // Méthodes
+    void setName(string n) {
+        name = n;
+    }
+    
+    void setAge(int a) {
+        age = a;
+    }
+    
+    void printInfo() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+</code></pre>
+
+<p>Pour créer un objet à partir d'une classe, on utilise le nom de la classe suivi d'un nom d'objet et de parenthèses. Les parenthèses peuvent être utilisées pour appeler un constructeur, qui est une méthode spéciale utilisée pour initialiser les attributs de l'objet.</p>
+
+<pre><code>Person person1; // Crée un objet de la classe Person
+person1.setName("John");
+person1.setAge(25);
+person1.printInfo(); // Affiche "Name: John" et "Age: 25"
+</code></pre>
+
+<h2>L'encapsulation et l'abstraction</h2>
+<p>L'encapsulation est un concept qui consiste à regrouper des données et des méthodes connexes dans une classe, en limitant l'accès direct aux données depuis l'extérieur de la classe. Cela permet de protéger les données et de garantir leur intégrité.</p>
+
+<p>L'abstraction est un concept qui consiste à cacher les détails d'implémentation d'une classe et à fournir une interface simplifiée pour interagir avec celle-ci. Cela permet aux utilisateurs de la classe de se concentrer sur ce qu'elle fait plutôt que sur comment elle le fait.</p>
+
+<p>En C++, l'encapsulation est réalisée en déclarant les attributs d'une classe comme privés (private) et en fournissant des méthodes publiques (public) pour accéder et modifier ces attributs.</p>
+
+<pre><code>class BankAccount {
+private:
+    string accountNumber;
+    double balance;
+    
+public:
+    void deposit(double amount) {
+        balance += amount;
+    }
+    
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            cout << "Insufficient funds." << endl;
+        }
+    }
+    
+    double getBalance() {
+        return balance;
+    }
+};
+</code></pre>
+
+<p>Les utilisateurs de la classe BankAccount peuvent uniquement interagir avec elle en utilisant les méthodes publiques, telles que <code>deposit</code>, <code>withdraw</code> et <code>getBalance</code>. Les détails de l'implémentation, tels que les attributs <code>accountNumber</code> et <code>balance</code>, sont cachés.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un concept qui permet de créer de nouvelles classes (appelées classes dérivées) à partir d'une classe existante (appelée classe de base). Les classes dérivées héritent des attributs et des méthodes de la classe de base, ce qui permet de réutiliser du code et de créer une hiérarchie de classes.</p>
+
+<p>Le polymorphisme est un concept qui permet à un objet d'une classe dérivée d'être traité comme un objet de la classe de base. Cela permet d'écrire du code générique qui peut être utilisé avec des objets de différentes classes dérivées, ce qui facilite l'extension et la maintenance du code.</p>
+
+<p>En C++, l'héritage est réalisé en utilisant le signe de deux points (::) pour spécifier la classe de base lors de la définition d'une classe dérivée.</p>
+
+<pre><code>class Shape {
+protected:
+    double width;
+    double height;
+    
+public:
+    void setWidth(double w) {
+        width = w;
+    }
+    
+    void setHeight(double h) {
+        height = h;
+    }
+    
+    virtual double getArea() {
+        return 0.0;
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    double getArea() override {
+        return width * height;
+    }
+};
+
+class Triangle : public Shape {
+public:
+    double getArea() override {
+        return 0.5 * width * height;
+    }
+};
+</code></pre>
+
+<p>La classe Shape est la classe de base, tandis que les classes Rectangle et Triangle sont des classes dérivées. Les classes dérivées héritent des attributs et des méthodes de la classe de base, et peuvent également redéfinir (override) les méthodes virtuelles pour fournir une implémentation spécifique.</p>
+
+<p>Le polymorphisme peut être utilisé pour traiter des objets de différentes classes dérivées comme des objets de la classe de base. Par exemple :</p>
+
+<pre><code>Shape* shape1 = new Rectangle();
+Shape* shape2 = new Triangle();
+
+shape1->setWidth(5.0);
+shape1->setHeight(3.0);
+cout << "Area of shape1: " << shape1->getArea() << endl;
+
+shape2->setWidth(4.0);
+shape2->setHeight(6.0);
+cout << "Area of shape2: " << shape2->getArea() << endl;
+</code></pre>
+
+<p>Cela permet d'écrire du code générique qui peut être utilisé avec des objets de différentes classes dérivées, sans avoir à connaître le type spécifique de l'objet.</p>
+
+<h2>Les templates et la programmation générique</h2>
+<p>Les templates sont un mécanisme en C++ qui permet de créer des fonctions et des classes génériques, c'est-à-dire des fonctions et des classes qui peuvent être utilisées avec différents types de données. Cela permet de réutiliser du code et d'écrire des algorithmes génériques.</p>
+
+<p>En utilisant des templates, on peut définir des fonctions et des classes qui prennent des paramètres de type générique, représentés par des paramètres de template. Les paramètres de template sont déclarés entre chevrons (<>) et peuvent être utilisés à l'intérieur de la fonction ou de la classe pour définir des types de données.</p>
+
+<pre><code>template &lt;typename T&gt;
+T maximum(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int maxInt = maximum(5, 10);
+double maxDouble = maximum(3.14, 2.71);
+string maxString = maximum("hello", "world");
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>maximum</code> est définie comme un template avec un paramètre de type générique <code>T</code>. La fonction peut être appelée avec différents types de données, tels que des entiers, des nombres à virgule flottante ou des chaînes de caractères.</p>
+
+<h2>Les exceptions et la gestion des erreurs</h2>
+<p>Les exceptions sont un mécanisme en C++ qui permet de gérer les erreurs et les situations exceptionnelles de manière structurée. Une exception est une valeur ou un objet qui est lancé (thrown) lorsqu'une erreur se produit, et qui peut être attrapé (caught) et géré par un bloc de code spécifique.</p>
+
+<p>En utilisant des exceptions, on peut séparer la logique normale du programme de la gestion des erreurs, ce qui rend le code plus lisible et plus maintenable. Les exceptions peuvent être lancées à l'aide du mot-clé <code>throw</code> et attrapées à l'aide du mot-clé <code>try</code> suivi d'un bloc de code <code>catch</code>.</p>
+
+<pre><code>try {
+    int result = divide(10, 0);
+    cout << "Result: " << result << endl;
+} catch (const char* error) {
+    cout << "Error: " << error << endl;
+}
+
+int divide(int a, int b) {
+    if (b == 0) {
+        throw "Division by zero.";
+    }
+    return a / b;
+}
+</code></pre>
+
+<p>Dans cet exemple, la fonction <code>divide</code> lance une exception avec le message "Division by zero" si le diviseur est égal à zéro. L'exception est attrapée par le bloc de code <code>catch</code>, qui affiche le message d'erreur correspondant.</p>
+
+<p>Il est également possible de définir ses propres types d'exceptions en créant des classes dérivées de la classe de base <code>std::exception</code>.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

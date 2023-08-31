@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les applications pratiques en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Le développement d'applications de bureau</h2>
+<p>Le développement d'applications de bureau en C++ est une utilisation courante et populaire du langage. Les applications de bureau sont des logiciels qui s'exécutent localement sur un ordinateur et offrent une interface utilisateur graphique (GUI) pour interagir avec l'utilisateur.</p>
+
+<p>Pour développer des applications de bureau en C++, vous pouvez utiliser des bibliothèques graphiques telles que Qt, wxWidgets ou MFC. Ces bibliothèques fournissent des fonctionnalités pour créer des fenêtres, des boutons, des menus et d'autres éléments d'interface utilisateur.</p>
+
+<p>Voici un exemple de code pour créer une fenêtre simple en utilisant la bibliothèque Qt :</p>
+
+<pre><code>#include &lt;QApplication&gt;
+#include &lt;QMainWindow&gt;
+
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
+
+    QMainWindow window;
+    window.setWindowTitle("Ma première application de bureau");
+    window.show();
+
+    return app.exec();
+}
+</code></pre>
+
+<p>Ce code crée une instance de la classe QMainWindow, définit le titre de la fenêtre et l'affiche à l'écran. L'exécution de l'application est gérée par la classe QApplication.</p>
+
+<h2>Le développement d'applications embarquées</h2>
+<p>Le développement d'applications embarquées en C++ consiste à créer des logiciels qui s'exécutent sur des systèmes embarqués, tels que des microcontrôleurs, des systèmes embarqués Linux ou des dispositifs IoT (Internet des objets).</p>
+
+<p>Les applications embarquées en C++ sont souvent utilisées dans des domaines tels que l'automobile, l'électronique grand public, les dispositifs médicaux et les systèmes de contrôle industriels.</p>
+
+<p>Voici un exemple de code pour contrôler un LED sur un microcontrôleur Arduino en utilisant le langage C++ :</p>
+
+<pre><code>#include &lt;Arduino.h&gt;
+
+const int ledPin = 13;
+
+void setup()
+{
+    pinMode(ledPin, OUTPUT);
+}
+
+void loop()
+{
+    digitalWrite(ledPin, HIGH);
+    delay(1000);
+    digitalWrite(ledPin, LOW);
+    delay(1000);
+}
+</code></pre>
+
+<p>Ce code utilise la bibliothèque Arduino pour contrôler une LED connectée au pin 13 du microcontrôleur. La fonction setup() est appelée une fois au démarrage de l'application pour configurer le pin en tant que sortie. La fonction loop() est appelée en boucle pour allumer et éteindre la LED avec des délais de 1 seconde.</p>
+
+<h2>Le développement de jeux vidéo</h2>
+<p>Le développement de jeux vidéo en C++ est une autre utilisation courante et puissante du langage. C++ est largement utilisé dans l'industrie du jeu en raison de sa performance et de sa flexibilité.</p>
+
+<p>Pour développer des jeux en C++, vous pouvez utiliser des bibliothèques et des frameworks tels que SDL, SFML, DirectX ou OpenGL. Ces bibliothèques fournissent des fonctionnalités pour gérer les graphismes, le son, les entrées utilisateur et d'autres aspects du jeu.</p>
+
+<p>Voici un exemple de code pour afficher une fenêtre de jeu simple en utilisant la bibliothèque SFML :</p>
+
+<pre><code>#include &lt;SFML/Graphics.hpp&gt;
+
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Mon premier jeu en C++");
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        // Dessiner le jeu ici
+        window.display();
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Ce code utilise la bibliothèque SFML pour créer une fenêtre de jeu avec une taille de 800x600 pixels et un titre. La boucle principale gère les événements, tels que la fermeture de la fenêtre, et rafraîchit l'affichage à chaque itération.</p>
+
+<h2>Le développement d'applications web avec C++ (serveurs, CGI, etc.)</h2>
+<p>Le développement d'applications web avec C++ permet de créer des serveurs web, des scripts CGI (Common Gateway Interface) et d'autres composants pour les applications web.</p>
+
+<p>Les serveurs web en C++ sont souvent utilisés pour des applications nécessitant une haute performance, telles que les sites à fort trafic ou les applications de streaming en temps réel.</p>
+
+<p>Voici un exemple de code pour créer un serveur web simple en utilisant la bibliothèque Boost.Beast :</p>
+
+<pre><code>#include &lt;boost/beast/core.hpp&gt;
+#include &lt;boost/beast/http.hpp&gt;
+#include &lt;boost/asio.hpp&gt;
+
+int main()
+{
+    boost::asio::io_context io_context;
+
+    boost::asio::ip::tcp::acceptor acceptor(io_context, boost::asio::ip::tcp::endpoint(boost::asio::ip::tcp::v4(), 8080));
+
+    while (true)
+    {
+        boost::asio::ip::tcp::socket socket(io_context);
+        acceptor.accept(socket);
+
+        boost::beast::http::request<boost::beast::http::string_body> request;
+        boost::beast::http::read(socket, request);
+
+        boost::beast::http::response<boost::beast::http::string_body> response;
+        response.version(request.version());
+        response.result(boost::beast::http::status::ok);
+        response.set(boost::beast::http::field::content_type, "text/plain");
+        response.body() = "Hello, World!";
+        response.prepare_payload();
+
+        boost::beast::http::write(socket, response);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Ce code utilise la bibliothèque Boost.Beast pour créer un serveur web écoutant sur le port 8080. À chaque requête reçue, le serveur renvoie une réponse "Hello, World!" au client.</p>
+
+<h2>Récapitulatif</h2>
+<p>Dans cette section, nous avons exploré différentes applications pratiques du langage C++. Nous avons vu comment développer des applications de bureau, des applications embarquées, des jeux vidéo et des applications web en utilisant C++. Ces exemples vous donnent un aperçu des possibilités offertes par le langage et vous permettent de commencer à explorer ces domaines plus en profondeur.</p>
+
+<h2>Les opportunités de carrière pour les développeurs C++</h2>
+<p>Les développeurs C++ ont de nombreuses opportunités de carrière dans divers domaines tels que le développement de logiciels, les jeux vidéo, l'automobile, la finance et bien d'autres. En raison de sa performance et de sa polyvalence, C++ est largement utilisé dans l'industrie et est une compétence précieuse pour les développeurs.</p>
+
+<p>Les développeurs C++ peuvent travailler comme programmeurs, ingénieurs logiciels, développeurs de jeux, ingénieurs embarqués, consultants en informatique et bien d'autres rôles. Les opportunités de carrière dépendent souvent du domaine d'application spécifique et des compétences supplémentaires du développeur.</p>
+
+<h2>Les prochaines étapes pour approfondir ses connaissances en C++</h2>
+<p>Pour approfondir vos connaissances en C++, voici quelques étapes que vous pouvez suivre :</p>
+
+<ol>
+    <li>Lire des livres spécialisés sur le C++ tels que "The C++ Programming Language" de Bjarne Stroustrup ou "Effective Modern C++" de Scott Meyers.</li>
+    <li>Suivre des tutoriels en ligne et des cours avancés sur le C++.</li>
+    <li>Participer à des projets open source en C++ pour acquérir de l'expérience pratique.</li>
+    <li>Rejoindre des communautés en ligne de développeurs C++ pour échanger des connaissances et poser des questions.</li>
+    <li>Expérimenter et pratiquer en développant vos propres projets en C++.</li>
+</ol>
+
+<p>En suivant ces étapes, vous pourrez approfondir vos connaissances en C++ et devenir un développeur C++ compétent et polyvalent.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

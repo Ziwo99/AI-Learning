@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les techniques avancées en C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La programmation concurrente et les threads</h2>
+<p>La programmation concurrente en C++ permet d'exécuter plusieurs tâches simultanément, améliorant ainsi les performances et l'efficacité des programmes. Les threads sont utilisés pour créer des processus légers qui peuvent s'exécuter en parallèle.</p>
+
+<p>Voici un exemple de création et d'exécution d'un thread en C++ :</p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;thread&gt;
+
+// Fonction exécutée par le thread
+void myThreadFunction() {
+    std::cout &lt;&lt; "Hello from myThreadFunction!" &lt;&lt; std::endl;
+}
+
+int main() {
+    // Création d'un thread
+    std::thread myThread(myThreadFunction);
+
+    // Attente de la fin du thread
+    myThread.join();
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous créons un thread en utilisant la classe std::thread de la bibliothèque standard C++. La fonction myThreadFunction est exécutée par le thread. L'appel à la fonction join() permet d'attendre la fin de l'exécution du thread.</p>
+
+<h2>Les opérateurs surchargés et les conversions de types</h2>
+<p>En C++, il est possible de surcharger les opérateurs existants pour leur donner de nouveaux comportements. Cela permet d'améliorer la lisibilité et la simplicité du code. De plus, il est possible de définir des conversions de types pour faciliter la manipulation des objets.</p>
+
+<p>Voici un exemple de surcharge de l'opérateur + pour une classe Fraction :</p>
+
+<pre><code>#include &lt;iostream&gt;
+
+class Fraction {
+public:
+    int numerator;
+    int denominator;
+
+    Fraction(int num, int den) : numerator(num), denominator(den) {}
+
+    Fraction operator+(const Fraction&amp; other) const {
+        int num = numerator * other.denominator + other.numerator * denominator;
+        int den = denominator * other.denominator;
+        return Fraction(num, den);
+    }
+};
+
+int main() {
+    Fraction f1(1, 2);
+    Fraction f2(3, 4);
+    Fraction result = f1 + f2;
+
+    std::cout &lt;&lt; "Result: " &lt;&lt; result.numerator &lt;&lt; "/" &lt;&lt; result.denominator &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous surchargeons l'opérateur + pour la classe Fraction. L'opérateur + est utilisé pour additionner deux fractions en calculant le numérateur et le dénominateur du résultat. Le résultat est ensuite affiché.</p>
+
+<h2>Les fonctions lambda et les expressions régulières</h2>
+<p>Les fonctions lambda en C++ permettent de définir des fonctions anonymes à la volée. Elles sont utiles lorsque l'on souhaite passer une fonction en argument ou lorsque l'on souhaite définir une fonction simple sans avoir à la déclarer explicitement.</p>
+
+<p>Voici un exemple d'utilisation d'une fonction lambda pour trier un vecteur de nombres :</p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {5, 2, 8, 1, 9};
+
+    // Tri du vecteur en utilisant une fonction lambda
+    std::sort(numbers.begin(), numbers.end(), [](int a, int b) {
+        return a &lt; b;
+    });
+
+    // Affichage des nombres triés
+    for (int number : numbers) {
+        std::cout &lt;&lt; number &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons une fonction lambda comme troisième argument de la fonction std::sort pour trier le vecteur numbers. La fonction lambda compare deux nombres et retourne true si le premier est inférieur au second. Les nombres triés sont ensuite affichés.</p>
+
+<p>Les expressions régulières en C++ permettent de rechercher et de manipuler des motifs de texte. Elles sont utilisées pour valider des chaînes de caractères, extraire des informations spécifiques ou effectuer des substitutions.</p>
+
+<p>Voici un exemple d'utilisation des expressions régulières pour valider une adresse email :</p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;regex&gt;
+
+bool validateEmail(const std::string&amp; email) {
+    std::regex pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    return std::regex_match(email, pattern);
+}
+
+int main() {
+    std::string email = "test@example.com";
+
+    if (validateEmail(email)) {
+        std::cout &lt;&lt; "Valid email address" &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; "Invalid email address" &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons une expression régulière pour valider une adresse email. La fonction validateEmail utilise la fonction std::regex_match pour vérifier si l'adresse email correspond au motif spécifié. Le résultat est affiché en conséquence.</p>
+
+<h2>Les bibliothèques de manipulation de fichiers et de réseaux</h2>
+<p>En C++, il existe des bibliothèques qui facilitent la manipulation de fichiers et la communication via le réseau. Ces bibliothèques offrent des fonctionnalités avancées pour lire, écrire et manipuler des fichiers, ainsi que pour établir des connexions réseau et échanger des données.</p>
+
+<p>Voici un exemple d'utilisation de la bibliothèque standard C++ pour lire et écrire dans un fichier :</p>
+
+<pre><code>#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int main() {
+    std::ofstream file("example.txt");
+
+    if (file.is_open()) {
+        file &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+        file.close();
+    } else {
+        std::cout &lt;&lt; "Unable to open file" &lt;&lt; std::endl;
+    }
+
+    std::ifstream readFile("example.txt");
+
+    if (readFile.is_open()) {
+        std::string line;
+        while (std::getline(readFile, line)) {
+            std::cout &lt;&lt; line &lt;&lt; std::endl;
+        }
+        readFile.close();
+    } else {
+        std::cout &lt;&lt; "Unable to open file" &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons les classes std::ofstream et std::ifstream pour écrire et lire dans un fichier respectivement. La classe std::ofstream est utilisée pour écrire dans le fichier "example.txt" et la classe std::ifstream est utilisée pour lire le contenu du fichier ligne par ligne. Le contenu du fichier est ensuite affiché à l'écran.</p>
+
+<p>Il existe également des bibliothèques tierces populaires en C++ pour la manipulation de fichiers et la communication réseau, telles que Boost.Filesystem et Boost.Asio. Ces bibliothèques offrent des fonctionnalités avancées et des performances optimisées pour ces tâches spécifiques.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

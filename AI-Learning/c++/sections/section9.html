@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C++ Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Les tendances et les évolutions du C++</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c%2B%2B/c%2B%2B.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les nouvelles fonctionnalités du langage C++</h2>
+<p>Le langage C++ continue d'évoluer avec l'ajout de nouvelles fonctionnalités qui améliorent sa puissance et sa flexibilité. Voici quelques-unes des nouvelles fonctionnalités introduites dans les versions récentes du langage :</p>
+
+<p><strong>1. Les lambdas :</strong> Les lambdas sont des fonctions anonymes qui peuvent être définies directement dans le code. Elles permettent de simplifier la syntaxe et d'améliorer la lisibilité du code. Voici un exemple :</p>
+
+<pre><code>auto sum = [](int a, int b) { return a + b; };
+int result = sum(3, 4); // result vaut 7
+</code></pre>
+
+<p><strong>2. Les expressions régulières :</strong> Les expressions régulières permettent de rechercher et de manipuler des motifs de texte complexes. Elles sont très utiles pour la validation des entrées utilisateur ou pour le traitement de données structurées. Voici un exemple :</p>
+
+<pre><code>#include &lt;regex&gt;
+std::regex pattern("([A-Za-z]+)\\s([0-9]+)");
+std::string input = "John 123";
+std::smatch matches;
+if (std::regex_match(input, matches, pattern)) {
+    std::cout &lt;&lt; "Name: " &lt;&lt; matches[1] &lt;&lt; ", Age: " &lt;&lt; matches[2] &lt;&lt; std::endl;
+}
+</code></pre>
+
+<p><strong>3. Les attributs :</strong> Les attributs permettent d'ajouter des métadonnées au code source, ce qui peut être utilisé par le compilateur ou d'autres outils. Ils sont utiles pour optimiser le code, gérer les avertissements du compilateur ou contrôler le comportement du programme. Voici un exemple :</p>
+
+<pre><code>[[nodiscard]] int calculateSum(int a, int b) {
+    return a + b;
+}
+</code></pre>
+
+<h2>Les normes et les standards du C++</h2>
+<p>Le C++ est un langage normalisé par l'ISO (International Organization for Standardization). Les normes du C++ définissent les spécifications du langage et garantissent la portabilité du code entre les différents compilateurs. Voici quelques-unes des normes les plus couramment utilisées :</p>
+
+<p><strong>1. C++98 :</strong> Cette norme, publiée en 1998, est la première norme officielle du C++. Elle définit les fonctionnalités de base du langage.</p>
+
+<p><strong>2. C++03 :</strong> Cette norme, publiée en 2003, est une mise à jour mineure de la norme C++98. Elle corrige certains problèmes et ambiguïtés du langage.</p>
+
+<p><strong>3. C++11 :</strong> Cette norme, publiée en 2011, introduit de nombreuses nouvelles fonctionnalités, telles que les lambdas, les expressions régulières, les attributs, etc. Elle apporte également des améliorations de performance et de sécurité.</p>
+
+<p><strong>4. C++14 :</strong> Cette norme, publiée en 2014, est une mise à jour mineure de la norme C++11. Elle ajoute quelques nouvelles fonctionnalités et améliore la lisibilité du code.</p>
+
+<p><strong>5. C++17 :</strong> Cette norme, publiée en 2017, apporte de nombreuses nouvelles fonctionnalités, telles que les variables inline, les déductions de type automatiques, les boucles if constexpr, etc. Elle améliore également la performance et la sécurité du langage.</p>
+
+<p><strong>6. C++20 :</strong> Cette norme, publiée en 2020, est la dernière version majeure du C++. Elle introduit de nouvelles fonctionnalités, telles que les concepts, les ranges, les coroutines, etc. Elle apporte également des améliorations de performance et de productivité.</p>
+
+<h2>Les frameworks et les bibliothèques émergents</h2>
+<p>Le C++ dispose d'une vaste gamme de frameworks et de bibliothèques qui facilitent le développement d'applications. Voici quelques-uns des frameworks et des bibliothèques émergents qui gagnent en popularité :</p>
+
+<p><strong>1. Qt :</strong> Qt est un framework multiplateforme qui permet de développer des applications graphiques et des interfaces utilisateur. Il offre une grande variété de fonctionnalités, telles que la gestion des événements, la création de fenêtres, la manipulation des widgets, etc.</p>
+
+<p><strong>2. Boost :</strong> Boost est une bibliothèque C++ qui étend les fonctionnalités du langage. Elle propose de nombreuses fonctionnalités avancées, telles que les fonctions lambda, les expressions régulières, les conteneurs, les algorithmes, etc.</p>
+
+<p><strong>3. POCO :</strong> POCO (POrtable COmponents) est une bibliothèque C++ qui fournit des composants réutilisables pour le développement d'applications réseau et multimédia. Elle offre des fonctionnalités telles que les sockets, les threads, les bases de données, etc.</p>
+
+<p><strong>4. Eigen :</strong> Eigen est une bibliothèque C++ de calcul matriciel et vectoriel. Elle offre des fonctionnalités de calcul numérique rapides et efficaces, ce qui en fait un choix populaire pour les applications scientifiques et graphiques.</p>
+
+<p><strong>5. CppRESTSDK :</strong> CppRESTSDK est une bibliothèque C++ qui facilite le développement d'applications web et de services RESTful. Elle offre des fonctionnalités telles que la gestion des requêtes HTTP, la sérialisation JSON, la gestion des sessions, etc.</p>
+
+<p>Ces frameworks et bibliothèques émergents offrent de nouvelles possibilités aux développeurs C++ et facilitent le développement d'applications de haute qualité.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c%2B%2B/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c%2B%2B/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
