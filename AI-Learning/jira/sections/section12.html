@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Jira Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Développement d'extensions pour Jira</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jira/jira.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jira/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jira/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction au développement d'extensions pour Jira</h2>
+<p>Le développement d'extensions pour Jira vous permet d'ajouter des fonctionnalités personnalisées à votre instance Jira. Cela vous permet de personnaliser Jira en fonction des besoins spécifiques de votre équipe ou de votre organisation. Les extensions peuvent inclure des plugins, des intégrations avec d'autres outils, des scripts personnalisés, etc.</p>
+
+<p>Pour développer des extensions pour Jira, vous devez avoir une connaissance approfondie de Java, car Jira est basé sur la plateforme Java. Vous devez également comprendre les concepts de base de Jira, tels que les projets, les tâches, les workflows, etc.</p>
+
+<p>Il existe plusieurs façons de développer des extensions pour Jira :</p>
+
+<ul>
+  <li>Création de plugins Jira : Les plugins Jira sont des modules autonomes qui ajoutent des fonctionnalités supplémentaires à Jira. Ils peuvent être développés en utilisant l'API de développement de plugins Jira.</li>
+  <li>Intégration avec d'autres outils : Vous pouvez intégrer Jira avec d'autres outils de développement, tels que Confluence, Bitbucket, Bamboo, etc. Cela vous permet de synchroniser les données entre les outils et d'améliorer la collaboration entre les équipes.</li>
+  <li>Développement de scripts personnalisés : Vous pouvez développer des scripts personnalisés pour automatiser des tâches spécifiques dans Jira. Cela peut être fait en utilisant des langages de script tels que Groovy, JavaScript, etc.</li>
+</ul>
+
+<h2>Création d'un plugin Jira</h2>
+<p>La création d'un plugin Jira vous permet d'ajouter des fonctionnalités personnalisées à Jira en développant un module autonome. Voici les étapes pour créer un plugin Jira :</p>
+
+<ol>
+  <li>Configurer l'environnement de développement : Avant de commencer à développer un plugin Jira, vous devez configurer votre environnement de développement. Cela implique l'installation de Java, de l'IDE (Integrated Development Environment) et de l'API de développement de plugins Jira.</li>
+  <li>Créer un projet de plugin : Une fois votre environnement de développement configuré, vous pouvez créer un nouveau projet de plugin Jira dans votre IDE. Cela créera la structure de base du plugin, y compris les fichiers de configuration et les dépendances.</li>
+  <li>Développer les fonctionnalités du plugin : Vous pouvez maintenant commencer à développer les fonctionnalités du plugin en utilisant l'API de développement de plugins Jira. Cela peut inclure l'ajout de nouveaux types de tâches, la personnalisation de l'interface utilisateur, l'intégration avec d'autres outils, etc.</li>
+  <li>Tester le plugin : Une fois que vous avez développé les fonctionnalités du plugin, vous devez les tester pour vous assurer qu'elles fonctionnent correctement. Vous pouvez utiliser l'environnement de développement pour exécuter le plugin et effectuer des tests unitaires et des tests d'intégration.</li>
+  <li>Emballer et déployer le plugin : Une fois que vous êtes satisfait des fonctionnalités du plugin, vous pouvez l'emballer dans un fichier JAR et le déployer dans votre instance Jira. Cela rendra les fonctionnalités du plugin disponibles pour les utilisateurs de Jira.</li>
+</ol>
+
+<h2>Déploiement et distribution d'un plugin Jira</h2>
+<p>Une fois que vous avez développé un plugin Jira, vous devez le déployer et le distribuer pour qu'il soit utilisé par d'autres utilisateurs de Jira. Voici les étapes pour déployer et distribuer un plugin Jira :</p>
+
+<ol>
+  <li>Emballer le plugin : Avant de déployer le plugin, vous devez l'emballer dans un fichier JAR. Cela peut être fait en utilisant l'outil de construction de votre IDE ou en utilisant des outils de construction tels que Maven ou Gradle.</li>
+  <li>Configurer le déploiement : Vous devez configurer les paramètres de déploiement du plugin, tels que l'emplacement de déploiement, les autorisations d'accès, etc. Cela peut être fait en utilisant les fichiers de configuration du plugin.</li>
+  <li>Déployer le plugin : Une fois que vous avez configuré les paramètres de déploiement, vous pouvez déployer le plugin dans votre instance Jira. Cela peut être fait en copiant le fichier JAR du plugin dans le répertoire de déploiement de Jira.</li>
+  <li>Tester le plugin déployé : Une fois que le plugin est déployé, vous devez le tester pour vous assurer qu'il fonctionne correctement dans votre instance Jira. Vous pouvez effectuer des tests manuels et des tests d'intégration pour vérifier les fonctionnalités du plugin.</li>
+  <li>Distribuer le plugin : Une fois que vous êtes satisfait du plugin déployé, vous pouvez le distribuer pour qu'il soit utilisé par d'autres utilisateurs de Jira. Cela peut être fait en partageant le fichier JAR du plugin avec d'autres utilisateurs ou en le rendant disponible en téléchargement sur une plateforme de distribution.</li>
+</ol>
+
+<p>Il est important de noter que le développement d'extensions pour Jira nécessite une bonne compréhension des concepts de base de Jira, ainsi que des compétences en développement logiciel. Il est recommandé de suivre des tutoriels et des guides de développement officiels fournis par Atlassian, le créateur de Jira, pour vous familiariser avec les meilleures pratiques de développement d'extensions pour Jira.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jira/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jira/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
