@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Programmation réseau en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Communication réseau avec les sockets</h2>
+<p>
+La communication réseau est un aspect essentiel de la programmation en Go. Go offre une prise en charge native des sockets, ce qui permet aux développeurs de créer des applications réseau robustes et performantes.
+</p>
+<p>
+Les sockets sont des points de terminaison de communication qui permettent aux processus d'envoyer et de recevoir des données sur un réseau. En Go, la création d'un socket se fait en utilisant la fonction <code>net.Dial</code> pour établir une connexion avec un serveur distant ou en utilisant la fonction <code>net.Listen</code> pour créer un serveur qui écoute les connexions entrantes.
+</p>
+<p>
+Voici un exemple de création d'un client TCP en utilisant des sockets en Go :
+</p>
+<pre><code>package main
+
+import (
+    "fmt"
+    "net"
+)
+
+func main() {
+    conn, err := net.Dial("tcp", "localhost:8080")
+    if err != nil {
+        fmt.Println("Erreur lors de la connexion au serveur:", err)
+        return
+    }
+    defer conn.Close()
+
+    // Envoyer des données au serveur
+    _, err = conn.Write([]byte("Bonjour, serveur!"))
+    if err != nil {
+        fmt.Println("Erreur lors de l'envoi des données:", err)
+        return
+    }
+
+    // Recevoir la réponse du serveur
+    buffer := make([]byte, 1024)
+    _, err = conn.Read(buffer)
+    if err != nil {
+        fmt.Println("Erreur lors de la réception des données:", err)
+        return
+    }
+
+    fmt.Println("Réponse du serveur:", string(buffer))
+}
+</code></pre>
+
+<h2>Utilisation des protocoles HTTP et TCP/IP</h2>
+<p>
+Go offre une prise en charge native des protocoles HTTP et TCP/IP, ce qui facilite la création de serveurs et de clients HTTP en utilisant le package standard <code>net/http</code>.
+</p>
+<p>
+Le package <code>net/http</code> fournit des fonctions et des types pour gérer les requêtes et les réponses HTTP. Voici un exemple de création d'un serveur HTTP simple en utilisant Go :
+</p>
+<pre><code>package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func main() {
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "Bonjour, client!")
+    })
+
+    http.ListenAndServe(":8080", nil)
+}
+</code></pre>
+
+<h2>Création de serveurs et clients réseau</h2>
+<p>
+En utilisant les sockets et les protocoles réseau, Go permet de créer facilement des serveurs et des clients réseau. Les serveurs peuvent écouter les connexions entrantes et traiter les requêtes des clients, tandis que les clients peuvent établir des connexions avec des serveurs distants et envoyer des requêtes.
+</p>
+<p>
+Voici un exemple de création d'un serveur TCP en utilisant des sockets en Go :
+</p>
+<pre><code>package main
+
+import (
+    "fmt"
+    "net"
+)
+
+func main() {
+    ln, err := net.Listen("tcp", ":8080")
+    if err != nil {
+        fmt.Println("Erreur lors de l'écoute des connexions:", err)
+        return
+    }
+    defer ln.Close()
+
+    for {
+        conn, err := ln.Accept()
+        if err != nil {
+            fmt.Println("Erreur lors de l'acceptation de la connexion:", err)
+            continue
+        }
+
+        go handleConnection(conn)
+    }
+}
+
+func handleConnection(conn net.Conn) {
+    defer conn.Close()
+
+    // Recevoir les données du client
+    buffer := make([]byte, 1024)
+    _, err := conn.Read(buffer)
+    if err != nil {
+        fmt.Println("Erreur lors de la réception des données:", err)
+        return
+    }
+
+    fmt.Println("Données reçues du client:", string(buffer))
+
+    // Envoyer une réponse au client
+    _, err = conn.Write([]byte("Bonjour, client!"))
+    if err != nil {
+        fmt.Println("Erreur lors de l'envoi de la réponse:", err)
+        return
+    }
+}
+</code></pre>
+
+<p>
+Ce code crée un serveur TCP qui écoute les connexions entrantes sur le port 8080. Lorsqu'une connexion est acceptée, la fonction <code>handleConnection</code> est appelée dans une goroutine pour gérer la connexion. Dans cet exemple, la fonction <code>handleConnection</code> lit les données envoyées par le client, affiche le message reçu et envoie une réponse au client.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

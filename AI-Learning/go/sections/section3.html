@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Structures de données en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Tableaux et tranches (slices)</h2>
+<p>En Go, un tableau est une séquence de valeurs de même type, tandis qu'une tranche (slice) est une vue dynamique sur un tableau. Les tranches sont plus flexibles que les tableaux car elles peuvent être redimensionnées et manipulées plus facilement.</p>
+
+<p>Voici comment déclarer et initialiser un tableau en Go :</p>
+<pre><code>var tableau [5]int // Déclaration d'un tableau de taille fixe de 5 éléments de type int
+tableau = [5]int{1, 2, 3, 4, 5} // Initialisation du tableau avec des valeurs
+</code></pre>
+
+<p>Et voici comment déclarer et initialiser une tranche en Go :</p>
+<pre><code>var tranche []int // Déclaration d'une tranche vide
+tranche = []int{1, 2, 3, 4, 5} // Initialisation de la tranche avec des valeurs
+</code></pre>
+
+<p>Les tranches peuvent être manipulées à l'aide de fonctions intégrées telles que <code>append</code> pour ajouter des éléments, <code>copy</code> pour copier une tranche, et <code>len</code> pour obtenir la longueur d'une tranche.</p>
+
+<h2>Maps (dictionnaires)</h2>
+<p>En Go, une map est une structure de données qui associe des clés à des valeurs. Les maps sont similaires aux dictionnaires dans d'autres langages de programmation.</p>
+
+<p>Voici comment déclarer et initialiser une map en Go :</p>
+<pre><code>var m map[string]int // Déclaration d'une map vide avec des clés de type string et des valeurs de type int
+m = make(map[string]int) // Initialisation de la map
+m["clé1"] = 1 // Ajout d'une paire clé-valeur à la map
+m["clé2"] = 2
+</code></pre>
+
+<p>Les maps peuvent être utilisées pour rechercher des valeurs à l'aide de clés, ajouter ou supprimer des paires clé-valeur, et itérer sur les paires clé-valeur à l'aide d'une boucle <code>for</code>.</p>
+
+<h2>Structures (structs)</h2>
+<p>En Go, une structure (struct) est une collection de champs de données de différents types. Les structures sont utilisées pour regrouper des données connexes et les manipuler en tant qu'unité.</p>
+
+<p>Voici comment déclarer et initialiser une structure en Go :</p>
+<pre><code>type Personne struct {
+    nom string
+    age int
+}
+
+var p Personne // Déclaration d'une variable de type Personne
+p = Personne{"John Doe", 30} // Initialisation de la structure avec des valeurs
+</code></pre>
+
+<p>Les structures peuvent être utilisées pour créer des objets avec des propriétés et des comportements. Les champs d'une structure peuvent être accédés à l'aide de la notation pointée (<code>p.nom</code>) ou de la notation avec point (<code>(*p).nom</code>).</p>
+
+<h2>Pointeurs et références</h2>
+<p>En Go, un pointeur est une variable qui contient l'adresse mémoire d'une autre variable. Les pointeurs sont utilisés pour référencer et manipuler des variables indirectement.</p>
+
+<p>Voici comment déclarer et utiliser un pointeur en Go :</p>
+<pre><code>var x int = 10
+var p *int // Déclaration d'un pointeur vers un entier
+p = &x // Attribution de l'adresse de x au pointeur p
+fmt.Println(*p) // Affiche la valeur de x en utilisant le pointeur p
+</code></pre>
+
+<p>Les pointeurs peuvent être utilisés pour passer des variables par référence, allouer dynamiquement de la mémoire et accéder à des variables dans des structures complexes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

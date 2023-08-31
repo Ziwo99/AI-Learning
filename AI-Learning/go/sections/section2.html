@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases du langage Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base et conventions de nommage</h2>
+<p>En Go, la syntaxe de base suit une approche simple et concise. Les instructions sont terminées par un point-virgule facultatif, et les blocs de code sont délimités par des accolades. Voici un exemple de code Go :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+</code></pre>
+
+<p>En ce qui concerne les conventions de nommage, Go suit la convention camelCase pour les noms de variables et de fonctions. Les noms de variables et de fonctions doivent commencer par une lettre majuscule pour être exportés et utilisés à l'extérieur du package. Voici un exemple :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    var myVariable int
+    myVariable = 10
+
+    fmt.Println(myVariable)
+}
+</code></pre>
+
+<h2>Types de données et variables</h2>
+<p>Go est un langage fortement typé, ce qui signifie que chaque variable doit avoir un type spécifié. Voici quelques types de données de base en Go :</p>
+
+<ul>
+  <li>int : entier signé</li>
+  <li>float64 : nombre à virgule flottante</li>
+  <li>string : chaîne de caractères</li>
+  <li>bool : valeur booléenne (true ou false)</li>
+</ul>
+
+<p>Pour déclarer une variable en Go, nous utilisons le mot-clé "var" suivi du nom de la variable et du type :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    var age int
+    age = 25
+
+    fmt.Println("J'ai", age, "ans.")
+}
+</code></pre>
+
+<h2>Opérations arithmétiques et opérateurs logiques</h2>
+<p>Go prend en charge les opérations arithmétiques de base telles que l'addition, la soustraction, la multiplication et la division. Voici un exemple :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    var a = 10
+    var b = 5
+
+    fmt.Println("a + b =", a + b)
+    fmt.Println("a - b =", a - b)
+    fmt.Println("a * b =", a * b)
+    fmt.Println("a / b =", a / b)
+}
+</code></pre>
+
+<p>En plus des opérations arithmétiques, Go propose également des opérateurs logiques tels que "&&" (ET), "||" (OU) et "!" (NON). Voici un exemple :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    var a = true
+    var b = false
+
+    fmt.Println("a && b =", a && b)
+    fmt.Println("a || b =", a || b)
+    fmt.Println("!a =", !a)
+}
+</code></pre>
+
+<h2>Structures de contrôle : boucles et conditions</h2>
+<p>En Go, nous avons plusieurs structures de contrôle pour gérer les boucles et les conditions. Voici un exemple d'utilisation de la boucle "for" :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    for i := 0; i < 5; i++ {
+        fmt.Println(i)
+    }
+}
+</code></pre>
+
+<p>En ce qui concerne les conditions, nous utilisons le mot-clé "if" suivi de la condition. Voici un exemple :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    var age = 18
+
+    if age >= 18 {
+        fmt.Println("Vous êtes majeur.")
+    } else {
+        fmt.Println("Vous êtes mineur.")
+    }
+}
+</code></pre>
+
+<h2>Fonctions et méthodes</h2>
+<p>En Go, les fonctions sont déclarées à l'aide du mot-clé "func" suivi du nom de la fonction, des paramètres entre parenthèses et du type de retour. Voici un exemple :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func add(a, b int) int {
+    return a + b
+}
+
+func main() {
+    result := add(5, 3)
+    fmt.Println("Le résultat est", result)
+}
+</code></pre>
+
+<p>En plus des fonctions, Go prend également en charge les méthodes, qui sont des fonctions liées à un type spécifique. Voici un exemple :</p>
+
+<pre><code>package main
+
+import "fmt"
+
+type Rectangle struct {
+    width  int
+    height int
+}
+
+func (r Rectangle) area() int {
+    return r.width * r.height
+}
+
+func main() {
+    rect := Rectangle{width: 5, height: 3}
+    fmt.Println("L'aire du rectangle est", rect.area())
+}
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

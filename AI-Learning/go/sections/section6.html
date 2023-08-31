@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Concurrency en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Goroutines et channels</h2>
+<p>En Go, la concurrence est gérée à l'aide de goroutines et de channels. Une goroutine est une fonction légère qui peut s'exécuter de manière concurrente avec d'autres goroutines. Les goroutines sont créées à l'aide du mot-clé "go" suivi de l'appel à une fonction.</p>
+
+<p>Voici un exemple de création et d'exécution d'une goroutine :</p>
+
+<pre><code>func printNumbers() {
+    for i := 0; i < 5; i++ {
+        fmt.Println(i)
+    }
+}
+
+func main() {
+    go printNumbers()
+    fmt.Println("Main function")
+    time.Sleep(time.Second)
+}
+</code></pre>
+
+<p>Dans cet exemple, la fonction "printNumbers" est exécutée en tant que goroutine. La fonction "main" est également exécutée, mais elle se termine avant que la goroutine "printNumbers" ait eu le temps de terminer son exécution. Pour attendre la fin de l'exécution de la goroutine, nous utilisons la fonction "Sleep" du package "time".</p>
+
+<p>Les channels sont utilisés pour la communication entre goroutines. Un channel est un moyen de transmettre des valeurs d'une goroutine à une autre. Les channels peuvent être utilisés pour envoyer et recevoir des valeurs de manière synchronisée.</p>
+
+<p>Voici un exemple d'utilisation d'un channel pour envoyer et recevoir des valeurs :</p>
+
+<pre><code>func sendMessage(ch chan string, message string) {
+    ch <- message
+}
+
+func main() {
+    ch := make(chan string)
+    go sendMessage(ch, "Hello, World!")
+    receivedMessage := <-ch
+    fmt.Println(receivedMessage)
+}
+</code></pre>
+
+<p>Dans cet exemple, nous créons un channel de type string à l'aide de la fonction "make". La goroutine "sendMessage" envoie le message "Hello, World!" au channel. Dans la fonction "main", nous recevons le message du channel à l'aide de l'opérateur "<-".</p>
+
+<h2>Synchronisation des goroutines</h2>
+<p>La synchronisation des goroutines est importante pour éviter les problèmes de concurrence tels que les conditions de course. En Go, la synchronisation des goroutines peut être réalisée à l'aide de primitives telles que les channels et les wait groups.</p>
+
+<p>Un wait group est un mécanisme de synchronisation qui permet d'attendre la fin de l'exécution de plusieurs goroutines. Voici un exemple d'utilisation d'un wait group :</p>
+
+<pre><code>func printNumbers(wg *sync.WaitGroup) {
+    defer wg.Done()
+    for i := 0; i < 5; i++ {
+        fmt.Println(i)
+    }
+}
+
+func main() {
+    var wg sync.WaitGroup
+    wg.Add(1)
+    go printNumbers(&wg)
+    wg.Wait()
+    fmt.Println("Main function")
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons un wait group pour attendre la fin de l'exécution de la goroutine "printNumbers". La fonction "Add" est utilisée pour ajouter le nombre de goroutines que nous attendons. La fonction "Done" est appelée à la fin de chaque goroutine pour indiquer qu'elle a terminé son exécution. La fonction "Wait" est utilisée pour bloquer l'exécution de la goroutine principale jusqu'à ce que toutes les goroutines aient terminé.</p>
+
+<h2>Patterns de concurrence</h2>
+<p>En plus des goroutines et des channels, Go propose également des patterns de concurrence pour résoudre des problèmes courants liés à la concurrence. Certains de ces patterns incluent le pattern "fan-in", le pattern "fan-out", le pattern "worker pool" et le pattern "pipeline".</p>
+
+<p>Le pattern "fan-in" consiste à combiner les résultats de plusieurs goroutines dans un seul channel. Cela permet de paralléliser le traitement et de récupérer les résultats de manière synchronisée.</p>
+
+<p>Le pattern "fan-out" consiste à diviser une tâche en plusieurs sous-tâches qui peuvent être exécutées de manière concurrente. Chaque sous-tâche peut être exécutée dans sa propre goroutine, et les résultats peuvent être combinés à l'aide d'un channel.</p>
+
+<p>Le pattern "worker pool" consiste à créer un groupe de goroutines (les "workers") qui peuvent traiter des tâches à partir d'un channel. Cela permet de paralléliser le traitement des tâches et de contrôler le nombre de goroutines en cours d'exécution.</p>
+
+<p>Le pattern "pipeline" consiste à chaîner plusieurs goroutines ensemble, où chaque goroutine traite une étape spécifique du traitement. Les goroutines communiquent entre elles à l'aide de channels, ce qui permet de paralléliser le traitement et d'obtenir une meilleure performance.</p>
+
+<p>Ces patterns de concurrence sont des techniques avancées qui peuvent être utilisées pour résoudre des problèmes de concurrence complexes. Ils permettent d'exploiter pleinement les capacités de la concurrence en Go.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

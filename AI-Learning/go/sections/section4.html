@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Programmation orientée objet en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Concepts de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. En Go, les objets sont créés à l'aide de structures (structs) et les méthodes sont attachées à ces structures pour leur donner des comportements spécifiques.</p>
+<p>Les concepts clés de la POO en Go sont :</p>
+<ul>
+  <li>Encapsulation : les données et les méthodes associées sont regroupées dans une structure pour former un objet.</li>
+  <li>Héritage : les structures peuvent être imbriquées les unes dans les autres pour créer des relations de parenté.</li>
+  <li>Polymorphisme : les interfaces permettent de définir des comportements communs à plusieurs structures différentes.</li>
+</ul>
+
+<h2>Définition de structures et méthodes</h2>
+<p>En Go, une structure est définie à l'aide du mot-clé <code>type</code> suivi du nom de la structure et de ses champs. Par exemple :</p>
+<pre><code>type Person struct {
+  Name string
+  Age  int
+}
+</code></pre>
+<p>Les méthodes sont définies en associant une fonction à une structure. Par exemple :</p>
+<pre><code>func (p *Person) SayHello() {
+  fmt.Println("Hello, my name is", p.Name)
+}
+</code></pre>
+<p>Dans cet exemple, la méthode <code>SayHello()</code> est attachée à la structure <code>Person</code> et peut être appelée sur une instance de cette structure.</p>
+
+<h2>Interfaces et polymorphisme</h2>
+<p>Les interfaces en Go permettent de définir des comportements communs à plusieurs structures différentes. Une interface est définie en spécifiant les méthodes qu'une structure doit implémenter pour être considérée comme satisfaisant cette interface.</p>
+<p>Par exemple, nous pouvons définir une interface <code>Animal</code> avec une méthode <code>MakeSound()</code> :</p>
+<pre><code>type Animal interface {
+  MakeSound()
+}
+</code></pre>
+<p>Une structure peut implémenter cette interface en définissant la méthode <code>MakeSound()</code>. Par exemple :</p>
+<pre><code>type Dog struct {
+  Name string
+}
+
+func (d Dog) MakeSound() {
+  fmt.Println(d.Name, "says woof!")
+}
+</code></pre>
+<p>En utilisant cette interface, nous pouvons traiter une instance de <code>Dog</code> comme un <code>Animal</code> :</p>
+<pre><code>func main() {
+  var animal Animal
+  animal = Dog{Name: "Fido"}
+  animal.MakeSound() // Output: Fido says woof!
+}
+</code></pre>
+
+<h2>Gestion des erreurs avec les interfaces</h2>
+<p>En Go, la gestion des erreurs est souvent réalisée à l'aide d'interfaces. Une interface <code>error</code> est définie dans la bibliothèque standard de Go et peut être utilisée pour représenter une erreur.</p>
+<p>Les fonctions peuvent retourner une valeur de type <code>error</code> pour indiquer qu'une erreur s'est produite. Par exemple :</p>
+<pre><code>func Divide(x, y float64) (float64, error) {
+  if y == 0 {
+    return 0, errors.New("division by zero")
+  }
+  return x / y, nil
+}
+</code></pre>
+<p>Lors de l'appel de cette fonction, nous pouvons vérifier si une erreur s'est produite en comparant la valeur de retour à <code>nil</code>. Par exemple :</p>
+<pre><code>result, err := Divide(10, 0)
+if err != nil {
+  fmt.Println("An error occurred:", err)
+} else {
+  fmt.Println("Result:", result)
+}
+</code></pre>
+<p>En utilisant cette approche, les erreurs peuvent être gérées de manière centralisée et les fonctions peuvent être chaînées pour effectuer des opérations supplémentaires en cas d'erreur.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

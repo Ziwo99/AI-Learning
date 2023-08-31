@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Gestion des erreurs et paniques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des erreurs avec les erreurs prédéfinies</h2>
+<p>
+En Go, la gestion des erreurs est une partie essentielle du processus de développement. Les erreurs peuvent survenir à différents niveaux de l'exécution d'un programme et il est important de les détecter et de les gérer correctement.
+</p>
+
+<p>
+Go fournit des erreurs prédéfinies qui peuvent être utilisées pour signaler et gérer les erreurs. Ces erreurs sont représentées par le type d'interface "error" qui est défini dans le package "errors". Pour créer une nouvelle erreur, vous pouvez utiliser la fonction "errors.New()" en passant une chaîne de caractères décrivant l'erreur.
+</p>
+
+<pre><code>package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+func divide(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, errors.New("division by zero")
+    }
+    return a / b, nil
+}
+
+func main() {
+    result, err := divide(10, 0)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Println("Result:", result)
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous avons une fonction "divide" qui effectue une division entre deux nombres. Si le diviseur est égal à zéro, nous retournons une nouvelle erreur en utilisant la fonction "errors.New()". Dans la fonction "main", nous appelons la fonction "divide" avec un diviseur égal à zéro, ce qui génère une erreur. Nous vérifions ensuite si une erreur s'est produite en utilisant la syntaxe "if err != nil" et affichons l'erreur à l'écran.
+</p>
+
+<h2>Utilisation des paniques et des récupérations</h2>
+<p>
+En plus de la gestion des erreurs, Go offre également la possibilité de déclencher des paniques et de les récupérer. Une panique est une situation exceptionnelle qui se produit lorsqu'une erreur critique se produit et que le programme ne peut pas continuer à s'exécuter normalement.
+</p>
+
+<p>
+Pour déclencher une panique, vous pouvez utiliser la fonction "panic()" en passant une valeur qui décrit la panique. Une fois qu'une panique est déclenchée, l'exécution normale du programme est arrêtée et le programme commence à remonter la pile d'appels pour trouver un point de récupération.
+</p>
+
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered:", r)
+        }
+    }()
+
+    panic("Something went wrong!")
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons la fonction "panic()" pour déclencher une panique avec le message "Something went wrong!". Nous utilisons également la fonction "recover()" dans une fonction différée pour récupérer la panique. La fonction "recover()" renvoie la valeur passée à "panic()" si une panique a été déclenchée, sinon elle renvoie "nil". Dans notre cas, nous affichons simplement le message de récupération à l'écran.
+</p>
+
+<p>
+Il est important de noter que les paniques ne doivent être utilisées que dans des situations exceptionnelles où le programme ne peut pas continuer à s'exécuter normalement. Dans la plupart des cas, il est préférable d'utiliser la gestion des erreurs pour gérer les situations d'erreur prévisibles.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

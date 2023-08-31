@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Utilisation des bibliothèques et frameworks populaires en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de bibliothèques tierces</h2>
+<p>En tant que développeur Go, vous aurez souvent besoin d'utiliser des bibliothèques tierces pour ajouter des fonctionnalités supplémentaires à vos applications. Heureusement, la communauté Go propose un large éventail de bibliothèques de haute qualité pour répondre à vos besoins.</p>
+
+<p>Pour utiliser une bibliothèque tierce, vous devez d'abord l'importer dans votre code. Vous pouvez le faire en utilisant la commande <code>import</code> suivie du chemin d'importation de la bibliothèque. Par exemple :</p>
+
+<pre><code>import "github.com/nom_utilisateur/nom_bibliotheque"</code></pre>
+
+<p>Une fois que vous avez importé la bibliothèque, vous pouvez utiliser ses fonctionnalités en appelant les fonctions et les méthodes qu'elle expose. Assurez-vous de consulter la documentation de la bibliothèque pour connaître les détails spécifiques sur la façon d'utiliser ses fonctionnalités.</p>
+
+<p>Il est également important de noter que les bibliothèques tierces peuvent être soumises à des mises à jour régulières. Il est donc recommandé de suivre les mises à jour de la bibliothèque que vous utilisez et de mettre à jour votre code en conséquence pour bénéficier des dernières fonctionnalités et corrections de bugs.</p>
+
+<h2>Introduction aux frameworks web en Go</h2>
+<p>Les frameworks web en Go sont des outils puissants qui facilitent le développement d'applications web. Ils fournissent une structure et des fonctionnalités prêtes à l'emploi pour gérer les requêtes HTTP, le routage, la gestion des sessions, la validation des formulaires, etc.</p>
+
+<p>Voici quelques-uns des frameworks web populaires en Go :</p>
+
+<ul>
+  <li><a href="https://github.com/gin-gonic/gin">Gin</a> : un framework léger et rapide avec une syntaxe simple et intuitive.</li>
+  <li><a href="https://github.com/labstack/echo">Echo</a> : un framework minimaliste et hautement performant.</li>
+  <li><a href="https://github.com/revel/revel">Revel</a> : un framework complet avec une architecture MVC.</li>
+</ul>
+
+<p>Pour utiliser un framework web en Go, vous devez d'abord l'importer dans votre code, tout comme vous le feriez avec une bibliothèque tierce. Ensuite, vous pouvez définir les routes de votre application, gérer les requêtes HTTP et les réponses, et utiliser les fonctionnalités spécifiques du framework.</p>
+
+<p>Chaque framework a sa propre façon de définir les routes et de gérer les requêtes, il est donc important de consulter la documentation du framework que vous utilisez pour connaître les détails spécifiques.</p>
+
+<h2>Utilisation de bases de données avec Go</h2>
+<p>Go offre une prise en charge native pour de nombreux types de bases de données, ce qui facilite l'utilisation de bases de données dans vos applications. Voici quelques-unes des bases de données populaires utilisées avec Go :</p>
+
+<ul>
+  <li><a href="https://www.postgresql.org/">PostgreSQL</a> : une base de données relationnelle open source.</li>
+  <li><a href="https://www.mysql.com/">MySQL</a> : une autre base de données relationnelle populaire.</li>
+  <li><a href="https://www.mongodb.com/">MongoDB</a> : une base de données NoSQL orientée document.</li>
+</ul>
+
+<p>Pour utiliser une base de données avec Go, vous devez d'abord importer le pilote de base de données correspondant dans votre code. Ensuite, vous pouvez établir une connexion à la base de données, exécuter des requêtes SQL et récupérer les résultats.</p>
+
+<p>Chaque base de données a son propre pilote et sa propre syntaxe SQL, il est donc important de consulter la documentation de la base de données que vous utilisez pour connaître les détails spécifiques.</p>
+
+<p>Il convient également de noter que Go propose également des bibliothèques d'ORM (Object-Relational Mapping) telles que <a href="https://gorm.io/">GORM</a> et <a href="https://xorm.io/">XORM</a> qui simplifient l'interaction avec les bases de données en utilisant des objets et des requêtes au lieu de SQL brut.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

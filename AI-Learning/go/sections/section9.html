@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Programmation avancée en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réflexion et introspection</h2>
+<p>La réflexion et l'introspection sont des fonctionnalités avancées de Go qui permettent d'analyser et de manipuler des objets à l'exécution. La réflexion permet d'obtenir des informations sur le type d'un objet, d'accéder à ses champs et de manipuler ses valeurs. L'introspection, quant à elle, permet d'analyser la structure d'un programme et d'obtenir des informations sur les fonctions, les variables et les types définis.</p>
+
+<p>Voici un exemple d'utilisation de la réflexion en Go :</p>
+
+<pre><code>package main
+
+import (
+    "fmt"
+    "reflect"
+)
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    p := Person{Name: "John", Age: 30}
+
+    // Obtention du type de l'objet p
+    t := reflect.TypeOf(p)
+    fmt.Println("Type:", t)
+
+    // Obtention des champs de l'objet p
+    for i := 0; i < t.NumField(); i++ {
+        field := t.Field(i)
+        fmt.Printf("Field %d: %s (%s)\n", i, field.Name, field.Type)
+    }
+
+    // Obtention des valeurs des champs de l'objet p
+    v := reflect.ValueOf(p)
+    for i := 0; i < v.NumField(); i++ {
+        value := v.Field(i)
+        fmt.Printf("Value %d: %v\n", i, value.Interface())
+    }
+}
+</code></pre>
+
+<p>Cet exemple utilise la réflexion pour obtenir le type de l'objet "p" (qui est de type "Person") et pour accéder à ses champs et à leurs valeurs. La fonction "reflect.TypeOf" renvoie le type de l'objet, tandis que la fonction "reflect.ValueOf" renvoie une valeur réfléchie qui permet d'accéder aux champs de l'objet.</p>
+
+<h2>Génération de code avec les templates</h2>
+<p>La génération de code avec les templates est une technique puissante qui permet de créer du code source à partir de modèles prédéfinis. Go propose un package "text/template" qui facilite la création de templates et leur utilisation pour générer du code.</p>
+
+<p>Voici un exemple d'utilisation de la génération de code avec les templates en Go :</p>
+
+<pre><code>package main
+
+import (
+    "os"
+    "text/template"
+)
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    p := Person{Name: "John", Age: 30}
+
+    // Définition du template
+    tmpl := template.Must(template.New("person").Parse("{{.Name}} is {{.Age}} years old."))
+
+    // Génération du code à partir du template
+    err := tmpl.Execute(os.Stdout, p)
+    if err != nil {
+        panic(err)
+    }
+}
+</code></pre>
+
+<p>Cet exemple utilise le package "text/template" pour définir un template qui affiche le nom et l'âge d'une personne. La fonction "template.Must" est utilisée pour créer le template et la méthode "Execute" est utilisée pour générer le code à partir du template. Le code généré est ensuite affiché sur la sortie standard.</p>
+
+<h2>Utilisation des channels pour la synchronisation avancée</h2>
+<p>Les channels sont un mécanisme de synchronisation avancée en Go. Ils permettent la communication et la synchronisation entre les goroutines, les unités d'exécution concurrentes en Go. Les channels peuvent être utilisés pour envoyer et recevoir des valeurs entre les goroutines, ce qui facilite la coordination et la synchronisation des différentes parties d'un programme concurrent.</p>
+
+<p>Voici un exemple d'utilisation des channels pour la synchronisation avancée en Go :</p>
+
+<pre><code>package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func worker(id int, jobs <-chan int, results chan<- int) {
+    for j := range jobs {
+        fmt.Println("Worker", id, "started job", j)
+        time.Sleep(time.Second)
+        fmt.Println("Worker", id, "finished job", j)
+        results <- j * 2
+    }
+}
+
+func main() {
+    numJobs := 5
+    jobs := make(chan int, numJobs)
+    results := make(chan int, numJobs)
+
+    // Lancement des goroutines
+    for w := 1; w <= 3; w++ {
+        go worker(w, jobs, results)
+    }
+
+    // Envoi des jobs aux goroutines
+    for j := 1; j <= numJobs; j++ {
+        jobs <- j
+    }
+    close(jobs)
+
+    // Récupération des résultats
+    for a := 1; a <= numJobs; a++ {
+        <-results
+    }
+}
+</code></pre>
+
+<p>Cet exemple utilise des channels pour coordonner le travail de plusieurs goroutines. La fonction "worker" est une goroutine qui reçoit des jobs à partir d'un channel "jobs" et envoie les résultats à un channel "results". La fonction "main" crée les channels, lance les goroutines et envoie les jobs aux goroutines via le channel "jobs". Les résultats sont ensuite récupérés à partir du channel "results".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

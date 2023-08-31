@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13 : Projet pratique : développement d'une application complète en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Analyse des besoins et conception de l'application</h2>
+<p>Lors de cette étape, nous allons analyser les besoins de notre application et concevoir sa structure. Il est essentiel de comprendre les fonctionnalités attendues et les exigences spécifiques avant de commencer à coder.</p>
+
+<p>Pour illustrer ce processus, prenons l'exemple d'une application de gestion de tâches. Les besoins de cette application sont les suivants :</p>
+
+<ul>
+  <li>Permettre aux utilisateurs de créer, modifier et supprimer des tâches</li>
+  <li>Afficher une liste des tâches existantes</li>
+  <li>Marquer une tâche comme terminée</li>
+  <li>Permettre aux utilisateurs de rechercher des tâches spécifiques</li>
+</ul>
+
+<p>Pour répondre à ces besoins, nous allons concevoir une architecture basée sur une structure de données pour représenter les tâches et des fonctions pour effectuer les opérations nécessaires.</p>
+
+<p>Voici un exemple de structure de données pour représenter une tâche :</p>
+
+<pre><code>type Task struct {
+  ID          int
+  Title       string
+  Description string
+  Completed   bool
+}
+</code></pre>
+
+<p>Nous aurons également besoin de fonctions pour créer, modifier et supprimer des tâches, ainsi que pour afficher la liste des tâches et effectuer des recherches. Voici un exemple de fonction pour créer une nouvelle tâche :</p>
+
+<pre><code>func CreateTask(title string, description string) Task {
+  // Générer un ID unique pour la nouvelle tâche
+  id := generateUniqueID()
+
+  // Créer une nouvelle instance de Task avec les valeurs fournies
+  task := Task{
+    ID:          id,
+    Title:       title,
+    Description: description,
+    Completed:   false,
+  }
+
+  // Ajouter la nouvelle tâche à la liste des tâches existantes
+  tasks = append(tasks, task)
+
+  return task
+}
+</code></pre>
+
+<p>Ce n'est qu'un exemple simplifié pour illustrer le processus d'analyse des besoins et de conception de l'application. Dans un projet réel, vous devrez prendre en compte des aspects tels que la sécurité, la performance et la convivialité de l'interface utilisateur.</p>
+
+<h2>Implémentation des fonctionnalités principales</h2>
+<p>Une fois que nous avons analysé les besoins et conçu la structure de notre application, nous pouvons passer à l'implémentation des fonctionnalités principales. Dans cette étape, nous allons coder les différentes fonctions nécessaires pour créer, modifier, supprimer et afficher des tâches.</p>
+
+<p>Voici un exemple de fonction pour marquer une tâche comme terminée :</p>
+
+<pre><code>func MarkTaskAsCompleted(taskID int) {
+  // Parcourir la liste des tâches existantes
+  for i, task := range tasks {
+    // Vérifier si l'ID de la tâche correspond à celui fourni en paramètre
+    if task.ID == taskID {
+      // Mettre à jour le statut de la tâche
+      tasks[i].Completed = true
+      break
+    }
+  }
+}
+</code></pre>
+
+<p>De même, nous devrons implémenter des fonctions pour modifier et supprimer des tâches, ainsi que pour afficher la liste des tâches existantes.</p>
+
+<h2>Tests et débogage de l'application</h2>
+<p>Une fois que nous avons implémenté les fonctionnalités principales de notre application, il est essentiel de les tester pour s'assurer qu'elles fonctionnent correctement. Les tests nous permettent de détecter et de corriger les éventuels problèmes ou bugs.</p>
+
+<p>Voici un exemple de test unitaire pour la fonction de création de tâches :</p>
+
+<pre><code>func TestCreateTask(t *testing.T) {
+  // Appeler la fonction CreateTask avec des valeurs de test
+  task := CreateTask("Test Task", "This is a test task")
+
+  // Vérifier si la tâche a été créée avec succès
+  if task.Title != "Test Task" || task.Description != "This is a test task" || task.Completed != false {
+    t.Errorf("CreateTask() failed, expected task with title 'Test Task', description 'This is a test task' and completed status 'false', got %+v", task)
+  }
+}
+</code></pre>
+
+<p>Nous devons également effectuer des tests d'intégration pour vérifier que toutes les fonctionnalités de notre application fonctionnent correctement ensemble.</p>
+
+<p>En plus des tests, il est important de déboguer notre application pour identifier et résoudre les problèmes éventuels. Nous pouvons utiliser des outils de débogage tels que les points d'arrêt (breakpoints) et les journaux (logs) pour comprendre le comportement de notre application et trouver les erreurs.</p>
+
+<h2>Déploiement et distribution de l'application</h2>
+<p>Une fois que nous avons terminé de développer et de tester notre application, nous pouvons passer à l'étape de déploiement et de distribution. Cette étape consiste à préparer notre application pour une utilisation réelle et à la rendre disponible aux utilisateurs finaux.</p>
+
+<p>Pour déployer notre application, nous devons la compiler en un binaire exécutable. Voici un exemple de commande pour compiler notre application :</p>
+
+<pre><code>go build -o task-manager main.go
+</code></pre>
+
+<p>Cette commande génère un fichier exécutable nommé "task-manager" à partir du fichier source principal "main.go".</p>
+
+<p>Une fois que nous avons notre binaire exécutable, nous pouvons le distribuer aux utilisateurs finaux. Cela peut se faire via différents canaux, tels que le téléchargement depuis un site web, la distribution via des plateformes de distribution d'applications ou l'intégration dans des packages de distribution de systèmes d'exploitation.</p>
+
+<h2>Récapitulatif des concepts clés</h2>
+<p>Dans cette section, nous avons appris à développer une application complète en Go en suivant les étapes d'analyse des besoins, de conception, d'implémentation, de tests, de débogage, de déploiement et de distribution. Nous avons également vu comment utiliser des structures de données, des fonctions et des tests pour créer des fonctionnalités robustes et fiables.</p>
+
+<h2>Ressources supplémentaires pour approfondir ses connaissances en Go</h2>
+<p>Si vous souhaitez approfondir vos connaissances en Go, voici quelques ressources supplémentaires recommandées :</p>
+
+<ul>
+  <li>Documentation officielle de Go : <a href="https://golang.org/doc/">https://golang.org/doc/</a></li>
+  <li>Tutoriels en ligne sur Go : <a href="https://tour.golang.org/welcome/1">https://tour.golang.org/welcome/1</a></li>
+  <li>Communauté Go sur Reddit : <a href="https://www.reddit.com/r/golang/">https://www.reddit.com/r/golang/</a></li>
+  <li>Chaîne YouTube officielle de Go : <a href="https://www.youtube.com/c/Golang">https://www.youtube.com/c/Golang</a></li>
+</ul>
+
+<h2>Perspectives et opportunités professionnelles avec Go</h2>
+<p>Go est un langage de programmation puissant et polyvalent qui offre de nombreuses opportunités professionnelles. En raison de sa simplicité, de sa performance et de sa concurrence native, Go est de plus en plus utilisé dans des domaines tels que le développement web, les systèmes distribués, la programmation réseau et la science des données.</p>
+
+<p>En maîtrisant Go, vous pouvez vous ouvrir de nombreuses portes dans le domaine du développement logiciel. Que vous souhaitiez travailler en tant que développeur Go dans une entreprise ou créer vos propres applications, les compétences en Go sont très demandées sur le marché du travail.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

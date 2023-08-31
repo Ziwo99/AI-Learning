@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Gestion des dépendances et tests en Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des dépendances avec Go Modules</h2>
+<p>Go Modules est un outil intégré dans Go qui permet de gérer les dépendances d'un projet. Il permet de spécifier les versions des packages utilisés et de gérer les mises à jour de manière contrôlée.</p>
+<p>Pour utiliser Go Modules, il suffit de créer un fichier go.mod à la racine du projet. Ce fichier contient la liste des dépendances et leurs versions. Lorsque vous importez un package, Go Modules vérifie si la version spécifiée est disponible et la télécharge automatiquement si nécessaire.</p>
+<p>Voici un exemple de fichier go.mod :</p>
+<pre><code>module monprojet
+
+go 1.16
+
+require (
+    github.com/nom-package/v1 v1.2.3
+    github.com/autre-package v0.4.5
+)
+</code></pre>
+<p>Dans cet exemple, le projet utilise deux packages : "nom-package" en version 1.2.3 et "autre-package" en version 0.4.5.</p>
+
+<h2>Écriture de tests unitaires et tests d'intégration</h2>
+<p>Les tests sont une partie essentielle du développement en Go. Ils permettent de vérifier le bon fonctionnement des différentes parties d'un programme et d'éviter les régressions.</p>
+<p>Les tests unitaires sont utilisés pour tester des fonctions, des méthodes ou des packages individuellement. Ils sont généralement écrits dans des fichiers séparés avec le suffixe "_test.go". Les tests unitaires peuvent être exécutés à l'aide de la commande "go test".</p>
+<p>Voici un exemple de test unitaire pour une fonction "Add" qui additionne deux nombres :</p>
+<pre><code>package math
+
+import "testing"
+
+func TestAdd(t *testing.T) {
+    result := Add(2, 3)
+    expected := 5
+    if result != expected {
+        t.Errorf("Add(2, 3) returned %d, expected %d", result, expected)
+    }
+}
+</code></pre>
+<p>Les tests d'intégration sont utilisés pour tester l'interaction entre plusieurs parties d'un programme. Ils peuvent être plus complexes et nécessitent souvent la mise en place d'un environnement de test spécifique.</p>
+<p>Il est recommandé d'écrire des tests unitaires et des tests d'intégration pour assurer une couverture complète des fonctionnalités d'un projet.</p>
+
+<h2>Utilisation d'outils de test et de couverture de code</h2>
+<p>Go propose plusieurs outils pour faciliter l'écriture et l'exécution des tests, ainsi que pour mesurer la couverture de code.</p>
+<p>L'outil "go test" est utilisé pour exécuter les tests unitaires et d'intégration. Il recherche automatiquement les fichiers de test dans le projet et les exécute. Il fournit également des informations détaillées sur les tests réussis ou échoués.</p>
+<p>Voici un exemple d'utilisation de la commande "go test" :</p>
+<pre><code>go test ./...
+</code></pre>
+<p>L'outil "go test" peut également générer un rapport de couverture de code. Il indique quelles parties du code ont été exécutées lors des tests et quelles parties n'ont pas été couvertes.</p>
+<p>Voici un exemple d'utilisation de la commande "go test" avec l'option de couverture de code :</p>
+<pre><code>go test -cover ./...
+</code></pre>
+<p>Cet exemple génère un rapport de couverture de code pour l'ensemble du projet.</p>
+
+<p>Il est recommandé d'utiliser régulièrement les outils de test et de couverture de code pour s'assurer de la qualité du code et de la couverture des tests.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

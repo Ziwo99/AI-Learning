@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Go Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Déploiement et distribution d'applications Go</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/go/go.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Compilation et création de binaires exécutables</h2>
+<p>Lorsque vous avez terminé de développer votre application Go, vous devez la compiler pour créer un binaire exécutable. La compilation de votre code source Go en un binaire exécutable peut être réalisée à l'aide de la commande <code>go build</code>.</p>
+<p>Par exemple, pour compiler un fichier source nommé <code>main.go</code> et créer un binaire exécutable nommé <code>myapp</code>, vous pouvez exécuter la commande suivante :</p>
+<pre><code>go build -o myapp main.go</code></pre>
+<p>Cela générera un fichier exécutable nommé <code>myapp</code> dans le répertoire actuel.</p>
+
+<h2>Packaging et distribution d'applications</h2>
+<p>Une fois que vous avez créé un binaire exécutable pour votre application Go, vous pouvez le distribuer aux utilisateurs finaux. Pour faciliter la distribution, vous pouvez créer un package contenant votre binaire exécutable et éventuellement d'autres fichiers nécessaires à l'exécution de votre application.</p>
+<p>Un moyen courant de créer un package est d'utiliser la commande <code>go build</code> avec l'option <code>-o</code> pour spécifier le nom du binaire exécutable et l'option <code>-ldflags</code> pour spécifier d'autres fichiers à inclure dans le package.</p>
+<p>Par exemple, pour créer un package contenant le binaire exécutable <code>myapp</code> et un fichier de configuration <code>config.json</code>, vous pouvez exécuter la commande suivante :</p>
+<pre><code>go build -o myapp -ldflags="-X main.configFile=config.json" main.go</code></pre>
+<p>Cela générera un package contenant le binaire exécutable <code>myapp</code> et le fichier de configuration <code>config.json</code>.</p>
+
+<h2>Déploiement sur des plateformes cloud</h2>
+<p>Go offre une excellente prise en charge du déploiement d'applications sur des plateformes cloud telles que Google Cloud Platform (GCP), Amazon Web Services (AWS) et Microsoft Azure. Ces plateformes cloud fournissent des services d'hébergement et de mise à l'échelle pour vos applications Go.</p>
+<p>Pour déployer une application Go sur une plateforme cloud, vous devez généralement suivre les étapes suivantes :</p>
+<ol>
+  <li>Créez un compte sur la plateforme cloud de votre choix et configurez votre environnement de développement pour y accéder.</li>
+  <li>Créez un projet sur la plateforme cloud et configurez les paramètres de votre application, tels que les ressources nécessaires et les variables d'environnement.</li>
+  <li>Compilez votre application Go en un binaire exécutable à l'aide de la commande <code>go build</code>.</li>
+  <li>Déployez votre application sur la plateforme cloud en utilisant les outils fournis par la plateforme, tels que la console de gestion ou les interfaces de ligne de commande.</li>
+</ol>
+<p>Chaque plateforme cloud a ses propres spécificités et outils de déploiement, il est donc important de consulter la documentation officielle de la plateforme cloud que vous utilisez pour obtenir des instructions détaillées sur le déploiement d'applications Go.</p>
+
+<p>En suivant ces étapes, vous pourrez déployer et distribuer vos applications Go sur différentes plateformes cloud, ce qui vous permettra de les rendre accessibles aux utilisateurs finaux de manière fiable et évolutive.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/go/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/go/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
