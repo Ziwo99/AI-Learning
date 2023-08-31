@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MongoDB Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Modélisation des données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mongodb/mongodb.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Conception de schémas de données</h2>
+<p>La conception de schémas de données est une étape cruciale dans l'utilisation de MongoDB. Elle consiste à déterminer la structure et les relations entre les données que vous souhaitez stocker dans votre base de données.</p>
+<p>La conception d'un schéma de données MongoDB repose sur le modèle de données flexible de MongoDB, qui permet de stocker des données non structurées ou semi-structurées. Cela signifie que vous n'avez pas besoin de définir un schéma rigide à l'avance, mais vous pouvez le faire au fur et à mesure que vous ajoutez des données à votre base de données.</p>
+<p>Pour concevoir un schéma de données efficace, il est important de prendre en compte les besoins spécifiques de votre application et de comprendre les types de requêtes que vous allez effectuer sur vos données.</p>
+<p>Voici quelques bonnes pratiques à suivre lors de la conception d'un schéma de données :</p>
+<ul>
+  <li>Identifier les entités principales de votre application et déterminer les relations entre elles.</li>
+  <li>Utiliser des structures de données imbriquées pour représenter des objets complexes.</li>
+  <li>Utiliser des index pour optimiser les requêtes fréquentes.</li>
+  <li>Éviter les schémas trop dénormalisés qui peuvent entraîner des redondances de données.</li>
+  <li>Utiliser des schémas flexibles pour permettre l'évolution de votre application.</li>
+</ul>
+
+<h2>Utilisation des types de données avancés</h2>
+<p>MongoDB offre une variété de types de données avancés pour stocker des données complexes. Ces types de données permettent de représenter des tableaux, des objets imbriqués, des dates, des géolocalisations, etc.</p>
+<p>Voici quelques-uns des types de données avancés les plus couramment utilisés dans MongoDB :</p>
+<ul>
+  <li>Tableaux : permettent de stocker plusieurs valeurs dans un seul champ.</li>
+  <li>Objets imbriqués : permettent de représenter des structures de données complexes.</li>
+  <li>Dates : permettent de stocker des dates et des heures.</li>
+  <li>Géolocalisations : permettent de stocker des coordonnées géographiques.</li>
+  <li>Objets ObjectId : permettent d'identifier de manière unique un document dans une collection.</li>
+</ul>
+<p>L'utilisation de ces types de données avancés peut rendre votre schéma de données plus flexible et plus adapté à vos besoins spécifiques.</p>
+
+<h2>Relations entre collections</h2>
+<p>Dans MongoDB, les relations entre collections peuvent être gérées de différentes manières. Vous pouvez utiliser des références ou des sous-documents pour représenter les relations entre vos données.</p>
+<p>Les références sont des liens entre documents dans différentes collections. Elles permettent de représenter des relations de type "un à plusieurs" ou "plusieurs à plusieurs". Par exemple, si vous avez une collection de clients et une collection de commandes, vous pouvez utiliser une référence pour lier chaque commande à un client.</p>
+<p>Les sous-documents sont des documents imbriqués à l'intérieur d'autres documents. Ils permettent de représenter des relations de type "un à un" ou "un à plusieurs". Par exemple, si vous avez une collection de produits et une collection de commentaires, vous pouvez utiliser un sous-document pour stocker les commentaires de chaque produit.</p>
+<p>Le choix entre les références et les sous-documents dépend des besoins spécifiques de votre application. Les références sont généralement préférées lorsque vous avez besoin de gérer des relations complexes ou lorsque vous avez besoin de performances élevées lors de l'accès aux données. Les sous-documents sont généralement préférés lorsque vous avez besoin de récupérer les données liées en une seule requête.</p>
+
+<h2>Utilisation des références et des sous-documents</h2>
+<p>Les références et les sous-documents sont deux techniques couramment utilisées pour représenter les relations entre les collections dans MongoDB.</p>
+<p>Les références sont des liens entre documents dans différentes collections. Elles permettent de représenter des relations de type "un à plusieurs" ou "plusieurs à plusieurs". Par exemple, si vous avez une collection de clients et une collection de commandes, vous pouvez utiliser une référence pour lier chaque commande à un client.</p>
+<p>Voici un exemple de l'utilisation des références :</p>
+<pre><code>db.clients.insertOne({
+  _id: ObjectId("5f5c4e8a8a1e9a001f2e3e4f"),
+  name: "John Doe"
+});
+
+db.orders.insertOne({
+  _id: ObjectId("5f5c4e8a8a1e9a001f2e3e50"),
+  client: ObjectId("5f5c4e8a8a1e9a001f2e3e4f"),
+  products: [
+    { name: "Product 1", price: 10 },
+    { name: "Product 2", price: 20 }
+  ]
+});</code></pre>
+<p>Les sous-documents sont des documents imbriqués à l'intérieur d'autres documents. Ils permettent de représenter des relations de type "un à un" ou "un à plusieurs". Par exemple, si vous avez une collection de produits et une collection de commentaires, vous pouvez utiliser un sous-document pour stocker les commentaires de chaque produit.</p>
+<p>Voici un exemple de l'utilisation des sous-documents :</p>
+<pre><code>db.products.insertOne({
+  _id: ObjectId("5f5c4e8a8a1e9a001f2e3e51"),
+  name: "Product 1",
+  comments: [
+    { author: "John Doe", text: "Great product!" },
+    { author: "Jane Smith", text: "I love it!" }
+  ]
+});</code></pre>
+<p>Le choix entre les références et les sous-documents dépend des besoins spécifiques de votre application. Les références sont généralement préférées lorsque vous avez besoin de gérer des relations complexes ou lorsque vous avez besoin de performances élevées lors de l'accès aux données. Les sous-documents sont généralement préférés lorsque vous avez besoin de récupérer les données liées en une seule requête.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

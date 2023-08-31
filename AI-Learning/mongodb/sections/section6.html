@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MongoDB Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Utilisation avancée de MongoDB</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mongodb/mongodb.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de MongoDB avec des langages de programmation</h2>
+<p>Une des forces de MongoDB est sa compatibilité avec de nombreux langages de programmation populaires tels que Python, Java, Node.js, et bien d'autres. Cela signifie que vous pouvez utiliser MongoDB dans vos applications en utilisant le langage de programmation de votre choix.</p>
+
+<p>Voici un exemple d'utilisation de MongoDB avec Python :</p>
+<pre><code>import pymongo
+
+# Connexion à la base de données MongoDB
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+# Sélection de la base de données
+db = client["ma_base_de_données"]
+
+# Sélection de la collection
+collection = db["ma_collection"]
+
+# Insertion d'un document
+document = { "nom": "John", "age": 30 }
+collection.insert_one(document)
+
+# Requête pour récupérer tous les documents
+documents = collection.find()
+
+# Affichage des documents
+for document in documents:
+    print(document)
+</code></pre>
+
+<h2>Utilisation de MongoDB avec des frameworks web</h2>
+<p>MongoDB est également compatible avec de nombreux frameworks web populaires tels que Express.js, Django, Ruby on Rails, etc. Cela vous permet d'utiliser MongoDB comme base de données pour vos applications web.</p>
+
+<p>Voici un exemple d'utilisation de MongoDB avec Express.js :</p>
+<pre><code>const express = require('express');
+const mongoose = require('mongoose');
+
+// Connexion à la base de données MongoDB
+mongoose.connect('mongodb://localhost:27017/ma_base_de_données', { useNewUrlParser: true });
+
+// Création du schéma de données
+const userSchema = new mongoose.Schema({
+    nom: String,
+    age: Number
+});
+
+// Création du modèle
+const User = mongoose.model('User', userSchema);
+
+// Création d'un nouvel utilisateur
+const user = new User({ nom: 'John', age: 30 });
+
+// Sauvegarde de l'utilisateur dans la base de données
+user.save((err) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('Utilisateur sauvegardé avec succès');
+    }
+});
+
+// Requête pour récupérer tous les utilisateurs
+User.find((err, utilisateurs) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(utilisateurs);
+    }
+});
+</code></pre>
+
+<h2>Utilisation de MongoDB avec des outils de Business Intelligence</h2>
+<p>MongoDB peut être utilisé avec des outils de Business Intelligence tels que Tableau, Power BI, et d'autres. Cela vous permet d'analyser et de visualiser vos données stockées dans MongoDB de manière efficace.</p>
+
+<p>Voici un exemple d'utilisation de MongoDB avec Tableau :</p>
+<pre><code>1. Ouvrez Tableau et cliquez sur "Connect to Data".
+2. Sélectionnez "MongoDB" comme source de données.
+3. Entrez les informations de connexion à votre base de données MongoDB.
+4. Sélectionnez la collection que vous souhaitez analyser.
+5. Utilisez les fonctionnalités de Tableau pour créer des visualisations et des tableaux de bord basés sur vos données MongoDB.
+</code></pre>
+
+<h2>Utilisation de MongoDB dans le cloud</h2>
+<p>MongoDB peut être utilisé dans le cloud en utilisant des services tels que MongoDB Atlas, AWS DocumentDB, Google Cloud Firestore, etc. Cela vous permet de déployer et de gérer facilement vos bases de données MongoDB dans le cloud.</p>
+
+<p>Voici un exemple d'utilisation de MongoDB avec MongoDB Atlas :</p>
+<pre><code>1. Créez un compte sur MongoDB Atlas et connectez-vous.
+2. Créez un nouveau cluster MongoDB.
+3. Configurez les paramètres de votre cluster, tels que la région, la taille de l'instance, etc.
+4. Une fois votre cluster créé, vous pouvez vous connecter à votre base de données MongoDB en utilisant l'URL de connexion fournie par MongoDB Atlas.
+5. Utilisez votre base de données MongoDB dans le cloud comme vous le feriez avec une base de données locale.
+</code></pre>
+
+Assurez-vous de consulter la documentation officielle de MongoDB et des langages/frameworks que vous utilisez pour obtenir des informations plus détaillées sur l'utilisation de MongoDB avec ces outils.
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

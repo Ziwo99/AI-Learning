@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MongoDB Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Administration de MongoDB</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mongodb/mongodb.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration et gestion des serveurs MongoDB</h2>
+<p>La configuration et la gestion des serveurs MongoDB sont des aspects essentiels de l'administration de MongoDB. Dans cette sous-section, nous allons explorer les différentes étapes pour configurer et gérer efficacement les serveurs MongoDB.</p>
+
+<p>Pour configurer un serveur MongoDB, vous devez prendre en compte plusieurs paramètres tels que le chemin d'accès aux fichiers de données, le port d'écoute, les options de journalisation, etc. Vous pouvez modifier ces paramètres en éditant le fichier de configuration mongod.conf.</p>
+
+<p>Voici un exemple de fichier de configuration mongod.conf :</p>
+
+<pre><code>storage:
+  dbPath: /var/lib/mongodb
+  journal:
+    enabled: true
+systemLog:
+  destination: file
+  path: /var/log/mongodb/mongod.log
+  logAppend: true
+net:
+  bindIp: 127.0.0.1
+  port: 27017
+</code></pre>
+
+<p>Une fois que vous avez configuré votre serveur MongoDB, vous pouvez le démarrer en exécutant la commande suivante :</p>
+
+<pre><code>mongod --config /path/to/mongod.conf</code></pre>
+
+<p>Pour gérer les serveurs MongoDB, vous pouvez utiliser l'interface en ligne de commande mongo. Cette interface vous permet d'exécuter des commandes MongoDB pour interagir avec le serveur.</p>
+
+<p>Voici quelques commandes utiles pour la gestion des serveurs MongoDB :</p>
+
+<pre><code>show dbs : Affiche la liste des bases de données.
+use &lt;database&gt; : Sélectionne une base de données spécifique.
+show collections : Affiche la liste des collections dans la base de données sélectionnée.
+db.stats() : Affiche les statistiques de la base de données sélectionnée.
+db.shutdownServer() : Arrête le serveur MongoDB.</code></pre>
+
+<h2>Sauvegarde et restauration de données</h2>
+<p>La sauvegarde et la restauration de données sont des opérations essentielles pour assurer la sécurité des données dans MongoDB. Dans cette sous-section, nous allons explorer les différentes méthodes pour sauvegarder et restaurer des données dans MongoDB.</p>
+
+<p>Une méthode courante pour sauvegarder des données dans MongoDB est d'utiliser l'outil mongodump. Cet outil vous permet de créer une sauvegarde complète de votre base de données MongoDB.</p>
+
+<p>Voici un exemple de commande mongodump pour sauvegarder une base de données :</p>
+
+<pre><code>mongodump --db &lt;database&gt; --out /path/to/backup/directory</code></pre>
+
+<p>Pour restaurer une sauvegarde, vous pouvez utiliser l'outil mongorestore. Cet outil vous permet de restaurer une sauvegarde précédemment créée dans MongoDB.</p>
+
+<p>Voici un exemple de commande mongorestore pour restaurer une sauvegarde :</p>
+
+<pre><code>mongorestore --db &lt;database&gt; /path/to/backup/directory</code></pre>
+
+<p>Il est également possible de sauvegarder et de restaurer des données à l'aide de l'interface en ligne de commande mongo. Vous pouvez utiliser les commandes suivantes :</p>
+
+<pre><code>mongodump : Sauvegarde la base de données actuellement sélectionnée.
+mongorestore : Restaure une sauvegarde dans la base de données actuellement sélectionnée.</code></pre>
+
+<h2>Surveillance et optimisation des performances</h2>
+<p>La surveillance et l'optimisation des performances sont des tâches importantes dans l'administration de MongoDB. Dans cette sous-section, nous allons explorer les différentes techniques pour surveiller et optimiser les performances de votre déploiement MongoDB.</p>
+
+<p>Pour surveiller les performances de votre déploiement MongoDB, vous pouvez utiliser l'outil mongostat. Cet outil vous permet de surveiller en temps réel les statistiques de performance de votre serveur MongoDB.</p>
+
+<p>Voici un exemple de commande mongostat pour surveiller les performances :</p>
+
+<pre><code>mongostat</code></pre>
+
+<p>En plus de l'outil mongostat, MongoDB fournit également une interface web appelée MongoDB Compass. Cette interface vous permet de visualiser et d'analyser les performances de votre déploiement MongoDB de manière graphique.</p>
+
+<p>Pour optimiser les performances de votre déploiement MongoDB, vous pouvez prendre en compte plusieurs facteurs tels que l'indexation, la configuration du cache, l'utilisation de requêtes efficaces, etc.</p>
+
+<p>Voici quelques conseils pour optimiser les performances de votre déploiement MongoDB :</p>
+
+<ul>
+  <li>Créez des index appropriés pour les requêtes fréquentes.</li>
+  <li>Utilisez la mise en cache pour réduire les temps d'accès aux données.</li>
+  <li>Évitez les requêtes coûteuses en utilisant des opérations d'agrégation.</li>
+  <li>Surveillez les performances régulièrement pour identifier les goulots d'étranglement.</li>
+</ul>
+
+<h2>Sécurité et gestion des utilisateurs</h2>
+<p>La sécurité et la gestion des utilisateurs sont des aspects critiques de l'administration de MongoDB. Dans cette sous-section, nous allons explorer les différentes mesures de sécurité que vous pouvez prendre pour protéger votre déploiement MongoDB.</p>
+
+<p>Une mesure de sécurité importante est de configurer l'authentification pour votre déploiement MongoDB. Vous pouvez utiliser l'authentification basée sur les rôles pour contrôler l'accès aux bases de données et aux collections.</p>
+
+<p>Voici les étapes pour configurer l'authentification dans MongoDB :</p>
+
+<ol>
+  <li>Créez un utilisateur administrateur avec des privilèges d'administration.</li>
+  <li>Créez des utilisateurs avec des rôles spécifiques pour accéder aux bases de données et aux collections.</li>
+  <li>Activez l'authentification dans le fichier de configuration mongod.conf.</li>
+  <li>Redémarrez le serveur MongoDB pour appliquer les modifications.</li>
+</ol>
+
+<p>En plus de l'authentification, vous pouvez également configurer d'autres mesures de sécurité telles que le chiffrement des données en transit et au repos, la limitation des connexions réseau, etc.</p>
+
+<h2>Réplication et haute disponibilité</h2>
+<p>La réplication et la haute disponibilité sont des fonctionnalités essentielles pour assurer la disponibilité continue des données dans MongoDB. Dans cette sous-section, nous allons explorer les concepts de réplication et de haute disponibilité dans MongoDB.</p>
+
+<p>La réplication dans MongoDB consiste à maintenir plusieurs copies des données sur différents serveurs. Cela permet d'assurer la disponibilité des données en cas de défaillance d'un serveur.</p>
+
+<p>Voici les étapes pour configurer la réplication dans MongoDB :</p>
+
+<ol>
+  <li>Créez un ensemble de réplication en spécifiant les membres et les rôles.</li>
+  <li>Initialisez l'ensemble de réplication en démarrant les membres.</li>
+  <li>Configurez les paramètres de réplication tels que le mode de réplication, les priorités, etc.</li>
+  <li>Vérifiez l'état de la réplication en utilisant la commande rs.status().</li>
+</ol>
+
+<p>La haute disponibilité dans MongoDB est assurée par la fonctionnalité de failover automatique. En cas de défaillance d'un membre de l'ensemble de réplication, un autre membre est automatiquement élu comme nouveau primaire.</p>
+
+<h2>Sharding et scalabilité horizontale</h2>
+<p>Le sharding et la scalabilité horizontale sont des fonctionnalités clés de MongoDB pour gérer de grandes quantités de données. Dans cette sous-section, nous allons explorer les concepts de sharding et de scalabilité horizontale dans MongoDB.</p>
+
+<p>Le sharding dans MongoDB consiste à répartir les données sur plusieurs serveurs appelés shards. Chaque shard contient une partie des données, ce qui permet de répartir la charge de travail et d'augmenter la capacité de stockage.</p>
+
+<p>Voici les étapes pour configurer le sharding dans MongoDB :</p>
+
+<ol>
+  <li>Configurez un serveur de configuration pour stocker les métadonnées du sharding.</li>
+  <li>Configurez plusieurs serveurs de données pour stocker les shards.</li>
+  <li>Activez le sharding pour une base de données spécifique en utilisant la commande sh.enableSharding().</li>
+  <li>Définissez une clé de shard pour la collection en utilisant la commande sh.shardCollection().</li>
+</ol>
+
+<p>La scalabilité horizontale dans MongoDB est réalisée en ajoutant de nouveaux serveurs de données au cluster. Cela permet d'augmenter la capacité de stockage et de traitement en ajoutant simplement de nouveaux serveurs.</p>
+
+<p>Il est important de noter que le sharding et la scalabilité horizontale nécessitent une planification et une configuration appropriées pour assurer des performances optimales.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MongoDB Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Opérations avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mongodb/mongodb.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Agrégation de données</h2>
+  <p>L'agrégation de données est une fonctionnalité puissante de MongoDB qui permet de traiter et d'analyser des données de manière avancée. Elle permet d'effectuer des opérations de regroupement, de filtrage, de tri et de calcul sur les données stockées dans une collection.</p>
+  <p>La méthode d'agrégation de MongoDB utilise un pipeline d'opérations, qui est une séquence d'étapes de traitement des données. Chaque étape du pipeline effectue une opération spécifique sur les données et passe les résultats à l'étape suivante.</p>
+  <p>Voici un exemple de pipeline d'agrégation qui calcule la moyenne des salaires pour chaque département :</p>
+  <pre><code>db.employees.aggregate([
+    { $group: { _id: "$department", averageSalary: { $avg: "$salary" } } }
+  ])</code></pre>
+  <p>Ce pipeline utilise l'opération $group pour regrouper les documents par département et calculer la moyenne des salaires à l'aide de l'opération $avg.</p>
+
+  <h2>Utilisation des pipelines d'agrégation</h2>
+  <p>Les pipelines d'agrégation permettent d'enchaîner plusieurs étapes de traitement des données pour effectuer des opérations complexes. Chaque étape peut utiliser différentes opérations pour manipuler les données.</p>
+  <p>Voici un exemple de pipeline d'agrégation qui calcule le nombre total de ventes par mois pour une collection de ventes :</p>
+  <pre><code>db.sales.aggregate([
+    { $match: { date: { $gte: ISODate("2022-01-01"), $lt: ISODate("2023-01-01") } } },
+    { $group: { _id: { $month: "$date" }, totalSales: { $sum: "$amount" } } },
+    { $sort: { _id: 1 } }
+  ])</code></pre>
+  <p>Ce pipeline utilise l'opération $match pour filtrer les ventes sur une période donnée, l'opération $group pour regrouper les ventes par mois et calculer le total des ventes à l'aide de l'opération $sum, et enfin l'opération $sort pour trier les résultats par mois.</p>
+
+  <h2>Opérations de jointure</h2>
+  <p>Les opérations de jointure permettent de combiner des données provenant de plusieurs collections dans une seule requête. MongoDB prend en charge les jointures équijoins et les jointures de table de hachage.</p>
+  <p>Voici un exemple de jointure équijoint entre une collection "orders" et une collection "customers" :</p>
+  <pre><code>db.orders.aggregate([
+    { $lookup: {
+      from: "customers",
+      localField: "customerId",
+      foreignField: "_id",
+      as: "customer"
+    } }
+  ])</code></pre>
+  <p>Cette opération de jointure récupère les documents de la collection "customers" qui correspondent aux valeurs de la clé étrangère "customerId" dans la collection "orders". Les résultats sont stockés dans un tableau "customer" dans chaque document de la collection "orders".</p>
+
+  <h2>Transactions et atomicité</h2>
+  <p>Les transactions permettent d'effectuer plusieurs opérations de manière atomique, c'est-à-dire que toutes les opérations sont exécutées avec succès ou aucune n'est exécutée. Cela garantit l'intégrité des données et évite les incohérences.</p>
+  <p>Voici un exemple de transaction qui transfère un montant d'une collection "accounts" à une autre :</p>
+  <pre><code>session.startTransaction();
+
+  try {
+    db.accounts.updateOne({ _id: fromAccountId }, { $inc: { balance: -amount } });
+    db.accounts.updateOne({ _id: toAccountId }, { $inc: { balance: amount } });
+
+    session.commitTransaction();
+  } catch (error) {
+    session.abortTransaction();
+    throw error;
+  } finally {
+    session.endSession();
+  }</code></pre>
+  <p>Cette transaction met à jour les soldes des comptes "fromAccountId" et "toAccountId" en déduisant le montant transféré du premier compte et en l'ajoutant au deuxième compte. Si une erreur se produit, la transaction est annulée et les modifications sont annulées.</p>
+
+  <h2>Gestion des transactions distribuées</h2>
+  <p>Les transactions distribuées permettent d'effectuer des transactions sur plusieurs instances MongoDB, ce qui est utile dans les environnements distribués. MongoDB utilise le protocole de consensus 2PC (Two-Phase Commit) pour garantir la cohérence des transactions distribuées.</p>
+  <p>Voici un exemple de transaction distribuée qui transfère un montant d'une collection "accounts" à une autre sur deux instances MongoDB :</p>
+  <pre><code>session.startTransaction();
+
+  try {
+    db.accounts.updateOne({ _id: fromAccountId }, { $inc: { balance: -amount } }, { session });
+    db.accounts.updateOne({ _id: toAccountId }, { $inc: { balance: amount } }, { session });
+
+    session.commitTransaction();
+  } catch (error) {
+    session.abortTransaction();
+    throw error;
+  } finally {
+    session.endSession();
+  }</code></pre>
+  <p>Cette transaction distribuée utilise la même logique que la transaction locale, mais spécifie la session MongoDB à utiliser pour chaque opération.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

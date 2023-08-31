@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MongoDB Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Manipulation de données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mongodb/mongodb.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création et suppression de bases de données</h2>
+<p>Pour créer une base de données MongoDB, vous pouvez utiliser la commande <code>use</code> suivie du nom de la base de données que vous souhaitez créer. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees</code></pre>
+
+<p>Cette commande créera une nouvelle base de données appelée "ma_base_de_donnees" si elle n'existe pas déjà.</p>
+
+<p>Pour supprimer une base de données, vous pouvez utiliser la commande <code>db.dropDatabase()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.dropDatabase()</code></pre>
+
+<p>Cette commande supprimera la base de données "ma_base_de_donnees" et tous ses documents.</p>
+
+<h2>Création et suppression de collections</h2>
+<p>Pour créer une collection dans une base de données MongoDB, vous pouvez utiliser la méthode <code>db.createCollection()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.createCollection("ma_collection")</code></pre>
+
+<p>Cette commande créera une nouvelle collection appelée "ma_collection" dans la base de données "ma_base_de_donnees".</p>
+
+<p>Pour supprimer une collection, vous pouvez utiliser la méthode <code>db.collection.drop()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.drop()</code></pre>
+
+<p>Cette commande supprimera la collection "ma_collection" de la base de données "ma_base_de_donnees".</p>
+
+<h2>Insertion, mise à jour et suppression de documents</h2>
+<p>Pour insérer un document dans une collection, vous pouvez utiliser la méthode <code>db.collection.insert()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.insert({ "nom": "John", "age": 30 })</code></pre>
+
+<p>Cette commande insérera un nouveau document avec les champs "nom" et "age" dans la collection "ma_collection" de la base de données "ma_base_de_donnees".</p>
+
+<p>Pour mettre à jour un document existant, vous pouvez utiliser la méthode <code>db.collection.update()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.update({ "nom": "John" }, { $set: { "age": 35 } })</code></pre>
+
+<p>Cette commande mettra à jour le champ "age" du document avec le champ "nom" égal à "John" dans la collection "ma_collection" de la base de données "ma_base_de_donnees".</p>
+
+<p>Pour supprimer un document, vous pouvez utiliser la méthode <code>db.collection.remove()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.remove({ "nom": "John" })</code></pre>
+
+<p>Cette commande supprimera tous les documents avec le champ "nom" égal à "John" de la collection "ma_collection" de la base de données "ma_base_de_donnees".</p>
+
+<h2>Requêtes de base : recherche, tri et filtrage</h2>
+<p>Pour effectuer une recherche dans une collection, vous pouvez utiliser la méthode <code>db.collection.find()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.find({ "age": 30 })</code></pre>
+
+<p>Cette commande renverra tous les documents de la collection "ma_collection" de la base de données "ma_base_de_donnees" avec le champ "age" égal à 30.</p>
+
+<p>Pour trier les résultats d'une requête, vous pouvez utiliser la méthode <code>db.collection.find().sort()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.find().sort({ "age": 1 })</code></pre>
+
+<p>Cette commande triera les documents de la collection "ma_collection" de la base de données "ma_base_de_donnees" par ordre croissant en fonction du champ "age".</p>
+
+<p>Pour filtrer les résultats d'une requête, vous pouvez utiliser la méthode <code>db.collection.find().filter()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.find().filter({ "age": { $gt: 30 } })</code></pre>
+
+<p>Cette commande renverra tous les documents de la collection "ma_collection" de la base de données "ma_base_de_donnees" avec le champ "age" supérieur à 30.</p>
+
+<h2>Indexation et optimisation des requêtes</h2>
+<p>Pour créer un index sur une collection, vous pouvez utiliser la méthode <code>db.collection.createIndex()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.createIndex({ "nom": 1 })</code></pre>
+
+<p>Cette commande créera un index sur le champ "nom" de la collection "ma_collection" de la base de données "ma_base_de_donnees".</p>
+
+<p>Pour optimiser les requêtes, vous pouvez utiliser la méthode <code>db.collection.explain()</code>. Par exemple :</p>
+
+<pre><code>use ma_base_de_donnees
+db.ma_collection.find({ "age": 30 }).explain()</code></pre>
+
+<p>Cette commande affichera des informations détaillées sur la façon dont la requête est exécutée, ce qui peut vous aider à identifier les problèmes de performance et à les résoudre.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

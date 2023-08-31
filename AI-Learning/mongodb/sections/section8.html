@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - MongoDB Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Développement et déploiement d'une application MongoDB</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/mongodb/mongodb.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'une application CRUD avec MongoDB</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application CRUD (Create, Read, Update, Delete) en utilisant MongoDB. Une application CRUD est une application qui permet de créer, lire, mettre à jour et supprimer des données dans une base de données.</p>
+
+<p>Pour commencer, nous devons d'abord nous connecter à notre base de données MongoDB. Voici un exemple de code pour établir une connexion :</p>
+
+<pre><code>const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://localhost:27017';
+
+MongoClient.connect(url, function(err, client) {
+  if (err) throw err;
+  console.log('Connected successfully to MongoDB server');
+  const db = client.db('mydatabase');
+  // À partir d'ici, vous pouvez commencer à effectuer des opérations CRUD sur votre base de données
+});
+</code></pre>
+
+<p>Une fois connecté à la base de données, nous pouvons commencer à créer, lire, mettre à jour et supprimer des documents. Voici quelques exemples de code pour effectuer ces opérations :</p>
+
+<p><strong>Création d'un document :</strong></p>
+
+<pre><code>const collection = db.collection('mycollection');
+const document = { name: 'John Doe', age: 30 };
+
+collection.insertOne(document, function(err, result) {
+  if (err) throw err;
+  console.log('Document inserted successfully');
+});
+</code></pre>
+
+<p><strong>Lecture de documents :</strong></p>
+
+<pre><code>collection.find({}).toArray(function(err, documents) {
+  if (err) throw err;
+  console.log('Documents retrieved successfully');
+  console.log(documents);
+});
+</code></pre>
+
+<p><strong>Mise à jour d'un document :</strong></p>
+
+<pre><code>const query = { name: 'John Doe' };
+const update = { $set: { age: 35 } };
+
+collection.updateOne(query, update, function(err, result) {
+  if (err) throw err;
+  console.log('Document updated successfully');
+});
+</code></pre>
+
+<p><strong>Suppression d'un document :</strong></p>
+
+<pre><code>const query = { name: 'John Doe' };
+
+collection.deleteOne(query, function(err, result) {
+  if (err) throw err;
+  console.log('Document deleted successfully');
+});
+</code></pre>
+
+<p>Voilà, vous avez maintenant les bases pour créer une application CRUD avec MongoDB. Vous pouvez ajouter d'autres fonctionnalités selon vos besoins, comme la validation des données ou la gestion des erreurs.</p>
+
+<h2>Déploiement de l'application sur un serveur</h2>
+<p>Une fois que vous avez développé votre application MongoDB, vous pouvez la déployer sur un serveur pour qu'elle soit accessible en ligne. Voici les étapes à suivre :</p>
+
+<p><strong>1. Choisissez un serveur :</strong></p>
+<p>Il existe de nombreux fournisseurs de serveurs cloud qui proposent des services d'hébergement MongoDB. Vous pouvez choisir celui qui convient le mieux à vos besoins et à votre budget. Certains des fournisseurs populaires sont Amazon Web Services (AWS), Microsoft Azure et Google Cloud Platform.</p>
+
+<p><strong>2. Configurez le serveur :</strong></p>
+<p>Une fois que vous avez choisi un fournisseur de serveur, vous devez créer une instance de serveur et configurer MongoDB. Suivez les instructions fournies par le fournisseur pour installer MongoDB sur votre serveur.</p>
+
+<p><strong>3. Transférez votre application :</strong></p>
+<p>Une fois que votre serveur est configuré, vous devez transférer votre application sur le serveur. Vous pouvez utiliser des outils de transfert de fichiers tels que FTP ou SCP pour copier les fichiers de votre application sur le serveur.</p>
+
+<p><strong>4. Configurez votre application :</strong></p>
+<p>Une fois que votre application est sur le serveur, vous devez la configurer pour qu'elle fonctionne correctement. Cela peut inclure la configuration des variables d'environnement, la modification des fichiers de configuration ou l'installation des dépendances nécessaires.</p>
+
+<p><strong>5. Démarrez votre application :</strong></p>
+<p>Une fois que votre application est configurée, vous pouvez la démarrer sur le serveur. Vous pouvez utiliser des outils tels que PM2 ou Forever pour exécuter votre application en arrière-plan et la redémarrer automatiquement en cas de panne.</p>
+
+<p>Voilà, votre application MongoDB est maintenant déployée sur un serveur et accessible en ligne. Assurez-vous de surveiller les performances de votre application et de mettre en place des mécanismes de sauvegarde réguliers pour éviter la perte de données.</p>
+
+<h2>Tests et débogage de l'application</h2>
+<p>Il est essentiel de tester et de déboguer votre application MongoDB pour vous assurer qu'elle fonctionne correctement et qu'elle répond aux attentes. Voici quelques conseils pour effectuer des tests et déboguer votre application :</p>
+
+<p><strong>1. Écriture de tests unitaires :</strong></p>
+<p>Les tests unitaires sont des tests qui vérifient le bon fonctionnement des différentes parties de votre application. Vous pouvez utiliser des frameworks de test tels que Mocha ou Jest pour écrire et exécuter des tests unitaires pour votre application MongoDB.</p>
+
+<p><strong>2. Tests d'intégration :</strong></p>
+<p>Les tests d'intégration vérifient le bon fonctionnement de l'ensemble de votre application, y compris l'interaction avec la base de données MongoDB. Vous pouvez utiliser des outils tels que Supertest ou Postman pour effectuer des tests d'intégration sur votre application.</p>
+
+<p><strong>3. Débogage :</strong></p>
+<p>Si vous rencontrez des problèmes avec votre application, vous pouvez utiliser des outils de débogage tels que le débogueur intégré de Node.js ou l'extension Chrome DevTools pour identifier et résoudre les problèmes. Vous pouvez également utiliser des journaux de débogage pour enregistrer les informations utiles lors de l'exécution de votre application.</p>
+
+<p>Assurez-vous de tester votre application dans différents scénarios et de vérifier son comportement dans des conditions normales et exceptionnelles. Cela vous aidera à identifier les problèmes potentiels et à les résoudre avant de déployer votre application en production.</p>
+
+<h2>Optimisation et amélioration de l'application</h2>
+<p>Pour optimiser et améliorer les performances de votre application MongoDB, vous pouvez suivre ces bonnes pratiques :</p>
+
+<p><strong>1. Indexation :</strong></p>
+<p>L'indexation est un moyen d'accélérer les opérations de recherche en créant des index sur les champs fréquemment utilisés dans vos requêtes. Vous pouvez utiliser la méthode <code>createIndex</code> pour créer des index sur vos collections MongoDB.</p>
+
+<p><strong>2. Limitation des résultats :</strong></p>
+<p>Lorsque vous effectuez des requêtes de recherche, utilisez la méthode <code>limit</code> pour limiter le nombre de résultats renvoyés. Cela peut améliorer les performances de votre application en réduisant la quantité de données transférées.</p>
+
+<p><strong>3. Utilisation de projections :</strong></p>
+<p>Les projections vous permettent de spécifier les champs que vous souhaitez récupérer dans les résultats de vos requêtes. Utilisez la méthode <code>project</code> pour spécifier les champs à inclure ou à exclure des résultats.</p>
+
+<p><strong>4. Utilisation de l'agrégation :</strong></p>
+<p>L'agrégation est une fonctionnalité puissante de MongoDB qui vous permet d'effectuer des opérations de traitement de données complexes. Utilisez l'agrégation pour regrouper, trier, filtrer et transformer vos données de manière efficace.</p>
+
+<p><strong>5. Optimisation des schémas de données :</strong></p>
+<p>La façon dont vous modélisez vos données peut avoir un impact significatif sur les performances de votre application. Essayez de concevoir des schémas de données efficaces en évitant les schémas imbriqués profonds ou les schémas avec un grand nombre de champs.</p>
+
+<p>En suivant ces bonnes pratiques et en surveillant les performances de votre application, vous pourrez optimiser et améliorer l'efficacité de votre application MongoDB.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/mongodb/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/mongodb/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
