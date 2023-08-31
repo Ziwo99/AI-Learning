@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Les modules avancés en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les expressions régulières en Python</h2>
+<p>Les expressions régulières sont des séquences de caractères utilisées pour décrire un motif de recherche. En utilisant des expressions régulières, vous pouvez rechercher, extraire et manipuler des chaînes de caractères selon des critères spécifiques.</p>
+<p>En Python, les expressions régulières sont prises en charge par le module <code>re</code>. Voici un exemple d'utilisation des expressions régulières pour rechercher un motif dans une chaîne de caractères :</p>
+
+<pre><code>import re
+
+text = "Bonjour, je m'appelle Alice et j'ai 25 ans."
+pattern = r"j'ai \d+ ans"
+
+result = re.search(pattern, text)
+if result:
+    print("Motif trouvé :", result.group())
+else:
+    print("Motif non trouvé.")</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>search()</code> du module <code>re</code> pour rechercher le motif "j'ai \d+ ans" dans la chaîne de caractères. Le motif \d+ correspond à un ou plusieurs chiffres. Si le motif est trouvé, nous affichons le résultat à l'aide de la méthode <code>group()</code>.</p>
+
+<h2>La manipulation de dates et d'heures en Python</h2>
+<p>En Python, le module <code>datetime</code> permet de manipuler les dates et les heures. Il fournit des classes et des fonctions pour créer, manipuler et formater les dates et les heures.</p>
+<p>Voici un exemple d'utilisation du module <code>datetime</code> pour afficher la date et l'heure actuelles :</p>
+
+<pre><code>from datetime import datetime
+
+now = datetime.now()
+print("Date et heure actuelles :", now)</code></pre>
+
+<p>Le module <code>datetime</code> offre également des méthodes pour formater les dates et les heures selon différents formats. Voici un exemple :</p>
+
+<pre><code>from datetime import datetime
+
+now = datetime.now()
+formatted_date = now.strftime("%d/%m/%Y %H:%M:%S")
+print("Date et heure formatées :", formatted_date)</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>strftime()</code> pour formater la date et l'heure actuelles selon le format "%d/%m/%Y %H:%M:%S".</p>
+
+<h2>La gestion des fichiers CSV en Python</h2>
+<p>Le format CSV (Comma-Separated Values) est couramment utilisé pour stocker des données tabulaires. En Python, le module <code>csv</code> permet de lire et d'écrire des fichiers CSV.</p>
+<p>Voici un exemple d'utilisation du module <code>csv</code> pour lire un fichier CSV :</p>
+
+<pre><code>import csv
+
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>reader()</code> du module <code>csv</code> pour lire le contenu du fichier CSV. Nous itérons ensuite sur les lignes du fichier et affichons chaque ligne.</p>
+
+<p>Le module <code>csv</code> offre également des fonctions pour écrire des données dans un fichier CSV. Voici un exemple :</p>
+
+<pre><code>import csv
+
+data = [
+    ['Nom', 'Âge', 'Ville'],
+    ['Alice', '25', 'Paris'],
+    ['Bob', '30', 'Londres'],
+    ['Charlie', '35', 'New York']
+]
+
+with open('data.csv', 'w') as file:
+    writer = csv.writer(file)
+    writer.writerows(data)</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>writer()</code> du module <code>csv</code> pour écrire les données dans le fichier CSV. Nous utilisons ensuite la méthode <code>writerows()</code> pour écrire toutes les lignes en une seule fois.</p>
+
+<h2>La manipulation de fichiers JSON en Python</h2>
+<p>Le format JSON (JavaScript Object Notation) est couramment utilisé pour échanger des données structurées entre différents systèmes. En Python, le module <code>json</code> permet de lire et d'écrire des fichiers JSON.</p>
+<p>Voici un exemple d'utilisation du module <code>json</code> pour lire un fichier JSON :</p>
+
+<pre><code>import json
+
+with open('data.json', 'r') as file:
+    data = json.load(file)
+    print(data)</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>load()</code> du module <code>json</code> pour charger le contenu du fichier JSON dans une variable. Nous affichons ensuite le contenu de la variable.</p>
+
+<p>Le module <code>json</code> offre également des fonctions pour écrire des données dans un fichier JSON. Voici un exemple :</p>
+
+<pre><code>import json
+
+data = {
+    'nom': 'Alice',
+    'age': 25,
+    'ville': 'Paris'
+}
+
+with open('data.json', 'w') as file:
+    json.dump(data, file)</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>dump()</code> du module <code>json</code> pour écrire les données dans le fichier JSON.</p>
+
+<p>Il est important de noter que les fichiers JSON doivent être valides selon la syntaxe JSON. Assurez-vous que les données que vous écrivez dans un fichier JSON sont correctement formatées.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

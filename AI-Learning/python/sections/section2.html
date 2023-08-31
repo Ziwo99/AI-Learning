@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les types de données en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les nombres en Python</h2>
+<p>En Python, les nombres sont utilisés pour représenter des valeurs numériques. Il existe différents types de nombres en Python :</p>
+<ul>
+  <li>Les entiers (int) : représentent les nombres entiers, par exemple 1, 2, -3.</li>
+  <li>Les nombres à virgule flottante (float) : représentent les nombres décimaux, par exemple 3.14, -0.5.</li>
+  <li>Les nombres complexes (complex) : représentent les nombres avec une partie réelle et une partie imaginaire, par exemple 2+3j, -1+2j.</li>
+</ul>
+
+<p>Voici quelques exemples d'utilisation des nombres en Python :</p>
+<pre><code>a = 5
+b = 2.5
+c = 1 + 2j
+
+print(a)  # Affiche 5
+print(b)  # Affiche 2.5
+print(c)  # Affiche (1+2j)
+
+# Opérations arithmétiques
+addition = a + b  # Addition : 5 + 2.5 = 7.5
+soustraction = a - b  # Soustraction : 5 - 2.5 = 2.5
+multiplication = a * b  # Multiplication : 5 * 2.5 = 12.5
+division = a / b  # Division : 5 / 2.5 = 2.0
+puissance = a ** 2  # Puissance : 5^2 = 25
+modulo = a % 2  # Modulo : 5 % 2 = 1
+
+print(addition)
+print(soustraction)
+print(multiplication)
+print(division)
+print(puissance)
+print(modulo)</code></pre>
+
+<h2>Les chaînes de caractères en Python</h2>
+<p>En Python, les chaînes de caractères sont utilisées pour représenter du texte. Une chaîne de caractères est définie en utilisant des guillemets simples ('') ou des guillemets doubles ("").</p>
+<p>Voici quelques exemples d'utilisation des chaînes de caractères en Python :</p>
+<pre><code>message1 = 'Bonjour'
+message2 = "monde"
+
+# Concaténation de chaînes de caractères
+message_complet = message1 + ' ' + message2  # 'Bonjour monde'
+
+# Accès aux caractères individuels
+premier_caractere = message1[0]  # 'B'
+dernier_caractere = message2[-1]  # 'e'
+
+# Longueur d'une chaîne de caractères
+longueur = len(message_complet)  # 13
+
+print(message_complet)
+print(premier_caractere)
+print(dernier_caractere)
+print(longueur)</code></pre>
+
+<h2>Les listes en Python</h2>
+<p>En Python, les listes sont utilisées pour stocker une collection ordonnée d'éléments. Les éléments d'une liste peuvent être de différents types (nombres, chaînes de caractères, etc.) et peuvent être modifiés une fois la liste créée.</p>
+<p>Voici quelques exemples d'utilisation des listes en Python :</p>
+<pre><code>liste_vide = []
+liste_nombres = [1, 2, 3, 4, 5]
+liste_mixte = [1, 'deux', 3.0, [4, 5]]
+
+# Accès aux éléments d'une liste
+premier_element = liste_nombres[0]  # 1
+dernier_element = liste_mixte[-1]  # [4, 5]
+
+# Modification d'une liste
+liste_nombres[0] = 10
+liste_mixte.append(6)
+
+# Longueur d'une liste
+longueur = len(liste_nombres)  # 5
+
+print(liste_nombres)
+print(liste_mixte)
+print(premier_element)
+print(dernier_element)
+print(longueur)</code></pre>
+
+<h2>Les tuples en Python</h2>
+<p>En Python, les tuples sont similaires aux listes, mais ils sont immuables, ce qui signifie qu'ils ne peuvent pas être modifiés une fois créés. Les tuples sont souvent utilisés pour représenter des collections d'éléments qui ne doivent pas être modifiés.</p>
+<p>Voici quelques exemples d'utilisation des tuples en Python :</p>
+<pre><code>tuple_vide = ()
+tuple_nombres = (1, 2, 3, 4, 5)
+tuple_mixte = (1, 'deux', 3.0, (4, 5))
+
+# Accès aux éléments d'un tuple
+premier_element = tuple_nombres[0]  # 1
+dernier_element = tuple_mixte[-1]  # (4, 5)
+
+# Longueur d'un tuple
+longueur = len(tuple_nombres)  # 5
+
+print(tuple_nombres)
+print(tuple_mixte)
+print(premier_element)
+print(dernier_element)
+print(longueur)</code></pre>
+
+<h2>Les dictionnaires en Python</h2>
+<p>En Python, les dictionnaires sont utilisés pour stocker des paires clé-valeur. Chaque élément d'un dictionnaire est constitué d'une clé et d'une valeur associée. Les clés doivent être uniques et les valeurs peuvent être de différents types.</p>
+<p>Voici quelques exemples d'utilisation des dictionnaires en Python :</p>
+<pre><code>dictionnaire_vide = {}
+dictionnaire_fr_en = {'bonjour': 'hello', 'au revoir': 'goodbye', 'merci': 'thank you'}
+
+# Accès aux valeurs d'un dictionnaire
+traduction_bonjour = dictionnaire_fr_en['bonjour']  # 'hello'
+
+# Modification d'un dictionnaire
+dictionnaire_fr_en['merci'] = 'thanks'
+dictionnaire_fr_en['s'il vous plaît'] = 'please'
+
+# Suppression d'une paire clé-valeur
+del dictionnaire_fr_en['au revoir']
+
+# Longueur d'un dictionnaire
+longueur = len(dictionnaire_fr_en)  # 3
+
+print(dictionnaire_fr_en)
+print(traduction_bonjour)
+print(longueur)</code></pre>
+
+<h2>Les ensembles en Python</h2>
+<p>En Python, les ensembles sont utilisés pour stocker une collection non ordonnée d'éléments uniques. Les ensembles sont utiles lorsque l'ordre des éléments n'a pas d'importance et lorsque chaque élément doit être unique.</p>
+<p>Voici quelques exemples d'utilisation des ensembles en Python :</p>
+<pre><code>ensemble_vide = set()
+ensemble_nombres = {1, 2, 3, 4, 5}
+ensemble_mixte = {1, 'deux', 3.0}
+
+# Ajout d'éléments à un ensemble
+ensemble_nombres.add(6)
+
+# Suppression d'un élément d'un ensemble
+ensemble_nombres.remove(3)
+
+# Opérations ensemblistes
+ensemble_pair = {2, 4, 6, 8, 10}
+ensemble_impair = {1, 3, 5, 7, 9}
+
+ensemble_union = ensemble_pair.union(ensemble_impair)
+ensemble_intersection = ensemble_pair.intersection(ensemble_impair)
+ensemble_difference = ensemble_pair.difference(ensemble_impair)
+
+print(ensemble_nombres)
+print(ensemble_mixte)
+print(ensemble_union)
+print(ensemble_intersection)
+print(ensemble_difference)</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

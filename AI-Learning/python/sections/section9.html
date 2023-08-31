@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Les classes et les objets en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux classes et aux objets en Python</h2>
+<p>Les classes et les objets sont des concepts fondamentaux de la programmation orientée objet (POO). En Python, tout est un objet, ce qui signifie que chaque élément de données est une instance d'une classe. Une classe est un modèle ou un plan pour créer des objets, tandis qu'un objet est une instance spécifique d'une classe.</p>
+
+<p>Pour créer une classe en Python, utilisez le mot-clé <code>class</code> suivi du nom de la classe. Par exemple :</p>
+
+<pre><code>class Voiture:
+    pass
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe appelée "Voiture". Cependant, cette classe est vide car nous utilisons le mot-clé <code>pass</code> pour indiquer qu'il n'y a pas de contenu à l'intérieur de la classe pour le moment.</p>
+
+<p>Pour créer un objet à partir d'une classe, utilisez le nom de la classe suivi de parenthèses. Par exemple :</p>
+
+<pre><code>voiture1 = Voiture()
+</code></pre>
+
+<p>Ici, nous avons créé un objet appelé "voiture1" à partir de la classe "Voiture". Cet objet est une instance de la classe "Voiture".</p>
+
+<h2>Les attributs et les méthodes en Python</h2>
+<p>Les attributs sont des variables associées à une classe ou à un objet, tandis que les méthodes sont des fonctions associées à une classe ou à un objet. Les attributs et les méthodes définissent le comportement et les caractéristiques d'une classe ou d'un objet.</p>
+
+<p>Pour définir un attribut dans une classe, utilisez la méthode spéciale <code>__init__</code>. Cette méthode est appelée le constructeur de la classe et est exécutée automatiquement chaque fois qu'un nouvel objet est créé à partir de la classe. Par exemple :</p>
+
+<pre><code>class Voiture:
+    def __init__(self, marque, modele):
+        self.marque = marque
+        self.modele = modele
+
+voiture1 = Voiture("Toyota", "Corolla")
+print(voiture1.marque)  # Output: Toyota
+print(voiture1.modele)  # Output: Corolla
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini deux attributs, "marque" et "modele", dans la classe "Voiture". Lorsque nous créons un nouvel objet "voiture1" à partir de cette classe, nous passons les valeurs "Toyota" et "Corolla" aux attributs "marque" et "modele" respectivement. Ensuite, nous pouvons accéder à ces attributs en utilisant la notation de point.</p>
+
+<p>Pour définir une méthode dans une classe, déclarez simplement une fonction à l'intérieur de la classe. Par exemple :</p>
+
+<pre><code>class Voiture:
+    def __init__(self, marque, modele):
+        self.marque = marque
+        self.modele = modele
+
+    def afficher_details(self):
+        print("Marque :", self.marque)
+        print("Modèle :", self.modele)
+
+voiture1 = Voiture("Toyota", "Corolla")
+voiture1.afficher_details()
+</code></pre>
+
+<p>Dans cet exemple, nous avons ajouté une méthode appelée "afficher_details" à la classe "Voiture". Cette méthode affiche les détails de la voiture, tels que la marque et le modèle. Nous pouvons appeler cette méthode en utilisant la notation de point sur l'objet "voiture1".</p>
+
+<h2>L'héritage en Python</h2>
+<p>L'héritage est un concept clé de la POO qui permet à une classe d'hériter des attributs et des méthodes d'une autre classe. La classe qui hérite est appelée la classe enfant ou la sous-classe, tandis que la classe dont les attributs et les méthodes sont hérités est appelée la classe parent ou la superclasse.</p>
+
+<p>Pour créer une classe enfant, utilisez le nom de la classe parent entre parenthèses après le nom de la classe enfant. Par exemple :</p>
+
+<pre><code>class VoitureElectrique(Voiture):
+    pass
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe enfant appelée "VoitureElectrique" qui hérite de la classe parent "Voiture". La classe "VoitureElectrique" a maintenant accès aux attributs et aux méthodes de la classe "Voiture".</p>
+
+<p>Vous pouvez également ajouter des attributs et des méthodes supplémentaires à la classe enfant. Par exemple :</p>
+
+<pre><code>class VoitureElectrique(Voiture):
+    def __init__(self, marque, modele, autonomie):
+        super().__init__(marque, modele)
+        self.autonomie = autonomie
+
+    def afficher_autonomie(self):
+        print("Autonomie :", self.autonomie)
+
+voiture2 = VoitureElectrique("Tesla", "Model S", 500)
+voiture2.afficher_details()
+voiture2.afficher_autonomie()
+</code></pre>
+
+<p>Dans cet exemple, nous avons ajouté un attribut supplémentaire "autonomie" à la classe "VoitureElectrique" et une méthode supplémentaire "afficher_autonomie". Nous utilisons la fonction <code>super()</code> pour appeler le constructeur de la classe parent et initialiser les attributs hérités. Ensuite, nous pouvons accéder à ces attributs et méthodes en utilisant la notation de point sur l'objet "voiture2".</p>
+
+<h2>Les classes abstraites et les interfaces en Python</h2>
+<p>En Python, les classes abstraites et les interfaces sont des concepts avancés de la POO qui permettent de définir des modèles de classes sans les implémenter directement. Une classe abstraite est une classe qui ne peut pas être instanciée et qui sert de modèle pour d'autres classes. Une interface est une classe abstraite qui ne contient que des méthodes abstraites, c'est-à-dire des méthodes sans implémentation.</p>
+
+<p>Pour créer une classe abstraite en Python, utilisez le module <code>abc</code> et le décorateur <code>@abstractmethod</code>. Par exemple :</p>
+
+<pre><code>from abc import ABC, abstractmethod
+
+class Forme(ABC):
+    @abstractmethod
+    def calculer_surface(self):
+        pass
+
+class Rectangle(Forme):
+    def __init__(self, longueur, largeur):
+        self.longueur = longueur
+        self.largeur = largeur
+
+    def calculer_surface(self):
+        return self.longueur * self.largeur
+
+rectangle1 = Rectangle(5, 3)
+print(rectangle1.calculer_surface())  # Output: 15
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe abstraite appelée "Forme" qui contient une méthode abstraite "calculer_surface". Cette méthode n'a pas d'implémentation dans la classe abstraite, mais doit être implémentée dans les classes enfants. La classe "Rectangle" hérite de la classe "Forme" et implémente la méthode "calculer_surface" en calculant la surface du rectangle.</p>
+
+<p>Les interfaces en Python sont similaires aux classes abstraites, mais elles ne contiennent que des méthodes abstraites. Pour créer une interface en Python, utilisez le module <code>abc</code> et le décorateur <code>@abstractmethod</code> sans implémenter les méthodes. Par exemple :</p>
+
+<pre><code>from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def faire_son(self):
+        pass
+
+class Chien(Animal):
+    def faire_son(self):
+        return "Woof!"
+
+chien1 = Chien()
+print(chien1.faire_son())  # Output: Woof!
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une interface appelée "Animal" qui contient une méthode abstraite "faire_son". La classe "Chien" implémente cette méthode en retournant le son "Woof!".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

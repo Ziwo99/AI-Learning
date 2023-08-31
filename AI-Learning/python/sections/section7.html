@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : La manipulation de fichiers en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'ouverture et la fermeture de fichiers en Python</h2>
+<p>En Python, pour manipuler des fichiers, nous devons d'abord ouvrir le fichier, effectuer les opérations nécessaires, puis le fermer. Pour ouvrir un fichier, nous utilisons la fonction <code>open()</code>. Cette fonction prend deux paramètres : le nom du fichier et le mode d'ouverture.</p>
+<p>Le mode d'ouverture spécifie comment le fichier doit être ouvert. Voici les modes d'ouverture les plus couramment utilisés :</p>
+<ul>
+  <li><code>'r'</code> : ouvre le fichier en mode lecture (par défaut)</li>
+  <li><code>'w'</code> : ouvre le fichier en mode écriture. Si le fichier existe déjà, son contenu sera écrasé. Sinon, un nouveau fichier sera créé.</li>
+  <li><code>'a'</code> : ouvre le fichier en mode ajout. Si le fichier existe déjà, les nouvelles données seront ajoutées à la fin du fichier. Sinon, un nouveau fichier sera créé.</li>
+  <li><code>'x'</code> : ouvre le fichier en mode création. Si le fichier existe déjà, une erreur sera levée.</li>
+</ul>
+<p>Voici un exemple d'ouverture d'un fichier en mode lecture :</p>
+<pre><code>file = open('exemple.txt', 'r')</code></pre>
+<p>Une fois que nous avons terminé de travailler avec un fichier, il est important de le fermer en utilisant la méthode <code>close()</code>. Cela permet de libérer les ressources système utilisées par le fichier.</p>
+<p>Voici un exemple de fermeture d'un fichier :</p>
+<pre><code>file.close()</code></pre>
+
+<h2>La lecture et l'écriture de fichiers en Python</h2>
+<p>Une fois que nous avons ouvert un fichier, nous pouvons effectuer des opérations de lecture ou d'écriture sur celui-ci.</p>
+<p>Pour lire le contenu d'un fichier, nous utilisons la méthode <code>read()</code>. Cette méthode renvoie une chaîne de caractères contenant tout le contenu du fichier.</p>
+<p>Voici un exemple de lecture d'un fichier :</p>
+<pre><code>file = open('exemple.txt', 'r')
+content = file.read()
+print(content)
+file.close()</code></pre>
+<p>Pour écrire dans un fichier, nous utilisons la méthode <code>write()</code>. Cette méthode prend une chaîne de caractères en paramètre et écrit cette chaîne dans le fichier.</p>
+<p>Voici un exemple d'écriture dans un fichier :</p>
+<pre><code>file = open('exemple.txt', 'w')
+file.write('Bonjour, monde!')
+file.close()</code></pre>
+
+<h2>La gestion des erreurs lors de la manipulation de fichiers en Python</h2>
+<p>Lorsque nous manipulons des fichiers, il est important de prendre en compte les erreurs qui peuvent se produire. Pour cela, nous utilisons des blocs <code>try</code> et <code>except</code> pour capturer et gérer les exceptions.</p>
+<p>Voici un exemple de gestion des erreurs lors de l'ouverture d'un fichier :</p>
+<pre><code>try:
+    file = open('exemple.txt', 'r')
+    content = file.read()
+    print(content)
+    file.close()
+except FileNotFoundError:
+    print("Le fichier n'a pas été trouvé.")</code></pre>
+<p>Dans cet exemple, si le fichier "exemple.txt" n'est pas trouvé, une exception de type <code>FileNotFoundError</code> sera levée. Nous capturons cette exception avec le bloc <code>except</code> et affichons un message d'erreur approprié.</p>
+<p>Il est également possible d'utiliser le bloc <code>finally</code> pour exécuter du code qui doit être exécuté, que des exceptions se produisent ou non. Par exemple, nous pouvons utiliser le bloc <code>finally</code> pour nous assurer que le fichier est toujours fermé, même en cas d'erreur :</p>
+<pre><code>try:
+    file = open('exemple.txt', 'r')
+    content = file.read()
+    print(content)
+except FileNotFoundError:
+    print("Le fichier n'a pas été trouvé.")
+finally:
+    file.close()</code></pre>
+<p>De cette façon, même si une exception se produit, le fichier sera toujours fermé correctement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

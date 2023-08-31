@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Les bases de données en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'accès aux bases de données en Python</h2>
+<p>Python offre de nombreuses bibliothèques pour accéder et manipuler des bases de données. L'une des bibliothèques les plus populaires est <strong>SQLite</strong>, qui est intégrée à Python et ne nécessite aucune installation supplémentaire.</p>
+<p>Pour utiliser SQLite en Python, vous devez importer le module <code>sqlite3</code>. Voici un exemple de code qui montre comment se connecter à une base de données SQLite :</p>
+<pre><code>import sqlite3
+
+# Connexion à la base de données
+conn = sqlite3.connect('ma_base_de_données.db')
+
+# Création d'un curseur pour exécuter des requêtes
+cur = conn.cursor()
+
+# Exécution d'une requête
+cur.execute("SELECT * FROM ma_table")
+
+# Récupération des résultats
+results = cur.fetchall()
+
+# Fermeture de la connexion
+conn.close()
+</code></pre>
+
+<h2>Les requêtes SQL en Python</h2>
+<p>Une fois connecté à une base de données, vous pouvez exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. Voici quelques exemples de requêtes SQL couramment utilisées en Python :</p>
+<ul>
+  <li><strong>SELECT</strong> : permet de récupérer des données à partir d'une table</li>
+  <li><strong>INSERT</strong> : permet d'insérer de nouvelles données dans une table</li>
+  <li><strong>UPDATE</strong> : permet de mettre à jour des données existantes dans une table</li>
+  <li><strong>DELETE</strong> : permet de supprimer des données d'une table</li>
+</ul>
+<p>Voici un exemple de code qui montre comment exécuter une requête SELECT en utilisant SQLite :</p>
+<pre><code>import sqlite3
+
+# Connexion à la base de données
+conn = sqlite3.connect('ma_base_de_données.db')
+cur = conn.cursor()
+
+# Exécution d'une requête SELECT
+cur.execute("SELECT * FROM ma_table")
+
+# Récupération des résultats
+results = cur.fetchall()
+
+# Affichage des résultats
+for row in results:
+    print(row)
+
+# Fermeture de la connexion
+conn.close()
+</code></pre>
+
+<h2>La manipulation des données en Python</h2>
+<p>En plus d'exécuter des requêtes SQL, Python offre également des fonctionnalités pour manipuler les données récupérées à partir d'une base de données. Vous pouvez effectuer des opérations telles que le tri, le filtrage, l'agrégation et la transformation des données.</p>
+<p>Voici un exemple de code qui montre comment trier les résultats d'une requête SELECT en utilisant SQLite :</p>
+<pre><code>import sqlite3
+
+# Connexion à la base de données
+conn = sqlite3.connect('ma_base_de_données.db')
+cur = conn.cursor()
+
+# Exécution d'une requête SELECT
+cur.execute("SELECT * FROM ma_table")
+
+# Récupération des résultats
+results = cur.fetchall()
+
+# Tri des résultats par ordre croissant
+sorted_results = sorted(results)
+
+# Affichage des résultats triés
+for row in sorted_results:
+    print(row)
+
+# Fermeture de la connexion
+conn.close()
+</code></pre>
+
+<p>Ce sont là quelques-unes des fonctionnalités de base pour accéder et manipuler des bases de données en Python. Il existe également d'autres bibliothèques populaires telles que <strong>MySQLdb</strong> pour MySQL, <strong>psycopg2</strong> pour PostgreSQL, et <strong>pyodbc</strong> pour Microsoft SQL Server, qui offrent des fonctionnalités plus avancées et spécifiques à chaque base de données.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

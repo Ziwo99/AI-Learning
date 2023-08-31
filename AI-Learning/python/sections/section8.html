@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les exceptions en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux exceptions en Python</h2>
+<p>En programmation, une exception est une erreur ou une condition anormale qui se produit lors de l'exécution d'un programme. Lorsqu'une exception se produit, le programme est interrompu et une trace d'exécution est affichée, indiquant le type d'exception et l'endroit où elle s'est produite.</p>
+<p>Python fournit un mécanisme de gestion des exceptions qui permet de gérer ces erreurs de manière contrôlée. Les exceptions peuvent être levées (ou "lançées") par le programme lui-même ou par le système lorsqu'une condition anormale se produit.</p>
+<p>Pour gérer les exceptions en Python, nous utilisons les blocs <code>try</code> et <code>except</code>. Le bloc <code>try</code> contient le code qui peut potentiellement générer une exception, tandis que le bloc <code>except</code> est utilisé pour capturer et gérer les exceptions.</p>
+<pre><code>try:
+    # Code susceptible de générer une exception
+    ...
+except ExceptionType:
+    # Gestion de l'exception
+    ...
+</code></pre>
+
+<h2>La gestion des exceptions en Python</h2>
+<p>La gestion des exceptions en Python permet de contrôler le comportement du programme lorsqu'une exception se produit. Elle permet d'éviter l'interruption brutale du programme et de prendre des mesures appropriées pour gérer l'erreur.</p>
+<p>En utilisant le bloc <code>try</code> et <code>except</code>, nous pouvons spécifier le type d'exception que nous souhaitons capturer et gérer. Si une exception du type spécifié se produit, le bloc <code>except</code> correspondant est exécuté.</p>
+<p>Il est également possible d'utiliser plusieurs blocs <code>except</code> pour gérer différents types d'exceptions de manière spécifique. Cela permet de personnaliser la gestion des erreurs en fonction du type d'exception.</p>
+<pre><code>try:
+    # Code susceptible de générer une exception
+    ...
+except ExceptionType1:
+    # Gestion de l'exception de type 1
+    ...
+except ExceptionType2:
+    # Gestion de l'exception de type 2
+    ...
+</code></pre>
+
+<h2>Les exceptions prédéfinies en Python</h2>
+<p>Python fournit de nombreuses exceptions prédéfinies qui peuvent être utilisées pour capturer et gérer des erreurs spécifiques. Chaque exception a un nom et une signification spécifiques, ce qui permet de comprendre facilement le type d'erreur qui s'est produit.</p>
+<p>Voici quelques-unes des exceptions prédéfinies couramment utilisées en Python :</p>
+<ul>
+  <li><code>ZeroDivisionError</code> : levée lorsque la division ou le modulo par zéro est effectué.</li>
+  <li><code>TypeError</code> : levée lorsque l'opération ou la fonction est appliquée à un objet d'un type inapproprié.</li>
+  <li><code>ValueError</code> : levée lorsque l'opération ou la fonction reçoit un argument de type correct, mais avec une valeur inappropriée.</li>
+  <li><code>FileNotFoundError</code> : levée lorsqu'un fichier ou un répertoire n'est pas trouvé.</li>
+</ul>
+<p>Il est également possible de créer ses propres exceptions personnalisées en définissant une classe qui hérite de la classe de base <code>Exception</code>. Cela permet de gérer des erreurs spécifiques à notre programme.</p>
+<pre><code>class CustomException(Exception):
+    pass
+
+try:
+    # Code susceptible de générer une exception
+    ...
+except CustomException:
+    # Gestion de l'exception personnalisée
+    ...
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

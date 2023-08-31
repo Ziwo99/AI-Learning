@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Python Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les fonctions en Python</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/python/python.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux fonctions en Python</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent une tâche spécifique. Elles permettent de structurer et d'organiser le code en le divisant en tâches plus petites et plus gérables. En Python, une fonction est définie à l'aide du mot-clé "def", suivi du nom de la fonction et de parenthèses contenant éventuellement des paramètres. Voici un exemple de définition de fonction :</p>
+
+<pre><code>def dire_bonjour():
+    print("Bonjour !")</code></pre>
+
+<p>Pour appeler une fonction, il suffit d'utiliser son nom suivi de parenthèses :</p>
+
+<pre><code>dire_bonjour()</code></pre>
+
+<p>Cela affichera "Bonjour !" à l'écran. Les fonctions peuvent également prendre des paramètres, qui sont des valeurs que vous pouvez passer à la fonction pour qu'elle les utilise dans son code. Par exemple :</p>
+
+<pre><code>def dire_bonjour(nom):
+    print("Bonjour", nom)</code></pre>
+
+<p>Vous pouvez ensuite appeler cette fonction en passant un argument :</p>
+
+<pre><code>dire_bonjour("Alice")</code></pre>
+
+<p>Cela affichera "Bonjour Alice" à l'écran. Les fonctions peuvent également retourner une valeur à l'aide du mot-clé "return". Par exemple :</p>
+
+<pre><code>def ajouter(a, b):
+    return a + b</code></pre>
+
+<p>Vous pouvez ensuite utiliser cette fonction pour effectuer une opération et stocker le résultat dans une variable :</p>
+
+<pre><code>resultat = ajouter(3, 5)
+print(resultat)  # affiche 8</code></pre>
+
+<h2>Les paramètres et les arguments en Python</h2>
+<p>Les paramètres sont des variables déclarées dans la définition d'une fonction, qui reçoivent les valeurs passées en tant qu'arguments lors de l'appel de la fonction. Les arguments sont les valeurs réelles passées à une fonction lors de son appel. Voici un exemple :</p>
+
+<pre><code>def multiplier(a, b):
+    return a * b
+
+resultat = multiplier(4, 6)
+print(resultat)  # affiche 24</code></pre>
+
+<p>Dans cet exemple, "a" et "b" sont les paramètres de la fonction "multiplier", et "4" et "6" sont les arguments passés lors de l'appel de la fonction.</p>
+
+<h2>Les fonctions récursives en Python</h2>
+<p>Une fonction récursive est une fonction qui s'appelle elle-même. Cela peut être utile pour résoudre des problèmes qui peuvent être décomposés en sous-problèmes plus petits. Voici un exemple de fonction récursive qui calcule la factorielle d'un nombre :</p>
+
+<pre><code>def factorielle(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorielle(n - 1)
+
+resultat = factorielle(5)
+print(resultat)  # affiche 120</code></pre>
+
+<p>Dans cet exemple, la fonction "factorielle" s'appelle elle-même avec un argument plus petit à chaque itération jusqu'à ce que la condition de base soit atteinte (n == 0).</p>
+
+<h2>Les fonctions lambda en Python</h2>
+<p>Les fonctions lambda, également appelées fonctions anonymes, sont des fonctions sans nom qui peuvent être utilisées pour effectuer des opérations simples. Elles sont définies à l'aide du mot-clé "lambda" suivi des paramètres et du corps de la fonction. Voici un exemple :</p>
+
+<pre><code>carre = lambda x: x ** 2
+
+resultat = carre(5)
+print(resultat)  # affiche 25</code></pre>
+
+<p>Dans cet exemple, la fonction lambda "carre" prend un paramètre "x" et renvoie "x ** 2". Elle est ensuite appelée avec l'argument "5" pour obtenir le carré de 5.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/python/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/python/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
