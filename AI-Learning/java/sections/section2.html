@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases de la programmation en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les opérateurs en Java</h2>
+<p>Les opérateurs en Java sont des symboles spéciaux qui effectuent des opérations sur les variables et les valeurs. Ils peuvent être utilisés pour effectuer des calculs mathématiques, des opérations logiques et des manipulations de bits.</p>
+<p>Voici quelques exemples d'opérateurs couramment utilisés en Java :</p>
+<ul>
+  <li>L'opérateur d'addition (+) : utilisé pour ajouter deux valeurs.</li>
+  <li>L'opérateur de soustraction (-) : utilisé pour soustraire une valeur d'une autre.</li>
+  <li>L'opérateur de multiplication (*) : utilisé pour multiplier deux valeurs.</li>
+  <li>L'opérateur de division (/) : utilisé pour diviser une valeur par une autre.</li>
+  <li>L'opérateur de modulo (%) : utilisé pour obtenir le reste d'une division.</li>
+  <li>L'opérateur d'incrémentation (++) : utilisé pour augmenter la valeur d'une variable de 1.</li>
+  <li>L'opérateur de décrémentation (--) : utilisé pour diminuer la valeur d'une variable de 1.</li>
+</ul>
+<p>Il existe également des opérateurs de comparaison (==, !=, >, <, >=, <=) qui permettent de comparer des valeurs, ainsi que des opérateurs logiques (&&, ||, !) qui permettent de combiner des conditions.</p>
+
+<h2>Les structures de contrôle en Java (boucles, conditions)</h2>
+<p>Les structures de contrôle en Java permettent de contrôler le flux d'exécution d'un programme. Elles permettent d'exécuter certaines instructions uniquement si une condition est remplie, ou de répéter un bloc d'instructions plusieurs fois.</p>
+<p>Les structures de contrôle les plus couramment utilisées en Java sont :</p>
+<ul>
+  <li>La structure conditionnelle <code>if</code> : permet d'exécuter un bloc d'instructions uniquement si une condition est vraie.</li>
+  <li>La structure conditionnelle <code>if-else</code> : permet d'exécuter un bloc d'instructions si une condition est vraie, et un autre bloc d'instructions si la condition est fausse.</li>
+  <li>La structure conditionnelle <code>switch</code> : permet d'exécuter différentes actions en fonction de la valeur d'une variable.</li>
+  <li>Les boucles <code>for</code>, <code>while</code> et <code>do-while</code> : permettent de répéter un bloc d'instructions plusieurs fois.</li>
+</ul>
+<p>Voici un exemple d'utilisation d'une boucle <code>for</code> :</p>
+<pre><code>for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}</code></pre>
+<p>Ce code affiche les nombres de 0 à 9 en utilisant une boucle <code>for</code>.</p>
+
+<h2>Les tableaux en Java</h2>
+<p>Un tableau en Java est une structure de données qui permet de stocker plusieurs valeurs de même type dans une seule variable. Chaque valeur dans le tableau est identifiée par un index, qui commence à 0 pour le premier élément.</p>
+<p>Voici comment déclarer et initialiser un tableau en Java :</p>
+<pre><code>int[] numbers = new int[5];
+numbers[0] = 1;
+numbers[1] = 2;
+numbers[2] = 3;
+numbers[3] = 4;
+numbers[4] = 5;</code></pre>
+<p>Ce code crée un tableau d'entiers de taille 5 et y stocke les valeurs de 1 à 5.</p>
+<p>Il est également possible d'initialiser un tableau lors de sa déclaration :</p>
+<pre><code>int[] numbers = {1, 2, 3, 4, 5};</code></pre>
+<p>Ce code crée un tableau d'entiers et y stocke les mêmes valeurs que précédemment.</p>
+
+<h2>Les fonctions et les méthodes en Java</h2>
+<p>Les fonctions et les méthodes en Java sont des blocs de code réutilisables qui effectuent une tâche spécifique. Ils permettent d'organiser le code en le divisant en petites parties, ce qui facilite sa compréhension et sa maintenance.</p>
+<p>Voici comment déclarer et appeler une fonction en Java :</p>
+<pre><code>public int add(int a, int b) {
+    return a + b;
+}
+
+int result = add(3, 4);
+System.out.println(result);</code></pre>
+<p>Ce code déclare une fonction <code>add</code> qui prend deux entiers en paramètres et renvoie leur somme. La fonction est ensuite appelée avec les valeurs 3 et 4, et le résultat est affiché.</p>
+
+<h2>La gestion des exceptions en Java</h2>
+<p>Les exceptions en Java sont des événements qui se produisent pendant l'exécution d'un programme et qui interrompent le flux normal d'exécution. Elles permettent de gérer les erreurs et les situations exceptionnelles de manière contrôlée.</p>
+<p>Voici comment gérer une exception en Java :</p>
+<pre><code>try {
+    // Code susceptible de générer une exception
+} catch (Exception e) {
+    // Code exécuté en cas d'exception
+}</code></pre>
+<p>Ce code entoure le bloc de code susceptible de générer une exception avec une instruction <code>try</code>. Si une exception se produit, le code à l'intérieur du bloc <code>catch</code> est exécuté.</p>
+<p>Il est également possible de gérer plusieurs types d'exceptions différentes en utilisant plusieurs blocs <code>catch</code> :</p>
+<pre><code>try {
+    // Code susceptible de générer une exception
+} catch (IOException e) {
+    // Code exécuté en cas d'exception de type IOException
+} catch (SQLException e) {
+    // Code exécuté en cas d'exception de type SQLException
+}</code></pre>
+<p>Ce code gère à la fois les exceptions de type <code>IOException</code> et <code>SQLException</code>.</p>
+
+<p>Ceci conclut la section sur les bases de la programmation en Java. Nous avons couvert les opérateurs, les structures de contrôle, les tableaux, les fonctions et les méthodes, ainsi que la gestion des exceptions. Dans la prochaine section, nous aborderons la programmation orientée objet en Java.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

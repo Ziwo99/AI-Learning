@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les interfaces graphiques en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les composants graphiques en Java</h2>
+<p>Les interfaces graphiques en Java permettent aux utilisateurs d'interagir avec les applications en utilisant des composants graphiques tels que des boutons, des champs de texte, des listes déroulantes, etc. Java offre une bibliothèque riche de composants graphiques prêts à être utilisés.</p>
+
+<p>Voici quelques-uns des composants graphiques les plus couramment utilisés en Java :</p>
+
+<ul>
+  <li><strong>JButton :</strong> Un bouton qui peut être cliqué par l'utilisateur.</li>
+  <li><strong>JTextField :</strong> Un champ de texte où l'utilisateur peut saisir du texte.</li>
+  <li><strong>JLabel :</strong> Un composant utilisé pour afficher du texte ou une image.</li>
+  <li><strong>JComboBox :</strong> Une liste déroulante qui permet à l'utilisateur de sélectionner une option parmi plusieurs.</li>
+  <li><strong>JCheckBox :</strong> Une case à cocher qui peut être cochée ou décochée par l'utilisateur.</li>
+  <li><strong>JRadioButton :</strong> Un bouton radio qui permet à l'utilisateur de sélectionner une option parmi plusieurs.</li>
+  <li><strong>JSlider :</strong> Une barre de défilement qui permet à l'utilisateur de sélectionner une valeur numérique dans une plage donnée.</li>
+</ul>
+
+<p>Chaque composant graphique a ses propres propriétés et méthodes pour personnaliser son apparence et son comportement. Par exemple, vous pouvez définir le texte d'un JButton en utilisant la méthode <code>setText()</code> ou ajouter un ActionListener pour détecter les clics sur le bouton.</p>
+
+<h2>Les événements en Java</h2>
+<p>Les événements sont des actions qui se produisent lorsqu'un utilisateur interagit avec une interface graphique, telle que le clic sur un bouton ou la saisie de texte dans un champ de texte. En Java, les événements sont gérés à l'aide de listeners (écouteurs).</p>
+
+<p>Voici quelques-uns des événements les plus couramment utilisés en Java :</p>
+
+<ul>
+  <li><strong>ActionEvent :</strong> Cet événement est déclenché lorsque l'utilisateur effectue une action, comme cliquer sur un bouton.</li>
+  <li><strong>MouseEvent :</strong> Cet événement est déclenché lorsque l'utilisateur effectue une action avec la souris, comme cliquer ou déplacer la souris.</li>
+  <li><strong>KeyEvent :</strong> Cet événement est déclenché lorsque l'utilisateur appuie sur une touche du clavier.</li>
+</ul>
+
+<p>Pour gérer les événements en Java, vous devez ajouter des listeners aux composants graphiques appropriés. Un listener est une classe qui implémente une interface spécifique, telle que <code>ActionListener</code> pour les événements d'action. Vous devez ensuite implémenter les méthodes de cette interface pour définir le comportement souhaité lorsqu'un événement se produit.</p>
+
+<h2>La gestion des fenêtres en Java</h2>
+<p>Les fenêtres sont des conteneurs de haut niveau dans lesquels vous pouvez placer des composants graphiques. En Java, vous pouvez créer des fenêtres en utilisant la classe <code>JFrame</code> de la bibliothèque Swing.</p>
+
+<p>Voici les étapes de base pour créer une fenêtre en Java :</p>
+
+<ol>
+  <li>Créez une instance de la classe <code>JFrame</code>.</li>
+  <li>Définissez le titre de la fenêtre à l'aide de la méthode <code>setTitle()</code>.</li>
+  <li>Définissez la taille de la fenêtre à l'aide de la méthode <code>setSize()</code>.</li>
+  <li>Ajoutez les composants graphiques souhaités à la fenêtre en utilisant les méthodes <code>add()</code> et <code>setLayout()</code>.</li>
+  <li>Définissez le comportement de fermeture de la fenêtre à l'aide de la méthode <code>setDefaultCloseOperation()</code>.</li>
+  <li>Affichez la fenêtre à l'aide de la méthode <code>setVisible()</code>.</li>
+</ol>
+
+<p>Une fois que vous avez créé une fenêtre, vous pouvez y ajouter des composants graphiques et gérer les événements associés à ces composants en utilisant des listeners.</p>
+
+<p>Il est également possible de créer des fenêtres modales en utilisant la classe <code>JDialog</code>. Les fenêtres modales sont des fenêtres qui bloquent l'interaction avec les autres fenêtres de l'application tant qu'elles sont ouvertes.</p>
+
+<p>En utilisant les composants graphiques, les événements et la gestion des fenêtres en Java, vous pouvez créer des interfaces utilisateur interactives et conviviales pour vos applications Java.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

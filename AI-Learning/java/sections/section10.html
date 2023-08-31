@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Les bonnes pratiques en développement Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les conventions de codage en Java</h2>
+<p>Les conventions de codage en Java sont des règles et des recommandations qui définissent la manière dont le code Java doit être écrit pour être lisible et compréhensible par les autres développeurs. Suivre ces conventions permet de rendre le code plus facile à maintenir et à collaborer.</p>
+
+<p>Voici quelques-unes des conventions de codage les plus couramment utilisées en Java :</p>
+
+<ul>
+  <li>Utiliser des noms de variables significatifs et des noms de classes en camelCase.</li>
+  <li>Utiliser des commentaires pour expliquer le code et rendre le code plus compréhensible.</li>
+  <li>Indenter le code de manière cohérente pour améliorer la lisibilité.</li>
+  <li>Utiliser des espaces pour séparer les éléments du code et améliorer la lisibilité.</li>
+  <li>Éviter d'utiliser des noms de variables ou de méthodes trop longs.</li>
+</ul>
+
+<p>Voici un exemple de code respectant les conventions de codage en Java :</p>
+
+<pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        int age = 25;
+        String name = "John";
+
+        System.out.println("Hello, " + name + "! You are " + age + " years old.");
+    }
+}
+</code></pre>
+
+<h2>La gestion des erreurs en Java</h2>
+<p>La gestion des erreurs en Java est une pratique essentielle pour garantir la fiabilité et la robustesse des applications. Elle consiste à anticiper et à traiter les erreurs potentielles qui peuvent survenir lors de l'exécution du code.</p>
+
+<p>Voici quelques bonnes pratiques pour gérer les erreurs en Java :</p>
+
+<ul>
+  <li>Utiliser des exceptions appropriées pour signaler les erreurs.</li>
+  <li>Utiliser des blocs try-catch pour capturer et gérer les exceptions.</li>
+  <li>Propager les exceptions appropriées lorsque nécessaire.</li>
+  <li>Utiliser des logs pour enregistrer les erreurs et faciliter le débogage.</li>
+  <li>Nettoyer les ressources utilisées dans les blocs finally.</li>
+</ul>
+
+<p>Voici un exemple de code illustrant la gestion des erreurs en Java :</p>
+
+<pre><code>try {
+    // Code pouvant générer une exception
+    FileInputStream file = new FileInputStream("file.txt");
+    // ...
+} catch (FileNotFoundException e) {
+    // Gérer l'exception
+    System.out.println("Le fichier n'a pas été trouvé.");
+} finally {
+    // Nettoyer les ressources
+    file.close();
+}
+</code></pre>
+
+<h2>Les tests unitaires en Java</h2>
+<p>Les tests unitaires en Java sont des tests automatisés qui permettent de vérifier le bon fonctionnement des différentes parties d'un programme. Ils sont utilisés pour s'assurer que chaque unité de code (méthode, classe, etc.) fonctionne correctement de manière isolée.</p>
+
+<p>Voici quelques bonnes pratiques pour écrire des tests unitaires en Java :</p>
+
+<ul>
+  <li>Écrire des tests indépendants et reproductibles.</li>
+  <li>Utiliser des frameworks de test tels que JUnit pour faciliter l'écriture et l'exécution des tests.</li>
+  <li>Tester les cas limites et les conditions d'erreur.</li>
+  <li>Utiliser des assertions pour vérifier les résultats attendus.</li>
+  <li>Exécuter les tests régulièrement pour détecter les éventuels problèmes.</li>
+</ul>
+
+<p>Voici un exemple de code illustrant l'écriture de tests unitaires en Java avec JUnit :</p>
+
+<pre><code>import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class CalculatorTest {
+    @Test
+    public void testAddition() {
+        Calculator calculator = new Calculator();
+        int result = calculator.add(2, 3);
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void testDivision() {
+        Calculator calculator = new Calculator();
+        double result = calculator.divide(10, 2);
+        assertEquals(5.0, result, 0.001);
+    }
+}
+</code></pre>
+
+<p>Il est important de noter que les tests unitaires doivent être écrits de manière à être exécutables de manière indépendante, sans dépendre d'autres parties du code ou de l'environnement d'exécution.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

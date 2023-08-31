@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les fonctionnalités avancées de Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les threads en Java</h2>
+<p>Les threads en Java permettent d'exécuter plusieurs tâches simultanément, améliorant ainsi les performances et la réactivité des applications. Un thread est une unité d'exécution indépendante qui peut être exécutée en parallèle avec d'autres threads.</p>
+<p>En Java, la création et la gestion des threads peuvent être réalisées en utilisant la classe Thread ou l'interface Runnable. Voici un exemple de création d'un thread en utilisant la classe Thread :</p>
+
+<pre><code>public class MyThread extends Thread {
+    public void run() {
+        // Code exécuté par le thread
+    }
+}
+
+// Création et démarrage du thread
+MyThread thread = new MyThread();
+thread.start();
+</code></pre>
+
+<p>Et voici un exemple de création d'un thread en utilisant l'interface Runnable :</p>
+
+<pre><code>public class MyRunnable implements Runnable {
+    public void run() {
+        // Code exécuté par le thread
+    }
+}
+
+// Création et démarrage du thread
+Thread thread = new Thread(new MyRunnable());
+thread.start();
+</code></pre>
+
+<p>Il est également possible de contrôler l'exécution des threads en utilisant des méthodes telles que sleep(), join() et interrupt(). La méthode sleep() permet de mettre en pause l'exécution d'un thread pendant une durée spécifiée. La méthode join() permet d'attendre la fin de l'exécution d'un thread avant de continuer l'exécution du thread actuel. La méthode interrupt() permet d'interrompre l'exécution d'un thread en lui envoyant un signal d'interruption.</p>
+
+<h2>Les annotations en Java</h2>
+<p>Les annotations en Java sont des métadonnées qui peuvent être ajoutées au code source pour fournir des informations supplémentaires sur les classes, les méthodes, les variables, etc. Elles peuvent être utilisées par le compilateur, les outils de développement et d'autres frameworks pour effectuer des actions spécifiques.</p>
+<p>En Java, les annotations sont définies à l'aide de l'annotation @interface. Voici un exemple de définition d'une annotation personnalisée :</p>
+
+<pre><code>import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface MyAnnotation {
+    String value();
+}
+
+// Utilisation de l'annotation
+@MyAnnotation("Exemple")
+public void myMethod() {
+    // Code de la méthode
+}
+</code></pre>
+
+<p>Dans cet exemple, l'annotation @MyAnnotation est définie avec une seule valeur de type String. L'annotation peut ensuite être utilisée sur des méthodes en spécifiant une valeur pour cette annotation.</p>
+
+<p>Les annotations prédéfinies en Java incluent @Override, @Deprecated et @SuppressWarnings, entre autres. L'annotation @Override est utilisée pour indiquer qu'une méthode est censée remplacer une méthode héritée de sa classe parente. L'annotation @Deprecated est utilisée pour indiquer qu'un élément (méthode, classe, etc.) est déprécié et ne doit plus être utilisé. L'annotation @SuppressWarnings est utilisée pour supprimer les avertissements du compilateur pour un élément spécifique.</p>
+
+<h2>La réflexion en Java</h2>
+<p>La réflexion en Java permet d'inspecter et de manipuler les classes, les méthodes, les champs, etc. à l'exécution. Elle permet d'accéder aux informations sur les classes et les objets, d'appeler des méthodes dynamiquement et de manipuler les champs privés.</p>
+<p>En Java, la réflexion est réalisée à l'aide de la classe Class et de ses méthodes. Voici un exemple d'utilisation de la réflexion pour obtenir des informations sur une classe :</p>
+
+<pre><code>import java.lang.reflect.*;
+
+public class MyClass {
+    public static void main(String[] args) {
+        Class<?> myClass = MyClass.class;
+        
+        // Obtention du nom de la classe
+        String className = myClass.getName();
+        System.out.println("Nom de la classe : " + className);
+        
+        // Obtention des méthodes de la classe
+        Method[] methods = myClass.getMethods();
+        System.out.println("Méthodes de la classe :");
+        for (Method method : methods) {
+            System.out.println(method.getName());
+        }
+        
+        // Obtention des champs de la classe
+        Field[] fields = myClass.getFields();
+        System.out.println("Champs de la classe :");
+        for (Field field : fields) {
+            System.out.println(field.getName());
+        }
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, la classe MyClass utilise la réflexion pour obtenir son nom, ses méthodes et ses champs. Les méthodes getClass(), getMethods() et getFields() sont utilisées pour obtenir les informations souhaitées.</p>
+
+<h2>Les expressions lambda en Java</h2>
+<p>Les expressions lambda en Java permettent de simplifier l'écriture de certaines interfaces fonctionnelles en utilisant une syntaxe concise. Elles sont principalement utilisées avec les interfaces fonctionnelles, qui sont des interfaces ne contenant qu'une seule méthode abstraite.</p>
+<p>En Java, les expressions lambda sont définies en utilisant la syntaxe (paramètres) -> expression. Voici un exemple d'utilisation d'une expression lambda avec l'interface fonctionnelle Runnable :</p>
+
+<pre><code>Runnable runnable = () -> {
+    // Code exécuté par le Runnable
+};
+
+// Utilisation du Runnable
+Thread thread = new Thread(runnable);
+thread.start();
+</code></pre>
+
+<p>Dans cet exemple, une expression lambda est utilisée pour définir le comportement du Runnable. L'interface fonctionnelle Runnable ne contient qu'une seule méthode abstraite, run(), qui est implémentée par l'expression lambda.</p>
+
+<p>Les expressions lambda peuvent également être utilisées avec d'autres interfaces fonctionnelles telles que Comparator, Predicate, Consumer, etc. Elles permettent de simplifier l'écriture du code en évitant la création de classes anonymes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

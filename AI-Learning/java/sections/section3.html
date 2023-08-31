@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Programmation orientée objet en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les concepts de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de modéliser le monde réel en utilisant des objets. Les objets sont des instances de classes, qui sont des modèles ou des plans pour créer des objets. La POO repose sur quatre concepts fondamentaux :</p>
+
+<ol>
+  <li><strong>L'encapsulation :</strong> Il s'agit de la capacité de regrouper des données et des méthodes dans une seule entité appelée classe. L'encapsulation permet de cacher les détails internes de la classe et de fournir une interface publique pour interagir avec l'objet.</li>
+  <li><strong>L'héritage :</strong> Il s'agit d'un mécanisme qui permet à une classe d'hériter des propriétés et des comportements d'une autre classe appelée classe parent. L'héritage favorise la réutilisation du code et permet de créer des hiérarchies de classes.</li>
+  <li><strong>Le polymorphisme :</strong> Il s'agit de la capacité d'un objet à prendre différentes formes ou à se comporter de différentes manières en fonction du contexte. Le polymorphisme permet de traiter des objets de différentes classes de manière uniforme.</li>
+  <li><strong>L'abstraction :</strong> Il s'agit de la capacité de représenter des concepts complexes en utilisant des entités simplifiées. L'abstraction permet de se concentrer sur les aspects essentiels d'un objet et d'ignorer les détails non pertinents.</li>
+</ol>
+
+<h2>Les classes et les objets en Java</h2>
+<p>En Java, une classe est un modèle ou un plan pour créer des objets. Une classe définit les propriétés (variables) et les comportements (méthodes) d'un objet. Voici un exemple de définition de classe en Java :</p>
+
+<pre><code>public class Person {
+    // Propriétés
+    private String name;
+    private int age;
+    
+    // Constructeur
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    // Méthodes
+    public void sayHello() {
+        System.out.println("Hello, my name is " + name + " and I am " + age + " years old.");
+    }
+}</code></pre>
+
+<p>Une fois que nous avons défini une classe, nous pouvons créer des objets à partir de cette classe en utilisant le mot-clé "new". Voici un exemple de création d'objet en Java :</p>
+
+<pre><code>Person person1 = new Person("John", 25);
+Person person2 = new Person("Jane", 30);</code></pre>
+
+<p>Chaque objet créé à partir d'une classe possède ses propres valeurs pour les propriétés et peut appeler les méthodes définies dans la classe.</p>
+
+<h2>L'encapsulation en Java</h2>
+<p>L'encapsulation en Java permet de regrouper des données et des méthodes dans une seule entité appelée classe. Les données sont généralement déclarées comme des variables d'instance privées, ce qui signifie qu'elles ne peuvent être accédées directement depuis l'extérieur de la classe. Pour accéder ou modifier les données encapsulées, nous utilisons des méthodes publiques appelées accesseurs (getters) et mutateurs (setters). Voici un exemple :</p>
+
+<pre><code>public class Person {
+    private String name;
+    private int age;
+    
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+}</code></pre>
+
+<p>Ainsi, pour accéder ou modifier les propriétés encapsulées d'un objet Person, nous utilisons les méthodes getName(), setName(), getAge() et setAge().</p>
+
+<h2>L'héritage en Java</h2>
+<p>L'héritage en Java permet à une classe d'hériter des propriétés et des comportements d'une autre classe appelée classe parent. La classe qui hérite est appelée classe enfant ou sous-classe, et la classe dont elle hérite est appelée classe parent ou superclasse. Pour hériter d'une classe, nous utilisons le mot-clé "extends". Voici un exemple :</p>
+
+<pre><code>public class Student extends Person {
+    private String major;
+    
+    public Student(String name, int age, String major) {
+        super(name, age);
+        this.major = major;
+    }
+    
+    public String getMajor() {
+        return major;
+    }
+    
+    public void setMajor(String major) {
+        this.major = major;
+    }
+}</code></pre>
+
+<p>Dans cet exemple, la classe Student hérite de la classe Person. Elle ajoute une propriété supplémentaire appelée "major" et des méthodes pour accéder et modifier cette propriété.</p>
+
+<h2>Le polymorphisme en Java</h2>
+<p>Le polymorphisme en Java permet à un objet d'être traité comme un objet d'un type différent dans une hiérarchie de classes. Cela signifie qu'un objet peut prendre différentes formes ou se comporter de différentes manières en fonction du contexte. Le polymorphisme est souvent utilisé en conjonction avec l'héritage et les classes abstraites ou les interfaces. Voici un exemple :</p>
+
+<pre><code>public interface Shape {
+    double getArea();
+}
+
+public class Circle implements Shape {
+    private double radius;
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Rectangle implements Shape {
+    private double width;
+    private double height;
+    
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    public double getArea() {
+        return width * height;
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous avons une interface Shape qui définit une méthode getArea(). Les classes Circle et Rectangle implémentent cette interface et fournissent une implémentation spécifique de la méthode getArea(). Ainsi, nous pouvons traiter un objet Circle ou Rectangle comme un objet Shape et appeler la méthode getArea() de manière uniforme.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

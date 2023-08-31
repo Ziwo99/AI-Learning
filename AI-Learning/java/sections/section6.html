@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les bases de données en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La connexion à une base de données en Java</h2>
+<p>
+La connexion à une base de données en Java est une étape essentielle pour interagir avec celle-ci. Java fournit une API standard appelée JDBC (Java Database Connectivity) pour faciliter la connexion et la manipulation des bases de données.
+</p>
+<p>
+Pour se connecter à une base de données en Java, il faut d'abord charger le pilote JDBC approprié. Chaque base de données a son propre pilote JDBC, donc assurez-vous d'avoir le pilote correspondant à votre base de données installé et disponible dans votre projet.
+</p>
+<p>
+Voici un exemple de code pour se connecter à une base de données MySQL en utilisant JDBC :
+</p>
+<pre><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnection {
+    public static void main(String[] args) {
+        // Informations de connexion à la base de données
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        // Chargement du pilote JDBC
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // Connexion à la base de données
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connexion réussie !");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>Les requêtes SQL en Java</h2>
+<p>
+Une fois connecté à une base de données en Java, vous pouvez exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. Java fournit des classes et des interfaces dans le package java.sql pour faciliter l'exécution de requêtes SQL.
+</p>
+<p>
+Voici un exemple de code pour exécuter une requête SELECT en Java :
+</p>
+<pre><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseQuery {
+    public static void main(String[] args) {
+        // Informations de connexion à la base de données
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        // Connexion à la base de données
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connexion réussie !");
+
+            // Création de la requête SQL
+            String sql = "SELECT * FROM users";
+
+            // Création de l'objet Statement
+            Statement statement = connection.createStatement();
+
+            // Exécution de la requête SQL
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            // Traitement des résultats
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+
+                System.out.println("ID: " + id + ", Name: " + name + ", Email: " + email);
+            }
+
+            // Fermeture des ressources
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<h2>La gestion des transactions en Java</h2>
+<p>
+La gestion des transactions est importante lors de l'exécution de plusieurs requêtes SQL qui doivent être traitées comme une seule unité logique. Java fournit des fonctionnalités pour gérer les transactions en utilisant JDBC.
+</p>
+<p>
+Voici un exemple de code pour gérer une transaction en Java :
+</p>
+<pre><code>
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseTransaction {
+    public static void main(String[] args) {
+        // Informations de connexion à la base de données
+        String url = "jdbc:mysql://localhost:3306/mydatabase";
+        String username = "root";
+        String password = "password";
+
+        // Connexion à la base de données
+        try {
+            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.println("Connexion réussie !");
+
+            // Désactivation de l'autocommit
+            connection.setAutoCommit(false);
+
+            // Création des requêtes SQL
+            String sql1 = "INSERT INTO users (name, email) VALUES ('John Doe', 'john.doe@example.com')";
+            String sql2 = "UPDATE users SET email = 'jane.doe@example.com' WHERE id = 1";
+
+            // Création des objets Statement
+            Statement statement1 = connection.createStatement();
+            Statement statement2 = connection.createStatement();
+
+            // Exécution des requêtes SQL
+            statement1.executeUpdate(sql1);
+            statement2.executeUpdate(sql2);
+
+            // Validation de la transaction
+            connection.commit();
+
+            // Fermeture des ressources
+            statement1.close();
+            statement2.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
+
+<p>
+Ces exemples vous montrent comment vous connecter à une base de données, exécuter des requêtes SQL et gérer des transactions en Java. N'hésitez pas à explorer davantage les fonctionnalités de JDBC pour répondre à vos besoins spécifiques en matière de bases de données.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

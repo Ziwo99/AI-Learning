@@ -1,0 +1,282 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Les frameworks et bibliothèques populaires en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Spring Framework</h2>
+<p>
+Le Spring Framework est un framework Java open-source qui fournit une infrastructure complète pour le développement d'applications Java. Il offre une approche modulaire pour la création d'applications Java, en utilisant des composants réutilisables et en favorisant la programmation orientée objet.
+</p>
+<p>
+Spring Framework offre de nombreux modules et fonctionnalités, tels que l'inversion de contrôle (IoC), l'injection de dépendances, la gestion des transactions, la sécurité, la gestion des exceptions, etc. Il facilite également l'intégration avec d'autres frameworks et bibliothèques populaires.
+</p>
+<p>
+Voici un exemple d'utilisation de l'inversion de contrôle (IoC) avec Spring Framework :
+</p>
+<pre><code>
+public class MyApp {
+    private MyService myService;
+
+    public MyApp(MyService myService) {
+        this.myService = myService;
+    }
+
+    public void run() {
+        myService.doSomething();
+    }
+}
+
+public interface MyService {
+    void doSomething();
+}
+
+public class MyServiceImpl implements MyService {
+    public void doSomething() {
+        System.out.println("Doing something...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyService myService = new MyServiceImpl();
+        MyApp myApp = new MyApp(myService);
+        myApp.run();
+    }
+}
+</code></pre>
+
+<h2>Hibernate</h2>
+<p>
+Hibernate est un framework de persistance open-source qui facilite l'interaction avec une base de données relationnelle en utilisant des objets Java. Il fournit une couche d'abstraction entre l'application et la base de données, permettant ainsi de se concentrer sur la logique métier plutôt que sur les détails de la manipulation des données.
+</p>
+<p>
+Hibernate utilise le langage HQL (Hibernate Query Language) pour effectuer des requêtes sur la base de données. Il prend également en charge la gestion des transactions et la mise en cache des objets pour améliorer les performances.
+</p>
+<p>
+Voici un exemple d'utilisation de Hibernate pour effectuer des opérations de base de données :
+</p>
+<pre><code>
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    // Getters and setters
+}
+
+public class UserDao {
+    private SessionFactory sessionFactory;
+
+    public UserDao(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    public void save(User user) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.save(user);
+        transaction.commit();
+        session.close();
+    }
+
+    public User getById(Long id) {
+        Session session = sessionFactory.openSession();
+        User user = session.get(User.class, id);
+        session.close();
+        return user;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        UserDao userDao = new UserDao(sessionFactory);
+
+        User user = new User();
+        user.setName("John Doe");
+        userDao.save(user);
+
+        User retrievedUser = userDao.getById(user.getId());
+        System.out.println("Retrieved user: " + retrievedUser.getName());
+    }
+}
+</code></pre>
+
+<h2>JavaFX</h2>
+<p>
+JavaFX est une bibliothèque graphique pour la création d'interfaces utilisateur riches et interactives dans les applications Java. Elle offre de nombreux composants graphiques prêts à l'emploi, tels que des boutons, des champs de texte, des tableaux, etc., ainsi que des fonctionnalités avancées telles que les animations et les effets visuels.
+</p>
+<p>
+JavaFX utilise une approche déclarative pour la création d'interfaces utilisateur, en utilisant un langage appelé FXML. Il est également possible de créer des interfaces utilisateur en utilisant du code Java pur.
+</p>
+<p>
+Voici un exemple d'utilisation de JavaFX pour créer une interface utilisateur simple :
+</p>
+<pre><code>
+public class Main extends Application {
+    public void start(Stage primaryStage) {
+        Button button = new Button("Click me!");
+        button.setOnAction(event -> System.out.println("Button clicked!"));
+
+        VBox root = new VBox();
+        root.getChildren().add(button);
+
+        Scene scene = new Scene(root, 300, 200);
+
+        primaryStage.setTitle("JavaFX App");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+</code></pre>
+
+<h2>Apache Maven</h2>
+<p>
+Apache Maven est un outil de gestion de projet et de construction pour les projets Java. Il facilite la création, la compilation, le test et le déploiement d'applications Java en utilisant des fichiers de configuration XML appelés POM (Project Object Model).
+</p>
+<p>
+Maven utilise une approche basée sur les conventions pour la gestion des dépendances, ce qui signifie que les dépendances d'un projet sont spécifiées dans le fichier POM et sont automatiquement téléchargées à partir de référentiels en ligne.
+</p>
+<p>
+Voici un exemple de fichier POM pour un projet Maven :
+</p>
+<pre><code>
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;my-app&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
+            &lt;artifactId&gt;commons-lang3&lt;/artifactId&gt;
+            &lt;version&gt;3.12.0&lt;/version&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
+
+Assurez-vous de consulter la documentation officielle de chaque framework et bibliothèque pour obtenir des informations plus détaillées sur leur utilisation et leurs fonctionnalités.
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

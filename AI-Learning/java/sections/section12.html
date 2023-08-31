@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<title>AI-Learning - Java Section 12</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<link href="/assets/css/main.css" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css" rel="stylesheet"/>
+<noscript>
+<link href="/assets/css/noscript.css" rel="stylesheet">
+</link></noscript>
+</head>
+<body class="is-preload">
+<!-- Page Wrapper -->
+<div id="page-wrapper">
+<!-- Header -->
+<header class="alt" id="header" style="display: flex; align-items: center;">
+<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+<img alt="Votre Logo" src="/images/ai-learning-logo.svg" style="display: block; border: none;"/>
+</a>
+<nav>
+<a href="#menu">Menu</a>
+</nav>
+</header>
+<!-- Menu -->
+<nav id="menu">
+<div class="inner">
+<h2>Menu</h2>
+<ul class="links">
+<li><a href="/index.html">Accueil</a></li>
+<li><a href="/courses.html">Formations</a></li>
+<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+<li><a href="/research.html">Travail de recherche</a></li>
+</ul>
+<a class="close" href="#">Close</a>
+</div>
+</nav>
+<!-- Wrapper -->
+<section id="wrapper">
+<header>
+<div class="inner">
+<h2>Section 12 : Projet final</h2>
+<ul class="actions stacked">
+<li><a class="button" href="/AI-Learning/java/java.html">
+								Revenir à la fiche du cours</a></li>
+</ul>
+</div>
+</header>
+<!-- Content -->
+<div class="wrapper">
+<div class="inner">
+<ul class="actions">
+<li><a class="button primary" href="/AI-Learning/java/sections/section11.html">
+								Section précédente</a></li>
+<li></li>
+</ul>
+<h2>Réalisation d'un projet complet en Java, en utilisant les concepts et les techniques vus dans la formation</h2>
+<p>Dans cette dernière section, vous allez mettre en pratique tout ce que vous avez appris jusqu'à présent en réalisant un projet complet en Java. Ce projet vous permettra de consolider vos connaissances et de vous familiariser avec les bonnes pratiques de développement.</p>
+<p>Pour ce projet, nous allons créer une application de gestion de bibliothèque. L'application devra permettre d'ajouter, de modifier et de supprimer des livres, ainsi que de rechercher des livres par titre, auteur ou catégorie. Nous allons également implémenter une fonctionnalité de prêt et de retour de livres.</p>
+<h2>Étape 1 : Création de la classe Book</h2>
+<p>Pour commencer, nous allons créer la classe Book qui représentera un livre dans notre application. La classe Book devra avoir les attributs suivants :</p>
+<pre><code>public class Book {
+    private String title;
+    private String author;
+    private String category;
+    private boolean isAvailable;
+
+    // Les getters et les setters seront ajoutés ici
+}
+</code></pre>
+<p>Dans cette classe, nous avons défini les attributs title, author, category et isAvailable. Le titre, l'auteur et la catégorie sont des chaînes de caractères, tandis que isAvailable est un booléen qui indique si le livre est disponible ou non.</p>
+<p>Nous allons maintenant ajouter les getters et les setters pour ces attributs :</p>
+<pre><code>public String getTitle() {
+    return title;
+}
+
+public void setTitle(String title) {
+    this.title = title;
+}
+
+public String getAuthor() {
+    return author;
+}
+
+public void setAuthor(String author) {
+    this.author = author;
+}
+
+public String getCategory() {
+    return category;
+}
+
+public void setCategory(String category) {
+    this.category = category;
+}
+
+public boolean isAvailable() {
+    return isAvailable;
+}
+
+public void setAvailable(boolean available) {
+    isAvailable = available;
+}
+</code></pre>
+<p>Avec ces getters et setters, nous pouvons maintenant accéder aux attributs de la classe Book et les modifier si nécessaire.</p>
+<h2>Étape 2 : Création de la classe Library</h2>
+<p>Ensuite, nous allons créer la classe Library qui représentera notre bibliothèque. La classe Library devra avoir les attributs suivants :</p>
+<pre><code>import java.util.ArrayList;
+import java.util.List;
+
+public class Library {
+    private List<book> books;
+
+    public Library() {
+        books = new ArrayList&lt;&gt;();
+    }
+
+    // Les méthodes seront ajoutées ici
+}
+</book></code></pre>
+<p>Dans cette classe, nous avons défini l'attribut books qui est une liste de livres. Nous avons également ajouté un constructeur qui initialise la liste books avec une nouvelle instance de ArrayList.</p>
+<p>Nous allons maintenant ajouter les méthodes pour ajouter, modifier et supprimer des livres, ainsi que pour rechercher des livres par titre, auteur ou catégorie :</p>
+<pre><code>public void addBook(Book book) {
+    books.add(book);
+}
+
+public void updateBook(Book book) {
+    // Recherche du livre dans la liste books et mise à jour des attributs
+}
+
+public void deleteBook(Book book) {
+    books.remove(book);
+}
+
+public List<book> searchByTitle(String title) {
+    List<book> result = new ArrayList&lt;&gt;();
+
+    for (Book book : books) {
+        if (book.getTitle().equals(title)) {
+            result.add(book);
+        }
+    }
+
+    return result;
+}
+
+public List<book> searchByAuthor(String author) {
+    // Recherche des livres par auteur et retourne une liste de livres correspondants
+}
+
+public List<book> searchByCategory(String category) {
+    // Recherche des livres par catégorie et retourne une liste de livres correspondants
+}
+</book></book></book></book></code></pre>
+<p>Avec ces méthodes, nous pouvons maintenant ajouter, modifier et supprimer des livres, ainsi que rechercher des livres par titre, auteur ou catégorie.</p>
+<h2>Étape 3 : Implémentation de la fonctionnalité de prêt et de retour de livres</h2>
+<p>Enfin, nous allons implémenter la fonctionnalité de prêt et de retour de livres. Pour cela, nous allons ajouter les méthodes suivantes à la classe Book :</p>
+<pre><code>public void borrowBook() {
+    if (isAvailable) {
+        isAvailable = false;
+        System.out.println("Le livre a été emprunté avec succès.");
+    } else {
+        System.out.println("Le livre n'est pas disponible pour le moment.");
+    }
+}
+
+public void returnBook() {
+    if (!isAvailable) {
+        isAvailable = true;
+        System.out.println("Le livre a été retourné avec succès.");
+    } else {
+        System.out.println("Le livre est déjà disponible.");
+    }
+}
+</code></pre>
+<p>Avec ces méthodes, nous pouvons maintenant emprunter et retourner des livres.</p>
+<h2>Conclusion</h2>
+<p>Félicitations ! Vous avez maintenant créé une application de gestion de bibliothèque en utilisant les concepts et les techniques vus dans cette formation. Vous avez appris à créer des classes, à définir des attributs et des méthodes, ainsi qu'à utiliser des listes pour stocker des objets. Vous avez également implémenté la fonctionnalité de prêt et de retour de livres. Vous pouvez maintenant continuer à améliorer cette application en ajoutant de nouvelles fonctionnalités ou en l'adaptant à vos besoins spécifiques.</p>
+<p>Continuez à pratiquer et à explorer d'autres concepts avancés de Java pour devenir un développeur Java accompli !</p>
+<ul class="actions">
+<li><a class="button primary" href="/AI-Learning/java/sections/section11.html">
+								Section précédente</a></li>
+<li></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<section id="footer">
+<div class="inner">
+<ul class="copyright">
+<li>© Untitled Inc. All rights reserved.</li>
+<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+</ul>
+</div>
+</section>
+</div>
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/browser.min.js"></script>
+<script src="/assets/js/breakpoints.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

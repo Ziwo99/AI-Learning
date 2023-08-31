@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Les avancées récentes en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Java 8 et les fonctionnalités lambda</h2>
+<p>Java 8 a introduit les fonctionnalités lambda, qui permettent d'écrire du code plus concis et plus lisible. Les lambdas sont des fonctions anonymes qui peuvent être utilisées comme des expressions. Elles sont souvent utilisées en conjonction avec les interfaces fonctionnelles, qui ne contiennent qu'une seule méthode abstraite.</p>
+
+<p>Les lambdas sont définies en utilisant la syntaxe suivante :</p>
+
+<pre><code>(paramètres) -> expression</code></pre>
+
+<p>Par exemple, voici comment on peut utiliser une lambda pour trier une liste de chaînes de caractères :</p>
+
+<pre><code>List&lt;String&gt; strings = Arrays.asList("foo", "bar", "baz");
+strings.sort((s1, s2) -&gt; s1.compareTo(s2));
+System.out.println(strings); // Output: [bar, baz, foo]</code></pre>
+
+<p>La lambda <code>(s1, s2) -&gt; s1.compareTo(s2)</code> est utilisée comme argument de la méthode <code>sort</code> pour définir l'ordre de tri des chaînes de caractères.</p>
+
+<h2>Java 9 et les modules</h2>
+<p>Java 9 a introduit le concept de modules, qui permet de découper une application en unités de code plus petites et plus autonomes. Les modules permettent de mieux organiser le code, de limiter les dépendances entre les différentes parties de l'application et de faciliter la maintenance et l'évolution du code.</p>
+
+<p>Un module est défini dans un fichier module-info.java, qui spécifie les dépendances du module et les packages qu'il exporte. Voici un exemple de fichier module-info.java :</p>
+
+<pre><code>module com.example.myapp {
+    requires java.base;
+    requires com.example.mylibrary;
+    exports com.example.myapp.api;
+}</code></pre>
+
+<p>Dans cet exemple, le module <code>com.example.myapp</code> dépend du module <code>java.base</code> et du module <code>com.example.mylibrary</code>. Il exporte le package <code>com.example.myapp.api</code> pour qu'il puisse être utilisé par d'autres modules.</p>
+
+<h2>Java 10 et les améliorations de la JVM</h2>
+<p>Java 10 a apporté plusieurs améliorations à la machine virtuelle Java (JVM). Parmi ces améliorations, on peut citer :</p>
+
+<ul>
+  <li>L'amélioration des performances de la JVM grâce à l'utilisation de la compilation juste-à-temps (JIT) et de l'allocation de mémoire dynamique.</li>
+  <li>L'ajout de nouvelles fonctionnalités pour faciliter le développement d'applications en Java, telles que l'ajout de méthodes utilitaires dans la classe java.util.Objects et l'ajout de nouvelles méthodes dans les classes java.util.List et java.util.Map.</li>
+  <li>L'amélioration de la sécurité de la JVM grâce à l'ajout de nouvelles fonctionnalités de sécurité, telles que la vérification des types et la gestion des exceptions.</li>
+</ul>
+
+<p>Ces améliorations permettent d'améliorer les performances et la sécurité des applications Java, tout en facilitant le développement et la maintenance du code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

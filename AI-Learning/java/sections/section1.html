@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1 : Introduction à Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Histoire et évolution de Java</h2>
+<p>
+Java est un langage de programmation créé par James Gosling et son équipe chez Sun Microsystems dans les années 1990. Il a été conçu pour être portable, c'est-à-dire qu'il peut être exécuté sur n'importe quel système d'exploitation. L'objectif principal de Java était de permettre aux développeurs de créer des applications qui fonctionnent de manière transparente sur différents appareils et plates-formes.
+</p>
+<p>
+Depuis sa création, Java a connu de nombreuses évolutions et mises à jour. La première version publique de Java, connue sous le nom de Java 1.0, a été lancée en 1996. Depuis lors, de nouvelles versions de Java ont été publiées régulièrement, apportant de nouvelles fonctionnalités et améliorations.
+</p>
+<p>
+Java est devenu extrêmement populaire dans l'industrie du développement logiciel en raison de sa portabilité, de sa facilité d'utilisation et de sa grande communauté de développeurs. Aujourd'hui, Java est utilisé pour créer une grande variété d'applications, allant des applications de bureau aux applications mobiles et aux applications d'entreprise.
+</p>
+
+<h2>Installation et configuration de l'environnement de développement Java</h2>
+<p>
+Avant de commencer à programmer en Java, vous devez installer et configurer l'environnement de développement Java sur votre machine. Voici les étapes à suivre pour installer Java :
+</p>
+<ol>
+  <li>Téléchargez la dernière version du kit de développement Java (JDK) à partir du site officiel d'Oracle.</li>
+  <li>Exécutez le programme d'installation et suivez les instructions à l'écran pour installer le JDK.</li>
+  <li>Une fois l'installation terminée, configurez les variables d'environnement Java sur votre système d'exploitation. Cela permettra à votre système de reconnaître les commandes Java.</li>
+</ol>
+<p>
+Une fois que vous avez installé et configuré l'environnement de développement Java, vous êtes prêt à commencer à programmer en Java.
+</p>
+
+<h2>Structure d'un programme Java</h2>
+<p>
+Un programme Java est composé de plusieurs éléments clés. Voici une structure de base d'un programme Java :
+</p>
+<pre><code>public class HelloWorld {
+    public static void main(String[] args) {
+        // Code à exécuter
+        System.out.println("Hello, World!");
+    }
+}
+</code></pre>
+<p>
+Expliquons brièvement chaque élément de ce programme :
+</p>
+<ul>
+  <li><code>public class HelloWorld</code> : C'est la déclaration de la classe principale du programme. Le nom de la classe doit correspondre au nom du fichier Java.</li>
+  <li><code>public static void main(String[] args)</code> : C'est la méthode principale du programme. C'est le point d'entrée de l'exécution du programme.</li>
+  <li><code>// Code à exécuter</code> : C'est un commentaire qui indique où vous pouvez écrire votre propre code.</li>
+  <li><code>System.out.println("Hello, World!");</code> : C'est une instruction qui affiche le message "Hello, World!" à la console.</li>
+</ul>
+<p>
+La structure d'un programme Java peut être plus complexe en fonction des fonctionnalités que vous souhaitez implémenter. Cependant, cette structure de base est un bon point de départ pour comprendre comment écrire un programme Java.
+</p>
+
+<h2>Les types de données en Java</h2>
+<p>
+Java est un langage fortement typé, ce qui signifie que chaque variable doit avoir un type spécifié. Voici les types de données primitifs disponibles en Java :
+</p>
+<ul>
+  <li><code>byte</code> : Un entier signé sur 8 bits.</li>
+  <li><code>short</code> : Un entier signé sur 16 bits.</li>
+  <li><code>int</code> : Un entier signé sur 32 bits.</li>
+  <li><code>long</code> : Un entier signé sur 64 bits.</li>
+  <li><code>float</code> : Un nombre à virgule flottante sur 32 bits.</li>
+  <li><code>double</code> : Un nombre à virgule flottante sur 64 bits.</li>
+  <li><code>boolean</code> : Une valeur booléenne (vrai ou faux).</li>
+  <li><code>char</code> : Un caractère Unicode sur 16 bits.</li>
+</ul>
+<p>
+En plus des types de données primitifs, Java prend également en charge les types de données de classe, tels que les chaînes de caractères et les tableaux. Ces types de données sont construits à partir des types de données primitifs.
+</p>
+
+<h2>Les variables et les constantes en Java</h2>
+<p>
+En Java, vous pouvez déclarer des variables pour stocker des valeurs et des constantes pour stocker des valeurs qui ne changeront pas. Voici comment déclarer une variable et une constante en Java :
+</p>
+<pre><code>// Déclaration d'une variable
+int age;
+age = 25;
+
+// Déclaration d'une constante
+final double PI = 3.14159;
+</code></pre>
+<p>
+Dans cet exemple, nous déclarons une variable <code>age</code> de type entier et lui attribuons une valeur de 25. Nous déclarons également une constante <code>PI</code> de type double et lui attribuons une valeur de 3.14159. La différence entre une variable et une constante est que la valeur d'une variable peut être modifiée, tandis que la valeur d'une constante reste constante tout au long du programme.
+</p>
+<p>
+Il est recommandé de donner des noms significatifs à vos variables et constantes pour rendre votre code plus lisible et compréhensible.
+</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les entrées/sorties en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les flux d'entrée/sortie en Java</h2>
+<p>
+Les flux d'entrée/sortie en Java sont utilisés pour lire et écrire des données à partir de sources externes, telles que des fichiers ou des connexions réseau. Les flux d'entrée sont utilisés pour lire des données à partir de sources externes, tandis que les flux de sortie sont utilisés pour écrire des données vers des destinations externes.
+</p>
+<p>
+En Java, les flux d'entrée/sortie sont représentés par les classes InputStream et OutputStream. Ces classes abstraites fournissent des méthodes pour lire et écrire des données de manière générique, indépendamment de la source ou de la destination réelle des données.
+</p>
+<p>
+Voici un exemple de lecture d'un fichier texte à l'aide d'un flux d'entrée en Java :
+</p>
+<pre><code>
+try (InputStream inputStream = new FileInputStream("fichier.txt")) {
+    int data;
+    while ((data = inputStream.read()) != -1) {
+        System.out.print((char) data);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons la classe FileInputStream pour créer un flux d'entrée à partir du fichier "fichier.txt". Ensuite, nous utilisons la méthode read() pour lire les données du flux d'entrée, un octet à la fois. La méthode read() renvoie -1 lorsque la fin du flux est atteinte.
+</p>
+<p>
+Notez que nous utilisons un bloc try-with-resources pour nous assurer que le flux d'entrée est correctement fermé, même en cas d'exception.
+</p>
+
+<h2>La sérialisation en Java</h2>
+<p>
+La sérialisation en Java est le processus de conversion d'un objet en une séquence d'octets, qui peut ensuite être enregistrée dans un fichier ou transmise via un réseau. La désérialisation est le processus inverse, qui consiste à reconstituer un objet à partir de sa représentation sérialisée.
+</p>
+<p>
+En Java, la sérialisation est prise en charge par les classes ObjectOutputStream et ObjectInputStream. Ces classes fournissent des méthodes pour sérialiser et désérialiser des objets, respectivement.
+</p>
+<p>
+Voici un exemple de sérialisation d'un objet en Java :
+</p>
+<pre><code>
+try (OutputStream outputStream = new FileOutputStream("objet.ser");
+     ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream)) {
+    MyClass myObject = new MyClass();
+    objectOutputStream.writeObject(myObject);
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons la classe FileOutputStream pour créer un flux de sortie vers le fichier "objet.ser". Ensuite, nous utilisons la classe ObjectOutputStream pour sérialiser l'objet myObject et l'écrire dans le flux de sortie.
+</p>
+<p>
+Notez que la classe de l'objet que nous sérialisons doit implémenter l'interface Serializable pour être sérialisable.
+</p>
+
+<h2>La gestion des fichiers en Java</h2>
+<p>
+La gestion des fichiers en Java permet de créer, lire, écrire et supprimer des fichiers sur le système de fichiers local. Java fournit plusieurs classes pour effectuer ces opérations, telles que File, FileReader, FileWriter, etc.
+</p>
+<p>
+Voici un exemple de création d'un fichier texte en Java :
+</p>
+<pre><code>
+try (FileWriter fileWriter = new FileWriter("fichier.txt")) {
+    fileWriter.write("Contenu du fichier");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons la classe FileWriter pour créer un flux de sortie vers le fichier "fichier.txt". Ensuite, nous utilisons la méthode write() pour écrire le contenu du fichier.
+</p>
+<p>
+Voici un exemple de lecture d'un fichier texte en Java :
+</p>
+<pre><code>
+try (FileReader fileReader = new FileReader("fichier.txt")) {
+    int data;
+    while ((data = fileReader.read()) != -1) {
+        System.out.print((char) data);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons la classe FileReader pour créer un flux d'entrée à partir du fichier "fichier.txt". Ensuite, nous utilisons la méthode read() pour lire les données du flux d'entrée, un caractère à la fois.
+</p>
+<p>
+Notez que nous utilisons un bloc try-with-resources pour nous assurer que les flux de fichier sont correctement fermés, même en cas d'exception.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

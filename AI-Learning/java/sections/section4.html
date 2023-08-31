@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Java Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les collections en Java</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/java/java.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les listes en Java</h2>
+<p>Une liste en Java est une collection ordonnée d'éléments. Chaque élément est identifié par un index, qui commence à zéro pour le premier élément. Les listes en Java sont implémentées par l'interface <code>List</code> et ont plusieurs classes d'implémentation, telles que <code>ArrayList</code> et <code>LinkedList</code>.</p>
+
+<p>Voici un exemple de création d'une liste en utilisant la classe <code>ArrayList</code> :</p>
+
+<pre><code>List&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("pomme");
+fruits.add("banane");
+fruits.add("orange");
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une liste appelée <code>fruits</code> et ajouté trois éléments : "pomme", "banane" et "orange".</p>
+
+<p>Il est également possible d'accéder aux éléments d'une liste en utilisant leur index :</p>
+
+<pre><code>String premierFruit = fruits.get(0);
+System.out.println(premierFruit); // Affiche "pomme"
+</code></pre>
+
+<p>La méthode <code>get()</code> permet d'obtenir l'élément à l'index spécifié.</p>
+
+<h2>Les ensembles en Java</h2>
+<p>Un ensemble en Java est une collection qui ne permet pas d'avoir des éléments en double. Les ensembles en Java sont implémentés par l'interface <code>Set</code> et ont plusieurs classes d'implémentation, telles que <code>HashSet</code> et <code>TreeSet</code>.</p>
+
+<p>Voici un exemple de création d'un ensemble en utilisant la classe <code>HashSet</code> :</p>
+
+<pre><code>Set&lt;String&gt; ensemble = new HashSet&lt;&gt;();
+ensemble.add("rouge");
+ensemble.add("vert");
+ensemble.add("bleu");
+ensemble.add("rouge"); // Cet élément sera ignoré car il est en double
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé un ensemble appelé <code>ensemble</code> et ajouté trois éléments : "rouge", "vert" et "bleu". Comme l'élément "rouge" est en double, il est ignoré.</p>
+
+<p>Il est également possible de vérifier si un ensemble contient un certain élément :</p>
+
+<pre><code>boolean contientRouge = ensemble.contains("rouge");
+System.out.println(contientRouge); // Affiche "true"
+</code></pre>
+
+<p>La méthode <code>contains()</code> renvoie <code>true</code> si l'ensemble contient l'élément spécifié.</p>
+
+<h2>Les cartes en Java</h2>
+<p>Une carte en Java est une collection d'éléments qui sont stockés sous forme de paires clé-valeur. Chaque élément est identifié par une clé unique. Les cartes en Java sont implémentées par l'interface <code>Map</code> et ont plusieurs classes d'implémentation, telles que <code>HashMap</code> et <code>TreeMap</code>.</p>
+
+<p>Voici un exemple de création d'une carte en utilisant la classe <code>HashMap</code> :</p>
+
+<pre><code>Map&lt;String, Integer&gt; scores = new HashMap&lt;&gt;();
+scores.put("Alice", 10);
+scores.put("Bob", 15);
+scores.put("Charlie", 20);
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une carte appelée <code>scores</code> et ajouté trois paires clé-valeur : "Alice" avec une valeur de 10, "Bob" avec une valeur de 15 et "Charlie" avec une valeur de 20.</p>
+
+<p>Il est également possible d'accéder à la valeur d'une clé spécifique :</p>
+
+<pre><code>int scoreAlice = scores.get("Alice");
+System.out.println(scoreAlice); // Affiche "10"
+</code></pre>
+
+<p>La méthode <code>get()</code> permet d'obtenir la valeur associée à la clé spécifiée.</p>
+
+<h2>Les itérations sur les collections en Java</h2>
+<p>En Java, il est possible d'itérer sur les éléments d'une collection en utilisant différentes méthodes. Voici deux exemples couramment utilisés :</p>
+
+<p>1. Utilisation d'une boucle <code>for-each</code> :</p>
+
+<pre><code>for (String fruit : fruits) {
+    System.out.println(fruit);
+}
+</code></pre>
+
+<p>Cette boucle permet d'itérer sur tous les éléments de la liste <code>fruits</code> et d'afficher chaque élément.</p>
+
+<p>2. Utilisation d'un itérateur :</p>
+
+<pre><code>Iterator&lt;String&gt; iterator = fruits.iterator();
+while (iterator.hasNext()) {
+    String fruit = iterator.next();
+    System.out.println(fruit);
+}
+</code></pre>
+
+<p>Cet exemple utilise un itérateur pour parcourir la liste <code>fruits</code> et afficher chaque élément. La méthode <code>hasNext()</code> vérifie s'il y a un élément suivant, et la méthode <code>next()</code> renvoie l'élément suivant.</p>
+
+<p>Il est important de noter que ces exemples peuvent être appliqués à d'autres types de collections en Java, tels que les ensembles et les cartes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/java/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/java/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
