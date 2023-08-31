@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Trello Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Utilisation de Trello sur différentes plateformes et intégration mobile</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/trello/trello.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/trello/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/trello/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Trello sur ordinateur</h2>
+<p>Trello est disponible sur différentes plateformes, y compris sur ordinateur. L'utilisation de Trello sur ordinateur offre une expérience plus complète et permet d'accéder à toutes les fonctionnalités de Trello.</p>
+<p>Pour utiliser Trello sur ordinateur, il vous suffit de vous rendre sur le site officiel de Trello et de vous connecter à votre compte. Une fois connecté, vous pourrez accéder à tous vos tableaux, listes et cartes, ainsi qu'effectuer toutes les actions disponibles dans Trello.</p>
+<p>La version pour ordinateur de Trello offre une interface conviviale et intuitive, avec des fonctionnalités avancées telles que la personnalisation des tableaux, l'ajout de membres d'équipe, l'utilisation de règles d'automatisation, etc.</p>
+<p>Voici un exemple de code pour vous connecter à Trello sur ordinateur :</p>
+<pre><code>const Trello = require('trello');
+
+const trello = new Trello('YOUR_API_KEY', 'YOUR_TOKEN');
+
+// Connect to Trello
+trello.connect();
+</code></pre>
+
+<h2>Utilisation de Trello sur mobile</h2>
+<p>Trello est également disponible sur les appareils mobiles, ce qui vous permet de gérer vos tableaux et vos tâches où que vous soyez. L'application mobile Trello est disponible sur les plateformes iOS et Android.</p>
+<p>Pour utiliser Trello sur mobile, vous devez d'abord télécharger l'application depuis l'App Store (pour iOS) ou le Google Play Store (pour Android). Une fois l'application installée, vous pouvez vous connecter à votre compte Trello et accéder à tous vos tableaux et cartes.</p>
+<p>L'application mobile Trello offre une expérience utilisateur optimisée pour les appareils mobiles, avec des fonctionnalités adaptées à une utilisation en déplacement. Vous pouvez créer de nouvelles cartes, ajouter des commentaires, attribuer des tâches, etc.</p>
+<p>Voici un exemple de code pour utiliser Trello sur mobile :</p>
+<pre><code>import Trello from 'trello';
+
+const trello = new Trello('YOUR_API_KEY', 'YOUR_TOKEN');
+
+// Connect to Trello
+trello.connect();
+</code></pre>
+
+<h2>Synchronisation et intégration avec d'autres outils</h2>
+<p>Trello offre la possibilité de synchroniser et d'intégrer vos tableaux avec d'autres outils et services que vous utilisez au quotidien. Cela vous permet de centraliser vos informations et de faciliter la gestion de vos projets.</p>
+<p>Voici quelques exemples d'intégrations populaires avec Trello :</p>
+<ul>
+  <li><strong>Intégration avec Slack :</strong> Vous pouvez connecter Trello à Slack pour recevoir des notifications et des mises à jour de vos tableaux directement dans votre canal Slack.</li>
+  <li><strong>Intégration avec Google Drive :</strong> Vous pouvez lier vos fichiers Google Drive à vos cartes Trello, ce qui vous permet de les consulter et de les modifier facilement.</li>
+  <li><strong>Intégration avec GitHub :</strong> Vous pouvez connecter Trello à GitHub pour suivre les problèmes et les demandes de fusion directement depuis vos tableaux Trello.</li>
+</ul>
+<p>Pour intégrer Trello avec d'autres outils, vous devez accéder aux paramètres de votre tableau, puis sélectionner l'option d'intégration correspondante. Suivez les instructions fournies pour connecter les deux outils.</p>
+<p>Voici un exemple de code pour synchroniser Trello avec Slack :</p>
+<pre><code>const Trello = require('trello');
+const Slack = require('slack');
+
+const trello = new Trello('YOUR_API_KEY', 'YOUR_TOKEN');
+const slack = new Slack('YOUR_SLACK_TOKEN');
+
+// Connect Trello with Slack
+trello.connect();
+slack.connect();
+
+// Sync Trello board with Slack channel
+trello.syncWithSlack('YOUR_SLACK_CHANNEL');
+</code></pre>
+
+<p>Avec ces informations, vous êtes maintenant prêt à utiliser Trello sur différentes plateformes et à intégrer Trello avec d'autres outils pour optimiser votre productivité et la gestion de vos projets.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/trello/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/trello/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

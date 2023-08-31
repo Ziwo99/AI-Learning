@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Trello Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Automatisation des tâches avec Trello</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/trello/trello.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/trello/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/trello/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<p>Dans cette section, nous allons explorer les différentes façons d'automatiser les tâches dans Trello pour gagner du temps et améliorer l'efficacité de votre travail.</p>
+
+<h2>Utilisation des règles pour automatiser les actions</h2>
+
+<p>Les règles dans Trello vous permettent de définir des actions automatiques qui se déclenchent en fonction de certains événements ou conditions. Voici quelques exemples de règles couramment utilisées :</p>
+
+<ul>
+  <li>Attribuer automatiquement une carte à un membre de l'équipe lorsqu'elle est ajoutée à une liste spécifique.</li>
+  <li>Déplacer automatiquement une carte vers une liste différente lorsqu'elle atteint une date d'échéance.</li>
+  <li>Envoyer automatiquement une notification à un membre de l'équipe lorsqu'une carte est modifiée.</li>
+</ul>
+
+<p>Pour créer une règle, accédez à la carte ou au tableau souhaité, cliquez sur le bouton "Règles" dans le menu de droite, puis sélectionnez "Ajouter une règle". Vous pouvez ensuite choisir parmi une variété de déclencheurs et d'actions pour personnaliser votre règle.</p>
+
+<h2>Utilisation des intégrations avec d'autres outils</h2>
+
+<p>Trello offre une intégration avec de nombreux autres outils populaires, tels que Slack, Google Drive et Jira. Ces intégrations vous permettent de connecter Trello à d'autres plateformes et d'automatiser les flux de travail entre elles.</p>
+
+<p>Par exemple, vous pouvez configurer une intégration avec Slack pour recevoir des notifications de Trello directement dans votre canal de discussion d'équipe. De cette façon, vous restez informé des mises à jour importantes sans avoir à vérifier constamment Trello.</p>
+
+<p>Pour configurer une intégration, accédez aux paramètres de votre tableau, cliquez sur "Intégrations" dans le menu de gauche, puis sélectionnez l'outil avec lequel vous souhaitez vous connecter. Suivez les instructions pour autoriser l'accès et configurer les paramètres de l'intégration.</p>
+
+<h2>Utilisation des modèles pour gagner du temps</h2>
+
+<p>Les modèles dans Trello vous permettent de créer des tableaux préconfigurés avec des listes, des cartes et des étiquettes prédéfinies. Cela vous fait gagner du temps en évitant de recréer les mêmes structures de tableau à partir de zéro.</p>
+
+<p>Pour utiliser un modèle, accédez à la page d'accueil de Trello, cliquez sur le bouton "Créer un tableau" et sélectionnez "Utiliser un modèle". Choisissez le modèle qui correspond le mieux à vos besoins, puis personnalisez-le en ajoutant ou en supprimant des listes, des cartes et des étiquettes selon vos préférences.</p>
+
+<p>Les modèles sont particulièrement utiles pour les projets récurrents ou les processus standardisés, car ils vous permettent de démarrer rapidement avec une structure prédéfinie.</p>
+
+<p>Voici un exemple de code pour automatiser une tâche spécifique dans Trello :</p>
+
+<pre><code>// Règle : Déplacer automatiquement les cartes vers la liste "Terminé" lorsqu'elles sont marquées comme complètes
+const cards = t.cards('id', 'name', 'due', 'labels');
+const completedList = t.list('Terminé');
+
+cards.forEach((card) => {
+  if (card.labels.includes('Complet')) {
+    t.moveCard(card.id, completedList.id);
+  }
+});
+</code></pre>
+
+<p>Ce code utilise l'API Trello pour récupérer toutes les cartes du tableau, puis vérifie si elles ont une étiquette "Complet". Si c'est le cas, la carte est déplacée vers la liste "Terminé". Vous pouvez personnaliser ce code en fonction de vos propres besoins et conditions.</p>
+
+<p>En utilisant les règles, les intégrations et les modèles, vous pouvez automatiser de nombreuses tâches répétitives dans Trello, ce qui vous permet de vous concentrer sur des tâches plus importantes et d'améliorer votre productivité.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/trello/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/trello/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
