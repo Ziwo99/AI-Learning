@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Les collections de données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les tableaux et les listes en Ruby</h2>
+<p>Les tableaux et les listes sont des structures de données couramment utilisées en Ruby pour stocker et manipuler des collections d'éléments. Un tableau est une séquence ordonnée d'éléments, tandis qu'une liste est une collection d'éléments qui peut être modifiée en ajoutant, en supprimant ou en modifiant des éléments.</p>
+
+<p>Voici comment déclarer et initialiser un tableau en Ruby :</p>
+<pre><code>array = [1, 2, 3, 4, 5]
+</code></pre>
+
+<p>On peut également créer une liste vide et ajouter des éléments par la suite :</p>
+<pre><code>list = []
+list.push(1)
+list.push(2)
+list.push(3)
+</code></pre>
+
+<p>Pour accéder aux éléments d'un tableau ou d'une liste, on utilise des indices. L'indice du premier élément est 0, celui du deuxième est 1, et ainsi de suite. Voici comment accéder à un élément spécifique :</p>
+<pre><code>puts array[0] # Affiche 1
+puts list[1] # Affiche 2
+</code></pre>
+
+<p>Il est également possible de modifier un élément en utilisant son indice :</p>
+<pre><code>array[2] = 10
+list[0] = 5
+</code></pre>
+
+<p>Pour parcourir tous les éléments d'un tableau ou d'une liste, on peut utiliser une boucle for :</p>
+<pre><code>for i in 0..array.length-1
+  puts array[i]
+end
+</code></pre>
+
+<p>On peut également utiliser la méthode each pour itérer sur les éléments :</p>
+<pre><code>array.each do |element|
+  puts element
+end
+</code></pre>
+
+<h2>Les hashages et les dictionnaires</h2>
+<p>Un hashage, également appelé dictionnaire, est une structure de données qui associe des clés à des valeurs. Chaque clé doit être unique et permet d'accéder à sa valeur correspondante.</p>
+
+<p>Voici comment déclarer et initialiser un hashage en Ruby :</p>
+<pre><code>hash = { "nom" => "John", "age" => 30, "ville" => "Paris" }
+</code></pre>
+
+<p>Pour accéder à une valeur dans un hashage, on utilise la clé correspondante :</p>
+<pre><code>puts hash["nom"] # Affiche "John"
+puts hash["age"] # Affiche 30
+</code></pre>
+
+<p>On peut également ajouter, modifier ou supprimer des paires clé-valeur dans un hashage :</p>
+<pre><code>hash["profession"] = "Développeur"
+hash["age"] = 31
+hash.delete("ville")
+</code></pre>
+
+<p>Pour parcourir toutes les paires clé-valeur d'un hashage, on peut utiliser la méthode each :</p>
+<pre><code>hash.each do |key, value|
+  puts "#{key}: #{value}"
+end
+</code></pre>
+
+<h2>Les ensembles et les piles</h2>
+<p>En Ruby, les ensembles et les piles peuvent être implémentés à l'aide de la classe Set et de la classe Array, respectivement.</p>
+
+<p>Un ensemble est une collection d'éléments uniques, sans ordre particulier. Voici comment créer un ensemble :</p>
+<pre><code>require 'set'
+
+set = Set.new
+set.add(1)
+set.add(2)
+set.add(3)
+</code></pre>
+
+<p>Pour vérifier si un élément est présent dans un ensemble, on peut utiliser la méthode include? :</p>
+<pre><code>puts set.include?(2) # Affiche true
+puts set.include?(4) # Affiche false
+</code></pre>
+
+<p>Une pile, également appelée stack, est une structure de données dans laquelle les éléments sont ajoutés et supprimés selon le principe du dernier entré, premier sorti (LIFO). Voici comment créer une pile :</p>
+<pre><code>stack = []
+stack.push(1)
+stack.push(2)
+stack.push(3)
+</code></pre>
+
+<p>Pour retirer le dernier élément ajouté à la pile, on utilise la méthode pop :</p>
+<pre><code>puts stack.pop # Affiche 3
+puts stack.pop # Affiche 2
+</code></pre>
+
+<h2>Les itérations sur les collections</h2>
+<p>En Ruby, il existe plusieurs méthodes pour itérer sur les éléments d'une collection, telles que each, map, select, etc.</p>
+
+<p>La méthode each permet de parcourir tous les éléments d'une collection :</p>
+<pre><code>array.each do |element|
+  puts element
+end
+
+hash.each do |key, value|
+  puts "#{key}: #{value}"
+end
+
+set.each do |element|
+  puts element
+end
+
+stack.each do |element|
+  puts element
+end
+</code></pre>
+
+<p>La méthode map permet de transformer chaque élément d'une collection en un autre élément :</p>
+<pre><code>new_array = array.map do |element|
+  element * 2
+end
+
+new_hash = hash.map do |key, value|
+  [key.to_sym, value]
+end
+</code></pre>
+
+<p>La méthode select permet de filtrer les éléments d'une collection en fonction d'une condition :</p>
+<pre><code>even_numbers = array.select do |element|
+  element % 2 == 0
+end
+
+adults = hash.select do |key, value|
+  key == "age" && value >= 18
+end
+</code></pre>
+
+<p>Ces méthodes d'itération sont très utiles pour manipuler et transformer les collections de données en Ruby.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

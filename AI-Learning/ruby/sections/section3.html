@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Fonctions et méthodes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les fonctions prédéfinies en Ruby</h2>
+<p>Les fonctions prédéfinies en Ruby sont des morceaux de code réutilisables qui effectuent des tâches spécifiques. Elles sont déjà incluses dans le langage Ruby et peuvent être utilisées directement sans avoir à les définir.</p>
+<p>Voici quelques exemples de fonctions prédéfinies en Ruby :</p>
+<pre><code>puts "Hello, World!"</code></pre>
+<p>Cette fonction affiche le texte "Hello, World!" dans la console.</p>
+<pre><code>rand(1..10)</code></pre>
+<p>Cette fonction génère un nombre aléatoire entre 1 et 10.</p>
+<pre><code>Math.sqrt(25)</code></pre>
+<p>Cette fonction calcule la racine carrée de 25.</p>
+
+<h2>Les méthodes de classe et les méthodes d'instance</h2>
+<p>En Ruby, les méthodes sont des morceaux de code réutilisables qui effectuent des actions spécifiques. Elles peuvent être définies à l'intérieur d'une classe et être appelées sur des objets de cette classe.</p>
+<p>Les méthodes de classe sont des méthodes qui peuvent être appelées directement sur la classe elle-même, sans avoir besoin d'instancier un objet. Elles sont définies en utilisant le mot-clé "self" suivi d'un point et du nom de la méthode.</p>
+<pre><code>class Person
+  def self.greet
+    puts "Hello, I am a person!"
+  end
+end
+
+Person.greet</code></pre>
+<p>Cette méthode de classe "greet" affiche le message "Hello, I am a person!" lorsque la méthode est appelée sur la classe Person.</p>
+<p>Les méthodes d'instance sont des méthodes qui peuvent être appelées sur des objets d'une classe spécifique. Elles sont définies à l'intérieur de la classe sans utiliser le mot-clé "self".</p>
+<pre><code>class Person
+  def greet
+    puts "Hello, I am a person!"
+  end
+end
+
+person = Person.new
+person.greet</code></pre>
+<p>Cette méthode d'instance "greet" affiche le message "Hello, I am a person!" lorsque la méthode est appelée sur un objet de la classe Person.</p>
+
+<h2>Les paramètres et les arguments des fonctions</h2>
+<p>Les paramètres sont des variables utilisées dans une fonction pour recevoir des valeurs lors de l'appel de la fonction. Les arguments sont les valeurs réelles passées à la fonction lors de son appel.</p>
+<p>Voici un exemple de fonction avec des paramètres :</p>
+<pre><code>def greet(name)
+  puts "Hello, #{name}!"
+end
+
+greet("John")</code></pre>
+<p>Cette fonction "greet" prend un paramètre "name" et affiche le message "Hello, John!" lorsque la fonction est appelée avec l'argument "John".</p>
+
+<h2>Les blocs et les lambdas</h2>
+<p>Les blocs et les lambdas sont des morceaux de code qui peuvent être passés en tant qu'arguments à une méthode. Ils permettent de créer des fonctions anonymes ou des portions de code réutilisables.</p>
+<p>Voici un exemple d'utilisation d'un bloc :</p>
+<pre><code>3.times do |i|
+  puts "Iteration #{i}"
+end</code></pre>
+<p>Ce bloc est passé à la méthode "times" et affiche le message "Iteration 0", "Iteration 1" et "Iteration 2" lors de son exécution.</p>
+<p>Voici un exemple d'utilisation d'une lambda :</p>
+<pre><code>add = lambda { |a, b| a + b }
+puts add.call(2, 3)</code></pre>
+<p>Cette lambda "add" prend deux arguments "a" et "b" et renvoie leur somme lorsqu'elle est appelée avec les arguments 2 et 3.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

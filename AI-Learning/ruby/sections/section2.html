@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Structures de contrôle et boucles</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les conditions et les opérateurs de comparaison</h2>
+<p>Les conditions et les opérateurs de comparaison sont utilisés pour prendre des décisions dans un programme Ruby. Une condition est une expression qui est évaluée comme vraie ou fausse. Les opérateurs de comparaison permettent de comparer des valeurs et de déterminer si elles sont égales, supérieures, inférieures, etc.</p>
+
+<p>Voici quelques exemples d'opérateurs de comparaison :</p>
+<pre><code>==   # égal à
+!=   # différent de
+&gt;    # supérieur à
+&lt;    # inférieur à
+&gt;=   # supérieur ou égal à
+&lt;=   # inférieur ou égal à
+</code></pre>
+
+<p>Voici un exemple d'utilisation des conditions et des opérateurs de comparaison :</p>
+<pre><code>age = 25;
+
+if age &gt;= 18
+  puts "Vous êtes majeur."
+else
+  puts "Vous êtes mineur."
+end
+</code></pre>
+
+<p>Dans cet exemple, si l'âge est supérieur ou égal à 18, le programme affiche "Vous êtes majeur.". Sinon, il affiche "Vous êtes mineur."</p>
+
+<h2>Les boucles while et for</h2>
+<p>Les boucles while et for sont utilisées pour répéter une série d'instructions tant qu'une condition est vraie ou pour itérer sur une collection d'éléments.</p>
+
+<p>Voici un exemple d'utilisation de la boucle while :</p>
+<pre><code>i = 0;
+
+while i &lt; 10
+  puts "Iteration #{i}"
+  i += 1
+end
+</code></pre>
+
+<p>Dans cet exemple, la boucle while répète les instructions à l'intérieur tant que la condition "i < 10" est vraie. À chaque itération, la valeur de "i" est augmentée de 1.</p>
+
+<p>Voici un exemple d'utilisation de la boucle for :</p>
+<pre><code>numbers = [1, 2, 3, 4, 5]
+
+for number in numbers
+  puts number
+end
+</code></pre>
+
+<p>Dans cet exemple, la boucle for itère sur chaque élément de la collection "numbers" et affiche sa valeur.</p>
+
+<h2>Les instructions de contrôle de flux (if, else, elsif)</h2>
+<p>Les instructions de contrôle de flux permettent de prendre des décisions conditionnelles dans un programme Ruby. L'instruction "if" est utilisée pour exécuter un bloc de code si une condition est vraie. L'instruction "else" est utilisée pour exécuter un bloc de code si la condition est fausse. L'instruction "elsif" est utilisée pour tester une autre condition si la première condition est fausse.</p>
+
+<p>Voici un exemple d'utilisation des instructions de contrôle de flux :</p>
+<pre><code>age = 25;
+
+if age &lt; 18
+  puts "Vous êtes mineur."
+elsif age &lt; 21
+  puts "Vous êtes majeur, mais vous ne pouvez pas boire d'alcool."
+else
+  puts "Vous êtes majeur."
+end
+</code></pre>
+
+<p>Dans cet exemple, si l'âge est inférieur à 18, le programme affiche "Vous êtes mineur.". Si l'âge est compris entre 18 et 21, le programme affiche "Vous êtes majeur, mais vous ne pouvez pas boire d'alcool.". Sinon, il affiche "Vous êtes majeur."</p>
+
+<h2>Les boucles do-while et until</h2>
+<p>Les boucles do-while et until sont utilisées pour répéter une série d'instructions tant qu'une condition est vraie ou fausse.</p>
+
+<p>Voici un exemple d'utilisation de la boucle do-while :</p>
+<pre><code>i = 0;
+
+begin
+  puts "Iteration #{i}"
+  i += 1
+end while i &lt; 10
+</code></pre>
+
+<p>Dans cet exemple, la boucle do-while répète les instructions à l'intérieur tant que la condition "i < 10" est vraie. À chaque itération, la valeur de "i" est augmentée de 1. La différence avec la boucle while est que la condition est vérifiée après l'exécution du bloc de code.</p>
+
+<p>Voici un exemple d'utilisation de la boucle until :</p>
+<pre><code>i = 0;
+
+until i &gt;= 10
+  puts "Iteration #{i}"
+  i += 1
+end
+</code></pre>
+
+<p>Dans cet exemple, la boucle until répète les instructions à l'intérieur tant que la condition "i >= 10" est fausse. À chaque itération, la valeur de "i" est augmentée de 1. La différence avec la boucle while est que la condition est vérifiée avant l'exécution du bloc de code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

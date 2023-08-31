@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Les classes et les objets</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les concepts de base des classes et des objets</h2>
+<p>En Ruby, tout est un objet. Une classe est un modèle ou un plan pour créer des objets. Les objets sont des instances de classes. Les classes définissent les propriétés (attributs) et les comportements (méthodes) des objets.</p>
+
+<p>La création d'une classe se fait en utilisant le mot-clé <code>class</code>, suivi du nom de la classe en commençant par une majuscule. Par exemple, pour créer une classe "Personne", on peut écrire :</p>
+
+<pre><code>class Personne
+end
+</code></pre>
+
+<p>Pour créer un objet à partir d'une classe, on utilise la méthode <code>new</code>. Par exemple, pour créer un objet "personne1" à partir de la classe "Personne", on peut écrire :</p>
+
+<pre><code>personne1 = Personne.new
+</code></pre>
+
+<p>Les objets ont des attributs qui définissent leurs caractéristiques. On peut définir des attributs pour une classe en utilisant le mot-clé <code>attr_accessor</code>. Par exemple, pour définir les attributs "nom" et "age" pour la classe "Personne", on peut écrire :</p>
+
+<pre><code>class Personne
+  attr_accessor :nom, :age
+end
+</code></pre>
+
+<p>Les attributs peuvent être lus et modifiés en utilisant les méthodes générées automatiquement par <code>attr_accessor</code>. Par exemple, pour lire et modifier l'attribut "nom" de l'objet "personne1", on peut écrire :</p>
+
+<pre><code>personne1.nom = "Alice"
+puts personne1.nom  # Affiche "Alice"
+</code></pre>
+
+<h2>L'encapsulation et l'abstraction en Ruby</h2>
+<p>L'encapsulation est le principe de regrouper les données et les méthodes qui les manipulent dans une classe. Cela permet de cacher les détails d'implémentation et de protéger les données d'accès non autorisé.</p>
+
+<p>En Ruby, l'encapsulation est réalisée en utilisant des méthodes d'accès (getters et setters) pour lire et modifier les attributs d'un objet. Par convention, les getters ont le même nom que l'attribut et les setters ont le même nom suivi d'un égal (<code>=</code>).</p>
+
+<p>Par exemple, pour encapsuler l'attribut "nom" de la classe "Personne", on peut écrire :</p>
+
+<pre><code>class Personne
+  def nom
+    @nom
+  end
+
+  def nom=(nouveau_nom)
+    @nom = nouveau_nom
+  end
+end
+</code></pre>
+
+<p>Ainsi, on peut lire et modifier l'attribut "nom" de la même manière qu'avec <code>attr_accessor</code>.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>L'héritage est un mécanisme qui permet à une classe d'hériter des propriétés et des comportements d'une autre classe. La classe qui hérite est appelée la classe dérivée ou sous-classe, et la classe dont elle hérite est appelée la classe de base ou superclasse.</p>
+
+<p>En Ruby, l'héritage est réalisé en utilisant le symbole <code>&lt;</code>. Par exemple, pour définir une classe "Etudiant" qui hérite de la classe "Personne", on peut écrire :</p>
+
+<pre><code>class Etudiant &lt; Personne
+end
+</code></pre>
+
+<p>La classe "Etudiant" hérite maintenant des attributs et des méthodes de la classe "Personne". On peut également ajouter des attributs et des méthodes spécifiques à la classe "Etudiant".</p>
+
+<p>Le polymorphisme est la capacité d'un objet à prendre différentes formes. En Ruby, le polymorphisme est réalisé en utilisant des méthodes avec le même nom mais des implémentations différentes dans les classes dérivées.</p>
+
+<p>Par exemple, si la classe "Personne" a une méthode "presentation" qui affiche le nom de la personne, on peut redéfinir cette méthode dans la classe "Etudiant" pour afficher également le numéro d'étudiant :</p>
+
+<pre><code>class Personne
+  attr_accessor :nom
+
+  def presentation
+    puts "Je m'appelle #{nom}."
+  end
+end
+
+class Etudiant &lt; Personne
+  attr_accessor :numero_etudiant
+
+  def presentation
+    puts "Je m'appelle #{nom} et mon numéro d'étudiant est #{numero_etudiant}."
+  end
+end
+</code></pre>
+
+<p>Ainsi, on peut appeler la méthode "presentation" sur un objet de type "Personne" ou "Etudiant" et obtenir des résultats différents en fonction du type de l'objet.</p>
+
+<h2>Les modules et les mixins</h2>
+<p>Les modules sont des collections de méthodes et de constantes qui peuvent être incluses dans les classes. Ils permettent de regrouper des fonctionnalités communes et de les réutiliser dans plusieurs classes.</p>
+
+<p>En Ruby, on peut définir un module en utilisant le mot-clé <code>module</code>. Par exemple, pour définir un module "Logger" qui ajoute des fonctionnalités de journalisation à une classe, on peut écrire :</p>
+
+<pre><code>module Logger
+  def log(message)
+    puts "[LOG] #{message}"
+  end
+end
+</code></pre>
+
+<p>Pour inclure un module dans une classe, on utilise le mot-clé <code>include</code>. Par exemple, pour inclure le module "Logger" dans la classe "Personne", on peut écrire :</p>
+
+<pre><code>class Personne
+  include Logger
+
+  attr_accessor :nom
+end
+</code></pre>
+
+<p>Maintenant, la classe "Personne" a accès à la méthode "log" du module "Logger". On peut l'appeler sur un objet de type "Personne" :</p>
+
+<pre><code>personne1 = Personne.new
+personne1.nom = "Alice"
+personne1.log("Nouvelle personne créée")  # Affiche "[LOG] Nouvelle personne créée"
+</code></pre>
+
+<p>Les mixins sont une forme de composition multiple où une classe peut inclure plusieurs modules. Cela permet de combiner différentes fonctionnalités de manière flexible.</p>
+
+<p>Par exemple, on peut définir un module "EmailSender" qui ajoute des fonctionnalités d'envoi d'e-mails à une classe :</p>
+
+<pre><code>module EmailSender
+  def send_email(to, subject, body)
+    # Code pour envoyer un e-mail
+  end
+end
+</code></pre>
+
+<p>Ensuite, on peut inclure à la fois le module "Logger" et le module "EmailSender" dans la classe "Personne" :</p>
+
+<pre><code>class Personne
+  include Logger
+  include EmailSender
+
+  attr_accessor :nom
+end
+</code></pre>
+
+<p>Maintenant, la classe "Personne" a accès à la fois à la méthode "log" du module "Logger" et à la méthode "send_email" du module "EmailSender". On peut les appeler sur un objet de type "Personne" :</p>
+
+<pre><code>personne1 = Personne.new
+personne1.nom = "Alice"
+personne1.log("Nouvelle personne créée")  # Affiche "[LOG] Nouvelle personne créée"
+personne1.send_email("alice@example.com", "Nouveau message", "Bonjour Alice, vous avez un nouveau message.")  # Envoie un e-mail
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

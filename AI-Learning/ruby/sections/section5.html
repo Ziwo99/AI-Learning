@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des exceptions</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Les exceptions prédéfinies en Ruby</h2>
+  <p>En Ruby, les exceptions sont utilisées pour gérer les erreurs et les situations exceptionnelles qui peuvent survenir lors de l'exécution d'un programme. Ruby fournit plusieurs exceptions prédéfinies qui peuvent être utilisées pour capturer et gérer ces erreurs.</p>
+  
+  <p>Voici quelques-unes des exceptions prédéfinies les plus couramment utilisées en Ruby :</p>
+  
+  <ul>
+    <li><code>StandardError</code> : La classe de base pour toutes les exceptions couramment rencontrées.</li>
+    <li><code>ArgumentError</code> : Levée lorsque les arguments d'une méthode sont incorrects.</li>
+    <li><code>TypeError</code> : Levée lorsque le type d'un objet est incorrect.</li>
+    <li><code>ZeroDivisionError</code> : Levée lorsque la division par zéro est effectuée.</li>
+    <li><code>FileNotFoundError</code> : Levée lorsque le fichier spécifié n'est pas trouvé.</li>
+  </ul>
+  
+  <p>Chaque exception prédéfinie a un nom spécifique et peut être utilisée pour capturer des erreurs spécifiques dans votre code Ruby.</p>
+
+  <h2>La gestion des exceptions avec les blocs begin-rescue-end</h2>
+  <p>En Ruby, la gestion des exceptions est réalisée à l'aide des blocs <code>begin</code>, <code>rescue</code> et <code>end</code>. Le bloc <code>begin</code> est utilisé pour entourer le code qui pourrait potentiellement lever une exception. Le bloc <code>rescue</code> est utilisé pour capturer et gérer les exceptions levées dans le bloc <code>begin</code>. Le bloc <code>end</code> est utilisé pour marquer la fin du bloc <code>begin</code>.</p>
+  
+  <p>Voici un exemple de gestion d'exception avec les blocs <code>begin-rescue-end</code> :</p>
+  
+  <pre><code>begin
+    # Code susceptible de lever une exception
+    result = 10 / 0
+  rescue ZeroDivisionError
+    # Gestion de l'exception ZeroDivisionError
+    puts "Erreur : division par zéro"
+  end</code></pre>
+  
+  <p>Dans cet exemple, le code à l'intérieur du bloc <code>begin</code> tente de diviser 10 par zéro, ce qui lève une exception <code>ZeroDivisionError</code>. Le bloc <code>rescue</code> capture cette exception et exécute le code à l'intérieur, qui affiche le message d'erreur "Erreur : division par zéro".</p>
+
+  <h2>La création de ses propres exceptions</h2>
+  <p>En plus des exceptions prédéfinies, Ruby permet également aux développeurs de créer leurs propres exceptions personnalisées. Cela peut être utile lorsque vous avez besoin de gérer des erreurs spécifiques à votre application.</p>
+  
+  <p>Voici comment créer une exception personnalisée en Ruby :</p>
+  
+  <pre><code>class CustomException &lt; StandardError
+    # Ajoutez du code spécifique à votre exception personnalisée ici
+  end</code></pre>
+  
+  <p>Dans cet exemple, nous avons créé une classe <code>CustomException</code> qui hérite de la classe de base <code>StandardError</code>. Vous pouvez ajouter du code spécifique à votre exception personnalisée à l'intérieur de cette classe.</p>
+  
+  <p>Une fois que vous avez créé votre exception personnalisée, vous pouvez l'utiliser de la même manière que les exceptions prédéfinies pour capturer et gérer des erreurs spécifiques dans votre code.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

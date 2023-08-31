@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les bases de données et Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'accès aux bases de données avec Ruby</h2>
+<p>En utilisant Ruby, il est possible d'accéder et de manipuler des bases de données de manière efficace. Ruby offre plusieurs bibliothèques et frameworks pour interagir avec les bases de données, tels que ActiveRecord, Sequel, et DataMapper.</p>
+
+<p>Pour accéder à une base de données en Ruby, il est nécessaire d'installer le pilote approprié pour la base de données que vous souhaitez utiliser. Par exemple, pour MySQL, vous pouvez installer le pilote mysql2 en utilisant la commande suivante :</p>
+
+<pre><code>gem install mysql2</code></pre>
+
+<p>Une fois le pilote installé, vous pouvez établir une connexion à la base de données en utilisant la classe correspondante du pilote. Par exemple, pour MySQL, vous pouvez utiliser la classe Mysql2::Client :</p>
+
+<pre><code>require 'mysql2'
+
+client = Mysql2::Client.new(
+  host: 'localhost',
+  username: 'root',
+  password: 'password',
+  database: 'my_database'
+)</code></pre>
+
+<p>Une fois la connexion établie, vous pouvez exécuter des requêtes SQL sur la base de données en utilisant les méthodes fournies par le pilote. Par exemple, pour exécuter une requête SELECT :</p>
+
+<pre><code>results = client.query("SELECT * FROM users")
+
+results.each do |row|
+  puts row['name']
+end</code></pre>
+
+<p>Cela exécutera la requête SELECT et affichera le nom de chaque utilisateur dans la table "users".</p>
+
+<h2>Les requêtes SQL en Ruby</h2>
+<p>Les requêtes SQL sont utilisées pour interagir avec les bases de données et récupérer, insérer, mettre à jour ou supprimer des données. En Ruby, vous pouvez exécuter des requêtes SQL en utilisant les méthodes fournies par le pilote de base de données que vous utilisez.</p>
+
+<p>Voici quelques exemples de requêtes SQL couramment utilisées en Ruby :</p>
+
+<ul>
+  <li>SELECT : utilisée pour récupérer des données à partir d'une table.</li>
+  <li>INSERT : utilisée pour insérer de nouvelles données dans une table.</li>
+  <li>UPDATE : utilisée pour mettre à jour des données existantes dans une table.</li>
+  <li>DELETE : utilisée pour supprimer des données d'une table.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation d'une requête SELECT en Ruby :</p>
+
+<pre><code>results = client.query("SELECT * FROM users WHERE age > 18")
+
+results.each do |row|
+  puts row['name']
+end</code></pre>
+
+<p>Cela exécutera la requête SELECT et affichera le nom de chaque utilisateur dont l'âge est supérieur à 18.</p>
+
+<h2>La manipulation des données avec Ruby</h2>
+<p>En utilisant Ruby, vous pouvez facilement manipuler les données dans une base de données. Vous pouvez insérer de nouvelles données, mettre à jour des données existantes et supprimer des données.</p>
+
+<p>Voici quelques exemples de manipulation de données couramment utilisés en Ruby :</p>
+
+<ul>
+  <li>INSERT : utilisée pour insérer de nouvelles données dans une table.</li>
+  <li>UPDATE : utilisée pour mettre à jour des données existantes dans une table.</li>
+  <li>DELETE : utilisée pour supprimer des données d'une table.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation d'une requête INSERT en Ruby :</p>
+
+<pre><code>client.query("INSERT INTO users (name, age) VALUES ('John Doe', 25)")</code></pre>
+
+<p>Cela insérera un nouvel utilisateur avec le nom "John Doe" et l'âge de 25 dans la table "users".</p>
+
+<p>Voici un exemple d'utilisation d'une requête UPDATE en Ruby :</p>
+
+<pre><code>client.query("UPDATE users SET age = 30 WHERE name = 'John Doe'")</code></pre>
+
+<p>Cela mettra à jour l'âge de l'utilisateur dont le nom est "John Doe" à 30 dans la table "users".</p>
+
+<p>Voici un exemple d'utilisation d'une requête DELETE en Ruby :</p>
+
+<pre><code>client.query("DELETE FROM users WHERE age > 30")</code></pre>
+
+<p>Cela supprimera tous les utilisateurs dont l'âge est supérieur à 30 de la table "users".</p>
+
+<p>Il est important de noter que l'utilisation de requêtes SQL directement dans votre code peut présenter des risques de sécurité, tels que les attaques par injection SQL. Il est recommandé d'utiliser des requêtes préparées ou des ORM (Object-Relational Mapping) pour éviter ces problèmes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

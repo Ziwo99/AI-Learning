@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12: Les projets pratiques en Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons créer une application de gestion de tâches en utilisant Ruby. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+
+<p>Voici un exemple de code pour créer une classe Task :</p>
+<pre><code>class Task
+  attr_accessor :title, :description, :completed
+
+  def initialize(title, description)
+    @title = title
+    @description = description
+    @completed = false
+  end
+
+  def mark_as_completed
+    @completed = true
+  end
+end
+</code></pre>
+
+<p>En utilisant cette classe, nous pouvons créer une liste de tâches :</p>
+<pre><code>tasks = []
+tasks << Task.new("Faire les courses", "Acheter du lait et du pain")
+tasks << Task.new("Apprendre Ruby", "Suivre un tutoriel en ligne")
+</code></pre>
+
+<p>Nous pouvons également modifier une tâche existante :</p>
+<pre><code>tasks[0].title = "Faire le ménage"
+tasks[0].description = "Nettoyer la cuisine et passer l'aspirateur"
+</code></pre>
+
+<p>Et enfin, nous pouvons marquer une tâche comme terminée :</p>
+<pre><code>tasks[1].mark_as_completed
+</code></pre>
+
+<h2>Développement d'un jeu de devinette</h2>
+<p>Dans cette sous-section, nous allons développer un jeu de devinette en utilisant Ruby. Le jeu consiste à deviner un nombre choisi aléatoirement par l'ordinateur.</p>
+
+<p>Voici un exemple de code pour le jeu de devinette :</p>
+<pre><code>number_to_guess = rand(1..100)
+guesses = 0
+guessed_number = false
+
+while !guessed_number
+  print "Devinez le nombre : "
+  user_guess = gets.chomp.to_i
+  guesses += 1
+
+  if user_guess == number_to_guess
+    guessed_number = true
+    puts "Bravo, vous avez deviné le nombre en #{guesses} essais !"
+  elsif user_guess < number_to_guess
+    puts "Le nombre à deviner est plus grand."
+  else
+    puts "Le nombre à deviner est plus petit."
+  end
+end
+</code></pre>
+
+<p>Ce code génère un nombre aléatoire entre 1 et 100, puis demande à l'utilisateur de deviner le nombre. Le programme indique si le nombre à deviner est plus grand ou plus petit que la proposition de l'utilisateur, jusqu'à ce que le nombre soit deviné correctement.</p>
+
+<h2>Construction d'un site web simple avec Ruby on Rails</h2>
+<p>Dans cette sous-section, nous allons construire un site web simple en utilisant le framework Ruby on Rails. Ce site web permettra aux utilisateurs de créer, modifier et supprimer des articles.</p>
+
+<p>Voici les étapes pour créer ce site web :</p>
+<ol>
+  <li>Créez une nouvelle application Rails en utilisant la commande <code>rails new blog</code>.</li>
+  <li>Générez un modèle Article avec les attributs title et content en utilisant la commande <code>rails generate model Article title:string content:text</code>.</li>
+  <li>Effectuez une migration de la base de données en utilisant la commande <code>rails db:migrate</code>.</li>
+  <li>Créez un contrôleur Articles avec les actions index, show, new, create, edit, update et destroy en utilisant la commande <code>rails generate controller Articles</code>.</li>
+  <li>Définissez les routes pour les actions du contrôleur Articles dans le fichier <code>config/routes.rb</code>.</li>
+  <li>Implémentez les vues correspondantes pour chaque action du contrôleur Articles dans le dossier <code>app/views/articles</code>.</li>
+</ol>
+
+<p>Avec ces étapes, vous aurez créé un site web fonctionnel permettant aux utilisateurs de gérer des articles.</p>
+
+<p>Ce projet est plus complexe que les précédents, mais il vous permettra de mettre en pratique les concepts que vous avez appris jusqu'à présent et de vous familiariser avec le développement web en utilisant Ruby on Rails.</p>
+
+<h2>Conclusion et ressources supplémentaires</h2>
+<p>Dans cette section, nous avons exploré différents projets pratiques que vous pouvez réaliser en utilisant Ruby. Ces projets vous permettront de mettre en pratique les concepts que vous avez appris tout au long de cette formation.</p>
+
+<p>Pour approfondir vos connaissances en Ruby, voici quelques ressources supplémentaires recommandées :</p>
+<ul>
+  <li><a href="https://www.ruby-lang.org/en/documentation/">Documentation officielle de Ruby</a></li>
+  <li><a href="https://rubygems.org/">RubyGems</a> - Répertoire des gems Ruby</li>
+  <li><a href="https://www.ruby-toolbox.com/">Ruby Toolbox</a> - Liste des gems populaires</li>
+  <li><a href="https://www.ruby-forum.com/">Ruby Forum</a> - Forum de discussion sur Ruby</li>
+</ul>
+
+<p>Continuez à pratiquer et à explorer Ruby pour devenir un développeur Ruby compétent !</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
