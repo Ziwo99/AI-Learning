@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sublime Text Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Débogage et tests</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sublime%20text/sublime%20text.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sublime%20text/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sublime%20text/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des outils de débogage</h2>
+<p>Sublime Text offre plusieurs outils de débogage pour vous aider à identifier et résoudre les erreurs dans votre code. Voici quelques-uns des outils de débogage les plus couramment utilisés :</p>
+
+<h3>Console de débogage</h3>
+<p>La console de débogage de Sublime Text vous permet d'afficher les messages de débogage et les erreurs générés par votre code. Pour ouvrir la console de débogage, allez dans le menu "View" (Affichage) > "Show Console" (Afficher la console) ou utilisez le raccourci clavier Ctrl+`.</p>
+<pre><code>print('Hello, world!')</code></pre>
+<p>Ce code affichera le message "Hello, world!" dans la console de débogage.</p>
+
+<h3>Points d'arrêt</h3>
+<p>Les points d'arrêt vous permettent de mettre en pause l'exécution de votre code à un endroit spécifique afin d'inspecter les valeurs des variables et de suivre le flux d'exécution. Vous pouvez ajouter un point d'arrêt en cliquant à gauche de la ligne de code sur laquelle vous souhaitez vous arrêter.</p>
+<pre><code>for i in range(10):
+    if i == 5:
+        breakpoint()
+    print(i)</code></pre>
+<p>Dans cet exemple, le code s'arrêtera à la ligne où la valeur de la variable i est égale à 5.</p>
+
+<h2>Utilisation des outils de test</h2>
+<p>Sublime Text propose également des outils de test pour vous aider à vérifier le bon fonctionnement de votre code. Voici quelques-uns des outils de test les plus couramment utilisés :</p>
+
+<h3>Framework de test intégré</h3>
+<p>Sublime Text dispose d'un framework de test intégré qui vous permet d'écrire et d'exécuter des tests unitaires pour votre code. Vous pouvez créer des fichiers de test séparés et les exécuter à partir de l'interface de Sublime Text.</p>
+<pre><code>import unittest
+
+class MyTest(unittest.TestCase):
+    def test_addition(self):
+        self.assertEqual(2 + 2, 4)
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+<p>Ce code définit une classe de test qui vérifie si l'addition de 2 et 2 est égale à 4. Vous pouvez exécuter ce test en utilisant le framework de test intégré de Sublime Text.</p>
+
+<h3>Tests de validation</h3>
+<p>Les tests de validation vous permettent de vérifier si votre code produit les résultats attendus. Vous pouvez utiliser des assertions pour vérifier si les valeurs de sortie de votre code correspondent à celles que vous attendez.</p>
+<pre><code>def add_numbers(a, b):
+    return a + b
+
+assert add_numbers(2, 2) == 4</code></pre>
+<p>Dans cet exemple, nous utilisons une assertion pour vérifier si la fonction add_numbers retourne bien la valeur attendue.</p>
+
+<p>Il est important de noter que les outils de débogage et de test peuvent varier en fonction du langage de programmation que vous utilisez dans Sublime Text. Assurez-vous de consulter la documentation spécifique à votre langage pour plus d'informations sur les outils de débogage et de test disponibles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sublime%20text/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sublime%20text/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
