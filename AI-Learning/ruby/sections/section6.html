@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Accès aux bases de données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Connexion à une base de données</h2>
+<p>La connexion à une base de données est une étape essentielle dans le développement d'applications Ruby qui nécessitent une interaction avec une base de données. Ruby offre plusieurs options pour se connecter à différentes bases de données, telles que MySQL, PostgreSQL, SQLite, etc.</p>
+
+<p>Pour se connecter à une base de données, nous devons d'abord installer le pilote approprié pour la base de données que nous utilisons. Par exemple, pour se connecter à une base de données MySQL, nous devons installer le pilote MySQL. Cela peut être fait en ajoutant la gem correspondante à notre fichier Gemfile et en exécutant la commande <code>bundle install</code>.</p>
+
+<p>Une fois le pilote installé, nous pouvons établir une connexion à la base de données en utilisant les informations d'identification appropriées, telles que l'hôte, le nom d'utilisateur, le mot de passe, etc. Voici un exemple de code pour se connecter à une base de données MySQL :</p>
+
+<pre><code>require 'mysql2'
+
+client = Mysql2::Client.new(
+  host: "localhost",
+  username: "root",
+  password: "password",
+  database: "mydatabase"
+)
+
+# Utilisation de la connexion à la base de données
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la gem <code>mysql2</code> pour se connecter à une base de données MySQL. Nous créons une instance de la classe <code>Mysql2::Client</code> en passant les informations d'identification appropriées. Une fois la connexion établie, nous pouvons utiliser l'objet <code>client</code> pour exécuter des requêtes SQL et interagir avec la base de données.</p>
+
+<h2>Requêtes SQL avec Ruby</h2>
+<p>Une fois que nous sommes connectés à une base de données, nous pouvons exécuter des requêtes SQL pour récupérer, insérer, mettre à jour ou supprimer des données. Ruby offre plusieurs façons d'exécuter des requêtes SQL, notamment en utilisant des méthodes fournies par les pilotes de base de données ou en utilisant un ORM (Object-Relational Mapping).</p>
+
+<p>Voici un exemple de code pour exécuter une requête SELECT pour récupérer des données à partir d'une table :</p>
+
+<pre><code>results = client.query("SELECT * FROM users")
+
+results.each do |row|
+  puts "ID: #{row['id']}, Name: #{row['name']}, Email: #{row['email']}"
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>query</code> de l'objet <code>client</code> pour exécuter une requête SELECT qui récupère toutes les lignes de la table "users". Les résultats de la requête sont renvoyés sous forme d'objet <code>Mysql2::Result</code>, que nous pouvons itérer pour accéder aux données de chaque ligne.</p>
+
+<h2>Utilisation d'un ORM (Object-Relational Mapping)</h2>
+<p>L'utilisation d'un ORM est une approche populaire pour interagir avec une base de données en Ruby. Un ORM permet de mapper les tables d'une base de données à des classes Ruby, ce qui facilite la manipulation des données en utilisant des objets plutôt que des requêtes SQL brutes.</p>
+
+<p>Un exemple courant d'ORM en Ruby est ActiveRecord, qui est inclus dans le framework Ruby on Rails. Voici un exemple de code utilisant ActiveRecord pour récupérer toutes les lignes de la table "users" :</p>
+
+<pre><code>class User &lt; ActiveRecord::Base
+end
+
+users = User.all
+
+users.each do |user|
+  puts "ID: #{user.id}, Name: #{user.name}, Email: #{user.email}"
+end
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une classe <code>User</code> qui hérite de la classe <code>ActiveRecord::Base</code>. ActiveRecord utilise des conventions de nommage pour mapper la classe <code>User</code> à la table "users" dans la base de données. Nous utilisons ensuite la méthode <code>all</code> pour récupérer toutes les lignes de la table "users" en tant qu'objets <code>User</code>. Nous pouvons ensuite itérer sur ces objets pour accéder aux données de chaque ligne.</p>
+
+<p>L'utilisation d'un ORM offre de nombreux avantages, tels que la facilité d'utilisation, la gestion automatique des requêtes SQL et la possibilité de définir des relations entre les tables à l'aide de modèles d'objets.</p>
+
+<p>Il est important de noter que chaque ORM peut avoir sa propre syntaxe et ses propres fonctionnalités spécifiques. Il est donc recommandé de consulter la documentation de l'ORM spécifique que vous utilisez pour obtenir des informations détaillées sur son utilisation.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

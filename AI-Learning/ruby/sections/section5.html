@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Manipulation de fichiers et dossiers</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes en programmation Ruby. Ruby offre plusieurs méthodes pour effectuer ces opérations de manière efficace.</p>
+
+<p>Pour lire le contenu d'un fichier, nous utilisons la méthode <code>File.open</code> avec le mode de lecture approprié. Par exemple, pour lire un fichier en mode lecture seule :</p>
+
+<pre><code>file = File.open("mon_fichier.txt", "r")
+content = file.read
+file.close
+
+puts content
+</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier "mon_fichier.txt" en mode lecture seule avec le paramètre "r". Ensuite, nous utilisons la méthode <code>read</code> pour lire le contenu du fichier et le stocker dans la variable <code>content</code>. Enfin, nous fermons le fichier avec la méthode <code>close</code> et affichons le contenu à l'aide de la méthode <code>puts</code>.</p>
+
+<p>Pour écrire dans un fichier, nous utilisons la méthode <code>File.open</code> avec le mode d'écriture approprié. Par exemple, pour écrire du texte dans un fichier :</p>
+
+<pre><code>file = File.open("mon_fichier.txt", "w")
+file.write("Contenu à écrire dans le fichier")
+file.close
+</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier "mon_fichier.txt" en mode écriture avec le paramètre "w". Ensuite, nous utilisons la méthode <code>write</code> pour écrire le contenu dans le fichier. Enfin, nous fermons le fichier avec la méthode <code>close</code>.</p>
+
+<h2>Manipulation de dossiers et de chemins de fichiers</h2>
+<p>En plus de la lecture et de l'écriture de fichiers, Ruby offre également des fonctionnalités pour manipuler les dossiers et les chemins de fichiers.</p>
+
+<p>Pour créer un nouveau dossier, nous utilisons la méthode <code>Dir.mkdir</code>. Par exemple, pour créer un dossier nommé "nouveau_dossier" :</p>
+
+<pre><code>Dir.mkdir("nouveau_dossier")
+</code></pre>
+
+<p>Pour supprimer un dossier, nous utilisons la méthode <code>Dir.delete</code>. Par exemple, pour supprimer le dossier "ancien_dossier" :</p>
+
+<pre><code>Dir.delete("ancien_dossier")
+</code></pre>
+
+<p>Pour vérifier si un dossier existe, nous utilisons la méthode <code>Dir.exist?</code>. Par exemple, pour vérifier si le dossier "mon_dossier" existe :</p>
+
+<pre><code>if Dir.exist?("mon_dossier")
+  puts "Le dossier existe"
+else
+  puts "Le dossier n'existe pas"
+end
+</code></pre>
+
+<p>Pour obtenir le chemin absolu d'un fichier ou d'un dossier, nous utilisons la méthode <code>File.absolute_path</code>. Par exemple, pour obtenir le chemin absolu du fichier "mon_fichier.txt" :</p>
+
+<pre><code>absolute_path = File.absolute_path("mon_fichier.txt")
+puts absolute_path
+</code></pre>
+
+<h2>Gestion des erreurs liées aux fichiers</h2>
+<p>Lors de la manipulation de fichiers, il est important de gérer les erreurs qui peuvent survenir. Ruby offre des mécanismes pour capturer et gérer ces erreurs.</p>
+
+<p>Une façon de gérer les erreurs est d'utiliser des blocs <code>begin-rescue-ensure</code>. Par exemple, pour gérer une erreur lors de la lecture d'un fichier :</p>
+
+<pre><code>begin
+  file = File.open("mon_fichier.txt", "r")
+  content = file.read
+rescue
+  puts "Une erreur s'est produite lors de la lecture du fichier"
+ensure
+  file.close if file
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le bloc <code>begin-rescue-ensure</code> pour capturer toute erreur qui se produit lors de la lecture du fichier. Si une erreur se produit, le code dans le bloc <code>rescue</code> est exécuté. Le bloc <code>ensure</code> est utilisé pour s'assurer que le fichier est fermé, même en cas d'erreur.</p>
+
+<p>Il est également possible de créer ses propres exceptions personnalisées en utilisant la classe <code>StandardError</code>. Par exemple, pour créer une exception personnalisée pour une erreur de fichier :</p>
+
+<pre><code>class FileError &lt; StandardError
+end
+
+begin
+  file = File.open("mon_fichier.txt", "r")
+  raise FileError, "Une erreur s'est produite lors de la lecture du fichier" if file.nil?
+  content = file.read
+rescue FileError =&gt; e
+  puts e.message
+ensure
+  file.close if file
+end
+</code></pre>
+
+<p>Dans cet exemple, nous créons une classe <code>FileError</code> qui hérite de la classe <code>StandardError</code>. Ensuite, nous utilisons la méthode <code>raise</code> pour lever une exception de type <code>FileError</code> si le fichier est nul. Dans le bloc <code>rescue</code>, nous affichons le message d'erreur de l'exception.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

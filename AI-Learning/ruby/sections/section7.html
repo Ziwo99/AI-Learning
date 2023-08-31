@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Programmation web avec Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux frameworks web Ruby (Ruby on Rails, Sinatra)</h2>
+<p>Les frameworks web Ruby sont des outils puissants qui facilitent le développement d'applications web en utilisant le langage de programmation Ruby. Deux des frameworks web les plus populaires en Ruby sont Ruby on Rails et Sinatra.</p>
+<p>Ruby on Rails, également connu sous le nom de Rails, est un framework web complet qui suit le principe de convention plutôt que de configuration. Il fournit une structure solide pour le développement d'applications web et suit le modèle MVC (Modèle-Vue-Contrôleur) pour organiser le code.</p>
+<p>Sinatra, en revanche, est un framework web minimaliste et léger. Il est souvent utilisé pour des projets plus simples ou des API RESTful. Sinatra est apprécié pour sa simplicité et sa flexibilité.</p>
+
+<h2>Création d'une application web simple</h2>
+<p>Pour créer une application web simple en Ruby, nous pouvons utiliser le framework Ruby on Rails. Voici les étapes pour créer une nouvelle application Rails :</p>
+<pre><code>$ rails new mon_app_web
+$ cd mon_app_web
+</code></pre>
+<p>Ces commandes créent un nouveau projet Rails appelé "mon_app_web" et nous positionnent dans le répertoire du projet.</p>
+<p>Ensuite, nous pouvons générer un contrôleur et une vue pour notre application :</p>
+<pre><code>$ rails generate controller Accueil index
+</code></pre>
+<p>Cette commande génère un contrôleur appelé "Accueil" avec une action "index" et crée également une vue correspondante.</p>
+<p>Nous pouvons maintenant démarrer le serveur Rails pour voir notre application en action :</p>
+<pre><code>$ rails server
+</code></pre>
+<p>En accédant à l'URL "http://localhost:3000/accueil/index" dans notre navigateur, nous devrions voir le contenu de la vue "index" que nous avons générée.</p>
+
+<h2>Gestion des routes et des contrôleurs</h2>
+<p>Dans Ruby on Rails, les routes définissent les URL de notre application et les associent aux actions des contrôleurs correspondants. Les routes sont définies dans le fichier "config/routes.rb". Voici un exemple de définition de route :</p>
+<pre><code>get '/accueil', to: 'accueil#index'
+</code></pre>
+<p>Cette route indique que lorsque l'utilisateur accède à l'URL "/accueil", l'action "index" du contrôleur "Accueil" doit être exécutée.</p>
+<p>Les contrôleurs dans Rails sont responsables de la logique métier de notre application web. Chaque action dans un contrôleur correspond à une URL spécifique et est responsable de la récupération des données nécessaires et de la préparation de la réponse à renvoyer au navigateur.</p>
+<p>Voici un exemple de code pour une action dans un contrôleur Rails :</p>
+<pre><code>class AccueilController &lt; ApplicationController
+  def index
+    @message = "Bienvenue sur notre site web !"
+  end
+end
+</code></pre>
+<p>Dans cet exemple, l'action "index" du contrôleur "Accueil" définit une instance de variable "@message" qui sera utilisée dans la vue correspondante pour afficher un message de bienvenue.</p>
+
+<h2>Utilisation de vues et de modèles</h2>
+<p>Les vues dans Ruby on Rails sont responsables de l'affichage des données aux utilisateurs. Elles utilisent des fichiers HTML avec des balises ERB (Embedded Ruby) pour intégrer du code Ruby dans les vues.</p>
+<p>Voici un exemple de code pour une vue dans Rails :</p>
+<pre><code>&lt;h1>&lt;%= @message %>&lt;/h1>
+</code></pre>
+<p>Dans cet exemple, la vue affiche le contenu de la variable "@message" définie dans l'action du contrôleur.</p>
+<p>Les modèles dans Rails sont responsables de l'accès aux données et de leur manipulation. Ils sont généralement associés à des tables de base de données et utilisent des requêtes SQL pour interagir avec la base de données.</p>
+<p>Voici un exemple de code pour un modèle dans Rails :</p>
+<pre><code>class Utilisateur &lt; ApplicationRecord
+  validates :nom, presence: true
+end
+</code></pre>
+<p>Dans cet exemple, le modèle "Utilisateur" utilise une validation pour s'assurer que le champ "nom" est présent avant de sauvegarder les données dans la base de données.</p>
+
+<p>Ce sont là quelques-uns des concepts de base de la programmation web avec Ruby. En utilisant les frameworks web Ruby tels que Ruby on Rails et Sinatra, vous pouvez créer des applications web puissantes et élégantes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

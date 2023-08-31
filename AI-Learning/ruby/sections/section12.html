@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Projets pratiques en Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un jeu en ligne de commande</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un jeu en ligne de commande en utilisant Ruby. Un jeu en ligne de commande est un jeu qui s'exécute dans la console et permet à l'utilisateur d'interagir avec le jeu en entrant des commandes textuelles.</p>
+
+<p>Voici un exemple de code pour créer un jeu de devinette en ligne de commande :</p>
+
+<pre><code>def devinette
+  nombre_a_deviner = rand(1..100)
+  devine = false
+
+  while !devine
+    print "Devine le nombre : "
+    proposition = gets.chomp.to_i
+
+    if proposition == nombre_a_deviner
+      devine = true
+      puts "Bravo ! Tu as deviné le nombre."
+    elsif proposition < nombre_a_deviner
+      puts "Le nombre à deviner est plus grand."
+    else
+      puts "Le nombre à deviner est plus petit."
+    end
+  end
+end
+
+devinette</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode rand() pour générer un nombre aléatoire entre 1 et 100. Ensuite, nous demandons à l'utilisateur de deviner le nombre en utilisant la méthode gets.chomp.to_i pour obtenir l'entrée de l'utilisateur et la convertir en entier. En fonction de la proposition de l'utilisateur, nous affichons un message approprié. Le jeu continue jusqu'à ce que l'utilisateur devine le bon nombre.</p>
+
+<h2>Développement d'une application web</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer une application web en utilisant Ruby. Une application web est un logiciel qui s'exécute sur un serveur web et est accessible via un navigateur web.</p>
+
+<p>Voici un exemple de code pour créer une application web simple en utilisant le framework Ruby on Rails :</p>
+
+<pre><code># app/controllers/welcome_controller.rb
+class WelcomeController &lt; ApplicationController
+  def index
+    render plain: "Bienvenue sur notre application web !"
+  end
+end
+
+# config/routes.rb
+Rails.application.routes.draw do
+  root 'welcome#index'
+end</code></pre>
+
+<p>Dans cet exemple, nous avons un contrôleur WelcomeController avec une action index qui renvoie un message de bienvenue. Nous avons également configuré la route racine pour afficher la page d'accueil.</p>
+
+<h2>Création d'une API RESTful</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une API RESTful en utilisant Ruby. Une API RESTful est une interface de programmation d'application qui suit les principes de l'architecture REST (Representational State Transfer) et permet aux clients d'interagir avec les ressources via des requêtes HTTP.</p>
+
+<p>Voici un exemple de code pour créer une API RESTful simple en utilisant le framework Sinatra :</p>
+
+<pre><code># app.rb
+require 'sinatra'
+require 'json'
+
+get '/api/users' do
+  content_type :json
+  users = [
+    { id: 1, name: 'John Doe' },
+    { id: 2, name: 'Jane Smith' }
+  ]
+  users.to_json
+end</code></pre>
+
+<p>Dans cet exemple, nous avons une route GET '/api/users' qui renvoie une liste d'utilisateurs au format JSON. Nous utilisons la méthode to_json pour convertir l'objet Ruby en JSON.</p>
+
+<p>Ce sont des exemples simples pour vous montrer comment créer un jeu en ligne de commande, une application web et une API RESTful en utilisant Ruby. Vous pouvez les personnaliser et les étendre selon vos besoins.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

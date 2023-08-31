@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases de Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Variables et types de données</h2>
+<p>Les variables sont utilisées pour stocker des valeurs dans un programme Ruby. Elles peuvent contenir différents types de données tels que des nombres, des chaînes de caractères, des booléens, etc. Pour déclarer une variable, utilisez le symbole "=" suivi de la valeur que vous souhaitez lui attribuer.</p>
+
+<p>Exemple :</p>
+<pre><code>name = "John"
+age = 25
+is_student = true
+</code></pre>
+
+<p>Les types de données les plus couramment utilisés en Ruby sont :</p>
+<ul>
+  <li>Les nombres entiers (integers) : représentent des nombres entiers, par exemple 1, 2, 3.</li>
+  <li>Les nombres décimaux (floats) : représentent des nombres décimaux, par exemple 3.14, 2.5.</li>
+  <li>Les chaînes de caractères (strings) : représentent du texte, par exemple "Hello, world!".</li>
+  <li>Les booléens (booleans) : représentent des valeurs de vérité, soit true (vrai) soit false (faux).</li>
+  <li>Les tableaux (arrays) : représentent une collection ordonnée d'éléments, par exemple [1, 2, 3].</li>
+  <li>Les hash (hashes) : représentent une collection de paires clé-valeur, par exemple {"name" => "John", "age" => 25}.</li>
+</ul>
+
+<h2>Opérations arithmétiques et opérateurs logiques</h2>
+<p>En Ruby, vous pouvez effectuer des opérations arithmétiques telles que l'addition, la soustraction, la multiplication et la division sur des nombres.</p>
+
+<p>Exemple :</p>
+<pre><code>a = 10
+b = 5
+
+addition = a + b
+soustraction = a - b
+multiplication = a * b
+division = a / b
+</code></pre>
+
+<p>Les opérateurs logiques sont utilisés pour évaluer des expressions booléennes. Les opérateurs logiques les plus couramment utilisés sont :</p>
+<ul>
+  <li>AND (&&) : renvoie true si les deux expressions sont vraies.</li>
+  <li>OR (||) : renvoie true si au moins l'une des expressions est vraie.</li>
+  <li>NOT (!) : renvoie l'inverse de l'expression.</li>
+</ul>
+
+<p>Exemple :</p>
+<pre><code>a = true
+b = false
+
+result1 = a && b
+result2 = a || b
+result3 = !a
+</code></pre>
+
+<h2>Structures de contrôle (conditions et boucles)</h2>
+<p>Les structures de contrôle permettent d'exécuter certaines parties du code en fonction de conditions spécifiques.</p>
+
+<p>La structure de contrôle la plus couramment utilisée est la condition "if". Elle permet d'exécuter un bloc de code si une condition est vraie.</p>
+
+<p>Exemple :</p>
+<pre><code>age = 18
+
+if age >= 18
+  puts "Vous êtes majeur."
+else
+  puts "Vous êtes mineur."
+end
+</code></pre>
+
+<p>Les boucles permettent de répéter l'exécution d'un bloc de code plusieurs fois. La boucle "while" est utilisée lorsque vous souhaitez répéter une action tant qu'une condition est vraie.</p>
+
+<p>Exemple :</p>
+<pre><code>i = 0
+
+while i < 10
+  puts "Iteration #{i}"
+  i += 1
+end
+</code></pre>
+
+<h2>Fonctions et méthodes</h2>
+<p>Les fonctions et les méthodes sont des blocs de code réutilisables qui effectuent une tâche spécifique. Les fonctions sont définies en dehors des classes, tandis que les méthodes sont définies à l'intérieur des classes.</p>
+
+<p>Exemple :</p>
+<pre><code>def say_hello(name)
+  puts "Hello, #{name}!"
+end
+
+say_hello("John")
+</code></pre>
+
+<p>Les fonctions et les méthodes peuvent prendre des paramètres et renvoyer des valeurs.</p>
+
+<h2>Tableaux et itérations</h2>
+<p>Les tableaux sont utilisés pour stocker une collection ordonnée d'éléments. Vous pouvez accéder aux éléments d'un tableau en utilisant leur index.</p>
+
+<p>Exemple :</p>
+<pre><code>numbers = [1, 2, 3, 4, 5]
+
+puts numbers[0] # Affiche 1
+puts numbers[2] # Affiche 3
+</code></pre>
+
+<p>Les itérations permettent de parcourir les éléments d'un tableau et d'effectuer une action pour chaque élément.</p>
+
+<p>Exemple :</p>
+<pre><code>numbers = [1, 2, 3, 4, 5]
+
+numbers.each do |number|
+  puts number
+end
+</code></pre>
+
+<h2>Manipulation de chaînes de caractères</h2>
+<p>Les chaînes de caractères peuvent être manipulées de différentes manières en Ruby. Vous pouvez les concaténer, les découper, les transformer en majuscules ou en minuscules, etc.</p>
+
+<p>Exemple :</p>
+<pre><code>name = "John"
+age = 25
+
+greeting = "Hello, my name is #{name} and I am #{age} years old."
+uppercase_name = name.upcase
+lowercase_name = name.downcase
+</code></pre>
+
+<p>Il existe de nombreuses autres fonctionnalités et concepts à apprendre en Ruby, mais cette section vous a donné une base solide pour commencer à programmer en Ruby.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

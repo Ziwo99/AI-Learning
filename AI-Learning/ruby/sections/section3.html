@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Programmation orientée objet en Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Concepts de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet d'organiser et de structurer le code en utilisant des objets. Les objets sont des instances de classes, qui sont des modèles ou des plans pour créer des objets. La POO repose sur quatre concepts fondamentaux :</p>
+<ul>
+  <li>L'encapsulation : il s'agit de regrouper des données et des méthodes associées dans une même entité, appelée objet. L'encapsulation permet de cacher les détails internes de l'objet et de ne rendre accessibles que les fonctionnalités nécessaires à son utilisation.</li>
+  <li>L'abstraction : elle consiste à définir une interface claire et simplifiée pour interagir avec un objet, sans se soucier des détails de son implémentation interne. L'abstraction permet de se concentrer sur l'utilisation de l'objet plutôt que sur sa complexité interne.</li>
+  <li>L'héritage : il permet de créer de nouvelles classes en se basant sur des classes existantes. La classe nouvellement créée hérite des attributs et des méthodes de la classe parente, ce qui facilite la réutilisation du code et la création de hiérarchies de classes.</li>
+  <li>Le polymorphisme : il permet à des objets de différentes classes d'être traités de manière uniforme. Cela signifie qu'un objet peut être utilisé comme une instance de sa classe d'origine ou comme une instance d'une de ses classes dérivées.</li>
+</ul>
+
+<h2>Classes et objets</h2>
+<p>En Ruby, une classe est définie à l'aide du mot-clé <code>class</code>. Une classe est un modèle à partir duquel des objets peuvent être créés. Voici un exemple de définition de classe :</p>
+<pre><code>class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def say_hello
+    puts "Hello, my name is #{@name} and I'm #{@age} years old."
+  end
+end
+
+person = Person.new("John", 30)
+person.say_hello
+</code></pre>
+<p>Dans cet exemple, nous avons défini une classe <code>Person</code> avec deux attributs <code>name</code> et <code>age</code>. La méthode <code>initialize</code> est un constructeur qui est appelé lors de la création d'un nouvel objet de la classe. La méthode <code>say_hello</code> affiche un message de salutation avec le nom et l'âge de la personne.</p>
+<p>Pour créer un nouvel objet de la classe <code>Person</code>, nous utilisons la méthode <code>new</code> suivie des arguments requis par le constructeur. Ensuite, nous pouvons appeler les méthodes de l'objet créé.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>En Ruby, l'héritage est réalisé en utilisant le symbole <code>&lt;</code> pour indiquer que la classe enfant hérite de la classe parente. Voici un exemple :</p>
+<pre><code>class Animal
+  def speak
+    puts "I'm an animal."
+  end
+end
+
+class Dog &lt; Animal
+  def speak
+    puts "Woof!"
+  end
+end
+
+class Cat &lt; Animal
+  def speak
+    puts "Meow!"
+  end
+end
+
+animal = Animal.new
+dog = Dog.new
+cat = Cat.new
+
+animal.speak
+dog.speak
+cat.speak
+</code></pre>
+<p>Dans cet exemple, nous avons une classe parente <code>Animal</code> avec une méthode <code>speak</code>. Les classes enfants <code>Dog</code> et <code>Cat</code> héritent de la classe <code>Animal</code> et redéfinissent la méthode <code>speak</code> pour produire des sons spécifiques à chaque animal.</p>
+<p>Le polymorphisme est illustré ici par le fait que nous pouvons appeler la méthode <code>speak</code> sur des objets de différentes classes, mais obtenir des résultats différents en fonction de la classe réelle de l'objet.</p>
+
+<h2>Encapsulation et abstraction</h2>
+<p>En Ruby, l'encapsulation est réalisée en utilisant des méthodes d'accès pour définir les attributs d'une classe. Les méthodes d'accès peuvent être définies à l'aide des mots-clés <code>attr_reader</code>, <code>attr_writer</code> ou <code>attr_accessor</code>. Voici un exemple :</p>
+<pre><code>class Car
+  attr_accessor :brand, :model
+
+  def initialize(brand, model)
+    @brand = brand
+    @model = model
+  end
+end
+
+car = Car.new("Toyota", "Corolla")
+puts car.brand
+puts car.model
+</code></pre>
+<p>Dans cet exemple, nous avons une classe <code>Car</code> avec deux attributs <code>brand</code> et <code>model</code>. En utilisant <code>attr_accessor</code>, nous créons automatiquement des méthodes d'accès en lecture et en écriture pour ces attributs. Ainsi, nous pouvons lire et modifier les attributs de l'objet <code>car</code> en utilisant les méthodes générées.</p>
+<p>L'abstraction est réalisée en définissant des méthodes publiques qui exposent uniquement les fonctionnalités nécessaires à l'utilisation de l'objet, tout en masquant les détails de son implémentation interne. Cela permet de simplifier l'utilisation de l'objet et de réduire la complexité du code client.</p>
+
+<h2>Modules et mixins</h2>
+<p>En Ruby, les modules sont des collections de méthodes et de constantes qui peuvent être incluses dans des classes pour leur ajouter des fonctionnalités supplémentaires. Voici un exemple :</p>
+<pre><code>module Greetings
+  def say_hello
+    puts "Hello!"
+  end
+end
+
+class Person
+  include Greetings
+end
+
+person = Person.new
+person.say_hello
+</code></pre>
+<p>Dans cet exemple, nous avons défini un module <code>Greetings</code> avec une méthode <code>say_hello</code>. En incluant ce module dans la classe <code>Person</code> à l'aide du mot-clé <code>include</code>, nous ajoutons la méthode <code>say_hello</code> à la classe <code>Person</code>. Ainsi, les objets de la classe <code>Person</code> peuvent appeler la méthode <code>say_hello</code>.</p>
+<p>Les mixins sont une forme de composition multiple en Ruby, ce qui signifie qu'une classe peut inclure plusieurs modules pour obtenir les fonctionnalités de chacun d'entre eux. Cela permet une grande flexibilité dans la conception et la réutilisation du code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

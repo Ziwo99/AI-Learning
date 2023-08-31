@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Gestion des exceptions</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux exceptions</h2>
+<p>Les exceptions sont des événements qui se produisent lors de l'exécution d'un programme et qui interrompent le flux normal d'exécution. Elles sont utilisées pour gérer les erreurs et les situations exceptionnelles qui peuvent survenir pendant l'exécution d'un programme Ruby.</p>
+
+<p>En Ruby, les exceptions sont des objets qui sont levés (ou "throw") lorsqu'une erreur se produit. Lorsqu'une exception est levée, le programme recherche un bloc de code appelé "rescue" qui peut gérer cette exception. Si aucun bloc rescue n'est trouvé, le programme s'arrête et affiche un message d'erreur.</p>
+
+<p>Voici un exemple de levée d'exception :</p>
+
+<pre><code>begin
+  # Code susceptible de lever une exception
+  raise "Une erreur s'est produite"
+rescue
+  # Bloc de code pour gérer l'exception
+  puts "Une exception a été levée"
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le mot-clé "raise" pour lever une exception avec le message "Une erreur s'est produite". Le bloc "rescue" est utilisé pour gérer cette exception et affiche le message "Une exception a été levée".</p>
+
+<h2>Utilisation des blocs begin-rescue-ensure</h2>
+<p>Les blocs "begin", "rescue" et "ensure" sont utilisés ensemble pour gérer les exceptions de manière plus précise.</p>
+
+<p>Le bloc "begin" est utilisé pour entourer le code qui pourrait lever une exception. Le bloc "rescue" est utilisé pour gérer les exceptions levées dans le bloc "begin". Le bloc "ensure" est utilisé pour exécuter du code qui doit être exécuté, qu'une exception soit levée ou non.</p>
+
+<p>Voici un exemple d'utilisation des blocs begin-rescue-ensure :</p>
+
+<pre><code>begin
+  # Code susceptible de lever une exception
+  raise "Une erreur s'est produite"
+rescue
+  # Bloc de code pour gérer l'exception
+  puts "Une exception a été levée"
+ensure
+  # Bloc de code à exécuter quoi qu'il arrive
+  puts "Fin de l'exécution"
+end
+</code></pre>
+
+<p>Dans cet exemple, le bloc "begin" entoure le code qui peut lever une exception. Si une exception est levée, le bloc "rescue" est exécuté et affiche le message "Une exception a été levée". Ensuite, le bloc "ensure" est exécuté et affiche le message "Fin de l'exécution".</p>
+
+<h2>Création de ses propres exceptions</h2>
+<p>En plus des exceptions prédéfinies de Ruby, vous pouvez également créer vos propres exceptions personnalisées. Cela peut être utile lorsque vous souhaitez gérer des erreurs spécifiques à votre programme.</p>
+
+<p>Pour créer une nouvelle exception, vous devez définir une classe qui hérite de la classe Exception. Voici un exemple :</p>
+
+<pre><code>class MonException &lt; Exception
+end
+
+begin
+  # Code susceptible de lever une exception
+  raise MonException, "Une erreur s'est produite"
+rescue MonException =&gt; e
+  # Bloc de code pour gérer l'exception personnalisée
+  puts "Une exception personnalisée a été levée : #{e.message}"
+end
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une nouvelle classe d'exception appelée "MonException" qui hérite de la classe Exception. Ensuite, nous utilisons le mot-clé "raise" pour lever une exception de cette classe avec le message "Une erreur s'est produite". Le bloc "rescue" est utilisé pour gérer cette exception personnalisée et affiche le message "Une exception personnalisée a été levée : Une erreur s'est produite".</p>
+
+<p>Il est recommandé d'utiliser des exceptions personnalisées pour des erreurs spécifiques à votre programme, afin de faciliter la gestion des erreurs et d'améliorer la lisibilité de votre code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

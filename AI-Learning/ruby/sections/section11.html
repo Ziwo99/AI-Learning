@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Avancées en Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Méta-programmation</h2>
+  <p>La méta-programmation est une technique avancée en Ruby qui permet de créer du code qui peut générer ou modifier d'autres parties du code. Cela signifie que vous pouvez écrire des programmes qui peuvent écrire d'autres programmes. La méta-programmation est souvent utilisée pour automatiser des tâches répétitives ou pour créer des bibliothèques et des frameworks puissants.</p>
+  <p>Un exemple courant de méta-programmation en Ruby est l'utilisation de la méthode <code>define_method</code> pour définir des méthodes dynamiquement. Voici un exemple :</p>
+  <pre><code>class Person
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+end
+
+person = Person.new("John", 30)
+person.name # Output: "John"
+person.age # Output: 30
+
+Person.define_method(:greet) do
+  puts "Hello, my name is #{@name} and I am #{@age} years old."
+end
+
+person.greet # Output: "Hello, my name is John and I am 30 years old."</code></pre>
+  <p>Dans cet exemple, nous utilisons la méthode <code>define_method</code> pour ajouter dynamiquement une méthode <code>greet</code> à la classe <code>Person</code>. Cette méthode utilise les variables d'instance <code>@name</code> et <code>@age</code> pour afficher un message de salutation.</p>
+
+  <h2>Utilisation de bibliothèques et de gems</h2>
+  <p>En Ruby, les bibliothèques et les gems sont des packages de code réutilisables qui peuvent être utilisés pour ajouter des fonctionnalités supplémentaires à vos programmes. Les bibliothèques sont généralement incluses dans le code source de votre projet, tandis que les gems sont des packages externes que vous pouvez installer à l'aide de l'outil RubyGems.</p>
+  <p>Pour utiliser une bibliothèque ou une gem dans votre programme Ruby, vous devez d'abord l'importer à l'aide de la commande <code>require</code>. Voici un exemple :</p>
+  <pre><code>require 'json'
+
+data = '{"name": "John", "age": 30}'
+parsed_data = JSON.parse(data)
+
+puts parsed_data["name"] # Output: "John"
+puts parsed_data["age"] # Output: 30</code></pre>
+  <p>Dans cet exemple, nous utilisons la bibliothèque JSON pour analyser une chaîne de caractères JSON en un objet Ruby. Nous importons la bibliothèque en utilisant la commande <code>require 'json'</code> et utilisons ensuite la méthode <code>JSON.parse</code> pour convertir la chaîne de caractères en un objet Ruby.</p>
+
+  <h2>Optimisation des performances</h2>
+  <p>L'optimisation des performances est un aspect important de la programmation en Ruby, surtout lorsque vous travaillez sur des projets de grande envergure. Voici quelques conseils pour optimiser les performances de votre code Ruby :</p>
+  <ul>
+    <li>Utilisez des opérations efficaces : Évitez les opérations coûteuses en termes de performances, comme les boucles imbriquées ou les opérations sur des tableaux de grande taille.</li>
+    <li>Utilisez des structures de données appropriées : Choisissez les structures de données qui conviennent le mieux à votre problème. Par exemple, utilisez un hash plutôt qu'un tableau si vous avez besoin d'un accès rapide aux éléments.</li>
+    <li>Optimisez les requêtes SQL : Si vous utilisez une base de données, assurez-vous d'optimiser vos requêtes SQL en utilisant des index et en évitant les requêtes coûteuses.</li>
+    <li>Mesurez les performances : Utilisez des outils de profilage pour mesurer les performances de votre code et identifier les parties qui nécessitent une optimisation.</li>
+  </ul>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Déploiement d'une application Ruby</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby/ruby.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration d'un serveur d'hébergement</h2>
+<p>Lorsque vous êtes prêt à déployer votre application Ruby, la première étape consiste à configurer un serveur d'hébergement. Il existe de nombreuses options disponibles, mais nous allons nous concentrer sur l'utilisation d'un serveur Linux avec Apache et Passenger.</p>
+
+<p>Pour commencer, vous devez vous assurer que votre serveur dispose de Ruby et de toutes les dépendances nécessaires installées. Vous pouvez utiliser des outils de gestion de versions comme RVM ou rbenv pour installer Ruby sur votre serveur.</p>
+
+<p>Ensuite, vous devez installer Apache, qui est un serveur web populaire. Vous pouvez le faire en utilisant le gestionnaire de paquets de votre système d'exploitation. Par exemple, sur Ubuntu, vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>sudo apt-get install apache2</code></pre>
+
+<p>Une fois Apache installé, vous devez installer Passenger, qui est un module pour Apache qui permet d'exécuter des applications Ruby. Vous pouvez l'installer en utilisant la gem Passenger :</p>
+
+<pre><code>gem install passenger</code></pre>
+
+<p>Après avoir installé Passenger, vous devez l'activer en exécutant la commande suivante :</p>
+
+<pre><code>sudo passenger-install-apache2-module</code></pre>
+
+<p>Cette commande vous guidera à travers le processus d'activation de Passenger pour Apache.</p>
+
+<h2>Déploiement d'une application Ruby</h2>
+<p>Une fois que votre serveur est configuré, vous pouvez procéder au déploiement de votre application Ruby. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Assurez-vous que votre application est prête à être déployée. Cela signifie qu'elle doit être testée et fonctionnelle localement.</li>
+  <li>Créez un répertoire sur votre serveur pour héberger votre application. Vous pouvez choisir n'importe quel emplacement, mais il est courant de le placer dans le répertoire /var/www.</li>
+  <li>Transférez les fichiers de votre application vers le répertoire que vous avez créé sur le serveur. Vous pouvez utiliser des outils comme scp ou rsync pour cela.</li>
+  <li>Configurez Apache pour qu'il serve votre application. Vous devez ajouter une configuration pour votre application dans le fichier de configuration d'Apache. Vous pouvez le trouver dans le répertoire /etc/apache2/sites-available. Voici un exemple de configuration :</li>
+</ol>
+
+<pre><code>&lt;VirtualHost *:80&gt;
+  ServerName example.com
+  DocumentRoot /var/www/your_app/public
+  &lt;Directory /var/www/your_app/public&gt;
+    AllowOverride all
+    Options -MultiViews
+    Require all granted
+  &lt;/Directory&gt;
+&lt;/VirtualHost&gt;</code></pre>
+
+<p>Assurez-vous de remplacer "example.com" par le nom de domaine de votre application et "/var/www/your_app" par le chemin vers le répertoire de votre application.</p>
+
+<p>Ensuite, activez la configuration en exécutant la commande suivante :</p>
+
+<pre><code>sudo a2ensite your_app</code></pre>
+
+<p>Redémarrez Apache pour prendre en compte les modifications :</p>
+
+<pre><code>sudo service apache2 restart</code></pre>
+
+<p>Votre application Ruby est maintenant déployée et accessible via votre nom de domaine.</p>
+
+<h2>Gestion des mises à jour et de la maintenance</h2>
+<p>Une fois votre application déployée, vous devrez peut-être effectuer des mises à jour ou effectuer des tâches de maintenance régulières. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li>Utilisez un système de gestion de versions comme Git pour suivre les modifications apportées à votre code source. Cela vous permettra de revenir à des versions antérieures en cas de problème.</li>
+  <li>Effectuez des sauvegardes régulières de votre base de données et de tout autre fichier important de votre application.</li>
+  <li>Surveillez les journaux d'erreurs de votre application pour détecter les problèmes potentiels.</li>
+  <li>Mettez à jour régulièrement les dépendances de votre application pour bénéficier des dernières fonctionnalités et correctifs de sécurité.</li>
+  <li>Planifiez des temps d'arrêt réguliers pour effectuer des tâches de maintenance, comme la mise à jour du système d'exploitation ou l'installation de correctifs de sécurité.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pourrez maintenir votre application Ruby en bon état de fonctionnement et éviter les problèmes potentiels.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
