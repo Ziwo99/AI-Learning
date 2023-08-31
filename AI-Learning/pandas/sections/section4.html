@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Manipulation avancée des données avec Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Manipulation des chaînes de caractères</h2>
+<p>La manipulation des chaînes de caractères est une tâche courante lors de l'analyse de données. Pandas offre de nombreuses fonctionnalités pour manipuler les chaînes de caractères dans les DataFrames.</p>
+<p>Voici quelques exemples de manipulations courantes :</p>
+<pre><code># Création d'une colonne avec la longueur des chaînes de caractères
+df['length'] = df['texte'].str.len()
+
+# Conversion en majuscules
+df['texte_upper'] = df['texte'].str.upper()
+
+# Extraction d'une sous-chaîne de caractères
+df['substring'] = df['texte'].str.slice(0, 5)
+
+# Remplacement de certaines valeurs
+df['texte'] = df['texte'].str.replace('a', 'b')</code></pre>
+
+<h2>Manipulation des dates et heures</h2>
+<p>La manipulation des dates et heures est essentielle lors de l'analyse de données temporelles. Pandas offre de nombreuses fonctionnalités pour manipuler les dates et heures dans les DataFrames.</p>
+<p>Voici quelques exemples de manipulations courantes :</p>
+<pre><code># Conversion d'une colonne en type datetime
+df['date'] = pd.to_datetime(df['date'])
+
+# Extraction de l'année, du mois et du jour
+df['year'] = df['date'].dt.year
+df['month'] = df['date'].dt.month
+df['day'] = df['date'].dt.day
+
+# Calcul de la différence entre deux dates
+df['diff'] = df['date1'] - df['date2']
+
+# Filtrage des données par date
+df_filtered = df[df['date'] &gt; '2020-01-01']</code></pre>
+
+<h2>Manipulation des catégories</h2>
+<p>La manipulation des catégories est utile lorsque vous avez des données avec des valeurs discrètes. Pandas offre des fonctionnalités pour manipuler les catégories dans les DataFrames.</p>
+<p>Voici quelques exemples de manipulations courantes :</p>
+<pre><code># Conversion d'une colonne en catégorie
+df['category'] = df['category'].astype('category')
+
+# Renommage des catégories
+df['category'] = df['category'].cat.rename_categories({'A': 'Category A', 'B': 'Category B'})
+
+# Tri des catégories par ordre personnalisé
+df['category'] = df['category'].cat.reorder_categories(['Category B', 'Category A'], ordered=True)
+
+# Groupement des données par catégorie
+df_grouped = df.groupby('category').sum()</code></pre>
+
+<h2>Manipulation des données textuelles</h2>
+<p>La manipulation des données textuelles est courante lors de l'analyse de données non structurées. Pandas offre des fonctionnalités pour manipuler les données textuelles dans les DataFrames.</p>
+<p>Voici quelques exemples de manipulations courantes :</p>
+<pre><code># Recherche de motifs dans une colonne
+df['contains_pattern'] = df['text'].str.contains('pattern')
+
+# Extraction de mots clés
+df['keywords'] = df['text'].str.findall('keyword')
+
+# Suppression des caractères spéciaux
+df['text_clean'] = df['text'].str.replace('[^a-zA-Z0-9]', ' ')
+
+# Tokenisation des phrases
+df['tokens'] = df['text'].str.split()</code></pre>
+
+<h2>Manipulation des données numériques</h2>
+<p>La manipulation des données numériques est essentielle lors de l'analyse de données quantitatives. Pandas offre des fonctionnalités pour manipuler les données numériques dans les DataFrames.</p>
+<p>Voici quelques exemples de manipulations courantes :</p>
+<pre><code># Calcul de la somme, de la moyenne et de la médiane
+sum_value = df['column'].sum()
+mean_value = df['column'].mean()
+median_value = df['column'].median()
+
+# Calcul de la différence entre deux colonnes
+df['difference'] = df['column1'] - df['column2']
+
+# Normalisation des données
+df['normalized'] = (df['column'] - df['column'].min()) / (df['column'].max() - df['column'].min())
+
+# Calcul de statistiques descriptives
+df_stats = df.describe()</code></pre>
+
+<h2>Manipulation des données booléennes</h2>
+<p>La manipulation des données booléennes est courante lors de l'analyse de données binaires. Pandas offre des fonctionnalités pour manipuler les données booléennes dans les DataFrames.</p>
+<p>Voici quelques exemples de manipulations courantes :</p>
+<pre><code># Filtrage des données en fonction d'une condition booléenne
+df_filtered = df[df['column'] == True]
+
+# Comptage des occurrences de valeurs booléennes
+count_true = df['column'].sum()
+count_false = len(df) - count_true
+
+# Opérations logiques entre colonnes booléennes
+df['result'] = df['column1'] &amp; df['column2']
+
+# Calcul de la proportion de valeurs booléennes
+proportion_true = count_true / len(df)</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

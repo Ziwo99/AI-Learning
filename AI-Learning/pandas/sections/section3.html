@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Analyse des données avec Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Statistiques descriptives</h2>
+<p>Les statistiques descriptives sont utilisées pour résumer et analyser les caractéristiques principales d'un ensemble de données. Avec Pandas, nous pouvons facilement calculer des statistiques descriptives telles que la moyenne, la médiane, l'écart-type, etc. pour chaque colonne d'un DataFrame.</p>
+
+<pre><code># Importer la bibliothèque Pandas
+import pandas as pd
+
+# Charger les données dans un DataFrame
+data = pd.read_csv('data.csv')
+
+# Calculer la moyenne de chaque colonne
+mean_values = data.mean()
+
+# Calculer l'écart-type de chaque colonne
+std_values = data.std()
+
+# Calculer la médiane de chaque colonne
+median_values = data.median()
+
+# Afficher les résultats
+print("Moyenne:")
+print(mean_values)
+print("\nÉcart-type:")
+print(std_values)
+print("\nMédiane:")
+print(median_values)
+</code></pre>
+
+<h2>Visualisation des données</h2>
+<p>La visualisation des données est essentielle pour comprendre et communiquer les informations contenues dans un ensemble de données. Pandas offre des fonctionnalités intégrées pour créer des graphiques tels que des histogrammes, des diagrammes en boîte, des diagrammes à barres, etc.</p>
+
+<pre><code># Importer la bibliothèque Pandas
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Charger les données dans un DataFrame
+data = pd.read_csv('data.csv')
+
+# Créer un histogramme de la colonne 'age'
+data['age'].plot(kind='hist')
+
+# Ajouter un titre et des étiquettes d'axe
+plt.title('Distribution des âges')
+plt.xlabel('Âge')
+plt.ylabel('Fréquence')
+
+# Afficher le graphique
+plt.show()
+</code></pre>
+
+<h2>Analyse de corrélation</h2>
+<p>L'analyse de corrélation est utilisée pour mesurer la relation entre deux variables dans un ensemble de données. Pandas fournit des fonctions pour calculer le coefficient de corrélation de Pearson, qui mesure la corrélation linéaire entre deux variables.</p>
+
+<pre><code># Importer la bibliothèque Pandas
+import pandas as pd
+
+# Charger les données dans un DataFrame
+data = pd.read_csv('data.csv')
+
+# Calculer la corrélation entre les colonnes 'age' et 'income'
+correlation = data['age'].corr(data['income'])
+
+# Afficher le résultat
+print("Corrélation entre l'âge et le revenu:", correlation)
+</code></pre>
+
+<h2>Analyse de séries temporelles</h2>
+<p>L'analyse de séries temporelles est utilisée pour étudier les données qui évoluent dans le temps. Pandas offre des fonctionnalités pour manipuler et analyser des séries temporelles, telles que le filtrage par date, le calcul de la moyenne mobile, etc.</p>
+
+<pre><code># Importer la bibliothèque Pandas
+import pandas as pd
+
+# Charger les données dans un DataFrame avec une colonne de dates
+data = pd.read_csv('data.csv', parse_dates=['date'])
+
+# Filtrer les données pour une période spécifique
+filtered_data = data[(data['date'] >= '2021-01-01') & (data['date'] <= '2021-12-31')]
+
+# Calculer la moyenne mobile sur 7 jours
+filtered_data['moving_average'] = filtered_data['value'].rolling(window=7).mean()
+
+# Afficher les résultats
+print(filtered_data)
+</code></pre>
+
+<h2>Analyse de données géospatiales</h2>
+<p>L'analyse de données géospatiales est utilisée pour étudier les données qui sont liées à des emplacements géographiques. Pandas offre des fonctionnalités pour manipuler et analyser des données géospatiales, telles que le regroupement par région, le calcul de la distance entre deux points, etc.</p>
+
+<pre><code># Importer la bibliothèque Pandas
+import pandas as pd
+
+# Charger les données dans un DataFrame avec des coordonnées géographiques
+data = pd.read_csv('data.csv', names=['latitude', 'longitude'])
+
+# Regrouper les données par région
+grouped_data = data.groupby('region').size()
+
+# Calculer la distance entre deux points
+distance = data.distance('point1', 'point2')
+
+# Afficher les résultats
+print("Données groupées par région:")
+print(grouped_data)
+print("\nDistance entre deux points:")
+print(distance)
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

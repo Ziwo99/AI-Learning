@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Bonnes pratiques en Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Organisation du code</h2>
+<p>L'organisation du code est essentielle pour maintenir un projet Pandas bien structuré et facile à comprendre. Voici quelques bonnes pratiques pour organiser votre code :</p>
+
+<ul>
+  <li>Séparez votre code en modules et fichiers logiques pour faciliter la réutilisation et la maintenance.</li>
+  <li>Utilisez des noms de variables et de fonctions explicites pour rendre votre code plus lisible.</li>
+  <li>Commentez votre code pour expliquer les parties complexes ou importantes.</li>
+  <li>Utilisez des conventions de nommage cohérentes pour les variables, les fonctions et les classes.</li>
+  <li>Utilisez des espaces et des indentations appropriés pour améliorer la lisibilité.</li>
+</ul>
+
+<h2>Documentation du code</h2>
+<p>La documentation du code est essentielle pour permettre aux autres développeurs de comprendre et d'utiliser votre code. Voici quelques bonnes pratiques pour documenter votre code :</p>
+
+<ul>
+  <li>Utilisez des commentaires pour expliquer le but et le fonctionnement de chaque partie de votre code.</li>
+  <li>Utilisez des docstrings pour documenter vos fonctions et classes, en expliquant leurs paramètres, leur valeur de retour et leur comportement.</li>
+  <li>Utilisez des conventions de documentation cohérentes, telles que celles définies dans la PEP 257.</li>
+  <li>Utilisez des outils de génération de documentation, tels que Sphinx, pour créer une documentation complète et facilement accessible.</li>
+</ul>
+
+<h2>Tests unitaires</h2>
+<p>Les tests unitaires sont essentiels pour garantir que votre code fonctionne correctement et pour détecter les erreurs avant qu'elles ne deviennent des problèmes plus importants. Voici quelques bonnes pratiques pour écrire des tests unitaires en Pandas :</p>
+
+<ul>
+  <li>Utilisez un framework de test, tel que pytest ou unittest, pour écrire et exécuter vos tests unitaires.</li>
+  <li>Testez chaque fonction et méthode individuellement pour vous assurer qu'elle produit les résultats attendus.</li>
+  <li>Utilisez des jeux de données de test représentatifs pour couvrir différents scénarios et cas limites.</li>
+  <li>Utilisez des assertions pour vérifier que les résultats de vos tests correspondent aux résultats attendus.</li>
+  <li>Exécutez vos tests régulièrement pour vous assurer que votre code reste fonctionnel à mesure que vous apportez des modifications.</li>
+</ul>
+
+<h2>Gestion des erreurs</h2>
+<p>La gestion des erreurs est importante pour garantir que votre code ne se bloque pas en cas d'erreur et pour fournir des informations utiles aux utilisateurs. Voici quelques bonnes pratiques pour gérer les erreurs en Pandas :</p>
+
+<ul>
+  <li>Utilisez des blocs try-except pour capturer les exceptions et gérer les erreurs de manière appropriée.</li>
+  <li>Loguez les erreurs pour faciliter le débogage et la résolution des problèmes.</li>
+  <li>Utilisez des messages d'erreur clairs et informatifs pour aider les utilisateurs à comprendre et à résoudre les problèmes.</li>
+  <li>Propagez les erreurs appropriées pour informer les utilisateurs des problèmes qui ne peuvent pas être résolus automatiquement.</li>
+</ul>
+
+<h2>Optimisation du code</h2>
+<p>L'optimisation du code est importante pour améliorer les performances de votre code et réduire la consommation de ressources. Voici quelques bonnes pratiques pour optimiser votre code en Pandas :</p>
+
+<ul>
+  <li>Utilisez des opérations vectorisées plutôt que des boucles pour améliorer les performances.</li>
+  <li>Utilisez des fonctions d'agrégation optimisées, telles que sum(), mean(), min(), max(), pour effectuer des calculs sur des données volumineuses.</li>
+  <li>Utilisez des index pour accélérer les opérations de recherche et de filtrage.</li>
+  <li>Utilisez des structures de données appropriées, telles que les catégories, pour réduire la consommation de mémoire.</li>
+  <li>Évitez les opérations coûteuses, telles que les boucles imbriquées, les jointures complexes et les opérations sur des chaînes de caractères volumineuses.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous serez en mesure de créer et de maintenir des projets Pandas de haute qualité, efficaces et faciles à utiliser.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Manipulation des données avec Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Importation et exportation des données</h2>
+<p>L'importation et l'exportation des données sont des étapes essentielles dans la manipulation des données avec Pandas. Pour importer des données dans Pandas, nous pouvons utiliser la fonction <code>read_csv()</code> pour lire des fichiers CSV, la fonction <code>read_excel()</code> pour lire des fichiers Excel, ou la fonction <code>read_sql()</code> pour lire des données à partir d'une base de données SQL.</p>
+
+<pre><code># Importer la bibliothèque Pandas
+import pandas as pd
+
+# Importer un fichier CSV
+data = pd.read_csv('data.csv')
+
+# Importer un fichier Excel
+data = pd.read_excel('data.xlsx')
+
+# Importer des données à partir d'une base de données SQL
+data = pd.read_sql('SELECT * FROM table', connection)
+</code></pre>
+
+<p>Pour exporter des données à partir de Pandas, nous pouvons utiliser la fonction <code>to_csv()</code> pour exporter des données vers un fichier CSV, la fonction <code>to_excel()</code> pour exporter des données vers un fichier Excel, ou la fonction <code>to_sql()</code> pour exporter des données vers une base de données SQL.</p>
+
+<pre><code># Exporter des données vers un fichier CSV
+data.to_csv('data.csv', index=False)
+
+# Exporter des données vers un fichier Excel
+data.to_excel('data.xlsx', index=False)
+
+# Exporter des données vers une base de données SQL
+data.to_sql('table', connection, if_exists='replace')
+</code></pre>
+
+<h2>Exploration des données</h2>
+<p>L'exploration des données est une étape cruciale pour comprendre les caractéristiques et la structure des données. Pandas offre de nombreuses fonctionnalités pour explorer les données, telles que la fonction <code>head()</code> pour afficher les premières lignes du DataFrame, la fonction <code>info()</code> pour obtenir des informations sur les colonnes et les types de données, et la fonction <code>describe()</code> pour obtenir des statistiques descriptives sur les données.</p>
+
+<pre><code># Afficher les premières lignes du DataFrame
+print(data.head())
+
+# Obtenir des informations sur les colonnes et les types de données
+print(data.info())
+
+# Obtenir des statistiques descriptives sur les données
+print(data.describe())
+</code></pre>
+
+<h2>Nettoyage des données</h2>
+<p>Le nettoyage des données est une étape cruciale pour garantir la qualité des données. Pandas offre de nombreuses fonctionnalités pour nettoyer les données, telles que la fonction <code>dropna()</code> pour supprimer les lignes contenant des valeurs manquantes, la fonction <code>fillna()</code> pour remplir les valeurs manquantes avec une valeur spécifique, et la fonction <code>replace()</code> pour remplacer les valeurs spécifiques.</p>
+
+<pre><code># Supprimer les lignes contenant des valeurs manquantes
+data = data.dropna()
+
+# Remplir les valeurs manquantes avec une valeur spécifique
+data = data.fillna(0)
+
+# Remplacer les valeurs spécifiques
+data = data.replace('old_value', 'new_value')
+</code></pre>
+
+<h2>Filtrage des données</h2>
+<p>Le filtrage des données permet de sélectionner les lignes ou les colonnes qui répondent à certaines conditions. Pandas offre de nombreuses fonctionnalités pour filtrer les données, telles que l'indexation basée sur des conditions, l'utilisation de l'opérateur logique <code>&</code> pour combiner des conditions, et l'utilisation de l'opérateur logique <code>|</code> pour sélectionner les lignes qui répondent à au moins l'une des conditions.</p>
+
+<pre><code># Filtrer les lignes qui répondent à une condition
+filtered_data = data[data['column'] > 10]
+
+# Filtrer les lignes qui répondent à plusieurs conditions
+filtered_data = data[(data['column1'] > 10) & (data['column2'] < 20)]
+
+# Filtrer les lignes qui répondent à au moins l'une des conditions
+filtered_data = data[(data['column1'] > 10) | (data['column2'] < 20)]
+</code></pre>
+
+<h2>Tri des données</h2>
+<p>Le tri des données permet de réorganiser les lignes ou les colonnes dans un ordre spécifique. Pandas offre la fonction <code>sort_values()</code> pour trier les données en fonction d'une ou plusieurs colonnes.</p>
+
+<pre><code># Trier les données en fonction d'une colonne
+sorted_data = data.sort_values('column')
+
+# Trier les données en fonction de plusieurs colonnes
+sorted_data = data.sort_values(['column1', 'column2'])
+</code></pre>
+
+<h2>Agrégation des données</h2>
+<p>L'agrégation des données permet de regrouper les données en fonction de certaines caractéristiques et d'effectuer des calculs sur ces groupes. Pandas offre la fonction <code>groupby()</code> pour regrouper les données en fonction d'une ou plusieurs colonnes, et les fonctions d'agrégation telles que <code>sum()</code>, <code>mean()</code>, <code>count()</code>, etc. pour effectuer des calculs sur ces groupes.</p>
+
+<pre><code># Regrouper les données en fonction d'une colonne et calculer la somme
+grouped_data = data.groupby('column').sum()
+
+# Regrouper les données en fonction de plusieurs colonnes et calculer la moyenne
+grouped_data = data.groupby(['column1', 'column2']).mean()
+</code></pre>
+
+<h2>Transformation des données</h2>
+<p>La transformation des données permet d'appliquer des fonctions à des colonnes spécifiques ou à l'ensemble du DataFrame. Pandas offre la fonction <code>apply()</code> pour appliquer une fonction à une colonne spécifique, et la fonction <code>applymap()</code> pour appliquer une fonction à l'ensemble du DataFrame.</p>
+
+<pre><code># Appliquer une fonction à une colonne spécifique
+data['new_column'] = data['column'].apply(function)
+
+# Appliquer une fonction à l'ensemble du DataFrame
+data = data.applymap(function)
+</code></pre>
+
+<h2>Fusion des données</h2>
+<p>La fusion des données permet de combiner plusieurs DataFrames en un seul. Pandas offre la fonction <code>concat()</code> pour concaténer des DataFrames verticalement ou horizontalement, et la fonction <code>merge()</code> pour fusionner des DataFrames en fonction d'une ou plusieurs colonnes communes.</p>
+
+<pre><code># Concaténer des DataFrames verticalement
+concatenated_data = pd.concat([data1, data2])
+
+# Concaténer des DataFrames horizontalement
+concatenated_data = pd.concat([data1, data2], axis=1)
+
+# Fusionner des DataFrames en fonction d'une colonne commune
+merged_data = pd.merge(data1, data2, on='column')
+</code></pre>
+
+<h2>Gestion des valeurs manquantes</h2>
+<p>La gestion des valeurs manquantes est une étape importante dans la manipulation des données. Pandas offre la fonction <code>isnull()</code> pour vérifier si une valeur est manquante, la fonction <code>notnull()</code> pour vérifier si une valeur n'est pas manquante, et la fonction <code>dropna()</code> pour supprimer les lignes ou les colonnes contenant des valeurs manquantes.</p>
+
+<pre><code># Vérifier si une valeur est manquante
+missing_values = data.isnull()
+
+# Vérifier si une valeur n'est pas manquante
+not_missing_values = data.notnull()
+
+# Supprimer les lignes ou les colonnes contenant des valeurs manquantes
+data = data.dropna()
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

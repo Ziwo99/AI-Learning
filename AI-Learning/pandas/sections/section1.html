@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1: Introduction à Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Qu'est-ce que Pandas ?</h2>
+<p>Pandas est une bibliothèque open-source Python qui offre des structures de données et des outils d'analyse de données performants. Elle est largement utilisée dans le domaine de la science des données et est particulièrement adaptée à la manipulation et à l'analyse de données tabulaires.</p>
+<p>Pandas permet de traiter facilement des données provenant de différentes sources, telles que des fichiers CSV, des bases de données SQL ou même des feuilles de calcul Excel. Il offre également des fonctionnalités avancées pour nettoyer, transformer et analyser les données, ainsi que pour effectuer des opérations statistiques et de visualisation.</p>
+
+<h2>Installation de Pandas</h2>
+<p>Pour installer Pandas, vous pouvez utiliser l'outil de gestion de paquets pip. Assurez-vous d'avoir Python installé sur votre système avant de procéder à l'installation.</p>
+<pre><code>pip install pandas</code></pre>
+<p>Une fois l'installation terminée, vous pouvez importer la bibliothèque dans votre code Python en utilisant l'instruction suivante :</p>
+<pre><code>import pandas as pd</code></pre>
+
+<h2>Les structures de données de base en Pandas</h2>
+<p>Pandas offre deux structures de données principales : les <strong>Séries</strong> et les <strong>DataFrames</strong>.</p>
+<p>Une <strong>Série</strong> est une structure unidimensionnelle qui peut contenir des données de différents types (nombres, chaînes de caractères, etc.). Elle est similaire à un tableau ou à une colonne dans une feuille de calcul.</p>
+<p>Un <strong>DataFrame</strong> est une structure bidimensionnelle qui peut contenir des données de différents types. Il est similaire à une table de base de données ou à une feuille de calcul avec des lignes et des colonnes.</p>
+<p>Les Séries et les DataFrames sont flexibles et offrent de nombreuses fonctionnalités pour manipuler et analyser les données. Ils permettent également de réaliser des opérations vectorisées, ce qui les rend très performants pour le traitement de grandes quantités de données.</p>
+<p>Voici comment créer une Série et un DataFrame en utilisant Pandas :</p>
+<pre><code># Création d'une Série
+s = pd.Series([1, 3, 5, np.nan, 6, 8])
+
+# Création d'un DataFrame
+df = pd.DataFrame({'A': [1, 2, 3, 4], 'B': ['a', 'b', 'c', 'd'], 'C': [True, False, True, False]})</code></pre>
+<p>La Série <code>s</code> contient des nombres entiers et un NaN (valeur manquante). Le DataFrame <code>df</code> est créé à partir d'un dictionnaire avec trois colonnes : 'A', 'B' et 'C'. La colonne 'A' contient des nombres entiers, la colonne 'B' contient des chaînes de caractères et la colonne 'C' contient des valeurs booléennes.</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Optimisation des performances avec Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des index</h2>
+<p>L'utilisation des index est une technique essentielle pour optimiser les performances lors de la manipulation des données avec Pandas. Les index permettent d'accéder rapidement aux données et d'effectuer des opérations efficaces.</p>
+
+<p>Pandas utilise par défaut un index numérique pour les DataFrames, mais il est souvent préférable de définir un index plus significatif en fonction des données. Cela peut être fait en utilisant la méthode <code>set_index()</code> sur le DataFrame.</p>
+
+<pre><code>import pandas as pd
+
+# Création d'un DataFrame
+data = {'Nom': ['Alice', 'Bob', 'Charlie'],
+        'Âge': [25, 30, 35],
+        'Ville': ['Paris', 'Londres', 'New York']}
+df = pd.DataFrame(data)
+
+# Définition de la colonne 'Nom' comme index
+df = df.set_index('Nom')
+
+print(df)
+</code></pre>
+
+<p>Cela définit la colonne 'Nom' comme index du DataFrame, ce qui permet d'accéder rapidement aux données en utilisant les noms des individus comme clés.</p>
+
+<h2>Utilisation des opérations vectorisées</h2>
+<p>Les opérations vectorisées sont une autre technique d'optimisation des performances avec Pandas. Au lieu d'itérer sur chaque élément d'une colonne, les opérations vectorisées effectuent des calculs sur l'ensemble de la colonne en une seule opération.</p>
+
+<p>Pandas utilise des bibliothèques sous-jacentes, telles que NumPy, pour effectuer ces opérations vectorisées de manière efficace. Cela permet d'accélérer considérablement les calculs sur de grandes quantités de données.</p>
+
+<pre><code>import pandas as pd
+
+# Création d'un DataFrame
+data = {'A': [1, 2, 3],
+        'B': [4, 5, 6]}
+df = pd.DataFrame(data)
+
+# Multiplication des colonnes 'A' et 'B'
+df['C'] = df['A'] * df['B']
+
+print(df)
+</code></pre>
+
+<p>Cette opération de multiplication est effectuée en une seule fois sur l'ensemble des éléments des colonnes 'A' et 'B', ce qui permet d'obtenir rapidement le résultat dans une nouvelle colonne 'C'.</p>
+
+<h2>Utilisation des fonctions d'agrégation optimisées</h2>
+<p>Pandas propose des fonctions d'agrégation optimisées qui permettent de calculer rapidement des statistiques sur les données. Ces fonctions sont conçues pour être utilisées avec des opérations vectorisées, ce qui les rend très efficaces.</p>
+
+<p>Voici quelques exemples de fonctions d'agrégation couramment utilisées :</p>
+
+<ul>
+  <li><code>sum()</code> : calcule la somme des valeurs</li>
+  <li><code>mean()</code> : calcule la moyenne des valeurs</li>
+  <li><code>min()</code> : trouve la valeur minimale</li>
+  <li><code>max()</code> : trouve la valeur maximale</li>
+</ul>
+
+<pre><code>import pandas as pd
+
+# Création d'un DataFrame
+data = {'A': [1, 2, 3, 4, 5],
+        'B': [10, 20, 30, 40, 50]}
+df = pd.DataFrame(data)
+
+# Calcul de la somme des valeurs de la colonne 'A'
+sum_a = df['A'].sum()
+
+print("Somme de la colonne 'A' :", sum_a)
+</code></pre>
+
+<p>Cette fonction <code>sum()</code> calcule rapidement la somme des valeurs de la colonne 'A'.</p>
+
+<h2>Utilisation de la mémoire efficacement</h2>
+<p>La gestion efficace de la mémoire est un aspect important de l'optimisation des performances avec Pandas. Lorsque vous travaillez avec de grandes quantités de données, il est essentiel de minimiser l'utilisation de la mémoire pour éviter les ralentissements.</p>
+
+<p>Voici quelques techniques pour utiliser la mémoire de manière efficace :</p>
+
+<ul>
+  <li>Supprimer les colonnes inutiles : utilisez la méthode <code>drop()</code> pour supprimer les colonnes qui ne sont pas nécessaires.</li>
+  <li>Utiliser des types de données appropriés : utilisez des types de données plus petits lorsque cela est possible, par exemple, utilisez des entiers de 8 bits au lieu de 32 bits si les valeurs le permettent.</li>
+  <li>Utiliser des chunks pour les opérations sur de grands fichiers : si vous travaillez avec de grands fichiers, vous pouvez utiliser la fonction <code>read_csv()</code> avec le paramètre <code>chunksize</code> pour lire les données par morceaux et les traiter séparément.</li>
+</ul>
+
+<p>En utilisant ces techniques, vous pouvez optimiser l'utilisation de la mémoire et améliorer les performances de vos opérations avec Pandas.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

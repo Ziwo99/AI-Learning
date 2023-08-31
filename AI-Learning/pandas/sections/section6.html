@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Pandas Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Utilisation avancée de Pandas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/pandas/pandas.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création de fonctions personnalisées</h2>
+<p>La création de fonctions personnalisées est une fonctionnalité puissante de Pandas qui permet aux utilisateurs de définir leurs propres fonctions pour effectuer des opérations spécifiques sur les données. Cela permet une plus grande flexibilité et une meilleure adaptation aux besoins spécifiques de l'utilisateur.</p>
+
+<p>Pour créer une fonction personnalisée, vous pouvez utiliser la syntaxe suivante :</p>
+
+<pre><code>def ma_fonction(parametres):
+    # Code de la fonction
+    return resultat
+</code></pre>
+
+<p>Vous pouvez ensuite utiliser cette fonction sur une colonne ou un DataFrame en utilisant la méthode <code>apply()</code>. Par exemple :</p>
+
+<pre><code># Création d'une fonction personnalisée pour calculer le carré d'un nombre
+def carre(x):
+    return x**2
+
+# Application de la fonction sur une colonne
+df['colonne_carree'] = df['colonne'].apply(carre)
+</code></pre>
+
+<p>Il est également possible de créer des fonctions personnalisées qui prennent plusieurs paramètres ou qui effectuent des opérations plus complexes. Vous pouvez utiliser des boucles, des conditions et d'autres fonctionnalités de Python pour créer des fonctions personnalisées plus avancées.</p>
+
+<h2>Utilisation des groupes et des opérations groupées</h2>
+<p>La fonctionnalité de groupement de Pandas permet de regrouper les données en fonction de certaines caractéristiques communes, puis d'effectuer des opérations sur ces groupes. Cela peut être utile pour effectuer des analyses spécifiques sur des sous-ensembles de données.</p>
+
+<p>Pour créer des groupes, vous pouvez utiliser la méthode <code>groupby()</code>. Par exemple :</p>
+
+<pre><code># Groupement des données par une colonne spécifique
+groupes = df.groupby('colonne')
+
+# Application d'une opération sur chaque groupe
+resultat = groupes.sum()
+</code></pre>
+
+<p>Vous pouvez également utiliser des fonctions d'agrégation telles que <code>sum()</code>, <code>mean()</code>, <code>count()</code>, etc. pour effectuer des calculs sur chaque groupe.</p>
+
+<p>Il est également possible de grouper les données en fonction de plusieurs colonnes. Par exemple :</p>
+
+<pre><code># Groupement des données par deux colonnes
+groupes = df.groupby(['colonne1', 'colonne2'])
+
+# Application d'une opération sur chaque groupe
+resultat = groupes.sum()
+</code></pre>
+
+<p>Cela permet de créer des groupes plus spécifiques et d'effectuer des analyses plus détaillées.</p>
+
+<h2>Utilisation des fenêtres glissantes</h2>
+<p>Les fenêtres glissantes, également appelées fenêtres de décalage, permettent d'effectuer des calculs sur des sous-groupes de données en déplaçant la fenêtre le long de la série temporelle ou d'une autre colonne. Cela peut être utile pour calculer des moyennes mobiles, des taux de croissance, des tendances, etc.</p>
+
+<p>Pour utiliser les fenêtres glissantes, vous pouvez utiliser la méthode <code>window()</code>. Par exemple :</p>
+
+<pre><code># Calcul de la moyenne mobile sur une colonne
+moyenne_mobile = df['colonne'].rolling(window=3).mean()
+</code></pre>
+
+<p>Cela calcule la moyenne mobile sur une fenêtre de taille 3. Vous pouvez ajuster la taille de la fenêtre en fonction de vos besoins.</p>
+
+<p>Il est également possible d'utiliser d'autres fonctions d'agrégation telles que <code>sum()</code>, <code>min()</code>, <code>max()</code>, etc. avec les fenêtres glissantes.</p>
+
+<h2>Utilisation des jointures avancées</h2>
+<p>Les jointures avancées permettent de combiner plusieurs DataFrames en utilisant des clés de jointure spécifiques. Cela peut être utile pour fusionner des données provenant de différentes sources ou pour effectuer des analyses plus complexes.</p>
+
+<p>Pour effectuer une jointure avancée, vous pouvez utiliser la méthode <code>merge()</code>. Par exemple :</p>
+
+<pre><code># Jointure de deux DataFrames sur une colonne commune
+resultat = pd.merge(df1, df2, on='colonne')
+</code></pre>
+
+<p>Cela fusionne les deux DataFrames en utilisant la colonne 'colonne' comme clé de jointure. Vous pouvez également spécifier d'autres paramètres tels que le type de jointure (par exemple, 'inner', 'left', 'right', 'outer') et les colonnes à inclure dans le résultat final.</p>
+
+<p>Il est également possible de réaliser des jointures sur plusieurs colonnes en spécifiant une liste de colonnes comme clés de jointure.</p>
+
+<h2>Utilisation des données multi-indexées</h2>
+<p>Les données multi-indexées permettent d'avoir plusieurs niveaux d'index pour organiser les données de manière hiérarchique. Cela peut être utile pour représenter des données complexes avec plusieurs dimensions.</p>
+
+<p>Pour créer des données multi-indexées, vous pouvez utiliser la méthode <code>set_index()</code>. Par exemple :</p>
+
+<pre><code># Création d'un index hiérarchique à partir de deux colonnes
+df = df.set_index(['colonne1', 'colonne2'])
+</code></pre>
+
+<p>Cela crée un index hiérarchique à partir des colonnes 'colonne1' et 'colonne2'. Vous pouvez ensuite accéder aux données en utilisant les niveaux d'index spécifiques.</p>
+
+<p>Il est également possible de réaliser des opérations d'agrégation sur les données multi-indexées en utilisant la méthode <code>groupby()</code> avec les niveaux d'index spécifiques.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/pandas/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/pandas/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
