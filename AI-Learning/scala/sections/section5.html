@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5. Programmation orientée objet avancée en Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Mixins et traits</h2>
+<p>Les mixins et les traits sont des fonctionnalités clés de la programmation orientée objet en Scala. Un mixin est une classe qui peut être mélangée avec d'autres classes pour ajouter des fonctionnalités supplémentaires. Un trait est une unité de code réutilisable qui peut être mélangée avec des classes pour ajouter des comportements spécifiques.</p>
+<p>Les mixins et les traits permettent une composition flexible des fonctionnalités, ce qui facilite la réutilisation du code et la création de hiérarchies de classes plus complexes.</p>
+<p>Voici un exemple d'utilisation de mixins en Scala :</p>
+<pre><code>trait Logger {
+  def log(message: String): Unit = {
+    println(s"[${this.getClass.getSimpleName}] $message")
+  }
+}
+
+class UserService extends Logger {
+  def createUser(username: String, password: String): Unit = {
+    // Logique de création d'utilisateur
+    log(s"Utilisateur créé : $username")
+  }
+}
+
+val userService = new UserService()
+userService.createUser("john.doe", "password")
+</code></pre>
+<p>Dans cet exemple, la classe <code>UserService</code> utilise le mixin <code>Logger</code> pour ajouter la fonctionnalité de journalisation. La méthode <code>log</code> du mixin peut être appelée à partir de la classe <code>UserService</code>.</p>
+
+<h2>Pattern matching</h2>
+<p>Le pattern matching est une fonctionnalité puissante de Scala qui permet de faire correspondre des valeurs à des modèles et d'exécuter des actions en fonction de ces correspondances. Il peut être utilisé pour effectuer des opérations conditionnelles plus complexes que les simples instructions <code>if</code> et <code>else</code>.</p>
+<p>Voici un exemple d'utilisation du pattern matching en Scala :</p>
+<pre><code>def matchNumber(num: Int): String = num match {
+  case 0 => "Zéro"
+  case 1 => "Un"
+  case 2 => "Deux"
+  case _ => "Autre"
+}
+
+println(matchNumber(1)) // Affiche "Un"
+</code></pre>
+<p>Dans cet exemple, la fonction <code>matchNumber</code> utilise le pattern matching pour faire correspondre la valeur de <code>num</code> à différents modèles. Si <code>num</code> correspond à l'un des modèles spécifiés, la correspondance est effectuée et la valeur correspondante est renvoyée.</p>
+
+<h2>Classes abstraites et interfaces</h2>
+<p>Les classes abstraites et les interfaces sont des concepts importants de la programmation orientée objet en Scala. Une classe abstraite est une classe qui ne peut pas être instanciée directement et qui peut contenir des méthodes abstraites, c'est-à-dire des méthodes sans implémentation. Une interface est une spécification de comportement qui peut être implémentée par des classes.</p>
+<p>Voici un exemple d'utilisation de classes abstraites et d'interfaces en Scala :</p>
+<pre><code>abstract class Animal {
+  def sound(): String
+}
+
+class Cat extends Animal {
+  def sound(): String = "Meow"
+}
+
+trait Walks {
+  def walk(): Unit = {
+    println("Walking...")
+  }
+}
+
+class Dog extends Animal with Walks {
+  def sound(): String = "Woof"
+}
+
+val cat = new Cat()
+println(cat.sound()) // Affiche "Meow"
+
+val dog = new Dog()
+println(dog.sound()) // Affiche "Woof"
+dog.walk() // Affiche "Walking..."
+</code></pre>
+<p>Dans cet exemple, la classe abstraite <code>Animal</code> définit une méthode abstraite <code>sound</code>, qui doit être implémentée par les classes concrètes qui en héritent. La classe <code>Cat</code> et la classe <code>Dog</code> sont des exemples de classes concrètes qui héritent de <code>Animal</code> et implémentent la méthode <code>sound</code>.</p>
+<p>Le trait <code>Walks</code> définit une méthode <code>walk</code> qui peut être mélangée avec d'autres classes. La classe <code>Dog</code> utilise le trait <code>Walks</code> pour ajouter la fonctionnalité de marche.</p>
+
+<h2>Gestion des exceptions</h2>
+<p>La gestion des exceptions est une partie importante de la programmation en Scala. Les exceptions sont utilisées pour signaler des erreurs ou des conditions exceptionnelles qui se produisent pendant l'exécution d'un programme.</p>
+<p>Voici un exemple de gestion des exceptions en Scala :</p>
+<pre><code>try {
+  val result = 10 / 0
+  println(result)
+} catch {
+  case e: ArithmeticException => println("Erreur de division par zéro")
+} finally {
+  println("Fin de l'exécution")
+}
+</code></pre>
+<p>Dans cet exemple, le code à l'intérieur du bloc <code>try</code> est exécuté. Si une exception se produit, le code à l'intérieur du bloc <code>catch</code> correspondant est exécuté. Dans ce cas, une exception <code>ArithmeticException</code> est attrapée et un message d'erreur est affiché. Le bloc <code>finally</code> est exécuté quelle que soit l'issue du bloc <code>try</code> et du bloc <code>catch</code>.</p>
+
+<h2>Méthodes implicites</h2>
+<p>Les méthodes implicites sont une fonctionnalité avancée de Scala qui permet d'ajouter des méthodes à des classes existantes sans les modifier. Les méthodes implicites sont utilisées pour étendre les fonctionnalités des classes sans avoir à les sous-classer ou à les modifier directement.</p>
+<p>Voici un exemple d'utilisation de méthodes implicites en Scala :</p>
+<pre><code>class Circle(radius: Double) {
+  def area(): Double = math.Pi * radius * radius
+}
+
+implicit class CircleExtensions(circle: Circle) {
+  def circumference(): Double = 2 * math.Pi * circle.radius
+}
+
+val circle = new Circle(5)
+println(circle.area()) // Affiche l'aire du cercle
+println(circle.circumference()) // Affiche la circonférence du cercle
+</code></pre>
+<p>Dans cet exemple, la classe <code>Circle</code> représente un cercle avec un rayon donné. La méthode implicite <code>CircleExtensions</code> ajoute une méthode <code>circumference</code> à la classe <code>Circle</code>. Cette méthode peut être appelée directement sur une instance de <code>Circle</code>, même si elle n'est pas définie dans la classe elle-même.</p>
+
+<p>Continuez à apprendre et à explorer les autres sections de cette formation e-learning Scala pour approfondir vos connaissances et compétences en programmation Scala.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

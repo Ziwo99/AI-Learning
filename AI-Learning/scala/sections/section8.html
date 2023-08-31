@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8. Utilisation des bibliothèques et frameworks Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de la bibliothèque standard de Scala</h2>
+<p>La bibliothèque standard de Scala est une collection de classes et de fonctions prédéfinies qui facilitent le développement d'applications en Scala. Elle offre un large éventail de fonctionnalités, allant des opérations de base sur les chaînes de caractères aux collections avancées et aux opérations de traitement des fichiers.</p>
+
+<p>Voici quelques exemples de fonctionnalités couramment utilisées de la bibliothèque standard de Scala :</p>
+
+<pre><code>// Manipulation de chaînes de caractères
+val str = "Hello, World!"
+println(str.toUpperCase()) // Affiche "HELLO, WORLD!"
+println(str.length()) // Affiche 13
+
+// Manipulation de collections
+val list = List(1, 2, 3, 4, 5)
+println(list.sum) // Affiche 15
+println(list.max) // Affiche 5
+
+// Manipulation de fichiers
+import scala.io.Source
+val file = Source.fromFile("example.txt")
+val lines = file.getLines()
+lines.foreach(println)
+file.close()
+</code></pre>
+
+<p>La bibliothèque standard de Scala offre également des fonctionnalités pour le traitement des dates et heures, la manipulation des expressions régulières, la gestion des entrées/sorties, etc. Elle constitue une ressource précieuse pour les développeurs Scala.</p>
+
+<h2>Utilisation de bibliothèques externes populaires (Akka, Play Framework, ScalaTest)</h2>
+<p>En plus de la bibliothèque standard de Scala, il existe de nombreuses bibliothèques externes populaires qui offrent des fonctionnalités avancées pour le développement Scala. Certaines de ces bibliothèques sont spécifiquement conçues pour des domaines particuliers, tandis que d'autres offrent des fonctionnalités générales.</p>
+
+<p>Voici quelques exemples de bibliothèques externes populaires en Scala :</p>
+
+<h3>Akka</h3>
+<p>Akka est un framework de programmation concurrente et distribuée en Scala. Il fournit un modèle d'acteurs léger et évolutif, qui permet de gérer facilement la concurrence et la distribution des tâches. Akka est largement utilisé dans le développement d'applications à haute performance et à tolérance de panne.</p>
+
+<h3>Play Framework</h3>
+<p>Play Framework est un framework web réactif et évolutif en Scala. Il offre une architecture basée sur le modèle MVC (Modèle-Vue-Contrôleur) et facilite le développement d'applications web modernes. Play Framework prend en charge la programmation asynchrone, la gestion des requêtes RESTful et offre de nombreuses fonctionnalités pour le développement web.</p>
+
+<h3>ScalaTest</h3>
+<p>ScalaTest est un framework de test unitaire en Scala. Il offre une syntaxe expressive et flexible pour écrire des tests, et prend en charge différents styles de test, tels que le style BDD (Behavior-Driven Development) et le style de test traditionnel. ScalaTest facilite l'écriture de tests robustes et maintenables pour les applications Scala.</p>
+
+<p>Ces bibliothèques externes populaires offrent des fonctionnalités avancées et sont largement utilisées dans l'industrie du développement Scala. Elles peuvent considérablement accélérer le processus de développement et améliorer la qualité des applications.</p>
+
+<h2>Création de bibliothèques et frameworks Scala personnalisés</h2>
+<p>En plus d'utiliser des bibliothèques externes, les développeurs Scala ont également la possibilité de créer leurs propres bibliothèques et frameworks personnalisés. Cela leur permet de répondre aux besoins spécifiques de leur application et de promouvoir la réutilisabilité du code.</p>
+
+<p>Voici les étapes générales pour créer une bibliothèque ou un framework Scala personnalisé :</p>
+
+<ol>
+  <li>Définir les fonctionnalités et les objectifs de la bibliothèque ou du framework.</li>
+  <li>Concevoir l'architecture et les interfaces de la bibliothèque ou du framework.</li>
+  <li>Implémenter les fonctionnalités en utilisant les concepts et les fonctionnalités avancées de Scala.</li>
+  <li>Tester la bibliothèque ou le framework pour s'assurer de sa fiabilité et de sa performance.</li>
+  <li>Documenter la bibliothèque ou le framework pour faciliter son utilisation par d'autres développeurs.</li>
+  <li>Distribuer la bibliothèque ou le framework pour permettre à d'autres développeurs de l'utiliser.</li>
+</ol>
+
+<p>La création de bibliothèques et de frameworks Scala personnalisés peut être un processus complexe, mais cela offre une grande flexibilité et permet de développer des solutions spécifiques et optimisées pour des problèmes particuliers.</p>
+
+<p>Il est important de noter que la création de bibliothèques et de frameworks Scala personnalisés nécessite une bonne compréhension des concepts avancés de Scala et une connaissance approfondie des bonnes pratiques de développement.</p>
+
+<p>En résumé, l'utilisation de bibliothèques externes populaires et la création de bibliothèques et de frameworks Scala personnalisés sont des approches courantes pour étendre les fonctionnalités de Scala et améliorer le processus de développement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

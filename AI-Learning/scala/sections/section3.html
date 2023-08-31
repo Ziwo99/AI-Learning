@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3. Syntaxe de base de Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Variables et types de données</h2>
+<p>En Scala, les variables sont déclarées en utilisant le mot-clé <code>var</code> suivi du nom de la variable et de son type. Par exemple :</p>
+
+<pre><code>var x: Int = 5
+</code></pre>
+
+<p>Ici, nous avons déclaré une variable <code>x</code> de type <code>Int</code> et lui avons attribué la valeur 5.</p>
+
+<p>Scala prend également en charge l'inférence de type, ce qui signifie que vous pouvez omettre le type de la variable si le compilateur peut le déduire. Par exemple :</p>
+
+<pre><code>var y = "Hello"
+</code></pre>
+
+<p>Ici, la variable <code>y</code> est automatiquement déduite comme étant de type <code>String</code>.</p>
+
+<h2>Opérateurs et expressions</h2>
+<p>Scala prend en charge les opérateurs arithmétiques de base tels que l'addition, la soustraction, la multiplication et la division. Par exemple :</p>
+
+<pre><code>val a = 10
+val b = 5
+val sum = a + b
+val difference = a - b
+val product = a * b
+val quotient = a / b
+</code></pre>
+
+<p>Ici, nous avons déclaré les variables <code>a</code> et <code>b</code> et effectué des opérations arithmétiques pour calculer la somme, la différence, le produit et le quotient.</p>
+
+<h2>Structures de contrôle (boucles, conditions)</h2>
+<p>En Scala, vous pouvez utiliser les structures de contrôle classiques telles que les boucles <code>while</code> et <code>for</code>, ainsi que les instructions conditionnelles <code>if</code> et <code>else</code>. Par exemple :</p>
+
+<pre><code>var i = 0
+
+while (i &lt; 10) {
+  println("Iteration " + i)
+  i += 1
+}
+
+for (j &lt;- 1 to 5) {
+  println("Value of j: " + j)
+}
+
+val x = 10
+
+if (x &gt; 5) {
+  println("x is greater than 5")
+} else {
+  println("x is less than or equal to 5")
+}
+</code></pre>
+
+<p>Ici, nous avons utilisé une boucle <code>while</code> pour afficher les itérations, une boucle <code>for</code> pour afficher les valeurs de <code>j</code> de 1 à 5, et une instruction <code>if</code> pour vérifier si <code>x</code> est supérieur à 5.</p>
+
+<h2>Fonctions et méthodes</h2>
+<p>En Scala, les fonctions sont définies en utilisant le mot-clé <code>def</code>. Par exemple :</p>
+
+<pre><code>def add(x: Int, y: Int): Int = {
+  return x + y
+}
+
+val result = add(5, 10)
+println("Result: " + result)
+</code></pre>
+
+<p>Ici, nous avons défini une fonction <code>add</code> qui prend deux paramètres <code>x</code> et <code>y</code> de type <code>Int</code> et renvoie leur somme. Nous avons ensuite appelé cette fonction avec les arguments 5 et 10 et stocké le résultat dans la variable <code>result</code>.</p>
+
+<h2>Classes et objets</h2>
+<p>En Scala, vous pouvez définir des classes en utilisant le mot-clé <code>class</code>. Par exemple :</p>
+
+<pre><code>class Person(name: String, age: Int) {
+  def greet(): Unit = {
+    println("Hello, my name is " + name + " and I am " + age + " years old.")
+  }
+}
+
+val person = new Person("John", 30)
+person.greet()
+</code></pre>
+
+<p>Ici, nous avons défini une classe <code>Person</code> avec deux paramètres <code>name</code> et <code>age</code>. La classe a une méthode <code>greet</code> qui affiche un message de salutation. Nous avons ensuite créé une instance de la classe <code>Person</code> avec les valeurs "John" et 30, et appelé la méthode <code>greet</code> sur cette instance.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>En Scala, vous pouvez hériter d'une classe existante en utilisant le mot-clé <code>extends</code>. Par exemple :</p>
+
+<pre><code>class Animal(name: String) {
+  def sound(): Unit = {
+    println("The animal makes a sound.")
+  }
+}
+
+class Dog(name: String) extends Animal(name) {
+  override def sound(): Unit = {
+    println("The dog barks.")
+  }
+}
+
+val animal: Animal = new Dog("Buddy")
+animal.sound()
+</code></pre>
+
+<p>Ici, nous avons défini une classe de base <code>Animal</code> avec une méthode <code>sound</code>. Nous avons ensuite défini une classe dérivée <code>Dog</code> qui hérite de la classe <code>Animal</code> et remplace la méthode <code>sound</code> pour afficher un aboiement de chien. Nous avons créé une instance de la classe <code>Dog</code> et l'avons assignée à une variable de type <code>Animal</code>, puis appelé la méthode <code>sound</code> sur cette variable.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6. Programmation concurrente en Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation concurrente</h2>
+<p>La programmation concurrente est une technique qui permet d'exécuter plusieurs tâches simultanément, améliorant ainsi les performances et l'efficacité d'une application. En Scala, la programmation concurrente est prise en charge par différentes fonctionnalités intégrées dans le langage.</p>
+
+<h2>Threads et synchronisation</h2>
+<p>Un thread est une unité d'exécution indépendante qui peut être exécutée en parallèle avec d'autres threads. En Scala, vous pouvez créer et gérer des threads en utilisant la classe <code>Thread</code> de la bibliothèque standard.</p>
+<p>La synchronisation est un mécanisme qui permet de contrôler l'accès concurrentiel aux ressources partagées. En Scala, vous pouvez utiliser des blocs synchronisés et des verrous pour garantir l'exécution ordonnée des threads.</p>
+<pre><code>import scala.concurrent._
+import ExecutionContext.Implicits.global
+
+val future = Future {
+  // Code exécuté de manière asynchrone dans un thread séparé
+  // ...
+}
+
+// Attente du résultat du future
+val result = Await.result(future, Duration.Inf)
+</code></pre>
+
+<h2>Utilisation des futures et des promesses</h2>
+<p>Les futures et les promesses sont des abstractions puissantes pour la programmation concurrente en Scala. Un future représente un résultat potentiellement disponible à l'avenir, tandis qu'une promesse est un moyen de produire ce résultat.</p>
+<pre><code>import scala.concurrent._
+import ExecutionContext.Implicits.global
+
+val promise = Promise[String]()
+
+val future = promise.future
+
+future.onComplete {
+  case Success(result) => println("Résultat : " + result)
+  case Failure(exception) => println("Erreur : " + exception.getMessage)
+}
+
+// Résolution de la promesse avec une valeur
+promise.success("Hello, World!")
+</code></pre>
+
+<h2>Acteurs et modèles d'acteurs</h2>
+<p>Les acteurs sont des entités concurrentes qui communiquent entre elles en envoyant des messages. Chaque acteur possède son propre état interne et peut réagir aux messages qu'il reçoit.</p>
+<p>En Scala, vous pouvez utiliser l'API d'acteurs fournie par la bibliothèque Akka pour implémenter des systèmes concurrents basés sur le modèle d'acteurs.</p>
+<pre><code>import akka.actor._
+
+class MyActor extends Actor {
+  def receive = {
+    case message: String => println("Message reçu : " + message)
+    case _ => println("Message non reconnu")
+  }
+}
+
+val system = ActorSystem("MySystem")
+val myActor = system.actorOf(Props[MyActor], "myActor")
+
+myActor ! "Hello, World!"
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9. Bonnes pratiques de développement Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Conventions de codage</h2>
+<p>Les conventions de codage sont des règles et des normes qui définissent la manière dont le code Scala doit être écrit pour garantir une lisibilité et une maintenabilité optimales. Voici quelques bonnes pratiques de codage à suivre :</p>
+
+<ul>
+  <li>Nommez vos variables, fonctions et classes de manière descriptive et significative. Utilisez des noms en minuscules avec des mots séparés par des underscores pour les variables et les fonctions, et utilisez la notation CamelCase pour les classes.</li>
+  <li>Indentation : utilisez une indentation de 2 ou 4 espaces pour améliorer la lisibilité du code.</li>
+  <li>Utilisez des commentaires pour expliquer le code complexe ou pour fournir des informations supplémentaires sur son fonctionnement.</li>
+  <li>Évitez les lignes de code trop longues. Si une ligne dépasse généralement 80 caractères, envisagez de la diviser en plusieurs lignes.</li>
+  <li>Utilisez des espaces autour des opérateurs pour améliorer la lisibilité. Par exemple, utilisez "a + b" au lieu de "a+b".</li>
+  <li>Évitez d'utiliser des caractères spéciaux non ASCII dans votre code source.</li>
+</ul>
+
+<h2>Tests unitaires et intégration continue</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité du code Scala. Ils permettent de vérifier le bon fonctionnement des différentes parties de votre code de manière isolée. Voici quelques bonnes pratiques pour les tests unitaires :</p>
+
+<ul>
+  <li>Utilisez un framework de test unitaire tel que ScalaTest ou JUnit pour écrire vos tests.</li>
+  <li>Écrivez des tests pour chaque fonction ou méthode de votre code.</li>
+  <li>Utilisez des assertions pour vérifier les résultats attendus de vos tests.</li>
+  <li>Utilisez des mocks ou des stubs pour isoler les dépendances externes lors des tests.</li>
+  <li>Exécutez vos tests régulièrement à l'aide d'un outil d'intégration continue tel que Jenkins ou Travis CI.</li>
+</ul>
+
+<h2>Documentation et commentaires</h2>
+<p>La documentation et les commentaires sont essentiels pour faciliter la compréhension et la maintenance du code Scala. Voici quelques bonnes pratiques pour la documentation et les commentaires :</p>
+
+<ul>
+  <li>Documentez chaque classe, fonction et méthode avec une description claire de son rôle et de son fonctionnement.</li>
+  <li>Utilisez des commentaires pour expliquer les parties complexes ou délicates de votre code.</li>
+  <li>Utilisez des annotations de documentation telles que Scaladoc pour générer automatiquement la documentation de votre code.</li>
+  <li>Mettez à jour régulièrement la documentation pour refléter les changements apportés au code.</li>
+</ul>
+
+<h2>Gestion des dépendances</h2>
+<p>La gestion des dépendances est un aspect important du développement Scala. Voici quelques bonnes pratiques pour la gestion des dépendances :</p>
+
+<ul>
+  <li>Utilisez un gestionnaire de dépendances tel que sbt ou Maven pour gérer les dépendances de votre projet.</li>
+  <li>Déclarez toutes les dépendances de votre projet dans un fichier de configuration dédié (par exemple, build.sbt pour sbt).</li>
+  <li>Utilisez des versions stables et maintenues des bibliothèques externes pour minimiser les problèmes de compatibilité.</li>
+  <li>Évitez d'inclure des dépendances inutiles dans votre projet pour réduire la taille de l'application finale.</li>
+</ul>
+
+<h2>Débogage et optimisation</h2>
+<p>Le débogage et l'optimisation sont des compétences essentielles pour améliorer les performances et la qualité de votre code Scala. Voici quelques bonnes pratiques pour le débogage et l'optimisation :</p>
+
+<ul>
+  <li>Utilisez un débogueur pour identifier et résoudre les problèmes de votre code.</li>
+  <li>Utilisez des outils de profilage pour identifier les parties de votre code qui consomment le plus de ressources.</li>
+  <li>Optimisez votre code en utilisant des algorithmes plus efficaces ou en évitant les opérations coûteuses.</li>
+  <li>Utilisez des outils de mesure des performances pour évaluer l'impact de vos optimisations.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques de développement Scala, vous serez en mesure de produire un code de haute qualité, maintenable et performant.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

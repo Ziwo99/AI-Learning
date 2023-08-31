@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4. Programmation fonctionnelle en Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Fonctions de haut niveau</h2>
+<p>Les fonctions de haut niveau en Scala sont des fonctions qui peuvent être assignées à des variables, passées en tant que paramètres à d'autres fonctions et retournées en tant que résultats d'autres fonctions. Elles sont considérées comme des citoyens de première classe dans le langage Scala.</p>
+<p>Voici un exemple de déclaration d'une fonction de haut niveau en Scala :</p>
+<pre><code>val addition: (Int, Int) => Int = (a, b) => a + b</code></pre>
+<p>Dans cet exemple, la fonction "addition" prend deux entiers en paramètres et retourne leur somme.</p>
+
+<h2>Fonctions anonymes</h2>
+<p>Les fonctions anonymes en Scala sont des fonctions qui n'ont pas de nom et peuvent être définies directement là où elles sont utilisées. Elles sont souvent utilisées comme arguments de fonctions de haut niveau ou dans des opérations de transformation de collections.</p>
+<p>Voici un exemple de déclaration d'une fonction anonyme en Scala :</p>
+<pre><code>val carre: Int => Int = (x) => x * x</code></pre>
+<p>Dans cet exemple, la fonction anonyme "carre" prend un entier en paramètre et retourne son carré.</p>
+
+<h2>Fonctions récursives</h2>
+<p>Les fonctions récursives en Scala sont des fonctions qui s'appellent elles-mêmes pendant leur exécution. Elles sont souvent utilisées pour résoudre des problèmes qui peuvent être décomposés en sous-problèmes plus petits.</p>
+<p>Voici un exemple de déclaration d'une fonction récursive en Scala :</p>
+<pre><code>def factorielle(n: Int): Int = {
+  if (n == 0) 1
+  else n * factorielle(n - 1)
+}</code></pre>
+<p>Dans cet exemple, la fonction récursive "factorielle" calcule la factorielle d'un nombre en multipliant ce nombre par la factorielle du nombre précédent, jusqu'à atteindre 0.</p>
+
+<h2>Immutabilité et immutabilité des données</h2>
+<p>En Scala, les données peuvent être déclarées comme immuables ou mutables. Les données immuables ne peuvent pas être modifiées une fois qu'elles ont été assignées, tandis que les données mutables peuvent être modifiées.</p>
+<p>Voici un exemple de déclaration d'une variable immuable en Scala :</p>
+<pre><code>val x: Int = 5</code></pre>
+<p>Dans cet exemple, la variable "x" est déclarée comme immuable et ne peut pas être modifiée après avoir été assignée.</p>
+
+<h2>Traitement des collections avec les fonctions de la bibliothèque standard</h2>
+<p>La bibliothèque standard de Scala offre de nombreuses fonctions pour le traitement des collections, telles que les listes, les ensembles et les tableaux. Ces fonctions permettent de réaliser des opérations de transformation, de filtrage et d'agrégation sur les éléments des collections.</p>
+<p>Voici un exemple d'utilisation de la fonction "map" pour transformer une liste en doublant chaque élément :</p>
+<pre><code>val liste = List(1, 2, 3, 4, 5)
+val listeDoublee = liste.map(x => x * 2)</code></pre>
+<p>Dans cet exemple, la fonction "map" est utilisée pour appliquer la transformation "x => x * 2" à chaque élément de la liste, ce qui donne une nouvelle liste avec les éléments doublés.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

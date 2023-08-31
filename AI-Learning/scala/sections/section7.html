@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7. Programmation avancée en Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Types avancés (type paramétré, type supérieur, type inférieur)</h2>
+<p>Les types avancés en Scala permettent de définir des contraintes supplémentaires sur les types de données utilisés dans un programme. Ils offrent une flexibilité et une expressivité accrues lors de la manipulation des types.</p>
+<p>Le type paramétré permet de définir une classe ou une fonction qui peut être utilisée avec différents types de données. Par exemple, on peut définir une classe générique de liste :</p>
+<pre><code>class Liste[T] {
+  // implémentation de la liste
+}</code></pre>
+<p>Le type supérieur permet de spécifier que le type utilisé doit être une sous-classe d'un certain type. Par exemple, on peut définir une fonction qui accepte uniquement des objets de type Animal ou de ses sous-classes :</p>
+<pre><code>def afficherAnimal[A &gt;: Animal](animal: A): Unit = {
+  println(animal)
+}</code></pre>
+<p>Le type inférieur permet de spécifier que le type utilisé doit être une super-classe d'un certain type. Par exemple, on peut définir une fonction qui accepte uniquement des objets de type Chien ou de ses super-classes :</p>
+<pre><code>def afficherChien[A &lt;: Chien](chien: A): Unit = {
+  println(chien)
+}</code></pre>
+
+<h2>Macros</h2>
+<p>Les macros en Scala permettent de générer du code à la compilation. Elles offrent une puissante fonctionnalité de méta-programmation, permettant de transformer et de générer du code source Scala à partir d'un code source Scala existant.</p>
+<p>Les macros sont définies à l'aide de la macro-annotation <code>@macro</code> et peuvent être utilisées pour effectuer des opérations complexes à la compilation, telles que la génération de code répétitif, la vérification statique des types ou la transformation de code source.</p>
+<pre><code>import scala.language.experimental.macros
+import scala.reflect.macros.blackbox.Context
+
+object Macros {
+  def hello: Unit = macro helloImpl
+
+  def helloImpl(c: Context): c.Expr[Unit] = {
+    import c.universe._
+    c.Expr(q"""println("Hello, World!")""")
+  }
+}</code></pre>
+<p>Dans cet exemple, la macro <code>hello</code> génère du code qui imprime "Hello, World!" à la compilation.</p>
+
+<h2>Réflexion et introspection</h2>
+<p>La réflexion en Scala permet d'inspecter et de manipuler les types et les valeurs à l'exécution. Elle offre une puissante fonctionnalité de méta-programmation, permettant de créer des programmes qui peuvent s'adapter dynamiquement à différentes situations.</p>
+<p>La réflexion peut être utilisée pour obtenir des informations sur les classes, les méthodes, les champs et les annotations, ainsi que pour créer de nouvelles instances de classes, appeler des méthodes et accéder aux champs.</p>
+<pre><code>import scala.reflect.runtime.universe._
+
+val mirror = runtimeMirror(getClass.getClassLoader)
+val classSymbol = mirror.staticClass("com.example.MyClass")
+val classMirror = mirror.reflectClass(classSymbol)
+val constructor = classSymbol.primaryConstructor.asMethod
+val constructorMirror = classMirror.reflectConstructor(constructor)
+val instance = constructorMirror() // création d'une nouvelle instance de MyClass</code></pre>
+<p>Dans cet exemple, la réflexion est utilisée pour obtenir le symbole de classe de <code>com.example.MyClass</code>, puis pour créer une nouvelle instance de cette classe en appelant son constructeur principal.</p>
+
+<h2>Interopérabilité avec Java</h2>
+<p>Scala est compatible avec Java, ce qui signifie que vous pouvez utiliser des bibliothèques Java existantes dans vos programmes Scala et vice versa. Scala offre une syntaxe concise et expressive pour interagir avec du code Java, ce qui facilite l'interopérabilité entre les deux langages.</p>
+<p>Pour utiliser une classe Java dans Scala, il suffit d'importer la classe et de l'utiliser comme n'importe quelle autre classe Scala :</p>
+<pre><code>import com.example.MyJavaClass
+
+val javaObject = new MyJavaClass()
+javaObject.doSomething()</code></pre>
+<p>De même, pour utiliser une classe Scala dans Java, il suffit de l'importer et de l'utiliser comme n'importe quelle autre classe Java :</p>
+<pre><code>import com.example.MyScalaClass;
+
+MyScalaClass scalaObject = new MyScalaClass();
+scalaObject.doSomething();</code></pre>
+<p>Scala offre également des fonctionnalités avancées d'interopérabilité avec Java, telles que la conversion automatique des types, la prise en charge des annotations Java et la possibilité d'étendre des classes Java dans Scala.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

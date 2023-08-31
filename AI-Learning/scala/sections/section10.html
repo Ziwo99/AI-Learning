@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Scala Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10. Projets pratiques en Scala</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/scala/scala.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons créer une application de gestion de tâches en utilisant Scala. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+
+<p>Voici un exemple de code pour créer une classe Task :</p>
+<pre><code>class Task(val id: Int, val description: String, var isCompleted: Boolean) {
+  def complete(): Unit = {
+    isCompleted = true
+  }
+}
+
+val task1 = new Task(1, "Faire les courses", false)
+val task2 = new Task(2, "Appeler le médecin", false)
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe Task avec trois propriétés : id, description et isCompleted. La méthode complete() permet de marquer une tâche comme terminée en modifiant la valeur de isCompleted à true. Nous avons ensuite créé deux instances de la classe Task.</p>
+
+<p>En utilisant cette classe Task, nous pouvons créer une liste de tâches :</p>
+<pre><code>val taskList = List(task1, task2)
+</code></pre>
+
+<p>Nous pouvons ensuite afficher la liste des tâches non terminées :</p>
+<pre><code>val incompleteTasks = taskList.filter(!_.isCompleted)
+incompleteTasks.foreach(task => println(task.description))
+</code></pre>
+
+<p>Ce code utilise la méthode filter() pour filtrer les tâches non terminées, puis la méthode foreach() pour afficher la description de chaque tâche.</p>
+
+<h2>Développement d'un système de recommandation</h2>
+<p>Dans cette sous-section, nous allons développer un système de recommandation en utilisant Scala. Ce système permettra de recommander des produits aux utilisateurs en fonction de leurs préférences.</p>
+
+<p>Voici un exemple de code pour créer une classe User :</p>
+<pre><code>class User(val id: Int, val name: String) {
+  var preferences: Map[String, Int] = Map()
+
+  def addPreference(item: String, rating: Int): Unit = {
+    preferences += (item -> rating)
+  }
+}
+
+val user1 = new User(1, "Alice")
+val user2 = new User(2, "Bob")
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe User avec deux propriétés : id et name. La propriété preferences est une carte qui stocke les préférences de l'utilisateur pour différents articles, avec les notes correspondantes. La méthode addPreference() permet d'ajouter une préférence à la carte.</p>
+
+<p>En utilisant cette classe User, nous pouvons ajouter des préférences pour chaque utilisateur :</p>
+<pre><code>user1.addPreference("Livre", 5)
+user1.addPreference("Film", 4)
+user2.addPreference("Livre", 3)
+user2.addPreference("Film", 5)
+</code></pre>
+
+<p>Nous pouvons ensuite recommander des articles à un utilisateur en fonction de ses préférences :</p>
+<pre><code>def recommend(user: User): List[String] = {
+  val maxRating = user.preferences.values.max
+  val topItems = user.preferences.filter(_._2 == maxRating).keys.toList
+  topItems
+}
+
+val recommendedItems = recommend(user1)
+recommendedItems.foreach(item => println(item))
+</code></pre>
+
+<p>Ce code utilise la méthode recommend() pour recommander les articles ayant la note maximale pour un utilisateur donné. Les articles recommandés sont ensuite affichés à l'aide de la méthode foreach().</p>
+
+<h2>Mise en place d'un service web avec Play Framework</h2>
+<p>Dans cette sous-section, nous allons mettre en place un service web en utilisant le framework Play. Ce service web permettra aux utilisateurs d'interagir avec notre application de gestion de tâches via des requêtes HTTP.</p>
+
+<p>Voici un exemple de code pour créer une route dans Play :</p>
+<pre><code>GET     /tasks                  controllers.TaskController.getTasks
+POST    /tasks                  controllers.TaskController.createTask
+PUT     /tasks/:id              controllers.TaskController.updateTask(id: Int)
+DELETE  /tasks/:id              controllers.TaskController.deleteTask(id: Int)
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini quatre routes pour notre application de gestion de tâches. La route GET /tasks appelle la méthode getTasks() du contrôleur TaskController, la route POST /tasks appelle la méthode createTask(), la route PUT /tasks/:id appelle la méthode updateTask() avec l'ID de la tâche en tant que paramètre, et la route DELETE /tasks/:id appelle la méthode deleteTask() avec l'ID de la tâche en tant que paramètre.</p>
+
+<p>Nous pouvons ensuite implémenter ces méthodes dans le contrôleur TaskController :</p>
+<pre><code>class TaskController extends Controller {
+  def getTasks = Action {
+    val tasks = // récupérer les tâches depuis la base de données
+    Ok(Json.toJson(tasks))
+  }
+
+  def createTask = Action { request =>
+    val taskJson = request.body.asJson.get
+    val task = // convertir le JSON en objet Task
+    // enregistrer la tâche dans la base de données
+    Created(Json.toJson(task))
+  }
+
+  def updateTask(id: Int) = Action { request =>
+    val taskJson = request.body.asJson.get
+    val task = // convertir le JSON en objet Task
+    // mettre à jour la tâche dans la base de données
+    Ok(Json.toJson(task))
+  }
+
+  def deleteTask(id: Int) = Action {
+    // supprimer la tâche de la base de données
+    NoContent
+  }
+}
+</code></pre>
+
+<p>Ce code utilise les méthodes du contrôleur TaskController pour gérer les requêtes HTTP. La méthode getTasks() récupère les tâches depuis la base de données et les renvoie au format JSON. La méthode createTask() convertit le JSON de la requête en objet Task, enregistre la tâche dans la base de données et renvoie la tâche créée au format JSON. Les méthodes updateTask() et deleteTask() fonctionnent de manière similaire.</p>
+
+<p>Avec ces routes et méthodes implémentées, notre service web est prêt à être utilisé pour interagir avec notre application de gestion de tâches.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/scala/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/scala/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
