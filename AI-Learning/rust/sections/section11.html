@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Bonnes pratiques et recommandations en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les conventions de codage</h2>
+<p>Les conventions de codage en Rust sont essentielles pour maintenir un code lisible, cohérent et facilement compréhensible par les autres développeurs. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li>Utilisez des noms de variables, de fonctions et de modules significatifs et descriptifs.</li>
+  <li>Utilisez des indentations de quatre espaces pour améliorer la lisibilité du code.</li>
+  <li>Évitez d'utiliser des caractères spéciaux dans les noms de variables, sauf si c'est nécessaire.</li>
+  <li>Utilisez des commentaires pour expliquer le code complexe ou pour fournir des informations supplémentaires.</li>
+  <li>Utilisez des structures de données appropriées pour organiser et représenter les informations.</li>
+</ul>
+
+<p>Voici un exemple de code respectant les conventions de codage en Rust :</p>
+
+<pre><code>fn calculate_average(numbers: &amp;[i32]) -&gt; f64 {
+    let sum: i32 = numbers.iter().sum();
+    let count = numbers.len() as f64;
+    sum as f64 / count
+}</code></pre>
+
+<h2>La documentation et les commentaires</h2>
+<p>La documentation et les commentaires sont importants pour rendre votre code compréhensible et faciliter la collaboration avec d'autres développeurs. Voici quelques bonnes pratiques :</p>
+
+<ul>
+  <li>Utilisez des commentaires pour expliquer le but et le fonctionnement des fonctions, des structures de données et des parties complexes du code.</li>
+  <li>Utilisez des commentaires de documentation pour générer une documentation automatique à l'aide de la commande <code>rustdoc</code>.</li>
+  <li>Écrivez des commentaires clairs et concis, en évitant les commentaires redondants ou inutiles.</li>
+  <li>Utilisez des conventions de documentation telles que les commentaires de blocs pour décrire les paramètres, les valeurs de retour et les erreurs potentielles.</li>
+</ul>
+
+<p>Voici un exemple de commentaires de documentation en Rust :</p>
+
+<pre><code>/// Cette fonction calcule la moyenne des nombres donnés.
+///
+/// # Arguments
+///
+/// * `numbers` - Un tableau de nombres entiers.
+///
+/// # Exemples
+///
+/// ```
+/// let numbers = [1, 2, 3, 4, 5];
+/// let average = calculate_average(&amp;numbers);
+/// assert_eq!(average, 3.0);
+/// ```
+fn calculate_average(numbers: &amp;[i32]) -&gt; f64 {
+    let sum: i32 = numbers.iter().sum();
+    let count = numbers.len() as f64;
+    sum as f64 / count
+}</code></pre>
+
+<h2>Les tests et la qualité du code</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité du code en Rust. Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li>Écrivez des tests unitaires pour chaque fonction ou méthode afin de vérifier son comportement attendu.</li>
+  <li>Utilisez l'assertion <code>assert_eq!</code> pour vérifier l'égalité entre la valeur attendue et la valeur réelle.</li>
+  <li>Utilisez des tests d'intégration pour vérifier le bon fonctionnement de l'ensemble du système.</li>
+  <li>Exécutez régulièrement les tests pour détecter les éventuels problèmes.</li>
+</ul>
+
+<p>Voici un exemple de tests unitaires en Rust :</p>
+
+<pre><code>fn calculate_average(numbers: &amp;[i32]) -&gt; f64 {
+    let sum: i32 = numbers.iter().sum();
+    let count = numbers.len() as f64;
+    sum as f64 / count
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_calculate_average() {
+        let numbers = [1, 2, 3, 4, 5];
+        let average = calculate_average(&amp;numbers);
+        assert_eq!(average, 3.0);
+    }
+}</code></pre>
+
+<h2>Les bonnes pratiques de gestion de projet</h2>
+<p>Pour maintenir un projet Rust organisé et facilement maintenable, voici quelques bonnes pratiques :</p>
+
+<ul>
+  <li>Utilisez un système de contrôle de version tel que Git pour suivre les modifications du code source.</li>
+  <li>Utilisez des outils de gestion de dépendances tels que Cargo pour gérer les bibliothèques tierces.</li>
+  <li>Divisez votre code en modules et en fichiers pour améliorer la lisibilité et la maintenabilité.</li>
+  <li>Utilisez des conventions de nommage cohérentes pour les fichiers, les modules et les fonctions.</li>
+  <li>Documentez votre projet pour faciliter la compréhension et la collaboration avec d'autres développeurs.</li>
+</ul>
+
+<p>Voici un exemple de structure de projet en Rust :</p>
+
+<pre><code>my_project/
+├── src/
+│   ├── main.rs
+│   ├── lib.rs
+│   └── utils.rs
+├── tests/
+│   └── utils.rs
+└── Cargo.toml</code></pre>
+
+<p>Ces bonnes pratiques vous aideront à maintenir un code de qualité, facilement compréhensible et évolutif.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

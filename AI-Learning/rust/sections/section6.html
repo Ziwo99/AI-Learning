@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Programmation concurrente en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les threads et les processus</h2>
+<p>La programmation concurrente permet d'exécuter plusieurs tâches en parallèle, améliorant ainsi les performances de l'application. En Rust, cela peut être réalisé en utilisant des threads et des processus.</p>
+
+<p>Un thread est une séquence d'instructions qui peut s'exécuter indépendamment des autres threads. Les threads partagent le même espace mémoire, ce qui permet une communication facile entre eux. Pour créer un thread en Rust, vous pouvez utiliser la fonction <code>thread::spawn</code>. Voici un exemple :</p>
+
+<pre><code>use std::thread;
+
+fn main() {
+    let handle = thread::spawn(|| {
+        // Code exécuté dans le thread
+        println!("Hello from a thread!");
+    });
+
+    // Attendre que le thread se termine
+    handle.join().unwrap();
+}
+</code></pre>
+
+<p>Un processus, quant à lui, est une instance d'un programme en cours d'exécution. Chaque processus a son propre espace mémoire, ce qui signifie qu'ils ne peuvent pas partager directement des données. Cependant, les processus peuvent communiquer en utilisant des mécanismes tels que les pipes ou les sockets.</p>
+
+<h2>Les canaux de communication</h2>
+<p>Les canaux de communication sont un moyen de transférer des données entre les threads en Rust. Ils permettent d'envoyer des valeurs d'un thread à un autre de manière sûre et synchronisée.</p>
+
+<p>En Rust, les canaux de communication sont implémentés à l'aide du type <code>std::sync::mpsc::channel</code>. Voici un exemple d'utilisation d'un canal de communication :</p>
+
+<pre><code>use std::sync::mpsc;
+use std::thread;
+
+fn main() {
+    // Créer un canal de communication
+    let (sender, receiver) = mpsc::channel();
+
+    // Créer un thread qui envoie des messages
+    thread::spawn(move || {
+        sender.send("Hello from a thread!").unwrap();
+    });
+
+    // Recevoir le message du thread
+    let message = receiver.recv().unwrap();
+    println!("{}", message);
+}
+</code></pre>
+
+<h2>Les verrous et les mutex</h2>
+<p>Les verrous et les mutex sont des mécanismes utilisés pour synchroniser l'accès aux données partagées entre les threads. Ils garantissent que seul un thread à la fois peut accéder à une ressource critique.</p>
+
+<p>En Rust, les verrous sont implémentés à l'aide du type <code>std::sync::Mutex</code>. Voici un exemple d'utilisation d'un verrou :</p>
+
+<pre><code>use std::sync::Mutex;
+use std::thread;
+
+fn main() {
+    // Créer un verrou
+    let mutex = Mutex::new(0);
+
+    // Créer plusieurs threads qui accèdent au verrou
+    for _ in 0..10 {
+        let mutex_ref = mutex.clone();
+        thread::spawn(move || {
+            let mut data = mutex_ref.lock().unwrap();
+            *data += 1;
+        });
+    }
+
+    // Attendre que tous les threads se terminent
+    thread::sleep(std::time::Duration::from_secs(1));
+
+    // Afficher la valeur finale du verrou
+    println!("Final value: {}", *mutex.lock().unwrap());
+}
+</code></pre>
+
+<h2>Les problèmes de concurrence et leurs solutions</h2>
+<p>La programmation concurrente peut entraîner des problèmes tels que les conditions de course (race conditions) et les deadlocks. Une condition de course se produit lorsque plusieurs threads accèdent simultanément à une ressource partagée et modifient son état de manière imprévisible. Un deadlock se produit lorsque deux ou plusieurs threads attendent indéfiniment les uns les autres pour libérer une ressource.</p>
+
+<p>En Rust, ces problèmes peuvent être évités en utilisant des mécanismes de synchronisation tels que les verrous, les mutex et les canaux de communication. Il est également important de concevoir soigneusement l'architecture de l'application pour minimiser les conflits d'accès aux données partagées.</p>
+
+<p>Il existe également des outils tels que les analyseurs de mémoire et les analyseurs de threads qui peuvent aider à détecter et à résoudre les problèmes de concurrence.</p>
+
+<p>En résumé, la programmation concurrente en Rust permet d'exécuter plusieurs tâches en parallèle, améliorant ainsi les performances de l'application. Les threads et les processus sont utilisés pour réaliser la concurrence, tandis que les canaux de communication, les verrous et les mutex sont utilisés pour synchroniser l'accès aux données partagées. Il est important de prendre en compte les problèmes de concurrence et de les résoudre de manière appropriée pour garantir le bon fonctionnement de l'application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

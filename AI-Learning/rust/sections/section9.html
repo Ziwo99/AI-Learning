@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Développement avancé en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Les macros</h2>
+  <p>Les macros en Rust sont des outils puissants qui permettent de générer du code à la compilation. Elles sont similaires aux macros dans d'autres langages de programmation, mais avec une syntaxe spécifique à Rust. Les macros sont utilisées pour automatiser des tâches répétitives, générer du code boilerplate et introduire des abstractions plus avancées.</p>
+  <p>Une macro en Rust est définie à l'aide du mot-clé <code>macro_rules!</code> suivi du nom de la macro et de son corps. Le corps de la macro est composé de règles de correspondance qui définissent comment la macro doit être transformée en code. Les macros peuvent prendre des paramètres et générer du code en fonction de ces paramètres.</p>
+  <p>Voici un exemple simple de macro en Rust :</p>
+  <pre><code>macro_rules! say_hello {
+    () => {
+        println!("Hello, world!");
+    };
+}
+
+fn main() {
+    say_hello!();
+}</code></pre>
+  <p>Cette macro <code>say_hello</code> génère simplement le message "Hello, world!" lorsqu'elle est appelée. Dans cet exemple, la macro ne prend pas de paramètres, mais elle pourrait en prendre si nécessaire.</p>
+
+  <h2>La réflexion</h2>
+  <p>La réflexion en Rust fait référence à la capacité d'un programme à examiner et à manipuler sa propre structure et ses données à l'exécution. Contrairement à certains autres langages de programmation, Rust n'a pas de fonctionnalité de réflexion intégrée. Cependant, il existe des bibliothèques tierces qui fournissent des fonctionnalités de réflexion en Rust.</p>
+  <p>Une bibliothèque populaire pour la réflexion en Rust est <code>proc-macro2</code>. Elle permet de définir des macros procédurales, qui sont des macros qui génèrent du code à la compilation. Les macros procédurales peuvent être utilisées pour effectuer des opérations de réflexion, telles que l'inspection des attributs d'une structure ou la génération de code à partir de métadonnées.</p>
+  <p>Voici un exemple simple d'utilisation de la bibliothèque <code>proc-macro2</code> pour la réflexion en Rust :</p>
+  <pre><code>use proc_macro2::TokenStream;
+use quote::quote;
+
+#[derive(MyMacro)]
+struct MyStruct {
+    field1: u32,
+    field2: String,
+}
+
+fn main() {
+    let tokens: TokenStream = quote! {
+        // Code généré à partir de la réflexion
+    };
+    println!("{}", tokens);
+}</code></pre>
+  <p>Dans cet exemple, la structure <code>MyStruct</code> est annotée avec l'attribut <code>MyMacro</code>. La macro procédurale <code>MyMacro</code> utilise la bibliothèque <code>quote</code> pour générer du code à partir de la réflexion sur la structure. Le code généré est ensuite stocké dans un <code>TokenStream</code> et affiché à l'écran.</p>
+
+  <h2>Les traits avancés</h2>
+  <p>Les traits en Rust sont utilisés pour définir des comportements communs à un ensemble de types. Ils permettent de définir des interfaces génériques et d'implémenter des fonctionnalités spécifiques pour différents types. Les traits avancés en Rust vont au-delà des fonctionnalités de base des traits et introduisent des concepts plus avancés tels que les traits associés, les traits génériques et les traits avec des contraintes.</p>
+  <p>Les traits associés en Rust sont des traits qui définissent des types ou des constantes associés à un trait. Ils permettent de définir des fonctionnalités qui dépendent d'un type spécifique, sans avoir besoin d'une instance de ce type. Les traits associés sont définis à l'aide du mot-clé <code>associatedtype</code>.</p>
+  <p>Les traits génériques en Rust sont des traits qui peuvent être implémentés pour différents types génériques. Ils permettent de définir des fonctionnalités qui s'appliquent à un ensemble de types similaires. Les traits génériques sont définis à l'aide du mot-clé <code>trait&lt;T&gt;</code>.</p>
+  <p>Les traits avec des contraintes en Rust sont des traits qui imposent des contraintes sur les types qui peuvent les implémenter. Ils permettent de définir des fonctionnalités qui nécessitent certaines propriétés ou comportements spécifiques. Les traits avec des contraintes sont définis à l'aide du mot-clé <code>trait&lt;T: Constraint&gt;</code>.</p>
+  <p>Voici un exemple d'utilisation de traits avancés en Rust :</p>
+  <pre><code>trait Printable {
+    type Output;
+
+    fn print(&self) -> Self::Output;
+}
+
+struct MyStruct;
+
+impl Printable for MyStruct {
+    type Output = String;
+
+    fn print(&self) -> Self::Output {
+        String::from("Hello, world!")
+    }
+}
+
+fn main() {
+    let my_struct = MyStruct;
+    let output = my_struct.print();
+    println!("{}", output);
+}</code></pre>
+  <p>Dans cet exemple, le trait <code>Printable</code> définit une fonction <code>print</code> qui renvoie une valeur de type <code>Output</code>. La structure <code>MyStruct</code> implémente ce trait en définissant le type de sortie comme <code>String</code> et en renvoyant le message "Hello, world!" dans la fonction <code>print</code>. Lorsque la fonction <code>print</code> est appelée sur une instance de <code>MyStruct</code>, elle renvoie la chaîne de caractères "Hello, world!".</p>
+
+  <h2>Les performances et l'optimisation</h2>
+  <p>Les performances et l'optimisation sont des aspects importants du développement en Rust. Rust est conçu pour offrir des performances élevées sans sacrifier la sécurité ou la facilité d'utilisation. Pour optimiser les performances d'un programme en Rust, il est important de comprendre certains concepts clés tels que la gestion de la mémoire, les opérations de bas niveau et les bonnes pratiques de programmation.</p>
+  <p>La gestion de la mémoire en Rust est basée sur le concept de propriété. Rust utilise un système de propriété strict pour garantir l'absence de fuites de mémoire et de conditions de concurrence. Il est important de comprendre comment fonctionne la gestion de la mémoire en Rust et d'utiliser les outils appropriés tels que les références, les emprunts et les pointeurs intelligents pour optimiser l'utilisation de la mémoire.</p>
+  <p>Les opérations de bas niveau en Rust permettent d'accéder directement à la mémoire et d'effectuer des opérations plus efficaces. Rust offre des fonctionnalités telles que les pointeurs bruts, les opérations bit à bit et les fonctions intrinsèques pour effectuer des opérations de bas niveau. Il est important de comprendre comment et quand utiliser ces fonctionnalités pour optimiser les performances d'un programme en Rust.</p>
+  <p>Enfin, les bonnes pratiques de programmation en Rust peuvent également contribuer à améliorer les performances d'un programme. Il est recommandé d'utiliser des types de données appropriés, d'éviter les allocations excessives, d'utiliser des itérations efficaces et d'éviter les opérations coûteuses. Il est également important de mesurer les performances d'un programme à l'aide d'outils tels que le profiler intégré à Rust (<code>rustc --profile</code>) et d'effectuer des optimisations ciblées en fonction des résultats obtenus.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

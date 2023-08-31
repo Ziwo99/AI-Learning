@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Syntaxe de base de Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Variables et types de données</h2>
+  <p>En Rust, les variables sont déclarées en utilisant le mot-clé "let". La syntaxe générale pour déclarer une variable est la suivante :</p>
+  <pre><code>let nom_de_variable = valeur;</code></pre>
+  <p>Par exemple, pour déclarer une variable entière nommée "x" avec une valeur de 5, on peut écrire :</p>
+  <pre><code>let x = 5;</code></pre>
+  <p>Rust est un langage à typage statique, ce qui signifie que le type de chaque variable doit être spécifié lors de sa déclaration. Rust offre plusieurs types de données primitifs, tels que :</p>
+  <ul>
+    <li>Entiers : i8, i16, i32, i64, u8, u16, u32, u64</li>
+    <li>Flottants : f32, f64</li>
+    <li>Booléens : bool</li>
+    <li>Caractères : char</li>
+  </ul>
+  <p>Il est également possible de déclarer des variables avec des types personnalisés en utilisant des structures ou des énumérations.</p>
+
+  <h2>Opérations et expressions</h2>
+  <p>En Rust, les opérations arithmétiques de base sont les suivantes :</p>
+  <ul>
+    <li>Addition : "+". Par exemple, "let sum = 2 + 3;"</li>
+    <li>Soustraction : "-". Par exemple, "let difference = 5 - 2;"</li>
+    <li>Multiplication : "*". Par exemple, "let product = 4 * 3;"</li>
+    <li>Division : "/". Par exemple, "let quotient = 10 / 2;"</li>
+    <li>Modulo : "%". Par exemple, "let remainder = 7 % 3;"</li>
+  </ul>
+  <p>Les expressions en Rust sont évaluées et renvoient une valeur. Par exemple :</p>
+  <pre><code>let x = 5;
+  let y = 10;
+  let sum = x + y; // sum vaut 15</code></pre>
+
+  <h2>Structures de contrôle (boucles, conditions)</h2>
+  <p>En Rust, les structures de contrôle permettent de prendre des décisions et de répéter des instructions. Voici quelques exemples :</p>
+  <h3>Conditions :</h3>
+  <pre><code>let x = 5;
+
+  if x > 0 {
+      println!("x est positif");
+  } else if x < 0 {
+      println!("x est négatif");
+  } else {
+      println!("x est nul");
+  }</code></pre>
+  <h3>Boucles :</h3>
+  <p>La boucle "while" permet de répéter des instructions tant qu'une condition est vraie :</p>
+  <pre><code>let mut i = 0;
+
+  while i < 5 {
+      println!("Valeur de i : {}", i);
+      i += 1;
+  }</code></pre>
+  <p>La boucle "for" permet de parcourir une collection d'éléments :</p>
+  <pre><code>let numbers = [1, 2, 3, 4, 5];
+
+  for number in numbers.iter() {
+      println!("Valeur : {}", number);
+  }</code></pre>
+
+  <h2>Fonctions et modules</h2>
+  <p>En Rust, les fonctions sont déclarées en utilisant le mot-clé "fn". Voici un exemple de déclaration de fonction :</p>
+  <pre><code>fn add(x: i32, y: i32) -> i32 {
+      return x + y;
+  }</code></pre>
+  <p>Les modules permettent d'organiser le code en regroupant des fonctions, des structures et d'autres éléments. Voici un exemple de déclaration de module :</p>
+  <pre><code>mod math {
+      pub fn add(x: i32, y: i32) -> i32 {
+          return x + y;
+      }
+  }</code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

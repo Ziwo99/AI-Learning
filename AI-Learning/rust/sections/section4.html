@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Gestion de la mémoire en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Propriétés de la mémoire en Rust</h2>
+<p>En Rust, la gestion de la mémoire est l'un des aspects les plus importants du langage. Contrairement à d'autres langages de programmation, Rust garantit l'absence de certaines erreurs de mémoire courantes telles que les fuites de mémoire et les accès invalides. Cela est possible grâce à un système de propriétés de la mémoire unique à Rust.</p>
+<p>Les propriétés de la mémoire en Rust sont les suivantes :</p>
+<ul>
+  <li><strong>La propriété de propriété</strong> : En Rust, chaque valeur a un propriétaire unique. Lorsqu'une valeur est créée, elle est associée à son propriétaire. Lorsque le propriétaire sort de la portée, la valeur est automatiquement libérée.</li>
+  <li><strong>La propriété de non-nullité</strong> : En Rust, les pointeurs ne peuvent pas être nuls par défaut. Cela signifie qu'il est impossible d'accéder à une zone mémoire non initialisée.</li>
+  <li><strong>La propriété de non-aliasing mutable</strong> : En Rust, il est impossible d'avoir plusieurs références mutables vers la même valeur. Cela garantit l'absence de conditions de concurrence lors de l'accès à la mémoire.</li>
+</ul>
+
+<h2>Les références et les emprunts</h2>
+<p>En Rust, les références et les emprunts sont des mécanismes utilisés pour partager la propriété d'une valeur sans la transférer. Les références sont des pointeurs qui permettent d'accéder à une valeur sans en être le propriétaire, tandis que les emprunts sont des références temporaires qui permettent d'accéder à une valeur de manière non mutable.</p>
+<p>Voici un exemple d'utilisation des références et des emprunts en Rust :</p>
+<pre><code>fn main() {
+    let mut x = 5;
+    let y = &x; // Référence à x
+    let z = &mut x; // Emprunt mutable de x
+
+    println!("x: {}", x);
+    println!("y: {}", y);
+    println!("z: {}", z);
+}</code></pre>
+<p>Dans cet exemple, nous créons une variable x et lui attribuons la valeur 5. Ensuite, nous créons une référence y qui pointe vers x et un emprunt mutable z qui permet de modifier la valeur de x. Enfin, nous affichons les valeurs de x, y et z.</p>
+
+<h2>Les pointeurs intelligents</h2>
+<p>En Rust, les pointeurs intelligents sont des types spéciaux qui permettent de gérer la durée de vie d'une valeur de manière plus flexible. Ils sont utilisés pour partager la propriété d'une valeur tout en permettant des opérations spécifiques telles que la libération automatique de la mémoire ou la gestion des références circulaires.</p>
+<p>Voici quelques exemples de pointeurs intelligents couramment utilisés en Rust :</p>
+<ul>
+  <li><strong>Box<T></strong> : Un pointeur intelligent qui alloue de la mémoire sur le tas et permet de transférer la propriété d'une valeur.</li>
+  <li><strong>Rc<T></strong> : Un pointeur intelligent qui permet de partager la propriété d'une valeur entre plusieurs propriétaires.</li>
+  <li><strong>Arc<T></strong> : Un pointeur intelligent qui permet de partager la propriété d'une valeur entre plusieurs propriétaires de manière concurrente.</li>
+</ul>
+
+<h2>Les cycles de référence</h2>
+<p>En Rust, les cycles de référence se produisent lorsqu'il y a une référence circulaire entre plusieurs valeurs. Cela peut entraîner des fuites de mémoire car les valeurs ne peuvent pas être libérées tant que la référence circulaire existe.</p>
+<p>Pour résoudre ce problème, Rust utilise le ramasse-miettes (garbage collector) pour détecter les cycles de référence et libérer la mémoire associée. Cependant, cela introduit un certain coût en termes de performance.</p>
+<p>Voici un exemple de cycle de référence en Rust :</p>
+<pre><code>use std::rc::Rc;
+
+struct Node {
+    value: i32,
+    next: Option<Rc<Node>>,
+}
+
+fn main() {
+    let node1 = Rc::new(Node {
+        value: 1,
+        next: None,
+    });
+
+    let node2 = Rc::new(Node {
+        value: 2,
+        next: Some(Rc::clone(&node1)),
+    });
+
+    // Crée un cycle de référence
+    node1.next = Some(Rc::clone(&node2));
+}</code></pre>
+<p>Dans cet exemple, nous créons deux nœuds (node1 et node2) qui contiennent une valeur et une référence optionnelle vers un autre nœud. Ensuite, nous créons un cycle de référence en faisant référence à node2 à partir de node1 et vice versa.</p>
+<p>Pour éviter les cycles de référence, il est recommandé d'utiliser des pointeurs intelligents tels que Rc<T> ou Arc<T> qui permettent de gérer la durée de vie des valeurs de manière plus flexible.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

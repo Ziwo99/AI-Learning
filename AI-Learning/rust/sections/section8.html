@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Utilisation des bibliothèques et des frameworks en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les bibliothèques standard de Rust</h2>
+<p>Les bibliothèques standard de Rust sont un ensemble de modules et de types prédéfinis qui font partie intégrante de l'installation de Rust. Elles fournissent des fonctionnalités de base pour la manipulation des chaînes de caractères, les opérations d'entrée/sortie, la gestion des fichiers, les collections de données, les opérations mathématiques, etc.</p>
+<p>Voici quelques exemples de bibliothèques standard couramment utilisées en Rust :</p>
+<pre><code>use std::fs::File;
+use std::io::prelude::*;
+use std::collections::HashMap;</code></pre>
+<p>Dans cet exemple, nous importons les modules <code>File</code> et <code>prelude</code> du module <code>io</code> de la bibliothèque standard, ainsi que le module <code>HashMap</code> du module <code>collections</code>.</p>
+
+<h2>Les bibliothèques tierces populaires</h2>
+<p>En plus des bibliothèques standard, il existe de nombreuses bibliothèques tierces populaires disponibles pour Rust. Ces bibliothèques offrent des fonctionnalités supplémentaires et des outils pour faciliter le développement en Rust.</p>
+<p>Voici quelques exemples de bibliothèques tierces populaires en Rust :</p>
+<pre><code>extern crate reqwest;
+extern crate serde;
+extern crate actix_web;</code></pre>
+<p>Dans cet exemple, nous importons les bibliothèques tierces <code>reqwest</code>, <code>serde</code> et <code>actix_web</code>. Ces bibliothèques sont utilisées respectivement pour effectuer des requêtes HTTP, la sérialisation/désérialisation de données et le développement d'applications web.</p>
+
+<h2>Les frameworks web en Rust</h2>
+<p>Les frameworks web en Rust sont des bibliothèques qui fournissent une infrastructure pour développer des applications web. Ils facilitent la gestion des routes, des requêtes HTTP, des modèles de données, etc.</p>
+<p>Voici quelques exemples de frameworks web populaires en Rust :</p>
+<pre><code>use actix_web::{web, App, HttpResponse, HttpServer};
+
+async fn index() -&gt; HttpResponse {
+    HttpResponse::Ok().body("Hello, world!")
+}
+
+#[actix_web::main]
+async fn main() -&gt; std::io::Result&lt;()&gt; {
+    HttpServer::new(|| {
+        App::new()
+            .route("/", web::get().to(index))
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
+}</code></pre>
+<p>Dans cet exemple, nous utilisons le framework web <code>actix_web</code> pour créer une application web simple qui renvoie "Hello, world!" en réponse à une requête GET sur la route principale ("/").</p>
+
+<p>Il est important de noter que les bibliothèques et les frameworks en Rust évoluent rapidement, il est donc recommandé de consulter la documentation officielle et les ressources communautaires pour obtenir les dernières informations sur les bibliothèques et les frameworks disponibles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

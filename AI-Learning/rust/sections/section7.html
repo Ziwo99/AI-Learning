@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Gestion des erreurs en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les erreurs de syntaxe et de compilation</h2>
+<p>En Rust, les erreurs de syntaxe se produisent lorsque le code ne respecte pas les règles de syntaxe du langage. Ces erreurs sont généralement signalées par le compilateur lors de la phase de compilation. Par exemple, si vous oubliez un point-virgule à la fin d'une instruction, le compilateur Rust générera une erreur de syntaxe.</p>
+
+<p>Les erreurs de compilation se produisent lorsque le code ne peut pas être compilé en raison de problèmes tels que des références manquantes, des types incompatibles ou des erreurs de portée. Le compilateur Rust fournit des messages d'erreur détaillés qui vous aident à identifier et à résoudre ces problèmes.</p>
+
+<p>Voici un exemple de code avec une erreur de syntaxe :</p>
+
+<pre><code>fn main() {
+    let x = 5
+    println!("The value of x is: {}", x);
+}</code></pre>
+
+<p>Dans cet exemple, nous avons oublié de mettre un point-virgule à la fin de la déclaration de la variable x. Le compilateur Rust générera une erreur de syntaxe indiquant qu'un point-virgule est attendu à la fin de l'instruction.</p>
+
+<h2>Les erreurs d'exécution</h2>
+<p>En Rust, les erreurs d'exécution se produisent lorsque le code rencontre une condition inattendue ou une situation qui ne peut pas être gérée normalement. Ces erreurs peuvent être causées par des erreurs de logique, des erreurs de manipulation de données ou des erreurs provenant de bibliothèques externes.</p>
+
+<p>Les erreurs d'exécution en Rust sont généralement gérées à l'aide du mécanisme de gestion des erreurs appelé "Result". Le type "Result" est utilisé pour représenter une valeur qui peut être soit une valeur valide, soit une erreur. Vous pouvez utiliser des instructions "match" ou des méthodes telles que "unwrap" ou "expect" pour gérer les erreurs d'exécution.</p>
+
+<p>Voici un exemple de code qui utilise le type "Result" pour gérer une erreur d'exécution :</p>
+
+<pre><code>use std::fs::File;
+
+fn main() {
+    let file = File::open("example.txt");
+
+    let contents = match file {
+        Ok(mut file) => {
+            let mut contents = String::new();
+            file.read_to_string(&mut contents).expect("Failed to read the file");
+            contents
+        },
+        Err(error) => {
+            panic!("Failed to open the file: {:?}", error);
+        },
+    };
+
+    println!("Contents: {}", contents);
+}</code></pre>
+
+<p>Dans cet exemple, nous essayons d'ouvrir un fichier appelé "example.txt". Si l'ouverture du fichier réussit, nous lisons son contenu dans une chaîne de caractères. Si une erreur se produit lors de l'ouverture du fichier ou de la lecture de son contenu, nous affichons un message d'erreur approprié.</p>
+
+<h2>Les tests unitaires et l'assertion</h2>
+<p>En Rust, les tests unitaires sont utilisés pour vérifier le bon fonctionnement des différentes parties d'un programme. Les tests unitaires permettent de s'assurer que chaque fonction ou module fonctionne correctement de manière isolée.</p>
+
+<p>Les tests unitaires en Rust sont écrits à l'aide d'annotations spéciales et de macros. La macro "assert_eq!" est couramment utilisée pour vérifier si deux valeurs sont égales. Si les valeurs ne sont pas égales, le test échoue et une erreur est signalée.</p>
+
+<p>Voici un exemple de code qui utilise des tests unitaires en Rust :</p>
+
+<pre><code>fn add(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_add() {
+        assert_eq!(add(2, 2), 4);
+        assert_eq!(add(5, 5), 10);
+        assert_eq!(add(10, -5), 5);
+    }
+}</code></pre>
+
+<p>Dans cet exemple, nous avons une fonction "add" qui ajoute deux nombres entiers. Nous avons également un module de tests qui utilise la macro "assert_eq!" pour vérifier si les résultats de la fonction "add" sont corrects.</p>
+
+<p>Vous pouvez exécuter les tests unitaires en utilisant la commande "cargo test" dans le répertoire de votre projet Rust. Le compilateur Rust exécutera tous les tests unitaires et affichera les résultats.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

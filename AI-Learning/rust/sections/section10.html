@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Projets pratiques en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'une application de ligne de commande</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application de ligne de commande en utilisant Rust. Une application de ligne de commande est un programme qui s'exécute dans le terminal et permet à l'utilisateur d'interagir avec le programme en entrant des commandes.</p>
+
+<p>Pour commencer, nous allons créer un nouveau projet Rust en utilisant la commande suivante :</p>
+<pre><code>cargo new ligne-de-commande
+cd ligne-de-commande
+</code></pre>
+
+<p>Ensuite, nous allons créer un fichier source principal pour notre application en utilisant la commande suivante :</p>
+<pre><code>touch src/main.rs
+</code></pre>
+
+<p>Ouvrez le fichier src/main.rs dans votre éditeur de code préféré et ajoutez le code suivant :</p>
+<pre><code>use std::env;
+
+fn main() {
+    let args: Vec&lt;String&gt; = env::args().collect();
+
+    println!("Les arguments passés sont : {:?}", args);
+}
+</code></pre>
+
+<p>Le code ci-dessus utilise le module std::env pour récupérer les arguments passés à l'application de ligne de commande. La fonction env::args() renvoie un itérable contenant les arguments, que nous collectons dans un vecteur de chaînes de caractères.</p>
+
+<p>Pour exécuter notre application, utilisez la commande suivante :</p>
+<pre><code>cargo run -- arg1 arg2 arg3
+</code></pre>
+
+<p>Remplacez arg1, arg2 et arg3 par les arguments que vous souhaitez passer à l'application. Vous devriez voir les arguments affichés dans le terminal.</p>
+
+<h2>Développement d'une application web</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer une application web en utilisant Rust. Rust offre plusieurs frameworks web populaires tels que Rocket, Actix et Warp, qui facilitent le développement d'applications web rapides et sécurisées.</p>
+
+<p>Pour commencer, nous allons créer un nouveau projet Rust en utilisant la commande suivante :</p>
+<pre><code>cargo new application-web
+cd application-web
+</code></pre>
+
+<p>Ensuite, nous allons ajouter les dépendances nécessaires à notre projet en modifiant le fichier Cargo.toml comme suit :</p>
+<pre><code>[dependencies]
+rocket = "0.5.0"
+</code></pre>
+
+<p>Ensuite, nous allons créer un fichier source principal pour notre application en utilisant la commande suivante :</p>
+<pre><code>touch src/main.rs
+</code></pre>
+
+<p>Ouvrez le fichier src/main.rs dans votre éditeur de code préféré et ajoutez le code suivant :</p>
+<pre><code>#[macro_use]
+extern crate rocket;
+
+#[get("/")]
+fn index() -&gt; &'static str {
+    "Hello, world!"
+}
+
+#[launch]
+fn rocket() -&gt; _ {
+    rocket::build().mount("/", routes![index])
+}
+</code></pre>
+
+<p>Le code ci-dessus utilise le framework Rocket pour créer une application web simple. La fonction index() est une route qui renvoie la chaîne de caractères "Hello, world!" lorsque l'utilisateur accède à la racine de l'application. La fonction rocket() initialise l'application Rocket et monte la route index() à la racine de l'application.</p>
+
+<p>Pour exécuter notre application, utilisez la commande suivante :</p>
+<pre><code>cargo run
+</code></pre>
+
+<p>Ouvrez votre navigateur et accédez à l'adresse http://localhost:8000. Vous devriez voir le message "Hello, world!" affiché dans votre navigateur.</p>
+
+<h2>Création d'une bibliothèque réutilisable</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une bibliothèque réutilisable en utilisant Rust. Une bibliothèque est un ensemble de fonctionnalités qui peuvent être utilisées par d'autres programmes.</p>
+
+<p>Pour commencer, nous allons créer un nouveau projet Rust en utilisant la commande suivante :</p>
+<pre><code>cargo new bibliotheque
+cd bibliotheque
+</code></pre>
+
+<p>Ensuite, nous allons créer un fichier source principal pour notre bibliothèque en utilisant la commande suivante :</p>
+<pre><code>touch src/lib.rs
+</code></pre>
+
+<p>Ouvrez le fichier src/lib.rs dans votre éditeur de code préféré et ajoutez le code suivant :</p>
+<pre><code>pub fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}
+</code></pre>
+
+<p>Le code ci-dessus définit une fonction add() qui prend deux entiers en entrée et renvoie leur somme.</p>
+
+<p>Pour utiliser notre bibliothèque dans un autre projet, nous devons l'ajouter en tant que dépendance dans le fichier Cargo.toml du projet. Ajoutez la ligne suivante :</p>
+<pre><code>[dependencies]
+bibliotheque = { path = "../bibliotheque" }
+</code></pre>
+
+<p>Ensuite, dans le fichier source principal du projet, vous pouvez utiliser la bibliothèque en ajoutant la ligne suivante :</p>
+<pre><code>use bibliotheque::add;
+</code></pre>
+
+<p>Vous pouvez maintenant utiliser la fonction add() dans votre projet.</p>
+
+<p>Pour tester notre bibliothèque, nous allons créer un fichier source principal pour notre projet en utilisant la commande suivante :</p>
+<pre><code>touch src/main.rs
+</code></pre>
+
+<p>Ouvrez le fichier src/main.rs dans votre éditeur de code préféré et ajoutez le code suivant :</p>
+<pre><code>use bibliotheque::add;
+
+fn main() {
+    let result = add(2, 3);
+    println!("Le résultat de l'addition est : {}", result);
+}
+</code></pre>
+
+<p>Pour exécuter notre projet, utilisez la commande suivante :</p>
+<pre><code>cargo run
+</code></pre>
+
+<p>Vous devriez voir le résultat de l'addition affiché dans le terminal.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

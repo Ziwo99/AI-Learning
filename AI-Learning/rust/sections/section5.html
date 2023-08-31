@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Rust Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Programmation orientée objet en Rust</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/rust/rust.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les structures et les méthodes</h2>
+<p>En Rust, les structures sont utilisées pour définir des types de données personnalisés. Elles permettent de regrouper plusieurs valeurs et de définir des méthodes associées à ces valeurs. Une méthode est une fonction qui peut être appelée sur une instance d'une structure.</p>
+
+<p>Voici un exemple de déclaration d'une structure en Rust :</p>
+
+<pre><code>struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une structure appelée "Rectangle" avec deux champs : "width" et "height". Ensuite, nous utilisons l'implémentation ("impl") pour définir une méthode "area" qui calcule et renvoie l'aire du rectangle.</p>
+
+<p>Pour créer une instance d'une structure et appeler sa méthode, voici comment cela peut être fait :</p>
+
+<pre><code>let rect = Rectangle { width: 10, height: 20 };
+let area = rect.area();
+println!("L'aire du rectangle est : {}", area);
+</code></pre>
+
+<p>Ce code crée une instance de la structure "Rectangle" avec une largeur de 10 et une hauteur de 20. Ensuite, il appelle la méthode "area" sur cette instance et affiche le résultat.</p>
+
+<h2>L'héritage et le polymorphisme</h2>
+<p>En Rust, il n'y a pas de concept d'héritage de classe comme dans d'autres langages orientés objet. Cependant, Rust offre une fonctionnalité similaire appelée "trait" qui permet de définir des comportements communs à plusieurs types.</p>
+
+<p>Un trait est une collection de méthodes qui peuvent être implémentées par différents types. Voici un exemple de déclaration d'un trait en Rust :</p>
+
+<pre><code>trait Shape {
+    fn area(&self) -> u32;
+    fn perimeter(&self) -> u32;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous définissons un trait appelé "Shape" avec deux méthodes : "area" et "perimeter". Tous les types qui implémentent ce trait doivent fournir une implémentation de ces méthodes.</p>
+
+<p>Pour implémenter un trait pour une structure, nous utilisons l'implémentation ("impl") comme suit :</p>
+
+<pre><code>struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Shape for Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+    
+    fn perimeter(&self) -> u32 {
+        2 * (self.width + self.height)
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous implémentons le trait "Shape" pour la structure "Rectangle" en fournissant des implémentations des méthodes "area" et "perimeter".</p>
+
+<p>En utilisant le polymorphisme, nous pouvons traiter différentes instances de structures qui implémentent le même trait de manière uniforme. Voici comment cela peut être fait :</p>
+
+<pre><code>fn print_shape_info(shape: &dyn Shape) {
+    println!("L'aire du shape est : {}", shape.area());
+    println!("Le périmètre du shape est : {}", shape.perimeter());
+}
+
+let rect = Rectangle { width: 10, height: 20 };
+print_shape_info(&rect);
+</code></pre>
+
+<p>Ce code définit une fonction "print_shape_info" qui prend une référence à un objet qui implémente le trait "Shape". Ensuite, il appelle cette fonction en passant une instance de la structure "Rectangle". La fonction peut accéder aux méthodes "area" et "perimeter" de l'objet de manière polymorphe.</p>
+
+<h2>Les traits et les implémentations</h2>
+<p>En Rust, les traits sont utilisés pour définir des comportements communs à plusieurs types. Une implémentation de trait est une façon de fournir une implémentation des méthodes définies dans le trait pour un type spécifique.</p>
+
+<p>Voici un exemple de déclaration d'un trait en Rust :</p>
+
+<pre><code>trait Printable {
+    fn print(&self);
+}
+</code></pre>
+
+<p>Dans cet exemple, nous définissons un trait appelé "Printable" avec une méthode "print". Tous les types qui implémentent ce trait doivent fournir une implémentation de cette méthode.</p>
+
+<p>Pour implémenter un trait pour un type, nous utilisons l'implémentation ("impl") comme suit :</p>
+
+<pre><code>struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Printable for Rectangle {
+    fn print(&self) {
+        println!("Rectangle de largeur {} et de hauteur {}", self.width, self.height);
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous implémentons le trait "Printable" pour la structure "Rectangle" en fournissant une implémentation de la méthode "print".</p>
+
+<p>Une fois qu'un type implémente un trait, nous pouvons utiliser les méthodes du trait sur des instances de ce type. Voici comment cela peut être fait :</p>
+
+<pre><code>let rect = Rectangle { width: 10, height: 20 };
+rect.print();
+</code></pre>
+
+<p>Ce code crée une instance de la structure "Rectangle" et appelle la méthode "print" du trait "Printable" sur cette instance.</p>
+
+<h2>Conclusion</h2>
+<p>Dans cette section, nous avons exploré la programmation orientée objet en Rust. Nous avons appris à définir des structures et des méthodes, à utiliser le polymorphisme avec les traits et les implémentations, et à fournir des comportements communs à plusieurs types. La programmation orientée objet en Rust offre une approche flexible et puissante pour organiser et réutiliser du code.</p>
+
+<h2>Ressources supplémentaires pour approfondir ses connaissances en Rust</h2>
+<p>Si vous souhaitez approfondir vos connaissances en Rust et en programmation orientée objet, voici quelques ressources recommandées :</p>
+<ul>
+    <li><a href="https://doc.rust-lang.org/book/ch05-00-structs.html">La documentation officielle de Rust sur les structures</a></li>
+    <li><a href="https://doc.rust-lang.org/book/ch17-01-what-is-oo.html">La documentation officielle de Rust sur la programmation orientée objet</a></li>
+    <li><a href="https://stevedonovan.github.io/rustifications/2018/08/17/rust-for-oop.html">Rustifications - Rust for OOP</a></li>
+</ul>
+
+<h2>Perspectives sur l'avenir de Rust</h2>
+<p>Rust est un langage en constante évolution et son écosystème continue de croître. De plus en plus de développeurs adoptent Rust pour ses performances, sa sécurité et sa concurrence. L'avenir de Rust semble prometteur, avec de nouvelles fonctionnalités et des améliorations à venir. Il est donc important de rester à jour avec les dernières nouvelles et développements de Rust.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/rust/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/rust/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
