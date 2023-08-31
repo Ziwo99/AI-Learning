@@ -40,7 +40,7 @@
 					<li><a href="/index.html">Accueil</a></li>
 					<li><a href="/courses.html">Formations</a></li>
 					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
-					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
 					<li><a href="/research.html">Travail de recherche</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
@@ -53,8 +53,7 @@
 				<div class="inner">
 					<h2>Section 15 : Les projets pratiques en Python</h2>
 					<ul class="actions stacked">
-						<li><a href="/AI-Learning/python/python.html"
-								class="button">
+						<li><a href="/AI-Learning/python/python.html" class="button">
 								Revenir à la fiche du cours</a></li>
 					</ul>
 				</div>
@@ -62,24 +61,24 @@
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section14.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section14.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section16.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section16.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
-					
 
-<h2>Projet pratique 1 : Création d'un jeu en Python</h2>
-<p>Dans ce projet pratique, vous allez créer un jeu en utilisant Python. Vous apprendrez à concevoir et à implémenter les mécanismes de jeu, ainsi qu'à gérer les entrées utilisateur et à afficher les résultats.</p>
 
-<p>Voici un exemple de code pour un jeu simple de devinette de nombre :</p>
 
-<pre><code>import random
+					<h2>Projet pratique 1 : Création d'un jeu en Python</h2>
+					<p>Dans ce projet pratique, vous allez créer un jeu en utilisant Python. Vous apprendrez à concevoir
+						et à implémenter les mécanismes de jeu, ainsi qu'à gérer les entrées utilisateur et à afficher
+						les résultats.</p>
+
+					<p>Voici un exemple de code pour un jeu simple de devinette de nombre :</p>
+
+					<pre><code>import random
 
 def guess_number():
     secret_number = random.randint(1, 100)
@@ -100,14 +99,19 @@ def guess_number():
 guess_number()
 </code></pre>
 
-<p>Dans cet exemple, le programme choisit un nombre aléatoire entre 1 et 100, puis demande à l'utilisateur de deviner ce nombre. Le programme compare ensuite la réponse de l'utilisateur avec le nombre secret et fournit des indications pour aider l'utilisateur à se rapprocher du nombre secret. Le jeu continue jusqu'à ce que l'utilisateur devine le nombre correctement.</p>
+					<p>Dans cet exemple, le programme choisit un nombre aléatoire entre 1 et 100, puis demande à
+						l'utilisateur de deviner ce nombre. Le programme compare ensuite la réponse de l'utilisateur
+						avec le nombre secret et fournit des indications pour aider l'utilisateur à se rapprocher du
+						nombre secret. Le jeu continue jusqu'à ce que l'utilisateur devine le nombre correctement.</p>
 
-<h2>Projet pratique 2 : Développement d'une application web en Python</h2>
-<p>Dans ce projet pratique, vous allez développer une application web en utilisant Python. Vous apprendrez à créer des routes, à gérer les requêtes et les réponses, ainsi qu'à interagir avec une base de données.</p>
+					<h2>Projet pratique 2 : Développement d'une application web en Python</h2>
+					<p>Dans ce projet pratique, vous allez développer une application web en utilisant Python. Vous
+						apprendrez à créer des routes, à gérer les requêtes et les réponses, ainsi qu'à interagir avec
+						une base de données.</p>
 
-<p>Voici un exemple de code pour une application web simple utilisant le framework Flask :</p>
+					<p>Voici un exemple de code pour une application web simple utilisant le framework Flask :</p>
 
-<pre><code>from flask import Flask, render_template, request
+					<pre><code>from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -128,14 +132,20 @@ if __name__ == '__main__':
     app.run()
 </code></pre>
 
-<p>Dans cet exemple, l'application web utilise le framework Flask pour créer deux routes : une pour la page d'accueil ("/") et une pour le formulaire de connexion ("/login"). Lorsque l'utilisateur soumet le formulaire de connexion, les informations sont récupérées à partir de la requête et vérifiées dans une base de données. Si les informations sont valides, l'utilisateur est redirigé vers le tableau de bord de l'application avec son nom d'utilisateur affiché.</p>
+					<p>Dans cet exemple, l'application web utilise le framework Flask pour créer deux routes : une pour
+						la page d'accueil ("/") et une pour le formulaire de connexion ("/login"). Lorsque l'utilisateur
+						soumet le formulaire de connexion, les informations sont récupérées à partir de la requête et
+						vérifiées dans une base de données. Si les informations sont valides, l'utilisateur est redirigé
+						vers le tableau de bord de l'application avec son nom d'utilisateur affiché.</p>
 
-<h2>Projet pratique 3 : Analyse de données en Python</h2>
-<p>Dans ce projet pratique, vous allez apprendre à utiliser Python pour analyser des données. Vous découvrirez comment importer des données à partir de fichiers, les nettoyer, les manipuler et les visualiser.</p>
+					<h2>Projet pratique 3 : Analyse de données en Python</h2>
+					<p>Dans ce projet pratique, vous allez apprendre à utiliser Python pour analyser des données. Vous
+						découvrirez comment importer des données à partir de fichiers, les nettoyer, les manipuler et
+						les visualiser.</p>
 
-<p>Voici un exemple de code pour analyser un fichier CSV contenant des données sur les ventes :</p>
+					<p>Voici un exemple de code pour analyser un fichier CSV contenant des données sur les ventes :</p>
 
-<pre><code>import pandas as pd
+					<pre><code>import pandas as pd
 
 # Importation des données à partir du fichier CSV
 data = pd.read_csv('sales_data.csv')
@@ -152,19 +162,21 @@ monthly_sales = data.groupby('Month')['Sales'].mean()
 print("Ventes mensuelles moyennes :", monthly_sales)
 </code></pre>
 
-<p>Dans cet exemple, le programme utilise la bibliothèque pandas pour importer les données à partir d'un fichier CSV. Ensuite, il affiche les premières lignes des données, calcule la somme totale des ventes et la moyenne des ventes par mois. Ces informations peuvent ensuite être utilisées pour prendre des décisions commerciales éclairées.</p>
+					<p>Dans cet exemple, le programme utilise la bibliothèque pandas pour importer les données à partir
+						d'un fichier CSV. Ensuite, il affiche les premières lignes des données, calcule la somme totale
+						des ventes et la moyenne des ventes par mois. Ces informations peuvent ensuite être utilisées
+						pour prendre des décisions commerciales éclairées.</p>
 
-<p>Ce projet pratique vous permettra de développer vos compétences en analyse de données et de découvrir les nombreuses possibilités offertes par Python dans ce domaine.</p>
-					
+					<p>Ce projet pratique vous permettra de développer vos compétences en analyse de données et de
+						découvrir les nombreuses possibilités offertes par Python dans ce domaine.</p>
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section14.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section14.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section16.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section16.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</section>

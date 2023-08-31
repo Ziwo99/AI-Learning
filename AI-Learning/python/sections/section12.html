@@ -40,7 +40,7 @@
 					<li><a href="/index.html">Accueil</a></li>
 					<li><a href="/courses.html">Formations</a></li>
 					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
-					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
 					<li><a href="/research.html">Travail de recherche</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
@@ -53,8 +53,7 @@
 				<div class="inner">
 					<h2>Section 12 : Les tests unitaires en Python</h2>
 					<ul class="actions stacked">
-						<li><a href="/AI-Learning/python/python.html"
-								class="button">
+						<li><a href="/AI-Learning/python/python.html" class="button">
 								Revenir à la fiche du cours</a></li>
 					</ul>
 				</div>
@@ -62,29 +61,40 @@
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section11.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section11.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section13.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section13.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
-					
 
-<h2>Introduction aux tests unitaires en Python</h2>
-<p>Les tests unitaires sont une pratique essentielle dans le développement logiciel. Ils permettent de vérifier le bon fonctionnement des différentes parties d'un programme de manière isolée, en testant chaque unité de code de manière indépendante. En Python, il existe plusieurs frameworks de tests unitaires populaires tels que <code>unittest</code>, <code>pytest</code> et <code>doctest</code>.</p>
 
-<p>Les tests unitaires sont écrits pour vérifier que chaque fonction ou méthode d'un programme produit les résultats attendus pour différentes entrées. Ils permettent de détecter rapidement les erreurs et de s'assurer que les modifications apportées au code n'ont pas introduit de régressions.</p>
 
-<h2>L'écriture de tests unitaires en Python</h2>
-<p>Pour écrire des tests unitaires en Python, il est recommandé d'utiliser le module <code>unittest</code> intégré à la bibliothèque standard. Ce module fournit des classes et des méthodes pour faciliter l'écriture et l'exécution des tests.</p>
+					<h2>Introduction aux tests unitaires en Python</h2>
+					<p>Les tests unitaires sont une pratique essentielle dans le développement logiciel. Ils permettent
+						de vérifier le bon fonctionnement des différentes parties d'un programme de manière isolée, en
+						testant chaque unité de code de manière indépendante. En Python, il existe plusieurs frameworks
+						de tests unitaires populaires tels que <code>unittest</code>, <code>pytest</code> et
+						<code>doctest</code>.</p>
 
-<p>Pour commencer, il est nécessaire de créer une classe de test qui hérite de la classe <code>unittest.TestCase</code>. Chaque méthode de cette classe représente un test unitaire et doit commencer par le mot-clé <code>test_</code>. À l'intérieur de chaque méthode de test, on utilise les méthodes d'assertion fournies par <code>unittest.TestCase</code> pour vérifier les résultats attendus.</p>
+					<p>Les tests unitaires sont écrits pour vérifier que chaque fonction ou méthode d'un programme
+						produit les résultats attendus pour différentes entrées. Ils permettent de détecter rapidement
+						les erreurs et de s'assurer que les modifications apportées au code n'ont pas introduit de
+						régressions.</p>
 
-<pre><code>import unittest
+					<h2>L'écriture de tests unitaires en Python</h2>
+					<p>Pour écrire des tests unitaires en Python, il est recommandé d'utiliser le module
+						<code>unittest</code> intégré à la bibliothèque standard. Ce module fournit des classes et des
+						méthodes pour faciliter l'écriture et l'exécution des tests.</p>
+
+					<p>Pour commencer, il est nécessaire de créer une classe de test qui hérite de la classe
+						<code>unittest.TestCase</code>. Chaque méthode de cette classe représente un test unitaire et
+						doit commencer par le mot-clé <code>test_</code>. À l'intérieur de chaque méthode de test, on
+						utilise les méthodes d'assertion fournies par <code>unittest.TestCase</code> pour vérifier les
+						résultats attendus.</p>
+
+					<pre><code>import unittest
 
 class MyTestCase(unittest.TestCase):
     def test_addition(self):
@@ -99,31 +109,42 @@ if __name__ == '__main__':
     unittest.main()
 </code></pre>
 
-<p>Dans cet exemple, nous avons créé une classe de test <code>MyTestCase</code> avec deux méthodes de test <code>test_addition</code> et <code>test_multiplication</code>. À l'intérieur de chaque méthode, nous utilisons la méthode d'assertion <code>assertEqual</code> pour vérifier que le résultat obtenu est égal au résultat attendu.</p>
+					<p>Dans cet exemple, nous avons créé une classe de test <code>MyTestCase</code> avec deux méthodes
+						de test <code>test_addition</code> et <code>test_multiplication</code>. À l'intérieur de chaque
+						méthode, nous utilisons la méthode d'assertion <code>assertEqual</code> pour vérifier que le
+						résultat obtenu est égal au résultat attendu.</p>
 
-<h2>L'exécution et l'analyse des tests unitaires en Python</h2>
-<p>Pour exécuter les tests unitaires, il suffit d'exécuter le script Python contenant les classes de test. Le module <code>unittest</code> détectera automatiquement les méthodes de test et les exécutera.</p>
+					<h2>L'exécution et l'analyse des tests unitaires en Python</h2>
+					<p>Pour exécuter les tests unitaires, il suffit d'exécuter le script Python contenant les classes de
+						test. Le module <code>unittest</code> détectera automatiquement les méthodes de test et les
+						exécutera.</p>
 
-<p>Après l'exécution des tests, <code>unittest</code> affiche un rapport indiquant le nombre de tests réussis, échoués ou ignorés. Si un test échoue, des informations détaillées sur l'erreur sont affichées pour faciliter le débogage.</p>
+					<p>Après l'exécution des tests, <code>unittest</code> affiche un rapport indiquant le nombre de
+						tests réussis, échoués ou ignorés. Si un test échoue, des informations détaillées sur l'erreur
+						sont affichées pour faciliter le débogage.</p>
 
-<p>Il est également possible d'exécuter les tests unitaires à partir de la ligne de commande en utilisant l'utilitaire <code>unittest</code>. Par exemple, pour exécuter tous les tests d'un module Python nommé <code>my_module.py</code>, on peut exécuter la commande suivante :</p>
+					<p>Il est également possible d'exécuter les tests unitaires à partir de la ligne de commande en
+						utilisant l'utilitaire <code>unittest</code>. Par exemple, pour exécuter tous les tests d'un
+						module Python nommé <code>my_module.py</code>, on peut exécuter la commande suivante :</p>
 
-<pre><code>python -m unittest my_module.py
+					<pre><code>python -m unittest my_module.py
 </code></pre>
 
-<p>Cela exécutera tous les tests définis dans le module <code>my_module.py</code> et affichera le rapport des résultats.</p>
+					<p>Cela exécutera tous les tests définis dans le module <code>my_module.py</code> et affichera le
+						rapport des résultats.</p>
 
-<p>Il est recommandé d'exécuter les tests unitaires régulièrement pendant le développement pour s'assurer que les modifications apportées au code n'ont pas introduit de régressions. Les tests unitaires peuvent également être intégrés à des outils d'intégration continue pour une exécution automatique à chaque modification du code.</p>
-					
+					<p>Il est recommandé d'exécuter les tests unitaires régulièrement pendant le développement pour
+						s'assurer que les modifications apportées au code n'ont pas introduit de régressions. Les tests
+						unitaires peuvent également être intégrés à des outils d'intégration continue pour une exécution
+						automatique à chaque modification du code.</p>
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section11.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section11.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section13.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section13.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</section>

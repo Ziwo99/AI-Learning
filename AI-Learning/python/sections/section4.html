@@ -40,7 +40,7 @@
 					<li><a href="/index.html">Accueil</a></li>
 					<li><a href="/courses.html">Formations</a></li>
 					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
-					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
 					<li><a href="/research.html">Travail de recherche</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
@@ -53,8 +53,7 @@
 				<div class="inner">
 					<h2>Section 4 : Les structures de contrôle en Python</h2>
 					<ul class="actions stacked">
-						<li><a href="/AI-Learning/python/python.html"
-								class="button">
+						<li><a href="/AI-Learning/python/python.html" class="button">
 								Revenir à la fiche du cours</a></li>
 					</ul>
 				</div>
@@ -62,32 +61,33 @@
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section3.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section3.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section5.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section5.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
-					
 
-<h2>Les conditions en Python</h2>
-<p>Les conditions en Python permettent d'exécuter certaines parties du code uniquement si une condition spécifique est remplie. Les conditions sont généralement basées sur des expressions booléennes, qui peuvent être soit vraies (True) soit fausses (False).</p>
 
-<p>La structure de base pour une condition en Python est la suivante :</p>
 
-<pre><code>if condition:
+					<h2>Les conditions en Python</h2>
+					<p>Les conditions en Python permettent d'exécuter certaines parties du code uniquement si une
+						condition spécifique est remplie. Les conditions sont généralement basées sur des expressions
+						booléennes, qui peuvent être soit vraies (True) soit fausses (False).</p>
+
+					<p>La structure de base pour une condition en Python est la suivante :</p>
+
+					<pre><code>if condition:
     # code à exécuter si la condition est vraie
 else:
     # code à exécuter si la condition est fausse
 </code></pre>
 
-<p>Il est également possible d'ajouter des conditions supplémentaires en utilisant les mots-clés "elif" (contraction de "else if") :</p>
+					<p>Il est également possible d'ajouter des conditions supplémentaires en utilisant les mots-clés
+						"elif" (contraction de "else if") :</p>
 
-<pre><code>if condition1:
+					<pre><code>if condition1:
     # code à exécuter si la condition1 est vraie
 elif condition2:
     # code à exécuter si la condition2 est vraie
@@ -95,9 +95,11 @@ else:
     # code à exécuter si aucune des conditions précédentes n'est vraie
 </code></pre>
 
-<p>Les conditions peuvent être basées sur des opérateurs de comparaison tels que "==", "!=", "&lt;", "&gt;", "&lt;=", "&gt;=", ainsi que sur des opérateurs logiques tels que "and", "or" et "not". Par exemple :</p>
+					<p>Les conditions peuvent être basées sur des opérateurs de comparaison tels que "==", "!=", "&lt;",
+						"&gt;", "&lt;=", "&gt;=", ainsi que sur des opérateurs logiques tels que "and", "or" et "not".
+						Par exemple :</p>
 
-<pre><code>x = 5
+					<pre><code>x = 5
 
 if x &gt; 0 and x &lt; 10:
     print("x est un nombre positif à un seul chiffre")
@@ -107,76 +109,83 @@ else:
     print("x est un nombre négatif")
 </code></pre>
 
-<h2>Les boucles en Python</h2>
-<p>Les boucles en Python permettent d'exécuter une partie du code plusieurs fois. Il existe deux types de boucles couramment utilisées en Python : la boucle "for" et la boucle "while".</p>
+					<h2>Les boucles en Python</h2>
+					<p>Les boucles en Python permettent d'exécuter une partie du code plusieurs fois. Il existe deux
+						types de boucles couramment utilisées en Python : la boucle "for" et la boucle "while".</p>
 
-<p>La boucle "for" est utilisée pour itérer sur une séquence (comme une liste, une chaîne de caractères, un tuple, etc.) ou sur tout objet itérable. La structure de base d'une boucle "for" est la suivante :</p>
+					<p>La boucle "for" est utilisée pour itérer sur une séquence (comme une liste, une chaîne de
+						caractères, un tuple, etc.) ou sur tout objet itérable. La structure de base d'une boucle "for"
+						est la suivante :</p>
 
-<pre><code>for element in sequence:
+					<pre><code>for element in sequence:
     # code à exécuter pour chaque élément de la séquence
 </code></pre>
 
-<p>Par exemple, pour afficher tous les éléments d'une liste :</p>
+					<p>Par exemple, pour afficher tous les éléments d'une liste :</p>
 
-<pre><code>fruits = ["pomme", "banane", "orange"]
+					<pre><code>fruits = ["pomme", "banane", "orange"]
 
 for fruit in fruits:
     print(fruit)
 </code></pre>
 
-<p>La boucle "while" est utilisée pour exécuter une partie du code tant qu'une condition spécifique est vraie. La structure de base d'une boucle "while" est la suivante :</p>
+					<p>La boucle "while" est utilisée pour exécuter une partie du code tant qu'une condition spécifique
+						est vraie. La structure de base d'une boucle "while" est la suivante :</p>
 
-<pre><code>while condition:
+					<pre><code>while condition:
     # code à exécuter tant que la condition est vraie
 </code></pre>
 
-<p>Par exemple, pour afficher les nombres de 1 à 5 :</p>
+					<p>Par exemple, pour afficher les nombres de 1 à 5 :</p>
 
-<pre><code>i = 1
+					<pre><code>i = 1
 
 while i &lt;= 5:
     print(i)
     i += 1
 </code></pre>
 
-<h2>Les instructions de contrôle en Python</h2>
-<p>En plus des conditions et des boucles, Python propose également d'autres instructions de contrôle pour gérer le flux d'exécution du code.</p>
+					<h2>Les instructions de contrôle en Python</h2>
+					<p>En plus des conditions et des boucles, Python propose également d'autres instructions de contrôle
+						pour gérer le flux d'exécution du code.</p>
 
-<p>L'instruction "break" permet de sortir d'une boucle prématurément si une condition spécifique est remplie :</p>
+					<p>L'instruction "break" permet de sortir d'une boucle prématurément si une condition spécifique est
+						remplie :</p>
 
-<pre><code>for i in range(1, 10):
+					<pre><code>for i in range(1, 10):
     if i == 5:
         break
     print(i)
 </code></pre>
 
-<p>L'instruction "continue" permet de passer à l'itération suivante d'une boucle sans exécuter le reste du code pour cette itération :</p>
+					<p>L'instruction "continue" permet de passer à l'itération suivante d'une boucle sans exécuter le
+						reste du code pour cette itération :</p>
 
-<pre><code>for i in range(1, 6):
+					<pre><code>for i in range(1, 6):
     if i == 3:
         continue
     print(i)
 </code></pre>
 
-<p>L'instruction "pass" est utilisée comme espace réservé pour une fonctionnalité à implémenter ultérieurement. Elle ne fait rien et permet d'éviter une erreur de syntaxe :</p>
+					<p>L'instruction "pass" est utilisée comme espace réservé pour une fonctionnalité à implémenter
+						ultérieurement. Elle ne fait rien et permet d'éviter une erreur de syntaxe :</p>
 
-<pre><code>if condition:
+					<pre><code>if condition:
     pass
 else:
     # code à exécuter si la condition est fausse
 </code></pre>
 
-<p>Ces instructions de contrôle peuvent être utilisées en combinaison avec les conditions et les boucles pour créer des structures de contrôle plus complexes.</p>
-					
+					<p>Ces instructions de contrôle peuvent être utilisées en combinaison avec les conditions et les
+						boucles pour créer des structures de contrôle plus complexes.</p>
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section3.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section3.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section5.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section5.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</section>

@@ -40,7 +40,7 @@
 					<li><a href="/index.html">Accueil</a></li>
 					<li><a href="/courses.html">Formations</a></li>
 					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
-					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
 					<li><a href="/research.html">Travail de recherche</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
@@ -53,8 +53,7 @@
 				<div class="inner">
 					<h2>Section 13 : Les frameworks et les bibliothèques en Python</h2>
 					<ul class="actions stacked">
-						<li><a href="/AI-Learning/python/python.html"
-								class="button">
+						<li><a href="/AI-Learning/python/python.html" class="button">
 								Revenir à la fiche du cours</a></li>
 					</ul>
 				</div>
@@ -62,24 +61,29 @@
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section12.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section12.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section14.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section14.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
-					
 
-<h2>Les frameworks web en Python</h2>
-<p>Les frameworks web en Python sont des outils puissants qui facilitent le développement d'applications web. Ils fournissent une structure et des fonctionnalités prêtes à l'emploi, ce qui permet aux développeurs de gagner du temps et d'éviter de réinventer la roue. Voici quelques-uns des frameworks web les plus populaires en Python :</p>
 
-<h3>Django</h3>
-<p>Django est un framework web complet et hautement extensible. Il suit le principe du "batteries included", ce qui signifie qu'il offre de nombreuses fonctionnalités intégrées telles que l'authentification utilisateur, la gestion des formulaires, l'administration de base de données, etc. Django suit le modèle MVC (Modèle-Vue-Contrôleur) et encourage les bonnes pratiques de développement.</p>
-<pre><code>from django.urls import path
+
+					<h2>Les frameworks web en Python</h2>
+					<p>Les frameworks web en Python sont des outils puissants qui facilitent le développement
+						d'applications web. Ils fournissent une structure et des fonctionnalités prêtes à l'emploi, ce
+						qui permet aux développeurs de gagner du temps et d'éviter de réinventer la roue. Voici
+						quelques-uns des frameworks web les plus populaires en Python :</p>
+
+					<h3>Django</h3>
+					<p>Django est un framework web complet et hautement extensible. Il suit le principe du "batteries
+						included", ce qui signifie qu'il offre de nombreuses fonctionnalités intégrées telles que
+						l'authentification utilisateur, la gestion des formulaires, l'administration de base de données,
+						etc. Django suit le modèle MVC (Modèle-Vue-Contrôleur) et encourage les bonnes pratiques de
+						développement.</p>
+					<pre><code>from django.urls import path
 from . import views
 
 urlpatterns = [
@@ -88,9 +92,13 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
 ]</code></pre>
 
-<h3>Flask</h3>
-<p>Flask est un micro-framework web minimaliste et flexible. Contrairement à Django, Flask ne fournit pas de fonctionnalités intégrées, mais il offre une grande liberté aux développeurs pour choisir les bibliothèques et les outils qu'ils souhaitent utiliser. Flask suit le modèle MVC (Modèle-Vue-Contrôleur) et est souvent utilisé pour créer des applications web légères et rapides.</p>
-<pre><code>from flask import Flask, render_template
+					<h3>Flask</h3>
+					<p>Flask est un micro-framework web minimaliste et flexible. Contrairement à Django, Flask ne
+						fournit pas de fonctionnalités intégrées, mais il offre une grande liberté aux développeurs pour
+						choisir les bibliothèques et les outils qu'ils souhaitent utiliser. Flask suit le modèle MVC
+						(Modèle-Vue-Contrôleur) et est souvent utilisé pour créer des applications web légères et
+						rapides.</p>
+					<pre><code>from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -106,12 +114,18 @@ def about():
 def contact():
     return render_template('contact.html')</code></pre>
 
-<h2>Les bibliothèques de traitement de données en Python</h2>
-<p>Les bibliothèques de traitement de données en Python offrent des fonctionnalités avancées pour manipuler et analyser des données. Elles sont largement utilisées dans les domaines de l'apprentissage automatique, de l'analyse de données et de la science des données. Voici quelques-unes des bibliothèques de traitement de données les plus populaires en Python :</p>
+					<h2>Les bibliothèques de traitement de données en Python</h2>
+					<p>Les bibliothèques de traitement de données en Python offrent des fonctionnalités avancées pour
+						manipuler et analyser des données. Elles sont largement utilisées dans les domaines de
+						l'apprentissage automatique, de l'analyse de données et de la science des données. Voici
+						quelques-unes des bibliothèques de traitement de données les plus populaires en Python :</p>
 
-<h3>Pandas</h3>
-<p>Pandas est une bibliothèque puissante pour la manipulation et l'analyse de données. Elle offre des structures de données flexibles et performantes, telles que les DataFrames, qui permettent de manipuler facilement des données tabulaires. Pandas fournit également des fonctionnalités pour le nettoyage des données, la fusion de données, l'agrégation, etc.</p>
-<pre><code>import pandas as pd
+					<h3>Pandas</h3>
+					<p>Pandas est une bibliothèque puissante pour la manipulation et l'analyse de données. Elle offre
+						des structures de données flexibles et performantes, telles que les DataFrames, qui permettent
+						de manipuler facilement des données tabulaires. Pandas fournit également des fonctionnalités
+						pour le nettoyage des données, la fusion de données, l'agrégation, etc.</p>
+					<pre><code>import pandas as pd
 
 data = {'Name': ['John', 'Emma', 'Mike'],
         'Age': [25, 28, 32],
@@ -120,19 +134,28 @@ data = {'Name': ['John', 'Emma', 'Mike'],
 df = pd.DataFrame(data)
 print(df)</code></pre>
 
-<h3>Numpy</h3>
-<p>Numpy est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle offre des structures de données de tableau multidimensionnel, ainsi que des fonctions mathématiques avancées pour effectuer des opérations sur ces tableaux. Numpy est largement utilisé pour le traitement numérique, l'algèbre linéaire, la génération de nombres aléatoires, etc.</p>
-<pre><code>import numpy as np
+					<h3>Numpy</h3>
+					<p>Numpy est une bibliothèque fondamentale pour le calcul scientifique en Python. Elle offre des
+						structures de données de tableau multidimensionnel, ainsi que des fonctions mathématiques
+						avancées pour effectuer des opérations sur ces tableaux. Numpy est largement utilisé pour le
+						traitement numérique, l'algèbre linéaire, la génération de nombres aléatoires, etc.</p>
+					<pre><code>import numpy as np
 
 arr = np.array([1, 2, 3, 4, 5])
 print(arr)</code></pre>
 
-<h2>Les bibliothèques de visualisation de données en Python</h2>
-<p>Les bibliothèques de visualisation de données en Python permettent de créer des graphiques et des visualisations attrayants à partir de données. Elles sont essentielles pour communiquer efficacement des informations et des idées à partir de données. Voici quelques-unes des bibliothèques de visualisation de données les plus populaires en Python :</p>
+					<h2>Les bibliothèques de visualisation de données en Python</h2>
+					<p>Les bibliothèques de visualisation de données en Python permettent de créer des graphiques et des
+						visualisations attrayants à partir de données. Elles sont essentielles pour communiquer
+						efficacement des informations et des idées à partir de données. Voici quelques-unes des
+						bibliothèques de visualisation de données les plus populaires en Python :</p>
 
-<h3>Matplotlib</h3>
-<p>Matplotlib est une bibliothèque de visualisation de données très populaire en Python. Elle offre une grande flexibilité pour créer une grande variété de graphiques, tels que des graphiques linéaires, des histogrammes, des diagrammes en boîte, etc. Matplotlib permet également de personnaliser les graphiques avec des titres, des légendes, des axes, etc.</p>
-<pre><code>import matplotlib.pyplot as plt
+					<h3>Matplotlib</h3>
+					<p>Matplotlib est une bibliothèque de visualisation de données très populaire en Python. Elle offre
+						une grande flexibilité pour créer une grande variété de graphiques, tels que des graphiques
+						linéaires, des histogrammes, des diagrammes en boîte, etc. Matplotlib permet également de
+						personnaliser les graphiques avec des titres, des légendes, des axes, etc.</p>
+					<pre><code>import matplotlib.pyplot as plt
 
 x = [1, 2, 3, 4, 5]
 y = [2, 4, 6, 8, 10]
@@ -143,9 +166,13 @@ plt.ylabel('Y-axis')
 plt.title('Simple Line Plot')
 plt.show()</code></pre>
 
-<h3>Seaborn</h3>
-<p>Seaborn est une bibliothèque de visualisation de données basée sur Matplotlib. Elle offre une interface plus simple et plus intuitive pour créer des graphiques statistiques attrayants. Seaborn est souvent utilisé pour explorer et visualiser des relations entre variables, ainsi que pour créer des graphiques de distribution, des diagrammes de dispersion, des cartes thermiques, etc.</p>
-<pre><code>import seaborn as sns
+					<h3>Seaborn</h3>
+					<p>Seaborn est une bibliothèque de visualisation de données basée sur Matplotlib. Elle offre une
+						interface plus simple et plus intuitive pour créer des graphiques statistiques attrayants.
+						Seaborn est souvent utilisé pour explorer et visualiser des relations entre variables, ainsi que
+						pour créer des graphiques de distribution, des diagrammes de dispersion, des cartes thermiques,
+						etc.</p>
+					<pre><code>import seaborn as sns
 
 tips = sns.load_dataset('tips')
 sns.scatterplot(x='total_bill', y='tip', hue='smoker', data=tips)
@@ -154,17 +181,18 @@ plt.ylabel('Tip')
 plt.title('Scatter Plot')
 plt.show()</code></pre>
 
-<p>Ces frameworks et bibliothèques en Python sont des outils puissants pour développer des applications web, traiter et analyser des données, ainsi que créer des visualisations attrayantes. En les maîtrisant, vous serez en mesure de créer des projets Python avancés et professionnels.</p>
-					
+					<p>Ces frameworks et bibliothèques en Python sont des outils puissants pour développer des
+						applications web, traiter et analyser des données, ainsi que créer des visualisations
+						attrayantes. En les maîtrisant, vous serez en mesure de créer des projets Python avancés et
+						professionnels.</p>
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section12.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section12.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section14.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section14.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</section>

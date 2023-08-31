@@ -40,7 +40,7 @@
 					<li><a href="/index.html">Accueil</a></li>
 					<li><a href="/courses.html">Formations</a></li>
 					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
-					<li><a href="/generation.html">Comment sont générer nos formations ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
 					<li><a href="/research.html">Travail de recherche</a></li>
 				</ul>
 				<a href="#" class="close">Close</a>
@@ -53,8 +53,7 @@
 				<div class="inner">
 					<h2>Section 6 : Les modules et les packages en Python</h2>
 					<ul class="actions stacked">
-						<li><a href="/AI-Learning/python/python.html"
-								class="button">
+						<li><a href="/AI-Learning/python/python.html" class="button">
 								Revenir à la fiche du cours</a></li>
 					</ul>
 				</div>
@@ -62,113 +61,130 @@
 			<!-- Content -->
 			<div class="wrapper">
 				<div class="inner">
-					
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section5.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section5.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section7.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section7.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
-					
 
-<h2>Les modules en Python</h2>
-<p>En Python, un module est un fichier contenant du code Python qui peut être utilisé dans d'autres programmes. Les modules sont utilisés pour organiser et réutiliser du code, ce qui permet de rendre les programmes plus modulaires et plus faciles à maintenir.</p>
 
-<p>Pour créer un module en Python, il suffit de créer un fichier avec l'extension ".py" et d'y écrire le code que vous souhaitez inclure dans le module. Par exemple, vous pouvez créer un fichier appelé "mon_module.py" et y écrire le code suivant :</p>
 
-<pre><code>def dire_bonjour():
+					<h2>Les modules en Python</h2>
+					<p>En Python, un module est un fichier contenant du code Python qui peut être utilisé dans d'autres
+						programmes. Les modules sont utilisés pour organiser et réutiliser du code, ce qui permet de
+						rendre les programmes plus modulaires et plus faciles à maintenir.</p>
+
+					<p>Pour créer un module en Python, il suffit de créer un fichier avec l'extension ".py" et d'y
+						écrire le code que vous souhaitez inclure dans le module. Par exemple, vous pouvez créer un
+						fichier appelé "mon_module.py" et y écrire le code suivant :</p>
+
+					<pre><code>def dire_bonjour():
     print("Bonjour !")
 
 def dire_aurevoir():
     print("Au revoir !")
 </code></pre>
 
-<p>Pour utiliser ce module dans un autre programme Python, vous devez l'importer en utilisant le mot-clé "import". Par exemple :</p>
+					<p>Pour utiliser ce module dans un autre programme Python, vous devez l'importer en utilisant le
+						mot-clé "import". Par exemple :</p>
 
-<pre><code>import mon_module
+					<pre><code>import mon_module
 
 mon_module.dire_bonjour()
 mon_module.dire_aurevoir()
 </code></pre>
 
-<p>Cela affichera "Bonjour !" suivi de "Au revoir !" lorsque vous exécutez le programme.</p>
+					<p>Cela affichera "Bonjour !" suivi de "Au revoir !" lorsque vous exécutez le programme.</p>
 
-<h2>Les packages en Python</h2>
-<p>Un package en Python est un dossier contenant un ensemble de modules. Les packages sont utilisés pour organiser et structurer le code Python en hiérarchies logiques.</p>
+					<h2>Les packages en Python</h2>
+					<p>Un package en Python est un dossier contenant un ensemble de modules. Les packages sont utilisés
+						pour organiser et structurer le code Python en hiérarchies logiques.</p>
 
-<p>Pour créer un package en Python, vous devez créer un dossier et y placer les fichiers de module. Par exemple, vous pouvez créer un dossier appelé "mon_package" et y placer le fichier "mon_module.py" que nous avons créé précédemment.</p>
+					<p>Pour créer un package en Python, vous devez créer un dossier et y placer les fichiers de module.
+						Par exemple, vous pouvez créer un dossier appelé "mon_package" et y placer le fichier
+						"mon_module.py" que nous avons créé précédemment.</p>
 
-<p>La structure du dossier "mon_package" ressemblerait à ceci :</p>
+					<p>La structure du dossier "mon_package" ressemblerait à ceci :</p>
 
-<pre><code>mon_package/
+					<pre><code>mon_package/
     __init__.py
     mon_module.py
 </code></pre>
 
-<p>Lorsque vous importez un package, Python exécute automatiquement le fichier "__init__.py" situé dans le dossier du package. Cela vous permet d'initialiser des variables, de définir des fonctions ou des classes, ou d'effectuer d'autres opérations d'initialisation.</p>
+					<p>Lorsque vous importez un package, Python exécute automatiquement le fichier "__init__.py" situé
+						dans le dossier du package. Cela vous permet d'initialiser des variables, de définir des
+						fonctions ou des classes, ou d'effectuer d'autres opérations d'initialisation.</p>
 
-<p>Pour utiliser un module à l'intérieur d'un package, vous devez spécifier le nom du package suivi du nom du module. Par exemple :</p>
+					<p>Pour utiliser un module à l'intérieur d'un package, vous devez spécifier le nom du package suivi
+						du nom du module. Par exemple :</p>
 
-<pre><code>import mon_package.mon_module
+					<pre><code>import mon_package.mon_module
 
 mon_package.mon_module.dire_bonjour()
 mon_package.mon_module.dire_aurevoir()
 </code></pre>
 
-<p>Cela affichera également "Bonjour !" suivi de "Au revoir !" lorsque vous exécutez le programme.</p>
+					<p>Cela affichera également "Bonjour !" suivi de "Au revoir !" lorsque vous exécutez le programme.
+					</p>
 
-<h2>L'importation de modules et de packages en Python</h2>
-<p>En plus d'importer des modules et des packages entiers, vous pouvez également importer des fonctions, des classes ou des variables spécifiques à partir de modules ou de packages.</p>
+					<h2>L'importation de modules et de packages en Python</h2>
+					<p>En plus d'importer des modules et des packages entiers, vous pouvez également importer des
+						fonctions, des classes ou des variables spécifiques à partir de modules ou de packages.</p>
 
-<p>Pour importer une fonction spécifique à partir d'un module, vous pouvez utiliser la syntaxe suivante :</p>
+					<p>Pour importer une fonction spécifique à partir d'un module, vous pouvez utiliser la syntaxe
+						suivante :</p>
 
-<pre><code>from mon_module import dire_bonjour
-
-dire_bonjour()
-</code></pre>
-
-<p>Cela importe uniquement la fonction "dire_bonjour" du module "mon_module" et vous permet de l'utiliser directement sans avoir à spécifier le nom du module.</p>
-
-<p>De même, pour importer une fonction spécifique à partir d'un package, vous pouvez utiliser la syntaxe suivante :</p>
-
-<pre><code>from mon_package.mon_module import dire_bonjour
+					<pre><code>from mon_module import dire_bonjour
 
 dire_bonjour()
 </code></pre>
 
-<p>Cela importe uniquement la fonction "dire_bonjour" du module "mon_module" du package "mon_package" et vous permet de l'utiliser directement.</p>
+					<p>Cela importe uniquement la fonction "dire_bonjour" du module "mon_module" et vous permet de
+						l'utiliser directement sans avoir à spécifier le nom du module.</p>
 
-<p>Vous pouvez également utiliser l'aliasing pour renommer les modules, les packages, les fonctions, les classes ou les variables lors de l'importation. Cela peut être utile pour éviter les conflits de noms ou pour rendre le code plus lisible. Par exemple :</p>
+					<p>De même, pour importer une fonction spécifique à partir d'un package, vous pouvez utiliser la
+						syntaxe suivante :</p>
 
-<pre><code>import mon_module as mm
+					<pre><code>from mon_package.mon_module import dire_bonjour
+
+dire_bonjour()
+</code></pre>
+
+					<p>Cela importe uniquement la fonction "dire_bonjour" du module "mon_module" du package
+						"mon_package" et vous permet de l'utiliser directement.</p>
+
+					<p>Vous pouvez également utiliser l'aliasing pour renommer les modules, les packages, les fonctions,
+						les classes ou les variables lors de l'importation. Cela peut être utile pour éviter les
+						conflits de noms ou pour rendre le code plus lisible. Par exemple :</p>
+
+					<pre><code>import mon_module as mm
 
 mm.dire_bonjour()
 mm.dire_aurevoir()
 </code></pre>
 
-<p>Cela importe le module "mon_module" en utilisant l'alias "mm", ce qui vous permet d'utiliser les fonctions du module en utilisant "mm.dire_bonjour()" et "mm.dire_aurevoir()".</p>
+					<p>Cela importe le module "mon_module" en utilisant l'alias "mm", ce qui vous permet d'utiliser les
+						fonctions du module en utilisant "mm.dire_bonjour()" et "mm.dire_aurevoir()".</p>
 
-<p>De même, vous pouvez utiliser l'aliasing lors de l'importation de fonctions spécifiques :</p>
+					<p>De même, vous pouvez utiliser l'aliasing lors de l'importation de fonctions spécifiques :</p>
 
-<pre><code>from mon_module import dire_bonjour as bonjour
+					<pre><code>from mon_module import dire_bonjour as bonjour
 
 bonjour()
 </code></pre>
 
-<p>Cela importe la fonction "dire_bonjour" du module "mon_module" en utilisant l'alias "bonjour", ce qui vous permet d'utiliser la fonction en utilisant simplement "bonjour()".</p>
-					
+					<p>Cela importe la fonction "dire_bonjour" du module "mon_module" en utilisant l'alias "bonjour", ce
+						qui vous permet d'utiliser la fonction en utilisant simplement "bonjour()".</p>
+
 					<ul class="actions">
-						<li><a href="/AI-Learning/python/sections/section5.html"
-								class="button primary">
+						<li><a href="/AI-Learning/python/sections/section5.html" class="button primary">
 								Section précédente</a></li>
-						<li><a href="/AI-Learning/python/sections/section7.html"
-								class="button primary" id="last">
+						<li><a href="/AI-Learning/python/sections/section7.html" class="button primary" id="last">
 								Section suivante</a></li>
 					</ul>
-					
+
 				</div>
 			</div>
 		</section>
