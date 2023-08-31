@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Les fonctionnalités avancées de PHP</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Manipulation des dates et heures</h2>
+<p>La manipulation des dates et heures est une fonctionnalité essentielle dans de nombreux projets PHP. PHP offre une gamme de fonctions intégrées pour travailler avec les dates et heures.</p>
+<p>Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+
+<pre><code>// Obtenir la date et l'heure actuelles
+$currentDate = date('Y-m-d');
+$currentDateTime = date('Y-m-d H:i:s');
+
+// Obtenir le timestamp actuel
+$timestamp = time();
+
+// Formater une date spécifique
+$date = date('d/m/Y', strtotime('2022-12-31'));
+
+// Ajouter ou soustraire une période de temps
+$futureDate = date('Y-m-d', strtotime('+1 week'));
+$pastDate = date('Y-m-d', strtotime('-1 month'));
+
+// Comparer des dates
+$today = date('Y-m-d');
+$otherDate = '2022-01-01';
+
+if ($today > $otherDate) {
+    echo 'La date actuelle est postérieure à l\'autre date.';
+} elseif ($today < $otherDate) {
+    echo 'La date actuelle est antérieure à l\'autre date.';
+} else {
+    echo 'Les deux dates sont identiques.';
+}</code></pre>
+
+<h2>Gestion des sessions et des cookies</h2>
+<p>La gestion des sessions et des cookies est essentielle pour suivre l'état de l'utilisateur et stocker des informations entre les différentes requêtes.</p>
+<p>Voici comment créer une session et stocker des données :</p>
+
+<pre><code>// Démarrer une session
+session_start();
+
+// Stocker des données dans la session
+$_SESSION['username'] = 'John';
+
+// Accéder aux données de la session
+$username = $_SESSION['username'];
+
+// Détruire la session
+session_destroy();
+
+// Créer un cookie
+setcookie('username', 'John', time() + 3600);
+
+// Accéder aux données du cookie
+$username = $_COOKIE['username'];
+
+// Supprimer un cookie
+setcookie('username', '', time() - 3600);</code></pre>
+
+<h2>Envoi d'e-mails</h2>
+<p>L'envoi d'e-mails est une fonctionnalité courante dans de nombreux projets PHP. Voici comment envoyer un e-mail :</p>
+
+<pre><code>// Paramètres du serveur de messagerie
+$to = 'john@example.com';
+$subject = 'Hello';
+$message = 'This is a test email.';
+$headers = 'From: webmaster@example.com' . "\r\n" .
+    'Reply-To: webmaster@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+// Envoi de l'e-mail
+mail($to, $subject, $message, $headers);</code></pre>
+
+<h2>Manipulation d'images</h2>
+<p>La manipulation d'images est souvent nécessaire dans les projets PHP, que ce soit pour redimensionner, recadrer, appliquer des filtres, etc. Voici comment manipuler des images :</p>
+
+<pre><code>// Ouvrir une image
+$image = imagecreatefromjpeg('image.jpg');
+
+// Obtenir les dimensions de l'image
+$width = imagesx($image);
+$height = imagesy($image);
+
+// Redimensionner l'image
+$newWidth = 500;
+$newHeight = ($height / $width) * $newWidth;
+$resizedImage = imagescale($image, $newWidth, $newHeight);
+
+// Enregistrer l'image redimensionnée
+imagejpeg($resizedImage, 'resized_image.jpg');
+
+// Libérer la mémoire
+imagedestroy($image);
+imagedestroy($resizedImage);</code></pre>
+
+<h2>Génération de fichiers PDF</h2>
+<p>La génération de fichiers PDF est utile lorsque vous avez besoin de créer des rapports, des factures, des bons de commande, etc. Voici comment générer un fichier PDF :</p>
+
+<pre><code>// Créer un nouvel objet PDF
+$pdf = new FPDF();
+
+// Ajouter une page
+$pdf->AddPage();
+
+// Définir la police et la taille
+$pdf->SetFont('Arial', 'B', 16);
+
+// Écrire du texte
+$pdf->Cell(40, 10, 'Hello World!');
+
+// Enregistrer le fichier PDF
+$pdf->Output('example.pdf', 'F');</code></pre>
+
+<h2>Utilisation de bibliothèques externes</h2>
+<p>PHP offre une grande variété de bibliothèques externes pour étendre les fonctionnalités de base. Voici comment utiliser une bibliothèque externe :</p>
+
+<pre><code>// Inclure la bibliothèque
+require_once 'library.php';
+
+// Utiliser les fonctions de la bibliothèque
+$result = LibraryClass::someFunction();</code></pre>
+
+<p>Ces fonctionnalités avancées de PHP vous permettront de créer des applications plus puissantes et plus dynamiques. Prenez le temps de les explorer et de les maîtriser pour améliorer vos compétences en développement PHP.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Programmation orientée objet en PHP</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la POO</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet d'organiser et de structurer son code de manière plus modulaire et réutilisable. En POO, on travaille avec des objets qui sont des instances de classes. Une classe est un modèle ou un plan qui définit les propriétés et les comportements des objets.</p>
+
+<h2>Classes et objets</h2>
+<p>Une classe est une structure qui regroupe des variables (appelées propriétés ou attributs) et des fonctions (appelées méthodes) qui agissent sur ces variables. Pour créer un objet à partir d'une classe, on utilise le mot-clé <code>new</code>.</p>
+
+<pre><code>class Person {
+    // Propriétés
+    public $name;
+    public $age;
+
+    // Méthodes
+    public function sayHello() {
+        echo "Hello, my name is " . $this->name;
+    }
+}
+
+// Création d'un objet
+$person = new Person();
+$person->name = "John";
+$person->age = 25;
+$person->sayHello(); // Output: Hello, my name is John
+</code></pre>
+
+<h2>Encapsulation, héritage et polymorphisme</h2>
+<p>L'encapsulation est un concept qui consiste à regrouper les données et les méthodes qui les manipulent au sein d'une même entité, la classe. On utilise des modificateurs d'accès (public, protected, private) pour définir la visibilité des propriétés et des méthodes.</p>
+
+<p>L'héritage permet de créer de nouvelles classes en se basant sur une classe existante. La classe existante est appelée classe parente ou superclasse, et la nouvelle classe est appelée classe enfant ou sous-classe. La classe enfant hérite des propriétés et des méthodes de la classe parente, et peut en ajouter de nouvelles ou les modifier.</p>
+
+<p>Le polymorphisme permet à des objets de différentes classes d'être traités de manière uniforme. Cela signifie qu'un objet peut être utilisé comme une instance de sa classe, mais aussi comme une instance d'une de ses classes parentes.</p>
+
+<h2>Interfaces et traits</h2>
+<p>Une interface est une structure qui définit un ensemble de méthodes que les classes qui l'implémentent doivent obligatoirement définir. Une classe peut implémenter plusieurs interfaces.</p>
+
+<p>Un trait est une sorte de classe partielle qui peut être réutilisée dans plusieurs classes. Un trait peut contenir des méthodes et des propriétés, et ces dernières peuvent être utilisées par les classes qui utilisent le trait.</p>
+
+<h2>Gestion des erreurs et exceptions</h2>
+<p>En PHP, les erreurs sont des problèmes qui se produisent lors de l'exécution du code et qui empêchent le bon fonctionnement de l'application. Les exceptions sont des erreurs qui peuvent être gérées de manière plus précise et contrôlée.</p>
+
+<p>Pour gérer les erreurs et les exceptions, on utilise les blocs <code>try</code> et <code>catch</code>. Le code qui peut générer une exception est placé dans le bloc <code>try</code>, et le code qui gère l'exception est placé dans le bloc <code>catch</code>.</p>
+
+<pre><code>try {
+    // Code susceptible de générer une exception
+    throw new Exception("Une erreur s'est produite");
+} catch (Exception $e) {
+    // Gestion de l'exception
+    echo "Erreur : " . $e->getMessage();
+}
+</code></pre>
+
+<p>Il est également possible de créer ses propres exceptions en définissant des classes qui étendent la classe <code>Exception</code>.</p>
+
+<p>Ceci conclut la section sur la programmation orientée objet en PHP. Nous avons vu les concepts fondamentaux de la POO, tels que les classes, les objets, l'encapsulation, l'héritage, le polymorphisme, les interfaces, les traits, ainsi que la gestion des erreurs et des exceptions.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

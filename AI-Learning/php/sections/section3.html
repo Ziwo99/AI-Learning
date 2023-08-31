@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Manipulation de données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les tableaux</h2>
+<p>Les tableaux sont des structures de données qui permettent de stocker et d'organiser plusieurs valeurs sous un même nom. En PHP, les tableaux peuvent contenir des valeurs de différents types tels que des entiers, des chaînes de caractères, des booléens, etc.</p>
+
+<p>Il existe plusieurs façons de créer un tableau en PHP :</p>
+
+<pre><code>// Méthode 1: Utilisation de la fonction array()
+$tableau1 = array(1, 2, 3, 4, 5);
+
+// Méthode 2: Utilisation de la syntaxe raccourcie []
+$tableau2 = [1, 2, 3, 4, 5];
+
+// Méthode 3: Création d'un tableau vide puis ajout des éléments
+$tableau3 = [];
+$tableau3[] = 1;
+$tableau3[] = 2;
+$tableau3[] = 3;
+$tableau3[] = 4;
+$tableau3[] = 5;
+</code></pre>
+
+<p>Pour accéder aux éléments d'un tableau, on utilise l'indice correspondant à la position de l'élément dans le tableau. Les indices commencent à 0 :</p>
+
+<pre><code>$tableau = [10, 20, 30, 40, 50];
+
+echo $tableau[0]; // Affiche 10
+echo $tableau[2]; // Affiche 30
+</code></pre>
+
+<p>Il est également possible d'ajouter, de modifier ou de supprimer des éléments d'un tableau :</p>
+
+<pre><code>$tableau = [10, 20, 30, 40, 50];
+
+// Ajouter un élément à la fin du tableau
+$tableau[] = 60;
+
+// Modifier un élément du tableau
+$tableau[1] = 25;
+
+// Supprimer un élément du tableau
+unset($tableau[3]);
+</code></pre>
+
+<h2>Les chaînes de caractères</h2>
+<p>Les chaînes de caractères sont des séquences de caractères, tels que des lettres, des chiffres ou des symboles. En PHP, les chaînes de caractères peuvent être définies en utilisant des guillemets simples ('') ou des guillemets doubles ("").</p>
+
+<p>Voici quelques exemples de déclaration de chaînes de caractères :</p>
+
+<pre><code>$chaine1 = 'Bonjour';
+$chaine2 = "Monde";
+$chaine3 = 'Il fait beau aujourd\'hui';
+$chaine4 = "J'ai 25 ans";
+</code></pre>
+
+<p>Il est possible de concaténer des chaînes de caractères en utilisant l'opérateur de concaténation (.) :</p>
+
+<pre><code>$nom = 'John';
+$age = 30;
+
+$message = 'Je m\'appelle ' . $nom . ' et j\'ai ' . $age . ' ans.';
+echo $message; // Affiche "Je m'appelle John et j'ai 30 ans."
+</code></pre>
+
+<p>Il existe de nombreuses fonctions prédéfinies en PHP pour manipuler les chaînes de caractères, telles que strlen() pour obtenir la longueur d'une chaîne, strtoupper() pour convertir une chaîne en majuscules, etc.</p>
+
+<h2>Les fichiers</h2>
+<p>La manipulation de fichiers est une tâche courante en programmation. En PHP, il existe plusieurs fonctions pour créer, lire, écrire et supprimer des fichiers.</p>
+
+<p>Pour ouvrir un fichier en lecture :</p>
+
+<pre><code>$fichier = fopen('monfichier.txt', 'r');
+</code></pre>
+
+<p>Pour lire le contenu d'un fichier ligne par ligne :</p>
+
+<pre><code>while (!feof($fichier)) {
+    $ligne = fgets($fichier);
+    echo $ligne;
+}
+</code></pre>
+
+<p>Pour écrire dans un fichier :</p>
+
+<pre><code>$fichier = fopen('monfichier.txt', 'w');
+fwrite($fichier, 'Contenu à écrire dans le fichier');
+fclose($fichier);
+</code></pre>
+
+<p>Pour supprimer un fichier :</p>
+
+<pre><code>unlink('monfichier.txt');
+</code></pre>
+
+<h2>Les bases de données (MySQL, SQLite)</h2>
+<p>Les bases de données sont utilisées pour stocker et gérer des données de manière structurée. En PHP, il est possible de se connecter à différentes bases de données, telles que MySQL et SQLite, en utilisant des extensions spécifiques.</p>
+
+<p>Pour se connecter à une base de données MySQL :</p>
+
+<pre><code>$serveur = 'localhost';
+$utilisateur = 'root';
+$motdepasse = 'monmotdepasse';
+$basededonnees = 'ma_base_de_donnees';
+
+$connexion = mysqli_connect($serveur, $utilisateur, $motdepasse, $basededonnees);
+
+if (!$connexion) {
+    die('Erreur de connexion : ' . mysqli_connect_error());
+}
+</code></pre>
+
+<p>Pour exécuter une requête SQL :</p>
+
+<pre><code>$requete = 'SELECT * FROM utilisateurs';
+$resultat = mysqli_query($connexion, $requete);
+
+while ($ligne = mysqli_fetch_assoc($resultat)) {
+    echo $ligne['nom'] . ' ' . $ligne['prenom'];
+}
+
+mysqli_close($connexion);
+</code></pre>
+
+<p>Pour se connecter à une base de données SQLite :</p>
+
+<pre><code>$fichier = 'ma_base_de_donnees.sqlite';
+
+$connexion = new SQLite3($fichier);
+
+if (!$connexion) {
+    die('Erreur de connexion : ' . $connexion->lastErrorMsg());
+}
+</code></pre>
+
+<p>Pour exécuter une requête SQL :</p>
+
+<pre><code>$requete = 'SELECT * FROM utilisateurs';
+$resultat = $connexion->query($requete);
+
+while ($ligne = $resultat->fetchArray()) {
+    echo $ligne['nom'] . ' ' . $ligne['prenom'];
+}
+
+$connexion->close();
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Sécurité en PHP</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les failles de sécurité courantes</h2>
+<p>Les applications PHP sont souvent vulnérables à certaines failles de sécurité courantes. Il est essentiel de comprendre ces failles et de prendre des mesures pour les prévenir. Voici quelques-unes des failles de sécurité courantes :</p>
+
+<h2>Validation des données utilisateur</h2>
+<p>La validation des données utilisateur est une étape cruciale pour garantir la sécurité de votre application. Il est important de vérifier et de valider toutes les données entrées par l'utilisateur pour éviter les attaques et les erreurs. Voici quelques bonnes pratiques pour la validation des données utilisateur :</p>
+
+<pre><code>// Exemple de validation d'un email
+$email = $_POST['email'];
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    // L'email est valide
+} else {
+    // L'email est invalide
+}</code></pre>
+
+<h2>Protection contre les attaques par injection SQL</h2>
+<p>L'injection SQL est une attaque courante où un attaquant insère du code SQL malveillant dans une requête SQL. Pour protéger votre application contre les attaques par injection SQL, vous devez utiliser des requêtes préparées ou des fonctions d'échappement appropriées. Voici un exemple d'utilisation de requêtes préparées :</p>
+
+<pre><code>// Exemple d'utilisation de requêtes préparées pour éviter l'injection SQL
+$statement = $pdo->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+$statement->execute([
+    'username' => $username,
+    'password' => $password
+]);</code></pre>
+
+<h2>Protection contre les attaques par cross-site scripting (XSS)</h2>
+<p>Les attaques par cross-site scripting (XSS) permettent à un attaquant d'injecter du code malveillant dans des pages web. Pour protéger votre application contre les attaques XSS, vous devez échapper correctement les données avant de les afficher. Voici un exemple d'utilisation de la fonction htmlspecialchars() pour échapper les données :</p>
+
+<pre><code>// Exemple d'échappement des données pour éviter les attaques XSS
+$name = htmlspecialchars($_POST['name']);
+echo "Bonjour, " . $name;</code></pre>
+
+<h2>Gestion des mots de passe sécurisés</h2>
+<p>La gestion des mots de passe sécurisés est essentielle pour protéger les informations sensibles des utilisateurs. Voici quelques bonnes pratiques pour la gestion des mots de passe sécurisés :</p>
+
+<pre><code>// Exemple de hachage de mot de passe avec l'algorithme bcrypt
+$password = $_POST['password'];
+$hash = password_hash($password, PASSWORD_BCRYPT);</code></pre>
+
+<p>Il est également recommandé d'utiliser des techniques telles que le salage (salt) et l'itération pour renforcer la sécurité des mots de passe.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

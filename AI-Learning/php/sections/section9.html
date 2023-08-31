@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Frameworks PHP</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux frameworks PHP</h2>
+<p>Un framework PHP est un ensemble d'outils et de bibliothèques qui facilite le développement d'applications web en PHP. Il fournit une structure et des fonctionnalités prédéfinies pour accélérer le processus de développement et améliorer la qualité du code.</p>
+<p>Les frameworks PHP sont conçus pour suivre les meilleures pratiques de développement, tels que le modèle MVC (Modèle-Vue-Contrôleur), la séparation des préoccupations et la réutilisation du code. Ils offrent également des fonctionnalités avancées telles que la gestion des bases de données, la gestion des sessions, la validation des formulaires, la sécurité, etc.</p>
+<p>Les frameworks PHP les plus populaires sont Laravel, Symfony et CodeIgniter. Chacun a ses propres caractéristiques et avantages, mais tous visent à simplifier le développement web en PHP.</p>
+
+<h2>Utilisation de Laravel</h2>
+<p>Laravel est un framework PHP open-source qui est devenu très populaire ces dernières années. Il est connu pour sa syntaxe élégante et expressive, sa facilité d'utilisation et sa vaste communauté de développeurs.</p>
+<p>Laravel suit le modèle MVC et fournit des fonctionnalités avancées telles que l'ORM (Object-Relational Mapping) pour la gestion des bases de données, la gestion des sessions, la validation des formulaires, la sécurité, la génération de migrations de base de données, etc.</p>
+<p>Voici un exemple de code Laravel qui montre comment créer une route et une vue :</p>
+<pre><code>Route::get('/hello', function () {
+    return view('hello');
+});</code></pre>
+<p>Dans cet exemple, nous définissons une route qui correspond à l'URL "/hello" et renvoie la vue "hello". La vue peut être un fichier Blade, un moteur de template puissant fourni par Laravel.</p>
+
+<h2>Utilisation de Symfony</h2>
+<p>Symfony est un framework PHP mature et puissant qui est largement utilisé dans l'industrie. Il suit également le modèle MVC et offre une grande flexibilité et extensibilité.</p>
+<p>Symfony est connu pour sa modularité et son architecture basée sur des composants. Il fournit une large gamme de composants réutilisables tels que le gestionnaire de formulaires, le gestionnaire de sécurité, le gestionnaire de cache, etc.</p>
+<p>Voici un exemple de code Symfony qui montre comment créer un contrôleur et une route :</p>
+<pre><code>use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class HelloController
+{
+    /**
+     * @Route("/hello")
+     */
+    public function hello()
+    {
+        return new Response('Hello Symfony!');
+    }
+}</code></pre>
+<p>Dans cet exemple, nous définissons un contrôleur avec une méthode "hello" qui correspond à l'URL "/hello" et renvoie la réponse "Hello Symfony!".</p>
+
+<h2>Utilisation de CodeIgniter</h2>
+<p>CodeIgniter est un framework PHP léger et facile à utiliser, idéal pour les petits projets ou les développeurs débutants. Il suit également le modèle MVC et offre une configuration simple et une courbe d'apprentissage rapide.</p>
+<p>CodeIgniter fournit des fonctionnalités de base telles que la gestion des bases de données, la gestion des sessions, la validation des formulaires, la sécurité, etc. Il est également extensible grâce à son système de bibliothèques et de helpers.</p>
+<p>Voici un exemple de code CodeIgniter qui montre comment créer un contrôleur et une méthode :</p>
+<pre><code>class Hello extends CI_Controller {
+    public function index()
+    {
+        echo "Hello CodeIgniter!";
+    }
+}</code></pre>
+<p>Dans cet exemple, nous définissons un contrôleur "Hello" avec une méthode "index" qui affiche "Hello CodeIgniter!".</p>
+
+<h2>Comparaison des frameworks PHP</h2>
+<p>Chaque framework PHP a ses propres avantages et inconvénients, et le choix du framework dépend des besoins spécifiques du projet et des préférences du développeur. Voici une comparaison générale des frameworks PHP les plus populaires :</p>
+<ul>
+    <li>Laravel : syntaxe élégante, grande communauté, fonctionnalités avancées, courbe d'apprentissage plus longue.</li>
+    <li>Symfony : modularité, architecture basée sur des composants, flexibilité, courbe d'apprentissage plus longue.</li>
+    <li>CodeIgniter : légèreté, facilité d'utilisation, courbe d'apprentissage plus courte, fonctionnalités de base.</li>
+</ul>
+<p>Il est important de noter que cette comparaison est générale et que chaque framework a ses propres caractéristiques uniques. Il est recommandé de faire des recherches approfondies et de tester différents frameworks avant de prendre une décision.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

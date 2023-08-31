@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de PHP</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base</h2>
+<p>La syntaxe de base de PHP est similaire à celle d'autres langages de programmation tels que C, C++ et Java. Voici un exemple de code PHP simple :</p>
+<pre><code>&lt;?php
+    // Ceci est un commentaire en PHP
+
+    // Déclaration d'une variable
+    $nom = "John Doe";
+
+    // Affichage du contenu de la variable
+    echo "Bonjour, " . $nom . "!";
+
+    // Fin du script PHP
+?&gt;</code></pre>
+
+<p>Dans cet exemple, nous avons utilisé la balise &lt;?php pour indiquer le début du code PHP. Les commentaires en PHP commencent par // et sont ignorés lors de l'exécution du code. La variable $nom est déclarée et contient la valeur "John Doe". Ensuite, nous utilisons la fonction echo pour afficher le message "Bonjour, John Doe!". Enfin, nous utilisons la balise ?&gt; pour indiquer la fin du code PHP.</p>
+
+<h2>Variables et types de données</h2>
+<p>En PHP, les variables sont utilisées pour stocker des valeurs. Voici quelques exemples de déclaration de variables en PHP :</p>
+<pre><code>$nom = "John Doe"; // Chaîne de caractères
+$age = 25; // Nombre entier
+$salaire = 2500.50; // Nombre à virgule flottante
+$estEtudiant = true; // Booléen (vrai ou faux)
+$listeAmis = array("Alice", "Bob", "Charlie"); // Tableau
+$utilisateur = null; // Valeur nulle</code></pre>
+
+<p>En PHP, les variables commencent toujours par le symbole $ suivi du nom de la variable. Les noms de variables sont sensibles à la casse, ce qui signifie que $nom et $Nom sont deux variables différentes. Les types de données en PHP comprennent les chaînes de caractères, les nombres entiers, les nombres à virgule flottante, les booléens, les tableaux et les valeurs nulles.</p>
+
+<h2>Opérateurs</h2>
+<p>Les opérateurs en PHP sont utilisés pour effectuer des opérations sur des variables et des valeurs. Voici quelques exemples d'opérateurs en PHP :</p>
+<pre><code>$a = 10;
+$b = 5;
+
+// Opérateurs arithmétiques
+$addition = $a + $b; // Addition
+$soustraction = $a - $b; // Soustraction
+$multiplication = $a * $b; // Multiplication
+$division = $a / $b; // Division
+$modulo = $a % $b; // Modulo
+
+// Opérateurs de comparaison
+$estEgal = ($a == $b); // Est égal
+$estDifferent = ($a != $b); // Est différent
+$estSuperieur = ($a > $b); // Est supérieur
+$estInferieur = ($a < $b); // Est inférieur
+$estSuperieurOuEgal = ($a >= $b); // Est supérieur ou égal
+$estInferieurOuEgal = ($a <= $b); // Est inférieur ou égal
+
+// Opérateurs logiques
+$etLogique = ($a > 0 && $b > 0); // ET logique
+$ouLogique = ($a > 0 || $b > 0); // OU logique
+$nonLogique = !($a > 0); // NON logique</code></pre>
+
+<p>Les opérateurs arithmétiques sont utilisés pour effectuer des opérations mathématiques telles que l'addition, la soustraction, la multiplication, la division et le modulo. Les opérateurs de comparaison sont utilisés pour comparer des valeurs et renvoyer un résultat booléen (vrai ou faux). Les opérateurs logiques sont utilisés pour combiner des expressions booléennes.</p>
+
+<h2>Structures de contrôle (if, else, switch)</h2>
+<p>Les structures de contrôle en PHP sont utilisées pour exécuter des blocs de code conditionnellement. Voici quelques exemples de structures de contrôle en PHP :</p>
+<pre><code>$age = 18;
+
+// Structure if...else
+if ($age &gt;= 18) {
+    echo "Vous êtes majeur.";
+} else {
+    echo "Vous êtes mineur.";
+}
+
+// Structure switch
+$jour = "lundi";
+
+switch ($jour) {
+    case "lundi":
+        echo "C'est le début de la semaine.";
+        break;
+    case "vendredi":
+        echo "C'est bientôt le week-end.";
+        break;
+    default:
+        echo "C'est un autre jour de la semaine.";
+        break;
+}</code></pre>
+
+<p>La structure if...else est utilisée pour exécuter un bloc de code si une condition est vraie et un autre bloc de code si la condition est fausse. La structure switch est utilisée pour exécuter différents blocs de code en fonction de la valeur d'une variable.</p>
+
+<h2>Boucles (for, while, do-while)</h2>
+<p>Les boucles en PHP sont utilisées pour répéter l'exécution d'un bloc de code plusieurs fois. Voici quelques exemples de boucles en PHP :</p>
+<pre><code>// Boucle for
+for ($i = 0; $i &lt; 5; $i++) {
+    echo $i;
+}
+
+// Boucle while
+$i = 0;
+while ($i &lt; 5) {
+    echo $i;
+    $i++;
+}
+
+// Boucle do...while
+$i = 0;
+do {
+    echo $i;
+    $i++;
+} while ($i &lt; 5);</code></pre>
+
+<p>La boucle for est utilisée pour répéter l'exécution d'un bloc de code un nombre spécifié de fois. La boucle while est utilisée pour répéter l'exécution d'un bloc de code tant qu'une condition est vraie. La boucle do...while est similaire à la boucle while, mais elle exécute le bloc de code au moins une fois, même si la condition est fausse.</p>
+
+<h2>Fonctions</h2>
+<p>Les fonctions en PHP sont utilisées pour regrouper un ensemble d'instructions et les exécuter à partir d'un endroit spécifié dans le code. Voici un exemple de déclaration et d'appel de fonction en PHP :</p>
+<pre><code>// Déclaration d'une fonction
+function direBonjour($nom) {
+    echo "Bonjour, " . $nom . "!";
+}
+
+// Appel de la fonction
+direBonjour("John Doe");</code></pre>
+
+<p>Dans cet exemple, nous avons déclaré une fonction nommée direBonjour qui prend un paramètre $nom. La fonction affiche le message "Bonjour, " suivi du nom passé en paramètre. Ensuite, nous appelons la fonction en passant le nom "John Doe". Le résultat affiché sera "Bonjour, John Doe!".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

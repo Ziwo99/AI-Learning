@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PHP Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Projets pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/php/php.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un blog en PHP</h2>
+<p>
+Dans cette sous-section, nous allons apprendre à créer un blog en utilisant PHP. Un blog est un site web où les utilisateurs peuvent publier des articles, les commenter et interagir avec d'autres utilisateurs. Nous allons couvrir les étapes suivantes pour créer notre blog :
+</p>
+
+<h3>1. Création de la base de données</h3>
+<p>
+Tout d'abord, nous devons créer une base de données pour stocker les articles, les commentaires et les utilisateurs. Nous utiliserons MySQL comme système de gestion de base de données. Vous pouvez utiliser l'interface en ligne de commande ou un outil graphique comme phpMyAdmin pour créer la base de données.
+</p>
+<pre><code>
+CREATE DATABASE blog;
+</code></pre>
+
+<h3>2. Création des tables</h3>
+<p>
+Ensuite, nous allons créer les tables nécessaires dans notre base de données. Nous aurons une table pour les articles, une table pour les commentaires et une table pour les utilisateurs. Voici les requêtes SQL pour créer ces tables :
+</p>
+<pre><code>
+CREATE TABLE articles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE comments (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    article_id INT NOT NULL,
+    user_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (article_id) REFERENCES articles(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+</code></pre>
+
+<h3>3. Création des pages du blog</h3>
+<p>
+Maintenant que notre base de données est prête, nous allons créer les pages du blog. Nous aurons une page d'accueil qui affiche tous les articles, une page pour afficher un article spécifique, une page pour créer un nouvel article et une page pour gérer les commentaires. Nous utiliserons PHP pour générer le contenu des pages et MySQL pour récupérer les données de la base de données.
+</p>
+
+<h3>4. Implémentation des fonctionnalités</h3>
+<p>
+Ensuite, nous allons implémenter les fonctionnalités principales de notre blog. Nous permettrons aux utilisateurs de s'inscrire, de se connecter, de publier des articles, de commenter les articles et de gérer leurs propres articles. Nous utiliserons des requêtes SQL pour insérer, mettre à jour et supprimer les données de la base de données.
+</p>
+
+<h2>Développement d'une application e-commerce</h2>
+<p>
+Dans cette sous-section, nous allons apprendre à développer une application e-commerce en utilisant PHP. Une application e-commerce est un site web où les utilisateurs peuvent acheter des produits en ligne. Nous allons couvrir les étapes suivantes pour développer notre application e-commerce :
+</p>
+
+<h3>1. Conception de la base de données</h3>
+<p>
+Tout d'abord, nous devons concevoir la structure de notre base de données pour stocker les produits, les utilisateurs et les commandes. Nous utiliserons MySQL comme système de gestion de base de données. Vous pouvez utiliser un outil de modélisation de base de données comme MySQL Workbench pour concevoir la base de données.
+</p>
+
+<h3>2. Création des tables</h3>
+<p>
+Ensuite, nous allons créer les tables nécessaires dans notre base de données. Nous aurons une table pour les produits, une table pour les utilisateurs et une table pour les commandes. Voici les requêtes SQL pour créer ces tables :
+</p>
+<pre><code>
+CREATE TABLE products (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+</code></pre>
+
+<h3>3. Création des pages de l'application</h3>
+<p>
+Maintenant que notre base de données est prête, nous allons créer les pages de notre application e-commerce. Nous aurons une page d'accueil qui affiche tous les produits, une page pour afficher les détails d'un produit, une page pour ajouter des produits au panier, une page pour passer une commande et une page pour afficher l'historique des commandes. Nous utiliserons PHP pour générer le contenu des pages et MySQL pour récupérer les données de la base de données.
+</p>
+
+<h3>4. Implémentation des fonctionnalités</h3>
+<p>
+Ensuite, nous allons implémenter les fonctionnalités principales de notre application e-commerce. Nous permettrons aux utilisateurs de s'inscrire, de se connecter, d'ajouter des produits au panier, de passer des commandes et de consulter leur historique de commandes. Nous utiliserons des requêtes SQL pour insérer, mettre à jour et supprimer les données de la base de données.
+</p>
+
+<h2>Création d'une API RESTful</h2>
+<p>
+Dans cette sous-section, nous allons apprendre à créer une API RESTful en utilisant PHP. Une API RESTful est une interface de programmation qui permet aux applications de communiquer entre elles en utilisant le protocole HTTP. Nous allons couvrir les étapes suivantes pour créer notre API RESTful :
+</p>
+
+<h3>1. Conception de l'API</h3>
+<p>
+Tout d'abord, nous devons concevoir les endpoints de notre API et définir les opérations qu'ils vont prendre en charge. Nous utiliserons les verbes HTTP (GET, POST, PUT, DELETE) pour définir les opérations. Nous aurons des endpoints pour les produits, les utilisateurs et les commandes.
+</p>
+
+<h3>2. Implémentation des endpoints</h3>
+<p>
+Ensuite, nous allons implémenter les endpoints de notre API en utilisant PHP. Nous utiliserons le framework Slim pour faciliter la création des routes et la gestion des requêtes HTTP. Nous utiliserons des requêtes SQL pour récupérer et manipuler les données de la base de données.
+</p>
+
+<h3>3. Test de l'API</h3>
+<p>
+Une fois que notre API est prête, nous devons la tester pour nous assurer qu'elle fonctionne correctement. Nous utiliserons des outils comme Postman pour envoyer des requêtes HTTP à notre API et vérifier les réponses. Nous testerons les différentes opérations (GET, POST, PUT, DELETE) pour chaque endpoint.
+</p>
+
+<h3>4. Documentation de l'API</h3>
+<p>
+Enfin, nous allons documenter notre API pour permettre aux autres développeurs de l'utiliser. Nous utiliserons des outils comme Swagger pour générer une documentation interactive à partir de nos commentaires de code. La documentation fournira des informations sur les endpoints, les paramètres, les réponses et les exemples d'utilisation de l'API.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/php/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/php/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
