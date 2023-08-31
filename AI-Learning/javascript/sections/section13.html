@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13: Tests et débogage avancés</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Tests unitaires</h2>
+  <p>Les tests unitaires sont utilisés pour vérifier le bon fonctionnement des différentes parties d'un programme. Ils permettent de s'assurer que chaque unité de code (fonction, méthode, classe) fonctionne correctement de manière isolée.</p>
+  <p>Pour effectuer des tests unitaires en JavaScript, il existe plusieurs frameworks populaires tels que Mocha, Jasmine et Jest. Ces frameworks fournissent des outils pour écrire et exécuter des tests unitaires de manière structurée.</p>
+  <p>Voici un exemple de test unitaire utilisant le framework Mocha :</p>
+  <pre><code>const assert = require('assert');
+
+  function add(a, b) {
+    return a + b;
+  }
+
+  describe('add function', function() {
+    it('should return the sum of two numbers', function() {
+      assert.equal(add(2, 3), 5);
+    });
+  });</code></pre>
+  <p>Dans cet exemple, nous utilisons la fonction <code>describe</code> pour décrire le groupe de tests et la fonction <code>it</code> pour décrire chaque test individuel. La fonction <code>assert.equal</code> est utilisée pour vérifier que le résultat de l'addition est égal à 5.</p>
+
+  <h2>Tests d'intégration</h2>
+  <p>Les tests d'intégration permettent de vérifier le bon fonctionnement de l'ensemble du système en testant les interactions entre les différentes parties du code.</p>
+  <p>Pour effectuer des tests d'intégration en JavaScript, on peut utiliser les mêmes frameworks que pour les tests unitaires, en écrivant des scénarios de test qui simulent les différentes interactions entre les composants du système.</p>
+  <p>Voici un exemple de test d'intégration utilisant le framework Jasmine :</p>
+  <pre><code>const Calculator = require('./calculator');
+  const assert = require('assert');
+
+  describe('Calculator', function() {
+    it('should return the correct result for addition', function() {
+      const calculator = new Calculator();
+      const result = calculator.add(2, 3);
+      assert.equal(result, 5);
+    });
+
+    it('should return the correct result for multiplication', function() {
+      const calculator = new Calculator();
+      const result = calculator.multiply(2, 3);
+      assert.equal(result, 6);
+    });
+  });</code></pre>
+  <p>Dans cet exemple, nous utilisons la classe <code>Calculator</code> pour effectuer des opérations d'addition et de multiplication. Nous vérifions ensuite que les résultats obtenus sont corrects à l'aide de la fonction <code>assert.equal</code>.</p>
+
+  <h2>Débogage avancé</h2>
+  <p>Le débogage avancé en JavaScript consiste à utiliser des outils et des techniques avancées pour identifier et résoudre les problèmes dans le code.</p>
+  <p>Voici quelques techniques couramment utilisées pour le débogage avancé en JavaScript :</p>
+  <ul>
+    <li><strong>Utilisation de console.log :</strong> La méthode <code>console.log</code> permet d'afficher des informations dans la console du navigateur, ce qui peut être utile pour comprendre le flux d'exécution du code et vérifier les valeurs des variables à différents moments.</li>
+    <li><strong>Utilisation de breakpoints :</strong> Les breakpoints sont des points d'arrêt que l'on place dans le code pour interrompre son exécution à un certain endroit. Cela permet d'inspecter l'état du programme à ce moment précis et de comprendre ce qui ne fonctionne pas correctement.</li>
+    <li><strong>Utilisation des outils de débogage du navigateur :</strong> Les navigateurs modernes disposent d'outils de débogage avancés tels que Chrome DevTools et Firefox Developer Tools. Ces outils permettent d'inspecter le code, de mettre des breakpoints, de surveiller les variables et d'exécuter le code pas à pas.</li>
+    <li><strong>Analyse des erreurs :</strong> Lorsqu'une erreur se produit, il est important de lire attentivement le message d'erreur affiché dans la console du navigateur. Ce message peut fournir des informations précieuses sur la cause de l'erreur.</li>
+  </ul>
+  <p>Il est également recommandé d'utiliser des outils de linting tels que ESLint pour détecter les erreurs de syntaxe et les problèmes de style dans le code.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

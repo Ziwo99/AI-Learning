@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Les API Web</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux API Web</h2>
+<p>
+Les API Web (Application Programming Interface) sont des ensembles de règles et de protocoles qui permettent à différentes applications de communiquer entre elles. En utilisant les API Web, vous pouvez accéder à des fonctionnalités et des données spécifiques fournies par d'autres applications ou services en ligne.
+</p>
+
+<p>
+Les API Web sont couramment utilisées dans le développement web pour intégrer des fonctionnalités tierces dans une application. Par exemple, vous pouvez utiliser une API Web pour récupérer des données en temps réel à partir d'une source externe, envoyer des données à un service tiers, ou interagir avec des fonctionnalités spécifiques d'un service en ligne.
+</p>
+
+<h2>Utilisation de l'API Fetch</h2>
+<p>
+L'API Fetch est une API Web intégrée dans les navigateurs modernes qui permet d'effectuer des requêtes HTTP asynchrones. Elle fournit une interface simple et puissante pour récupérer des ressources à partir d'un serveur distant et gérer les réponses.
+</p>
+
+<p>
+Pour utiliser l'API Fetch, vous devez appeler la fonction fetch() en lui passant l'URL de la ressource que vous souhaitez récupérer. Cette fonction renvoie une promesse qui sera résolue avec la réponse du serveur une fois qu'elle sera disponible.
+</p>
+
+<p>
+Voici un exemple d'utilisation de l'API Fetch pour récupérer des données JSON à partir d'une API publique :
+</p>
+
+<pre><code>fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    // Utilisez les données récupérées ici
+  })
+  .catch(error => {
+    // Gérez les erreurs ici
+  });
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons la fonction fetch() pour envoyer une requête GET à l'URL 'https://api.example.com/data'. Ensuite, nous utilisons les méthodes then() pour traiter la réponse du serveur. La méthode then() prend une fonction de rappel qui sera appelée lorsque la promesse sera résolue avec la réponse du serveur. Dans notre cas, nous utilisons la méthode json() pour extraire les données JSON de la réponse.
+</p>
+
+<p>
+Notez que l'utilisation de l'API Fetch nécessite une compréhension des promesses et des méthodes de manipulation des promesses, telles que then() et catch(). Assurez-vous de bien comprendre ces concepts avant d'utiliser l'API Fetch dans vos projets.
+</p>
+
+<h2>Utilisation d'API spécifiques (ex: Geolocation, Web Storage)</h2>
+<p>
+En plus de l'API Fetch, JavaScript offre également un certain nombre d'API spécifiques qui permettent d'accéder à des fonctionnalités spécifiques du navigateur ou du système d'exploitation. Parmi ces API, on trouve l'API Geolocation et l'API Web Storage.
+</p>
+
+<p>
+L'API Geolocation permet d'obtenir la position géographique de l'utilisateur à l'aide du GPS ou d'autres sources de localisation. Elle peut être utilisée pour fournir des fonctionnalités basées sur la localisation, telles que des cartes interactives ou des recommandations de lieux à proximité.
+</p>
+
+<p>
+Voici un exemple d'utilisation de l'API Geolocation pour obtenir la position de l'utilisateur :
+</p>
+
+<pre><code>if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(position => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+    // Utilisez les coordonnées de position ici
+  }, error => {
+    // Gérez les erreurs de géolocalisation ici
+  });
+} else {
+  // Gérez le cas où la géolocalisation n'est pas prise en charge
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons la méthode getCurrentPosition() de l'objet navigator.geolocation pour obtenir la position de l'utilisateur. La méthode getCurrentPosition() prend deux fonctions de rappel en argument : une qui sera appelée lorsque la position sera récupérée avec succès, et une autre qui sera appelée en cas d'erreur.
+</p>
+
+<p>
+L'API Web Storage permet de stocker des données localement dans le navigateur de l'utilisateur. Elle offre deux mécanismes de stockage : sessionStorage et localStorage. Le sessionStorage permet de stocker des données qui seront disponibles uniquement pendant la session de navigation en cours, tandis que le localStorage permet de stocker des données qui seront persistantes entre les sessions de navigation.
+</p>
+
+<p>
+Voici un exemple d'utilisation de l'API Web Storage pour stocker et récupérer des données :
+</p>
+
+<pre><code>// Stockage de données
+sessionStorage.setItem('username', 'John');
+localStorage.setItem('theme', 'dark');
+
+// Récupération de données
+const username = sessionStorage.getItem('username');
+const theme = localStorage.getItem('theme');
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons les méthodes setItem() pour stocker des données et getItem() pour récupérer des données à partir du sessionStorage et du localStorage. Les données sont stockées sous forme de paires clé-valeur, où la clé est une chaîne de caractères et la valeur peut être de n'importe quel type pris en charge par JSON.
+</p>
+
+<p>
+Assurez-vous de consulter la documentation officielle de chaque API spécifique pour en savoir plus sur leurs fonctionnalités et leur utilisation.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

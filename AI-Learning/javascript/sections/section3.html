@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Manipulation du DOM</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction au DOM</h2>
+<p>Le DOM (Document Object Model) est une interface de programmation qui permet de manipuler les éléments d'une page HTML. Il représente la structure du document sous forme d'un arbre, où chaque élément est un nœud.</p>
+<p>Grâce au DOM, il est possible de sélectionner des éléments, de modifier leur contenu, d'ajouter ou de supprimer des éléments, et de gérer les événements.</p>
+
+<h2>Sélection d'éléments</h2>
+<p>Pour sélectionner des éléments dans le DOM, on utilise la méthode <code>querySelector()</code> ou <code>querySelectorAll()</code>. La méthode <code>querySelector()</code> renvoie le premier élément correspondant au sélecteur spécifié, tandis que la méthode <code>querySelectorAll()</code> renvoie une liste de tous les éléments correspondants.</p>
+<p>Voici quelques exemples :</p>
+<pre><code>// Sélection d'un élément par son ID
+const element = document.querySelector('#monElement');
+
+// Sélection de tous les éléments de classe "maClasse"
+const elements = document.querySelectorAll('.maClasse');
+
+// Sélection de tous les éléments de balise &lt;p&gt;
+const paragraphs = document.querySelectorAll('p');
+</code></pre>
+
+<h2>Modification du contenu</h2>
+<p>Pour modifier le contenu d'un élément dans le DOM, on utilise les propriétés <code>innerHTML</code> ou <code>textContent</code>. La propriété <code>innerHTML</code> permet de modifier le contenu HTML de l'élément, tandis que la propriété <code>textContent</code> permet de modifier le contenu texte de l'élément.</p>
+<p>Voici quelques exemples :</p>
+<pre><code>// Modification du contenu HTML d'un élément
+element.innerHTML = '&lt;strong&gt;Nouveau contenu&lt;/strong&gt;';
+
+// Modification du contenu texte d'un élément
+element.textContent = 'Nouveau contenu';
+</code></pre>
+
+<h2>Gestion des événements</h2>
+<p>Pour gérer les événements dans le DOM, on utilise la méthode <code>addEventListener()</code>. Cette méthode permet d'ajouter un écouteur d'événement à un élément spécifié, en spécifiant le type d'événement à écouter et la fonction à exécuter lorsque l'événement se produit.</p>
+<p>Voici un exemple :</p>
+<pre><code>// Ajout d'un écouteur d'événement au clic sur un bouton
+const button = document.querySelector('#monBouton');
+
+button.addEventListener('click', function() {
+  // Code à exécuter lorsque le bouton est cliqué
+});
+</code></pre>
+
+<p>Il est également possible de supprimer un écouteur d'événement en utilisant la méthode <code>removeEventListener()</code>.</p>
+<p>Voici un exemple :</p>
+<pre><code>// Suppression de l'écouteur d'événement au clic sur un bouton
+button.removeEventListener('click', maFonction);
+</code></pre>
+
+<p>Il est important de noter que les événements peuvent être de différents types, tels que "click", "mouseover", "keydown", etc. De plus, il est possible de capturer des événements au niveau du document entier ou d'éléments spécifiques.</p>
+
+<p>Ceci conclut la section sur la manipulation du DOM. Nous avons appris comment sélectionner des éléments, modifier leur contenu et gérer les événements. Dans la prochaine section, nous aborderons la programmation orientée objet en Javascript.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

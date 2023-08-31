@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 14</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 14: Déploiement et gestion de projet</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Préparation du déploiement</h2>
+<p>Avant de déployer une application JavaScript, il est important de prendre certaines mesures pour assurer un déploiement réussi. Voici quelques étapes clés à suivre :</p>
+
+<p>1. Minification du code : La minification consiste à réduire la taille du code en supprimant les espaces, les commentaires et en raccourcissant les noms de variables. Cela permet de réduire le temps de chargement de l'application.</p>
+
+<p>2. Concaténation des fichiers : Si votre application JavaScript est composée de plusieurs fichiers, il est recommandé de les concaténer en un seul fichier pour réduire le nombre de requêtes HTTP lors du chargement de l'application.</p>
+
+<p>3. Utilisation de la mise en cache : Configurez les en-têtes de cache appropriés pour permettre aux navigateurs de mettre en cache les fichiers statiques de votre application. Cela permettra de réduire le temps de chargement lors des visites ultérieures.</p>
+
+<p>4. Configuration du serveur : Assurez-vous que votre serveur est correctement configuré pour servir les fichiers JavaScript de manière efficace. Cela peut inclure la compression Gzip, la mise en cache côté serveur et l'utilisation de CDN (Content Delivery Network) pour distribuer les fichiers statiques.</p>
+
+<h2>Gestion des dépendances</h2>
+<p>La gestion des dépendances est un aspect important du développement JavaScript, en particulier lorsque vous utilisez des bibliothèques ou des frameworks tiers. Voici quelques concepts clés à comprendre :</p>
+
+<p>1. Package Managers : Les gestionnaires de packages tels que npm (Node Package Manager) et Yarn permettent de gérer les dépendances de votre projet. Ils vous permettent d'installer, de mettre à jour et de supprimer des packages JavaScript de manière efficace.</p>
+
+<p>2. Fichiers de configuration : Les fichiers de configuration tels que package.json (utilisé par npm) et yarn.lock (utilisé par Yarn) contiennent des informations sur les dépendances de votre projet. Ils spécifient les versions des packages à utiliser et permettent de garantir la reproductibilité de l'environnement de développement.</p>
+
+<p>3. Résolution des conflits de dépendances : Lorsque vous utilisez plusieurs packages qui dépendent de différentes versions d'une même dépendance, il peut y avoir des conflits. Il est important de comprendre comment résoudre ces conflits en utilisant des outils tels que npm shrinkwrap ou yarn resolutions.</p>
+
+<h2>Outils de gestion de projet</h2>
+<p>Il existe de nombreux outils de gestion de projet JavaScript qui peuvent faciliter le développement, le déploiement et la maintenance de votre application. Voici quelques-uns des outils les plus populaires :</p>
+
+<p>1. Webpack : Webpack est un outil de build qui permet de regrouper et de transformer les fichiers JavaScript, CSS et autres ressources de votre application. Il offre également des fonctionnalités avancées telles que le code splitting, la gestion des modules et l'optimisation des performances.</p>
+
+<p>2. Babel : Babel est un transpileur JavaScript qui permet d'utiliser des fonctionnalités ECMAScript récentes dans des environnements qui ne les prennent pas en charge nativement. Il est souvent utilisé en conjonction avec Webpack pour compiler le code JavaScript avant le déploiement.</p>
+
+<p>3. ESLint : ESLint est un outil d'analyse statique qui permet de détecter les erreurs et les problèmes de style dans votre code JavaScript. Il peut être configuré pour suivre des règles spécifiques et vous aider à maintenir un code propre et cohérent.</p>
+
+<p>4. Git : Git est un système de contrôle de version largement utilisé qui facilite la collaboration et la gestion des modifications de code. Il permet de suivre l'historique des modifications, de créer des branches pour travailler sur des fonctionnalités ou des correctifs spécifiques, et de fusionner les modifications en toute sécurité.</p>
+
+<p>5. Task Runners : Les task runners tels que Grunt et Gulp permettent d'automatiser des tâches répétitives telles que la compilation du code, la minification des fichiers et le déploiement de l'application. Ils peuvent être configurés pour s'intégrer à d'autres outils de gestion de projet.</p>
+
+<p>6. Continuous Integration (CI) : Les outils de CI tels que Jenkins, Travis CI et CircleCI permettent d'automatiser le processus de construction, de test et de déploiement de votre application. Ils peuvent être configurés pour s'exécuter à chaque modification du code source, garantissant ainsi la qualité et la stabilité de votre application.</p>
+
+<p>En utilisant ces outils de gestion de projet, vous pourrez développer, déployer et maintenir votre application JavaScript de manière plus efficace et professionnelle.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

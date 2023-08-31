@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Sécurité en Javascript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les vulnérabilités courantes</h2>
+<p>La sécurité en Javascript est un aspect crucial à prendre en compte lors du développement d'applications web. Voici quelques-unes des vulnérabilités courantes auxquelles vous pourriez être confronté :</p>
+
+<h3>Injections de code</h3>
+<p>Les injections de code sont l'une des vulnérabilités les plus courantes en Javascript. Elles se produisent lorsque des données non fiables sont insérées dans du code Javascript, ce qui peut permettre à un attaquant d'exécuter du code malveillant sur le navigateur de l'utilisateur. Pour éviter cela, il est important de toujours valider et échapper les données utilisateur avant de les utiliser dans du code Javascript.</p>
+
+<h3>Attaques par cross-site scripting (XSS)</h3>
+<p>Les attaques XSS se produisent lorsque du code Javascript malveillant est injecté dans une page web, généralement via des entrées utilisateur non validées. Cela permet à un attaquant d'exécuter du code sur le navigateur de l'utilisateur, compromettant ainsi la sécurité de ses données. Pour prévenir les attaques XSS, il est essentiel de valider et échapper correctement toutes les entrées utilisateur et d'utiliser des mécanismes de sécurité tels que les en-têtes de sécurité HTTP (Content Security Policy).</p>
+
+<h3>Attaques par injection SQL</h3>
+<p>Les attaques par injection SQL se produisent lorsque des données non fiables sont insérées dans des requêtes SQL, ce qui permet à un attaquant d'exécuter des requêtes non autorisées sur la base de données. Pour éviter les attaques par injection SQL, il est important d'utiliser des requêtes préparées ou des ORM (Object-Relational Mapping) pour interagir avec la base de données, plutôt que de concaténer directement des valeurs dans les requêtes SQL.</p>
+
+<h2>Bonnes pratiques de sécurité</h2>
+<p>Pour garantir la sécurité de vos applications Javascript, voici quelques bonnes pratiques à suivre :</p>
+
+<h3>Validation des entrées utilisateur</h3>
+<p>Toujours valider et échapper correctement toutes les entrées utilisateur avant de les utiliser dans du code Javascript. Cela permet de prévenir les injections de code et les attaques XSS.</p>
+
+<h3>Utilisation de mécanismes de sécurité</h3>
+<p>Utilisez des mécanismes de sécurité tels que les en-têtes de sécurité HTTP (Content Security Policy) pour prévenir les attaques XSS et autres vulnérabilités liées à l'exécution de code non autorisé.</p>
+
+<h3>Utilisation de requêtes préparées ou d'ORM</h3>
+<p>Utilisez des requêtes préparées ou des ORM pour interagir avec la base de données, afin de prévenir les attaques par injection SQL.</p>
+
+<h3>Mise à jour régulière des dépendances</h3>
+<p>Assurez-vous de maintenir à jour toutes les dépendances de votre application Javascript, y compris les bibliothèques et les frameworks utilisés. Les mises à jour régulières permettent de corriger les vulnérabilités connues et de renforcer la sécurité de votre application.</p>
+
+<h3>Utilisation de mots de passe forts</h3>
+<p>Lorsque vous stockez des mots de passe dans votre application, assurez-vous d'utiliser des algorithmes de hachage sécurisés et de saler les mots de passe pour renforcer leur sécurité.</p>
+
+<h3>Limitation des privilèges</h3>
+<p>Accordez uniquement les privilèges nécessaires aux utilisateurs de votre application. Limitez l'accès aux fonctionnalités sensibles et assurez-vous que seuls les utilisateurs autorisés peuvent y accéder.</p>
+
+<h3>Journalisation et surveillance</h3>
+<p>Mettez en place un système de journalisation et de surveillance pour détecter les activités suspectes et les tentatives d'attaque. Cela vous permettra de réagir rapidement en cas de problème de sécurité.</p>
+
+<p>En suivant ces bonnes pratiques de sécurité, vous pouvez renforcer la sécurité de vos applications Javascript et protéger les données sensibles de vos utilisateurs.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

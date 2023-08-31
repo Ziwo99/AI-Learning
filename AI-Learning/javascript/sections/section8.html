@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Programmation asynchrone</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation asynchrone</h2>
+<p>
+La programmation asynchrone est une approche de programmation qui permet d'exécuter des tâches de manière non bloquante. Cela signifie que le programme peut continuer à s'exécuter sans attendre la fin d'une tâche avant de passer à la suivante. En JavaScript, la programmation asynchrone est essentielle pour gérer les opérations qui prennent du temps, comme les appels réseau ou les interactions avec l'utilisateur.
+</p>
+
+<h2>Utilisation des callbacks</h2>
+<p>
+Les callbacks sont une façon courante de gérer la programmation asynchrone en JavaScript. Un callback est une fonction qui est passée comme argument à une autre fonction et qui sera appelée une fois que cette dernière aura terminé son exécution. Les callbacks permettent d'exécuter du code de manière asynchrone, en spécifiant ce qui doit être fait une fois qu'une opération asynchrone est terminée.
+</p>
+<p>Voici un exemple d'utilisation d'un callback :</p>
+<pre><code>function fetchData(callback) {
+    setTimeout(function() {
+        const data = 'Exemple de données asynchrones';
+        callback(data);
+    }, 2000);
+}
+
+function displayData(data) {
+    console.log(data);
+}
+
+fetchData(displayData); // Affiche 'Exemple de données asynchrones' après 2 secondes
+</code></pre>
+
+<h2>Promesses et async/await</h2>
+<p>
+Les promesses sont une autre façon de gérer la programmation asynchrone en JavaScript. Une promesse représente une valeur qui peut être disponible maintenant, dans le futur ou jamais. Elle permet de gérer les opérations asynchrones de manière plus lisible et plus facile à comprendre que les callbacks.
+</p>
+<p>Voici un exemple d'utilisation des promesses :</p>
+<pre><code>function fetchData() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            const data = 'Exemple de données asynchrones';
+            resolve(data);
+        }, 2000);
+    });
+}
+
+fetchData()
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.error(error);
+    });
+</code></pre>
+<p>
+L'async/await est une syntaxe introduite dans ECMAScript 2017 qui permet de gérer les promesses de manière plus synchrone. L'async indique que la fonction retourne une promesse, tandis que l'await met en pause l'exécution de la fonction jusqu'à ce que la promesse soit résolue ou rejetée.
+</p>
+<p>Voici un exemple d'utilisation de l'async/await :</p>
+<pre><code>async function fetchData() {
+    return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+            const data = 'Exemple de données asynchrones';
+            resolve(data);
+        }, 2000);
+    });
+}
+
+async function displayData() {
+    try {
+        const data = await fetchData();
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+displayData();
+</code></pre>
+<p>
+Dans cet exemple, la fonction fetchData retourne une promesse qui est résolue après 2 secondes. La fonction displayData utilise l'await pour attendre que la promesse soit résolue avant de continuer l'exécution. Si la promesse est rejetée, l'erreur est capturée dans le bloc catch.
+</p>
+
+<p>
+La programmation asynchrone est essentielle pour développer des applications JavaScript performantes et réactives. Les callbacks, les promesses et l'async/await sont des outils puissants pour gérer les opérations asynchrones de manière efficace. Il est important de comprendre ces concepts et de les utiliser correctement pour éviter les problèmes de synchronisation et améliorer l'expérience utilisateur.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des erreurs et débogage</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des erreurs avec les exceptions</h2>
+<p>En JavaScript, les exceptions sont utilisées pour gérer les erreurs et les situations exceptionnelles. Une exception est une interruption normale du flux d'exécution d'un programme en réponse à une condition d'erreur.</p>
+<p>Pour gérer les exceptions, vous pouvez utiliser les mots-clés <code>try</code>, <code>catch</code> et <code>finally</code>. Le bloc <code>try</code> contient le code qui peut générer une exception, tandis que le bloc <code>catch</code> est utilisé pour attraper et gérer l'exception. Le bloc <code>finally</code> est facultatif et est utilisé pour exécuter du code qui doit être exécuté, qu'une exception soit levée ou non.</p>
+<p>Voici un exemple de gestion d'exception :</p>
+<pre><code>try {
+    // Code pouvant générer une exception
+    throw new Error('Une erreur s\'est produite.');
+} catch (error) {
+    // Gestion de l'exception
+    console.log('Erreur attrapée : ' + error.message);
+} finally {
+    // Code exécuté après le bloc try-catch, qu'une exception soit levée ou non
+    console.log('Fin de la gestion des erreurs.');
+}</code></pre>
+
+<h2>Utilisation des outils de débogage</h2>
+<p>Le débogage est un processus essentiel pour identifier et résoudre les erreurs dans votre code JavaScript. Heureusement, les navigateurs modernes sont équipés d'outils de débogage puissants qui facilitent cette tâche.</p>
+<p>Le plus couramment utilisé est l'outil de débogage intégré dans les navigateurs, accessible via les outils de développement. Cet outil vous permet de mettre des points d'arrêt, d'exécuter votre code pas à pas, d'inspecter les variables et de surveiller les appels de fonction.</p>
+<p>Voici comment utiliser l'outil de débogage dans le navigateur Google Chrome :</p>
+<ol>
+    <li>Ouvrez votre page web dans Google Chrome.</li>
+    <li>Cliquez avec le bouton droit de la souris sur la page et sélectionnez "Inspecter" dans le menu contextuel.</li>
+    <li>Dans l'onglet "Sources" des outils de développement, recherchez le fichier JavaScript que vous souhaitez déboguer.</li>
+    <li>Placez des points d'arrêt en cliquant sur le numéro de ligne correspondant dans le panneau de gauche.</li>
+    <li>Rechargez la page pour démarrer le débogage.</li>
+    <li>Utilisez les boutons de contrôle (play, pause, next) pour exécuter votre code pas à pas et inspecter les variables.</li>
+</ol>
+
+<h2>Bonnes pratiques de débogage</h2>
+<p>Voici quelques bonnes pratiques à suivre lors du débogage de votre code JavaScript :</p>
+<ul>
+    <li>Utilisez des noms de variables et de fonctions significatifs pour faciliter la compréhension du code.</li>
+    <li>Divisez votre code en petites parties et testez-les individuellement pour isoler les erreurs.</li>
+    <li>Utilisez des commentaires pour expliquer votre code et marquer les sections problématiques.</li>
+    <li>Utilisez des consoles de débogage pour afficher des informations utiles pendant l'exécution du code.</li>
+    <li>Utilisez des outils de débogage pour mettre des points d'arrêt et exécuter votre code pas à pas.</li>
+    <li>Recherchez des ressources en ligne, telles que des forums et des documentations, pour obtenir de l'aide sur des problèmes spécifiques.</li>
+</ul>
+
+<p>Ces bonnes pratiques vous aideront à identifier et à résoudre les erreurs plus rapidement, ce qui améliorera la qualité de votre code JavaScript.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

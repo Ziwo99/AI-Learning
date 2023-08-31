@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Les frameworks Javascript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux frameworks Javascript</h2>
+<p>Un framework Javascript est une collection de bibliothèques, de modules et d'outils qui facilitent le développement d'applications web en Javascript. Les frameworks Javascript offrent une structure et des fonctionnalités prédéfinies qui permettent aux développeurs de créer des applications plus rapidement et plus efficacement.</p>
+
+<p>Les frameworks Javascript sont utilisés pour gérer des tâches courantes telles que la manipulation du DOM, la gestion des événements, la gestion des états, la création d'interfaces utilisateur réactives, etc. Ils fournissent également des fonctionnalités avancées telles que la gestion des routes, la gestion des données, la communication avec les serveurs, etc.</p>
+
+<p>Il existe de nombreux frameworks Javascript populaires, chacun ayant ses propres caractéristiques et avantages. Dans cette sous-section, nous allons explorer trois des frameworks les plus utilisés : Vue.js, React.js et Angular.js.</p>
+
+<h2>Vue.js</h2>
+<p>Vue.js est un framework Javascript progressif et évolutif qui est devenu très populaire ces dernières années. Il est apprécié pour sa simplicité et sa facilité d'apprentissage, ce qui en fait un excellent choix pour les débutants en développement web.</p>
+
+<p>Vue.js utilise une approche basée sur les composants, ce qui signifie que vous pouvez créer des composants réutilisables et les combiner pour former des interfaces utilisateur complexes. Il offre également une réactivité automatique, ce qui signifie que les modifications apportées aux données sont automatiquement reflétées dans l'interface utilisateur.</p>
+
+<p>Voici un exemple de code Vue.js :</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;{{ message }}&lt;/h2&gt;
+    &lt;button @click="changeMessage"&gt;Changer le message&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      message: 'Bonjour, Vue.js!'
+    }
+  },
+  methods: {
+    changeMessage() {
+      this.message = 'Nouveau message!'
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+
+<h2>React.js</h2>
+<p>React.js est un framework Javascript développé par Facebook. Il est très populaire et largement utilisé dans l'industrie. React.js est basé sur une approche basée sur les composants, similaire à Vue.js.</p>
+
+<p>React.js utilise une syntaxe appelée JSX, qui permet d'écrire du code HTML directement dans le code Javascript. Cela facilite la création d'interfaces utilisateur réactives et dynamiques.</p>
+
+<p>Voici un exemple de code React.js :</p>
+<pre><code>import React, { useState } from 'react';
+
+function App() {
+  const [message, setMessage] = useState('Bonjour, React.js!');
+
+  const changeMessage = () => {
+    setMessage('Nouveau message!');
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;h2&gt;{message}&lt;/h2&gt;
+      &lt;button onClick={changeMessage}&gt;Changer le message&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;</code></pre>
+
+<h2>Angular.js</h2>
+<p>Angular.js est un framework Javascript développé par Google. Il est utilisé pour créer des applications web complexes et évolutives. Angular.js utilise une approche basée sur les composants et suit les principes de la programmation orientée objet.</p>
+
+<p>Angular.js offre de nombreuses fonctionnalités avancées telles que la gestion des routes, la gestion des formulaires, la validation des données, etc. Il est également très performant et optimisé pour les applications à grande échelle.</p>
+
+<p>Voici un exemple de code Angular.js :</p>
+<pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    &lt;div&gt;
+      &lt;h2&gt;{{ message }}&lt;/h2&gt;
+      &lt;button (click)="changeMessage()"&gt;Changer le message&lt;/button&gt;
+    &lt;/div&gt;
+  `
+})
+export class AppComponent {
+  message = 'Bonjour, Angular.js!';
+
+  changeMessage() {
+    this.message = 'Nouveau message!';
+  }
+}</code></pre>
+
+<p>Il est important de noter que ces exemples de code sont simplifiés pour des besoins de démonstration. Les frameworks Javascript offrent de nombreuses autres fonctionnalités et possibilités que nous ne pouvons pas couvrir en détail ici.</p>
+
+<p>En conclusion, les frameworks Javascript sont des outils puissants qui facilitent le développement d'applications web en Javascript. Vue.js, React.js et Angular.js sont trois des frameworks les plus populaires et les plus utilisés. Chacun a ses propres caractéristiques et avantages, il est donc important de choisir celui qui convient le mieux à votre projet.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Les modules et les bibliothèques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux modules</h2>
+<p>Les modules sont des morceaux de code JavaScript réutilisables qui permettent d'organiser et de structurer efficacement votre code. Ils permettent de regrouper des fonctionnalités similaires et de les encapsuler, ce qui facilite la maintenance et la réutilisation du code.</p>
+<p>Les modules sont particulièrement utiles lorsque vous travaillez sur de grands projets, car ils vous permettent de diviser votre code en plusieurs fichiers, ce qui rend le développement plus facile à gérer.</p>
+<p>Pour utiliser des modules en JavaScript, vous devez utiliser la syntaxe <code>import</code> pour importer des modules existants ou créer vos propres modules à l'aide de la syntaxe <code>export</code>.</p>
+
+<h2>Utilisation des modules existants</h2>
+<p>Il existe de nombreux modules JavaScript disponibles que vous pouvez utiliser dans vos projets. Ces modules sont généralement créés par d'autres développeurs et sont disponibles sous forme de bibliothèques ou de packages.</p>
+<p>Pour utiliser un module existant, vous devez d'abord l'installer à l'aide d'un gestionnaire de packages tel que npm (Node Package Manager). Une fois installé, vous pouvez l'importer dans votre code à l'aide de la syntaxe <code>import</code>.</p>
+<p>Par exemple, pour utiliser le module lodash, vous pouvez l'installer en exécutant la commande suivante dans votre terminal :</p>
+<pre><code>npm install lodash</code></pre>
+<p>Ensuite, vous pouvez l'importer dans votre code :</p>
+<pre><code>import _ from 'lodash';</code></pre>
+<p>Vous pouvez maintenant utiliser les fonctionnalités fournies par le module lodash dans votre code.</p>
+
+<h2>Création de modules personnalisés</h2>
+<p>En plus d'utiliser des modules existants, vous pouvez également créer vos propres modules personnalisés en JavaScript. Cela vous permet de regrouper des fonctionnalités spécifiques dans un module réutilisable.</p>
+<p>Pour créer un module personnalisé, vous devez utiliser la syntaxe <code>export</code> pour exporter les fonctionnalités que vous souhaitez rendre accessibles à d'autres parties de votre code.</p>
+<p>Par exemple, supposons que vous souhaitez créer un module qui contient une fonction pour calculer la somme de deux nombres :</p>
+<pre><code>// myModule.js
+export function sum(a, b) {
+  return a + b;
+}</code></pre>
+<p>Vous pouvez ensuite importer ce module dans un autre fichier JavaScript :</p>
+<pre><code>// main.js
+import { sum } from './myModule.js';
+
+console.log(sum(2, 3)); // Output: 5</code></pre>
+<p>Vous pouvez également exporter plusieurs fonctionnalités à partir d'un module en utilisant la syntaxe <code>export</code> :</p>
+<pre><code>// myModule.js
+export function sum(a, b) {
+  return a + b;
+}
+
+export function subtract(a, b) {
+  return a - b;
+}</code></pre>
+<p>Et les importer dans un autre fichier JavaScript :</p>
+<pre><code>// main.js
+import { sum, subtract } from './myModule.js';
+
+console.log(sum(2, 3)); // Output: 5
+console.log(subtract(5, 2)); // Output: 3</code></pre>
+<p>Il est également possible d'exporter une fonctionnalité par défaut à partir d'un module en utilisant la syntaxe <code>export default</code>. Cela permet d'importer cette fonctionnalité sans avoir à spécifier son nom lors de l'importation.</p>
+<pre><code>// myModule.js
+export default function multiply(a, b) {
+  return a * b;
+}</code></pre>
+<p>Et l'importer dans un autre fichier JavaScript :</p>
+<pre><code>// main.js
+import multiply from './myModule.js';
+
+console.log(multiply(2, 3)); // Output: 6</code></pre>
+<p>Il est important de noter que les modules JavaScript sont pris en charge par les navigateurs modernes, mais pas par tous les navigateurs plus anciens. Si vous devez prendre en charge les navigateurs plus anciens, vous devrez utiliser un outil de compilation tel que Babel pour convertir votre code en une version compatible.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

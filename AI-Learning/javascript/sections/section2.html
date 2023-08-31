@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de Javascript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base</h2>
+<p>La syntaxe de base de Javascript est assez simple et ressemble à celle des autres langages de programmation. Voici un exemple de code Javascript :</p>
+
+<pre><code>let x = 5;
+let y = 10;
+let z = x + y;
+
+console.log(z); // Affiche 15 dans la console</code></pre>
+
+<p>Dans cet exemple, nous déclarons trois variables (x, y et z) et effectuons une opération d'addition. Le résultat est ensuite affiché dans la console à l'aide de la fonction console.log().</p>
+
+<h2>Variables et types de données</h2>
+<p>En Javascript, les variables sont utilisées pour stocker des valeurs. Il existe plusieurs types de données que l'on peut assigner à une variable :</p>
+
+<ul>
+  <li>Nombre (number) : utilisé pour stocker des valeurs numériques, par exemple 5 ou 3.14.</li>
+  <li>Chaîne de caractères (string) : utilisée pour stocker du texte, par exemple "Bonjour" ou 'Javascript'.</li>
+  <li>Booléen (boolean) : utilisé pour stocker des valeurs de vérité, soit true (vrai) soit false (faux).</li>
+  <li>Tableau (array) : utilisé pour stocker plusieurs valeurs dans une seule variable.</li>
+  <li>Objet (object) : utilisé pour stocker des données structurées, avec des propriétés et des méthodes.</li>
+  <li>Null : utilisé pour représenter l'absence de valeur.</li>
+  <li>Undefined : utilisé pour représenter une variable qui n'a pas été assignée.</li>
+</ul>
+
+<p>Voici un exemple montrant comment déclarer et utiliser différentes variables :</p>
+
+<pre><code>let age = 25; // Nombre
+let nom = "Jean"; // Chaîne de caractères
+let estMajeur = true; // Booléen
+
+let fruits = ["pomme", "banane", "orange"]; // Tableau
+console.log(fruits[0]); // Affiche "pomme" dans la console
+
+let personne = { nom: "Jean", age: 25 }; // Objet
+console.log(personne.nom); // Affiche "Jean" dans la console
+
+let valeurNull = null; // Null
+let valeurNonAssignee; // Undefined</code></pre>
+
+<h2>Opérateurs</h2>
+<p>Les opérateurs sont utilisés pour effectuer des opérations sur les variables et les valeurs. Voici quelques-uns des opérateurs les plus couramment utilisés en Javascript :</p>
+
+<ul>
+  <li>Opérateurs arithmétiques : + (addition), - (soustraction), * (multiplication), / (division), % (modulo).</li>
+  <li>Opérateurs d'affectation : = (assignation), += (addition et assignation), -= (soustraction et assignation), *= (multiplication et assignation), /= (division et assignation), %= (modulo et assignation).</li>
+  <li>Opérateurs de comparaison : == (égal à), != (différent de), === (égal à en termes de valeur et de type), !== (différent de en termes de valeur et de type), > (supérieur à), < (inférieur à), >= (supérieur ou égal à), <= (inférieur ou égal à).</li>
+  <li>Opérateurs logiques : && (et logique), || (ou logique), ! (non logique).</li>
+</ul>
+
+<p>Voici un exemple montrant comment utiliser certains de ces opérateurs :</p>
+
+<pre><code>let x = 5;
+let y = 10;
+
+let addition = x + y; // Addition
+let soustraction = x - y; // Soustraction
+let multiplication = x * y; // Multiplication
+let division = x / y; // Division
+let modulo = x % y; // Modulo
+
+console.log(addition); // Affiche 15 dans la console
+console.log(soustraction); // Affiche -5 dans la console
+console.log(multiplication); // Affiche 50 dans la console
+console.log(division); // Affiche 0.5 dans la console
+console.log(modulo); // Affiche 5 dans la console
+
+let a = 5;
+let b = 10;
+let c = 15;
+
+let estSuperieur = a > b; // Est-ce que a est supérieur à b ?
+let estInferieurOuEgal = b <= c; // Est-ce que b est inférieur ou égal à c ?
+
+console.log(estSuperieur); // Affiche false dans la console
+console.log(estInferieurOuEgal); // Affiche true dans la console
+
+let estVrai = true;
+let estFaux = false;
+
+let etLogique = estVrai && estFaux; // Est-ce que estVrai ET estFaux ?
+let ouLogique = estVrai || estFaux; // Est-ce que estVrai OU estFaux ?
+let nonLogique = !estVrai; // Est-ce que NON estVrai ?
+
+console.log(etLogique); // Affiche false dans la console
+console.log(ouLogique); // Affiche true dans la console
+console.log(nonLogique); // Affiche false dans la console</code></pre>
+
+<h2>Structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle permettent de contrôler le flux d'exécution d'un programme en fonction de certaines conditions. Les boucles et les conditions sont les structures de contrôle les plus couramment utilisées en Javascript.</p>
+
+<h3>Boucles</h3>
+<p>Les boucles permettent d'exécuter une série d'instructions plusieurs fois. Voici les boucles les plus couramment utilisées en Javascript :</p>
+
+<ul>
+  <li>Boucle while : exécute un bloc d'instructions tant qu'une condition est vraie.</li>
+  <li>Boucle for : exécute un bloc d'instructions un certain nombre de fois.</li>
+  <li>Boucle do...while : exécute un bloc d'instructions au moins une fois, puis tant qu'une condition est vraie.</li>
+</ul>
+
+<p>Voici un exemple montrant comment utiliser une boucle while :</p>
+
+<pre><code>let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}</code></pre>
+
+<p>Cet exemple affiche les nombres de 0 à 4 dans la console.</p>
+
+<h3>Conditions</h3>
+<p>Les conditions permettent d'exécuter certaines instructions uniquement si une condition est vraie. Voici les conditions les plus couramment utilisées en Javascript :</p>
+
+<ul>
+  <li>if...else : exécute un bloc d'instructions si une condition est vraie, sinon exécute un autre bloc d'instructions.</li>
+  <li>switch : exécute un bloc d'instructions en fonction de la valeur d'une variable.</li>
+</ul>
+
+<p>Voici un exemple montrant comment utiliser une condition if...else :</p>
+
+<pre><code>let age = 18;
+
+if (age >= 18) {
+  console.log("Vous êtes majeur.");
+} else {
+  console.log("Vous êtes mineur.");
+}</code></pre>
+
+<p>Cet exemple affiche "Vous êtes majeur." si l'âge est supérieur ou égal à 18, sinon il affiche "Vous êtes mineur.".</p>
+
+<h2>Fonctions</h2>
+<p>Les fonctions sont des blocs de code réutilisables qui peuvent être appelés à partir d'autres parties du programme. Elles permettent d'organiser le code en le divisant en tâches plus petites et plus gérables.</p>
+
+<p>Voici un exemple montrant comment déclarer et utiliser une fonction :</p>
+
+<pre><code>function direBonjour() {
+  console.log("Bonjour !");
+}
+
+direBonjour(); // Appelle la fonction et affiche "Bonjour !" dans la console</code></pre>
+
+<p>Dans cet exemple, nous déclarons une fonction appelée direBonjour() qui affiche "Bonjour !" dans la console. Nous appelons ensuite cette fonction pour l'exécuter.</p>
+
+<p>Les fonctions peuvent également prendre des paramètres, qui sont des valeurs que l'on peut passer à la fonction lors de son appel. Voici un exemple montrant comment déclarer une fonction avec des paramètres :</p>
+
+<pre><code>function direBonjour(nom) {
+  console.log("Bonjour " + nom + " !");
+}
+
+direBonjour("Jean"); // Appelle la fonction avec le paramètre "Jean" et affiche "Bonjour Jean !" dans la console</code></pre>
+
+<p>Dans cet exemple, nous déclarons une fonction appelée direBonjour() qui prend un paramètre nom. Lorsque nous appelons cette fonction avec le paramètre "Jean", elle affiche "Bonjour Jean !" dans la console.</p>
+
+<p>Les fonctions peuvent également renvoyer une valeur à partir du bloc de code. Voici un exemple montrant comment déclarer une fonction avec une valeur de retour :</p>
+
+<pre><code>function additionner(a, b) {
+  return a + b;
+}
+
+let resultat = additionner(5, 10); // Appelle la fonction avec les paramètres 5 et 10, et assigne le résultat à la variable resultat
+console.log(resultat); // Affiche 15 dans la console</code></pre>
+
+<p>Dans cet exemple, nous déclarons une fonction appelée additionner() qui prend deux paramètres a et b. La fonction renvoie la somme de ces deux paramètres. Lorsque nous appelons cette fonction avec les paramètres 5 et 10, elle renvoie 15, que nous assignons à la variable resultat. Nous affichons ensuite cette variable dans la console.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

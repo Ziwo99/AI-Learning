@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Javascript Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Manipulation des tableaux et des objets</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/javascript/javascript.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Tableaux et méthodes associées</h2>
+<p>Les tableaux sont des structures de données qui permettent de stocker et d'organiser plusieurs valeurs dans une seule variable. En JavaScript, les tableaux peuvent contenir des éléments de différents types de données tels que des nombres, des chaînes de caractères, des objets, etc.</p>
+
+<p>Pour créer un tableau, on utilise les crochets [] et on sépare les éléments par des virgules. Par exemple :</p>
+
+<pre><code>let fruits = ['pomme', 'banane', 'orange'];</code></pre>
+
+<p>Pour accéder à un élément spécifique dans un tableau, on utilise l'indice de cet élément. Les indices commencent à 0. Par exemple, pour accéder à la première valeur du tableau "fruits", on utilise :</p>
+
+<pre><code>let premierFruit = fruits[0]; // 'pomme'</code></pre>
+
+<p>Il existe plusieurs méthodes intégrées pour manipuler les tableaux en JavaScript :</p>
+
+<ul>
+  <li><code>push()</code> : ajoute un élément à la fin du tableau</li>
+  <li><code>pop()</code> : supprime le dernier élément du tableau</li>
+  <li><code>shift()</code> : supprime le premier élément du tableau</li>
+  <li><code>unshift()</code> : ajoute un élément au début du tableau</li>
+  <li><code>splice()</code> : ajoute, supprime ou remplace des éléments dans le tableau</li>
+  <li><code>slice()</code> : extrait une partie du tableau et renvoie un nouveau tableau</li>
+  <li><code>concat()</code> : fusionne deux tableaux en un seul</li>
+  <li><code>sort()</code> : trie les éléments du tableau</li>
+  <li><code>reverse()</code> : inverse l'ordre des éléments du tableau</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de certaines de ces méthodes :</p>
+
+<pre><code>let fruits = ['pomme', 'banane', 'orange'];
+
+fruits.push('kiwi'); // ['pomme', 'banane', 'orange', 'kiwi']
+
+fruits.pop(); // ['pomme', 'banane', 'orange']
+
+fruits.shift(); // ['banane', 'orange']
+
+fruits.unshift('fraise'); // ['fraise', 'banane', 'orange']
+
+fruits.splice(1, 0, 'mangue'); // ['fraise', 'mangue', 'banane', 'orange']
+
+let citrus = fruits.slice(1, 3); // ['mangue', 'banane']
+
+let allFruits = fruits.concat(citrus); // ['fraise', 'mangue', 'banane', 'orange', 'mangue', 'banane']
+
+fruits.sort(); // ['banane', 'fraise', 'mangue', 'orange']
+
+fruits.reverse(); // ['orange', 'mangue', 'fraise', 'banane']</code></pre>
+
+<h2>Objets et méthodes associées</h2>
+<p>Les objets sont des structures de données qui permettent de stocker des collections de propriétés et de méthodes. En JavaScript, les objets sont des entités autonomes avec leurs propres attributs et comportements.</p>
+
+<p>Pour créer un objet, on utilise les accolades {}. Par exemple :</p>
+
+<pre><code>let personne = {
+  nom: 'John',
+  age: 30,
+  adresse: 'Paris'
+};</code></pre>
+
+<p>Pour accéder à une propriété spécifique d'un objet, on utilise la notation pointée. Par exemple, pour accéder à la propriété "nom" de l'objet "personne", on utilise :</p>
+
+<pre><code>let nomPersonne = personne.nom; // 'John'</code></pre>
+
+<p>Il est également possible d'accéder aux propriétés d'un objet en utilisant la notation entre crochets. Par exemple :</p>
+
+<pre><code>let nomPersonne = personne['nom']; // 'John'</code></pre>
+
+<p>Les objets peuvent également avoir des méthodes, qui sont des fonctions associées à l'objet. Par exemple :</p>
+
+<pre><code>let personne = {
+  nom: 'John',
+  age: 30,
+  adresse: 'Paris',
+  sePresenter: function() {
+    console.log('Je m\'appelle ' + this.nom + ', j\'ai ' + this.age + ' ans.');
+  }
+};
+
+personne.sePresenter(); // Affiche "Je m'appelle John, j'ai 30 ans."</code></pre>
+
+<p>Il est possible d'ajouter, de modifier ou de supprimer des propriétés et des méthodes d'un objet à tout moment. Par exemple :</p>
+
+<pre><code>personne.profession = 'Développeur'; // Ajoute une nouvelle propriété
+
+personne.age = 31; // Modifie la valeur d'une propriété existante
+
+delete personne.adresse; // Supprime une propriété</code></pre>
+
+<h2>Utilisation de JSON</h2>
+<p>JSON (JavaScript Object Notation) est un format de données couramment utilisé pour échanger des données entre un serveur et un client, ou entre différentes parties d'une application. JSON est basé sur la syntaxe des objets JavaScript.</p>
+
+<p>Pour convertir un objet JavaScript en JSON, on utilise la méthode <code>JSON.stringify()</code>. Par exemple :</p>
+
+<pre><code>let personne = {
+  nom: 'John',
+  age: 30,
+  adresse: 'Paris'
+};
+
+let jsonPersonne = JSON.stringify(personne);
+console.log(jsonPersonne); // {"nom":"John","age":30,"adresse":"Paris"}</code></pre>
+
+<p>Pour convertir une chaîne JSON en objet JavaScript, on utilise la méthode <code>JSON.parse()</code>. Par exemple :</p>
+
+<pre><code>let jsonPersonne = '{"nom":"John","age":30,"adresse":"Paris"}';
+
+let personne = JSON.parse(jsonPersonne);
+console.log(personne.nom); // 'John'</code></pre>
+
+<p>JSON est largement utilisé dans les applications Web pour échanger des données avec des serveurs, stocker des configurations, etc.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/javascript/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/javascript/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
