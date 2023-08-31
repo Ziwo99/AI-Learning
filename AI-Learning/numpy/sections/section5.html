@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - NumPy Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Opérations avancées avec NumPy</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/numpy/numpy.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Broadcasting</h2>
+<p>Le broadcasting est un mécanisme puissant de NumPy qui permet d'effectuer des opérations entre des tableaux de formes différentes. Il permet d'étendre automatiquement les dimensions des tableaux pour qu'ils aient des formes compatibles pour les opérations.</p>
+<p>Par exemple, si vous avez un tableau de forme (3, 3) et un autre tableau de forme (3,), le broadcasting permettra d'étendre automatiquement le deuxième tableau pour qu'il ait la même forme que le premier, c'est-à-dire (3, 3). Ainsi, vous pourrez effectuer des opérations entre ces deux tableaux sans avoir à les redimensionner manuellement.</p>
+<p>Voici un exemple :</p>
+<pre><code>import numpy as np
+
+a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+b = np.array([10, 20, 30])
+
+result = a + b
+
+print(result)
+</code></pre>
+<p>Résultat :</p>
+<pre><code>[[11 22 33]
+ [14 25 36]
+ [17 28 39]]
+</code></pre>
+<p>Le broadcasting a permis d'étendre automatiquement le tableau b pour qu'il ait la même forme que le tableau a, ce qui a permis d'effectuer l'opération d'addition entre les deux tableaux.</p>
+
+<h2>Masques et filtrage de tableaux</h2>
+<p>Les masques et le filtrage de tableaux sont des techniques couramment utilisées avec NumPy pour sélectionner des éléments spécifiques d'un tableau en fonction de certaines conditions.</p>
+<p>Un masque est un tableau de booléens qui indique quels éléments d'un autre tableau doivent être sélectionnés. Les éléments correspondant à des valeurs True dans le masque sont sélectionnés, tandis que les éléments correspondant à des valeurs False sont ignorés.</p>
+<p>Voici un exemple :</p>
+<pre><code>import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+mask = np.array([True, False, True, False, False])
+
+result = a[mask]
+
+print(result)
+</code></pre>
+<p>Résultat :</p>
+<pre><code>[1 3]
+</code></pre>
+<p>Le masque indique que seuls les éléments aux indices 0 et 2 doivent être sélectionnés dans le tableau a.</p>
+<p>Le filtrage de tableaux est une technique similaire qui permet de sélectionner des éléments en fonction de certaines conditions. Au lieu d'utiliser un masque explicite, vous pouvez utiliser des expressions booléennes pour filtrer les éléments d'un tableau.</p>
+<p>Voici un exemple :</p>
+<pre><code>import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+result = a[a &gt; 2]
+
+print(result)
+</code></pre>
+<p>Résultat :</p>
+<pre><code>[3 4 5]
+</code></pre>
+<p>Le filtrage a sélectionné tous les éléments du tableau a qui sont supérieurs à 2.</p>
+
+<h2>Algèbre linéaire avec NumPy</h2>
+<p>NumPy offre de nombreuses fonctionnalités pour effectuer des opérations d'algèbre linéaire, telles que la multiplication de matrices, la résolution de systèmes d'équations linéaires et le calcul des valeurs propres et des vecteurs propres.</p>
+<p>Voici quelques exemples :</p>
+<pre><code>import numpy as np
+
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+
+# Multiplication de matrices
+result = np.dot(a, b)
+
+print(result)
+
+# Résolution de systèmes d'équations linéaires
+coefficients = np.array([[2, 3], [4, 5]])
+constants = np.array([6, 7])
+solution = np.linalg.solve(coefficients, constants)
+
+print(solution)
+
+# Calcul des valeurs propres et des vecteurs propres
+matrix = np.array([[1, 2], [3, 4]])
+eigenvalues, eigenvectors = np.linalg.eig(matrix)
+
+print(eigenvalues)
+print(eigenvectors)
+</code></pre>
+<p>Résultat :</p>
+<pre><code>[[19 22]
+ [43 50]]
+ 
+[-1.  2.]
+[[-0.70710678 -0.6       ]
+ [ 0.70710678 -0.8       ]]
+</code></pre>
+<p>La fonction np.dot permet de multiplier les matrices a et b. La fonction np.linalg.solve permet de résoudre le système d'équations linéaires défini par les coefficients et les constantes. La fonction np.linalg.eig permet de calculer les valeurs propres et les vecteurs propres d'une matrice.</p>
+
+<h2>Statistiques avec NumPy</h2>
+<p>NumPy offre également des fonctionnalités pour effectuer des opérations statistiques sur des tableaux, telles que le calcul de la moyenne, de la variance, de l'écart-type, etc.</p>
+<p>Voici quelques exemples :</p>
+<pre><code>import numpy as np
+
+a = np.array([1, 2, 3, 4, 5])
+
+# Calcul de la moyenne
+mean = np.mean(a)
+
+print(mean)
+
+# Calcul de la variance
+variance = np.var(a)
+
+print(variance)
+
+# Calcul de l'écart-type
+std = np.std(a)
+
+print(std)
+
+# Calcul de la somme cumulée
+cumsum = np.cumsum(a)
+
+print(cumsum)
+</code></pre>
+<p>Résultat :</p>
+<pre><code>3.0
+2.0
+1.4142135623730951
+[ 1  3  6 10 15]
+</code></pre>
+<p>La fonction np.mean permet de calculer la moyenne des éléments du tableau a. La fonction np.var permet de calculer la variance des éléments du tableau a. La fonction np.std permet de calculer l'écart-type des éléments du tableau a. La fonction np.cumsum permet de calculer la somme cumulée des éléments du tableau a.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

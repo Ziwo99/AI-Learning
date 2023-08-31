@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - NumPy Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Applications pratiques de NumPy</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/numpy/numpy.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Traitement d'images avec NumPy</h2>
+<p>NumPy offre de nombreuses fonctionnalités pour le traitement d'images. Il permet de lire, d'écrire, de manipuler et de transformer des images de manière efficace. Voici quelques exemples de ce que vous pouvez faire avec NumPy :</p>
+
+<p><strong>1. Lecture et affichage d'une image :</strong></p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Charger une image à l'aide de NumPy
+image = np.imread('image.jpg')
+
+# Afficher l'image à l'aide de Matplotlib
+plt.imshow(image)
+plt.show()</code></pre>
+
+<p><strong>2. Conversion d'une image en niveaux de gris :</strong></p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Charger une image en niveaux de gris
+image_gray = np.dot(image[...,:3], [0.2989, 0.5870, 0.1140])
+
+# Afficher l'image en niveaux de gris
+plt.imshow(image_gray, cmap='gray')
+plt.show()</code></pre>
+
+<p><strong>3. Redimensionnement d'une image :</strong></p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Redimensionner une image
+image_resized = np.resize(image, (new_height, new_width))
+
+# Afficher l'image redimensionnée
+plt.imshow(image_resized)
+plt.show()</code></pre>
+
+<h2>Analyse de données avec NumPy</h2>
+<p>NumPy est largement utilisé pour l'analyse de données en raison de sa capacité à manipuler et à traiter des tableaux multidimensionnels. Voici quelques exemples d'analyse de données que vous pouvez effectuer avec NumPy :</p>
+
+<p><strong>1. Calcul de statistiques descriptives :</strong></p>
+<pre><code>import numpy as np
+
+# Calculer la moyenne d'un tableau
+mean = np.mean(data)
+
+# Calculer l'écart-type d'un tableau
+std = np.std(data)
+
+# Calculer la médiane d'un tableau
+median = np.median(data)</code></pre>
+
+<p><strong>2. Filtrage de données :</strong></p>
+<pre><code>import numpy as np
+
+# Filtrer les données en fonction d'une condition
+filtered_data = data[data > threshold]</code></pre>
+
+<p><strong>3. Calcul de corrélations :</strong></p>
+<pre><code>import numpy as np
+
+# Calculer la corrélation entre deux tableaux
+correlation = np.corrcoef(data1, data2)</code></pre>
+
+<h2>Simulation numérique avec NumPy</h2>
+<p>NumPy est également utilisé pour effectuer des simulations numériques en raison de sa capacité à générer des nombres aléatoires et à effectuer des calculs mathématiques complexes. Voici quelques exemples de simulations numériques que vous pouvez réaliser avec NumPy :</p>
+
+<p><strong>1. Génération de nombres aléatoires :</strong></p>
+<pre><code>import numpy as np
+
+# Générer un tableau de nombres aléatoires
+random_numbers = np.random.rand(100)
+
+# Générer un tableau de nombres aléatoires entiers
+random_integers = np.random.randint(0, 10, size=100)</code></pre>
+
+<p><strong>2. Simulation de processus stochastiques :</strong></p>
+<pre><code>import numpy as np
+
+# Simuler un processus de diffusion
+diffusion_process = np.cumsum(np.random.normal(0, 1, size=100))</code></pre>
+
+<p><strong>3. Calcul de probabilités :</strong></p>
+<pre><code>import numpy as np
+
+# Calculer la probabilité d'un événement
+probability = np.sum(data > threshold) / len(data)</code></pre>
+
+<h2>Intégration de NumPy avec d'autres bibliothèques</h2>
+<p>NumPy peut être intégré avec d'autres bibliothèques Python pour étendre ses fonctionnalités. Voici quelques exemples d'intégration de NumPy avec d'autres bibliothèques :</p>
+
+<p><strong>1. Intégration avec Matplotlib :</strong></p>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+# Créer un tableau de données
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Tracer une courbe à l'aide de Matplotlib
+plt.plot(x, y)
+plt.show()</code></pre>
+
+<p><strong>2. Intégration avec Pandas :</strong></p>
+<pre><code>import numpy as np
+import pandas as pd
+
+# Créer un tableau de données avec NumPy
+data = np.random.rand(100)
+
+# Créer une série de données avec Pandas
+series = pd.Series(data)</code></pre>
+
+<p><strong>3. Intégration avec SciPy :</strong></p>
+<pre><code>import numpy as np
+from scipy import optimize
+
+# Définir une fonction à optimiser
+def func(x):
+    return x**2 + 2*x - 1
+
+# Optimiser la fonction avec SciPy
+result = optimize.minimize(func, x0=0)</code></pre>
+
+<p>Ces exemples illustrent comment NumPy peut être utilisé en combinaison avec d'autres bibliothèques pour résoudre des problèmes plus complexes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

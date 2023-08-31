@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - NumPy Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Débogage et gestion des erreurs avec NumPy</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/numpy/numpy.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Détection et résolution des erreurs courantes</h2>
+<p>Lorsque vous travaillez avec NumPy, il est courant de rencontrer des erreurs. Comprendre comment détecter et résoudre ces erreurs est essentiel pour développer efficacement avec NumPy.</p>
+
+<p>Voici quelques erreurs courantes que vous pourriez rencontrer lors de l'utilisation de NumPy :</p>
+
+<h3>1. Erreur de dimension</h3>
+<p>Une erreur de dimension se produit lorsque vous essayez d'effectuer une opération sur des tableaux de dimensions incompatibles. Par exemple, si vous essayez d'ajouter ou de soustraire deux tableaux de tailles différentes, une erreur de dimension se produira.</p>
+
+<p>Pour résoudre cette erreur, assurez-vous que les dimensions des tableaux que vous utilisez sont compatibles pour l'opération que vous souhaitez effectuer. Vous pouvez utiliser la fonction <code>numpy.shape</code> pour vérifier les dimensions des tableaux.</p>
+
+<h3>2. Erreur de type de données</h3>
+<p>Une erreur de type de données se produit lorsque vous essayez d'effectuer une opération sur des tableaux avec des types de données incompatibles. Par exemple, si vous essayez d'effectuer une opération mathématique sur un tableau de chaînes de caractères, une erreur de type de données se produira.</p>
+
+<p>Pour résoudre cette erreur, assurez-vous que les types de données des tableaux que vous utilisez sont compatibles pour l'opération que vous souhaitez effectuer. Vous pouvez utiliser la fonction <code>numpy.dtype</code> pour vérifier les types de données des tableaux.</p>
+
+<h3>3. Erreur d'indice</h3>
+<p>Une erreur d'indice se produit lorsque vous essayez d'accéder à un élément d'un tableau avec un indice invalide. Par exemple, si vous essayez d'accéder à l'élément d'indice 5 d'un tableau de taille 3, une erreur d'indice se produira.</p>
+
+<p>Pour résoudre cette erreur, assurez-vous d'utiliser des indices valides pour accéder aux éléments des tableaux. Gardez à l'esprit que les indices commencent à 0 dans NumPy.</p>
+
+<h2>Utilisation de l'outil de débogage de NumPy</h2>
+<p>NumPy offre un outil de débogage intégré qui peut vous aider à identifier et à résoudre les erreurs dans votre code. Cet outil est appelé <code>numpy.seterr</code>.</p>
+
+<p>Voici comment utiliser <code>numpy.seterr</code> :</p>
+
+<pre><code>import numpy as np
+
+# Définir les options de débogage
+np.seterr(divide='raise', over='warn', under='ignore', invalid='warn')
+
+# Votre code NumPy ici
+</code></pre>
+
+<p>Avec <code>numpy.seterr</code>, vous pouvez définir différentes options de débogage pour gérer les erreurs de division par zéro, les dépassements de capacité, les opérations invalides, etc. Vous pouvez choisir de lever une exception, d'afficher un avertissement ou d'ignorer l'erreur.</p>
+
+<p>En utilisant <code>numpy.seterr</code>, vous pouvez mieux contrôler la gestion des erreurs dans votre code NumPy.</p>
+
+<h2>Gestion des erreurs et exceptions</h2>
+<p>En plus de l'outil de débogage de NumPy, vous pouvez également utiliser les mécanismes de gestion des erreurs et les exceptions Python pour gérer les erreurs dans votre code NumPy.</p>
+
+<p>Voici comment utiliser les exceptions Python pour gérer les erreurs dans votre code NumPy :</p>
+
+<pre><code>import numpy as np
+
+try:
+    # Votre code NumPy ici
+except Exception as e:
+    # Gérer l'erreur ici
+    print("Une erreur s'est produite :", e)
+</code></pre>
+
+<p>En utilisant un bloc <code>try-except</code>, vous pouvez capturer les exceptions qui se produisent lors de l'exécution de votre code NumPy. Vous pouvez ensuite gérer ces exceptions de manière appropriée, par exemple en affichant un message d'erreur ou en effectuant une action de récupération.</p>
+
+<p>Il est recommandé d'utiliser des blocs <code>try-except</code> spécifiques pour capturer des types d'exceptions spécifiques, plutôt que d'utiliser un bloc <code>except Exception</code> générique. Cela vous permet de gérer les erreurs de manière plus précise et de prendre des mesures appropriées en fonction du type d'erreur.</p>
+
+<p>En utilisant les mécanismes de gestion des erreurs et les exceptions Python, vous pouvez gérer efficacement les erreurs dans votre code NumPy et améliorer la robustesse de votre application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

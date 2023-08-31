@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - NumPy Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Développement avancé avec NumPy</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/numpy/numpy.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création de fonctions universelles personnalisées</h2>
+<p>Les fonctions universelles (ufuncs) sont des fonctions intégrées à NumPy qui effectuent des opérations élément par élément sur des tableaux NumPy. Cependant, il est également possible de créer des fonctions universelles personnalisées pour répondre à des besoins spécifiques.</p>
+
+<p>Pour créer une fonction universelle personnalisée, vous devez utiliser la fonction <code>numpy.frompyfunc()</code>. Cette fonction prend en argument une fonction Python et renvoie une fonction universelle NumPy.</p>
+
+<p>Voici un exemple de création d'une fonction universelle personnalisée qui calcule la racine carrée d'un nombre :</p>
+
+<pre><code>import numpy as np
+
+def custom_sqrt(x):
+    return np.sqrt(x)
+
+sqrt_func = np.frompyfunc(custom_sqrt, 1, 1)
+
+arr = np.array([4, 9, 16])
+result = sqrt_func(arr)
+
+print(result)
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une fonction Python <code>custom_sqrt()</code> qui utilise la fonction <code>numpy.sqrt()</code> pour calculer la racine carrée d'un nombre. Ensuite, nous utilisons la fonction <code>numpy.frompyfunc()</code> pour créer une fonction universelle NumPy <code>sqrt_func</code> à partir de notre fonction Python.</p>
+
+<p>Nous pouvons ensuite utiliser notre fonction universelle personnalisée <code>sqrt_func</code> pour calculer la racine carrée de chaque élément d'un tableau NumPy <code>arr</code>. Le résultat est un nouveau tableau NumPy contenant les racines carrées des éléments de <code>arr</code>.</p>
+
+<h2>Utilisation de types de données personnalisés</h2>
+<p>NumPy prend en charge les types de données numériques standard tels que les entiers, les flottants, les booléens, etc. Cependant, il est également possible de définir des types de données personnalisés pour répondre à des besoins spécifiques.</p>
+
+<p>Pour créer un type de données personnalisé, vous devez utiliser la fonction <code>numpy.dtype()</code>. Cette fonction prend en argument un dictionnaire qui spécifie les propriétés du type de données personnalisé.</p>
+
+<p>Voici un exemple de création d'un type de données personnalisé pour représenter des coordonnées cartésiennes :</p>
+
+<pre><code>import numpy as np
+
+# Définition du type de données personnalisé
+cartesian_type = np.dtype([('x', float), ('y', float)])
+
+# Création d'un tableau NumPy avec le type de données personnalisé
+arr = np.array([(1.0, 2.0), (3.0, 4.0)], dtype=cartesian_type)
+
+print(arr)
+print(arr['x'])
+print(arr['y'])
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>numpy.dtype()</code> pour définir un type de données personnalisé appelé <code>cartesian_type</code>. Ce type de données a deux champs : <code>x</code> et <code>y</code>, qui sont tous deux des nombres flottants.</p>
+
+<p>Nous utilisons ensuite la fonction <code>numpy.array()</code> pour créer un tableau NumPy <code>arr</code> avec le type de données personnalisé <code>cartesian_type</code>. Le tableau <code>arr</code> contient deux coordonnées cartésiennes : (1.0, 2.0) et (3.0, 4.0).</p>
+
+<p>Enfin, nous pouvons accéder aux valeurs des champs <code>x</code> et <code>y</code> du tableau <code>arr</code> en utilisant la notation des tableaux structurés de NumPy.</p>
+
+<h2>Utilisation de mémoire partagée avec NumPy</h2>
+<p>NumPy prend en charge l'utilisation de mémoire partagée pour partager des tableaux entre plusieurs processus ou threads. Cela peut être utile lorsque vous travaillez avec des données volumineuses et que vous souhaitez éviter de les copier à chaque fois.</p>
+
+<p>Pour utiliser la mémoire partagée avec NumPy, vous devez utiliser la classe <code>numpy.sharedmem.SharedMemory</code>. Cette classe permet de créer un objet de mémoire partagée qui peut être utilisé pour créer des tableaux NumPy partagés.</p>
+
+<p>Voici un exemple d'utilisation de mémoire partagée avec NumPy :</p>
+
+<pre><code>import numpy as np
+from multiprocessing import shared_memory
+
+# Création d'un tableau NumPy
+arr = np.array([1, 2, 3, 4, 5])
+
+# Création d'un objet de mémoire partagée
+shm = shared_memory.SharedMemory(create=True, size=arr.nbytes)
+
+# Création d'un tableau NumPy partagé
+shared_arr = np.ndarray(arr.shape, dtype=arr.dtype, buffer=shm.buf)
+shared_arr[:] = arr[:]
+
+print(shared_arr)
+
+# Suppression de l'objet de mémoire partagée
+shm.close()
+shm.unlink()
+</code></pre>
+
+<p>Dans cet exemple, nous commençons par créer un tableau NumPy <code>arr</code> contenant quelques valeurs. Ensuite, nous utilisons la classe <code>shared_memory.SharedMemory</code> pour créer un objet de mémoire partagée <code>shm</code>.</p>
+
+<p>Nous utilisons ensuite la méthode <code>np.ndarray()</code> pour créer un tableau NumPy partagé <code>shared_arr</code> à partir de l'objet de mémoire partagée <code>shm.buf</code>. Nous copions les valeurs de <code>arr</code> dans <code>shared_arr</code> en utilisant la syntaxe de découpage.</p>
+
+<p>Enfin, nous pouvons utiliser le tableau NumPy partagé <code>shared_arr</code> comme n'importe quel autre tableau NumPy. Lorsque nous avons terminé, nous devons supprimer l'objet de mémoire partagée en appelant les méthodes <code>shm.close()</code> et <code>shm.unlink()</code>.</p>
+
+<h2>Utilisation de parallélisme avec NumPy</h2>
+<p>NumPy prend en charge l'utilisation de parallélisme pour accélérer les calculs sur les tableaux NumPy. Cela peut être particulièrement utile lorsque vous travaillez avec des données volumineuses et que vous souhaitez exploiter pleinement les capacités de votre processeur.</p>
+
+<p>Pour utiliser le parallélisme avec NumPy, vous devez utiliser des bibliothèques externes telles que <code>NumExpr</code> ou <code>Numba</code>. Ces bibliothèques permettent d'accélérer les calculs en utilisant des techniques telles que la compilation juste-à-temps (JIT) ou l'évaluation paresseuse.</p>
+
+<p>Voici un exemple d'utilisation du parallélisme avec NumPy en utilisant la bibliothèque <code>NumExpr</code> :</p>
+
+<pre><code>import numpy as np
+import numexpr as ne
+
+# Création de deux tableaux NumPy
+arr1 = np.array([1, 2, 3, 4, 5])
+arr2 = np.array([6, 7, 8, 9, 10])
+
+# Calcul parallèle avec NumExpr
+result = ne.evaluate("arr1 + arr2")
+
+print(result)
+</code></pre>
+
+<p>Dans cet exemple, nous commençons par créer deux tableaux NumPy <code>arr1</code> et <code>arr2</code> contenant quelques valeurs. Ensuite, nous utilisons la fonction <code>ne.evaluate()</code> de la bibliothèque <code>NumExpr</code> pour effectuer une opération de calcul parallèle sur les tableaux <code>arr1</code> et <code>arr2</code>.</p>
+
+<p>Le résultat est un nouveau tableau NumPy contenant la somme des éléments correspondants de <code>arr1</code> et <code>arr2</code>.</p>
+
+<p>Il convient de noter que l'utilisation du parallélisme avec NumPy peut nécessiter l'installation de bibliothèques supplémentaires et peut varier en fonction de votre configuration système.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

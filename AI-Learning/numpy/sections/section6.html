@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - NumPy Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Performances et optimisation</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/numpy/numpy.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Vecteurisation des opérations</h2>
+<p>La vecteurisation des opérations est une technique clé pour optimiser les performances de NumPy. Elle consiste à effectuer des opérations sur des tableaux entiers plutôt que sur des éléments individuels. Cela permet d'exploiter les capacités de calcul parallèle des processeurs modernes.</p>
+<p>Par exemple, au lieu d'utiliser une boucle pour multiplier chaque élément d'un tableau par un scalaire, vous pouvez simplement multiplier le tableau entier par ce scalaire :</p>
+<pre><code>a = np.array([1, 2, 3, 4, 5])
+b = 2
+
+result = a * b
+
+print(result)
+</code></pre>
+<p>Cette opération est beaucoup plus rapide que d'itérer sur chaque élément du tableau et de le multiplier individuellement.</p>
+
+<h2>Utilisation de mémoire efficace avec NumPy</h2>
+<p>NumPy offre des fonctionnalités pour optimiser l'utilisation de la mémoire. Par exemple, vous pouvez spécifier le type de données des tableaux pour minimiser l'espace mémoire utilisé :</p>
+<pre><code>a = np.array([1, 2, 3], dtype=np.int8)
+
+print(a.dtype)
+</code></pre>
+<p>Ici, nous avons spécifié que les éléments du tableau a sont des entiers signés sur 8 bits. Cela permet de réduire la consommation de mémoire par rapport à l'utilisation du type de données par défaut (int32).</p>
+
+<h2>Utilisation de fonctions universelles optimisées</h2>
+<p>NumPy propose des fonctions universelles (ufuncs) qui sont des opérations mathématiques et logiques optimisées pour les tableaux. Ces fonctions sont implémentées en C, ce qui les rend beaucoup plus rapides que les opérations équivalentes en Python pur.</p>
+<p>Par exemple, la fonction np.sin() calcule le sinus de chaque élément d'un tableau :</p>
+<pre><code>a = np.array([0, np.pi/2, np.pi])
+
+result = np.sin(a)
+
+print(result)
+</code></pre>
+<p>Cette fonction universelle est bien plus rapide que si vous aviez utilisé une boucle pour calculer le sinus de chaque élément individuellement.</p>
+
+<h2>Utilisation de fonctions vectorisées</h2>
+<p>NumPy propose également des fonctions vectorisées qui permettent d'appliquer une fonction à chaque élément d'un tableau. Ces fonctions sont optimisées pour les performances et peuvent être utilisées pour effectuer des opérations complexes sur les tableaux.</p>
+<p>Par exemple, la fonction np.vectorize() permet d'appliquer une fonction personnalisée à chaque élément d'un tableau :</p>
+<pre><code>def square(x):
+    return x ** 2
+
+v_square = np.vectorize(square)
+
+a = np.array([1, 2, 3, 4, 5])
+
+result = v_square(a)
+
+print(result)
+</code></pre>
+<p>Cette fonction vectorisée est plus rapide que si vous aviez utilisé une boucle pour appliquer la fonction à chaque élément individuellement.</p>
+
+<p>En utilisant ces techniques de performances et d'optimisation, vous pouvez améliorer considérablement les performances de vos calculs avec NumPy.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

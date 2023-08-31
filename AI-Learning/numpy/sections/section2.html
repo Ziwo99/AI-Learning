@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - NumPy Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de NumPy</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/numpy/numpy.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création de tableaux NumPy</h2>
+<p>NumPy est une bibliothèque Python qui permet de manipuler des tableaux multidimensionnels et d'effectuer des opérations mathématiques sur ces tableaux de manière efficace. Pour commencer à utiliser NumPy, nous devons d'abord créer des tableaux. Il existe plusieurs façons de créer des tableaux NumPy :</p>
+
+<pre><code># Importer la bibliothèque NumPy
+import numpy as np
+
+# Créer un tableau à partir d'une liste
+arr1 = np.array([1, 2, 3, 4, 5])
+
+# Créer un tableau de zéros
+arr2 = np.zeros(5)
+
+# Créer un tableau de uns
+arr3 = np.ones((3, 3))
+
+# Créer un tableau avec des valeurs aléatoires
+arr4 = np.random.rand(2, 2)
+
+# Créer un tableau avec une séquence de valeurs
+arr5 = np.arange(0, 10, 2)
+
+# Créer un tableau avec des valeurs espacées uniformément
+arr6 = np.linspace(0, 1, 5)
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, nous avons utilisé la fonction <code>np.array()</code> pour créer un tableau à partir d'une liste, la fonction <code>np.zeros()</code> pour créer un tableau de zéros, la fonction <code>np.ones()</code> pour créer un tableau de uns, la fonction <code>np.random.rand()</code> pour créer un tableau avec des valeurs aléatoires, la fonction <code>np.arange()</code> pour créer un tableau avec une séquence de valeurs et la fonction <code>np.linspace()</code> pour créer un tableau avec des valeurs espacées uniformément.</p>
+
+<h2>Accès et manipulation des éléments d'un tableau</h2>
+<p>Une fois que nous avons créé un tableau NumPy, nous pouvons accéder et manipuler ses éléments. Voici quelques opérations courantes :</p>
+
+<pre><code># Accéder à un élément spécifique
+print(arr1[0])  # Affiche le premier élément du tableau
+
+# Accéder à une tranche de tableau
+print(arr1[1:4])  # Affiche les éléments du deuxième au quatrième
+
+# Modifier un élément spécifique
+arr1[0] = 10  # Modifie le premier élément du tableau
+
+# Modifier une tranche de tableau
+arr1[1:4] = [20, 30, 40]  # Modifie les éléments du deuxième au quatrième
+
+# Copier un tableau
+arr2 = arr1.copy()  # Copie le tableau arr1 dans le tableau arr2
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, nous avons utilisé des index pour accéder à des éléments spécifiques du tableau, des tranches pour accéder à plusieurs éléments à la fois, et nous avons modifié des éléments spécifiques ou des tranches de tableau en leur attribuant de nouvelles valeurs. Nous avons également utilisé la méthode <code>copy()</code> pour créer une copie indépendante d'un tableau existant.</p>
+
+<h2>Opérations mathématiques avec NumPy</h2>
+<p>NumPy offre une grande variété d'opérations mathématiques que nous pouvons effectuer sur les tableaux. Voici quelques exemples :</p>
+
+<pre><code># Addition de tableaux
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+arr3 = arr1 + arr2
+
+# Soustraction de tableaux
+arr4 = arr2 - arr1
+
+# Multiplication de tableaux
+arr5 = arr1 * arr2
+
+# Division de tableaux
+arr6 = arr2 / arr1
+
+# Calcul de la moyenne d'un tableau
+mean = np.mean(arr1)
+
+# Calcul de la somme des éléments d'un tableau
+sum = np.sum(arr2)
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, nous avons utilisé les opérateurs mathématiques standard pour effectuer des opérations d'addition, de soustraction, de multiplication et de division sur les tableaux. Nous avons également utilisé les fonctions <code>mean()</code> et <code>sum()</code> pour calculer respectivement la moyenne et la somme des éléments d'un tableau.</p>
+
+<h2>Fonctions universelles de NumPy</h2>
+<p>NumPy propose également un ensemble de fonctions universelles (ufuncs) qui permettent d'effectuer des opérations mathématiques sur les tableaux de manière vectorisée. Voici quelques exemples :</p>
+
+<pre><code># Calcul de la racine carrée des éléments d'un tableau
+arr1 = np.array([1, 4, 9])
+sqrt_arr = np.sqrt(arr1)
+
+# Calcul de l'exponentielle des éléments d'un tableau
+exp_arr = np.exp(arr1)
+
+# Calcul du logarithme des éléments d'un tableau
+log_arr = np.log(arr1)
+
+# Calcul du sinus des éléments d'un tableau
+sin_arr = np.sin(arr1)
+</code></pre>
+
+<p>Dans l'exemple ci-dessus, nous avons utilisé les fonctions universelles <code>sqrt()</code>, <code>exp()</code>, <code>log()</code> et <code>sin()</code> pour effectuer respectivement le calcul de la racine carrée, de l'exponentielle, du logarithme et du sinus des éléments d'un tableau.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/numpy/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/numpy/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
