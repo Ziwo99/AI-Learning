@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Structure de base de données PostgreSQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création de bases de données</h2>
+<p>La création d'une base de données est une étape essentielle dans PostgreSQL. Une base de données est un conteneur logique qui regroupe des objets tels que des tables, des vues, des fonctions, etc. Pour créer une base de données, vous pouvez utiliser la commande SQL <code>CREATE DATABASE</code>.</p>
+<pre><code>CREATE DATABASE nom_de_la_base_de_données;</code></pre>
+<p>Vous pouvez également spécifier des options supplémentaires lors de la création de la base de données, telles que l'encodage, le modèle de données, etc.</p>
+<pre><code>CREATE DATABASE nom_de_la_base_de_données
+    WITH ENCODING 'UTF8'
+    TEMPLATE template0;</code></pre>
+
+<h2>Tables, colonnes et types de données</h2>
+<p>Les tables sont les objets principaux dans une base de données PostgreSQL. Elles sont utilisées pour stocker les données de manière structurée. Pour créer une table, vous pouvez utiliser la commande SQL <code>CREATE TABLE</code>.</p>
+<pre><code>CREATE TABLE nom_de_la_table (
+    colonne1 type_de_données,
+    colonne2 type_de_données,
+    ...
+);</code></pre>
+<p>Vous devez spécifier le nom de la table et les colonnes avec leurs types de données respectifs. PostgreSQL prend en charge différents types de données tels que les entiers, les chaînes de caractères, les dates, etc.</p>
+
+<h2>Contraintes et index</h2>
+<p>Les contraintes sont utilisées pour imposer des règles sur les données stockées dans une table. Par exemple, vous pouvez définir une contrainte d'intégrité référentielle pour garantir que les valeurs d'une colonne correspondent à celles d'une autre colonne dans une autre table.</p>
+<pre><code>CREATE TABLE table1 (
+    ...
+    colonne1 type_de_données REFERENCES table2(colonne2),
+    ...
+);</code></pre>
+<p>Les index sont utilisés pour améliorer les performances des requêtes en accélérant la recherche de données. Vous pouvez créer un index sur une ou plusieurs colonnes d'une table.</p>
+<pre><code>CREATE INDEX nom_de_l_index ON nom_de_la_table (colonne1, colonne2);</code></pre>
+
+<h2>Vues, séquences et fonctions</h2>
+<p>Les vues sont des objets virtuels qui permettent de visualiser les données d'une ou plusieurs tables. Elles sont créées à partir d'une requête SQL et peuvent être utilisées comme des tables normales.</p>
+<pre><code>CREATE VIEW nom_de_la_vue AS
+    SELECT colonne1, colonne2
+    FROM nom_de_la_table
+    WHERE condition;</code></pre>
+<p>Les séquences sont utilisées pour générer des valeurs numériques uniques. Elles sont souvent utilisées pour les clés primaires ou les identifiants uniques.</p>
+<pre><code>CREATE SEQUENCE nom_de_la_sequence
+    START WITH 1
+    INCREMENT BY 1
+    MINVALUE 1
+    MAXVALUE 1000;</code></pre>
+<p>Les fonctions sont des blocs de code réutilisables qui effectuent des opérations spécifiques. Elles peuvent être créées en utilisant le langage de programmation PL/pgSQL.</p>
+<pre><code>CREATE FUNCTION nom_de_la_fonction(paramètre1 type, paramètre2 type)
+    RETURNS type_de_retour AS $$
+    BEGIN
+        -- Code de la fonction
+    END;
+    $$ LANGUAGE plpgsql;</code></pre>
+
+<p>Ceci conclut la section sur la structure de base de données PostgreSQL. Vous avez appris comment créer des bases de données, des tables, des contraintes, des index, des vues, des séquences et des fonctions. Dans la prochaine section, nous explorerons les requêtes SQL avancées.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

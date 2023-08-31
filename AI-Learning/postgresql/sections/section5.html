@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Programmation avec PostgreSQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction au langage de programmation PL/pgSQL</h2>
+<p>PL/pgSQL est un langage de programmation procédural spécifique à PostgreSQL. Il est conçu pour écrire des fonctions stockées, des procédures stockées et des déclencheurs (triggers) dans la base de données.</p>
+<p>PL/pgSQL est basé sur le langage SQL et offre des fonctionnalités supplémentaires telles que des variables, des boucles, des conditions et des exceptions. Il permet également d'utiliser des requêtes SQL dans le code.</p>
+<p>Voici un exemple de fonction PL/pgSQL qui calcule la somme des salaires des employés dans une table :</p>
+<pre><code>CREATE OR REPLACE FUNCTION calculate_total_salary()
+RETURNS numeric AS $$
+DECLARE
+    total numeric := 0;
+    salary numeric;
+BEGIN
+    FOR salary IN SELECT salary FROM employees LOOP
+        total := total + salary;
+    END LOOP;
+    RETURN total;
+END;
+$$ LANGUAGE plpgsql;</code></pre>
+
+<h2>Création de fonctions et de procédures stockées</h2>
+<p>Les fonctions et les procédures stockées sont des objets de base de données qui encapsulent du code PL/pgSQL et peuvent être appelés à partir d'autres requêtes ou de programmes externes.</p>
+<p>Voici un exemple de création d'une fonction stockée qui renvoie le nombre total d'employés dans une table :</p>
+<pre><code>CREATE OR REPLACE FUNCTION get_total_employees()
+RETURNS integer AS $$
+DECLARE
+    total_employees integer;
+BEGIN
+    SELECT COUNT(*) INTO total_employees FROM employees;
+    RETURN total_employees;
+END;
+$$ LANGUAGE plpgsql;</code></pre>
+
+<h2>Déclencheurs (triggers) et événements</h2>
+<p>Les déclencheurs (triggers) sont des objets de base de données qui sont automatiquement exécutés en réponse à certains événements, tels que l'insertion, la mise à jour ou la suppression de lignes dans une table.</p>
+<p>Voici un exemple de création d'un déclencheur qui met à jour la date de modification d'une ligne chaque fois qu'elle est mise à jour :</p>
+<pre><code>CREATE OR REPLACE FUNCTION update_modified_date()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.modified_date := NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER update_modified_date_trigger
+BEFORE UPDATE ON employees
+FOR EACH ROW
+EXECUTE FUNCTION update_modified_date();</code></pre>
+
+<h2>Utilisation de langages de programmation externes (Python, Java, etc.)</h2>
+<p>PostgreSQL permet également d'utiliser des langages de programmation externes tels que Python, Java, C, etc., pour écrire des fonctions stockées et des procédures stockées.</p>
+<p>Voici un exemple de création d'une fonction stockée en utilisant le langage Python :</p>
+<pre><code>CREATE OR REPLACE FUNCTION calculate_total_salary()
+RETURNS numeric AS $$
+BEGIN
+    -- Code Python ici
+    total = 0
+    for salary in SELECT salary FROM employees:
+        total += salary
+    return total
+END;
+$$ LANGUAGE plpythonu;</code></pre>
+
+<p>Il est important de noter que l'utilisation de langages de programmation externes nécessite l'installation des extensions appropriées dans PostgreSQL.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

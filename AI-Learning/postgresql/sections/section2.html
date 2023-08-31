@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Installation et configuration de PostgreSQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Prérequis pour l'installation de PostgreSQL</h2>
+<p>Avant d'installer PostgreSQL, assurez-vous de disposer des éléments suivants :</p>
+<ul>
+  <li>Un système d'exploitation compatible avec PostgreSQL (Windows, macOS, Linux, etc.)</li>
+  <li>Les privilèges d'administration nécessaires pour installer des logiciels sur votre système</li>
+  <li>Espace disque suffisant pour l'installation de PostgreSQL et les données associées</li>
+</ul>
+
+<h2>Installation de PostgreSQL sur différents systèmes d'exploitation</h2>
+<p>Les étapes d'installation de PostgreSQL peuvent varier en fonction du système d'exploitation que vous utilisez. Voici les instructions pour les systèmes d'exploitation les plus courants :</p>
+
+<h3>Installation de PostgreSQL sur Windows</h3>
+<p>Pour installer PostgreSQL sur Windows, suivez les étapes suivantes :</p>
+<ol>
+  <li>Téléchargez le programme d'installation de PostgreSQL à partir du site officiel de PostgreSQL.</li>
+  <li>Exécutez le programme d'installation et suivez les instructions à l'écran.</li>
+  <li>Pendant l'installation, vous serez invité à choisir un mot de passe pour le superutilisateur de la base de données (appelé "postgres" par défaut). Assurez-vous de choisir un mot de passe fort et de le noter quelque part en toute sécurité.</li>
+  <li>Une fois l'installation terminée, PostgreSQL sera prêt à être utilisé.</li>
+</ol>
+
+<h3>Installation de PostgreSQL sur macOS</h3>
+<p>Pour installer PostgreSQL sur macOS, suivez les étapes suivantes :</p>
+<ol>
+  <li>Ouvrez un navigateur Web et accédez au site officiel de PostgreSQL.</li>
+  <li>Téléchargez le package d'installation pour macOS.</li>
+  <li>Double-cliquez sur le package d'installation téléchargé et suivez les instructions à l'écran.</li>
+  <li>Pendant l'installation, vous serez invité à choisir un mot de passe pour le superutilisateur de la base de données (appelé "postgres" par défaut). Assurez-vous de choisir un mot de passe fort et de le noter quelque part en toute sécurité.</li>
+  <li>Une fois l'installation terminée, PostgreSQL sera prêt à être utilisé.</li>
+</ol>
+
+<h3>Installation de PostgreSQL sur Linux</h3>
+<p>Les étapes d'installation de PostgreSQL sur Linux peuvent varier en fonction de la distribution Linux que vous utilisez. Voici les instructions générales :</p>
+<ol>
+  <li>Ouvrez un terminal.</li>
+  <li>Utilisez le gestionnaire de paquets de votre distribution Linux pour installer PostgreSQL. Par exemple, sur Ubuntu, vous pouvez exécuter la commande suivante : <pre><code>sudo apt-get install postgresql</code></pre></li>
+  <li>Pendant l'installation, vous serez invité à choisir un mot de passe pour le superutilisateur de la base de données (appelé "postgres" par défaut). Assurez-vous de choisir un mot de passe fort et de le noter quelque part en toute sécurité.</li>
+  <li>Une fois l'installation terminée, PostgreSQL sera prêt à être utilisé.</li>
+</ol>
+
+<h2>Configuration initiale de PostgreSQL</h2>
+<p>Après avoir installé PostgreSQL, vous devez effectuer quelques étapes de configuration initiale :</p>
+<ol>
+  <li>Ouvrez une interface en ligne de commande ou un terminal.</li>
+  <li>Connectez-vous à PostgreSQL en tant que superutilisateur en utilisant la commande suivante : <pre><code>sudo -u postgres psql</code></pre></li>
+  <li>Vous serez maintenant dans l'interface de ligne de commande de PostgreSQL. Vous pouvez exécuter des commandes SQL pour configurer votre base de données.</li>
+  <li>Pour créer un nouvel utilisateur, utilisez la commande suivante : <pre><code>CREATE USER nom_utilisateur WITH PASSWORD 'mot_de_passe';</code></pre> Remplacez "nom_utilisateur" par le nom d'utilisateur souhaité et "mot_de_passe" par le mot de passe souhaité.</li>
+  <li>Pour créer une nouvelle base de données, utilisez la commande suivante : <pre><code>CREATE DATABASE nom_base_de_donnees;</code></pre> Remplacez "nom_base_de_donnees" par le nom de la base de données souhaitée.</li>
+  <li>Pour accorder des privilèges à un utilisateur sur une base de données, utilisez la commande suivante : <pre><code>GRANT ALL PRIVILEGES ON DATABASE nom_base_de_donnees TO nom_utilisateur;</code></pre> Remplacez "nom_base_de_donnees" par le nom de la base de données et "nom_utilisateur" par le nom de l'utilisateur.</li>
+  <li>Une fois la configuration initiale terminée, vous pouvez quitter l'interface de ligne de commande de PostgreSQL en utilisant la commande suivante : <pre><code>\q</code></pre></li>
+</ol>
+
+<h2>Gestion des utilisateurs et des privilèges</h2>
+<p>Dans PostgreSQL, vous pouvez créer des utilisateurs et leur accorder des privilèges spécifiques sur les bases de données. Voici quelques commandes utiles :</p>
+
+<h3>Création d'un utilisateur</h3>
+<p>Pour créer un nouvel utilisateur, utilisez la commande suivante :</p>
+<pre><code>CREATE USER nom_utilisateur WITH PASSWORD 'mot_de_passe';</code></pre>
+<p>Remplacez "nom_utilisateur" par le nom d'utilisateur souhaité et "mot_de_passe" par le mot de passe souhaité.</p>
+
+<h3>Création d'une base de données</h3>
+<p>Pour créer une nouvelle base de données, utilisez la commande suivante :</p>
+<pre><code>CREATE DATABASE nom_base_de_donnees;</code></pre>
+<p>Remplacez "nom_base_de_donnees" par le nom de la base de données souhaitée.</p>
+
+<h3>Accorder des privilèges à un utilisateur sur une base de données</h3>
+<p>Pour accorder des privilèges à un utilisateur sur une base de données, utilisez la commande suivante :</p>
+<pre><code>GRANT ALL PRIVILEGES ON DATABASE nom_base_de_donnees TO nom_utilisateur;</code></pre>
+<p>Remplacez "nom_base_de_donnees" par le nom de la base de données et "nom_utilisateur" par le nom de l'utilisateur.</p>
+
+<p>Assurez-vous de consulter la documentation officielle de PostgreSQL pour plus d'informations sur la gestion des utilisateurs et des privilèges.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

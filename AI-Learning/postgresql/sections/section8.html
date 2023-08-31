@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Sécurité et gestion des utilisateurs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Authentification et autorisation dans PostgreSQL</h2>
+<p>
+Dans PostgreSQL, l'authentification est le processus permettant de vérifier l'identité d'un utilisateur qui tente de se connecter à la base de données. L'autorisation, quant à elle, concerne les privilèges et les droits accordés à un utilisateur une fois qu'il est authentifié.
+</p>
+
+<p>
+PostgreSQL propose plusieurs méthodes d'authentification, telles que l'authentification basée sur le système d'exploitation, l'authentification par mot de passe, l'authentification par certificat SSL, etc. Chaque méthode a ses avantages et ses inconvénients, et le choix de la méthode appropriée dépend des besoins de sécurité spécifiques de votre application.
+</p>
+
+<p>
+Une fois qu'un utilisateur est authentifié, PostgreSQL utilise un système de gestion des privilèges basé sur les rôles pour déterminer les actions qu'il est autorisé à effectuer. Les rôles peuvent être des utilisateurs individuels ou des groupes d'utilisateurs, et ils peuvent être assignés à des privilèges spécifiques sur des objets de la base de données.
+</p>
+
+<h2>Gestion des rôles et des privilèges</h2>
+<p>
+Dans PostgreSQL, les rôles sont utilisés pour gérer les utilisateurs et les groupes d'utilisateurs. Chaque rôle peut avoir des privilèges spécifiques sur des objets de la base de données, tels que les tables, les vues, les fonctions, etc.
+</p>
+
+<p>
+Pour créer un nouveau rôle, vous pouvez utiliser la commande CREATE ROLE. Par exemple, pour créer un rôle nommé "utilisateur1" avec un mot de passe, vous pouvez exécuter la commande suivante :
+</p>
+
+<pre><code>CREATE ROLE utilisateur1 WITH LOGIN PASSWORD 'mot_de_passe';</code></pre>
+
+<p>
+Une fois que le rôle est créé, vous pouvez lui attribuer des privilèges sur des objets spécifiques en utilisant la commande GRANT. Par exemple, pour accorder au rôle "utilisateur1" le droit de sélectionner des données dans une table nommée "ma_table", vous pouvez exécuter la commande suivante :
+</p>
+
+<pre><code>GRANT SELECT ON ma_table TO utilisateur1;</code></pre>
+
+<p>
+Il est également possible de créer des rôles de groupe qui peuvent être utilisés pour regrouper plusieurs utilisateurs et leur attribuer des privilèges communs. Pour créer un rôle de groupe, vous pouvez utiliser la commande CREATE ROLE avec l'option GROUP. Par exemple, pour créer un groupe nommé "mon_groupe", vous pouvez exécuter la commande suivante :
+</p>
+
+<pre><code>CREATE ROLE mon_groupe WITH GROUP;</code></pre>
+
+<p>
+Ensuite, vous pouvez ajouter des utilisateurs existants au groupe en utilisant la commande ALTER ROLE. Par exemple, pour ajouter l'utilisateur "utilisateur1" au groupe "mon_groupe", vous pouvez exécuter la commande suivante :
+</p>
+
+<pre><code>ALTER ROLE utilisateur1 IN GROUP mon_groupe;</code></pre>
+
+<h2>Sécurisation des données avec le chiffrement</h2>
+<p>
+Dans PostgreSQL, vous pouvez sécuriser vos données en utilisant le chiffrement. Le chiffrement permet de protéger les données sensibles en les rendant illisibles pour toute personne non autorisée.
+</p>
+
+<p>
+PostgreSQL prend en charge plusieurs méthodes de chiffrement, telles que le chiffrement des connexions avec SSL/TLS, le chiffrement des données stockées avec des clés de chiffrement, etc. Ces méthodes peuvent être utilisées individuellement ou en combinaison pour renforcer la sécurité de vos données.
+</p>
+
+<p>
+Par exemple, pour activer le chiffrement des connexions, vous devez configurer PostgreSQL pour utiliser SSL/TLS. Cela implique de générer des certificats SSL/TLS et de les configurer dans le fichier de configuration de PostgreSQL. Une fois que le chiffrement des connexions est activé, toutes les communications entre le client et le serveur PostgreSQL seront chiffrées.
+</p>
+
+<p>
+Pour chiffrer les données stockées, vous pouvez utiliser des clés de chiffrement. PostgreSQL prend en charge le chiffrement de colonnes individuelles, de tables entières ou même de bases de données entières. Vous pouvez utiliser des algorithmes de chiffrement symétriques ou asymétriques, en fonction de vos besoins de sécurité.
+</p>
+
+<h2>Audit et suivi des activités</h2>
+<p>
+Dans PostgreSQL, vous pouvez mettre en place un audit et un suivi des activités pour enregistrer les actions effectuées sur la base de données. Cela permet de suivre les modifications apportées aux données, d'identifier les problèmes de performance, de détecter les tentatives d'accès non autorisées, etc.
+</p>
+
+<p>
+Pour activer l'audit des activités, vous devez configurer PostgreSQL pour enregistrer les événements souhaités dans les fichiers journaux. Vous pouvez spécifier les types d'événements à enregistrer, tels que les connexions réussies/échouées, les requêtes exécutées, les modifications de données, etc.
+</p>
+
+<p>
+Une fois que l'audit est activé, vous pouvez consulter les fichiers journaux pour analyser les activités de la base de données. Vous pouvez utiliser des outils de visualisation de journaux ou des requêtes SQL pour extraire les informations souhaitées.
+</p>
+
+<p>
+Il est important de noter que l'audit et le suivi des activités peuvent avoir un impact sur les performances du système. Par conséquent, il est recommandé de configurer judicieusement les paramètres d'audit en fonction de vos besoins spécifiques.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

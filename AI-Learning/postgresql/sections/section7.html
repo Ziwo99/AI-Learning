@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Haute disponibilité et réplication</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Concepts de haute disponibilité</h2>
+<p>La haute disponibilité est un concept essentiel pour assurer la continuité des opérations dans un environnement PostgreSQL. Elle vise à minimiser les temps d'arrêt et à garantir que les données sont toujours accessibles aux utilisateurs.</p>
+<p>Il existe plusieurs approches pour atteindre la haute disponibilité avec PostgreSQL, notamment :</p>
+<ul>
+  <li>La réplication synchrone : cette méthode garantit que chaque transaction est répliquée sur un ou plusieurs serveurs de réplication avant d'être validée. Cela permet d'assurer une disponibilité maximale des données, mais peut entraîner une latence accrue.</li>
+  <li>La réplication asynchrone : dans ce cas, les transactions sont répliquées de manière asynchrone sur les serveurs de réplication. Cela permet d'obtenir une meilleure performance, mais il existe un risque de perte de données en cas de défaillance du serveur principal.</li>
+  <li>La mise en cluster : cette approche consiste à regrouper plusieurs serveurs PostgreSQL en un seul cluster, où chaque serveur peut prendre en charge les requêtes des clients. Cela permet d'assurer une disponibilité élevée en répartissant la charge de travail entre les serveurs.</li>
+</ul>
+
+<h2>Configuration de la réplication avec Streaming Replication</h2>
+<p>La réplication avec Streaming Replication est l'une des méthodes les plus couramment utilisées pour assurer la haute disponibilité dans PostgreSQL. Elle permet de créer une copie exacte de la base de données principale sur un ou plusieurs serveurs de réplication.</p>
+<p>Pour configurer la réplication avec Streaming Replication, vous devez effectuer les étapes suivantes :</p>
+<ol>
+  <li>Activer la réplication sur le serveur principal en modifiant le fichier de configuration <code>postgresql.conf</code> et en ajoutant les paramètres appropriés.</li>
+  <li>Configurer le fichier <code>pg_hba.conf</code> pour autoriser la connexion des serveurs de réplication.</li>
+  <li>Créer une sauvegarde de la base de données principale et la restaurer sur le serveur de réplication.</li>
+  <li>Démarrer le serveur de réplication et le synchroniser avec le serveur principal en utilisant la fonctionnalité de streaming.</li>
+</ol>
+<p>Une fois la réplication configurée, les modifications apportées à la base de données principale seront automatiquement répliquées sur les serveurs de réplication, assurant ainsi une haute disponibilité des données.</p>
+
+<h2>Utilisation de la réplication logique avec Logical Replication</h2>
+<p>La réplication logique est une autre méthode de réplication disponible dans PostgreSQL. Contrairement à la réplication physique, qui se concentre sur la copie exacte des données, la réplication logique permet de sélectionner et de filtrer les modifications à répliquer.</p>
+<p>Pour utiliser la réplication logique avec Logical Replication, vous devez effectuer les étapes suivantes :</p>
+<ol>
+  <li>Activer la réplication logique sur le serveur principal en modifiant le fichier de configuration <code>postgresql.conf</code> et en ajoutant les paramètres appropriés.</li>
+  <li>Configurer le fichier <code>pg_hba.conf</code> pour autoriser la connexion des serveurs de réplication.</li>
+  <li>Créer une publication sur le serveur principal pour spécifier les tables et les colonnes à répliquer.</li>
+  <li>Créer un abonnement sur le serveur de réplication pour spécifier les tables et les colonnes à recevoir.</li>
+</ol>
+<p>Une fois la réplication logique configurée, seules les modifications sélectionnées seront répliquées sur les serveurs de réplication, offrant ainsi une plus grande flexibilité dans la gestion des données répliquées.</p>
+
+<h2>Mise en place de la réplication asynchrone</h2>
+<p>La réplication asynchrone est une méthode de réplication qui permet de répliquer les modifications de la base de données principale vers les serveurs de réplication de manière asynchrone. Cela signifie que les transactions peuvent être validées sur le serveur principal avant d'être répliquées.</p>
+<p>Pour mettre en place la réplication asynchrone, vous devez effectuer les étapes suivantes :</p>
+<ol>
+  <li>Configurer la réplication synchrone sur le serveur principal en modifiant le fichier de configuration <code>postgresql.conf</code> et en ajoutant les paramètres appropriés.</li>
+  <li>Configurer le fichier <code>pg_hba.conf</code> pour autoriser la connexion des serveurs de réplication.</li>
+  <li>Créer une sauvegarde de la base de données principale et la restaurer sur le serveur de réplication.</li>
+  <li>Démarrer le serveur de réplication et le synchroniser avec le serveur principal en utilisant la fonctionnalité de streaming.</li>
+</ol>
+<p>Une fois la réplication asynchrone configurée, les modifications apportées à la base de données principale seront répliquées de manière asynchrone sur les serveurs de réplication, ce qui permet d'obtenir une meilleure performance tout en maintenant une certaine tolérance aux pannes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

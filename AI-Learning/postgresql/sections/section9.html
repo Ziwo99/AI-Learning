@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Sauvegarde et restauration</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Stratégies de sauvegarde</h2>
+<p>La sauvegarde des données est une étape essentielle pour assurer la sécurité et la disponibilité de vos bases de données PostgreSQL. Il existe plusieurs stratégies de sauvegarde que vous pouvez utiliser en fonction de vos besoins et de votre infrastructure.</p>
+
+<p>La première stratégie de sauvegarde est la sauvegarde complète, qui consiste à sauvegarder l'intégralité de la base de données. Cela inclut toutes les tables, les index, les contraintes, les vues, les séquences et les fonctions. Cette stratégie est recommandée pour les bases de données de petite à moyenne taille.</p>
+
+<p>Une autre stratégie de sauvegarde est la sauvegarde différentielle, qui consiste à sauvegarder uniquement les modifications apportées depuis la dernière sauvegarde complète. Cette stratégie permet de réduire le temps de sauvegarde et d'économiser de l'espace de stockage.</p>
+
+<p>Enfin, la sauvegarde incrémentielle est une stratégie qui consiste à sauvegarder uniquement les modifications apportées depuis la dernière sauvegarde, qu'elle soit complète ou différentielle. Cette stratégie permet de réduire encore plus le temps de sauvegarde et l'espace de stockage utilisé.</p>
+
+<h2>Utilisation des outils de sauvegarde et de restauration</h2>
+<p>PostgreSQL offre plusieurs outils pour effectuer des sauvegardes et des restaurations de bases de données.</p>
+
+<p>L'outil le plus couramment utilisé est pg_dump, qui permet de sauvegarder une base de données PostgreSQL dans un fichier texte. Cet outil prend en charge différentes options pour spécifier les objets à sauvegarder, tels que les tables, les vues, les séquences, etc. Vous pouvez également spécifier des options de compression pour réduire la taille du fichier de sauvegarde.</p>
+
+<p>Pour restaurer une base de données à partir d'une sauvegarde créée avec pg_dump, vous pouvez utiliser l'outil pg_restore. Cet outil lit le fichier de sauvegarde et restaure les objets dans la base de données cible. Vous pouvez spécifier des options pour contrôler le comportement de la restauration, telles que la suppression des objets existants avant la restauration.</p>
+
+<p>Il est également possible d'utiliser des outils tiers pour effectuer des sauvegardes et des restaurations de bases de données PostgreSQL. Certains outils populaires incluent Barman, pgBackRest et pgAdmin.</p>
+
+<h2>Restauration d'une base de données à partir d'une sauvegarde</h2>
+<p>Pour restaurer une base de données à partir d'une sauvegarde, vous devez d'abord créer une base de données vide avec le même nom que la base de données d'origine. Ensuite, vous pouvez utiliser l'outil de restauration approprié pour restaurer les objets à partir du fichier de sauvegarde.</p>
+
+<p>Supposons que vous ayez une sauvegarde de votre base de données appelée "mydatabase.backup". Pour restaurer cette sauvegarde, vous pouvez exécuter la commande suivante :</p>
+
+<pre><code>createdb mydatabase
+pg_restore --dbname=mydatabase mydatabase.backup
+</code></pre>
+
+<p>Cette commande crée une nouvelle base de données appelée "mydatabase" et restaure les objets à partir du fichier de sauvegarde "mydatabase.backup".</p>
+
+<p>Il est important de noter que la restauration d'une sauvegarde écrase les objets existants dans la base de données cible. Assurez-vous donc d'avoir une sauvegarde récente et valide avant de procéder à la restauration.</p>
+
+<p>De plus, assurez-vous d'avoir les privilèges nécessaires pour créer une base de données et restaurer les objets. Si vous rencontrez des erreurs lors de la restauration, vérifiez les messages d'erreur pour identifier les problèmes potentiels.</p>
+
+<p>Enfin, n'oubliez pas de tester la restauration en vérifiant que tous les objets ont été restaurés correctement et que la base de données fonctionne comme prévu.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

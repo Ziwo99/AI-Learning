@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Optimisation des performances</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Indexation et optimisation des requêtes</h2>
+<p>L'indexation est un aspect essentiel de l'optimisation des performances dans PostgreSQL. Les index permettent d'accélérer les requêtes en créant des structures de données supplémentaires qui permettent de rechercher rapidement des valeurs spécifiques dans une table.</p>
+<p>Pour créer un index dans PostgreSQL, vous pouvez utiliser la commande CREATE INDEX. Par exemple :</p>
+<pre><code>CREATE INDEX index_name ON table_name (column_name);</code></pre>
+<p>Il est important de choisir les colonnes appropriées pour créer des index. Les colonnes utilisées fréquemment dans les clauses WHERE et JOIN sont de bons candidats pour l'indexation.</p>
+<p>En plus de l'indexation, il est également important d'optimiser les requêtes elles-mêmes. Cela peut être fait en utilisant des clauses telles que WHERE, JOIN, GROUP BY et ORDER BY de manière efficace. Il est également recommandé d'utiliser EXPLAIN pour analyser les plans d'exécution des requêtes et d'apporter des modifications si nécessaire.</p>
+
+<h2>Analyse des plans d'exécution</h2>
+<p>PostgreSQL fournit la commande EXPLAIN pour analyser les plans d'exécution des requêtes. Cette commande permet de visualiser comment PostgreSQL exécute une requête spécifique et d'identifier les éventuels problèmes de performance.</p>
+<p>Voici un exemple d'utilisation de la commande EXPLAIN :</p>
+<pre><code>EXPLAIN SELECT * FROM table_name WHERE column_name = 'value';</code></pre>
+<p>Le résultat de la commande EXPLAIN affiche le plan d'exécution de la requête, y compris les étapes de traitement et les coûts associés. En analysant ce plan, vous pouvez identifier les parties de la requête qui peuvent être optimisées.</p>
+
+<h2>Configuration des paramètres de performance</h2>
+<p>La configuration des paramètres de performance dans PostgreSQL peut grandement influencer les performances globales du système. Il est important de comprendre les différents paramètres et d'ajuster leur valeur en fonction des besoins spécifiques.</p>
+<p>Les paramètres de performance peuvent être configurés dans le fichier postgresql.conf. Voici quelques paramètres couramment utilisés :</p>
+<ul>
+  <li><code>shared_buffers</code> : spécifie la quantité de mémoire partagée utilisée pour le cache des données.</li>
+  <li><code>work_mem</code> : spécifie la quantité de mémoire utilisée pour les opérations de tri et de hachage.</li>
+  <li><code>effective_cache_size</code> : spécifie la taille de cache estimée pour le planificateur de requêtes.</li>
+  <li><code>max_connections</code> : spécifie le nombre maximal de connexions simultanées autorisées.</li>
+</ul>
+<p>Il est recommandé de consulter la documentation officielle de PostgreSQL pour obtenir des informations détaillées sur chaque paramètre et comprendre comment les ajuster en fonction des besoins spécifiques.</p>
+
+<h2>Utilisation des outils de monitoring et de profiling</h2>
+<p>PostgreSQL propose plusieurs outils de monitoring et de profiling pour surveiller les performances du système et identifier les problèmes potentiels.</p>
+<p>Un outil couramment utilisé est pg_stat_statements, qui enregistre les statistiques d'exécution des requêtes. Cela permet d'identifier les requêtes les plus coûteuses en termes de temps d'exécution et de ressources.</p>
+<p>Un autre outil utile est pg_stat_activity, qui affiche les informations sur les connexions actives et les requêtes en cours d'exécution. Cela permet de surveiller l'activité du système en temps réel.</p>
+<p>Il existe également des outils tiers tels que pgBadger et pgAdmin qui offrent des fonctionnalités avancées de monitoring et de profiling.</p>
+<p>Il est recommandé d'utiliser ces outils régulièrement pour surveiller les performances du système et prendre des mesures correctives si nécessaire.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

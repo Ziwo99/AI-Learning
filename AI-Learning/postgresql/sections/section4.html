@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - PostgreSQL Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Requêtes SQL avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/postgresql/postgresql.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Requêtes SELECT avec jointures</h2>
+<p>Les requêtes SELECT avec jointures permettent de combiner des données provenant de plusieurs tables en utilisant des critères de jointure. Cela permet d'obtenir des résultats plus complexes et plus précis.</p>
+
+<p>Voici un exemple de requête SELECT avec une jointure :</p>
+<pre><code>SELECT orders.order_id, customers.customer_name
+FROM orders
+JOIN customers ON orders.customer_id = customers.customer_id;
+</code></pre>
+
+<p>Dans cet exemple, nous sélectionnons l'identifiant de commande (order_id) et le nom du client (customer_name) à partir des tables "orders" et "customers". La jointure est réalisée en utilisant la colonne "customer_id" qui est commune aux deux tables.</p>
+
+<p>Il existe différents types de jointures, tels que INNER JOIN, LEFT JOIN, RIGHT JOIN et FULL JOIN, qui permettent de spécifier comment les enregistrements doivent être combinés. Chaque type de jointure a ses propres caractéristiques et est utilisé en fonction des besoins spécifiques.</p>
+
+<h2>Sous-requêtes et opérateurs logiques</h2>
+<p>Les sous-requêtes sont des requêtes SQL imbriquées à l'intérieur d'une autre requête. Elles permettent d'effectuer des opérations plus complexes en utilisant les résultats d'une requête comme critère de sélection dans une autre requête.</p>
+
+<p>Voici un exemple de sous-requête :</p>
+<pre><code>SELECT customer_name
+FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders WHERE order_date = '2022-01-01');
+</code></pre>
+
+<p>Dans cet exemple, nous sélectionnons le nom des clients à partir de la table "customers" en utilisant une sous-requête. La sous-requête sélectionne les identifiants de client (customer_id) à partir de la table "orders" où la date de commande (order_date) est égale à '2022-01-01'.</p>
+
+<p>Les opérateurs logiques, tels que AND, OR et NOT, peuvent également être utilisés avec les sous-requêtes pour créer des conditions plus complexes.</p>
+
+<h2>Agrégation de données avec GROUP BY</h2>
+<p>L'agrégation de données avec GROUP BY permet de regrouper les données en fonction de certaines colonnes et d'effectuer des opérations d'agrégation, telles que la somme, la moyenne, le maximum, le minimum, etc., sur les valeurs regroupées.</p>
+
+<p>Voici un exemple d'utilisation de GROUP BY :</p>
+<pre><code>SELECT category_id, COUNT(*) as total_products
+FROM products
+GROUP BY category_id;
+</code></pre>
+
+<p>Dans cet exemple, nous sélectionnons l'identifiant de catégorie (category_id) et le nombre total de produits (total_products) à partir de la table "products". Les données sont regroupées par identifiant de catégorie en utilisant la clause GROUP BY.</p>
+
+<p>Il est également possible d'utiliser des fonctions d'agrégation telles que SUM, AVG, MAX, MIN, etc., pour effectuer des calculs sur les valeurs regroupées.</p>
+
+<h2>Utilisation des fonctions d'agrégation</h2>
+<p>Les fonctions d'agrégation permettent d'effectuer des calculs sur un ensemble de valeurs. Elles sont souvent utilisées en conjonction avec la clause GROUP BY pour obtenir des résultats agrégés.</p>
+
+<p>Voici un exemple d'utilisation de fonctions d'agrégation :</p>
+<pre><code>SELECT category_id, AVG(price) as average_price
+FROM products
+GROUP BY category_id;
+</code></pre>
+
+<p>Dans cet exemple, nous sélectionnons l'identifiant de catégorie (category_id) et le prix moyen (average_price) à partir de la table "products". Les données sont regroupées par identifiant de catégorie en utilisant la clause GROUP BY, puis la fonction AVG est utilisée pour calculer la moyenne des prix pour chaque catégorie.</p>
+
+<p>Il existe de nombreuses autres fonctions d'agrégation telles que SUM, MAX, MIN, COUNT, etc., qui peuvent être utilisées en fonction des besoins spécifiques.</p>
+
+<h2>Manipulation de données avec INSERT, UPDATE et DELETE</h2>
+<p>Les instructions INSERT, UPDATE et DELETE permettent de manipuler les données dans une table.</p>
+
+<p>Voici un exemple d'utilisation de l'instruction INSERT :</p>
+<pre><code>INSERT INTO customers (customer_name, email)
+VALUES ('John Doe', 'john.doe@example.com');
+</code></pre>
+
+<p>Dans cet exemple, nous insérons un nouvel enregistrement dans la table "customers" en spécifiant les valeurs des colonnes "customer_name" et "email".</p>
+
+<p>Voici un exemple d'utilisation de l'instruction UPDATE :</p>
+<pre><code>UPDATE customers
+SET email = 'johndoe@example.com'
+WHERE customer_id = 1;
+</code></pre>
+
+<p>Dans cet exemple, nous mettons à jour l'enregistrement dans la table "customers" en modifiant la valeur de la colonne "email" pour l'enregistrement dont l'identifiant de client (customer_id) est égal à 1.</p>
+
+<p>Voici un exemple d'utilisation de l'instruction DELETE :</p>
+<pre><code>DELETE FROM customers
+WHERE customer_id = 1;
+</code></pre>
+
+<p>Dans cet exemple, nous supprimons l'enregistrement de la table "customers" dont l'identifiant de client (customer_id) est égal à 1.</p>
+
+<p>Il est important de noter que les instructions UPDATE et DELETE peuvent affecter plusieurs enregistrements en fonction des critères de sélection spécifiés.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/postgresql/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/postgresql/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
