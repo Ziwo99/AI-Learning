@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13 : Débogage et optimisation en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Techniques de débogage</h2>
+<p>Le débogage est un processus essentiel dans le développement de logiciels en Perl. Il permet d'identifier et de corriger les erreurs dans le code. Voici quelques techniques couramment utilisées pour déboguer en Perl :</p>
+
+<h3>1. Utilisation de la fonction print</h3>
+<p>La fonction print est un outil de débogage simple mais efficace. Elle permet d'afficher des messages à des endroits spécifiques du code pour vérifier les valeurs des variables ou suivre l'exécution du programme. Voici un exemple :</p>
+
+<pre><code>my $variable = 10;
+print "La valeur de la variable est : $variable\n";</code></pre>
+
+<p>Dans cet exemple, la valeur de la variable est affichée à l'écran. Cela peut être utile pour vérifier si la valeur est correcte à un certain point du programme.</p>
+
+<h3>2. Utilisation du module Data::Dumper</h3>
+<p>Le module Data::Dumper permet d'afficher des structures de données complexes, telles que des tableaux ou des hachages, de manière lisible. Il est souvent utilisé pour déboguer des structures de données complexes. Voici un exemple :</p>
+
+<pre><code>use Data::Dumper;
+
+my @array = (1, 2, 3);
+print Dumper(\@array);</code></pre>
+
+<p>Cet exemple affiche le contenu du tableau @array de manière lisible. Cela peut être utile pour vérifier si les données sont correctement stockées dans une structure de données complexe.</p>
+
+<h3>3. Utilisation du module Carp</h3>
+<p>Le module Carp fournit des fonctions de débogage avancées, telles que carp() et croak(), qui permettent d'afficher des messages d'erreur détaillés, y compris la trace d'appel, en cas d'erreur. Voici un exemple :</p>
+
+<pre><code>use Carp;
+
+sub divide {
+    my ($numerator, $denominator) = @_;
+
+    croak("Division by zero") if $denominator == 0;
+
+    return $numerator / $denominator;
+}</code></pre>
+
+<p>Dans cet exemple, si le dénominateur est égal à zéro, une erreur est déclenchée avec un message d'erreur détaillé.</p>
+
+<h2>Profilage et optimisation des performances</h2>
+<p>L'optimisation des performances est un aspect important du développement en Perl. Voici quelques techniques couramment utilisées pour profiler et optimiser les performances d'un programme Perl :</p>
+
+<h3>1. Utilisation du module Benchmark</h3>
+<p>Le module Benchmark permet de mesurer le temps d'exécution d'un morceau de code. Il est souvent utilisé pour comparer les performances de différentes implémentations d'un algorithme. Voici un exemple :</p>
+
+<pre><code>use Benchmark;
+
+my $start = new Benchmark;
+# Code à mesurer
+my $end = new Benchmark;
+
+my $difference = timediff($end, $start);
+print "Le code a pris ", timestr($difference), " pour s'exécuter.\n";</code></pre>
+
+<p>Dans cet exemple, le temps d'exécution du code entre les deux marqueurs est mesuré et affiché à l'écran.</p>
+
+<h3>2. Utilisation du module Devel::NYTProf</h3>
+<p>Le module Devel::NYTProf est un outil de profilage avancé qui permet d'analyser les performances d'un programme Perl en détail. Il fournit des informations sur le temps d'exécution de chaque sous-routine, la mémoire utilisée et d'autres métriques de performance. Voici un exemple d'utilisation :</p>
+
+<pre><code>use Devel::NYTProf;
+
+# Code à profiler
+
+# Exécution du profiler
+system("nytprofhtml");</code></pre>
+
+<p>Dans cet exemple, le code entre les marqueurs est profilé et les résultats sont générés sous forme de fichiers HTML.</p>
+
+<h3>3. Optimisation du code</h3>
+<p>Pour optimiser les performances d'un programme Perl, il est important d'identifier les parties du code qui consomment le plus de ressources et de les optimiser. Voici quelques conseils pour optimiser le code Perl :</p>
+
+<ul>
+  <li>Utilisez des opérations efficaces pour les structures de données, telles que les tableaux et les hachages.</li>
+  <li>Évitez les boucles imbriquées autant que possible.</li>
+  <li>Utilisez des fonctions intégrées de Perl plutôt que d'écrire du code personnalisé.</li>
+  <li>Utilisez des expressions régulières optimisées pour les opérations de recherche et de remplacement.</li>
+  <li>Utilisez des modules optimisés pour des tâches spécifiques, tels que les modules de manipulation de fichiers CSV.</li>
+</ul>
+
+<p>En suivant ces conseils, vous pouvez améliorer les performances de votre code Perl.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

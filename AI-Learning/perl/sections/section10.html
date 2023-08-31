@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Gestion des erreurs et exceptions en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des erreurs avec die et warn</h2>
+<p>En Perl, la gestion des erreurs peut être réalisée à l'aide des fonctions <code>die</code> et <code>warn</code>. La fonction <code>die</code> est utilisée pour générer une erreur fatale qui arrête immédiatement l'exécution du programme, tandis que la fonction <code>warn</code> génère un avertissement qui ne stoppe pas l'exécution du programme.</p>
+
+<p>Voici un exemple d'utilisation de la fonction <code>die</code> :</p>
+
+<pre><code>my $num = 10;
+
+if ($num &gt; 5) {
+    die "Le nombre ne peut pas être supérieur à 5.";
+}
+
+print "Ce message ne sera pas affiché car le programme s'est arrêté.";
+</code></pre>
+
+<p>Dans cet exemple, si la condition <code>$num &gt; 5</code> est vraie, le programme s'arrête immédiatement et affiche le message d'erreur spécifié dans la fonction <code>die</code>.</p>
+
+<p>Voici un exemple d'utilisation de la fonction <code>warn</code> :</p>
+
+<pre><code>my $num = 10;
+
+if ($num &gt; 5) {
+    warn "Le nombre est supérieur à 5.";
+}
+
+print "Ce message sera affiché malgré l'avertissement.";
+</code></pre>
+
+<p>Dans cet exemple, si la condition <code>$num &gt; 5</code> est vraie, un avertissement est généré mais le programme continue son exécution normalement.</p>
+
+<h2>Utilisation des blocs eval</h2>
+<p>En Perl, les blocs <code>eval</code> sont utilisés pour capturer et gérer les exceptions. Un bloc <code>eval</code> permet d'exécuter du code Perl tout en capturant les erreurs qui pourraient survenir.</p>
+
+<p>Voici un exemple d'utilisation d'un bloc <code>eval</code> :</p>
+
+<pre><code>eval {
+    # Code susceptible de générer une exception
+    my $result = 10 / 0;
+};
+
+if ($@) {
+    # Gestion de l'exception
+    print "Une erreur s'est produite : $@";
+}
+</code></pre>
+
+<p>Dans cet exemple, le code à l'intérieur du bloc <code>eval</code> tente de diviser le nombre 10 par zéro, ce qui génère une exception. L'exception est capturée par la variable spéciale <code>$@</code> et peut être utilisée pour afficher un message d'erreur personnalisé.</p>
+
+<h2>Création de classes d'exceptions personnalisées</h2>
+<p>En Perl, il est possible de créer des classes d'exceptions personnalisées en utilisant le mécanisme d'héritage. Cela permet de définir des exceptions spécifiques à notre application et de les gérer de manière appropriée.</p>
+
+<p>Voici un exemple de création d'une classe d'exception personnalisée :</p>
+
+<pre><code>package MonException;
+
+use strict;
+use warnings;
+
+use base 'Error::Simple';
+
+sub new {
+    my ($class, $message) = @_;
+    my $self = $class-&gt;SUPER::new($message);
+    return $self;
+}
+
+1;
+</code></pre>
+
+<p>Dans cet exemple, nous créons une classe <code>MonException</code> qui hérite de la classe <code>Error::Simple</code>. La méthode <code>new</code> est redéfinie pour permettre la création d'une instance de notre classe d'exception personnalisée.</p>
+
+<p>Voici comment utiliser notre classe d'exception personnalisée :</p>
+
+<pre><code>use MonException;
+
+eval {
+    # Code susceptible de générer une exception
+    if (...) {
+        die MonException-&gt;new("Une erreur s'est produite.");
+    }
+};
+
+if ($@) {
+    # Gestion de l'exception
+    if (ref $@ eq 'MonException') {
+        print "Une exception de type MonException a été capturée.";
+    } else {
+        print "Une autre exception a été capturée.";
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>die</code> pour générer une instance de notre classe d'exception personnalisée <code>MonException</code>. L'exception est ensuite capturée et nous pouvons vérifier son type à l'aide de la fonction <code>ref</code>.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

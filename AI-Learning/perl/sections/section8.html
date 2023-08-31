@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Modules et bibliothèques en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de modules existants</h2>
+<p>Perl dispose d'une vaste collection de modules prêts à l'emploi qui peuvent être utilisés pour étendre les fonctionnalités de base du langage. Ces modules sont généralement disponibles sur le Comprehensive Perl Archive Network (CPAN) et peuvent être installés à l'aide de l'utilitaire CPAN.</p>
+
+<p>Pour utiliser un module existant dans votre programme Perl, vous devez d'abord l'installer sur votre système. Une fois le module installé, vous pouvez l'importer dans votre programme en utilisant la directive <code>use</code>.</p>
+
+<p>Voici un exemple d'utilisation du module DateTime, qui fournit des fonctionnalités de manipulation de dates et d'heures :</p>
+
+<pre><code>use DateTime;
+
+# Création d'un objet DateTime pour la date actuelle
+my $dt = DateTime->now();
+
+# Affichage de la date et de l'heure
+print $dt->ymd(); # Affiche la date au format YYYY-MM-DD
+print $dt->hms(); # Affiche l'heure au format HH:MM:SS
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode <code>now()</code> de la classe DateTime pour créer un objet représentant la date et l'heure actuelles. Ensuite, nous utilisons les méthodes <code>ymd()</code> et <code>hms()</code> pour afficher la date et l'heure au format souhaité.</p>
+
+<h2>Création de modules personnalisés</h2>
+<p>En plus d'utiliser des modules existants, vous pouvez également créer vos propres modules personnalisés en Perl. Les modules personnalisés vous permettent d'encapsuler du code dans des packages réutilisables, ce qui facilite la maintenance et la réutilisation du code.</p>
+
+<p>Voici un exemple de création d'un module personnalisé nommé <code>MyModule.pm</code> :</p>
+
+<pre><code>package MyModule;
+
+# Exportation des symboles par défaut
+use Exporter qw(import);
+our @EXPORT = qw(sub1 sub2);
+
+# Définition des sous-routines
+sub sub1 {
+    # Code de la sous-routine sub1
+}
+
+sub sub2 {
+    # Code de la sous-routine sub2
+}
+
+1; # Fin du module
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le package <code>MyModule</code> pour encapsuler notre code. Nous utilisons également le module Exporter pour exporter les symboles <code>sub1</code> et <code>sub2</code> par défaut, ce qui permet de les utiliser dans d'autres programmes Perl.</p>
+
+<p>Pour utiliser notre module personnalisé dans un programme Perl, nous pouvons l'importer en utilisant la directive <code>use</code> :</p>
+
+<pre><code>use MyModule;
+
+# Appel des sous-routines du module
+sub1();
+sub2();
+</code></pre>
+
+<p>Dans cet exemple, nous importons le module <code>MyModule</code> et appelons les sous-routines <code>sub1()</code> et <code>sub2()</code> définies dans le module.</p>
+
+<h2>Utilisation de bibliothèques externes</h2>
+<p>En plus des modules Perl, vous pouvez également utiliser des bibliothèques externes dans vos programmes Perl. Les bibliothèques externes sont généralement écrites dans d'autres langages de programmation, tels que C, et peuvent être liées à Perl à l'aide de l'interface de programmation Perl XS.</p>
+
+<p>Pour utiliser une bibliothèque externe dans votre programme Perl, vous devez d'abord l'installer sur votre système. Une fois la bibliothèque installée, vous pouvez l'utiliser en utilisant le module correspondant dans Perl.</p>
+
+<p>Voici un exemple d'utilisation de la bibliothèque externe SQLite dans Perl :</p>
+
+<pre><code>use DBI;
+
+# Connexion à la base de données SQLite
+my $dbh = DBI->connect("dbi:SQLite:dbname=test.db", "", "");
+
+# Exécution d'une requête SQL
+my $sth = $dbh->prepare("SELECT * FROM users");
+$sth->execute();
+
+# Récupération des résultats
+while (my $row = $sth->fetchrow_hashref()) {
+    print $row->{name} . "\n";
+}
+
+# Fermeture de la connexion
+$dbh->disconnect();
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module DBI pour établir une connexion à une base de données SQLite. Nous exécutons ensuite une requête SQL pour récupérer les enregistrements de la table "users" et affichons le nom de chaque utilisateur.</p>
+
+<p>Il est important de noter que l'utilisation de bibliothèques externes peut nécessiter des connaissances supplémentaires dans le langage de programmation correspondant à la bibliothèque. Vous devrez peut-être consulter la documentation de la bibliothèque pour comprendre comment l'utiliser correctement dans Perl.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

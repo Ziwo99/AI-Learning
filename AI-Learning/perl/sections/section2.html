@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Variables et types de données en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Variables scalaires</h2>
+<p>En Perl, les variables scalaires sont utilisées pour stocker des valeurs individuelles. Elles peuvent contenir des nombres, des chaînes de caractères ou des références à d'autres types de données.</p>
+<p>Voici comment déclarer une variable scalaire en Perl :</p>
+<pre><code>my $nom_variable;
+</code></pre>
+<p>Il est également possible d'initialiser une variable scalaire lors de sa déclaration :</p>
+<pre><code>my $nom_variable = valeur;
+</code></pre>
+<p>Les variables scalaires peuvent être utilisées dans des opérations arithmétiques, des opérations de chaînes de caractères et d'autres manipulations de données.</p>
+
+<h2>Variables tableaux</h2>
+<p>En Perl, les variables tableaux sont utilisées pour stocker des listes de valeurs. Elles peuvent contenir des nombres, des chaînes de caractères ou des références à d'autres types de données.</p>
+<p>Voici comment déclarer un tableau en Perl :</p>
+<pre><code>my @nom_tableau;
+</code></pre>
+<p>Il est également possible d'initialiser un tableau lors de sa déclaration :</p>
+<pre><code>my @nom_tableau = (valeur1, valeur2, valeur3);
+</code></pre>
+<p>Les éléments d'un tableau peuvent être accédés en utilisant leur indice :</p>
+<pre><code>my $element = $nom_tableau[indice];
+</code></pre>
+<p>Les tableaux peuvent être utilisés dans des boucles, des opérations de recherche et de tri, et d'autres manipulations de données.</p>
+
+<h2>Variables hachages</h2>
+<p>En Perl, les variables hachages sont utilisées pour stocker des paires clé-valeur. Elles sont également appelées tableaux associatifs ou dictionnaires dans d'autres langages de programmation.</p>
+<p>Voici comment déclarer une hachage en Perl :</p>
+<pre><code>my %nom_hachage;
+</code></pre>
+<p>Il est également possible d'initialiser une hachage lors de sa déclaration :</p>
+<pre><code>my %nom_hachage = (clé1 => valeur1, clé2 => valeur2, clé3 => valeur3);
+</code></pre>
+<p>Les valeurs d'une hachage peuvent être accédées en utilisant leur clé :</p>
+<pre><code>my $valeur = $nom_hachage{clé};
+</code></pre>
+<p>Les hachages peuvent être utilisées dans des opérations de recherche, de tri et de manipulation de données basées sur des clés.</p>
+
+<h2>Variables de type référence</h2>
+<p>En Perl, les variables de type référence sont utilisées pour stocker des références à d'autres types de données, tels que des tableaux, des hachages ou des sous-routines.</p>
+<p>Voici comment déclarer une variable de type référence en Perl :</p>
+<pre><code>my $nom_reference = \valeur;
+</code></pre>
+<p>Les références peuvent être utilisées pour accéder aux données contenues dans une structure de données complexe, ou pour passer des structures de données en tant qu'arguments à des sous-routines.</p>
+<p>Il est important de noter que les références doivent être déréférencées avant d'accéder à leurs valeurs réelles. Cela peut être fait en utilisant l'opérateur de déréférencement approprié, tel que <code>$</code> pour les scalaires, <code>@</code> pour les tableaux et <code>%</code> pour les hachages.</p>
+<pre><code>my $valeur = $$nom_reference;  # déréférencement d'une référence scalaire
+my @tableau = @$nom_reference;  # déréférencement d'une référence tableau
+my %hachage = %$nom_reference;  # déréférencement d'une référence hachage
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

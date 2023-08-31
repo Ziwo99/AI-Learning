@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Structures de contrôle en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structures conditionnelles (if, else, elsif)</h2>
+<p>Les structures conditionnelles en Perl permettent d'exécuter des blocs de code en fonction de conditions spécifiques. La structure if permet d'exécuter un bloc de code si une condition est vraie. Voici un exemple :</p>
+
+<pre><code>my $age = 25;
+
+if ($age &gt;= 18) {
+    print "Vous êtes majeur.";
+}
+</code></pre>
+
+<p>Dans cet exemple, si la variable $age est supérieure ou égale à 18, le message "Vous êtes majeur." sera affiché.</p>
+
+<p>La structure else permet d'exécuter un bloc de code si la condition de l'instruction if est fausse. Voici un exemple :</p>
+
+<pre><code>my $age = 15;
+
+if ($age &gt;= 18) {
+    print "Vous êtes majeur.";
+} else {
+    print "Vous êtes mineur.";
+}
+</code></pre>
+
+<p>Dans cet exemple, si la variable $age est inférieure à 18, le message "Vous êtes mineur." sera affiché.</p>
+
+<p>La structure elsif permet d'ajouter des conditions supplémentaires à une structure if. Voici un exemple :</p>
+
+<pre><code>my $age = 25;
+
+if ($age &lt; 18) {
+    print "Vous êtes mineur.";
+} elsif ($age &lt; 25) {
+    print "Vous êtes jeune adulte.";
+} else {
+    print "Vous êtes adulte.";
+}
+</code></pre>
+
+<p>Dans cet exemple, si la variable $age est inférieure à 18, le message "Vous êtes mineur." sera affiché. Si la variable $age est supérieure ou égale à 18 mais inférieure à 25, le message "Vous êtes jeune adulte." sera affiché. Sinon, le message "Vous êtes adulte." sera affiché.</p>
+
+<h2>Boucles (for, while, do-while)</h2>
+<p>Les boucles en Perl permettent d'exécuter un bloc de code plusieurs fois. Il existe trois types de boucles couramment utilisées en Perl : la boucle for, la boucle while et la boucle do-while.</p>
+
+<p>La boucle for permet d'exécuter un bloc de code un nombre spécifié de fois. Voici un exemple :</p>
+
+<pre><code>for (my $i = 0; $i &lt; 5; $i++) {
+    print "Iteration $i\n";
+}
+</code></pre>
+
+<p>Dans cet exemple, le bloc de code à l'intérieur de la boucle for sera exécuté cinq fois, avec la variable $i prenant les valeurs de 0 à 4.</p>
+
+<p>La boucle while permet d'exécuter un bloc de code tant qu'une condition spécifiée est vraie. Voici un exemple :</p>
+
+<pre><code>my $i = 0;
+
+while ($i &lt; 5) {
+    print "Iteration $i\n";
+    $i++;
+}
+</code></pre>
+
+<p>Dans cet exemple, le bloc de code à l'intérieur de la boucle while sera exécuté tant que la variable $i est inférieure à 5. À chaque itération, la variable $i est incrémentée de 1.</p>
+
+<p>La boucle do-while est similaire à la boucle while, mais elle exécute le bloc de code au moins une fois, puis vérifie la condition. Voici un exemple :</p>
+
+<pre><code>my $i = 0;
+
+do {
+    print "Iteration $i\n";
+    $i++;
+} while ($i &lt; 5);
+</code></pre>
+
+<p>Dans cet exemple, le bloc de code à l'intérieur de la boucle do-while sera exécuté une première fois, puis la condition sera vérifiée. Si la condition est vraie, le bloc de code sera exécuté à nouveau, et ainsi de suite, tant que la condition est vraie.</p>
+
+<h2>Instructions de contrôle (next, last, redo)</h2>
+<p>Les instructions de contrôle en Perl permettent de contrôler le flux d'exécution d'une boucle. Il existe trois instructions de contrôle couramment utilisées en Perl : next, last et redo.</p>
+
+<p>L'instruction next permet de passer à l'itération suivante d'une boucle. Voici un exemple :</p>
+
+<pre><code>for (my $i = 0; $i &lt; 5; $i++) {
+    if ($i == 2) {
+        next;
+    }
+    print "Iteration $i\n";
+}
+</code></pre>
+
+<p>Dans cet exemple, lorsque la variable $i est égale à 2, l'instruction next est exécutée, ce qui passe à l'itération suivante de la boucle sans exécuter le reste du bloc de code.</p>
+
+<p>L'instruction last permet de sortir d'une boucle prématurément. Voici un exemple :</p>
+
+<pre><code>for (my $i = 0; $i &lt; 5; $i++) {
+    if ($i == 2) {
+        last;
+    }
+    print "Iteration $i\n";
+}
+</code></pre>
+
+<p>Dans cet exemple, lorsque la variable $i est égale à 2, l'instruction last est exécutée, ce qui sort de la boucle sans exécuter le reste du bloc de code.</p>
+
+<p>L'instruction redo permet de recommencer l'itération actuelle d'une boucle. Voici un exemple :</p>
+
+<pre><code>for (my $i = 0; $i &lt; 5; $i++) {
+    if ($i == 2) {
+        redo;
+    }
+    print "Iteration $i\n";
+}
+</code></pre>
+
+<p>Dans cet exemple, lorsque la variable $i est égale à 2, l'instruction redo est exécutée, ce qui recommence l'itération actuelle de la boucle sans incrémenter la variable $i.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

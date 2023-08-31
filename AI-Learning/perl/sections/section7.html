@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Expressions régulières en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux expressions régulières</h2>
+<p>Les expressions régulières sont des motifs de recherche utilisés pour trouver des correspondances dans les chaînes de caractères. En Perl, les expressions régulières sont définies à l'aide de délimiteurs spéciaux, généralement des slashs (/). Par exemple, la regex /abc/ correspondrait à la chaîne "abc".</p>
+
+<p>Les expressions régulières peuvent être utilisées pour effectuer des opérations telles que la recherche, le remplacement et la validation de chaînes de caractères. Elles sont extrêmement puissantes et flexibles, permettant de rechercher des motifs complexes dans les données.</p>
+
+<h2>Utilisation des métacaractères</h2>
+<p>Les métacaractères sont des caractères spéciaux utilisés dans les expressions régulières pour représenter des classes de caractères ou des quantificateurs. Voici quelques-uns des métacaractères les plus couramment utilisés en Perl :</p>
+
+<ul>
+  <li><code>.</code> : Correspond à n'importe quel caractère, sauf un saut de ligne.</li>
+  <li><code>[abc]</code> : Correspond à un seul caractère parmi ceux spécifiés entre les crochets.</li>
+  <li><code>[^abc]</code> : Correspond à un seul caractère qui n'est pas spécifié entre les crochets.</li>
+  <li><code>\d</code> : Correspond à un chiffre.</li>
+  <li><code>\w</code> : Correspond à un caractère alphanumérique.</li>
+  <li><code>\s</code> : Correspond à un espace blanc.</li>
+  <li><code>*</code> : Correspond à zéro ou plusieurs occurrences du caractère précédent.</li>
+  <li><code>+</code> : Correspond à une ou plusieurs occurrences du caractère précédent.</li>
+  <li><code>?</code> : Correspond à zéro ou une occurrence du caractère précédent.</li>
+</ul>
+
+<p>Il existe de nombreux autres métacaractères disponibles en Perl, chacun ayant sa propre signification. Il est important de les comprendre et de les utiliser correctement pour obtenir les résultats souhaités.</p>
+
+<h2>Fonctions de correspondance et de substitution</h2>
+<p>Perl offre plusieurs fonctions pour effectuer des opérations de correspondance et de substitution avec des expressions régulières. Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+
+<ul>
+  <li><code>m//</code> : Cette fonction est utilisée pour effectuer une correspondance d'une chaîne de caractères avec une expression régulière. Par exemple, <code>$str =~ m/abc/</code> vérifie si la chaîne <code>$str</code> contient la séquence "abc".</li>
+  <li><code>s///</code> : Cette fonction est utilisée pour effectuer une substitution d'une partie d'une chaîne de caractères par une autre. Par exemple, <code>$str =~ s/abc/def/</code> remplace la première occurrence de "abc" par "def" dans la chaîne <code>$str</code>.</li>
+  <li><code>qr//</code> : Cette fonction est utilisée pour créer une regex compilée, qui peut ensuite être utilisée pour effectuer des correspondances plus efficaces. Par exemple, <code>my $regex = qr/abc/;</code> crée une regex compilée correspondant à la séquence "abc".</li>
+</ul>
+
+<p>Ces fonctions peuvent être utilisées de différentes manières pour répondre à des besoins spécifiques. Il est important de comprendre comment les utiliser correctement pour obtenir les résultats souhaités.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

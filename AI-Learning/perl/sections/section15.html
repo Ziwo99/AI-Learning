@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 15</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 15 : Projets pratiques en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section14.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section16.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réalisation d'un script de traitement de fichiers</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un script Perl qui permet de traiter des fichiers. Nous allons voir comment ouvrir, lire et écrire dans des fichiers en utilisant Perl.</p>
+
+<p>Voici un exemple de code qui ouvre un fichier, lit son contenu et l'affiche à l'écran :</p>
+
+<pre><code>open(my $file, '&lt;', 'mon_fichier.txt') or die "Impossible d'ouvrir le fichier : $!";
+while (my $ligne = &lt;$file&gt;) {
+    print $ligne;
+}
+close($file);
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>open</code> pour ouvrir le fichier "mon_fichier.txt" en mode lecture ("<code>&lt;</code>"). Si le fichier ne peut pas être ouvert, le programme affiche un message d'erreur et s'arrête grâce à la fonction <code>die</code>.</p>
+
+<p>Ensuite, nous utilisons une boucle <code>while</code> pour lire chaque ligne du fichier et l'afficher à l'écran à l'aide de la fonction <code>print</code>.</p>
+
+<p>Enfin, nous utilisons la fonction <code>close</code> pour fermer le fichier.</p>
+
+<h2>Création d'une application web simple</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application web simple en utilisant Perl. Nous allons voir comment utiliser le module CGI (Common Gateway Interface) pour traiter les requêtes HTTP et générer des réponses HTML.</p>
+
+<p>Voici un exemple de code qui crée un formulaire HTML et traite les données soumises par l'utilisateur :</p>
+
+<pre><code>use CGI;
+
+my $cgi = CGI->new;
+
+print $cgi->header;
+print $cgi->start_html('Mon formulaire');
+print $cgi->h1('Mon formulaire');
+print $cgi->start_form;
+print $cgi->textfield('nom');
+print $cgi->submit('submit', 'Envoyer');
+print $cgi->end_form;
+
+if ($cgi->param('submit')) {
+    my $nom = $cgi->param('nom');
+    print $cgi->p("Bonjour, $nom !");
+}
+
+print $cgi->end_html;
+</code></pre>
+
+<p>Dans cet exemple, nous commençons par créer une instance de la classe CGI en utilisant la méthode <code>new</code>. Ensuite, nous utilisons les méthodes de cette instance pour générer le code HTML de notre formulaire.</p>
+
+<p>La méthode <code>header</code> génère l'en-tête HTTP, la méthode <code>start_html</code> génère la balise <code>&lt;html&gt;</code> avec le titre spécifié, la méthode <code>h1</code> génère un titre de niveau 1, la méthode <code>start_form</code> génère la balise <code>&lt;form&gt;</code>, la méthode <code>textfield</code> génère un champ de texte, la méthode <code>submit</code> génère un bouton d'envoi et la méthode <code>end_form</code> génère la balise de fin <code>&lt;/form&gt;</code>.</p>
+
+<p>Ensuite, nous utilisons la méthode <code>param</code> pour récupérer la valeur du champ de texte lorsque le formulaire est soumis. Si le bouton d'envoi est cliqué, nous affichons un message de salutation personnalisé à l'aide de la méthode <code>p</code>.</p>
+
+<p>Enfin, nous utilisons les méthodes <code>end_html</code> pour générer la balise de fin <code>&lt;/html&gt;</code> et nous imprimons le code HTML généré à l'aide de la fonction <code>print</code>.</p>
+
+<h2>Développement d'un programme orienté objet</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer un programme orienté objet en Perl. Nous allons voir comment définir des classes, créer des objets et utiliser l'héritage et le polymorphisme.</p>
+
+<p>Voici un exemple de code qui illustre la création d'une classe "Personne" avec des attributs et des méthodes :</p>
+
+<pre><code>package Personne;
+
+sub new {
+    my ($classe, $nom, $age) = @_;
+    my $self = {
+        nom => $nom,
+        age => $age
+    };
+    bless $self, $classe;
+    return $self;
+}
+
+sub parler {
+    my ($self, $message) = @_;
+    print "$self->{nom} dit : $message\n";
+}
+
+sub sePresenter {
+    my ($self) = @_;
+    print "Je m'appelle $self->{nom} et j'ai $self->{age} ans.\n";
+}
+
+1;
+</code></pre>
+
+<p>Dans cet exemple, nous commençons par définir un package Perl appelé "Personne". À l'intérieur de ce package, nous définissons une méthode <code>new</code> qui sert de constructeur pour la classe "Personne". Cette méthode prend en paramètres le nom et l'âge de la personne, crée un nouvel objet et le bénit avec la classe "Personne" à l'aide de la fonction <code>bless</code>.</p>
+
+<p>Nous définissons également deux autres méthodes : <code>parler</code> et <code>sePresenter</code>. La méthode <code>parler</code> prend en paramètres un message et l'affiche à l'écran avec le nom de la personne. La méthode <code>sePresenter</code> affiche simplement le nom et l'âge de la personne.</p>
+
+<p>Pour utiliser cette classe, nous pouvons créer un nouvel objet "Personne" en utilisant la méthode <code>new</code> :</p>
+
+<pre><code>my $personne = Personne->new('John Doe', 30);
+</code></pre>
+
+<p>Ensuite, nous pouvons appeler les méthodes de cet objet :</p>
+
+<pre><code>$personne->parler('Bonjour !');
+$personne->sePresenter();
+</code></pre>
+
+<p>Cela affichera :</p>
+
+<pre><code>John Doe dit : Bonjour !
+Je m'appelle John Doe et j'ai 30 ans.
+</code></pre>
+
+<p>Ce sont là quelques exemples de projets pratiques que vous pouvez réaliser en Perl. N'hésitez pas à explorer davantage et à créer vos propres projets pour approfondir vos connaissances en Perl.</p>
+
+<h1>Section 16 : Ressources supplémentaires</h1>
+
+<h2>Livres recommandés sur Perl</h2>
+<p>Voici quelques livres recommandés pour approfondir vos connaissances en Perl :</p>
+<ul>
+    <li>"Learning Perl" de Randal L. Schwartz, brian d foy et Tom Phoenix</li>
+    <li>"Intermediate Perl" de Randal L. Schwartz, brian d foy et Tom Phoenix</li>
+    <li>"Mastering Perl" de brian d foy</li>
+</ul>
+
+<h2>Sites web et forums de la communauté Perl</h2>
+<p>Voici quelques sites web et forums où vous pouvez trouver des ressources supplémentaires et poser des questions à la communauté Perl :</p>
+<ul>
+    <li><a href="https://www.perl.org/">https://www.perl.org/</a></li>
+    <li><a href="https://www.perlmonks.org/">https://www.perlmonks.org/</a></li>
+    <li><a href="https://stackoverflow.com/questions/tagged/perl">https://stackoverflow.com/questions/tagged/perl</a></li>
+</ul>
+
+<h2>Outils et IDE pour le développement en Perl</h2>
+<p>Voici quelques outils et IDE populaires pour le développement en Perl :</p>
+<ul>
+    <li>Padre</li>
+    <li>Perl IDE</li>
+    <li>Perl Development Kit (PDK)</li>
+</ul>
+
+<p>Utilisez ces ressources supplémentaires pour approfondir vos connaissances en Perl et améliorer vos compétences de développement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section14.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section16.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

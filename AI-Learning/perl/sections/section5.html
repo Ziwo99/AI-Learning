@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Fonctions en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Définition et appel de fonctions</h2>
+<p>En Perl, une fonction est un bloc de code réutilisable qui effectue une tâche spécifique. Elle peut prendre des paramètres en entrée et renvoyer une valeur en sortie. Voici comment définir et appeler une fonction en Perl :</p>
+
+<pre><code>sub maFonction {
+    # Code de la fonction
+}
+
+# Appel de la fonction
+maFonction();
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction nommée "maFonction" en utilisant le mot-clé "sub". Le code de la fonction est placé entre des accolades {}. Pour appeler la fonction, nous utilisons simplement son nom suivi de parenthèses ().</p>
+
+<h2>Paramètres de fonctions</h2>
+<p>Les fonctions en Perl peuvent prendre des paramètres en entrée. Ces paramètres sont des valeurs que vous pouvez transmettre à la fonction pour qu'elle les utilise dans son code. Voici comment définir une fonction avec des paramètres :</p>
+
+<pre><code>sub maFonction {
+    my ($parametre1, $parametre2) = @_;
+    # Code de la fonction utilisant les paramètres
+}
+
+# Appel de la fonction avec des valeurs pour les paramètres
+maFonction($valeur1, $valeur2);
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction nommée "maFonction" avec deux paramètres, "$parametre1" et "$parametre2". Lors de l'appel de la fonction, nous passons les valeurs des paramètres entre parenthèses. À l'intérieur de la fonction, nous utilisons la variable spéciale "@_" pour accéder aux valeurs des paramètres.</p>
+
+<h2>Variables locales et globales</h2>
+<p>En Perl, vous pouvez déclarer des variables locales à l'intérieur d'une fonction en utilisant le mot-clé "my". Ces variables ne sont accessibles qu'à l'intérieur de la fonction. Voici un exemple :</p>
+
+<pre><code>sub maFonction {
+    my $variableLocale = "valeur";
+    # Code de la fonction utilisant la variable locale
+}
+
+# Appel de la fonction
+maFonction();
+
+# Tentative d'accéder à la variable locale en dehors de la fonction (erreur)
+print $variableLocale;
+</code></pre>
+
+<p>Dans cet exemple, nous avons déclaré une variable locale "$variableLocale" à l'intérieur de la fonction "maFonction". Cette variable n'est pas accessible en dehors de la fonction, donc la tentative d'imprimer sa valeur en dehors de la fonction générera une erreur.</p>
+
+<p>En revanche, les variables déclarées en dehors de toutes les fonctions sont des variables globales et peuvent être utilisées à la fois à l'intérieur et à l'extérieur des fonctions :</p>
+
+<pre><code>$variableGlobale = "valeur";
+
+sub maFonction {
+    # Code de la fonction utilisant la variable globale
+}
+
+# Appel de la fonction
+maFonction();
+
+# Accès à la variable globale en dehors de la fonction
+print $variableGlobale;
+</code></pre>
+
+<h2>Fonctions récursives</h2>
+<p>Une fonction récursive est une fonction qui s'appelle elle-même à l'intérieur de son propre code. Cela peut être utile pour résoudre des problèmes qui peuvent être décomposés en sous-problèmes plus petits. Voici un exemple de fonction récursive en Perl :</p>
+
+<pre><code>sub maFonctionRecursive {
+    my ($n) = @_;
+    
+    if ($n == 0) {
+        return 1;
+    } else {
+        return $n * maFonctionRecursive($n - 1);
+    }
+}
+
+# Appel de la fonction récursive
+my $resultat = maFonctionRecursive(5);
+print $resultat;
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini une fonction récursive "maFonctionRecursive" qui calcule la factorielle d'un nombre. La fonction s'appelle elle-même avec un argument réduit à chaque itération jusqu'à ce que la condition d'arrêt soit atteinte. Le résultat final est renvoyé à chaque appel de la fonction.</p>
+
+<p>Il est important de noter que les fonctions récursives peuvent entraîner une consommation excessive de mémoire si elles sont mal utilisées. Il est donc essentiel de s'assurer que la condition d'arrêt est atteinte à un moment donné.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

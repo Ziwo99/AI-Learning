@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 14</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 14 : Bonnes pratiques de développement en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Conventions de codage</h2>
+<p>Les conventions de codage sont des règles et des normes qui définissent la façon dont le code Perl doit être écrit pour garantir sa lisibilité et sa maintenabilité. Voici quelques bonnes pratiques de codage en Perl :</p>
+
+<ul>
+  <li>Utilisez une indentation cohérente pour améliorer la lisibilité du code. Il est recommandé d'utiliser des tabulations ou des espaces pour indenter le code, mais assurez-vous de choisir une méthode et de la suivre de manière cohérente tout au long du projet.</li>
+  
+  <li>Utilisez des noms de variables et de fonctions significatifs et des commentaires appropriés pour rendre le code plus compréhensible. Les noms de variables et de fonctions doivent être descriptifs et refléter leur objectif ou leur fonction.</li>
+  
+  <li>Évitez d'utiliser des noms de variables trop courts ou des abréviations obscures. Il est préférable d'utiliser des noms de variables explicites même si cela signifie des noms de variables plus longs.</li>
+  
+  <li>Utilisez des espaces autour des opérateurs et des symboles pour améliorer la lisibilité. Par exemple, utilisez "if ($condition)" plutôt que "if($condition)".</li>
+  
+  <li>Évitez d'utiliser des variables globales autant que possible. Privilégiez l'utilisation de variables locales pour limiter la portée des variables et éviter les conflits.</li>
+  
+  <li>Utilisez des commentaires pour expliquer le code complexe, les algorithmes ou les parties du code qui pourraient être difficiles à comprendre. Les commentaires aident les autres développeurs (y compris vous-même) à comprendre le code plus facilement.</li>
+  
+  <li>Évitez d'utiliser des constructions obsolètes ou dépréciées de Perl. Tenez-vous au courant des nouvelles fonctionnalités et des meilleures pratiques de Perl pour écrire un code plus moderne et plus efficace.</li>
+</ul>
+
+<h2>Documentation et commentaires</h2>
+<p>La documentation et les commentaires sont essentiels pour rendre le code compréhensible et faciliter la maintenance. Voici quelques bonnes pratiques pour documenter et commenter votre code Perl :</p>
+
+<ul>
+  <li>Utilisez des commentaires pour expliquer le but et le fonctionnement du code. Les commentaires doivent être clairs, concis et pertinents.</li>
+  
+  <li>Documentez les fonctions et les méthodes en fournissant des descriptions détaillées de leur objectif, des paramètres qu'elles prennent en entrée et des valeurs qu'elles renvoient.</li>
+  
+  <li>Utilisez des conventions de documentation standard telles que POD (Plain Old Documentation) pour documenter les modules Perl. Cela permet de générer automatiquement une documentation lisible par les humains à partir du code source.</li>
+  
+  <li>Utilisez des outils de génération de documentation tels que Pod::Usage ou Pod::Html pour générer des documents de référence à partir de la documentation intégrée dans le code.</li>
+  
+  <li>Assurez-vous de maintenir la documentation à jour au fur et à mesure que le code évolue. La documentation obsolète peut être plus nuisible que pas de documentation du tout.</li>
+</ul>
+
+<h2>Tests unitaires et intégration continue</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité du code et faciliter la maintenance. Voici quelques bonnes pratiques pour écrire des tests unitaires en Perl :</p>
+
+<ul>
+  <li>Utilisez un framework de test unitaire tel que Test::Simple ou Test::More pour écrire et exécuter des tests unitaires.</li>
+  
+  <li>Écrivez des tests pour chaque fonction ou méthode afin de vérifier qu'elle produit les résultats attendus.</li>
+  
+  <li>Utilisez des assertions pour vérifier les résultats des tests. Les assertions permettent de vérifier que les résultats obtenus correspondent aux résultats attendus.</li>
+  
+  <li>Exécutez régulièrement les tests unitaires pour vous assurer que le code fonctionne correctement et pour détecter rapidement les éventuels problèmes.</li>
+  
+  <li>Intégrez les tests unitaires dans un processus d'intégration continue pour automatiser l'exécution des tests à chaque modification du code source.</li>
+  
+  <li>Utilisez des outils d'analyse de couverture de code pour vérifier que les tests couvrent suffisamment de code pour garantir une bonne qualité.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques de développement en Perl, vous pourrez écrire un code plus lisible, maintenable et de meilleure qualité.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

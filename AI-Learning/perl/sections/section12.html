@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Développement web avec Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux CGI (Common Gateway Interface)</h2>
+<p>
+Le CGI (Common Gateway Interface) est une spécification qui permet à un serveur web de communiquer avec des programmes externes, tels que des scripts Perl, pour générer des pages web dynamiques. Les scripts CGI sont exécutés côté serveur et génèrent du contenu HTML qui est ensuite renvoyé au navigateur du client.
+</p>
+<p>
+Pour utiliser le CGI avec Perl, vous devez d'abord configurer votre serveur web pour exécuter les scripts Perl. Ensuite, vous pouvez créer un script Perl qui sera appelé par le serveur web lorsqu'une requête est faite à une URL spécifique.
+</p>
+<p>
+Le script Perl CGI reçoit les données de la requête HTTP, telles que les paramètres de formulaire, les cookies et les en-têtes, et peut les utiliser pour générer une réponse dynamique. Le résultat de l'exécution du script est renvoyé au serveur web, qui l'envoie ensuite au navigateur du client.
+</p>
+
+<h2>Création de formulaires web</h2>
+<p>
+Les formulaires web sont un moyen courant de collecter des données auprès des utilisateurs. En utilisant Perl, vous pouvez créer des formulaires web interactifs et traiter les données soumises par les utilisateurs.
+</p>
+<p>
+Pour créer un formulaire web en Perl, vous devez d'abord définir les éléments du formulaire, tels que les champs de texte, les cases à cocher et les boutons radio, à l'aide de balises HTML appropriées. Vous pouvez également spécifier des attributs supplémentaires, tels que des validations de formulaire et des actions à effectuer lors de la soumission du formulaire.
+</p>
+<p>
+Une fois que le formulaire est soumis par l'utilisateur, les données sont envoyées au script Perl CGI. Vous pouvez récupérer ces données dans votre script en utilisant la variable spéciale %ENV, qui contient les paramètres de la requête HTTP. Vous pouvez ensuite traiter les données et générer une réponse appropriée.
+</p>
+
+<h2>Utilisation de modules Perl pour le développement web</h2>
+<p>
+Perl dispose de nombreux modules qui facilitent le développement web. Ces modules fournissent des fonctionnalités supplémentaires, telles que la gestion des sessions, la manipulation des cookies, l'envoi de courriers électroniques et l'accès aux bases de données.
+</p>
+<p>
+Pour utiliser un module Perl, vous devez d'abord l'installer sur votre système. Vous pouvez le faire en utilisant le gestionnaire de modules CPAN (Comprehensive Perl Archive Network) ou en téléchargeant le module à partir du site web du module et en l'installant manuellement.
+</p>
+<p>
+Une fois que le module est installé, vous pouvez l'inclure dans votre script Perl en utilisant la directive "use". Cela importe les fonctions et les variables du module dans votre script, vous permettant de les utiliser pour développer des fonctionnalités web avancées.
+</p>
+<p>
+Par exemple, le module CGI.pm est couramment utilisé pour traiter les données de formulaire et générer des réponses HTML. Il fournit des fonctions pratiques pour récupérer les valeurs des champs de formulaire, valider les données et générer des éléments HTML.
+</p>
+<pre><code>use CGI;
+
+# Créer un nouvel objet CGI
+my $cgi = CGI->new();
+
+# Récupérer la valeur d'un champ de formulaire
+my $nom = $cgi->param('nom');
+
+# Générer une réponse HTML
+print $cgi->header();
+print $cgi->start_html('Mon formulaire');
+print $cgi->h1('Bienvenue ' . $nom);
+print $cgi->end_html();
+</code></pre>
+
+<p>
+En utilisant des modules Perl pour le développement web, vous pouvez accélérer le processus de développement, améliorer la sécurité de votre application et ajouter des fonctionnalités avancées à vos sites web.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

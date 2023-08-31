@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Manipulation de fichiers en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Ouverture, lecture et écriture de fichiers</h2>
+<p>En Perl, la manipulation de fichiers est une tâche courante. Pour ouvrir un fichier en lecture ou en écriture, vous pouvez utiliser la fonction <code>open()</code>. Voici un exemple :</p>
+
+<pre><code>open(my $file, '&lt;', 'nom_du_fichier.txt') or die "Impossible d'ouvrir le fichier : $!";
+</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier <code>nom_du_fichier.txt</code> en mode lecture (<code>&lt;</code>). Si le fichier ne peut pas être ouvert, la fonction <code>die()</code> affiche un message d'erreur.</p>
+
+<p>Une fois le fichier ouvert, vous pouvez lire son contenu ligne par ligne à l'aide de la fonction <code>readline()</code>. Voici un exemple :</p>
+
+<pre><code>while (my $ligne = &lt;$file&gt;) {
+    print $ligne;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons une boucle <code>while</code> pour lire chaque ligne du fichier. La variable <code>$ligne</code> contient le contenu de chaque ligne.</p>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la fonction <code>print()</code>. Voici un exemple :</p>
+
+<pre><code>print $file "Contenu à écrire dans le fichier";
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>print()</code> pour écrire le texte "Contenu à écrire dans le fichier" dans le fichier ouvert.</p>
+
+<p>Une fois que vous avez terminé de lire ou d'écrire dans un fichier, vous devez le fermer à l'aide de la fonction <code>close()</code>. Voici un exemple :</p>
+
+<pre><code>close($file);
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>close()</code> pour fermer le fichier ouvert.</p>
+
+<h2>Manipulation de fichiers CSV</h2>
+<p>En Perl, la manipulation de fichiers CSV (Comma-Separated Values) est courante lors du traitement de données tabulaires. Pour cela, vous pouvez utiliser le module <code>Text::CSV</code>. Voici un exemple :</p>
+
+<pre><code>use Text::CSV;
+
+my $csv = Text::CSV-&gt;new({ sep_char =&gt; ',' });
+
+open(my $file, '&lt;', 'nom_du_fichier.csv') or die "Impossible d'ouvrir le fichier : $!";
+
+while (my $ligne = &lt;$file&gt;) {
+    if ($csv-&gt;parse($ligne)) {
+        my @colonnes = $csv-&gt;fields();
+        # Faites quelque chose avec les colonnes
+    } else {
+        my $erreur = $csv-&gt;error_input;
+        print "Erreur de parsing : $erreur";
+    }
+}
+
+close($file);
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module <code>Text::CSV</code> pour manipuler le fichier CSV. Nous ouvrons le fichier en lecture, puis nous utilisons la méthode <code>parse()</code> pour analyser chaque ligne du fichier. Si la ligne est correctement analysée, nous pouvons accéder aux colonnes à l'aide de la méthode <code>fields()</code>.</p>
+
+<p>Si une erreur se produit lors du parsing, nous pouvons utiliser la méthode <code>error_input()</code> pour obtenir le message d'erreur.</p>
+
+<h2>Manipulation de fichiers texte</h2>
+<p>En Perl, la manipulation de fichiers texte est similaire à la manipulation de fichiers normaux. Vous pouvez utiliser les mêmes fonctions <code>open()</code>, <code>print()</code> et <code>close()</code> pour ouvrir, écrire et fermer un fichier texte.</p>
+
+<p>Voici un exemple d'ouverture, de lecture et d'écriture d'un fichier texte :</p>
+
+<pre><code>open(my $file, '&lt;', 'nom_du_fichier.txt') or die "Impossible d'ouvrir le fichier : $!";
+
+while (my $ligne = &lt;$file&gt;) {
+    print $ligne;
+}
+
+print $file "Contenu à écrire dans le fichier";
+
+close($file);
+</code></pre>
+
+<p>Dans cet exemple, nous ouvrons le fichier texte <code>nom_du_fichier.txt</code> en lecture, nous lisons chaque ligne du fichier à l'aide d'une boucle <code>while</code>, puis nous écrivons du contenu dans le fichier à l'aide de la fonction <code>print()</code>.</p>
+
+<p>N'oubliez pas de fermer le fichier une fois que vous avez terminé de le manipuler.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

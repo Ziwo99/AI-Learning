@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Perl Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Programmation orientée objet en Perl</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/perl/perl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Concepts de base de la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer le code en utilisant des objets. Un objet est une instance d'une classe, qui est une structure de données contenant des attributs (variables) et des méthodes (fonctions). La POO offre de nombreux avantages, tels que la modularité, la réutilisabilité du code et la facilité de maintenance.</p>
+
+<p>En Perl, la POO est mise en œuvre en utilisant des packages. Un package est une collection de variables et de sous-routines (fonctions) qui peuvent être utilisées pour créer des objets. Pour créer une classe en Perl, il suffit de déclarer un package et de définir les attributs et les méthodes de la classe.</p>
+
+<pre><code>package Person;
+
+# Définition de la classe Person
+sub new {
+    my $class = shift;
+    my $self = {
+        name => shift,
+        age => shift,
+    };
+    bless $self, $class;
+    return $self;
+}
+
+sub getName {
+    my ($self) = @_;
+    return $self->{name};
+}
+
+sub getAge {
+    my ($self) = @_;
+    return $self->{age};
+}
+
+1; # Fin du package
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe "Person" avec deux attributs "name" et "age" ainsi que deux méthodes "getName" et "getAge". La méthode "new" est utilisée pour créer une nouvelle instance de la classe et initialiser les attributs.</p>
+
+<h2>Définition de classes et d'objets</h2>
+<p>Pour créer un objet à partir d'une classe en Perl, il suffit d'appeler la méthode "new" de la classe et de passer les paramètres nécessaires. Par exemple :</p>
+
+<pre><code>my $person = Person->new("John Doe", 30);
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé un nouvel objet "person" de la classe "Person" avec le nom "John Doe" et l'âge 30.</p>
+
+<p>Pour accéder aux attributs et aux méthodes d'un objet, nous utilisons l'opérateur "->". Par exemple :</p>
+
+<pre><code>my $name = $person->getName();
+my $age = $person->getAge();
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons les méthodes "getName" et "getAge" de l'objet "person" pour obtenir respectivement le nom et l'âge.</p>
+
+<h2>Héritage et polymorphisme en Perl</h2>
+<p>En Perl, l'héritage permet de créer de nouvelles classes en se basant sur des classes existantes. Une classe enfant hérite des attributs et des méthodes de sa classe parent. Cela permet de réutiliser le code et de créer une hiérarchie de classes.</p>
+
+<p>Pour définir une classe enfant en Perl, il suffit de déclarer un package pour la classe enfant et d'utiliser la fonction "use base" pour spécifier la classe parent. Par exemple :</p>
+
+<pre><code>package Employee;
+use base 'Person';
+
+# Définition de la classe Employee
+sub new {
+    my $class = shift;
+    my $self = $class->SUPER::new(@_);
+    $self->{salary} = shift;
+    return $self;
+}
+
+sub getSalary {
+    my ($self) = @_;
+    return $self->{salary};
+}
+
+1; # Fin du package
+</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe "Employee" qui hérite de la classe "Person". La classe "Employee" a un attribut supplémentaire "salary" et une méthode supplémentaire "getSalary". La méthode "new" est redéfinie pour ajouter l'attribut "salary" à l'objet créé par la classe parent.</p>
+
+<p>Le polymorphisme en Perl permet à une classe enfant de redéfinir les méthodes de sa classe parent. Cela permet d'utiliser une méthode spécifique à la classe enfant lorsqu'elle est appelée sur un objet de cette classe. Par exemple :</p>
+
+<pre><code>my $employee = Employee->new("Jane Smith", 35, 50000);
+my $name = $employee->getName(); # Appelle la méthode getName de la classe Person
+my $salary = $employee->getSalary(); # Appelle la méthode getSalary de la classe Employee
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons les méthodes "getName" et "getSalary" de l'objet "employee". La méthode "getName" est héritée de la classe "Person" et la méthode "getSalary" est définie dans la classe "Employee".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/perl/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/perl/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
