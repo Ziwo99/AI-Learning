@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les tests et débogage en Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les tests unitaires</h2>
+<p>Les tests unitaires sont utilisés pour vérifier le bon fonctionnement des différentes parties d'un programme Swift de manière isolée. Ils permettent de s'assurer que chaque unité de code, telle qu'une fonction ou une méthode, produit les résultats attendus.</p>
+
+<p>Voici un exemple de test unitaire en Swift :</p>
+
+<pre><code>func testAddition() {
+    let calculator = Calculator()
+    let result = calculator.add(2, 3)
+    XCTAssertEqual(result, 5, "Addition failed")
+}</code></pre>
+
+<p>Dans cet exemple, nous créons une instance de la classe Calculator et appelons sa méthode add() avec les paramètres 2 et 3. Nous utilisons ensuite la fonction XCTAssertEqual() pour vérifier que le résultat est égal à 5. Si le test échoue, un message d'erreur sera affiché.</p>
+
+<h2>Les tests d'intégration</h2>
+<p>Les tests d'intégration sont utilisés pour vérifier le bon fonctionnement de l'ensemble du système, en testant l'interaction entre différentes unités de code. Ils permettent de s'assurer que les différentes parties du programme fonctionnent correctement ensemble.</p>
+
+<p>Voici un exemple de test d'intégration en Swift :</p>
+
+<pre><code>func testLogin() {
+    let authenticationService = AuthenticationService()
+    let loginViewController = LoginViewController()
+    
+    loginViewController.username = "john.doe"
+    loginViewController.password = "password"
+    
+    let result = authenticationService.login(username: loginViewController.username, password: loginViewController.password)
+    
+    XCTAssertTrue(result, "Login failed")
+}</code></pre>
+
+<p>Dans cet exemple, nous créons une instance de la classe AuthenticationService et une instance de la classe LoginViewController. Nous définissons ensuite les valeurs des propriétés username et password de LoginViewController. Enfin, nous appelons la méthode login() de AuthenticationService en utilisant les valeurs des propriétés de LoginViewController. Nous utilisons la fonction XCTAssertTrue() pour vérifier que le résultat est vrai, ce qui signifie que le login a réussi.</p>
+
+<h2>Les outils de débogage</h2>
+<p>Les outils de débogage en Swift sont utilisés pour identifier et résoudre les erreurs dans le code. Ils permettent de suivre l'exécution du programme pas à pas, d'inspecter les valeurs des variables et d'identifier les erreurs de logique.</p>
+
+<p>Voici quelques outils de débogage couramment utilisés en Swift :</p>
+
+<ul>
+    <li><strong>LLDB</strong> : LLDB est le débogueur par défaut de Swift. Il permet d'exécuter le code pas à pas, de mettre des points d'arrêt et d'inspecter les valeurs des variables.</li>
+    <li><strong>Xcode Debugger</strong> : L'environnement de développement Xcode dispose d'un débogueur intégré qui facilite le processus de débogage en fournissant une interface conviviale pour exécuter le code pas à pas, inspecter les variables et afficher les messages de débogage.</li>
+    <li><strong>Instruments</strong> : Instruments est un outil d'analyse de performances qui permet de détecter les fuites de mémoire, les problèmes de performances et les erreurs de logique dans le code Swift.</li>
+</ul>
+
+<p>Il est important de maîtriser l'utilisation de ces outils de débogage pour pouvoir identifier et résoudre rapidement les erreurs dans le code Swift.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

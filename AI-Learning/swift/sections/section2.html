@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base</h2>
+<p>La syntaxe de base de Swift est similaire à celle d'autres langages de programmation tels que C, C++ et Objective-C. Voici un exemple de code Swift :</p>
+
+<pre><code>let message = "Hello, World!"
+print(message)
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons une constante appelée "message" qui contient la chaîne de caractères "Hello, World!". Ensuite, nous utilisons la fonction "print" pour afficher le contenu de la constante.</p>
+
+<h2>Variables et constantes</h2>
+<p>En Swift, vous pouvez utiliser à la fois des variables et des constantes pour stocker des valeurs. Les variables sont déclarées avec le mot-clé "var" et peuvent être modifiées ultérieurement, tandis que les constantes sont déclarées avec le mot-clé "let" et ne peuvent pas être modifiées une fois qu'elles ont été définies. Voici un exemple :</p>
+
+<pre><code>var age = 25
+let name = "John"
+
+age = 26
+// name = "Mike" - Cette ligne générera une erreur car "name" est une constante
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons une variable "age" et une constante "name". Ensuite, nous modifions la valeur de la variable "age" de 25 à 26. Cependant, si nous essayons de modifier la valeur de la constante "name", une erreur sera générée.</p>
+
+<h2>Types de données</h2>
+<p>Swift est un langage fortement typé, ce qui signifie que chaque variable et constante doit avoir un type de données spécifié. Voici quelques types de données couramment utilisés en Swift :</p>
+
+<ul>
+  <li>Int : représente les nombres entiers</li>
+  <li>Double : représente les nombres à virgule flottante</li>
+  <li>String : représente les chaînes de caractères</li>
+  <li>Bool : représente les valeurs booléennes (true ou false)</li>
+  <li>Array : représente une collection ordonnée d'éléments du même type</li>
+  <li>Dictionary : représente une collection de paires clé-valeur</li>
+</ul>
+
+<p>Voici un exemple montrant comment déclarer des variables avec différents types de données :</p>
+
+<pre><code>var age: Int = 25
+var height: Double = 1.75
+var name: String = "John"
+var isStudent: Bool = true
+var numbers: [Int] = [1, 2, 3, 4, 5]
+var person: [String: Any] = ["name": "John", "age": 25, "isStudent": true]
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons des variables avec différents types de données. Notez que nous pouvons également spécifier le type de données lors de la déclaration de la variable.</p>
+
+<h2>Opérateurs</h2>
+<p>Swift prend en charge une variété d'opérateurs pour effectuer des opérations sur les variables et les constantes. Voici quelques-uns des opérateurs les plus couramment utilisés en Swift :</p>
+
+<ul>
+  <li>Opérateurs arithmétiques : +, -, *, /, %</li>
+  <li>Opérateurs de comparaison : ==, !=, &gt;, &lt;, &gt;=, &lt;=</li>
+  <li>Opérateurs logiques : &&, ||, !</li>
+  <li>Opérateurs d'affectation : =, +=, -=, *=, /=</li>
+</ul>
+
+<p>Voici un exemple montrant comment utiliser ces opérateurs :</p>
+
+<pre><code>let a = 10
+let b = 5
+
+let sum = a + b
+let difference = a - b
+let product = a * b
+let quotient = a / b
+let remainder = a % b
+
+let isEqual = a == b
+let isGreater = a &gt; b
+let isLess = a &lt; b
+
+let logicalAnd = isEqual && isGreater
+let logicalOr = isEqual || isGreater
+let logicalNot = !isEqual
+
+var x = 10
+x += 5 // équivaut à x = x + 5
+</code></pre>
+
+<p>Dans cet exemple, nous effectuons différentes opérations arithmétiques et logiques à l'aide des opérateurs appropriés.</p>
+
+<h2>Structures de contrôle (boucles, conditions)</h2>
+<p>Les structures de contrôle sont utilisées pour contrôler le flux d'exécution d'un programme. En Swift, nous avons plusieurs structures de contrôle, notamment les boucles et les conditions.</p>
+
+<h3>Boucles</h3>
+<p>Les boucles sont utilisées pour répéter une série d'instructions plusieurs fois. Voici les boucles les plus couramment utilisées en Swift :</p>
+
+<ul>
+  <li>Boucle "for" : utilisée pour répéter un bloc de code un certain nombre de fois</li>
+  <li>Boucle "while" : utilisée pour répéter un bloc de code tant qu'une condition est vraie</li>
+  <li>Boucle "repeat-while" : utilisée pour répéter un bloc de code au moins une fois, puis tant qu'une condition est vraie</li>
+</ul>
+
+<p>Voici un exemple montrant comment utiliser ces boucles :</p>
+
+<pre><code>// Boucle "for"
+for i in 1...5 {
+    print(i)
+}
+
+// Boucle "while"
+var j = 1
+while j &lt;= 5 {
+    print(j)
+    j += 1
+}
+
+// Boucle "repeat-while"
+var k = 1
+repeat {
+    print(k)
+    k += 1
+} while k &lt;= 5
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons les différentes boucles pour afficher les nombres de 1 à 5.</p>
+
+<h3>Conditions</h3>
+<p>Les conditions sont utilisées pour exécuter un bloc de code uniquement si une condition est vraie. Voici les conditions les plus couramment utilisées en Swift :</p>
+
+<ul>
+  <li>Condition "if" : utilisée pour exécuter un bloc de code si une condition est vraie</li>
+  <li>Condition "if-else" : utilisée pour exécuter un bloc de code si une condition est vraie, sinon exécuter un autre bloc de code</li>
+  <li>Condition "if-else if-else" : utilisée pour exécuter un bloc de code si une condition est vraie, sinon vérifier une autre condition et exécuter un autre bloc de code, et ainsi de suite</li>
+  <li>Opérateur ternaire : utilisé pour exécuter une expression conditionnelle en une seule ligne</li>
+</ul>
+
+<p>Voici un exemple montrant comment utiliser ces conditions :</p>
+
+<pre><code>let number = 10
+
+if number &gt; 0 {
+    print("Positive")
+} else if number &lt; 0 {
+    print("Negative")
+} else {
+    print("Zero")
+}
+
+let result = number &gt; 0 ? "Positive" : "Negative"
+print(result)
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons les différentes conditions pour déterminer si un nombre est positif, négatif ou nul. Nous utilisons également l'opérateur ternaire pour affecter une valeur à la variable "result" en fonction de la condition.</p>
+
+<h2>Fonctions et procédures</h2>
+<p>Les fonctions et les procédures sont utilisées pour regrouper un ensemble d'instructions et les exécuter à partir d'un endroit spécifique dans le code. La différence entre les fonctions et les procédures est que les fonctions renvoient une valeur, tandis que les procédures n'en renvoient pas. Voici un exemple de fonction en Swift :</p>
+
+<pre><code>func greet(name: String) -&gt; String {
+    return "Hello, " + name + "!"
+}
+
+let message = greet(name: "John")
+print(message)
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une fonction appelée "greet" qui prend un paramètre de type String appelé "name" et renvoie une chaîne de caractères contenant un message de salutation. Ensuite, nous appelons cette fonction avec le nom "John" et stockons le résultat dans la constante "message". Enfin, nous affichons le contenu de la constante.</p>
+
+<h2>Les tableaux et les dictionnaires</h2>
+<p>Les tableaux et les dictionnaires sont utilisés pour stocker des collections d'éléments en Swift.</p>
+
+<h3>Tableaux</h3>
+<p>Un tableau est une collection ordonnée d'éléments du même type. Voici un exemple de tableau en Swift :</p>
+
+<pre><code>var numbers: [Int] = [1, 2, 3, 4, 5]
+print(numbers[0]) // Affiche 1
+
+numbers.append(6)
+print(numbers) // Affiche [1, 2, 3, 4, 5, 6]
+
+numbers.remove(at: 3)
+print(numbers) // Affiche [1, 2, 3, 5, 6]
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons un tableau appelé "numbers" qui contient les nombres de 1 à 5. Nous pouvons accéder aux éléments du tableau en utilisant leur indice, commençant par 0. Nous pouvons également ajouter de nouveaux éléments à la fin du tableau à l'aide de la méthode "append" et supprimer des éléments à l'aide de la méthode "remove".</p>
+
+<h3>Dictionnaires</h3>
+<p>Un dictionnaire est une collection de paires clé-valeur. Voici un exemple de dictionnaire en Swift :</p>
+
+<pre><code>var person: [String: Any] = ["name": "John", "age": 25, "isStudent": true]
+print(person["name"]) // Affiche "John"
+
+person["age"] = 26
+print(person) // Affiche ["name": "John", "age": 26, "isStudent": true]
+
+person.removeValue(forKey: "isStudent")
+print(person) // Affiche ["name": "John", "age": 26]
+</code></pre>
+
+<p>Dans cet exemple, nous déclarons un dictionnaire appelé "person" qui contient des informations sur une personne. Nous pouvons accéder aux valeurs du dictionnaire en utilisant leur clé. Nous pouvons également modifier les valeurs existantes en utilisant leur clé ou supprimer des paires clé-valeur à l'aide de la méthode "removeValue".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

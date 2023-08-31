@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Programmation orientée objet en Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet d'organiser et de structurer le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO repose sur quatre principes fondamentaux : l'encapsulation, l'abstraction, l'héritage et le polymorphisme.</p>
+
+<h2>Classes et objets</h2>
+<p>En Swift, une classe est une structure qui définit les propriétés et les comportements d'un objet. Pour créer une classe, on utilise le mot-clé <code>class</code>. Un objet est une instance d'une classe, créée à partir du modèle défini par la classe. Pour créer un objet, on utilise le mot-clé <code>let</code> suivi du nom de la classe et de parenthèses vides.</p>
+<pre><code>class Person {
+    var name: String
+    var age: Int
+    
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+
+let person = Person(name: "John", age: 25)
+</code></pre>
+
+<h2>Héritage et polymorphisme</h2>
+<p>L'héritage permet de créer de nouvelles classes en se basant sur des classes existantes. Une classe qui hérite d'une autre classe est appelée une sous-classe ou une classe dérivée, tandis que la classe dont elle hérite est appelée une superclasse ou une classe de base. La sous-classe hérite des propriétés et des méthodes de sa superclasse, et peut également ajouter de nouvelles propriétés et méthodes spécifiques.</p>
+<p>Le polymorphisme permet à un objet d'être traité comme s'il était de n'importe quel type de sa hiérarchie de classes. Cela permet d'écrire du code générique qui peut être utilisé avec différents types d'objets.</p>
+<pre><code>class Animal {
+    func makeSound() {
+        // Implementation générique du son d'un animal
+    }
+}
+
+class Dog: Animal {
+    override func makeSound() {
+        print("Woof!")
+    }
+}
+
+class Cat: Animal {
+    override func makeSound() {
+        print("Meow!")
+    }
+}
+
+let animal: Animal = Dog()
+animal.makeSound() // Affiche "Woof!"
+
+let anotherAnimal: Animal = Cat()
+anotherAnimal.makeSound() // Affiche "Meow!"
+</code></pre>
+
+<h2>Encapsulation et abstraction</h2>
+<p>L'encapsulation est le principe qui consiste à regrouper les données et les méthodes qui les manipulent au sein d'une même entité, la classe. Cela permet de cacher les détails d'implémentation et de protéger les données sensibles en les rendant privées.</p>
+<p>L'abstraction est le principe qui consiste à représenter les caractéristiques essentielles d'un objet sans se soucier des détails d'implémentation. Cela permet de simplifier la complexité du code en se concentrant sur les aspects les plus importants.</p>
+
+<h2>Les propriétés</h2>
+<p>Les propriétés sont des variables ou des constantes qui sont associées à une classe, et qui définissent les caractéristiques de l'objet. Elles peuvent être stockées (stockées en mémoire) ou calculées (calculées à partir d'autres propriétés ou méthodes).</p>
+<pre><code>class Rectangle {
+    var width: Double
+    var height: Double
+    
+    var area: Double {
+        return width * height
+    }
+    
+    init(width: Double, height: Double) {
+        self.width = width
+        self.height = height
+    }
+}
+
+let rectangle = Rectangle(width: 10, height: 5)
+print(rectangle.area) // Affiche "50.0"
+</code></pre>
+
+<h2>Les méthodes</h2>
+<p>Les méthodes sont des fonctions qui sont associées à une classe, et qui définissent les actions que l'objet peut effectuer. Elles peuvent être des méthodes d'instance, qui agissent sur une instance spécifique de la classe, ou des méthodes de classe, qui agissent sur la classe elle-même.</p>
+<pre><code>class Counter {
+    var count = 0
+    
+    func increment() {
+        count += 1
+    }
+    
+    static func reset() {
+        count = 0
+    }
+}
+
+let counter = Counter()
+counter.increment()
+print(counter.count) // Affiche "1"
+
+Counter.reset()
+print(Counter.count) // Affiche "0"
+</code></pre>
+
+<h2>Les extensions</h2>
+<p>Les extensions permettent d'ajouter de nouvelles fonctionnalités à une classe existante, sans avoir à modifier son code source. Cela permet d'étendre les fonctionnalités d'une classe sans avoir à créer une sous-classe.</p>
+<pre><code>extension String {
+    func reverse() -> String {
+        return String(self.reversed())
+    }
+}
+
+let message = "Hello, World!"
+print(message.reverse()) // Affiche "!dlroW ,olleH"
+</code></pre>
+
+<h2>Les protocoles</h2>
+<p>Les protocoles définissent un ensemble de méthodes et de propriétés que les types qui les adoptent doivent implémenter. Cela permet de définir des interfaces communes pour les types différents, et de les traiter de manière générique.</p>
+<pre><code>protocol Drawable {
+    func draw()
+}
+
+class Circle: Drawable {
+    func draw() {
+        // Implémentation spécifique pour dessiner un cercle
+    }
+}
+
+class Square: Drawable {
+    func draw() {
+        // Implémentation spécifique pour dessiner un carré
+    }
+}
+
+func drawShapes(_ shapes: [Drawable]) {
+    for shape in shapes {
+        shape.draw()
+    }
+}
+
+let circle = Circle()
+let square = Square()
+
+drawShapes([circle, square])
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

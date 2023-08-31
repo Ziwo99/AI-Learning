@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des erreurs et exceptions</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des erreurs avec les do-catch</h2>
+<p>
+La gestion des erreurs est une partie essentielle de la programmation en Swift. Elle permet de gérer les situations où une erreur peut se produire pendant l'exécution d'un programme. Swift utilise le mécanisme do-catch pour gérer les erreurs.
+</p>
+<p>
+La structure do-catch permet d'exécuter un bloc de code et de capturer les erreurs qui peuvent se produire pendant son exécution. Voici un exemple de code utilisant la structure do-catch :
+</p>
+<pre><code>do {
+    // Code pouvant générer une erreur
+} catch {
+    // Gestion de l'erreur
+}</code></pre>
+<p>
+Dans cet exemple, le code à l'intérieur du bloc do est exécuté. Si une erreur se produit, elle est capturée et le code à l'intérieur du bloc catch est exécuté pour gérer cette erreur.
+</p>
+<p>
+Il est également possible de spécifier le type d'erreur que l'on souhaite capturer. Par exemple :
+</p>
+<pre><code>do {
+    // Code pouvant générer une erreur
+} catch ErrorType1 {
+    // Gestion de l'erreur de type ErrorType1
+} catch ErrorType2 {
+    // Gestion de l'erreur de type ErrorType2
+}</code></pre>
+<p>
+Dans cet exemple, si une erreur de type ErrorType1 se produit, le premier bloc catch est exécuté. Si une erreur de type ErrorType2 se produit, le deuxième bloc catch est exécuté.
+</p>
+
+<h2>Utilisation des exceptions</h2>
+<p>
+En plus de la gestion des erreurs avec do-catch, Swift prend également en charge l'utilisation des exceptions pour gérer les erreurs. Les exceptions sont des objets qui représentent une erreur et qui peuvent être lancés (throw) et attrapés (catch).
+</p>
+<p>
+Pour lancer une exception, on utilise le mot-clé throw suivi de l'objet exception. Voici un exemple de code utilisant les exceptions :
+</p>
+<pre><code>func divide(_ a: Int, by b: Int) throws -> Int {
+    if b == 0 {
+        throw DivisionError.divideByZero
+    }
+    return a / b
+}</code></pre>
+<p>
+Dans cet exemple, la fonction divide lance une exception de type DivisionError si le diviseur est égal à zéro.
+</p>
+<p>
+Pour attraper une exception, on utilise la structure do-catch, comme dans l'exemple précédent. Voici un exemple de code attrapant une exception :
+</p>
+<pre><code>do {
+    let result = try divide(10, by: 0)
+    print(result)
+} catch DivisionError.divideByZero {
+    print("Erreur : division par zéro")
+}</code></pre>
+<p>
+Dans cet exemple, si une exception de type DivisionError est lancée, le bloc catch correspondant est exécuté.
+</p>
+<p>
+Il est également possible de spécifier plusieurs blocs catch pour attraper différentes exceptions. Par exemple :
+</p>
+<pre><code>do {
+    let result = try divide(10, by: 0)
+    print(result)
+} catch DivisionError.divideByZero {
+    print("Erreur : division par zéro")
+} catch DivisionError.invalidOperation {
+    print("Erreur : opération invalide")
+}</code></pre>
+<p>
+Dans cet exemple, si une exception de type DivisionError.divideByZero est lancée, le premier bloc catch est exécuté. Si une exception de type DivisionError.invalidOperation est lancée, le deuxième bloc catch est exécuté.
+</p>
+<p>
+Il est également possible de capturer toutes les exceptions non spécifiées en utilisant le bloc catch sans spécifier le type d'exception. Par exemple :
+</p>
+<pre><code>do {
+    let result = try divide(10, by: 0)
+    print(result)
+} catch {
+    print("Erreur inattendue")
+}</code></pre>
+<p>
+Dans cet exemple, si une exception non spécifiée est lancée, le bloc catch est exécuté.
+</p>
+
+<p>
+C'était une introduction à la gestion des erreurs et exceptions en Swift. La prochaine section abordera la programmation asynchrone en Swift.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

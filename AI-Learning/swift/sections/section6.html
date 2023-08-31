@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Les interfaces utilisateur en Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à l'interface utilisateur</h2>
+<p>L'interface utilisateur (UI) est un élément essentiel de toute application Swift. Elle permet aux utilisateurs d'interagir avec l'application et d'afficher les informations de manière conviviale. Dans cette section, nous allons explorer les différentes techniques pour créer des interfaces utilisateur attrayantes et fonctionnelles.</p>
+
+<h2>Utilisation des Storyboards</h2>
+<p>Les Storyboards sont un outil puissant pour la création d'interfaces utilisateur dans Swift. Ils permettent de visualiser et de gérer facilement les différentes vues de votre application. Vous pouvez ajouter des contrôles, définir des transitions entre les vues et personnaliser l'apparence de votre application. Voici un exemple de code pour ajouter un bouton à votre storyboard :</p>
+
+<pre><code>import UIKit
+
+class ViewController: UIViewController {
+    @IBOutlet weak var myButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        myButton.setTitle("Cliquez ici", for: .normal)
+        myButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc func buttonTapped() {
+        print("Le bouton a été cliqué !")
+    }
+}
+</code></pre>
+
+<h2>Création d'interfaces utilisateur programmatically</h2>
+<p>Si vous préférez créer vos interfaces utilisateur sans utiliser de Storyboards, vous pouvez le faire en utilisant du code Swift. Cela vous donne un contrôle total sur la disposition et l'apparence de vos vues. Voici un exemple de code pour créer un bouton programmatically :</p>
+
+<pre><code>import UIKit
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let myButton = UIButton(type: .system)
+        myButton.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        myButton.setTitle("Cliquez ici", for: .normal)
+        myButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        
+        view.addSubview(myButton)
+    }
+    
+    @objc func buttonTapped() {
+        print("Le bouton a été cliqué !")
+    }
+}
+</code></pre>
+
+<h2>Utilisation des contraintes et de l'autolayout</h2>
+<p>Les contraintes et l'autolayout sont des fonctionnalités essentielles pour créer des interfaces utilisateur adaptatives. Ils permettent à votre application de s'adapter automatiquement à différentes tailles d'écran et orientations. Voici un exemple de code pour ajouter des contraintes à un bouton :</p>
+
+<pre><code>import UIKit
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let myButton = UIButton(type: .system)
+        myButton.translatesAutoresizingMaskIntoConstraints = false
+        myButton.setTitle("Cliquez ici", for: .normal)
+        myButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        
+        view.addSubview(myButton)
+        
+        NSLayoutConstraint.activate([
+            myButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            myButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    @objc func buttonTapped() {
+        print("Le bouton a été cliqué !")
+    }
+}
+</code></pre>
+
+<h2>Gestion des événements</h2>
+<p>La gestion des événements est essentielle pour permettre aux utilisateurs d'interagir avec votre application. Vous pouvez détecter les gestes, les touches et les mouvements pour déclencher des actions spécifiques. Voici un exemple de code pour détecter un appui sur un bouton :</p>
+
+<pre><code>import UIKit
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let myButton = UIButton(type: .system)
+        myButton.frame = CGRect(x: 100, y: 100, width: 200, height: 50)
+        myButton.setTitle("Cliquez ici", for: .normal)
+        myButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        
+        view.addSubview(myButton)
+    }
+    
+    @objc func buttonTapped() {
+        print("Le bouton a été cliqué !")
+    }
+}
+</code></pre>
+
+<p>Ce sont là quelques-unes des techniques de base pour créer des interfaces utilisateur en Swift. Avec ces connaissances, vous serez en mesure de créer des interfaces attrayantes et fonctionnelles pour vos applications Swift.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

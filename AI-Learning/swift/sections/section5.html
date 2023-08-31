@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Programmation asynchrone en Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les closures</h2>
+<p>Les closures sont des blocs de code auto-contenus qui peuvent être assignés à des variables ou passés en tant que paramètres à d'autres fonctions. Elles sont similaires aux lambdas ou aux fonctions anonymes dans d'autres langages de programmation.</p>
+<p>Une closure peut capturer et stocker des références à des variables et à des constantes provenant du contexte dans lequel elle est définie. Elle peut ensuite être appelée ultérieurement dans un autre contexte.</p>
+<p>Voici un exemple de closure en Swift :</p>
+<pre><code>let greet = {
+    print("Hello, World!")
+}
+
+greet() // Affiche "Hello, World!"</code></pre>
+
+<h2>Les opérations asynchrones</h2>
+<p>Les opérations asynchrones permettent d'exécuter des tâches en arrière-plan sans bloquer l'interface utilisateur. Cela est particulièrement utile lorsqu'il s'agit d'effectuer des opérations longues ou de télécharger des données depuis un serveur distant.</p>
+<p>En Swift, les opérations asynchrones sont généralement gérées à l'aide de la classe <code>DispatchQueue</code> et de ses méthodes <code>async</code> et <code>sync</code>. Voici un exemple d'utilisation :</p>
+<pre><code>DispatchQueue.global().async {
+    // Code exécuté de manière asynchrone
+    print("Background task")
+    
+    DispatchQueue.main.async {
+        // Code exécuté sur le thread principal
+        print("UI update")
+    }
+}</code></pre>
+
+<h2>Les promesses et les futures</h2>
+<p>Les promesses et les futures sont des concepts utilisés pour gérer les opérations asynchrones de manière plus fluide. Ils permettent de définir des actions à exécuter une fois qu'une opération asynchrone est terminée.</p>
+<p>En Swift, il existe plusieurs bibliothèques tierces qui fournissent des fonctionnalités de promesses et de futures, telles que <code>PromiseKit</code> ou <code>RxSwift</code>. Voici un exemple d'utilisation avec <code>PromiseKit</code> :</p>
+<pre><code>func fetchData() -&gt; Promise&lt;Data&gt; {
+    return Promise { seal in
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                seal.reject(error)
+            } else if let data = data {
+                seal.fulfill(data)
+            }
+        }.resume()
+    }
+}
+
+fetchData().done { data in
+    // Traitement des données
+}.catch { error in
+    // Gestion des erreurs
+}</code></pre>
+
+<p>Ce code utilise <code>PromiseKit</code> pour effectuer une requête asynchrone à l'aide de <code>URLSession</code> et renvoie une promesse contenant les données téléchargées. Les blocs <code>done</code> et <code>catch</code> sont utilisés pour traiter les données ou gérer les erreurs une fois que la promesse est remplie ou rejetée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

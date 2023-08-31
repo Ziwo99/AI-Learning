@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Les frameworks et bibliothèques en Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des frameworks iOS</h2>
+<p>Les frameworks iOS sont des ensembles de bibliothèques et d'outils fournis par Apple pour faciliter le développement d'applications iOS. Ils offrent des fonctionnalités prêtes à l'emploi et permettent aux développeurs de gagner du temps en évitant de réinventer la roue. Voici quelques-uns des frameworks iOS les plus couramment utilisés :</p>
+
+<h3>UIKit</h3>
+<p>UIKit est le framework principal pour la création d'interfaces utilisateur iOS. Il fournit des classes et des outils pour la gestion des fenêtres, des vues, des contrôles, des animations, des gestes et bien plus encore. Par exemple, pour créer une interface utilisateur avec des boutons et des étiquettes, vous pouvez utiliser les classes UIButton et UILabel fournies par UIKit.</p>
+
+<h3>CoreData</h3>
+<p>CoreData est un framework de persistance de données qui permet de stocker et de récupérer des objets dans une base de données. Il offre des fonctionnalités avancées telles que la gestion des relations entre les objets, la recherche et le tri des données, et la synchronisation avec des services distants. CoreData est souvent utilisé pour créer des applications qui nécessitent un stockage de données local, telles que les applications de gestion de tâches ou les applications de réseaux sociaux.</p>
+
+<h3>MapKit</h3>
+<p>MapKit est un framework qui permet d'intégrer des cartes interactives dans une application iOS. Il fournit des classes pour afficher des cartes, ajouter des annotations, tracer des itinéraires, rechercher des lieux et bien plus encore. MapKit utilise les services de cartographie d'Apple pour fournir des fonctionnalités de cartographie avancées. Par exemple, vous pouvez utiliser MapKit pour afficher une carte avec des marqueurs pour indiquer des lieux d'intérêt dans une application de voyage.</p>
+
+<h2>Utilisation des bibliothèques tierces</h2>
+<p>En plus des frameworks iOS fournis par Apple, il existe également de nombreuses bibliothèques tierces développées par la communauté des développeurs. Ces bibliothèques offrent des fonctionnalités supplémentaires qui ne sont pas disponibles dans les frameworks iOS standard. Voici quelques exemples de bibliothèques tierces populaires en Swift :</p>
+
+<h3>Alamofire</h3>
+<p>Alamofire est une bibliothèque de gestion des requêtes HTTP en Swift. Elle simplifie l'envoi de requêtes HTTP, la gestion des réponses et la manipulation des données JSON. Alamofire offre une syntaxe élégante et expressive qui facilite l'écriture de code pour les appels réseau.</p>
+
+<h3>Realm</h3>
+<p>Realm est une bibliothèque de base de données mobile qui offre une alternative légère et rapide à CoreData. Elle permet de stocker et de récupérer des objets dans une base de données locale, tout en offrant des fonctionnalités avancées telles que la synchronisation en temps réel avec un serveur distant. Realm est souvent utilisé pour les applications qui nécessitent une persistance de données rapide et réactive, telles que les applications de messagerie ou les applications de suivi de fitness.</p>
+
+<h3>SwiftyJSON</h3>
+<p>SwiftyJSON est une bibliothèque qui facilite la manipulation des données JSON en Swift. Elle permet de parcourir et de manipuler facilement des objets JSON en utilisant une syntaxe simple et expressive. SwiftyJSON rend le traitement des données JSON plus sûr et plus facile en évitant les erreurs de typage et en fournissant des méthodes pratiques pour extraire des valeurs spécifiques à partir d'un objet JSON.</p>
+
+<h3>Kingfisher</h3>
+<p>Kingfisher est une bibliothèque de gestion du téléchargement et du cache d'images en Swift. Elle facilite le chargement d'images à partir d'URL, la mise en cache des images téléchargées et la gestion du recyclage de la mémoire. Kingfisher offre des fonctionnalités avancées telles que le chargement progressif des images, la mise en cache basée sur la taille de l'écran et la gestion automatique du cache.</p>
+
+<p>Ces exemples de frameworks et de bibliothèques ne sont qu'un aperçu de ce qui est disponible en Swift. Il existe de nombreuses autres options disponibles en fonction des besoins spécifiques de votre application. Lors du choix d'un framework ou d'une bibliothèque, il est important de prendre en compte la popularité, la documentation, la stabilité et la compatibilité avec les versions actuelles de Swift et d'iOS.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Swift Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Projets pratiques en Swift</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/swift/swift.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une application de gestion de tâches en utilisant Swift. Cette application permettra aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées.</p>
+
+<p>Tout d'abord, nous allons créer une classe Task qui représentera une tâche. Cette classe aura les propriétés suivantes :</p>
+<ul>
+  <li><code>id</code> : un identifiant unique pour chaque tâche</li>
+  <li><code>title</code> : le titre de la tâche</li>
+  <li><code>description</code> : une description détaillée de la tâche</li>
+  <li><code>isCompleted</code> : un booléen indiquant si la tâche est terminée ou non</li>
+</ul>
+
+<p>Ensuite, nous allons créer une classe TaskManager qui sera responsable de la gestion des tâches. Cette classe aura les méthodes suivantes :</p>
+<ul>
+  <li><code>addTask(task: Task)</code> : ajoute une tâche à la liste des tâches</li>
+  <li><code>removeTask(task: Task)</code> : supprime une tâche de la liste des tâches</li>
+  <li><code>updateTask(task: Task)</code> : met à jour les informations d'une tâche existante</li>
+  <li><code>completeTask(task: Task)</code> : marque une tâche comme terminée</li>
+  <li><code>getTasks()</code> : renvoie la liste des tâches</li>
+</ul>
+
+<p>Une fois que nous avons défini nos classes, nous pouvons commencer à créer l'interface utilisateur de notre application. Nous allons utiliser les Storyboards pour cela.</p>
+
+<p>Tout d'abord, nous allons ajouter une table view à notre view controller principal. Cette table view affichera la liste des tâches. Chaque cellule de la table view affichera le titre de la tâche et une icône indiquant si la tâche est terminée ou non.</p>
+
+<p>Ensuite, nous allons ajouter un bouton "Ajouter" en haut à droite de la navigation bar. Lorsque l'utilisateur appuie sur ce bouton, une nouvelle vue s'affiche où il peut saisir les informations de la nouvelle tâche.</p>
+
+<p>Une fois que l'utilisateur a saisi les informations de la tâche et appuyé sur le bouton "Enregistrer", la tâche est ajoutée à la liste des tâches et la table view est mise à jour pour afficher la nouvelle tâche.</p>
+
+<p>Enfin, nous allons ajouter la possibilité de modifier et supprimer une tâche existante. Lorsque l'utilisateur appuie sur une cellule de la table view, une nouvelle vue s'affiche où il peut modifier les informations de la tâche. Il y aura également un bouton "Supprimer" pour supprimer la tâche.</p>
+
+<p>Voici un exemple de code pour la classe Task :</p>
+<pre><code>class Task {
+    let id: Int
+    var title: String
+    var description: String
+    var isCompleted: Bool
+    
+    init(id: Int, title: String, description: String, isCompleted: Bool) {
+        self.id = id
+        self.title = title
+        self.description = description
+        self.isCompleted = isCompleted
+    }
+}</code></pre>
+
+<p>Et voici un exemple de code pour la classe TaskManager :</p>
+<pre><code>class TaskManager {
+    var tasks: [Task] = []
+    
+    func addTask(task: Task) {
+        tasks.append(task)
+    }
+    
+    func removeTask(task: Task) {
+        if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+            tasks.remove(at: index)
+        }
+    }
+    
+    func updateTask(task: Task) {
+        if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+            tasks[index] = task
+        }
+    }
+    
+    func completeTask(task: Task) {
+        if let index = tasks.firstIndex(where: { $0.id == task.id }) {
+            tasks[index].isCompleted = true
+        }
+    }
+    
+    func getTasks() -> [Task] {
+        return tasks
+    }
+}</code></pre>
+
+<h2>Création d'un jeu simple</h2>
+<p>Dans cette sous-section, nous allons créer un jeu simple en utilisant Swift. Le jeu consistera à deviner un nombre aléatoire généré par l'ordinateur.</p>
+
+<p>Tout d'abord, nous allons créer une fonction qui génère un nombre aléatoire entre 1 et 100 :</p>
+<pre><code>func generateRandomNumber() -> Int {
+    return Int.random(in: 1...100)
+}</code></pre>
+
+<p>Ensuite, nous allons créer une boucle qui demande à l'utilisateur de deviner le nombre. À chaque itération de la boucle, nous allons comparer la réponse de l'utilisateur avec le nombre généré aléatoirement.</p>
+
+<p>Si la réponse de l'utilisateur est égale au nombre généré, nous affichons un message de félicitations et sortons de la boucle. Sinon, nous affichons un message indiquant si la réponse de l'utilisateur est trop grande ou trop petite par rapport au nombre généré.</p>
+
+<p>Voici un exemple de code pour le jeu :</p>
+<pre><code>let randomNumber = generateRandomNumber()
+var guessedNumber: Int?
+
+while guessedNumber != randomNumber {
+    print("Devinez le nombre:")
+    let input = readLine()
+    
+    if let number = Int(input ?? "") {
+        guessedNumber = number
+        
+        if guessedNumber == randomNumber {
+            print("Félicitations, vous avez deviné le nombre!")
+        } else if guessedNumber &lt; randomNumber {
+            print("Le nombre est plus grand.")
+        } else {
+            print("Le nombre est plus petit.")
+        }
+    } else {
+        print("Veuillez entrer un nombre valide.")
+    }
+}</code></pre>
+
+<p>Ce jeu simple peut être étendu en ajoutant des fonctionnalités telles que le nombre maximum d'essais, un système de points, etc. N'hésitez pas à expérimenter et à ajouter vos propres fonctionnalités au jeu.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/swift/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/swift/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
