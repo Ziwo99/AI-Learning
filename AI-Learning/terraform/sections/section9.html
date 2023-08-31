@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Gestion des infrastructures</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Provisionnement d'infrastructures</h2>
+<p>
+Le provisionnement d'infrastructures est l'étape de création et de configuration des ressources nécessaires à votre infrastructure Terraform. Cela peut inclure la création de machines virtuelles, de réseaux, de bases de données, etc. Terraform utilise des fichiers de configuration appelés fichiers de plan pour décrire l'état souhaité de votre infrastructure.
+</p>
+<p>
+Pour provisionner des infrastructures avec Terraform, vous devez définir les ressources que vous souhaitez créer dans un fichier de configuration. Ce fichier de configuration utilise la syntaxe HCL (HashiCorp Configuration Language) pour décrire les ressources et leurs paramètres. Par exemple, pour créer une machine virtuelle dans un fournisseur de cloud, vous pouvez utiliser le bloc de code suivant :
+</p>
+<pre><code>
+resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c71c99"
+  instance_type = "t2.micro"
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons le fournisseur AWS et nous créons une instance EC2 avec l'ID de l'AMI et le type d'instance spécifiés. Une fois que vous avez défini vos ressources dans le fichier de configuration, vous pouvez exécuter la commande "terraform apply" pour créer ces ressources.
+</p>
+
+<h2>Configuration des connexions réseau</h2>
+<p>
+La configuration des connexions réseau est une partie essentielle de la gestion des infrastructures avec Terraform. Vous pouvez configurer les connexions réseau pour permettre la communication entre les différentes ressources de votre infrastructure.
+</p>
+<p>
+Pour configurer les connexions réseau dans Terraform, vous pouvez utiliser les ressources de réseau fournies par votre fournisseur de cloud. Par exemple, pour créer un groupe de sécurité dans AWS, vous pouvez utiliser le bloc de code suivant :
+</p>
+<pre><code>
+resource "aws_security_group" "example" {
+  name        = "example"
+  description = "Example security group"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+</code></pre>
+<p>
+Dans cet exemple, nous créons un groupe de sécurité qui permet le trafic SSH entrant sur le port 22 à partir de n'importe quelle adresse IP. Vous pouvez personnaliser les règles de sécurité en fonction de vos besoins spécifiques.
+</p>
+
+<h2>Gestion des groupes de sécurité</h2>
+<p>
+La gestion des groupes de sécurité est une autre tâche importante lors de la gestion des infrastructures avec Terraform. Les groupes de sécurité permettent de contrôler les accès réseau à vos ressources et de définir des règles de sécurité.
+</p>
+<p>
+Pour gérer les groupes de sécurité dans Terraform, vous pouvez utiliser les ressources de groupe de sécurité fournies par votre fournisseur de cloud. Par exemple, pour créer un groupe de sécurité dans AWS, vous pouvez utiliser le bloc de code suivant :
+</p>
+<pre><code>
+resource "aws_security_group" "example" {
+  name        = "example"
+  description = "Example security group"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+</code></pre>
+<p>
+Dans cet exemple, nous créons un groupe de sécurité qui permet le trafic SSH entrant sur le port 22 à partir de n'importe quelle adresse IP. Vous pouvez personnaliser les règles de sécurité en fonction de vos besoins spécifiques.
+</p>
+<p>
+Une fois que vous avez défini vos groupes de sécurité dans votre fichier de configuration Terraform, vous pouvez exécuter la commande "terraform apply" pour créer ces groupes de sécurité.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

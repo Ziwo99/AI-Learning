@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Gestion des variables</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Variables d'entrée et de sortie</h2>
+  <p>Les variables d'entrée et de sortie sont des éléments clés dans la gestion des configurations Terraform. Les variables d'entrée permettent de paramétrer les ressources Terraform, tandis que les variables de sortie permettent de récupérer des informations sur les ressources créées.</p>
+  <p>Pour déclarer une variable d'entrée, utilisez la syntaxe suivante :</p>
+  <pre><code>variable "nom_variable" {
+  type = type_de_données
+  default = valeur_par_défaut
+}</code></pre>
+  <p>Par exemple, pour déclarer une variable d'entrée de type chaîne de caractères avec une valeur par défaut :</p>
+  <pre><code>variable "nom" {
+  type = string
+  default = "John Doe"
+}</code></pre>
+  <p>Pour utiliser une variable d'entrée dans une ressource Terraform, utilisez la syntaxe suivante :</p>
+  <pre><code>resource "type_de_ressource" "nom_ressource" {
+  champ = var.nom_variable
+}</code></pre>
+  <p>Par exemple, pour utiliser la variable d'entrée "nom" dans une ressource de type "aws_instance" :</p>
+  <pre><code>resource "aws_instance" "example" {
+  ami = var.nom
+}</code></pre>
+  <p>Pour déclarer une variable de sortie, utilisez la syntaxe suivante :</p>
+  <pre><code>output "nom_variable" {
+  value = valeur
+}</code></pre>
+  <p>Par exemple, pour déclarer une variable de sortie avec une valeur statique :</p>
+  <pre><code>output "ip_publique" {
+  value = "192.168.0.1"
+}</code></pre>
+  <p>Pour récupérer une variable de sortie dans un autre module Terraform, utilisez la syntaxe suivante :</p>
+  <pre><code>module "nom_module" {
+  source = "./chemin/vers/module"
+  variable_sortie = module.nom_module.nom_variable
+}</code></pre>
+
+  <h2>Utilisation des variables d'environnement</h2>
+  <p>Les variables d'environnement sont un moyen pratique de passer des valeurs à Terraform sans les stocker directement dans les fichiers de configuration. Elles peuvent être utilisées pour des informations sensibles ou spécifiques à l'environnement.</p>
+  <p>Pour utiliser une variable d'environnement dans une configuration Terraform, utilisez la syntaxe suivante :</p>
+  <pre><code>variable "nom_variable" {
+  type = type_de_données
+  default = valeur_par_défaut
+  description = "Description de la variable"
+  sensitive = true
+}</code></pre>
+  <p>Par exemple, pour utiliser une variable d'environnement nommée "AWS_ACCESS_KEY" :</p>
+  <pre><code>variable "access_key" {
+  type = string
+  default = ""
+  description = "Clé d'accès AWS"
+  sensitive = true
+}</code></pre>
+  <p>La valeur de la variable d'environnement peut être définie dans le terminal avant d'exécuter Terraform :</p>
+  <pre><code>export AWS_ACCESS_KEY="valeur_de_la_clé"</code></pre>
+  <p>La variable d'environnement peut ensuite être utilisée dans la configuration Terraform :</p>
+  <pre><code>resource "aws_instance" "example" {
+  access_key = var.access_key
+}</code></pre>
+
+  <h2>Utilisation des fichiers de variables</h2>
+  <p>Les fichiers de variables sont un moyen pratique de stocker des valeurs de variables dans des fichiers séparés, plutôt que de les définir directement dans les fichiers de configuration Terraform. Cela permet de garder les valeurs sensibles en dehors du code source et facilite la gestion des configurations pour différents environnements.</p>
+  <p>Pour utiliser un fichier de variables dans une configuration Terraform, utilisez la syntaxe suivante :</p>
+  <pre><code>variable "nom_variable" {
+  type = type_de_données
+  default = valeur_par_défaut
+  description = "Description de la variable"
+  sensitive = true
+}</code></pre>
+  <p>Par exemple, pour utiliser un fichier de variables nommé "variables.tfvars" :</p>
+  <pre><code>variable "access_key" {
+  type = string
+  default = ""
+  description = "Clé d'accès AWS"
+  sensitive = true
+}</code></pre>
+  <p>Le fichier de variables peut être créé avec l'extension ".tfvars" et les valeurs peuvent être définies à l'intérieur :</p>
+  <pre><code>access_key = "valeur_de_la_clé"</code></pre>
+  <p>Le fichier de variables peut ensuite être utilisé dans la configuration Terraform :</p>
+  <pre><code>terraform {
+  required_version = ">= 0.12"
+  }
+
+  provider "aws" {
+  access_key = var.access_key
+  }</code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

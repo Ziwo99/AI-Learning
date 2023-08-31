@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Gestion des modules</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Création et utilisation de modules</h2>
+  <p>Les modules sont des éléments clés dans Terraform qui permettent de réutiliser du code et de structurer efficacement votre infrastructure. Un module est un ensemble de ressources Terraform qui peuvent être utilisées ensemble pour créer une partie spécifique de votre infrastructure.</p>
+  <p>Pour créer un module, vous devez d'abord définir un répertoire contenant les fichiers Terraform nécessaires. Ce répertoire doit contenir un fichier principal nommé main.tf qui définit les ressources et les paramètres du module.</p>
+  <p>Une fois que vous avez créé votre module, vous pouvez l'utiliser dans d'autres configurations Terraform en l'appelant à l'aide de la directive module. Vous pouvez spécifier les valeurs des variables d'entrée du module et utiliser les sorties du module dans votre configuration principale.</p>
+  <p>Voici un exemple de création et d'utilisation d'un module :</p>
+  <pre><code>// main.tf du module "vpc"
+resource "aws_vpc" "main" {
+  cidr_block = var.vpc_cidr_block
+}
+
+resource "aws_subnet" "public" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.public_subnet_cidr_block
+}
+
+resource "aws_subnet" "private" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.private_subnet_cidr_block
+}</code></pre>
+  <pre><code>// main.tf de la configuration principale
+module "vpc" {
+  source = "./modules/vpc"
+
+  vpc_cidr_block            = "10.0.0.0/16"
+  public_subnet_cidr_block  = "10.0.1.0/24"
+  private_subnet_cidr_block = "10.0.2.0/24"
+}</code></pre>
+
+  <h2>Partage et réutilisation de modules</h2>
+  <p>L'un des avantages clés des modules Terraform est la possibilité de les partager et de les réutiliser. Cela permet de gagner du temps et de maintenir une cohérence dans vos configurations.</p>
+  <p>Pour partager un module, vous pouvez le publier sur un registre de modules Terraform, tel que le registre Terraform d'HashiCorp. Les autres utilisateurs peuvent alors facilement l'installer et l'utiliser dans leurs propres configurations.</p>
+  <p>Si vous souhaitez réutiliser un module publié, vous pouvez l'installer en utilisant la directive module dans votre configuration principale. Vous devez spécifier la source du module, qui peut être un chemin local ou une URL vers le registre de modules.</p>
+  <p>Voici un exemple d'utilisation d'un module partagé :</p>
+  <pre><code>// main.tf de la configuration principale
+module "vpc" {
+  source = "hashicorp/vpc/aws"
+
+  vpc_cidr_block            = "10.0.0.0/16"
+  public_subnet_cidr_block  = "10.0.1.0/24"
+  private_subnet_cidr_block = "10.0.2.0/24"
+}</code></pre>
+
+  <h2>Gestion des versions de modules</h2>
+  <p>Il est important de gérer les versions des modules que vous utilisez dans vos configurations Terraform. Cela permet de garantir la stabilité et la reproductibilité de votre infrastructure.</p>
+  <p>Les modules Terraform peuvent être versionnés en utilisant des tags Git ou des numéros de version. Vous pouvez spécifier la version d'un module en utilisant la directive module avec l'argument version.</p>
+  <p>Si vous ne spécifiez pas de version pour un module, Terraform utilisera la dernière version disponible. Cependant, il est recommandé de spécifier explicitement la version pour éviter les problèmes de compatibilité.</p>
+  <p>Voici un exemple de spécification de version pour un module :</p>
+  <pre><code>// main.tf de la configuration principale
+module "vpc" {
+  source  = "hashicorp/vpc/aws"
+  version = "2.0.0"
+
+  vpc_cidr_block            = "10.0.0.0/16"
+  public_subnet_cidr_block  = "10.0.1.0/24"
+  private_subnet_cidr_block = "10.0.2.0/24"
+}</code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

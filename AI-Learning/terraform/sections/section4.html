@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des ressources</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création et configuration de ressources</h2>
+<p>La création et la configuration de ressources sont des étapes essentielles dans l'utilisation de Terraform. Les ressources représentent les éléments que vous souhaitez gérer et provisionner dans votre infrastructure. Elles peuvent être des machines virtuelles, des bases de données, des réseaux, etc.</p>
+
+<p>Pour créer une ressource, vous devez spécifier son type et ses paramètres dans un fichier Terraform. Voici un exemple de création d'une ressource de machine virtuelle :</p>
+
+<pre><code>resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c71c99"
+  instance_type = "t2.micro"
+}</code></pre>
+
+<p>Dans cet exemple, nous créons une ressource de type "aws_instance" avec le nom "example". Nous spécifions l'ID de l'image AMI et le type d'instance.</p>
+
+<p>Une fois que vous avez défini vos ressources, vous pouvez exécuter la commande "terraform apply" pour provisionner ces ressources dans votre infrastructure. Terraform se chargera de créer les ressources spécifiées et de les configurer selon vos paramètres.</p>
+
+<h2>Utilisation des données externes</h2>
+<p>Il est souvent nécessaire d'utiliser des données externes dans vos configurations Terraform. Cela peut inclure des informations provenant de services tiers, des fichiers de configuration ou des variables d'environnement.</p>
+
+<p>Pour utiliser des données externes, vous pouvez utiliser la fonction "data" dans votre fichier Terraform. Voici un exemple d'utilisation de données externes provenant d'un fichier JSON :</p>
+
+<pre><code>data "external" "example" {
+  program = ["python", "${path.module}/script.py"]
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c71c99"
+  instance_type = "t2.micro"
+  user_data     = "${data.external.example.result}"
+}</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction "data" pour exécuter un script Python qui renvoie des données au format JSON. Nous utilisons ensuite ces données dans la configuration de notre ressource "aws_instance".</p>
+
+<h2>Gestion des dépendances entre les ressources</h2>
+<p>Les ressources dans Terraform peuvent avoir des dépendances les unes envers les autres. Par exemple, vous pouvez avoir besoin de créer une base de données avant de créer une application qui l'utilise.</p>
+
+<p>Pour gérer les dépendances entre les ressources, vous pouvez utiliser l'attribut "depends_on" dans votre configuration Terraform. Voici un exemple :</p>
+
+<pre><code>resource "aws_db_instance" "example" {
+  // Configuration de la base de données
+}
+
+resource "aws_ecs_task_definition" "example" {
+  // Configuration de la tâche ECS
+  depends_on = [aws_db_instance.example]
+}</code></pre>
+
+<p>Dans cet exemple, nous spécifions que la ressource "aws_ecs_task_definition" dépend de la ressource "aws_db_instance". Cela garantit que la base de données est créée avant que la tâche ECS ne soit provisionnée.</p>
+
+<p>Il est important de noter que Terraform gère automatiquement les dépendances implicites entre les ressources. Cependant, si vous avez des dépendances explicites, vous devez les spécifier à l'aide de l'attribut "depends_on".</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Gestion des fournisseurs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des fournisseurs Terraform</h2>
+<p>Les fournisseurs Terraform sont des plugins qui permettent à Terraform d'interagir avec différents services et plateformes cloud. Ils fournissent les ressources et les fonctionnalités spécifiques à chaque fournisseur.</p>
+<p>Pour utiliser un fournisseur Terraform, vous devez d'abord le déclarer dans votre configuration Terraform. Cela se fait en ajoutant une section <code>provider</code> dans votre fichier de configuration.</p>
+<p>Voici un exemple de déclaration de fournisseur pour AWS :</p>
+<pre><code>provider "aws" {
+  region = "us-west-2"
+}</code></pre>
+<p>Dans cet exemple, nous déclarons le fournisseur AWS et spécifions la région dans laquelle nous souhaitons déployer nos ressources.</p>
+<p>Une fois que vous avez déclaré le fournisseur, vous pouvez utiliser les ressources et les fonctionnalités spécifiques à ce fournisseur dans votre configuration Terraform.</p>
+
+<h2>Configuration des fournisseurs</h2>
+<p>La configuration des fournisseurs Terraform se fait en utilisant des variables d'environnement ou des fichiers de configuration spécifiques au fournisseur.</p>
+<p>Les variables d'environnement sont généralement utilisées pour spécifier les informations d'authentification nécessaires pour se connecter au fournisseur. Par exemple, pour AWS, vous pouvez définir les variables d'environnement suivantes :</p>
+<pre><code>AWS_ACCESS_KEY_ID="your-access-key"
+AWS_SECRET_ACCESS_KEY="your-secret-key"
+</code></pre>
+<p>Vous pouvez également utiliser des fichiers de configuration spécifiques au fournisseur pour spécifier les informations d'authentification. Ces fichiers sont généralement au format JSON ou YAML.</p>
+<p>Voici un exemple de fichier de configuration pour AWS :</p>
+<pre><code>provider "aws" {
+  region                  = "us-west-2"
+  access_key              = "your-access-key"
+  secret_access_key       = "your-secret-key"
+}</code></pre>
+<p>Assurez-vous de garder ces informations d'authentification en sécurité et de ne pas les partager publiquement.</p>
+
+<h2>Utilisation de modules de fournisseurs tiers</h2>
+<p>En plus des fournisseurs officiels fournis par HashiCorp, il existe également des modules de fournisseurs tiers créés par la communauté Terraform. Ces modules permettent d'étendre les fonctionnalités de Terraform en ajoutant des ressources et des fonctionnalités spécifiques à des services ou plateformes cloud spécifiques.</p>
+<p>Pour utiliser un module de fournisseur tiers, vous devez d'abord l'importer dans votre configuration Terraform. Cela se fait en ajoutant une section <code>module</code> dans votre fichier de configuration.</p>
+<p>Voici un exemple d'importation d'un module de fournisseur tiers :</p>
+<pre><code>module "example" {
+  source  = "terraform-aws-modules/example/aws"
+  version = "2.0.0"
+}</code></pre>
+<p>Dans cet exemple, nous importons le module "example" à partir du référentiel "terraform-aws-modules/example/aws" avec la version 2.0.0.</p>
+<p>Une fois que vous avez importé le module, vous pouvez utiliser les ressources et les fonctionnalités spécifiques à ce module dans votre configuration Terraform.</p>
+
+<p>Assurez-vous de vérifier la documentation du module de fournisseur tiers pour connaître les détails spécifiques sur son utilisation et ses fonctionnalités.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

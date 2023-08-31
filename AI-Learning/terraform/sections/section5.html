@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des états</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <p>La gestion des états est un aspect crucial de Terraform. Les états Terraform sont des fichiers JSON qui stockent l'état actuel de votre infrastructure. Ils contiennent des informations sur les ressources créées, leur configuration, leurs dépendances et d'autres détails importants.</p>
+  
+  <h2>Comprendre les états Terraform</h2>
+  <p>Les états Terraform sont utilisés pour suivre l'état réel de votre infrastructure par rapport à votre configuration Terraform. Ils permettent à Terraform de déterminer les modifications à apporter à votre infrastructure lors de l'exécution de la commande "terraform apply". Les états sont stockés localement par défaut, mais peuvent également être stockés à distance dans un backend Terraform.</p>
+  
+  <p>Les états Terraform contiennent des informations telles que :</p>
+  <ul>
+    <li>Les ressources créées et leurs attributs</li>
+    <li>Les dépendances entre les ressources</li>
+    <li>Les valeurs des variables d'entrée</li>
+    <li>Les valeurs des sorties générées</li>
+  </ul>
+  
+  <p>Il est important de noter que les états Terraform sont sensibles et doivent être gérés avec précaution. Ils contiennent des informations sensibles telles que les clés d'accès aux fournisseurs cloud, les adresses IP, les noms d'utilisateur, etc. Il est recommandé de ne pas les partager ou de les stocker dans des dépôts de code publics.</p>
+  
+  <h2>Sauvegarde et restauration des états</h2>
+  <p>Il est essentiel de sauvegarder régulièrement vos états Terraform pour éviter toute perte de données en cas de problème. Vous pouvez sauvegarder vos états en les copiant dans un emplacement sécurisé, tel qu'un système de stockage cloud ou un système de contrôle de version. Assurez-vous de conserver plusieurs copies de sauvegarde pour une sécurité accrue.</p>
+  
+  <p>Pour restaurer un état Terraform à partir d'une sauvegarde, vous devez simplement copier le fichier d'état sauvegardé dans le répertoire de travail Terraform et exécuter la commande "terraform init". Terraform détectera automatiquement l'état restauré et pourra le gérer comme d'habitude.</p>
+  
+  <h2>Utilisation de la gestion des verrous</h2>
+  <p>La gestion des verrous est un mécanisme intégré à Terraform qui permet de gérer les accès concurrents aux états Terraform. Lorsque vous exécutez des commandes Terraform, telles que "terraform apply" ou "terraform destroy", Terraform verrouille automatiquement l'état pour éviter les conflits.</p>
+  
+  <p>Les verrous sont essentiels pour éviter les problèmes de concurrence lorsque plusieurs utilisateurs ou processus tentent de modifier l'infrastructure en même temps. Ils garantissent que les modifications sont apportées de manière cohérente et évitent les conflits de fusion.</p>
+  
+  <p>Terraform prend en charge différents types de verrous, tels que les verrous locaux, les verrous distants et les verrous de verrouillage de l'état. Vous pouvez configurer les verrous dans le fichier de configuration Terraform en utilisant le bloc "backend" approprié.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

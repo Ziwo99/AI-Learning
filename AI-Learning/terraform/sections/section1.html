@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1: Introduction à Terraform</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Qu'est-ce que Terraform?</h2>
+<p>Terraform est un outil open source de gestion d'infrastructure en tant que code (IaC) développé par HashiCorp. Il permet aux équipes de provisionner et de gérer de manière efficace et reproductible des ressources d'infrastructure sur différents fournisseurs cloud et sur site.</p>
+<p>Avec Terraform, vous pouvez décrire votre infrastructure cible dans un fichier de configuration déclaratif, appelé fichier Terraform, qui spécifie les ressources nécessaires et leurs configurations. Terraform se charge ensuite de créer et de gérer ces ressources de manière automatique, en s'assurant que l'état réel de l'infrastructure correspond à l'état souhaité décrit dans le fichier Terraform.</p>
+
+<h2>Avantages de l'utilisation de Terraform</h2>
+<p>L'utilisation de Terraform présente de nombreux avantages pour la gestion de l'infrastructure :</p>
+<ul>
+  <li><strong>Infrastructure en tant que code :</strong> Terraform permet de décrire l'infrastructure cible sous forme de code, ce qui facilite la gestion, la collaboration et la reproductibilité.</li>
+  <li><strong>Multi-cloud et multi-fournisseur :</strong> Terraform prend en charge plusieurs fournisseurs cloud, tels que AWS, Azure, Google Cloud, ainsi que des solutions sur site, ce qui vous permet de gérer votre infrastructure de manière cohérente et portable.</li>
+  <li><strong>Planification et prévisualisation :</strong> Terraform vous permet de planifier et de prévisualiser les modifications avant de les appliquer, ce qui vous permet de comprendre les impacts potentiels et de prévenir les erreurs.</li>
+  <li><strong>Gestion de l'état :</strong> Terraform maintient un état de l'infrastructure, ce qui permet de gérer les modifications de manière incrémentale et de garantir la cohérence de l'infrastructure.</li>
+  <li><strong>Automatisation :</strong> Terraform peut être intégré à des outils d'automatisation tels que Jenkins ou GitLab CI/CD, ce qui permet d'automatiser les déploiements et les mises à jour de l'infrastructure.</li>
+</ul>
+
+<h2>Installation et configuration de Terraform</h2>
+<p>Pour commencer à utiliser Terraform, vous devez d'abord l'installer sur votre machine de développement. Voici les étapes pour installer Terraform :</p>
+<ol>
+  <li>Téléchargez la dernière version de Terraform à partir du site officiel de HashiCorp.</li>
+  <li>Décompressez le fichier téléchargé dans un répertoire de votre choix.</li>
+  <li>Ajoutez le chemin d'accès au répertoire contenant l'exécutable Terraform à votre variable d'environnement PATH.</li>
+  <li>Vérifiez l'installation en exécutant la commande "terraform" dans votre terminal. Vous devriez voir la liste des commandes disponibles.</li>
+</ol>
+<p>Une fois Terraform installé, vous devez configurer l'accès à votre fournisseur cloud. Cela implique généralement de créer des clés d'API ou des fichiers de configuration spécifiques à votre fournisseur. Consultez la documentation officielle de Terraform pour obtenir des instructions détaillées sur la configuration de votre fournisseur spécifique.</p>
+
+<p>Voici un exemple de code Terraform pour créer une instance EC2 sur AWS :</p>
+<pre><code>provider "aws" {
+  access_key = "YOUR_ACCESS_KEY"
+  secret_key = "YOUR_SECRET_KEY"
+  region     = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c71c99"
+  instance_type = "t2.micro"
+}</code></pre>
+<p>Dans cet exemple, nous utilisons le fournisseur AWS et nous définissons les clés d'accès, la région et les ressources que nous voulons créer. Vous devrez remplacer "YOUR_ACCESS_KEY" et "YOUR_SECRET_KEY" par vos propres clés d'accès AWS.</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

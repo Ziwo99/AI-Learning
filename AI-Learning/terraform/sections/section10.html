@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Gestion des déploiements</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <p>La gestion des déploiements est une étape essentielle dans l'utilisation de Terraform. Elle permet de déployer des applications et de configurer les variables d'environnement nécessaires. De plus, elle offre la possibilité de gérer les mises à jour et les rollbacks de manière efficace.</p>
+
+  <h2>Déploiement d'applications</h2>
+  <p>Le déploiement d'applications avec Terraform se fait en utilisant des ressources spécifiques qui permettent de créer et de configurer les instances nécessaires. Ces ressources peuvent être des serveurs, des conteneurs ou d'autres types d'infrastructures.</p>
+  <p>Voici un exemple de code Terraform pour déployer une application sur un serveur :</p>
+  <pre><code>resource "aws_instance" "example" {
+    ami           = "ami-0c94855ba95c71c99"
+    instance_type = "t2.micro"
+
+    tags = {
+      Name = "example-instance"
+    }
+  }</code></pre>
+  <p>Dans cet exemple, nous utilisons la ressource "aws_instance" pour créer une instance EC2 sur AWS. Nous spécifions l'AMI (Amazon Machine Image) à utiliser, le type d'instance et ajoutons des tags pour identifier notre instance.</p>
+
+  <h2>Configuration des variables d'environnement</h2>
+  <p>La configuration des variables d'environnement est une étape importante pour déployer des applications avec Terraform. Les variables d'environnement permettent de stocker des informations sensibles ou spécifiques à l'environnement, telles que des clés d'API ou des URL de base de données.</p>
+  <p>Voici un exemple de code Terraform pour configurer des variables d'environnement :</p>
+  <pre><code>resource "aws_instance" "example" {
+    ami           = "ami-0c94855ba95c71c99"
+    instance_type = "t2.micro"
+
+    tags = {
+      Name = "example-instance"
+    }
+
+    provisioner "remote-exec" {
+      inline = [
+        "export DB_HOST=${var.db_host}",
+        "export API_KEY=${var.api_key}"
+      ]
+    }
+  }</code></pre>
+  <p>Dans cet exemple, nous utilisons la ressource "aws_instance" pour créer une instance EC2 sur AWS. Nous utilisons également le provisioner "remote-exec" pour exécuter des commandes à distance sur l'instance. Nous configurons les variables d'environnement DB_HOST et API_KEY en utilisant les valeurs définies dans les variables Terraform.</p>
+
+  <h2>Gestion des mises à jour et des rollbacks</h2>
+  <p>Terraform offre des fonctionnalités avancées pour gérer les mises à jour et les rollbacks de manière efficace. Lorsque vous apportez des modifications à votre infrastructure, Terraform compare l'état actuel avec l'état souhaité et détermine les actions nécessaires pour atteindre cet état.</p>
+  <p>Si une mise à jour est nécessaire, Terraform effectuera les modifications de manière séquentielle et sécurisée. En cas d'échec, Terraform peut automatiquement effectuer un rollback en revenant à l'état précédent.</p>
+  <p>Voici un exemple de code Terraform pour gérer les mises à jour et les rollbacks :</p>
+  <pre><code>resource "aws_instance" "example" {
+    ami           = "ami-0c94855ba95c71c99"
+    instance_type = "t2.micro"
+
+    tags = {
+      Name = "example-instance"
+    }
+
+    lifecycle {
+      create_before_destroy = true
+    }
+  }</code></pre>
+  <p>Dans cet exemple, nous utilisons la ressource "aws_instance" pour créer une instance EC2 sur AWS. Nous utilisons également le bloc "lifecycle" pour spécifier que la nouvelle instance doit être créée avant que l'ancienne instance ne soit détruite. Cela permet d'assurer un déploiement en douceur et un rollback automatique en cas d'échec.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Gestion des environnements</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création et gestion d'environnements</h2>
+<p>Lorsque vous travaillez avec Terraform, il est courant d'avoir besoin de gérer plusieurs environnements, tels que le développement, la pré-production et la production. Terraform facilite la création et la gestion de ces environnements en utilisant des workspaces.</p>
+
+<p>Un workspace est un état isolé dans lequel vous pouvez travailler avec vos configurations Terraform. Chaque workspace a son propre état et peut être utilisé pour déployer et gérer des ressources spécifiques à cet environnement.</p>
+
+<p>Pour créer un nouveau workspace, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>terraform workspace new dev</code></pre>
+
+<p>Cela créera un nouveau workspace appelé "dev". Vous pouvez ensuite basculer vers ce workspace en utilisant la commande :</p>
+
+<pre><code>terraform workspace select dev</code></pre>
+
+<p>Une fois que vous êtes dans un workspace spécifique, vous pouvez exécuter les commandes Terraform normalement, telles que "terraform init", "terraform plan" et "terraform apply". Les ressources que vous créez ou modifiez dans ce workspace seront spécifiques à cet environnement.</p>
+
+<p>Vous pouvez également lister tous les workspaces disponibles en utilisant la commande :</p>
+
+<pre><code>terraform workspace list</code></pre>
+
+<p>Cela affichera tous les workspaces existants, y compris celui dans lequel vous vous trouvez actuellement.</p>
+
+<h2>Utilisation de workspaces</h2>
+<p>Les workspaces sont utiles pour gérer les différents environnements, mais ils peuvent également être utilisés pour gérer les branches Git ou les versions de votre code Terraform. Par exemple, vous pouvez créer un workspace pour chaque branche Git que vous utilisez, ce qui vous permet de travailler sur différentes fonctionnalités ou correctifs en parallèle.</p>
+
+<p>Pour utiliser un workspace spécifique avec une branche Git, vous pouvez créer un fichier de configuration Terraform nommé ".terraformrc" à la racine de votre projet. Dans ce fichier, vous pouvez spécifier le workspace à utiliser pour chaque branche Git :</p>
+
+<pre><code>workspaces {
+  branch "feature-branch" {
+    name = "feature"
+  }
+  branch "bug-fix" {
+    name = "fix"
+  }
+}</code></pre>
+
+<p>Ainsi, lorsque vous basculez vers la branche "feature-branch", Terraform utilisera automatiquement le workspace "feature". Cela vous permet de travailler sur différentes fonctionnalités ou correctifs sans avoir à basculer manuellement entre les workspaces.</p>
+
+<h2>Stratégies de déploiement multi-environnements</h2>
+<p>Lorsque vous gérez plusieurs environnements avec Terraform, il est important de mettre en place des stratégies de déploiement appropriées pour garantir la cohérence et la fiabilité de vos déploiements.</p>
+
+<p>Une stratégie courante consiste à utiliser des variables d'environnement pour configurer les différences entre les environnements. Par exemple, vous pouvez définir une variable d'environnement appelée "environment" avec les valeurs "dev", "staging" ou "prod". Ensuite, vous pouvez utiliser cette variable dans vos configurations Terraform pour déterminer les ressources à déployer ou les paramètres à utiliser.</p>
+
+<p>Voici un exemple de configuration Terraform utilisant une variable d'environnement pour déterminer le nombre d'instances EC2 à déployer :</p>
+
+<pre><code>variable "environment" {
+  description = "The environment to deploy to"
+}
+
+resource "aws_instance" "example" {
+  count = var.environment == "prod" ? 2 : 1
+  instance_type = "t2.micro"
+}</code></pre>
+
+<p>Dans cet exemple, si la variable d'environnement "environment" est définie sur "prod", deux instances EC2 seront déployées. Sinon, une seule instance sera déployée.</p>
+
+<p>En utilisant des variables d'environnement de cette manière, vous pouvez facilement déployer vos configurations Terraform dans différents environnements en modifiant simplement les valeurs des variables d'environnement.</p>
+
+<p>Il est également recommandé d'utiliser des workspaces distincts pour chaque environnement, comme expliqué précédemment. Cela permet de garder les états Terraform séparés et d'éviter les conflits entre les environnements.</p>
+
+<p>En résumé, la gestion des environnements avec Terraform peut être réalisée en utilisant des workspaces, des variables d'environnement et des stratégies de déploiement appropriées. Ces techniques vous permettent de gérer efficacement vos différents environnements et de garantir la cohérence de vos déploiements.</p>
+
+<h2>Références supplémentaires et recommandations</h2>
+<p>Pour en savoir plus sur la gestion des environnements avec Terraform, vous pouvez consulter les ressources suivantes :</p>
+
+<ul>
+  <li><a href="https://www.terraform.io/docs/state/workspaces.html" target="_blank">Documentation officielle de Terraform sur les workspaces</a></li>
+  <li><a href="https://www.terraform.io/docs/configuration/variables.html" target="_blank">Documentation officielle de Terraform sur les variables d'environnement</a></li>
+  <li><a href="https://www.terraform.io/docs/state/index.html" target="_blank">Documentation officielle de Terraform sur la gestion des états</a></li>
+</ul>
+
+<p>En suivant les bonnes pratiques et en utilisant les fonctionnalités avancées de Terraform, vous serez en mesure de gérer efficacement vos environnements et de garantir des déploiements fiables et cohérents.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

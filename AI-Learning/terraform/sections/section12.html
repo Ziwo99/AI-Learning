@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12: Gestion des tests et de la qualité</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<p>Dans cette section, nous aborderons les différentes pratiques et outils pour assurer la qualité de votre code Terraform et effectuer des tests approfondis. Il est essentiel de tester et de valider votre infrastructure avant de la déployer en production afin de minimiser les erreurs et les problèmes potentiels.</p>
+
+<h2>Utilisation des tests unitaires</h2>
+
+<p>Les tests unitaires sont une pratique courante dans le développement logiciel, et ils peuvent également être appliqués à l'infrastructure en tant que code. Les tests unitaires vous permettent de vérifier le comportement attendu de vos ressources Terraform.</p>
+
+<p>Voici un exemple de test unitaire pour vérifier la création d'une ressource AWS S3 :</p>
+
+<pre><code>resource "aws_s3_bucket" "example" {
+  bucket = "example-bucket"
+}
+
+resource "aws_s3_bucket" "example2" {
+  bucket = "example-bucket2"
+}
+
+# Test unitaire
+data "aws_s3_bucket" "example" {
+  bucket = aws_s3_bucket.example.id
+}
+
+data "aws_s3_bucket" "example2" {
+  bucket = aws_s3_bucket.example2.id
+}
+
+# Vérification des résultats
+assert(data.aws_s3_bucket.example.bucket == "example-bucket")
+assert(data.aws_s3_bucket.example2.bucket == "example-bucket2")
+</code></pre>
+
+<p>Dans cet exemple, nous créons deux ressources AWS S3 et utilisons ensuite des tests unitaires pour vérifier que les valeurs des attributs sont correctes.</p>
+
+<h2>Intégration de tests de validation</h2>
+
+<p>En plus des tests unitaires, il est également important d'effectuer des tests de validation pour vérifier que votre infrastructure Terraform fonctionne correctement dans son ensemble. Les tests de validation peuvent inclure des tests de déploiement, des tests de performance, des tests de sécurité, etc.</p>
+
+<p>Voici un exemple de test de validation pour vérifier le déploiement d'une infrastructure AWS :</p>
+
+<pre><code>provider "aws" {
+  region = "us-west-2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c71c99"
+  instance_type = "t2.micro"
+}
+
+# Test de validation
+assert(aws_instance.example.state == "running")
+assert(aws_instance.example.public_ip != null)
+</code></pre>
+
+<p>Dans cet exemple, nous déployons une instance AWS EC2 et utilisons des tests de validation pour vérifier que l'instance est en cours d'exécution et qu'elle a une adresse IP publique.</p>
+
+<h2>Utilisation des outils de linting et de formatage</h2>
+
+<p>Les outils de linting et de formatage sont des outils qui vous aident à maintenir un code Terraform cohérent et de haute qualité. Ils vérifient votre code par rapport à des règles prédéfinies et vous aident à détecter les erreurs de syntaxe, les problèmes de style et les mauvaises pratiques.</p>
+
+<p>Voici un exemple d'utilisation de l'outil de linting Terraform :</p>
+
+<pre><code>$ terraform fmt
+
+# Résultat
+Terraform has made formatting changes to your configuration files.
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la commande "terraform fmt" pour formater automatiquement notre code Terraform selon les règles de formatage prédéfinies.</p>
+
+<p>Il existe également d'autres outils de linting et de formatage populaires tels que "terraform validate" et "terraform-docs" qui peuvent être utilisés pour améliorer la qualité de votre code Terraform.</p>
+
+<p>En conclusion, la gestion des tests et de la qualité est essentielle pour garantir la fiabilité et la stabilité de votre infrastructure Terraform. Les tests unitaires, les tests de validation et les outils de linting et de formatage sont des pratiques recommandées pour assurer la qualité de votre code Terraform. En les utilisant de manière appropriée, vous pouvez minimiser les erreurs et les problèmes potentiels lors du déploiement de votre infrastructure.</p>
+
+<p>Continuez à explorer les bonnes pratiques et les astuces pour optimiser les performances dans la prochaine section.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Terraform Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Gestion de la sécurité</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/terraform/terraform.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des politiques de sécurité</h2>
+<p>Les politiques de sécurité sont un élément essentiel de la gestion de la sécurité dans Terraform. Elles permettent de définir des règles et des contrôles pour garantir la conformité et la sécurité des ressources déployées.</p>
+<p>Les politiques de sécurité peuvent être utilisées pour restreindre les actions autorisées, définir des autorisations granulaires et appliquer des contrôles de sécurité spécifiques. Elles sont définies dans des fichiers de politique au format JSON et peuvent être appliquées à l'aide de la commande "terraform validate".</p>
+<p>Voici un exemple de fichier de politique de sécurité Terraform :</p>
+<pre><code>{
+  "version": "2012-10-17",
+  "statement": [
+    {
+      "effect": "deny",
+      "action": [
+        "aws:ec2:TerminateInstances"
+      ],
+      "resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    }
+  ]
+}
+</code></pre>
+<p>Dans cet exemple, la politique de sécurité interdit la terminaison d'instances EC2. Elle spécifie l'action "aws:ec2:TerminateInstances" et la ressource "arn:aws:ec2:*:*:instance/*". Toute tentative de terminaison d'instance sera refusée.</p>
+
+<h2>Gestion des secrets et des données sensibles</h2>
+<p>La gestion des secrets et des données sensibles est un aspect crucial de la sécurité dans Terraform. Il est important de protéger les informations sensibles, telles que les clés d'API, les mots de passe et les certificats, afin d'éviter toute compromission.</p>
+<p>Terraform propose plusieurs mécanismes pour gérer les secrets et les données sensibles :</p>
+<ul>
+  <li><strong>Variables d'environnement :</strong> Les variables d'environnement permettent de stocker des informations sensibles en dehors des fichiers de configuration Terraform. Elles peuvent être référencées dans les fichiers de configuration à l'aide de la syntaxe "${var.VARIABLE}".</li>
+  <li><strong>Vault :</strong> Vault est un outil open-source de gestion des secrets développé par HashiCorp. Il permet de stocker et de sécuriser les secrets, et offre une intégration transparente avec Terraform.</li>
+  <li><strong>Backend de stockage sécurisé :</strong> Terraform prend en charge différents backends de stockage sécurisé, tels que Amazon S3 avec chiffrement côté serveur, pour stocker les fichiers de configuration Terraform de manière sécurisée.</li>
+</ul>
+<p>Il est recommandé d'utiliser ces mécanismes pour protéger les secrets et les données sensibles dans vos déploiements Terraform.</p>
+
+<h2>Mise en place de contrôles de sécurité</h2>
+<p>La mise en place de contrôles de sécurité est essentielle pour garantir la conformité et la sécurité des infrastructures Terraform. Voici quelques bonnes pratiques pour mettre en place des contrôles de sécurité efficaces :</p>
+<ul>
+  <li><strong>Évaluation des risques :</strong> Identifiez les risques potentiels liés à vos ressources Terraform et évaluez leur impact sur la sécurité. Cela vous permettra de définir les contrôles de sécurité appropriés.</li>
+  <li><strong>Principe du moindre privilège :</strong> Accordez les autorisations les plus restrictives possibles aux utilisateurs et aux ressources. Limitez l'accès aux ressources sensibles et utilisez des rôles IAM avec des autorisations granulaires.</li>
+  <li><strong>Surveillance continue :</strong> Mettez en place des mécanismes de surveillance pour détecter les activités suspectes et les violations de sécurité. Utilisez des outils de surveillance tels que Amazon CloudWatch pour suivre les métriques et les journaux de vos ressources Terraform.</li>
+  <li><strong>Mises à jour régulières :</strong> Assurez-vous de maintenir vos ressources Terraform à jour en appliquant les correctifs de sécurité et les mises à jour recommandées par les fournisseurs.</li>
+</ul>
+<p>En suivant ces bonnes pratiques, vous pourrez mettre en place des contrôles de sécurité solides pour vos déploiements Terraform.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/terraform/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/terraform/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
