@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Utilisation de bibliothèques et modules externes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux bibliothèques et modules externes</h2>
+<p>Les bibliothèques et modules externes sont des composants logiciels développés par d'autres programmeurs et mis à disposition de la communauté Lua. Ils permettent d'étendre les fonctionnalités de base de Lua en ajoutant de nouvelles fonctionnalités et en facilitant certaines tâches courantes.</p>
+
+<p>Pour utiliser une bibliothèque ou un module externe, vous devez d'abord l'installer sur votre système. Cela peut être fait en téléchargeant les fichiers correspondants depuis le site web du développeur ou en utilisant un gestionnaire de paquets spécifique à votre système d'exploitation.</p>
+
+<h2>Utilisation de bibliothèques populaires en Lua</h2>
+<p>Il existe de nombreuses bibliothèques populaires disponibles pour Lua, qui couvrent un large éventail de domaines. Voici quelques-unes des bibliothèques les plus utilisées :</p>
+
+<p><strong>1. LuaSocket :</strong> Cette bibliothèque permet la communication réseau en fournissant des fonctionnalités pour les sockets TCP et UDP, ainsi que pour les protocoles HTTP, FTP et SMTP.</p>
+
+<pre><code>local socket = require("socket")
+
+-- Création d'un socket TCP
+local tcp = socket.tcp()
+
+-- Connexion à un serveur distant
+tcp:connect("www.example.com", 80)
+
+-- Envoi de données au serveur
+tcp:send("GET / HTTP/1.1\r\nHost: www.example.com\r\n\r\n")
+
+-- Réception de la réponse du serveur
+local response = tcp:receive()
+
+-- Fermeture du socket
+tcp:close()</code></pre>
+
+<p><strong>2. LuaSQL :</strong> Cette bibliothèque permet d'accéder à des bases de données relationnelles à partir de Lua. Elle prend en charge plusieurs moteurs de bases de données populaires tels que MySQL, PostgreSQL et SQLite.</p>
+
+<pre><code>local luasql = require("luasql.mysql")
+
+-- Connexion à une base de données MySQL
+local env = assert(luasql.mysql())
+
+local con = assert(env:connect("database", "username", "password", "hostname"))
+
+-- Exécution d'une requête SQL
+local cur = assert(con:execute("SELECT * FROM users"))
+
+-- Récupération des résultats
+local row = cur:fetch({}, "a")
+
+while row do
+    print(row.name)
+    row = cur:fetch(row, "a")
+end
+
+-- Fermeture de la connexion
+cur:close()
+con:close()
+env:close()</code></pre>
+
+<p><strong>3. LuaFileSystem :</strong> Cette bibliothèque fournit des fonctionnalités pour manipuler les fichiers et les répertoires. Elle permet de créer, supprimer, renommer et parcourir des fichiers et des répertoires.</p>
+
+<pre><code>local lfs = require("lfs")
+
+-- Parcours des fichiers d'un répertoire
+for file in lfs.dir("/path/to/directory") do
+    if file ~= "." and file ~= ".." then
+        print(file)
+    end
+end
+
+-- Création d'un répertoire
+lfs.mkdir("/path/to/new/directory")
+
+-- Suppression d'un fichier
+os.remove("/path/to/file.txt")</code></pre>
+
+<h2>Création et utilisation de modules personnalisés</h2>
+<p>En plus d'utiliser des bibliothèques externes, vous pouvez également créer vos propres modules personnalisés en Lua. Un module est un fichier contenant du code Lua qui peut être chargé et utilisé dans d'autres programmes.</p>
+
+<p>Voici un exemple de création et d'utilisation d'un module personnalisé :</p>
+
+<p><strong>1. Création du module :</strong></p>
+<p>Créez un fichier nommé "mymodule.lua" et ajoutez le code suivant :</p>
+
+<pre><code>local mymodule = {}
+
+function mymodule.sayHello()
+    print("Hello from mymodule!")
+end
+
+return mymodule</code></pre>
+
+<p><strong>2. Utilisation du module :</strong></p>
+<p>Dans votre programme principal, vous pouvez utiliser le module créé en utilisant la fonction require :</p>
+
+<pre><code>local mymodule = require("mymodule")
+
+mymodule.sayHello()</code></pre>
+
+<p>Cela affichera "Hello from mymodule!" lorsque vous exécutez votre programme.</p>
+
+<p>Il est également possible de créer des modules plus complexes avec des fonctions, des variables et des tables, en fonction de vos besoins spécifiques.</p>
+
+<p>Avec ces bibliothèques populaires et la possibilité de créer vos propres modules personnalisés, vous pouvez étendre les fonctionnalités de Lua pour répondre à vos besoins spécifiques et faciliter le développement de vos projets.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Structures de données en Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Tableaux</h2>
+<p>Les tableaux sont des structures de données qui permettent de stocker une collection ordonnée d'éléments. En Lua, les tableaux sont implémentés comme des listes indexées, où chaque élément est associé à un indice numérique.</p>
+<p>Voici un exemple de création et d'accès à un tableau en Lua :</p>
+<pre><code>monTableau = {10, 20, 30, 40, 50}
+print(monTableau[1]) -- Affiche 10
+print(monTableau[3]) -- Affiche 30
+</code></pre>
+
+<h2>Chaînes de caractères</h2>
+<p>Les chaînes de caractères sont utilisées pour représenter du texte en Lua. Elles peuvent être définies en utilisant des guillemets simples ou doubles.</p>
+<p>Voici un exemple de création et de manipulation de chaînes de caractères en Lua :</p>
+<pre><code>maChaine = "Bonjour Lua"
+print(maChaine) -- Affiche Bonjour Lua
+
+-- Concaténation de chaînes de caractères
+nom = "John"
+prenom = "Doe"
+message = "Bonjour, je m'appelle " .. prenom .. " " .. nom
+print(message) -- Affiche Bonjour, je m'appelle John Doe
+</code></pre>
+
+<h2>Listes chaînées</h2>
+<p>Les listes chaînées sont des structures de données dynamiques qui permettent de stocker une collection d'éléments liés les uns aux autres. En Lua, les listes chaînées peuvent être implémentées en utilisant des tables et des pointeurs.</p>
+<p>Voici un exemple de création et de manipulation d'une liste chaînée en Lua :</p>
+<pre><code>element1 = {valeur = 10, suivant = nil}
+element2 = {valeur = 20, suivant = nil}
+element3 = {valeur = 30, suivant = nil}
+
+-- Liaison des éléments de la liste chaînée
+element1.suivant = element2
+element2.suivant = element3
+
+-- Parcours de la liste chaînée
+elementCourant = element1
+while elementCourant do
+    print(elementCourant.valeur)
+    elementCourant = elementCourant.suivant
+end
+</code></pre>
+
+<h2>Dictionnaires</h2>
+<p>Les dictionnaires, également appelés tables associatives, sont des structures de données qui permettent de stocker des paires clé-valeur. En Lua, les dictionnaires sont implémentés en utilisant des tables.</p>
+<p>Voici un exemple de création et d'accès à un dictionnaire en Lua :</p>
+<pre><code>monDictionnaire = {nom = "John", age = 30, ville = "Paris"}
+print(monDictionnaire["nom"]) -- Affiche John
+print(monDictionnaire["age"]) -- Affiche 30
+</code></pre>
+
+<h2>Manipulation de données</h2>
+<p>En Lua, il existe plusieurs fonctions et opérations permettant de manipuler les données dans les structures de données. Par exemple, pour ajouter un élément à un tableau, on peut utiliser la fonction table.insert().</p>
+<p>Voici un exemple de manipulation de données dans un tableau en Lua :</p>
+<pre><code>monTableau = {10, 20, 30}
+table.insert(monTableau, 40) -- Ajoute l'élément 40 à la fin du tableau
+print(monTableau[4]) -- Affiche 40
+
+table.remove(monTableau, 2) -- Supprime l'élément à l'indice 2 du tableau
+print(monTableau[2]) -- Affiche 30
+</code></pre>
+
+<p>Ces exemples illustrent les principales structures de données disponibles en Lua. Il est important de comprendre comment utiliser ces structures de données pour manipuler et organiser les données dans vos programmes Lua.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

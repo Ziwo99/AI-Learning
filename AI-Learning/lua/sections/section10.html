@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Projets pratiques en Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un jeu simple en Lua</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un jeu simple en Lua. Nous allons utiliser les concepts que nous avons appris dans les sections précédentes pour développer un jeu de devinette.</p>
+
+<p>Voici le code pour notre jeu de devinette :</p>
+
+<pre><code>math.randomseed(os.time())
+
+function devinette()
+    local nombreAleatoire = math.random(1, 100)
+    local devine = false
+
+    print("Bienvenue dans le jeu de devinette !")
+    print("Je pense à un nombre entre 1 et 100. Devine quel est ce nombre.")
+
+    while not devine do
+        local proposition = tonumber(io.read())
+
+        if proposition == nombreAleatoire then
+            print("Bravo ! Tu as deviné le bon nombre.")
+            devine = true
+        elseif proposition < nombreAleatoire then
+            print("Non, c'est plus grand. Essaye encore.")
+        else
+            print("Non, c'est plus petit. Essaye encore.")
+        end
+    end
+end
+
+devinette()
+</code></pre>
+
+<p>Explication du code :</p>
+
+<p>Tout d'abord, nous utilisons la fonction math.randomseed(os.time()) pour initialiser la génération de nombres aléatoires avec une graine basée sur l'heure actuelle. Cela garantit que chaque fois que nous exécutons le jeu, nous obtenons un nombre aléatoire différent.</p>
+
+<p>Ensuite, nous définissons une fonction devinette() qui contient la logique du jeu. À l'intérieur de cette fonction, nous déclarons une variable nombreAleatoire qui contient le nombre aléatoire que le joueur doit deviner. Nous initialisons également une variable devine à false pour indiquer que le joueur n'a pas encore deviné le nombre.</p>
+
+<p>Nous utilisons ensuite une boucle while pour permettre au joueur de faire des propositions jusqu'à ce qu'il devine le bon nombre. À chaque itération de la boucle, nous demandons au joueur de saisir une proposition à l'aide de la fonction io.read(). Nous convertissons ensuite cette proposition en un nombre en utilisant la fonction tonumber().</p>
+
+<p>Ensuite, nous comparons la proposition du joueur avec le nombre aléatoire. Si la proposition est égale au nombre aléatoire, nous affichons un message de félicitations et nous mettons la variable devine à true pour sortir de la boucle. Sinon, nous affichons un message indiquant au joueur si la proposition est trop grande ou trop petite par rapport au nombre aléatoire.</p>
+
+<p>Enfin, nous appelons la fonction devinette() pour démarrer le jeu.</p>
+
+<h2>Développement d'une application web en Lua</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer une application web en Lua en utilisant le framework web OpenResty.</p>
+
+<p>Voici un exemple de code pour une application web simple :</p>
+
+<pre><code>local resty_http = require "resty.http"
+
+local httpc = resty_http.new()
+local res, err = httpc:request_uri("https://api.example.com/data", {
+    method = "GET",
+    headers = {
+        ["Content-Type"] = "application/json",
+    },
+})
+
+if not res then
+    ngx.say("Erreur lors de la requête : ", err)
+    return
+end
+
+ngx.say("Statut de la réponse : ", res.status)
+ngx.say("Corps de la réponse : ", res.body)
+</code></pre>
+
+<p>Explication du code :</p>
+
+<p>Tout d'abord, nous importons le module resty.http en utilisant la ligne de code local resty_http = require "resty.http". Ce module nous permet d'effectuer des requêtes HTTP depuis notre application web.</p>
+
+<p>Ensuite, nous créons une instance de la classe resty.http en utilisant la ligne de code local httpc = resty_http.new(). Cette instance sera utilisée pour effectuer la requête HTTP.</p>
+
+<p>Nous utilisons ensuite la méthode request_uri() de l'instance httpc pour effectuer une requête GET vers l'URL "https://api.example.com/data". Nous passons également un tableau de paramètres supplémentaires à cette méthode, tels que les en-têtes de la requête.</p>
+
+<p>Si la requête est réussie, nous affichons le statut de la réponse et le corps de la réponse en utilisant la fonction ngx.say(). Si la requête échoue, nous affichons un message d'erreur.</p>
+
+<p>Ce code est un exemple simple pour illustrer comment effectuer une requête HTTP dans une application web en Lua. Dans une application web réelle, vous auriez probablement besoin de gérer les routes, les modèles de vue, les sessions, etc. OpenResty fournit des fonctionnalités supplémentaires pour faciliter le développement d'applications web en Lua.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

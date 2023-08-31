@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Débogage et optimisation en Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Techniques de débogage</h2>
+<p>Le débogage est une étape essentielle dans le processus de développement de logiciels. Il permet d'identifier et de corriger les erreurs dans le code Lua. Voici quelques techniques de débogage couramment utilisées :</p>
+
+<p><strong>1. Affichage de messages de débogage :</strong> L'une des techniques les plus simples consiste à insérer des messages de débogage dans le code pour afficher des informations sur l'état du programme à des points clés. Par exemple :</p>
+
+<pre><code>function calculateSum(a, b)
+    print("Calculating the sum...")
+    local sum = a + b
+    print("The sum is: " .. sum)
+    return sum
+end
+</code></pre>
+
+<p>En utilisant la fonction <code>print</code>, nous pouvons afficher des messages à la console pour vérifier les valeurs des variables et suivre l'exécution du programme.</p>
+
+<p><strong>2. Utilisation de l'assertion :</strong> L'assertion est une autre technique de débogage qui permet de vérifier si une condition est vraie. Si la condition est fausse, une erreur est générée avec un message explicatif. Par exemple :</p>
+
+<pre><code>function divide(a, b)
+    assert(b ~= 0, "Division by zero is not allowed.")
+    return a / b
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons l'assertion pour vérifier si le diviseur <code>b</code> est différent de zéro avant de procéder à la division. Si la condition est fausse, une erreur sera générée avec le message "Division by zero is not allowed."</p>
+
+<p><strong>3. Utilisation d'un débogueur :</strong> Lua dispose de plusieurs débogueurs qui permettent de suivre l'exécution du programme, d'arrêter l'exécution à des points d'arrêt et d'inspecter les variables en cours d'exécution. Certains débogueurs populaires pour Lua sont ZeroBrane Studio, Decoda et MobDebug.</p>
+
+<h2>Profilage et optimisation du code Lua</h2>
+<p>L'optimisation du code Lua est un processus qui vise à améliorer les performances du programme en réduisant le temps d'exécution et la consommation de mémoire. Voici quelques techniques couramment utilisées pour optimiser le code Lua :</p>
+
+<p><strong>1. Identification des goulots d'étranglement :</strong> Pour optimiser le code Lua, il est important d'identifier les parties du code qui consomment le plus de ressources et qui ralentissent l'exécution du programme. Cela peut être fait en utilisant des outils de profilage qui mesurent le temps d'exécution de chaque fonction et identifient les fonctions les plus coûteuses.</p>
+
+<p><strong>2. Utilisation de structures de données efficaces :</strong> Le choix des structures de données appropriées peut avoir un impact significatif sur les performances du programme. Par exemple, l'utilisation d'une table Lua pour stocker des données peut être plus efficace que l'utilisation d'une liste chaînée.</p>
+
+<p><strong>3. Éviter les opérations coûteuses à l'intérieur des boucles :</strong> Les opérations coûteuses, telles que les appels de fonction ou les accès à des fichiers, doivent être évitées autant que possible à l'intérieur des boucles, car elles peuvent ralentir considérablement l'exécution du programme. Il est préférable de déplacer ces opérations en dehors des boucles ou de les optimiser.</p>
+
+<p><strong>4. Utilisation de la compilation juste-à-temps (JIT) :</strong> LuaJIT est une implémentation de Lua qui utilise la compilation juste-à-temps pour améliorer les performances du code Lua. En utilisant LuaJIT, le code Lua peut être compilé en code machine natif, ce qui peut entraîner des gains de performance significatifs.</p>
+
+<p><strong>5. Utilisation de caches :</strong> L'utilisation de caches peut également contribuer à l'optimisation du code Lua. Par exemple, si une fonction effectue des calculs coûteux, les résultats peuvent être mis en cache pour éviter de les recalculer à chaque appel.</p>
+
+<p>En utilisant ces techniques d'optimisation, il est possible d'améliorer les performances du code Lua et de réduire les temps d'exécution.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

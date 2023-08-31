@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Programmation orientée objet en Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la programmation orientée objet</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de structurer et d'organiser le code en utilisant des objets. Un objet est une instance d'une classe, qui est un modèle ou un plan pour créer des objets. La POO offre de nombreux avantages, tels que la réutilisabilité du code, la modularité, l'encapsulation des données et la facilité de maintenance.</p>
+
+<h2>Classes et objets en Lua</h2>
+<p>En Lua, la POO est mise en œuvre à l'aide de tables. Une table peut être utilisée pour représenter une classe, et ses clés peuvent être utilisées pour représenter les attributs et les méthodes de la classe. Pour créer un objet, nous créons simplement une instance de la table représentant la classe.</p>
+
+<p>Voici un exemple de création d'une classe en Lua :</p>
+
+<pre><code>Person = {name = "", age = 0}
+
+function Person:new(name, age)
+    local obj = {}
+    setmetatable(obj, self)
+    self.__index = self
+    obj.name = name
+    obj.age = age
+    return obj
+end
+
+function Person:sayHello()
+    print("Hello, my name is " .. self.name .. " and I am " .. self.age .. " years old.")
+end
+
+local person = Person:new("John", 25)
+person:sayHello()
+</code></pre>
+
+<p>Dans cet exemple, nous créons une classe Person avec deux attributs (name et age) et une méthode (sayHello). La méthode new est utilisée pour créer une nouvelle instance de la classe, et la méthode sayHello est utilisée pour afficher un message de salutation.</p>
+
+<h2>Héritage et polymorphisme</h2>
+<p>En Lua, l'héritage peut être réalisé en utilisant le mécanisme de métatable. Une métatable est une table spéciale qui définit le comportement d'une autre table. En utilisant les métatables, nous pouvons définir une relation d'héritage entre deux classes.</p>
+
+<p>Voici un exemple d'héritage en Lua :</p>
+
+<pre><code>Animal = {name = ""}
+
+function Animal:new(name)
+    local obj = {}
+    setmetatable(obj, self)
+    self.__index = self
+    obj.name = name
+    return obj
+end
+
+function Animal:sayHello()
+    print("Hello, my name is " .. self.name)
+end
+
+Cat = Animal:new()
+
+function Cat:sayHello()
+    print("Meow, my name is " .. self.name)
+end
+
+local animal = Animal:new("Animal")
+local cat = Cat:new("Whiskers")
+
+animal:sayHello()
+cat:sayHello()
+</code></pre>
+
+<p>Dans cet exemple, nous avons une classe Animal avec une méthode sayHello, et une classe Cat qui hérite de la classe Animal. La classe Cat redéfinit la méthode sayHello pour afficher un message spécifique aux chats. Lorsque nous créons une instance de la classe Cat, elle hérite automatiquement des attributs et des méthodes de la classe Animal.</p>
+
+<h2>Encapsulation et modularité</h2>
+<p>En Lua, l'encapsulation peut être réalisée en utilisant des fonctions locales et des tables locales. Les fonctions locales ne sont accessibles que dans le contexte où elles sont définies, et les tables locales ne sont accessibles que dans le fichier où elles sont définies.</p>
+
+<p>Voici un exemple d'encapsulation en Lua :</p>
+
+<pre><code>local Counter = {}
+
+function Counter:new()
+    local count = 0
+
+    local function increment()
+        count = count + 1
+    end
+
+    local function decrement()
+        count = count - 1
+    end
+
+    local function getCount()
+        return count
+    end
+
+    return {
+        increment = increment,
+        decrement = decrement,
+        getCount = getCount
+    }
+end
+
+local counter = Counter:new()
+counter:increment()
+counter:increment()
+counter:decrement()
+print(counter.getCount())
+</code></pre>
+
+<p>Dans cet exemple, nous créons une classe Counter qui utilise des fonctions locales pour encapsuler la variable count. Les fonctions increment, decrement et getCount sont les seules façons d'interagir avec la variable count. Cela permet de protéger la variable count et d'éviter les accès non autorisés.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Manipulation de fichiers et entrées/sorties</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Lecture et écriture de fichiers</h2>
+<p>La lecture et l'écriture de fichiers sont des opérations courantes en programmation Lua. Lua offre des fonctions intégrées pour faciliter ces opérations.</p>
+
+<p>Pour lire un fichier, vous pouvez utiliser la fonction <code>io.open()</code> en spécifiant le chemin d'accès au fichier et le mode d'ouverture. Par exemple, pour ouvrir un fichier en mode lecture, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>local file = io.open("chemin/vers/le/fichier.txt", "r")
+if file then
+    local content = file:read("*a")
+    print(content)
+    file:close()
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>io.open()</code> pour ouvrir le fichier en mode lecture ("r"). Ensuite, nous utilisons la méthode <code>read()</code> de l'objet fichier pour lire tout le contenu du fichier en une seule fois. Enfin, nous fermons le fichier en utilisant la méthode <code>close()</code>.</p>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser la fonction <code>io.open()</code> en spécifiant le chemin d'accès au fichier et le mode d'ouverture. Par exemple, pour ouvrir un fichier en mode écriture, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>local file = io.open("chemin/vers/le/fichier.txt", "w")
+if file then
+    file:write("Contenu à écrire dans le fichier")
+    file:close()
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>io.open()</code> pour ouvrir le fichier en mode écriture ("w"). Ensuite, nous utilisons la méthode <code>write()</code> de l'objet fichier pour écrire le contenu spécifié dans le fichier. Enfin, nous fermons le fichier en utilisant la méthode <code>close()</code>.</p>
+
+<h2>Manipulation de répertoires</h2>
+<p>La manipulation de répertoires est également une opération courante en programmation Lua. Lua offre des fonctions intégrées pour faciliter ces opérations.</p>
+
+<p>Pour créer un répertoire, vous pouvez utiliser la fonction <code>os.execute()</code> en spécifiant la commande système appropriée. Par exemple, pour créer un répertoire nommé "nouveau_repertoire", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>os.execute("mkdir nouveau_repertoire")
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>os.execute()</code> pour exécuter la commande système "mkdir" qui crée un nouveau répertoire.</p>
+
+<p>Pour supprimer un répertoire, vous pouvez utiliser la fonction <code>os.execute()</code> en spécifiant la commande système appropriée. Par exemple, pour supprimer un répertoire nommé "ancien_repertoire", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>os.execute("rmdir ancien_repertoire")
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>os.execute()</code> pour exécuter la commande système "rmdir" qui supprime un répertoire.</p>
+
+<h2>Gestion des erreurs et exceptions</h2>
+<p>La gestion des erreurs et exceptions est une partie importante de la programmation Lua. Lua offre des mécanismes intégrés pour gérer les erreurs et exceptions.</p>
+
+<p>Pour gérer les erreurs, vous pouvez utiliser la fonction <code>pcall()</code> en spécifiant la fonction à appeler et ses arguments. Par exemple, pour appeler une fonction <code>myFunction()</code> avec des arguments et gérer les erreurs éventuelles, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>local success, result = pcall(myFunction, arg1, arg2)
+if success then
+    print("La fonction s'est exécutée avec succès")
+else
+    print("Une erreur s'est produite : " .. result)
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction <code>pcall()</code> pour appeler la fonction <code>myFunction()</code> avec les arguments spécifiés. La variable <code>success</code> indique si l'appel de la fonction s'est terminé avec succès ou non, et la variable <code>result</code> contient le résultat de l'appel de la fonction ou l'erreur qui s'est produite.</p>
+
+<p>Pour gérer les exceptions, vous pouvez utiliser la fonction <code>xpcall()</code> en spécifiant la fonction à appeler, une fonction de gestion des erreurs et ses arguments. Par exemple, pour appeler une fonction <code>myFunction()</code> avec des arguments, gérer les erreurs éventuelles et afficher une trace d'appel en cas d'erreur, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>local function errorHandler(err)
+    print("Une erreur s'est produite : " .. err)
+    print(debug.traceback())
+end
+
+local success, result = xpcall(myFunction, errorHandler, arg1, arg2)
+if success then
+    print("La fonction s'est exécutée avec succès")
+end
+</code></pre>
+
+<p>Dans cet exemple, nous définissons une fonction <code>errorHandler()</code> qui est appelée en cas d'erreur. Cette fonction affiche l'erreur et une trace d'appel en utilisant la fonction <code>debug.traceback()</code>. Ensuite, nous utilisons la fonction <code>xpcall()</code> pour appeler la fonction <code>myFunction()</code> avec les arguments spécifiés et gérer les erreurs en utilisant la fonction <code>errorHandler()</code>.</p>
+
+<p>Ces exemples vous donnent une idée de la façon dont vous pouvez manipuler les fichiers et les entrées/sorties en Lua. N'hésitez pas à explorer davantage la documentation officielle de Lua pour en savoir plus sur ces sujets.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

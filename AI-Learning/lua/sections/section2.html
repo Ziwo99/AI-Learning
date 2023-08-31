@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases de Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Syntaxe de base</h2>
+<p>La syntaxe de base de Lua est simple et facile à comprendre. Voici un exemple de code Lua :</p>
+<pre><code>print("Bonjour, Lua!")
+</code></pre>
+<p>Dans cet exemple, la fonction <code>print</code> est utilisée pour afficher le texte "Bonjour, Lua!" à l'écran.</p>
+
+<h2>Variables et types de données</h2>
+<p>En Lua, les variables sont utilisées pour stocker des valeurs. Voici comment déclarer et utiliser une variable en Lua :</p>
+<pre><code>local age = 25
+local nom = "Jean"
+</code></pre>
+<p>Dans cet exemple, la variable <code>age</code> est déclarée et initialisée avec la valeur 25, et la variable <code>nom</code> est déclarée et initialisée avec la valeur "Jean".</p>
+
+<p>Il existe plusieurs types de données en Lua, tels que les nombres, les chaînes de caractères, les booléens, les tableaux, etc. Voici quelques exemples :</p>
+<pre><code>local age = 25
+local nom = "Jean"
+local estVrai = true
+local tableau = {1, 2, 3, 4, 5}
+</code></pre>
+<p>Dans cet exemple, la variable <code>age</code> est de type nombre, la variable <code>nom</code> est de type chaîne de caractères, la variable <code>estVrai</code> est de type booléen, et la variable <code>tableau</code> est de type tableau.</p>
+
+<h2>Opérations arithmétiques et logiques</h2>
+<p>En Lua, vous pouvez effectuer des opérations arithmétiques telles que l'addition, la soustraction, la multiplication, la division, etc. Voici quelques exemples :</p>
+<pre><code>local a = 10
+local b = 5
+
+local addition = a + b
+local soustraction = a - b
+local multiplication = a * b
+local division = a / b
+</code></pre>
+<p>Dans cet exemple, la variable <code>addition</code> contient le résultat de l'addition de <code>a</code> et <code>b</code>, la variable <code>soustraction</code> contient le résultat de la soustraction de <code>a</code> et <code>b</code>, etc.</p>
+
+<p>En plus des opérations arithmétiques, Lua prend également en charge les opérations logiques telles que l'ET logique (<code>and</code>), le OU logique (<code>or</code>), et la négation logique (<code>not</code>). Voici quelques exemples :</p>
+<pre><code>local a = true
+local b = false
+
+local etLogique = a and b
+local ouLogique = a or b
+local negationLogique = not a
+</code></pre>
+<p>Dans cet exemple, la variable <code>etLogique</code> contient le résultat de l'opération ET logique entre <code>a</code> et <code>b</code>, la variable <code>ouLogique</code> contient le résultat de l'opération OU logique entre <code>a</code> et <code>b</code>, etc.</p>
+
+<h2>Structures de contrôle (boucles et conditions)</h2>
+<p>En Lua, vous pouvez utiliser des structures de contrôle telles que les boucles et les conditions pour contrôler le flux d'exécution de votre programme. Voici quelques exemples :</p>
+
+<p>Utilisation de la boucle <code>while</code> :</p>
+<pre><code>local i = 0
+
+while i &lt; 10 do
+    print("Iteration " .. i)
+    i = i + 1
+end
+</code></pre>
+<p>Dans cet exemple, la boucle <code>while</code> s'exécute tant que la condition <code>i &lt; 10</code> est vraie. À chaque itération, le texte "Iteration" suivi de la valeur de <code>i</code> est affiché à l'écran, puis la valeur de <code>i</code> est incrémentée de 1.</p>
+
+<p>Utilisation de la boucle <code>for</code> :</p>
+<pre><code>for i = 1, 10 do
+    print("Iteration " .. i)
+end
+</code></pre>
+<p>Dans cet exemple, la boucle <code>for</code> s'exécute pour chaque valeur de <code>i</code> allant de 1 à 10. À chaque itération, le texte "Iteration" suivi de la valeur de <code>i</code> est affiché à l'écran.</p>
+
+<p>Utilisation de la structure de condition <code>if</code> :</p>
+<pre><code>local age = 25
+
+if age &gt;= 18 then
+    print("Vous êtes majeur.")
+else
+    print("Vous êtes mineur.")
+end
+</code></pre>
+<p>Dans cet exemple, si la valeur de <code>age</code> est supérieure ou égale à 18, le texte "Vous êtes majeur." est affiché à l'écran. Sinon, le texte "Vous êtes mineur." est affiché à l'écran.</p>
+
+<h2>Fonctions et procédures</h2>
+<p>En Lua, vous pouvez définir vos propres fonctions et procédures pour regrouper du code et le réutiliser. Voici comment définir une fonction en Lua :</p>
+<pre><code>function direBonjour(nom)
+    print("Bonjour, " .. nom .. "!")
+end
+
+direBonjour("Jean")
+</code></pre>
+<p>Dans cet exemple, la fonction <code>direBonjour</code> est définie avec un paramètre <code>nom</code>. À l'intérieur de la fonction, le texte "Bonjour," suivi de la valeur du paramètre <code>nom</code>, est affiché à l'écran. Ensuite, la fonction est appelée avec l'argument "Jean".</p>
+
+<p>Les procédures sont similaires aux fonctions, mais elles ne renvoient pas de valeur. Voici un exemple de procédure en Lua :</p>
+<pre><code>function afficherMessage()
+    print("Ceci est un message.")
+end
+
+afficherMessage()
+</code></pre>
+<p>Dans cet exemple, la procédure <code>afficherMessage</code> est définie. À l'intérieur de la procédure, le texte "Ceci est un message." est affiché à l'écran. Ensuite, la procédure est appelée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

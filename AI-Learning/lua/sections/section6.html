@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Fonctionnalités avancées de Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Manipulation de chaînes de caractères avancée</h2>
+<p>La manipulation de chaînes de caractères est une fonctionnalité essentielle en Lua. Lua offre de nombreuses fonctions intégrées pour manipuler et modifier des chaînes de caractères.</p>
+<p>Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+<pre><code>string.len(s)</code></pre>
+<p>Cette fonction renvoie la longueur de la chaîne de caractères <code>s</code>.</p>
+<pre><code>string.upper(s)</code></pre>
+<p>Cette fonction renvoie une copie de la chaîne de caractères <code>s</code> en majuscules.</p>
+<pre><code>string.lower(s)</code></pre>
+<p>Cette fonction renvoie une copie de la chaîne de caractères <code>s</code> en minuscules.</p>
+<pre><code>string.sub(s, start, end)</code></pre>
+<p>Cette fonction renvoie une sous-chaîne de la chaîne de caractères <code>s</code> en commençant à l'index <code>start</code> et se terminant à l'index <code>end</code>.</p>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code>local s = "Hello, World!"
+print(string.len(s)) -- Affiche 13
+print(string.upper(s)) -- Affiche "HELLO, WORLD!"
+print(string.lower(s)) -- Affiche "hello, world!"
+print(string.sub(s, 1, 5)) -- Affiche "Hello"</code></pre>
+
+<h2>Expressions régulières</h2>
+<p>Les expressions régulières sont des motifs de recherche utilisés pour trouver des correspondances dans les chaînes de caractères. Lua prend en charge les expressions régulières à l'aide de la bibliothèque intégrée <code>string</code>.</p>
+<p>Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+<pre><code>string.match(s, pattern)</code></pre>
+<p>Cette fonction recherche la première occurrence du motif <code>pattern</code> dans la chaîne de caractères <code>s</code> et renvoie la correspondance.</p>
+<pre><code>string.gmatch(s, pattern)</code></pre>
+<p>Cette fonction itère sur toutes les occurrences du motif <code>pattern</code> dans la chaîne de caractères <code>s</code> et renvoie un itérateur.</p>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code>local s = "Hello, World!"
+local pattern = "%a+"
+local match = string.match(s, pattern)
+print(match) -- Affiche "Hello"
+for word in string.gmatch(s, pattern) do
+    print(word)
+end
+-- Affiche :
+-- Hello
+-- World</code></pre>
+
+<h2>Manipulation de dates et heures</h2>
+<p>La manipulation de dates et heures est une fonctionnalité couramment utilisée dans les applications Lua. Lua offre des fonctions intégrées pour manipuler les dates et heures.</p>
+<p>Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+<pre><code>os.time([table])</code></pre>
+<p>Cette fonction renvoie le nombre de secondes écoulées depuis le 1er janvier 1970.</p>
+<pre><code>os.date([format [, time]])</code></pre>
+<p>Cette fonction renvoie une chaîne de caractères représentant la date et l'heure spécifiées.</p>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code>local time = os.time()
+print(time) -- Affiche le nombre de secondes écoulées depuis le 1er janvier 1970
+local date = os.date("%Y-%m-%d %H:%M:%S", time)
+print(date) -- Affiche la date et l'heure actuelles au format "AAAA-MM-JJ HH:MM:SS"</code></pre>
+
+<h2>Gestion des threads et concurrence</h2>
+<p>La gestion des threads et de la concurrence est une fonctionnalité avancée en Lua. Lua offre des fonctions intégrées pour créer et gérer des threads.</p>
+<p>Voici quelques-unes des fonctions les plus couramment utilisées :</p>
+<pre><code>coroutine.create(f)</code></pre>
+<p>Cette fonction crée un nouveau thread exécutant la fonction <code>f</code>.</p>
+<pre><code>coroutine.resume(co [, val1, ...])</code></pre>
+<p>Cette fonction reprend l'exécution du thread <code>co</code> en lui passant les valeurs <code>val1, ...</code>.</p>
+<pre><code>coroutine.yield([val1, ...])</code></pre>
+<p>Cette fonction suspend l'exécution du thread actuel et renvoie les valeurs <code>val1, ...</code>.</p>
+<p>Voici un exemple d'utilisation de ces fonctions :</p>
+<pre><code>local function printNumbers()
+    for i = 1, 5 do
+        print(i)
+        coroutine.yield()
+    end
+end
+
+local co = coroutine.create(printNumbers)
+coroutine.resume(co) -- Affiche 1
+coroutine.resume(co) -- Affiche 2
+coroutine.resume(co) -- Affiche 3
+coroutine.resume(co) -- Affiche 4
+coroutine.resume(co) -- Affiche 5</code></pre>
+
+<p>Ce contenu détaillé sur les fonctionnalités avancées de Lua vous permettra de maîtriser les manipulations de chaînes de caractères, les expressions régulières, la manipulation de dates et heures, ainsi que la gestion des threads et de la concurrence en Lua.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

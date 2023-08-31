@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Lua Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Bonnes pratiques en Lua</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/lua/lua.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Conventions de codage</h2>
+<p>Les conventions de codage consistent à adopter un style de programmation cohérent et lisible pour faciliter la compréhension et la maintenance du code. Voici quelques bonnes pratiques à suivre lors de la programmation en Lua :</p>
+
+<ul>
+  <li>Utilisez des noms de variables significatifs et des commentaires clairs pour expliquer le but et le fonctionnement du code.</li>
+  <li>Indentation : Utilisez une indentation de 2 ou 4 espaces pour améliorer la lisibilité du code.</li>
+  <li>Utilisez des espaces autour des opérateurs pour améliorer la lisibilité du code.</li>
+  <li>Évitez les lignes de code trop longues. Si une ligne dépasse généralement 80 caractères, vous pouvez la diviser en plusieurs lignes pour améliorer la lisibilité.</li>
+  <li>Utilisez des noms de variables en minuscules avec des mots séparés par des underscores (snake_case).</li>
+  <li>Utilisez des noms de fonctions en minuscules avec des mots séparés par des underscores (snake_case).</li>
+  <li>Utilisez des noms de classes en majuscules avec des mots séparés par des majuscules (PascalCase).</li>
+</ul>
+
+<p>Voici un exemple de code respectant les conventions de codage en Lua :</p>
+
+<pre><code>function calculate_average(numbers)
+    local sum = 0
+    for i, number in ipairs(numbers) do
+        sum = sum + number
+    end
+    return sum / #numbers
+end
+</code></pre>
+
+<h2>Documentation et commentaires</h2>
+<p>La documentation et les commentaires sont essentiels pour expliquer le fonctionnement du code et faciliter la compréhension pour les autres développeurs. Voici quelques bonnes pratiques pour documenter votre code en Lua :</p>
+
+<ul>
+  <li>Utilisez des commentaires pour expliquer le but et le fonctionnement du code, ainsi que pour clarifier les parties complexes.</li>
+  <li>Documentez les paramètres d'une fonction, leur type et leur rôle.</li>
+  <li>Documentez la valeur de retour d'une fonction et les exceptions éventuelles.</li>
+  <li>Utilisez des annotations spécifiques pour générer automatiquement la documentation, comme LDoc.</li>
+</ul>
+
+<p>Voici un exemple de code avec des commentaires explicatifs en Lua :</p>
+
+<pre><code>-- Cette fonction calcule la somme des éléments d'une liste de nombres.
+-- @param numbers Une liste de nombres.
+-- @return La somme des éléments de la liste.
+function calculate_sum(numbers)
+    local sum = 0
+    for i, number in ipairs(numbers) do
+        sum = sum + number
+    end
+    return sum
+end
+</code></pre>
+
+<h2>Tests unitaires et intégration continue</h2>
+<p>Les tests unitaires et l'intégration continue sont des pratiques essentielles pour garantir la qualité du code et détecter les erreurs rapidement. Voici quelques bonnes pratiques pour les tests unitaires et l'intégration continue en Lua :</p>
+
+<ul>
+  <li>Utilisez un framework de tests unitaires, comme LuaUnit, pour écrire et exécuter vos tests unitaires.</li>
+  <li>Écrivez des tests pour chaque fonction ou méthode afin de vérifier son bon fonctionnement.</li>
+  <li>Automatisez l'exécution des tests unitaires à chaque modification du code en utilisant un outil d'intégration continue, comme Travis CI ou Jenkins.</li>
+  <li>Utilisez des assertions pour vérifier les résultats attendus dans vos tests unitaires.</li>
+</ul>
+
+<p>Voici un exemple de code avec des tests unitaires en Lua :</p>
+
+<pre><code>local luaunit = require('luaunit')
+
+function test_calculate_sum()
+    local numbers = {1, 2, 3, 4, 5}
+    luaunit.assertEquals(calculate_sum(numbers), 15)
+end
+
+-- Exécute les tests unitaires
+luaunit.run()
+</code></pre>
+
+<p>Avec ces bonnes pratiques en Lua, vous serez en mesure de développer du code propre, lisible et de qualité professionnelle. N'oubliez pas de les appliquer tout au long de votre processus de développement pour faciliter la maintenance et la collaboration avec d'autres développeurs.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/lua/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/lua/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
