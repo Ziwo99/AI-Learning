@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Bonnes pratiques de développement en C</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c/c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Conventions de codage</h2>
+<p>Les conventions de codage sont des règles et des normes qui définissent la manière dont le code source doit être écrit pour garantir une lisibilité et une maintenabilité optimales. Voici quelques bonnes pratiques de codage en C :</p>
+
+<ul>
+  <li>Utilisez une indentation cohérente pour améliorer la lisibilité du code. Il est recommandé d'utiliser des tabulations ou des espaces pour indenter le code.</li>
+  <li>Choisissez des noms de variables, de fonctions et de structures descriptifs et significatifs. Évitez les noms trop courts ou trop génériques.</li>
+  <li>Utilisez des commentaires pour expliquer le code et rendre le code plus compréhensible pour les autres développeurs.</li>
+  <li>Évitez d'utiliser des constantes magiques (valeurs littérales directement dans le code). Utilisez plutôt des constantes symboliques pour améliorer la maintenabilité.</li>
+  <li>Limitez la longueur des lignes de code à environ 80 caractères pour une meilleure lisibilité.</li>
+  <li>Utilisez des parenthèses pour clarifier l'ordre d'évaluation des opérations dans les expressions complexes.</li>
+</ul>
+
+<h2>Documentation et commentaires</h2>
+<p>La documentation et les commentaires sont essentiels pour faciliter la compréhension et la maintenance du code. Voici quelques bonnes pratiques de documentation et de commentaires en C :</p>
+
+<ul>
+  <li>Utilisez des commentaires pour expliquer le but et le fonctionnement des fonctions, des structures de données et des parties complexes du code.</li>
+  <li>Documentez les paramètres d'entrée, les valeurs de retour et les effets secondaires des fonctions.</li>
+  <li>Utilisez des commentaires pour indiquer les parties du code qui nécessitent une attention particulière ou qui doivent être améliorées.</li>
+  <li>Utilisez des conventions de documentation standardisées, telles que Doxygen, pour générer automatiquement la documentation à partir du code source.</li>
+</ul>
+
+<h2>Gestion des erreurs et exceptions</h2>
+<p>La gestion des erreurs et des exceptions est cruciale pour garantir la fiabilité et la robustesse d'une application en C. Voici quelques bonnes pratiques pour gérer les erreurs et les exceptions :</p>
+
+<ul>
+  <li>Utilisez des codes de retour pour indiquer les erreurs et les exceptions dans les fonctions. Définissez une convention pour les codes de retour afin de faciliter leur interprétation.</li>
+  <li>Utilisez des structures de gestion des erreurs pour encapsuler les informations sur les erreurs et faciliter leur traitement.</li>
+  <li>Utilisez des mécanismes de gestion des exceptions, tels que les blocs try-catch, pour gérer les situations exceptionnelles.</li>
+  <li>Loggez les erreurs et les exceptions de manière appropriée pour faciliter le débogage et la résolution des problèmes.</li>
+</ul>
+
+<h2>Sécurité et protection contre les vulnérabilités</h2>
+<p>La sécurité est un aspect critique du développement en C. Voici quelques bonnes pratiques pour renforcer la sécurité et protéger contre les vulnérabilités :</p>
+
+<ul>
+  <li>Validez et filtrez toutes les entrées utilisateur pour prévenir les attaques par injection de code.</li>
+  <li>Utilisez des fonctions sécurisées pour les opérations sensibles, telles que la manipulation de chaînes de caractères et les opérations de mémoire.</li>
+  <li>Évitez les dépassements de tampon en utilisant des fonctions de manipulation de chaînes de caractères sûres, telles que strncpy() au lieu de strcpy().</li>
+  <li>Utilisez des mécanismes de chiffrement pour protéger les données sensibles, telles que les mots de passe et les informations personnelles.</li>
+  <li>Mettez à jour régulièrement les bibliothèques et les dépendances pour bénéficier des dernières corrections de sécurité.</li>
+</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

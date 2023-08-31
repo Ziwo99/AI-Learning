@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Projets pratiques en C</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c/c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un jeu en console</h2>
+<p>Dans cette sous-section, vous apprendrez à créer un jeu en console en utilisant le langage C. Vous explorerez les concepts de base de la programmation de jeux, tels que la gestion des entrées utilisateur, la logique du jeu et l'affichage des résultats.</p>
+<p>Voici un exemple de code pour créer un jeu simple en console :</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int nombreMystere = 42;
+    int nombreUtilisateur;
+
+    printf("Devinez le nombre mystere !\n");
+
+    do {
+        printf("Entrez un nombre : ");
+        scanf("%d", &nombreUtilisateur);
+
+        if (nombreUtilisateur &lt; nombreMystere) {
+            printf("C'est plus !\n");
+        } else if (nombreUtilisateur &gt; nombreMystere) {
+            printf("C'est moins !\n");
+        } else {
+            printf("Bravo, vous avez trouve le nombre mystere !\n");
+        }
+    } while (nombreUtilisateur != nombreMystere);
+
+    return 0;
+}
+</code></pre>
+
+<h2>Développement d'une application de gestion de données</h2>
+<p>Dans cette sous-section, vous apprendrez à développer une application de gestion de données en utilisant le langage C. Vous découvrirez comment créer, lire, mettre à jour et supprimer des données à partir d'un fichier.</p>
+<p>Voici un exemple de code pour créer une application de gestion de contacts :</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+typedef struct {
+    char nom[50];
+    char email[50];
+    char telephone[15];
+} Contact;
+
+int main() {
+    FILE *fichier;
+    Contact contact;
+    char choix;
+
+    fichier = fopen("contacts.txt", "a+");
+
+    if (fichier == NULL) {
+        printf("Erreur lors de l'ouverture du fichier.\n");
+        return 1;
+    }
+
+    do {
+        printf("Entrez le nom du contact : ");
+        scanf("%s", contact.nom);
+
+        printf("Entrez l'email du contact : ");
+        scanf("%s", contact.email);
+
+        printf("Entrez le telephone du contact : ");
+        scanf("%s", contact.telephone);
+
+        fwrite(&contact, sizeof(Contact), 1, fichier);
+
+        printf("Voulez-vous ajouter un autre contact ? (o/n) ");
+        scanf(" %c", &choix);
+    } while (choix == 'o' || choix == 'O');
+
+    fclose(fichier);
+
+    return 0;
+}
+</code></pre>
+
+<h2>Implémentation d'un algorithme complexe</h2>
+<p>Dans cette sous-section, vous apprendrez à implémenter un algorithme complexe en utilisant le langage C. Vous explorerez des algorithmes avancés tels que le tri, la recherche et les algorithmes de graphes.</p>
+<p>Voici un exemple de code pour implémenter l'algorithme de tri rapide (quicksort) :</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = (low - 1);
+
+    for (int j = low; j &lt;= high - 1; j++) {
+        if (arr[j] &lt; pivot) {
+            i++;
+            swap(&arr[i], &arr[j]);
+        }
+    }
+
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+
+void quicksort(int arr[], int low, int high) {
+    if (low &lt; high) {
+        int pi = partition(arr, low, high);
+
+        quicksort(arr, low, pi - 1);
+        quicksort(arr, pi + 1, high);
+    }
+}
+
+int main() {
+    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    quicksort(arr, 0, n - 1);
+
+    printf("Le tableau trie : \n");
+    for (int i = 0; i &lt; n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Assurez-vous de comprendre chaque ligne de code et de l'adapter à vos besoins spécifiques lorsque vous créez vos propres projets pratiques en C.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

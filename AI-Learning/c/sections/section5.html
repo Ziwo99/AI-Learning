@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Programmation avancée en C</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c/c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Préprocesseur et macros</h2>
+<p>Le préprocesseur en C est une étape de compilation qui se déroule avant la compilation proprement dite. Il permet de manipuler le code source avant qu'il ne soit compilé. Une des fonctionnalités les plus utilisées du préprocesseur est l'utilisation de macros.</p>
+
+<p>Une macro est une séquence de code qui est définie à l'aide de la directive #define. Elle peut être utilisée pour définir des constantes, des fonctions inline ou pour effectuer des opérations de substitution de texte.</p>
+
+<p>Voici un exemple de définition d'une macro pour calculer le carré d'un nombre :</p>
+
+<pre><code>#define SQUARE(x) ((x) * (x))
+
+int main() {
+    int a = 5;
+    int b = SQUARE(a);
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, la macro SQUARE est définie pour calculer le carré d'un nombre. Lorsque la macro est utilisée dans le code, elle est remplacée par l'expression ((x) * (x)). Ainsi, l'appel SQUARE(a) sera remplacé par ((a) * (a)), ce qui équivaut à 5 * 5.</p>
+
+<h2>Gestion de la mémoire et optimisation</h2>
+<p>La gestion de la mémoire est un aspect important de la programmation en C. En C, la mémoire est gérée manuellement, ce qui signifie que le programmeur est responsable de l'allocation et de la libération de la mémoire.</p>
+
+<p>La gestion de la mémoire peut être réalisée à l'aide des fonctions malloc, calloc, realloc et free. La fonction malloc permet d'allouer de la mémoire dynamiquement, la fonction calloc permet d'allouer de la mémoire et de l'initialiser à zéro, la fonction realloc permet de redimensionner une zone de mémoire déjà allouée et la fonction free permet de libérer la mémoire allouée.</p>
+
+<p>Il est important de libérer la mémoire allouée une fois qu'elle n'est plus nécessaire, afin d'éviter les fuites de mémoire. Une fuite de mémoire se produit lorsque de la mémoire allouée n'est pas libérée, ce qui peut entraîner une utilisation excessive de la mémoire et des problèmes de performance.</p>
+
+<p>En ce qui concerne l'optimisation, il est important d'optimiser le code pour améliorer les performances et réduire la consommation de mémoire. Cela peut être réalisé en utilisant des algorithmes efficaces, en évitant les opérations coûteuses et en optimisant l'utilisation de la mémoire.</p>
+
+<h2>Manipulation de chaînes de caractères</h2>
+<p>La manipulation de chaînes de caractères est une tâche courante en programmation. En C, les chaînes de caractères sont représentées comme des tableaux de caractères terminés par un caractère nul ('\0').</p>
+
+<p>La bibliothèque standard C fournit plusieurs fonctions pour manipuler les chaînes de caractères, telles que strlen, strcpy, strcat, etc.</p>
+
+<p>Voici un exemple d'utilisation de la fonction strlen pour calculer la longueur d'une chaîne de caractères :</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    char str[] = "Hello, world!";
+    int length = strlen(str);
+    printf("Length of the string: %d\n", length);
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, la fonction strlen est utilisée pour calculer la longueur de la chaîne de caractères str. La longueur est ensuite affichée à l'aide de la fonction printf.</p>
+
+<h2>Fonctions avancées (pointeurs de fonctions, fonctions récursives)</h2>
+<p>En C, il est possible de manipuler des pointeurs vers des fonctions. Un pointeur de fonction est une variable qui peut contenir l'adresse d'une fonction. Cela permet d'appeler une fonction à travers un pointeur de fonction.</p>
+
+<p>Voici un exemple d'utilisation d'un pointeur de fonction :</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int main() {
+    int (*operation)(int, int);
+    operation = add;
+    int result = operation(5, 3);
+    printf("Result: %d\n", result);
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, un pointeur de fonction nommé operation est déclaré. Il est ensuite assigné à la fonction add. Ensuite, le pointeur de fonction est utilisé pour appeler la fonction add avec les arguments 5 et 3. Le résultat est ensuite affiché à l'aide de la fonction printf.</p>
+
+<p>Les fonctions récursives sont des fonctions qui s'appellent elles-mêmes. Elles sont souvent utilisées pour résoudre des problèmes qui peuvent être décomposés en sous-problèmes plus petits.</p>
+
+<p>Voici un exemple d'une fonction récursive pour calculer le factoriel d'un nombre :</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int result = factorial(5);
+    printf("Factorial: %d\n", result);
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, la fonction factorial est définie de manière récursive. Si l'argument n est égal à zéro, la fonction renvoie 1. Sinon, la fonction renvoie n multiplié par le factoriel de n-1. Ainsi, factorial(5) renvoie 5 * 4 * 3 * 2 * 1, ce qui équivaut à 120.</p>
+
+<h2>Programmation orientée objet en C</h2>
+<p>La programmation orientée objet (POO) est un paradigme de programmation qui permet de modéliser le monde réel en utilisant des objets qui interagissent les uns avec les autres. Bien que le langage C ne soit pas nativement orienté objet, il est possible de mettre en œuvre des concepts de la POO en utilisant des structures et des fonctions.</p>
+
+<p>Voici un exemple de mise en œuvre d'une classe en utilisant des structures en C :</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+typedef struct {
+    int x;
+    int y;
+} Point;
+
+void printPoint(Point p) {
+    printf("Point: (%d, %d)\n", p.x, p.y);
+}
+
+int main() {
+    Point p;
+    p.x = 5;
+    p.y = 3;
+    printPoint(p);
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, une structure Point est définie pour représenter un point dans un plan cartésien. La fonction printPoint est définie pour afficher les coordonnées d'un point. Dans la fonction main, un objet de type Point est créé et initialisé avec les valeurs 5 et 3. Ensuite, la fonction printPoint est appelée pour afficher les coordonnées du point.</p>
+
+<p>Bien que cette approche ne soit pas aussi puissante que la programmation orientée objet dans d'autres langages, elle permet de mettre en œuvre certains concepts de base de la POO en C.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

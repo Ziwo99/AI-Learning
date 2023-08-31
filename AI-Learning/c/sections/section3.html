@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Structures de données avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c/c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structures et unions</h2>
+<p>Les structures et les unions sont des types de données avancés qui permettent de regrouper plusieurs variables de types différents en une seule entité. Une structure est une collection de variables appelées membres, tandis qu'une union est une collection de variables partageant le même espace mémoire.</p>
+<p>Les structures sont déclarées à l'aide du mot-clé <code>struct</code> suivi du nom de la structure et de la liste des membres entre des accolades. Par exemple :</p>
+<pre><code>struct Person {
+    char name[50];
+    int age;
+    float height;
+};
+</code></pre>
+<p>Une fois déclarée, une structure peut être utilisée pour créer des variables :</p>
+<pre><code>struct Person person1;
+person1.age = 25;
+strcpy(person1.name, "John Doe");
+person1.height = 1.75;
+</code></pre>
+<p>Les unions fonctionnent de manière similaire, mais les membres partagent le même espace mémoire. Cela signifie que seule une des variables membres peut être utilisée à la fois. Les unions sont déclarées de la même manière que les structures, mais avec le mot-clé <code>union</code>.</p>
+
+<h2>Enumérations</h2>
+<p>Les énumérations sont des types de données qui permettent de définir un ensemble de valeurs constantes nommées. Chaque valeur de l'énumération est appelée une énumération.</p>
+<p>Une énumération est déclarée à l'aide du mot-clé <code>enum</code> suivi du nom de l'énumération et de la liste des énumérations entre des accolades. Par exemple :</p>
+<pre><code>enum DaysOfWeek {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+};
+</code></pre>
+<p>Une fois déclarée, une énumération peut être utilisée pour créer des variables :</p>
+<pre><code>enum DaysOfWeek today = Tuesday;
+</code></pre>
+<p>Les énumérations sont souvent utilisées pour représenter des ensembles de valeurs prédéfinies, comme les jours de la semaine ou les mois de l'année.</p>
+
+<h2>Allocation dynamique de mémoire</h2>
+<p>L'allocation dynamique de mémoire permet de réserver de l'espace mémoire pendant l'exécution d'un programme. Cela permet de créer des structures de données flexibles dont la taille peut varier en fonction des besoins.</p>
+<p>En langage C, l'allocation dynamique de mémoire se fait à l'aide des fonctions <code>malloc</code>, <code>calloc</code> et <code>realloc</code>. La fonction <code>malloc</code> alloue un bloc de mémoire de la taille spécifiée, la fonction <code>calloc</code> alloue un bloc de mémoire initialisé à zéro, et la fonction <code>realloc</code> permet de redimensionner un bloc de mémoire déjà alloué.</p>
+<p>Voici un exemple d'allocation dynamique de mémoire :</p>
+<pre><code>int* numbers = (int*)malloc(5 * sizeof(int));
+if (numbers != NULL) {
+    numbers[0] = 1;
+    numbers[1] = 2;
+    numbers[2] = 3;
+    numbers[3] = 4;
+    numbers[4] = 5;
+}
+</code></pre>
+<p>Il est important de libérer la mémoire allouée dynamiquement à l'aide de la fonction <code>free</code> une fois que vous avez terminé de l'utiliser :</p>
+<pre><code>free(numbers);
+</code></pre>
+
+<h2>Listes chaînées</h2>
+<p>Les listes chaînées sont des structures de données linéaires qui permettent de stocker et d'accéder à des données de manière séquentielle. Chaque élément de la liste, appelé nœud, contient une valeur et un pointeur vers le nœud suivant.</p>
+<p>En langage C, les listes chaînées sont généralement implémentées à l'aide de structures. Voici un exemple de structure de nœud pour une liste chaînée d'entiers :</p>
+<pre><code>struct Node {
+    int data;
+    struct Node* next;
+};
+</code></pre>
+<p>Pour créer une liste chaînée, il faut déclarer un pointeur vers le premier nœud de la liste :</p>
+<pre><code>struct Node* head = NULL;
+</code></pre>
+<p>Ensuite, on peut ajouter des nœuds à la liste en allouant dynamiquement de la mémoire :</p>
+<pre><code>struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+newNode->data = 1;
+newNode->next = NULL;
+head = newNode;
+</code></pre>
+<p>Pour parcourir une liste chaînée, on peut utiliser une boucle while en utilisant le pointeur <code>next</code> pour passer d'un nœud à l'autre.</p>
+
+<h2>Arbres et graphes</h2>
+<p>Les arbres et les graphes sont des structures de données non linéaires qui permettent de représenter des relations hiérarchiques entre des éléments.</p>
+<p>Un arbre est une structure de données composée de nœuds, où chaque nœud peut avoir un nombre quelconque de nœuds enfants. Le premier nœud de l'arbre est appelé la racine.</p>
+<p>Un graphe est une structure de données composée de nœuds, où chaque nœud peut être relié à un ou plusieurs autres nœuds par des arêtes. Les graphes peuvent être orientés (les arêtes ont une direction) ou non orientés.</p>
+<p>En langage C, les arbres et les graphes sont généralement implémentés à l'aide de structures et de pointeurs. Les opérations sur les arbres et les graphes peuvent être complexes et nécessitent souvent l'utilisation de récursion.</p>
+<p>Voici un exemple de structure de nœud pour un arbre binaire :</p>
+<pre><code>struct TreeNode {
+    int data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};
+</code></pre>
+<p>Les opérations sur les arbres et les graphes incluent l'insertion, la suppression, la recherche, le parcours et bien d'autres.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - C Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Manipulation de fichiers</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/c/c.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Ouverture, lecture et écriture de fichiers</h2>
+<p>La manipulation de fichiers est une tâche courante en programmation C. Pour travailler avec des fichiers, vous devez d'abord les ouvrir en utilisant la fonction <code>fopen()</code>. Cette fonction prend deux paramètres : le nom du fichier et le mode d'ouverture.</p>
+
+<p>Voici les modes d'ouverture les plus couramment utilisés :</p>
+<ul>
+  <li><code>"r"</code> : ouvre un fichier en mode lecture. Le fichier doit exister.</li>
+  <li><code>"w"</code> : ouvre un fichier en mode écriture. Si le fichier existe, son contenu est supprimé. Sinon, un nouveau fichier est créé.</li>
+  <li><code>"a"</code> : ouvre un fichier en mode ajout. Si le fichier existe, les données sont ajoutées à la fin. Sinon, un nouveau fichier est créé.</li>
+</ul>
+
+<p>Voici un exemple d'ouverture d'un fichier en mode lecture :</p>
+<pre><code>FILE *file = fopen("exemple.txt", "r");
+if (file == NULL) {
+    printf("Impossible d'ouvrir le fichier.");
+    return 1;
+}
+</code></pre>
+
+<p>Une fois le fichier ouvert, vous pouvez lire son contenu en utilisant des fonctions telles que <code>fscanf()</code> ou <code>fgets()</code>. Voici un exemple de lecture d'une ligne à partir d'un fichier :</p>
+<pre><code>char ligne[100];
+if (fgets(ligne, 100, file) != NULL) {
+    printf("Contenu du fichier : %s", ligne);
+}
+</code></pre>
+
+<p>Pour écrire dans un fichier, vous pouvez utiliser des fonctions telles que <code>fprintf()</code> ou <code>fputs()</code>. Voici un exemple d'écriture dans un fichier :</p>
+<pre><code>fprintf(file, "Bonjour, monde !");
+</code></pre>
+
+<p>Une fois que vous avez terminé de travailler avec un fichier, vous devez le fermer en utilisant la fonction <code>fclose()</code>. Cela libère les ressources associées au fichier.</p>
+<pre><code>fclose(file);
+</code></pre>
+
+<h2>Manipulation de fichiers binaires</h2>
+<p>En plus de manipuler des fichiers texte, vous pouvez également manipuler des fichiers binaires en C. Les fichiers binaires contiennent des données brutes, telles que des images, des sons ou des vidéos.</p>
+
+<p>Pour lire ou écrire des fichiers binaires, vous pouvez utiliser les fonctions <code>fread()</code> et <code>fwrite()</code>. Voici un exemple de lecture d'un fichier binaire :</p>
+<pre><code>FILE *file = fopen("image.bin", "rb");
+if (file == NULL) {
+    printf("Impossible d'ouvrir le fichier.");
+    return 1;
+}
+
+unsigned char buffer[1024];
+size_t bytesRead = fread(buffer, sizeof(unsigned char), 1024, file);
+fclose(file);
+</code></pre>
+
+<p>La fonction <code>fread()</code> lit un certain nombre d'éléments de taille fixe à partir du fichier et les stocke dans un tampon. Dans cet exemple, nous lisons 1024 octets du fichier binaire "image.bin" dans le tampon "buffer". La taille de chaque élément est spécifiée avec l'opérateur <code>sizeof()</code>.</p>
+
+<p>Voici un exemple d'écriture dans un fichier binaire :</p>
+<pre><code>FILE *file = fopen("image.bin", "wb");
+if (file == NULL) {
+    printf("Impossible d'ouvrir le fichier.");
+    return 1;
+}
+
+unsigned char buffer[1024];
+// Remplir le tampon avec des données à écrire
+
+size_t bytesWritten = fwrite(buffer, sizeof(unsigned char), 1024, file);
+fclose(file);
+</code></pre>
+
+<h2>Gestion des erreurs et exceptions</h2>
+<p>Lors de la manipulation de fichiers, il est important de gérer les erreurs qui peuvent survenir. Par exemple, si vous essayez d'ouvrir un fichier qui n'existe pas, vous devez être en mesure de détecter cette erreur et de prendre les mesures appropriées.</p>
+
+<p>La fonction <code>fopen()</code> renvoie un pointeur NULL si elle échoue. Vous pouvez utiliser cette valeur de retour pour vérifier si l'ouverture du fichier a réussi ou non. Voici un exemple :</p>
+<pre><code>FILE *file = fopen("exemple.txt", "r");
+if (file == NULL) {
+    printf("Impossible d'ouvrir le fichier.");
+    return 1;
+}
+</code></pre>
+
+<p>De plus, vous pouvez utiliser la fonction <code>feof()</code> pour vérifier si la fin du fichier a été atteinte lors de la lecture. Voici un exemple :</p>
+<pre><code>while (!feof(file)) {
+    // Lire le contenu du fichier
+}
+</code></pre>
+
+<p>Enfin, n'oubliez pas de gérer les erreurs lors de l'écriture dans un fichier. Par exemple, si le disque est plein, l'écriture peut échouer. Vous pouvez vérifier si l'écriture a réussi en comparant le nombre d'éléments écrits avec le nombre d'éléments que vous avez essayé d'écrire.</p>
+<pre><code>size_t bytesWritten = fwrite(buffer, sizeof(unsigned char), 1024, file);
+if (bytesWritten != 1024) {
+    printf("Erreur lors de l'écriture dans le fichier.");
+    return 1;
+}
+</code></pre>
+
+<p>En résumé, la manipulation de fichiers en C nécessite d'ouvrir, lire, écrire et fermer des fichiers en utilisant les fonctions appropriées. Assurez-vous de gérer les erreurs qui peuvent survenir et de vérifier le succès des opérations de lecture et d'écriture.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/c/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/c/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
