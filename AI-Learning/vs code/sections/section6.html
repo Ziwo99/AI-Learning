@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - VS Code Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Gestion de versions avec VS Code</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vs%20code/vs%20code.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vs%20code/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vs%20code/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Git dans VS Code</h2>
+<p>Git est un système de contrôle de version largement utilisé dans l'industrie du développement logiciel. VS Code offre une intégration complète avec Git, ce qui facilite la gestion des versions de votre code.</p>
+
+<p>Pour commencer à utiliser Git dans VS Code, vous devez d'abord initialiser un référentiel Git dans votre projet. Pour ce faire, ouvrez le dossier de votre projet dans VS Code, puis ouvrez le terminal intégré en allant dans le menu "View" (Affichage) > "Terminal". Dans le terminal, exécutez la commande suivante :</p>
+
+<pre><code>git init</code></pre>
+
+<p>Cette commande créera un nouveau référentiel Git dans votre projet.</p>
+
+<p>Une fois que vous avez initialisé le référentiel Git, vous pouvez commencer à effectuer des opérations de base telles que l'ajout de fichiers, la création de commits et la gestion des branches.</p>
+
+<p>Pour ajouter un fichier à l'index Git, utilisez la commande suivante :</p>
+
+<pre><code>git add nom_du_fichier</code></pre>
+
+<p>Cette commande ajoutera le fichier spécifié à l'index Git, prêt à être inclus dans le prochain commit.</p>
+
+<p>Pour créer un commit, utilisez la commande suivante :</p>
+
+<pre><code>git commit -m "Message de commit"</code></pre>
+
+<p>Cette commande crée un nouveau commit avec les modifications actuelles de l'index Git et associe un message de commit à ce dernier.</p>
+
+<h2>Gestion des branches et des conflits</h2>
+<p>Les branches sont un aspect essentiel de Git qui permettent de travailler sur différentes versions de votre code en parallèle. VS Code facilite la gestion des branches et la résolution des conflits.</p>
+
+<p>Pour créer une nouvelle branche, utilisez la commande suivante :</p>
+
+<pre><code>git branch nom_de_la_branche</code></pre>
+
+<p>Cette commande crée une nouvelle branche avec le nom spécifié.</p>
+
+<p>Pour basculer vers une branche existante, utilisez la commande suivante :</p>
+
+<pre><code>git checkout nom_de_la_branche</code></pre>
+
+<p>Cette commande vous permet de passer à la branche spécifiée.</p>
+
+<p>Lorsque vous travaillez sur différentes branches, il peut arriver que des conflits surviennent lors de la fusion de ces branches. VS Code vous permet de résoudre facilement ces conflits en affichant les différences entre les versions en conflit et en vous permettant de choisir les modifications à conserver.</p>
+
+<p>Pour résoudre un conflit, ouvrez le fichier en conflit dans VS Code. Les parties en conflit seront marquées et vous pourrez choisir les modifications à conserver en cliquant sur les boutons "Accept Current Change" (Accepter le changement actuel) ou "Accept Incoming Change" (Accepter le changement entrant) dans la barre de navigation supérieure.</p>
+
+<h2>Collaboration avec d'autres développeurs</h2>
+<p>VS Code facilite la collaboration avec d'autres développeurs en fournissant des fonctionnalités intégrées pour le partage de code et la communication.</p>
+
+<p>Une façon courante de collaborer sur un projet est d'utiliser des référentiels Git hébergés sur des plateformes telles que GitHub ou GitLab. VS Code vous permet de cloner ces référentiels directement depuis l'interface utilisateur.</p>
+
+<p>Pour cloner un référentiel Git, utilisez la commande suivante :</p>
+
+<pre><code>git clone url_du_referentiel</code></pre>
+
+<p>Cette commande créera une copie locale du référentiel Git sur votre machine.</p>
+
+<p>Une fois que vous avez cloné un référentiel, vous pouvez travailler sur le code localement et pousser vos modifications vers le référentiel distant en utilisant les commandes Git habituelles.</p>
+
+<p>VS Code offre également des extensions telles que Live Share qui permettent une collaboration en temps réel, où plusieurs développeurs peuvent travailler sur le même code simultanément.</p>
+
+<p>Pour utiliser Live Share, installez l'extension correspondante depuis le marché des extensions de VS Code. Une fois installée, vous pouvez inviter d'autres développeurs à rejoindre votre session de partage en cliquant sur l'icône Live Share dans la barre latérale de VS Code.</p>
+
+<p>En résumé, la gestion de versions avec VS Code est facilitée grâce à son intégration complète avec Git. Vous pouvez facilement créer des référentiels Git, effectuer des opérations de base telles que l'ajout de fichiers et la création de commits, gérer des branches et résoudre des conflits. De plus, VS Code offre des fonctionnalités pour collaborer avec d'autres développeurs, que ce soit en utilisant des référentiels Git hébergés ou des extensions telles que Live Share.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vs%20code/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vs%20code/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

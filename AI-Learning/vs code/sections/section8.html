@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - VS Code Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Optimisation des performances de VS Code</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vs%20code/vs%20code.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vs%20code/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vs%20code/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion de la mémoire et des ressources</h2>
+<p>La gestion efficace de la mémoire et des ressources est essentielle pour optimiser les performances de VS Code. Voici quelques bonnes pratiques à suivre :</p>
+
+<p><strong>1. Limiter le nombre d'extensions installées :</strong> Les extensions peuvent consommer des ressources supplémentaires, il est donc recommandé de n'installer que celles dont vous avez réellement besoin.</p>
+
+<p><strong>2. Fermer les fichiers inutilisés :</strong> Lorsque vous travaillez sur un projet, il est courant d'avoir plusieurs fichiers ouverts simultanément. Cependant, garder trop de fichiers ouverts peut entraîner une utilisation excessive de la mémoire. Pensez à fermer les fichiers que vous n'utilisez pas activement.</p>
+
+<p><strong>3. Utiliser la fonctionnalité "Workspace Trust" :</strong> La fonctionnalité "Workspace Trust" de VS Code permet de limiter l'exécution de code potentiellement dangereux provenant de fichiers non fiables. Activer cette fonctionnalité peut contribuer à améliorer la sécurité et les performances de l'éditeur.</p>
+
+<h2>Utilisation des fonctionnalités de performance</h2>
+<p>VS Code propose plusieurs fonctionnalités qui peuvent améliorer les performances de l'éditeur :</p>
+
+<p><strong>1. Utilisation de la recherche incrémentale :</strong> Lorsque vous effectuez une recherche dans un fichier, utilisez la recherche incrémentale en appuyant sur "Ctrl+F" pour rechercher du texte dans le fichier actif. Cette fonctionnalité est plus rapide que la recherche globale.</p>
+
+<p><strong>2. Désactivation de la mise en surbrillance des occurrences :</strong> La mise en surbrillance des occurrences peut ralentir les performances de VS Code, surtout lorsque vous travaillez sur de gros fichiers. Vous pouvez désactiver cette fonctionnalité en ajoutant la ligne suivante dans votre fichier de configuration :<br>
+<code>"editor.occurrencesHighlight": false</code></p>
+
+<p><strong>3. Utilisation de l'option "Large File Optimizations" :</strong> Lorsque vous travaillez sur des fichiers volumineux, VS Code peut activer automatiquement des optimisations spécifiques pour améliorer les performances. Vous pouvez également activer cette option manuellement en ajoutant la ligne suivante dans votre fichier de configuration :<br>
+<code>"files.largeFileOptimizations": true</code></p>
+
+<h2>Configuration des paramètres de performance</h2>
+<p>VS Code offre plusieurs paramètres de configuration qui peuvent être ajustés pour améliorer les performances :</p>
+
+<p><strong>1. Limiter la taille de la mémoire :</strong> Vous pouvez limiter la quantité de mémoire utilisée par VS Code en ajoutant la ligne suivante dans votre fichier de configuration :<br>
+<code>"javascript.memoryLimit": 4096</code><br>
+Cela limite la mémoire utilisée par VS Code à 4 Go.</p>
+
+<p><strong>2. Augmenter la taille du cache :</strong> Vous pouvez augmenter la taille du cache utilisé par VS Code en ajoutant la ligne suivante dans votre fichier de configuration :<br>
+<code>"files.watcherMaxMemory": 8192</code><br>
+Cela augmente la taille du cache à 8 Mo.</p>
+
+<p><strong>3. Désactiver les animations :</strong> Les animations peuvent ralentir les performances de VS Code, surtout sur des machines moins puissantes. Vous pouvez les désactiver en ajoutant la ligne suivante dans votre fichier de configuration :<br>
+<code>"workbench.enableExperiments": false</code></p>
+
+<p>En ajustant ces paramètres en fonction de vos besoins, vous pouvez optimiser les performances de VS Code pour votre environnement de développement spécifique.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vs%20code/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vs%20code/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

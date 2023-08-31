@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - VS Code Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Intégration de VS Code avec d'autres outils</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vs%20code/vs%20code.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vs%20code/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vs%20code/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Intégration avec les outils de build</h2>
+<p>VS Code offre une intégration transparente avec les outils de build populaires tels que Gulp, Grunt et Webpack. Ces outils permettent d'automatiser des tâches courantes telles que la compilation du code, la minification des fichiers, la génération de rapports de test, etc.</p>
+
+<p>Pour intégrer un outil de build dans VS Code, vous devez d'abord installer l'extension correspondante depuis le marché des extensions. Une fois l'extension installée, vous pouvez configurer les tâches de build dans le fichier <code>tasks.json</code> à la racine de votre projet.</p>
+
+<p>Par exemple, si vous utilisez Gulp comme outil de build, vous pouvez configurer une tâche de build pour exécuter la commande <code>gulp build</code> en utilisant le fichier <code>tasks.json</code> suivant :</p>
+
+<pre><code>{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "gulp build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}</code></pre>
+
+<p>Une fois la tâche de build configurée, vous pouvez l'exécuter en utilisant la commande <code>Tasks: Run Build Task</code> dans la palette de commandes de VS Code.</p>
+
+<h2>Intégration avec les outils de test</h2>
+<p>VS Code prend également en charge l'intégration avec les outils de test populaires tels que Mocha, Jest et Karma. Ces outils permettent d'exécuter des tests unitaires, des tests d'intégration et des tests de performance pour votre code.</p>
+
+<p>Pour intégrer un outil de test dans VS Code, vous devez d'abord installer l'extension correspondante depuis le marché des extensions. Une fois l'extension installée, vous pouvez configurer les tâches de test dans le fichier <code>tasks.json</code> à la racine de votre projet.</p>
+
+<p>Par exemple, si vous utilisez Mocha comme outil de test, vous pouvez configurer une tâche de test pour exécuter la commande <code>mocha</code> en utilisant le fichier <code>tasks.json</code> suivant :</p>
+
+<pre><code>{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "mocha",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}</code></pre>
+
+<p>Une fois la tâche de test configurée, vous pouvez l'exécuter en utilisant la commande <code>Tasks: Run Test Task</code> dans la palette de commandes de VS Code.</p>
+
+<h2>Intégration avec les outils de déploiement</h2>
+<p>VS Code peut également être intégré avec des outils de déploiement tels que Docker, Azure DevOps et AWS CodeDeploy. Ces outils permettent de déployer facilement votre application sur des serveurs distants ou dans le cloud.</p>
+
+<p>Pour intégrer un outil de déploiement dans VS Code, vous devez d'abord installer l'extension correspondante depuis le marché des extensions. Une fois l'extension installée, vous pouvez configurer les tâches de déploiement dans le fichier <code>tasks.json</code> à la racine de votre projet.</p>
+
+<p>Par exemple, si vous utilisez Docker comme outil de déploiement, vous pouvez configurer une tâche de déploiement pour exécuter la commande <code>docker-compose up</code> en utilisant le fichier <code>tasks.json</code> suivant :</p>
+
+<pre><code>{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Deploy",
+            "type": "shell",
+            "command": "docker-compose up",
+            "group": {
+                "kind": "deploy",
+                "isDefault": true
+            }
+        }
+    ]
+}</code></pre>
+
+<p>Une fois la tâche de déploiement configurée, vous pouvez l'exécuter en utilisant la commande <code>Tasks: Run Deploy Task</code> dans la palette de commandes de VS Code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vs%20code/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vs%20code/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
