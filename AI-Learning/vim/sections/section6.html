@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vim Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Les astuces et bonnes pratiques avec Vim</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vim/vim.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vim/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vim/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des buffers et des registres</h2>
+<p>Les buffers et les registres sont des fonctionnalités puissantes de Vim qui vous permettent de gérer efficacement vos fichiers et votre contenu. Voici comment les utiliser :</p>
+
+<h3>Buffers</h3>
+<p>Un buffer est une zone de mémoire dans laquelle Vim stocke le contenu d'un fichier. Lorsque vous ouvrez un fichier dans Vim, il est chargé dans un buffer. Vous pouvez ensuite naviguer entre les buffers pour travailler sur différents fichiers.</p>
+<p>Pour afficher la liste des buffers ouverts, utilisez la commande <code>:ls</code>. Vous verrez une liste des numéros de buffers et des noms de fichiers associés. Pour ouvrir un buffer spécifique, utilisez la commande <code>:b[numéro du buffer]</code>.</p>
+<p>Pour fermer un buffer, utilisez la commande <code>:bd[numéro du buffer]</code>. Si vous souhaitez fermer tous les buffers, utilisez la commande <code>:bufdo bd</code>.</p>
+
+<h3>Registres</h3>
+<p>Les registres sont des espaces de stockage temporaires dans lesquels vous pouvez copier, couper et coller du texte. Vim dispose de plusieurs registres, dont certains sont prédéfinis et d'autres peuvent être définis par l'utilisateur.</p>
+<p>Pour copier du texte dans un registre, utilisez la commande <code>"[nom du registre]y</code>. Par exemple, pour copier une ligne dans le registre a, utilisez la commande <code>"ayy</code>.</p>
+<p>Pour coller le contenu d'un registre, utilisez la commande <code>"[nom du registre]p</code>. Par exemple, pour coller le contenu du registre a, utilisez la commande <code>"ap</code>.</p>
+<p>Pour afficher le contenu d'un registre, utilisez la commande <code>:reg [nom du registre]</code>. Vous verrez le contenu du registre dans la fenêtre des résultats.</p>
+
+<h2>Utilisation des sessions et des fichiers de configuration</h2>
+<p>Les sessions et les fichiers de configuration sont des outils utiles pour personnaliser votre environnement Vim et enregistrer vos paramètres préférés. Voici comment les utiliser :</p>
+
+<h3>Sessions</h3>
+<p>Une session est un ensemble de paramètres Vim qui peuvent être enregistrés et chargés ultérieurement. Cela vous permet de conserver vos préférences et votre configuration d'une session à l'autre.</p>
+<p>Pour enregistrer une session, utilisez la commande <code>:mksession [chemin du fichier]</code>. Par exemple, pour enregistrer une session dans le fichier "ma_session.vim", utilisez la commande <code>:mksession ma_session.vim</code>.</p>
+<p>Pour charger une session, utilisez la commande <code>:source [chemin du fichier]</code>. Par exemple, pour charger la session enregistrée dans le fichier "ma_session.vim", utilisez la commande <code>:source ma_session.vim</code>.</p>
+
+<h3>Fichiers de configuration</h3>
+<p>Les fichiers de configuration Vim vous permettent de personnaliser votre environnement en définissant des options et des commandes spécifiques. Le fichier de configuration principal est appelé ".vimrc" et est généralement situé dans votre répertoire utilisateur.</p>
+<p>Pour éditer votre fichier de configuration, utilisez la commande <code>:e $MYVIMRC</code>. Cela ouvrira le fichier de configuration dans une nouvelle fenêtre Vim.</p>
+<p>Vous pouvez ajouter des options et des commandes spécifiques à votre fichier de configuration pour personnaliser votre environnement Vim. Par exemple, pour définir la taille de la tabulation à 4 espaces, ajoutez la ligne suivante à votre fichier de configuration :</p>
+<pre><code>set tabstop=4</code></pre>
+
+<h2>Utilisation des commandes de gestion de fichiers</h2>
+<p>Vim offre plusieurs commandes pour gérer vos fichiers de manière efficace. Voici quelques commandes utiles :</p>
+
+<h3>Ouverture de fichiers</h3>
+<p>Pour ouvrir un fichier dans Vim, utilisez la commande <code>:e [chemin du fichier]</code>. Par exemple, pour ouvrir le fichier "mon_fichier.txt", utilisez la commande <code>:e mon_fichier.txt</code>.</p>
+<p>Vous pouvez également ouvrir plusieurs fichiers en même temps en spécifiant leurs chemins séparés par des espaces. Par exemple, pour ouvrir les fichiers "fichier1.txt" et "fichier2.txt", utilisez la commande <code>:e fichier1.txt fichier2.txt</code>.</p>
+
+<h3>Enregistrement de fichiers</h3>
+<p>Pour enregistrer un fichier, utilisez la commande <code>:w</code>. Si vous souhaitez enregistrer le fichier sous un nom différent, utilisez la commande <code>:w [nouveau nom du fichier]</code>.</p>
+<p>Pour enregistrer tous les fichiers ouverts, utilisez la commande <code>:wa</code>. Pour enregistrer tous les fichiers et quitter Vim, utilisez la commande <code>:wqa</code>.</p>
+
+<h3>Fermeture de fichiers</h3>
+<p>Pour fermer un fichier sans enregistrer les modifications, utilisez la commande <code>:q</code>. Si vous avez apporté des modifications au fichier et souhaitez les ignorer, utilisez la commande <code>:q!</code>.</p>
+<p>Pour fermer tous les fichiers ouverts, utilisez la commande <code>:qa</code>. Pour fermer tous les fichiers sans enregistrer les modifications, utilisez la commande <code>:qa!</code>.</p>
+
+<p>Ce sont quelques-unes des commandes de gestion de fichiers les plus couramment utilisées dans Vim. Explorez davantage pour découvrir d'autres fonctionnalités utiles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vim/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vim/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

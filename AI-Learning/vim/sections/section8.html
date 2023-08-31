@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vim Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les techniques de collaboration avec Vim</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vim/vim.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vim/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vim/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Vim en mode client-serveur</h2>
+<p>
+Vim offre la possibilité d'être utilisé en mode client-serveur, ce qui permet à plusieurs utilisateurs de collaborer sur un même fichier Vim en même temps. Pour démarrer Vim en mode serveur, utilisez la commande suivante dans votre terminal :
+</p>
+<pre><code>$ vim --servername monserveur</code></pre>
+<p>
+Une fois que le serveur Vim est démarré, vous pouvez ouvrir un fichier en utilisant la commande suivante :
+</p>
+<pre><code>$ vim --servername monserveur --remote fichier.txt</code></pre>
+<p>
+Pour ouvrir un fichier dans une nouvelle fenêtre Vim, utilisez la commande suivante :
+</p>
+<pre><code>$ vim --servername monserveur --remote-tab fichier.txt</code></pre>
+<p>
+Pour envoyer des commandes à un serveur Vim en cours d'exécution, vous pouvez utiliser la commande suivante :
+</p>
+<pre><code>$ vim --servername monserveur --remote-send ":commande&lt;CR&gt;"</code></pre>
+<p>
+Par exemple, pour sauvegarder un fichier, vous pouvez utiliser la commande suivante :
+</p>
+<pre><code>$ vim --servername monserveur --remote-send ":w&lt;CR&gt;"</code></pre>
+
+<h2>Utilisation de Vim avec des systèmes de contrôle de version</h2>
+<p>
+Vim est compatible avec de nombreux systèmes de contrôle de version populaires tels que Git, Subversion et Mercurial. Vous pouvez utiliser Vim pour effectuer des opérations de base telles que la vérification de l'état des fichiers, la création de nouvelles branches et la fusion de modifications.
+</p>
+<p>
+Pour utiliser Vim avec un système de contrôle de version, vous devez d'abord initialiser votre projet avec le système de contrôle de version de votre choix. Ensuite, vous pouvez utiliser les commandes spécifiques au système de contrôle de version pour interagir avec les fichiers de votre projet.
+</p>
+<p>
+Par exemple, pour vérifier l'état des fichiers dans un projet Git, vous pouvez utiliser la commande suivante dans votre terminal :
+</p>
+<pre><code>$ git status</code></pre>
+<p>
+Pour ouvrir un fichier modifié dans Vim, vous pouvez utiliser la commande suivante :
+</p>
+<pre><code>$ vim fichier.txt</code></pre>
+<p>
+Une fois que vous avez ouvert le fichier dans Vim, vous pouvez effectuer des modifications, enregistrer le fichier et quitter Vim comme d'habitude. Les modifications seront ensuite prises en compte par votre système de contrôle de version.
+</p>
+
+<h2>Utilisation de Vim pour la collaboration en temps réel</h2>
+<p>
+Vim offre également des fonctionnalités pour la collaboration en temps réel, ce qui permet à plusieurs utilisateurs de travailler simultanément sur un même fichier Vim. Pour cela, vous pouvez utiliser des plugins tels que "vim-ether" ou "Floobits" qui facilitent la collaboration en temps réel.
+</p>
+<p>
+Une fois que vous avez installé le plugin de collaboration de votre choix, vous pouvez inviter d'autres utilisateurs à rejoindre votre session de collaboration en leur partageant un lien ou en leur donnant un identifiant de session. Les utilisateurs invités peuvent alors se connecter à votre session de collaboration et travailler sur le même fichier Vim en temps réel.
+</p>
+<p>
+Pendant la session de collaboration, les modifications apportées par chaque utilisateur sont immédiatement visibles par les autres participants. Vous pouvez également discuter avec les autres utilisateurs via un chat intégré pour faciliter la communication pendant la collaboration.
+</p>
+<p>
+Une fois la session de collaboration terminée, vous pouvez enregistrer les modifications apportées au fichier et quitter Vim comme d'habitude. Les modifications seront ensuite synchronisées avec les autres utilisateurs et enregistrées dans le fichier partagé.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vim/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vim/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

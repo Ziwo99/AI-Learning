@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vim Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Les commandes essentielles de Vim</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vim/vim.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vim/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vim/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Commandes de recherche et de remplacement</h2>
+<p>Les commandes de recherche et de remplacement sont essentielles pour naviguer et modifier efficacement du texte dans Vim. Voici quelques commandes couramment utilisées :</p>
+
+<p><strong>/motif</strong> : Recherche le motif spécifié vers l'avant dans le fichier.</p>
+<p><strong>?motif</strong> : Recherche le motif spécifié vers l'arrière dans le fichier.</p>
+<p><strong>n</strong> : Passe à l'occurrence suivante du motif trouvé.</p>
+<p><strong>N</strong> : Passe à l'occurrence précédente du motif trouvé.</p>
+<p><strong>:s/motif/remplacement/g</strong> : Remplace toutes les occurrences du motif par le texte de remplacement dans la ligne courante.</p>
+<p><strong>:s/motif/remplacement/gc</strong> : Remplace toutes les occurrences du motif par le texte de remplacement dans la ligne courante avec confirmation.</p>
+
+<h2>Gestion des fenêtres et des onglets</h2>
+<p>La gestion des fenêtres et des onglets est une fonctionnalité puissante de Vim qui vous permet de travailler avec plusieurs fichiers simultanément. Voici quelques commandes utiles :</p>
+
+<p><strong>:split</strong> : Divise la fenêtre actuelle horizontalement en deux fenêtres.</p>
+<p><strong>:vsplit</strong> : Divise la fenêtre actuelle verticalement en deux fenêtres.</p>
+<p><strong>Ctrl+w+w</strong> : Passe à la fenêtre suivante.</p>
+<p><strong>Ctrl+w+h</strong> : Passe à la fenêtre de gauche.</p>
+<p><strong>Ctrl+w+j</strong> : Passe à la fenêtre du bas.</p>
+<p><strong>Ctrl+w+k</strong> : Passe à la fenêtre du haut.</p>
+<p><strong>Ctrl+w+l</strong> : Passe à la fenêtre de droite.</p>
+<p><strong>:tabnew</strong> : Ouvre un nouvel onglet.</p>
+<p><strong>gt</strong> : Passe à l'onglet suivant.</p>
+<p><strong>gT</strong> : Passe à l'onglet précédent.</p>
+
+<h2>Utilisation des marqueurs et des signets</h2>
+<p>Les marqueurs et les signets sont des outils pratiques pour naviguer rapidement dans un fichier. Voici comment les utiliser :</p>
+
+<p><strong>m{lettre}</strong> : Place un marqueur à l'emplacement actuel du curseur, en utilisant la lettre spécifiée.</p>
+<p><strong>`{lettre}</strong> : Se déplace vers le marqueur associé à la lettre spécifiée.</p>
+<p><strong>:marks</strong> : Affiche la liste des marqueurs dans le fichier.</p>
+<p><strong>:sign {numéro}</strong> : Place un signet à la ligne spécifiée.</p>
+<p><strong>:sign place {numéro}</strong> : Place un signet à la ligne spécifiée sans déplacer le curseur.</p>
+<p><strong>:sign unplace {numéro}</strong> : Supprime le signet à la ligne spécifiée.</p>
+<p><strong>:sign list</strong> : Affiche la liste des signets dans le fichier.</p>
+
+<p>Utilisez ces commandes pour faciliter la navigation et le repérage dans vos fichiers Vim.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vim/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vim/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
