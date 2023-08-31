@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - VirtualBox Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Gestion des machines virtuelles</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/virtualbox/virtualbox.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/virtualbox/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/virtualbox/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Importation et exportation de machines virtuelles</h2>
+<p>L'importation et l'exportation de machines virtuelles sont des fonctionnalités essentielles de VirtualBox qui permettent de déplacer facilement des machines virtuelles entre différents hôtes.</p>
+<p>Pour importer une machine virtuelle dans VirtualBox, suivez les étapes suivantes :</p>
+<ol>
+  <li>Ouvrez VirtualBox et cliquez sur le menu "Fichier".</li>
+  <li>Sélectionnez "Importer un appareil virtuel" dans le menu déroulant.</li>
+  <li>Parcourez et sélectionnez le fichier d'exportation de la machine virtuelle.</li>
+  <li>Cliquez sur "Suivant" et suivez les instructions à l'écran pour terminer l'importation.</li>
+</ol>
+<p>Pour exporter une machine virtuelle depuis VirtualBox, procédez comme suit :</p>
+<ol>
+  <li>Sélectionnez la machine virtuelle que vous souhaitez exporter dans la liste des machines virtuelles.</li>
+  <li>Cliquez sur le menu "Fichier" et sélectionnez "Exporter l'appareil virtuel".</li>
+  <li>Choisissez l'emplacement de destination et le nom du fichier d'exportation.</li>
+  <li>Cliquez sur "Suivant" et suivez les instructions à l'écran pour terminer l'exportation.</li>
+</ol>
+
+<h2>Clonage de machines virtuelles</h2>
+<p>Le clonage de machines virtuelles est une fonctionnalité utile qui permet de créer des copies identiques d'une machine virtuelle existante.</p>
+<p>Pour cloner une machine virtuelle dans VirtualBox, suivez ces étapes :</p>
+<ol>
+  <li>Sélectionnez la machine virtuelle que vous souhaitez cloner dans la liste des machines virtuelles.</li>
+  <li>Cliquez avec le bouton droit de la souris sur la machine virtuelle et sélectionnez "Cloner".</li>
+  <li>Choisissez un nom et un emplacement pour la nouvelle machine virtuelle clonée.</li>
+  <li>Cliquez sur "Suivant" et suivez les instructions à l'écran pour terminer le clonage.</li>
+</ol>
+
+<h2>Gestion des ressources système pour les machines virtuelles</h2>
+<p>La gestion des ressources système est importante pour optimiser les performances des machines virtuelles dans VirtualBox.</p>
+<p>Voici quelques paramètres de gestion des ressources système couramment utilisés :</p>
+<ul>
+  <li><strong>Mémoire :</strong> Vous pouvez allouer une quantité spécifique de mémoire RAM à chaque machine virtuelle. Plus la machine virtuelle nécessite de ressources, plus vous devrez allouer de mémoire.</li>
+  <li><strong>Processeur :</strong> Vous pouvez définir le nombre de processeurs virtuels et le nombre de cœurs par processeur pour chaque machine virtuelle. Assurez-vous de ne pas allouer plus de ressources que ce dont vous disposez réellement.</li>
+  <li><strong>Stockage :</strong> Vous pouvez attribuer un espace de stockage spécifique à chaque machine virtuelle. Assurez-vous de disposer d'un espace de stockage suffisant sur votre hôte.</li>
+</ul>
+
+<h2>Utilisation de la ligne de commande pour gérer les machines virtuelles</h2>
+<p>VirtualBox offre également une interface en ligne de commande (CLI) pour gérer les machines virtuelles.</p>
+<p>Voici quelques commandes couramment utilisées :</p>
+<pre><code>VBoxManage startvm [nom_de_la_machine] - Démarre une machine virtuelle spécifique.
+VBoxManage controlvm [nom_de_la_machine] poweroff - Arrête une machine virtuelle spécifique.
+VBoxManage snapshot [nom_de_la_machine] take [nom_du_snapshot] - Crée un snapshot de la machine virtuelle.
+VBoxManage snapshot [nom_de_la_machine] restore [nom_du_snapshot] - Restaure un snapshot de la machine virtuelle.
+VBoxManage list vms - Affiche la liste des machines virtuelles disponibles.
+</code></pre>
+<p>Utilisez ces commandes avec précaution, car elles peuvent avoir un impact sur l'état et le fonctionnement des machines virtuelles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/virtualbox/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/virtualbox/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

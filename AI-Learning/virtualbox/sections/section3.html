@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - VirtualBox Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Utilisation de VirtualBox</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/virtualbox/virtualbox.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/virtualbox/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/virtualbox/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Démarrage et arrêt d'une machine virtuelle</h2>
+  <p>Pour démarrer une machine virtuelle dans VirtualBox, suivez les étapes suivantes :</p>
+  <ol>
+    <li>Ouvrez VirtualBox sur votre ordinateur.</li>
+    <li>Sélectionnez la machine virtuelle que vous souhaitez démarrer dans la liste des machines disponibles.</li>
+    <li>Cliquez sur le bouton "Démarrer" pour lancer la machine virtuelle.</li>
+    <li>Attendez que la machine virtuelle démarre et affiche l'écran d'accueil de l'OS invité.</li>
+  </ol>
+  <p>Pour arrêter une machine virtuelle, suivez ces étapes :</p>
+  <ol>
+    <li>Sélectionnez la machine virtuelle que vous souhaitez arrêter dans la liste des machines disponibles.</li>
+    <li>Cliquez sur le bouton "Arrêter" pour éteindre la machine virtuelle.</li>
+    <li>Attendez que la machine virtuelle s'arrête complètement.</li>
+  </ol>
+
+  <h2>Gestion des snapshots</h2>
+  <p>Les snapshots sont des instantanés de l'état d'une machine virtuelle à un moment donné. Ils permettent de sauvegarder l'état actuel de la machine virtuelle et de revenir à cet état ultérieurement si nécessaire. Voici comment gérer les snapshots dans VirtualBox :</p>
+  <ol>
+    <li>Sélectionnez la machine virtuelle pour laquelle vous souhaitez créer un snapshot.</li>
+    <li>Cliquez sur le menu "Machine" dans la barre de menu de VirtualBox.</li>
+    <li>Sélectionnez "Prendre un snapshot" pour créer un nouveau snapshot.</li>
+    <li>Donnez un nom et une description au snapshot, puis cliquez sur "OK".</li>
+    <li>Pour restaurer un snapshot, sélectionnez la machine virtuelle, cliquez sur le menu "Machine" et choisissez "Restaurer le snapshot".</li>
+    <li>Sélectionnez le snapshot que vous souhaitez restaurer et cliquez sur "Restaurer".</li>
+  </ol>
+
+  <h2>Partage de fichiers entre l'hôte et la machine virtuelle</h2>
+  <p>VirtualBox permet de partager des fichiers entre l'hôte (votre ordinateur physique) et la machine virtuelle. Voici comment configurer le partage de fichiers :</p>
+  <ol>
+    <li>Dans VirtualBox, sélectionnez la machine virtuelle pour laquelle vous souhaitez configurer le partage de fichiers.</li>
+    <li>Cliquez sur le menu "Périphériques" dans la barre de menu de VirtualBox.</li>
+    <li>Sélectionnez "Insérer l'image CD des additions invité" pour monter le CD d'additions invité dans la machine virtuelle.</li>
+    <li>Sur la machine virtuelle, ouvrez le CD d'additions invité et exécutez le programme d'installation.</li>
+    <li>Redémarrez la machine virtuelle après l'installation des additions invité.</li>
+    <li>Une fois la machine virtuelle redémarrée, vous pouvez accéder aux fichiers partagés en utilisant l'explorateur de fichiers de l'OS invité.</li>
+  </ol>
+
+  <h2>Utilisation des périphériques USB dans VirtualBox</h2>
+  <p>VirtualBox permet d'utiliser des périphériques USB dans une machine virtuelle. Voici comment configurer l'utilisation des périphériques USB :</p>
+  <ol>
+    <li>Dans VirtualBox, sélectionnez la machine virtuelle pour laquelle vous souhaitez configurer l'utilisation des périphériques USB.</li>
+    <li>Cliquez sur le menu "Périphériques" dans la barre de menu de VirtualBox.</li>
+    <li>Sélectionnez le périphérique USB que vous souhaitez utiliser dans la liste des périphériques disponibles.</li>
+    <li>Si le périphérique USB n'apparaît pas dans la liste, assurez-vous qu'il est connecté à votre ordinateur et qu'il est reconnu par le système d'exploitation hôte.</li>
+    <li>Une fois le périphérique USB sélectionné, il sera disponible dans la machine virtuelle.</li>
+  </ol>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/virtualbox/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/virtualbox/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

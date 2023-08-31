@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - VirtualBox Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Dépannage et optimisation de VirtualBox</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/virtualbox/virtualbox.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/virtualbox/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/virtualbox/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Résolution des problèmes courants dans VirtualBox</h2>
+<p>Lors de l'utilisation de VirtualBox, il est possible de rencontrer certains problèmes courants. Voici quelques-uns des problèmes les plus fréquents et leurs solutions :</p>
+
+<h3>Problème 1 : Erreur de démarrage de la machine virtuelle</h3>
+<p>Si vous rencontrez une erreur lors du démarrage de votre machine virtuelle, assurez-vous de vérifier les points suivants :</p>
+<pre><code>- Vérifiez que vous avez sélectionné le bon système d'exploitation invité lors de la création de la machine virtuelle.
+- Assurez-vous que les paramètres de la machine virtuelle sont correctement configurés, notamment la quantité de mémoire allouée et les paramètres de stockage.
+- Vérifiez que vous disposez de suffisamment d'espace disque disponible sur votre ordinateur hôte.
+- Assurez-vous que votre système d'exploitation hôte est à jour et que vous disposez des derniers pilotes pour votre matériel.
+- Si vous utilisez une version ancienne de VirtualBox, envisagez de mettre à jour vers la dernière version pour résoudre les problèmes connus.</code></pre>
+
+<h3>Problème 2 : Performances lentes de la machine virtuelle</h3>
+<p>Si votre machine virtuelle fonctionne lentement, voici quelques conseils pour optimiser les performances :</p>
+<pre><code>- Allouez suffisamment de mémoire à la machine virtuelle. Si vous avez suffisamment de mémoire disponible sur votre ordinateur hôte, augmentez la quantité de mémoire allouée à la machine virtuelle.
+- Utilisez des disques virtuels de type "dynamiquement alloué" plutôt que "fixe". Les disques virtuels dynamiquement alloués augmentent automatiquement leur taille en fonction des besoins, ce qui peut améliorer les performances.
+- Évitez d'exécuter des applications gourmandes en ressources sur votre ordinateur hôte en même temps que la machine virtuelle.
+- Mettez à jour les pilotes de votre carte graphique sur votre ordinateur hôte.
+- Si vous utilisez une version ancienne de VirtualBox, envisagez de mettre à jour vers la dernière version pour bénéficier des améliorations de performance.</code></pre>
+
+<h3>Problème 3 : Problèmes de réseau dans la machine virtuelle</h3>
+<p>Si vous rencontrez des problèmes de réseau dans votre machine virtuelle, voici quelques étapes de dépannage à suivre :</p>
+<pre><code>- Assurez-vous que la configuration du réseau dans VirtualBox est correcte. Vérifiez les paramètres de la carte réseau de la machine virtuelle et assurez-vous qu'elle est configurée pour utiliser le mode de réseau approprié (NAT, pont, etc.).
+- Vérifiez les paramètres de votre pare-feu sur l'ordinateur hôte. Assurez-vous que VirtualBox et les applications de la machine virtuelle sont autorisées à accéder au réseau.
+- Si vous utilisez une connexion Wi-Fi, assurez-vous que votre ordinateur hôte est connecté au réseau Wi-Fi et que la machine virtuelle est configurée pour utiliser la carte réseau Wi-Fi.
+- Si vous utilisez une connexion Ethernet, assurez-vous que votre ordinateur hôte est connecté à Internet via Ethernet et que la machine virtuelle est configurée pour utiliser la carte réseau Ethernet.
+- Si vous rencontrez des problèmes de résolution DNS dans la machine virtuelle, vérifiez les paramètres DNS de la machine virtuelle et assurez-vous qu'ils sont correctement configurés.</code></pre>
+
+<h2>Optimisation des performances de VirtualBox</h2>
+<p>Pour optimiser les performances de VirtualBox, vous pouvez suivre les conseils suivants :</p>
+
+<h3>Conseil 1 : Allouer suffisamment de mémoire à la machine virtuelle</h3>
+<p>La quantité de mémoire allouée à la machine virtuelle peut avoir un impact significatif sur ses performances. Assurez-vous d'allouer suffisamment de mémoire à la machine virtuelle pour qu'elle puisse fonctionner de manière optimale.</p>
+
+<h3>Conseil 2 : Utiliser des disques virtuels de type "dynamiquement alloué"</h3>
+<p>Les disques virtuels de type "dynamiquement alloué" augmentent automatiquement leur taille en fonction des besoins, ce qui peut améliorer les performances de la machine virtuelle. Utilisez ce type de disque virtuel lorsque cela est possible.</p>
+
+<h3>Conseil 3 : Éviter d'exécuter des applications gourmandes en ressources sur l'ordinateur hôte</h3>
+<p>Lorsque vous exécutez une machine virtuelle, évitez d'exécuter simultanément des applications gourmandes en ressources sur votre ordinateur hôte. Cela peut entraîner une diminution des performances de la machine virtuelle.</p>
+
+<h3>Conseil 4 : Mettre à jour les pilotes de la carte graphique</h3>
+<p>Assurez-vous de mettre à jour les pilotes de votre carte graphique sur votre ordinateur hôte. Des pilotes obsolètes peuvent entraîner des problèmes de performance dans la machine virtuelle.</p>
+
+<h2>Sécurité dans VirtualBox</h2>
+<p>Lors de l'utilisation de VirtualBox, il est important de prendre en compte les aspects de sécurité suivants :</p>
+
+<h3>Conseil 1 : Mettre à jour régulièrement VirtualBox</h3>
+<p>Assurez-vous de mettre à jour régulièrement VirtualBox avec les dernières versions et correctifs de sécurité. Les mises à jour peuvent corriger les vulnérabilités connues et améliorer la sécurité globale de VirtualBox.</p>
+
+<h3>Conseil 2 : Configurer les paramètres de sécurité appropriés</h3>
+<p>VirtualBox offre plusieurs paramètres de sécurité qui peuvent être configurés pour renforcer la protection de vos machines virtuelles. Par exemple, vous pouvez activer le chiffrement des disques virtuels ou configurer des mots de passe pour l'accès aux machines virtuelles.</p>
+
+<h3>Conseil 3 : Utiliser des machines virtuelles isolées</h3>
+<p>Pour renforcer la sécurité, il est recommandé d'utiliser des machines virtuelles isolées les unes des autres. Cela signifie que chaque machine virtuelle doit être utilisée pour des tâches spécifiques et ne doit pas partager de ressources avec d'autres machines virtuelles.</p>
+
+<h3>Conseil 4 : Sauvegarder régulièrement les machines virtuelles</h3>
+<p>Il est important de sauvegarder régulièrement vos machines virtuelles pour éviter la perte de données en cas de problème ou de panne. Assurez-vous de sauvegarder les fichiers de configuration et les disques virtuels de chaque machine virtuelle.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/virtualbox/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/virtualbox/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
