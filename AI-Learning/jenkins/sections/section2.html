@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Jenkins Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Installation et configuration de Jenkins</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jenkins/jenkins.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Prérequis pour l'installation de Jenkins</h2>
+<p>Avant d'installer Jenkins, assurez-vous que votre système répond aux exigences minimales suivantes :</p>
+<ul>
+  <li>Java Development Kit (JDK) version 8 ou supérieure doit être installé.</li>
+  <li>Un utilisateur avec des privilèges d'administration sur le système.</li>
+  <li>Un système d'exploitation compatible avec Jenkins (Windows, Linux, macOS, etc.).</li>
+</ul>
+
+<h2>Installation de Jenkins sur différents systèmes d'exploitation</h2>
+<p>Les étapes d'installation de Jenkins peuvent varier en fonction du système d'exploitation que vous utilisez. Voici les instructions générales pour les systèmes d'exploitation courants :</p>
+
+<h3>Installation de Jenkins sur Windows</h3>
+<p>Pour installer Jenkins sur Windows, suivez les étapes suivantes :</p>
+<ol>
+  <li>Téléchargez le fichier d'installation de Jenkins à partir du site officiel de Jenkins.</li>
+  <li>Exécutez le fichier d'installation et suivez les instructions à l'écran.</li>
+  <li>Une fois l'installation terminée, Jenkins sera accessible via votre navigateur à l'adresse http://localhost:8080.</li>
+</ol>
+
+<h3>Installation de Jenkins sur Linux</h3>
+<p>Pour installer Jenkins sur Linux, suivez les étapes suivantes :</p>
+<ol>
+  <li>Ouvrez un terminal et exécutez les commandes suivantes pour ajouter le référentiel Jenkins :</li>
+  <pre><code>sudo apt update
+sudo apt install wget
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+sudo apt update</code></pre>
+  <li>Installez Jenkins en exécutant la commande suivante :</li>
+  <pre><code>sudo apt install jenkins</code></pre>
+  <li>Une fois l'installation terminée, Jenkins sera accessible via votre navigateur à l'adresse http://localhost:8080.</li>
+</ol>
+
+<h3>Installation de Jenkins sur macOS</h3>
+<p>Pour installer Jenkins sur macOS, suivez les étapes suivantes :</p>
+<ol>
+  <li>Téléchargez le fichier d'installation de Jenkins à partir du site officiel de Jenkins.</li>
+  <li>Ouvrez le fichier d'installation et suivez les instructions à l'écran.</li>
+  <li>Une fois l'installation terminée, Jenkins sera accessible via votre navigateur à l'adresse http://localhost:8080.</li>
+</ol>
+
+<h2>Configuration initiale de Jenkins</h2>
+<p>Après avoir installé Jenkins, vous devez effectuer une configuration initiale pour le mettre en place. Voici les étapes à suivre :</p>
+<ol>
+  <li>Ouvrez votre navigateur et accédez à l'adresse http://localhost:8080.</li>
+  <li>Vous serez invité à saisir le mot de passe initial de Jenkins. Pour le trouver, ouvrez un terminal et exécutez la commande suivante :</li>
+  <pre><code>sudo cat /var/lib/jenkins/secrets/initialAdminPassword</code></pre>
+  <li>Copiez le mot de passe affiché dans le terminal et collez-le dans le champ correspondant sur la page de configuration de Jenkins.</li>
+  <li>Sélectionnez les plugins à installer. Vous pouvez choisir d'installer les plugins recommandés ou sélectionner manuellement les plugins dont vous avez besoin.</li>
+  <li>Une fois l'installation des plugins terminée, créez un compte administrateur en fournissant les informations requises.</li>
+  <li>Enfin, cliquez sur "Démarrer à l'aide de Jenkins" pour accéder à l'interface principale de Jenkins.</li>
+</ol>
+
+<h2>Gestion des plugins Jenkins</h2>
+<p>Jenkins propose une large gamme de plugins qui étendent ses fonctionnalités. Voici comment gérer les plugins dans Jenkins :</p>
+<ol>
+  <li>Ouvrez Jenkins et connectez-vous en tant qu'administrateur.</li>
+  <li>Cliquez sur "Gérer Jenkins" dans le menu de gauche.</li>
+  <li>Sélectionnez "Gérer les plugins" pour accéder à la page de gestion des plugins.</li>
+  <li>Sur l'onglet "Disponible", vous pouvez parcourir et rechercher les plugins disponibles.</li>
+  <li>Cochez les plugins que vous souhaitez installer et cliquez sur "Installer sans redémarrer" pour les installer.</li>
+  <li>Sur l'onglet "Installé", vous pouvez voir la liste des plugins installés et les mettre à jour si nécessaire.</li>
+  <li>Sur l'onglet "Avancé", vous pouvez gérer les plugins obsolètes, désinstaller les plugins inutilisés, etc.</li>
+</ol>
+
+<p>C'est ainsi que vous pouvez installer et configurer Jenkins sur différents systèmes d'exploitation, effectuer la configuration initiale et gérer les plugins. Dans la prochaine section, nous aborderons la création et la gestion de projets Jenkins.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Jenkins Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Gestion avancée de Jenkins</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jenkins/jenkins.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  
+  <h2>Configuration de la sécurité et des autorisations</h2>
+  <p>La configuration de la sécurité et des autorisations dans Jenkins est essentielle pour protéger votre environnement et garantir que seules les personnes autorisées peuvent accéder et effectuer des actions spécifiques. Pour configurer la sécurité, vous pouvez suivre les étapes suivantes :</p>
+  
+  <ol>
+    <li>Ouvrez Jenkins dans votre navigateur et connectez-vous en tant qu'administrateur.</li>
+    <li>Cliquez sur "Gérer Jenkins" dans le menu de navigation.</li>
+    <li>Sélectionnez "Configurer la sécurité globale" pour accéder aux paramètres de sécurité.</li>
+    <li>Choisissez le mode de sécurité qui convient le mieux à vos besoins. Vous pouvez utiliser le mode de sécurité basé sur la matrice de droits, le mode de sécurité basé sur les utilisateurs ou le mode de sécurité basé sur la sécurité LDAP.</li>
+    <li>Configurez les autorisations pour chaque utilisateur ou groupe d'utilisateurs en spécifiant les droits d'accès aux différentes fonctionnalités de Jenkins.</li>
+    <li>Enregistrez les modifications et redémarrez Jenkins pour appliquer les nouvelles configurations de sécurité.</li>
+  </ol>
+  
+  <h2>Utilisation des agents distants pour la distribution des tâches</h2>
+  <p>Les agents distants dans Jenkins permettent de distribuer les tâches de construction et de test sur plusieurs machines, ce qui permet d'optimiser les performances et d'accélérer le processus de développement. Voici comment utiliser les agents distants :</p>
+  
+  <ol>
+    <li>Installez Jenkins sur les machines distantes que vous souhaitez utiliser comme agents.</li>
+    <li>Dans Jenkins, accédez à "Gérer Jenkins" et sélectionnez "Gérer les nœuds" pour ajouter un nouvel agent distant.</li>
+    <li>Configurez les informations de connexion pour l'agent distant, telles que l'adresse IP, le nom d'utilisateur et le mot de passe.</li>
+    <li>Définissez les capacités de l'agent distant, telles que les outils de construction et les environnements pris en charge.</li>
+    <li>Enregistrez les modifications et redémarrez Jenkins.</li>
+    <li>Lors de la configuration d'un projet, sélectionnez l'agent distant approprié pour exécuter les tâches de construction et de test.</li>
+  </ol>
+  
+  <h2>Configuration des notifications et des rapports</h2>
+  <p>Les notifications et les rapports dans Jenkins permettent de tenir les membres de l'équipe informés des résultats des builds et des tests. Voici comment configurer les notifications et les rapports :</p>
+  
+  <ol>
+    <li>Accédez à la configuration du projet dans Jenkins.</li>
+    <li>Sous la section "Notifications", ajoutez les adresses e-mail des destinataires qui doivent recevoir les notifications.</li>
+    <li>Configurez les paramètres de notification, tels que les événements déclencheurs, les formats de notification et les destinataires.</li>
+    <li>Enregistrez les modifications et exécutez un build pour tester les notifications.</li>
+    <li>Pour les rapports, vous pouvez utiliser des plugins Jenkins tels que "JUnit" pour générer des rapports de test et "HTML Publisher" pour générer des rapports HTML.</li>
+  </ol>
+  
+  <h2>Surveillance et gestion des performances de Jenkins</h2>
+  <p>La surveillance et la gestion des performances de Jenkins sont importantes pour garantir un fonctionnement optimal de votre environnement. Voici quelques bonnes pratiques pour surveiller et gérer les performances de Jenkins :</p>
+  
+  <ul>
+    <li>Utilisez le plugin "Monitoring" pour surveiller les ressources système utilisées par Jenkins, tels que l'utilisation du processeur, de la mémoire et du disque.</li>
+    <li>Configurez des alertes pour être averti en cas de dépassement des seuils de performance.</li>
+    <li>Optimisez les performances en ajustant les paramètres de Jenkins, tels que la mémoire allouée et le nombre de threads.</li>
+    <li>Supprimez régulièrement les builds et les artefacts inutiles pour libérer de l'espace disque.</li>
+    <li>Utilisez des outils de surveillance externes pour obtenir des informations détaillées sur les performances de Jenkins.</li>
+  </ul>
+  
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

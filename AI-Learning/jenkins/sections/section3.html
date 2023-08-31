@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Jenkins Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Création et gestion de projets Jenkins</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jenkins/jenkins.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un nouveau projet Jenkins</h2>
+<p>Pour créer un nouveau projet Jenkins, suivez les étapes ci-dessous :</p>
+<ol>
+  <li>Ouvrez votre navigateur et accédez à l'interface utilisateur de Jenkins.</li>
+  <li>Connectez-vous à Jenkins en utilisant vos identifiants.</li>
+  <li>Sur le tableau de bord de Jenkins, cliquez sur "Nouveau projet" ou "Nouvel élément".</li>
+  <li>Donnez un nom à votre projet et sélectionnez le type de projet que vous souhaitez créer (freestyle, pipeline, etc.).</li>
+  <li>Cliquez sur "OK" pour créer le projet.</li>
+</ol>
+
+<h2>Configuration des paramètres du projet</h2>
+<p>Une fois que vous avez créé votre projet Jenkins, vous pouvez le configurer en fonction de vos besoins. Voici quelques paramètres couramment utilisés :</p>
+<ul>
+  <li><strong>Source Code Management (SCM)</strong>: Configurez le système de gestion de code source que vous utilisez (Git, SVN, etc.) et spécifiez l'URL du référentiel.</li>
+  <li><strong>Build Triggers</strong>: Configurez les déclencheurs de build pour spécifier quand un build doit être déclenché (par exemple, après chaque commit, à une heure spécifique, etc.).</li>
+  <li><strong>Build Environment</strong>: Configurez l'environnement de build en spécifiant les variables d'environnement, les outils de build nécessaires, etc.</li>
+  <li><strong>Build</strong>: Configurez les étapes de build en spécifiant les commandes à exécuter, les fichiers à compiler, etc.</li>
+  <li><strong>Publishing</strong>: Configurez les actions à effectuer après le build, telles que l'archivage des artefacts, l'envoi de notifications, etc.</li>
+</ul>
+
+<h2>Utilisation des différents types de projets (freestyle, pipeline, etc.)</h2>
+<p>Jenkins offre différents types de projets pour répondre à différents besoins. Voici quelques-uns des types de projets les plus couramment utilisés :</p>
+<ul>
+  <li><strong>Freestyle project</strong>: Un projet freestyle est un projet Jenkins flexible où vous pouvez configurer manuellement chaque étape du processus de build.</li>
+  <li><strong>Pipeline project</strong>: Un projet pipeline est un projet Jenkins basé sur un script déclaratif ou un script pipeline. Il permet de définir le processus de build en utilisant un langage de script spécifique.</li>
+  <li><strong>Multi-configuration project</strong>: Un projet de configuration multiple est utilisé lorsque vous souhaitez exécuter le même build avec différentes configurations (par exemple, sur différents systèmes d'exploitation, avec différentes versions de logiciels, etc.).</li>
+</ul>
+
+<h2>Gestion des versions et des branches de code source</h2>
+<p>Lorsque vous travaillez avec Jenkins, il est important de gérer les versions et les branches de votre code source. Voici quelques bonnes pratiques pour la gestion des versions et des branches :</p>
+<ul>
+  <li><strong>Utilisation d'un système de contrôle de version</strong>: Utilisez un système de contrôle de version tel que Git ou SVN pour gérer votre code source.</li>
+  <li><strong>Utilisation de branches</strong>: Utilisez des branches pour développer de nouvelles fonctionnalités ou corriger des bugs sans perturber la branche principale du code.</li>
+  <li><strong>Intégration continue</strong>: Configurez Jenkins pour surveiller les modifications sur les branches et déclencher automatiquement des builds et des tests.</li>
+  <li><strong>Utilisation de plugins de gestion de versions</strong>: Utilisez des plugins Jenkins tels que Git Plugin ou SVN Plugin pour faciliter la gestion des versions et des branches.</li>
+</ul>
+
+<p>Ces étapes vous permettront de créer et de gérer efficacement vos projets Jenkins. N'oubliez pas d'adapter ces étapes en fonction de vos besoins spécifiques.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

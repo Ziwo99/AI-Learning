@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Jenkins Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Intégration continue avec Jenkins</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jenkins/jenkins.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration des déclencheurs de build</h2>
+<p>Les déclencheurs de build dans Jenkins permettent de spécifier les conditions qui déclenchent l'exécution d'un build. Il existe plusieurs types de déclencheurs disponibles :</p>
+<ul>
+  <li>Déclencheur de build périodique : permet de planifier des builds à des intervalles réguliers.</li>
+  <li>Déclencheur de build SCM : déclenche un build lorsque des modifications sont détectées dans le système de contrôle de version.</li>
+  <li>Déclencheur de build manuel : permet de déclencher un build manuellement à partir de l'interface Jenkins.</li>
+  <li>Déclencheur de build à distance : permet de déclencher un build à partir d'une autre instance Jenkins.</li>
+</ul>
+<p>Pour configurer un déclencheur de build, accédez à la configuration du projet Jenkins, puis sélectionnez l'onglet "Build Triggers". Choisissez le type de déclencheur souhaité et configurez les paramètres appropriés.</p>
+
+<h2>Utilisation des outils de gestion de code source (Git, SVN, etc.)</h2>
+<p>Jenkins offre une intégration native avec plusieurs systèmes de contrôle de version populaires tels que Git, SVN, Mercurial, etc. Pour utiliser ces outils de gestion de code source, vous devez d'abord les configurer dans Jenkins.</p>
+<p>Pour configurer Git, par exemple, accédez à la configuration globale de Jenkins, puis sélectionnez l'onglet "Git". Ajoutez les informations d'identification du référentiel Git, spécifiez l'URL du référentiel et configurez d'autres paramètres tels que la branche à surveiller.</p>
+<p>Une fois que vous avez configuré l'outil de gestion de code source, vous pouvez l'utiliser dans la configuration de votre projet Jenkins. Sélectionnez l'option appropriée dans la section "Source Code Management" et configurez les paramètres spécifiques à l'outil que vous utilisez.</p>
+
+<h2>Utilisation des outils de construction (Maven, Gradle, etc.)</h2>
+<p>Jenkins prend en charge plusieurs outils de construction populaires tels que Maven, Gradle, Ant, etc. Ces outils permettent de compiler, tester et empaqueter votre code source.</p>
+<p>Pour utiliser un outil de construction dans Jenkins, vous devez d'abord le configurer dans la configuration globale de Jenkins. Accédez à la configuration globale, puis sélectionnez l'onglet "Global Tool Configuration". Ajoutez l'outil de construction souhaité en spécifiant son chemin d'installation.</p>
+<p>Une fois que vous avez configuré l'outil de construction, vous pouvez l'utiliser dans la configuration de votre projet Jenkins. Sélectionnez l'option appropriée dans la section "Build" et configurez les paramètres spécifiques à l'outil que vous utilisez.</p>
+
+<h2>Configuration des étapes de build et de test</h2>
+<p>Dans Jenkins, vous pouvez configurer les étapes de build et de test de votre projet en utilisant des plugins spécifiques ou des scripts personnalisés.</p>
+<p>Pour configurer les étapes de build, accédez à la configuration de votre projet Jenkins, puis sélectionnez l'onglet "Build". Ajoutez les étapes de build souhaitées en utilisant les options disponibles, telles que l'exécution d'un script shell, l'appel à une cible de construction spécifique, etc.</p>
+<p>Pour configurer les étapes de test, vous pouvez utiliser des plugins spécifiques tels que JUnit, TestNG, etc. Ajoutez le plugin souhaité dans la configuration de votre projet Jenkins, puis configurez les paramètres spécifiques aux tests que vous souhaitez exécuter.</p>
+
+<h2>Gestion des rapports de build et de test</h2>
+<p>Jenkins offre la possibilité de générer et de visualiser des rapports de build et de test pour suivre l'état et la qualité de votre projet.</p>
+<p>Pour générer des rapports de build, vous pouvez utiliser des plugins tels que HTML Publisher, qui permet de publier des rapports HTML générés par votre build. Configurez le plugin dans la configuration de votre projet Jenkins, puis spécifiez les rapports à publier.</p>
+<p>Pour générer des rapports de test, vous pouvez utiliser des plugins spécifiques tels que JUnit, TestNG, etc. Configurez le plugin dans la configuration de votre projet Jenkins, puis spécifiez les rapports de test à générer.</p>
+<p>Une fois que vous avez configuré les rapports de build et de test, vous pouvez les visualiser à partir de l'interface Jenkins en accédant à la page de détails du build ou du test correspondant.</p>
+
+<p>Assurez-vous de vérifier régulièrement les rapports de build et de test pour identifier les problèmes et les erreurs potentiels dans votre projet.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jenkins/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jenkins/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
