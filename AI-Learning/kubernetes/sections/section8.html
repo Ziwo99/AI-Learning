@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Déploiement et gestion de l'état dans Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Déploiement d'applications à état</h2>
+<p>Le déploiement d'applications à état dans Kubernetes est une tâche essentielle pour gérer les applications qui nécessitent un stockage persistant ou qui ont besoin de conserver un état spécifique. Dans cette sous-section, nous allons explorer les différentes méthodes de déploiement d'applications à état dans Kubernetes.</p>
+
+<p>Il existe plusieurs approches pour déployer des applications à état dans Kubernetes, notamment l'utilisation de volumes persistants, de StatefulSets et de bases de données gérées. Chaque approche a ses propres avantages et inconvénients, et il est important de choisir celle qui convient le mieux à votre cas d'utilisation spécifique.</p>
+
+<h2>Stockage persistant</h2>
+<p>Le stockage persistant est une fonctionnalité clé de Kubernetes qui permet aux applications de conserver leurs données même en cas de redémarrage ou de défaillance des pods. Kubernetes prend en charge plusieurs types de stockage persistant, tels que les volumes persistants, les réclamations de stockage et les classes de stockage.</p>
+
+<p>Un volume persistant est un espace de stockage qui peut être monté sur un pod et qui conserve ses données même lorsque le pod est détruit. Les volumes persistants peuvent être utilisés pour stocker des fichiers, des bases de données ou d'autres types de données nécessaires à une application à état.</p>
+
+<p>Pour utiliser un volume persistant dans Kubernetes, vous devez d'abord créer une définition de volume persistant qui spécifie le type de stockage, la capacité et d'autres paramètres. Ensuite, vous pouvez créer une réclamation de stockage pour demander un volume persistant spécifique. Enfin, vous pouvez monter le volume persistant sur un pod en utilisant un volume monté.</p>
+
+<h2>Sauvegarde et restauration des données</h2>
+<p>La sauvegarde et la restauration des données sont des aspects importants de la gestion de l'état dans Kubernetes. Il est essentiel de disposer d'un plan de sauvegarde solide pour protéger vos données contre la perte ou la corruption.</p>
+
+<p>Il existe plusieurs méthodes pour sauvegarder et restaurer des données dans Kubernetes, notamment l'utilisation de volumes persistants, de snapshots de volumes et d'outils de sauvegarde tiers. Chaque méthode a ses propres avantages et inconvénients, et il est important de choisir celle qui convient le mieux à votre cas d'utilisation spécifique.</p>
+
+<p>Les volumes persistants peuvent être sauvegardés en créant des snapshots de volume, qui sont des instantanés des données stockées sur le volume. Les snapshots de volume peuvent être utilisés pour restaurer les données en cas de perte ou de corruption.</p>
+
+<p>En plus des snapshots de volume, il existe également des outils de sauvegarde tiers qui peuvent être utilisés pour sauvegarder et restaurer des données dans Kubernetes. Ces outils offrent souvent des fonctionnalités avancées telles que la compression, le chiffrement et la planification des sauvegardes.</p>
+
+<h2>Gestion des bases de données dans Kubernetes</h2>
+<p>La gestion des bases de données dans Kubernetes peut être un défi en raison de la nature à état des bases de données. Les bases de données nécessitent souvent des opérations de mise à l'échelle, de sauvegarde, de restauration et de réplication spécifiques.</p>
+
+<p>Il existe plusieurs approches pour gérer les bases de données dans Kubernetes, notamment l'utilisation de bases de données gérées, de StatefulSets et d'opérateurs de bases de données. Chaque approche a ses propres avantages et inconvénients, et il est important de choisir celle qui convient le mieux à votre cas d'utilisation spécifique.</p>
+
+<p>Les bases de données gérées sont des services cloud qui gèrent automatiquement les opérations de mise à l'échelle, de sauvegarde, de restauration et de réplication des bases de données. Ces services offrent souvent une haute disponibilité, une sécurité renforcée et des performances optimisées.</p>
+
+<p>Les StatefulSets sont une fonctionnalité de Kubernetes qui permet de déployer et de gérer des applications à état, telles que les bases de données. Les StatefulSets garantissent que chaque instance de l'application à état a un nom unique et un état persistant, ce qui facilite la gestion des bases de données dans Kubernetes.</p>
+
+<p>Les opérateurs de bases de données sont des outils qui étendent les fonctionnalités de Kubernetes pour la gestion des bases de données. Ces opérateurs permettent d'automatiser des tâches telles que la mise à l'échelle, la sauvegarde, la restauration et la réplication des bases de données.</p>
+
+<p>En conclusion, la gestion de l'état dans Kubernetes est un aspect essentiel de la création et de la gestion d'applications à état. En utilisant les fonctionnalités de stockage persistant, de sauvegarde et de restauration des données, ainsi que les méthodes de gestion des bases de données, vous pouvez déployer et gérer efficacement des applications à état dans Kubernetes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

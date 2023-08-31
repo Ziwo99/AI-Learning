@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Migration vers Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Stratégies de migration</h2>
+<p>La migration vers Kubernetes peut être réalisée selon différentes stratégies en fonction des besoins et des contraintes de l'entreprise. Voici quelques-unes des stratégies couramment utilisées :</p>
+
+<p><strong>1. Stratégie de rehosting :</strong></p>
+<p>Cette stratégie consiste à migrer les applications existantes vers Kubernetes sans apporter de modifications significatives à l'architecture ou au code. Les applications sont simplement déployées sur des conteneurs Kubernetes sans modification majeure.</p>
+
+<p><strong>2. Stratégie de réécriture :</strong></p>
+<p>Dans cette stratégie, les applications sont entièrement réécrites pour être compatibles avec Kubernetes. Cela peut impliquer une refonte complète de l'architecture, du code et des dépendances pour tirer pleinement parti des fonctionnalités offertes par Kubernetes.</p>
+
+<p><strong>3. Stratégie de replateforme :</strong></p>
+<p>Cette stratégie consiste à migrer les applications vers Kubernetes en les adaptant légèrement pour tirer parti des fonctionnalités spécifiques de la plateforme. Cela peut inclure des modifications mineures de l'architecture ou du code pour optimiser les performances ou la disponibilité.</p>
+
+<p><strong>4. Stratégie de refactorisation :</strong></p>
+<p>Dans cette stratégie, les applications sont refactorisées pour être découpées en microservices indépendants qui peuvent être déployés et gérés individuellement sur Kubernetes. Cela permet une plus grande flexibilité et évolutivité de l'architecture.</p>
+
+<h2>Migration d'applications existantes vers Kubernetes</h2>
+<p>La migration d'applications existantes vers Kubernetes peut être un processus complexe qui nécessite une planification minutieuse. Voici les étapes générales à suivre :</p>
+
+<p><strong>1. Évaluation des applications :</strong></p>
+<p>Commencez par évaluer les applications existantes pour déterminer leur compatibilité avec Kubernetes. Certaines applications peuvent nécessiter des modifications importantes pour être migrées, tandis que d'autres peuvent être migrées plus facilement.</p>
+
+<p><strong>2. Définition de l'architecture cible :</strong></p>
+<p>Définissez l'architecture cible pour les applications migrées. Cela peut inclure des décisions sur la façon dont les applications seront découpées en microservices, comment elles seront déployées et comment elles interagiront avec d'autres services.</p>
+
+<p><strong>3. Adaptation des applications :</strong></p>
+<p>Adaptez les applications existantes pour qu'elles puissent être déployées sur Kubernetes. Cela peut inclure des modifications du code, des dépendances ou de la configuration pour s'assurer que les applications fonctionnent correctement sur la plateforme.</p>
+
+<p><strong>4. Déploiement sur Kubernetes :</strong></p>
+<p>Déployez les applications migrées sur Kubernetes en utilisant les outils et les méthodes appropriés. Assurez-vous de tester soigneusement les applications pour vous assurer qu'elles fonctionnent correctement dans l'environnement Kubernetes.</p>
+
+<h2>Migration de bases de données vers Kubernetes</h2>
+<p>La migration de bases de données vers Kubernetes peut être un processus délicat en raison des exigences de stockage persistant et de la gestion des données. Voici quelques considérations importantes :</p>
+
+<p><strong>1. Choix de la solution de stockage persistant :</strong></p>
+<p>Choisissez une solution de stockage persistant adaptée à vos besoins, telle que des volumes persistants ou des bases de données distribuées. Assurez-vous de comprendre les avantages et les limitations de chaque solution.</p>
+
+<p><strong>2. Sauvegarde et restauration des données :</strong></p>
+<p>Mettez en place des mécanismes de sauvegarde et de restauration des données pour garantir la disponibilité et l'intégrité des données. Planifiez régulièrement des sauvegardes et testez la procédure de restauration pour vous assurer qu'elle fonctionne correctement.</p>
+
+<p><strong>3. Migration des données :</strong></p>
+<p>Migrez les données existantes vers la nouvelle infrastructure de bases de données sur Kubernetes. Cela peut nécessiter des outils spécifiques ou des scripts personnalisés pour transférer les données de manière sécurisée et efficace.</p>
+
+<p><strong>4. Test et validation :</strong></p>
+<p>Testez soigneusement la migration des bases de données pour vous assurer que toutes les données ont été transférées correctement et que les applications fonctionnent comme prévu. Effectuez des tests de performance pour vous assurer que les performances de la base de données sont satisfaisantes.</p>
+
+<p>En suivant ces étapes et en prenant en compte les considérations spécifiques à votre environnement, vous pourrez migrer avec succès vos applications et vos bases de données vers Kubernetes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

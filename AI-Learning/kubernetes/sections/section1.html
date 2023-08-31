@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1: Introduction à Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Qu'est-ce que Kubernetes?</h2>
+<p>Kubernetes est une plateforme open-source de gestion et d'orchestration de conteneurs. Il permet de déployer, de mettre à l'échelle et de gérer des applications conteneurisées de manière efficace et automatisée. Kubernetes fournit un environnement de déploiement cohérent et reproductible, ce qui facilite la gestion des applications dans des environnements de production complexes.</p>
+
+<h2>Historique de Kubernetes</h2>
+<p>Kubernetes a été initialement développé par Google et a été publié en tant que projet open-source en 2014. Il s'est rapidement imposé comme la norme de facto pour la gestion des conteneurs, grâce à sa robustesse, sa flexibilité et sa communauté active. Depuis sa création, Kubernetes a connu plusieurs versions majeures, avec des améliorations constantes de ses fonctionnalités et de sa stabilité.</p>
+
+<h2>Pourquoi utiliser Kubernetes?</h2>
+<p>Kubernetes offre de nombreux avantages pour les entreprises qui utilisent des conteneurs pour déployer leurs applications. Voici quelques raisons pour lesquelles vous devriez envisager d'utiliser Kubernetes :</p>
+<ul>
+  <li><strong>Évolutivité :</strong> Kubernetes permet de mettre à l'échelle automatiquement les applications en fonction de la demande, ce qui garantit une disponibilité élevée et une performance optimale.</li>
+  <li><strong>Portabilité :</strong> Kubernetes est compatible avec différents fournisseurs de cloud et systèmes d'exploitation, ce qui vous permet de déployer vos applications sur n'importe quelle infrastructure.</li>
+  <li><strong>Gestion simplifiée :</strong> Kubernetes automatise de nombreuses tâches de gestion, telles que le déploiement, la mise à l'échelle, la surveillance et la récupération en cas de panne, ce qui réduit la charge de travail des équipes opérationnelles.</li>
+  <li><strong>Sécurité :</strong> Kubernetes offre des fonctionnalités avancées de sécurité, telles que l'isolation des ressources, l'authentification et l'autorisation, la gestion des certificats et la sécurité des conteneurs.</li>
+</ul>
+
+<h2>Architecture de base de Kubernetes</h2>
+<p>La structure de base de Kubernetes est composée des éléments suivants :</p>
+<ul>
+  <li><strong>Nœud :</strong> Un nœud est une machine physique ou virtuelle qui exécute les conteneurs. Chaque nœud a un agent Kubernetes appelé kubelet qui communique avec le contrôleur de cluster.</li>
+  <li><strong>Cluster :</strong> Un cluster Kubernetes est un ensemble de nœuds qui travaillent ensemble pour exécuter des applications conteneurisées. Le cluster est géré par le contrôleur de cluster, qui coordonne les opérations et assure la haute disponibilité.</li>
+  <li><strong>Pod :</strong> Un pod est l'unité de base dans Kubernetes. Il représente un ou plusieurs conteneurs qui partagent un environnement d'exécution commun. Les pods sont déployés sur les nœuds et sont gérés par le contrôleur de déploiement.</li>
+  <li><strong>Service :</strong> Un service est une abstraction qui définit un ensemble de pods et une politique d'accès à ces pods. Il permet de fournir une adresse IP stable pour accéder aux applications et de gérer la découverte des services.</li>
+  <li><strong>Déploiement :</strong> Un déploiement est une ressource Kubernetes qui permet de définir et de gérer l'état désiré d'une application. Il spécifie le nombre de répliques de pods à exécuter et les règles de mise à jour.</li>
+  <li><strong>Volume :</strong> Un volume est un espace de stockage persistant qui peut être monté dans un pod. Il permet aux applications d'accéder aux données de manière fiable et indépendante de la durée de vie des pods.</li>
+  <li><strong>Namespace :</strong> Un namespace est un mécanisme de regroupement logique qui permet d'isoler et de gérer les ressources Kubernetes. Il permet de séparer les applications, les équipes et les environnements.</li>
+  <li><strong>Étiquettes et sélecteurs :</strong> Les étiquettes sont des paires clé-valeur qui peuvent être attachées aux ressources Kubernetes. Les sélecteurs permettent de filtrer et de sélectionner des ressources en fonction de leurs étiquettes.</li>
+</ul>
+
+<p>Cette architecture de base fournit une base solide pour la gestion des applications conteneurisées dans Kubernetes. Les différents composants travaillent ensemble pour fournir une plateforme fiable et évolutive pour le déploiement et la gestion des applications.</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des ressources avec Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des nœuds et des clusters</h2>
+<p>La gestion des nœuds et des clusters est essentielle pour assurer le bon fonctionnement de votre environnement Kubernetes. Un nœud est une machine physique ou virtuelle sur laquelle s'exécutent les conteneurs. Un cluster est un ensemble de nœuds qui travaillent ensemble pour exécuter les applications.</p>
+<p>Pour gérer les nœuds et les clusters, vous pouvez utiliser la commande kubectl, l'outil en ligne de commande de Kubernetes. Voici quelques commandes utiles :</p>
+<pre><code>kubectl get nodes : affiche la liste des nœuds du cluster
+kubectl describe node &lt;node_name&gt; : affiche des informations détaillées sur un nœud spécifique
+kubectl label nodes &lt;node_name&gt; &lt;label_key&gt;=&lt;label_value&gt; : ajoute une étiquette à un nœud
+kubectl taint nodes &lt;node_name&gt; &lt;taint_key&gt;=&lt;taint_value&gt;:&lt;taint_effect&gt; : ajoute une contrainte à un nœud</code></pre>
+
+<h2>Allocation de ressources</h2>
+<p>L'allocation de ressources consiste à spécifier les quantités de CPU et de mémoire que chaque conteneur peut utiliser. Cela permet de garantir que les ressources sont équitablement réparties entre les différentes applications exécutées sur le cluster.</p>
+<p>Pour spécifier l'allocation de ressources, vous pouvez utiliser les ressources requests et limits dans les fichiers de configuration des déploiements ou des pods. Voici un exemple :</p>
+<pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: my-image
+      resources:
+        requests:
+          cpu: "0.5"
+          memory: "512Mi"
+        limits:
+          cpu: "1"
+          memory: "1Gi"</code></pre>
+
+<h2>Limitation des ressources</h2>
+<p>La limitation des ressources permet de définir une limite maximale sur la quantité de CPU et de mémoire qu'un conteneur peut utiliser. Cela permet d'éviter qu'un conteneur ne monopolise toutes les ressources du cluster.</p>
+<p>Vous pouvez spécifier les limites de ressources de la même manière que les demandes de ressources, en utilisant les ressources limits dans les fichiers de configuration des déploiements ou des pods.</p>
+
+<h2>Planification des tâches</h2>
+<p>La planification des tâches consiste à déterminer sur quel nœud chaque conteneur doit être exécuté. Kubernetes utilise un algorithme de planification pour prendre cette décision en fonction des ressources disponibles et des contraintes spécifiées.</p>
+<p>Vous pouvez spécifier des contraintes de planification en utilisant les sélecteurs d'étiquettes et les sélecteurs d'affinité dans les fichiers de configuration des déploiements ou des pods. Voici un exemple :</p>
+<pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: my-image
+  nodeSelector:
+    disktype: ssd
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: kubernetes.io/e2e-az-name
+                operator: In
+                values:
+                  - e2e-az1
+                  - e2e-az2</code></pre>
+
+<h2>Gestion des quotas</h2>
+<p>La gestion des quotas permet de limiter les ressources qu'un utilisateur ou un groupe d'utilisateurs peut consommer dans un cluster Kubernetes. Cela permet de prévenir les abus et de garantir que les ressources sont équitablement réparties entre les utilisateurs.</p>
+<p>Vous pouvez définir des quotas en utilisant les objets Quota dans les fichiers de configuration. Voici un exemple :</p>
+<pre><code>apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: my-quota
+spec:
+  hard:
+    pods: "10"
+    requests.cpu: "4"
+    requests.memory: 4Gi
+    limits.cpu: "8"
+    limits.memory: 8Gi</code></pre>
+
+<p>Avec ces concepts de gestion des ressources, vous serez en mesure de gérer efficacement votre environnement Kubernetes et d'optimiser l'utilisation des ressources disponibles.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Concepts fondamentaux de Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Pods</h2>
+  <p>Un pod est l'unité de base dans Kubernetes. Il représente un ou plusieurs conteneurs qui sont toujours déployés ensemble sur le même nœud. Les pods sont utilisés pour exécuter des applications et fournir un environnement d'exécution isolé. Chaque pod possède une adresse IP unique et peut communiquer avec d'autres pods via cette adresse.</p>
+  <p>Un pod peut contenir un ou plusieurs conteneurs, qui partagent le même espace de stockage, les mêmes ressources réseau et les mêmes volumes. Cela permet aux conteneurs de communiquer entre eux et de partager des données.</p>
+  <pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: mon-pod
+spec:
+  containers:
+    - name: conteneur-1
+      image: mon-image-1
+    - name: conteneur-2
+      image: mon-image-2
+</code></pre>
+
+  <h2>Services</h2>
+  <p>Un service est une abstraction qui définit un ensemble de pods et une politique d'accès à ces pods. Il permet de fournir une adresse IP stable et un nom de domaine pour accéder aux pods, même si leur adresse IP change.</p>
+  <p>Les services peuvent être utilisés pour exposer des applications aux utilisateurs externes ou pour permettre la communication entre les différents composants d'une application.</p>
+  <pre><code>apiVersion: v1
+kind: Service
+metadata:
+  name: mon-service
+spec:
+  selector:
+    app: mon-application
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+</code></pre>
+
+  <h2>Réplicas</h2>
+  <p>Les réplicas sont utilisés pour garantir la disponibilité et la tolérance aux pannes des applications dans Kubernetes. Ils permettent de créer plusieurs instances d'un pod, appelées réplicas, qui sont réparties sur différents nœuds du cluster.</p>
+  <p>Les réplicas sont gérés par un contrôleur de réplicas, qui s'assure que le nombre de réplicas spécifié est toujours en cours d'exécution. Si l'un des réplicas échoue, le contrôleur en crée automatiquement un nouveau pour le remplacer.</p>
+  <pre><code>apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mon-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mon-application
+  template:
+    metadata:
+      labels:
+        app: mon-application
+    spec:
+      containers:
+        - name: mon-conteneur
+          image: mon-image
+</code></pre>
+
+  <h2>Déploiements</h2>
+  <p>Les déploiements sont utilisés pour gérer les mises à jour et les versions des applications dans Kubernetes. Ils permettent de définir l'état souhaité de l'application et de gérer le processus de mise à jour en douceur.</p>
+  <p>Les déploiements utilisent des stratégies de mise à jour, telles que le déploiement en rolling update, pour s'assurer que les nouvelles versions de l'application sont déployées progressivement, en minimisant les temps d'arrêt.</p>
+  <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon-deploiement
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mon-application
+  template:
+    metadata:
+      labels:
+        app: mon-application
+    spec:
+      containers:
+        - name: mon-conteneur
+          image: mon-image
+</code></pre>
+
+  <h2>Volumes</h2>
+  <p>Les volumes sont utilisés pour stocker des données persistantes dans Kubernetes. Ils permettent aux pods de partager et d'accéder aux données même lorsque les pods sont redéployés ou déplacés vers d'autres nœuds.</p>
+  <p>Différents types de volumes sont disponibles, tels que les volumes vides, les volumes basés sur des hôtes, les volumes basés sur des fichiers, les volumes basés sur des blocs, etc. Ces volumes peuvent être montés dans les conteneurs des pods pour accéder aux données.</p>
+  <pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: mon-pod
+spec:
+  containers:
+    - name: mon-conteneur
+      image: mon-image
+      volumeMounts:
+        - name: mon-volume
+          mountPath: /data
+  volumes:
+    - name: mon-volume
+      emptyDir: {}
+</code></pre>
+
+  <h2>Namespaces</h2>
+  <p>Les namespaces sont utilisés pour diviser un cluster Kubernetes en plusieurs espaces de noms virtuels. Ils permettent d'isoler les ressources et les objets entre les différents utilisateurs ou les différentes équipes.</p>
+  <p>Les namespaces peuvent être utilisés pour gérer les autorisations, la gestion des ressources et la visibilité des objets dans un cluster Kubernetes. Ils permettent également de limiter l'impact des erreurs ou des problèmes dans un espace de noms spécifique.</p>
+  <pre><code>apiVersion: v1
+kind: Namespace
+metadata:
+  name: mon-namespace
+</code></pre>
+
+  <h2>Étiquettes et sélecteurs</h2>
+  <p>Les étiquettes et les sélecteurs sont utilisés pour organiser et regrouper les objets dans Kubernetes. Les étiquettes sont des paires clé-valeur qui peuvent être attachées à des objets, tandis que les sélecteurs sont utilisés pour filtrer les objets en fonction de leurs étiquettes.</p>
+  <p>Cela permet de rechercher et de sélectionner facilement des objets spécifiques dans un cluster Kubernetes. Les étiquettes peuvent être utilisées pour définir des politiques de déploiement, des stratégies de mise à l'échelle, des règles de réseau, etc.</p>
+  <pre><code>apiVersion: v1
+kind: Pod
+metadata:
+  name: mon-pod
+  labels:
+    app: mon-application
+    tier: frontend
+spec:
+  containers:
+    - name: mon-conteneur
+      image: mon-image
+</code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

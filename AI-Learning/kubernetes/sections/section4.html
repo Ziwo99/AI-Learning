@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des applications avec Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Déploiement d'une application sur Kubernetes</h2>
+<p>Le déploiement d'une application sur Kubernetes est une étape essentielle pour tirer parti de la puissance de la gestion des conteneurs. Kubernetes offre plusieurs options pour déployer des applications, notamment en utilisant des fichiers de configuration YAML ou en utilisant des outils de déploiement tels que Helm.</p>
+<p>Le déploiement d'une application sur Kubernetes implique les étapes suivantes :</p>
+<ol>
+  <li>Création d'un fichier de configuration YAML décrivant les spécifications de l'application, y compris les conteneurs, les volumes, les variables d'environnement, etc.</li>
+  <li>Utilisation de la commande kubectl pour créer le déploiement en utilisant le fichier de configuration YAML.</li>
+  <li>Vérification de l'état du déploiement à l'aide de la commande kubectl get deployments.</li>
+</ol>
+<p>Voici un exemple de fichier de configuration YAML pour un déploiement d'application :</p>
+<pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: my-app-image:latest
+        ports:
+        - containerPort: 8080
+</code></pre>
+<p>Dans cet exemple, nous créons un déploiement avec 3 réplicas de l'application. L'application utilise une image Docker appelée my-app-image:latest et écoute sur le port 8080.</p>
+
+<h2>Mise à l'échelle des applications</h2>
+<p>Une fois que votre application est déployée sur Kubernetes, vous pouvez facilement la mettre à l'échelle en augmentant ou en diminuant le nombre de réplicas. Cela permet de gérer efficacement la charge de travail et d'assurer la disponibilité de l'application.</p>
+<p>La mise à l'échelle des applications peut être effectuée à l'aide de la commande kubectl scale. Par exemple, pour mettre à l'échelle un déploiement appelé my-app à 5 réplicas, vous pouvez utiliser la commande suivante :</p>
+<pre><code>kubectl scale deployment my-app --replicas=5
+</code></pre>
+<p>Il est également possible de mettre en place un système de mise à l'échelle automatique en utilisant des métriques telles que l'utilisation du CPU ou la charge du réseau. Kubernetes peut ajuster automatiquement le nombre de réplicas en fonction de ces métriques pour maintenir les performances de l'application.</p>
+
+<h2>Gestion des mises à jour et des versions</h2>
+<p>La gestion des mises à jour et des versions des applications est un aspect important de la gestion des applications avec Kubernetes. Kubernetes offre des fonctionnalités telles que les déploiements rolling update et les stratégies de mise à jour pour faciliter la mise à jour des applications sans interruption de service.</p>
+<p>Un déploiement rolling update permet de mettre à jour progressivement les réplicas de l'application en remplaçant les anciens conteneurs par les nouveaux. Cela garantit que l'application reste disponible pendant la mise à jour.</p>
+<p>Voici un exemple de mise à jour rolling update :</p>
+<pre><code>kubectl set image deployment/my-app my-app-container=my-app-image:v2
+</code></pre>
+<p>Cette commande met à jour l'image du conteneur my-app-container dans le déploiement my-app vers la version v2.</p>
+<p>Il est également possible de définir des stratégies de mise à jour plus avancées, telles que les mises à jour canary ou blue-green, qui permettent de tester les nouvelles versions de l'application avant de les déployer complètement.</p>
+
+<h2>Surveillance et journalisation des applications</h2>
+<p>La surveillance et la journalisation des applications sont essentielles pour assurer leur bon fonctionnement et détecter les problèmes éventuels. Kubernetes offre plusieurs outils et mécanismes pour surveiller et journaliser les applications.</p>
+<p>Les outils de surveillance tels que Prometheus peuvent être utilisés pour collecter des métriques sur les performances de l'application, telles que l'utilisation du CPU, la consommation de mémoire, etc. Ces métriques peuvent être visualisées à l'aide d'outils tels que Grafana.</p>
+<p>La journalisation des applications peut être effectuée en utilisant des outils tels que Fluentd ou Elasticsearch. Ces outils permettent de collecter et d'indexer les journaux des conteneurs, ce qui facilite la recherche et l'analyse des problèmes.</p>
+<p>Il est important de configurer correctement la surveillance et la journalisation des applications pour garantir une visibilité complète sur leur état et leur performance.</p>
+
+<h2>Gestion des secrets et des configurations</h2>
+<p>La gestion des secrets et des configurations est un aspect important de la gestion des applications avec Kubernetes. Kubernetes offre des mécanismes pour stocker et gérer les secrets sensibles, tels que les informations d'identification de base de données, les clés d'API, etc.</p>
+<p>Les secrets peuvent être stockés dans des objets de type Secret dans Kubernetes. Ces objets peuvent être montés en tant que volumes dans les conteneurs de l'application, ce qui permet d'accéder aux secrets en tant que fichiers ou variables d'environnement.</p>
+<p>Voici un exemple de création d'un objet Secret dans Kubernetes :</p>
+<pre><code>apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+type: Opaque
+data:
+  username: dXNlcm5hbWU=
+  password: cGFzc3dvcmQ=
+</code></pre>
+<p>Dans cet exemple, nous créons un objet Secret appelé my-secret avec deux clés : username et password. Les valeurs des clés sont encodées en base64 pour des raisons de sécurité.</p>
+<p>Les configurations de l'application peuvent également être gérées à l'aide de ConfigMaps dans Kubernetes. Les ConfigMaps permettent de stocker des paires clé-valeur qui peuvent être montées en tant que fichiers ou variables d'environnement dans les conteneurs de l'application.</p>
+<p>Voici un exemple de création d'un objet ConfigMap dans Kubernetes :</p>
+<pre><code>apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+  app.properties: |
+    key1=value1
+    key2=value2
+</code></pre>
+<p>Dans cet exemple, nous créons un objet ConfigMap appelé my-config avec une clé app.properties contenant des paires clé-valeur pour la configuration de l'application.</p>
+
+<p>Cette section a couvert les principaux aspects de la gestion des applications avec Kubernetes. Nous avons exploré le déploiement d'applications, la mise à l'échelle, la gestion des mises à jour et des versions, la surveillance et la journalisation, ainsi que la gestion des secrets et des configurations. Ces connaissances vous permettront de gérer efficacement vos applications sur Kubernetes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

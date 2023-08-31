@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Sécurité dans Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Authentification et autorisation</h2>
+<p>L'authentification et l'autorisation sont des aspects essentiels de la sécurité dans Kubernetes. L'authentification garantit que seules les entités légitimes peuvent accéder au cluster Kubernetes, tandis que l'autorisation contrôle les actions qu'une entité peut effectuer une fois authentifiée.</p>
+
+<p>Pour l'authentification, Kubernetes prend en charge plusieurs mécanismes, notamment :</p>
+<ul>
+  <li>Les jetons d'authentification : les utilisateurs ou les processus peuvent s'authentifier en fournissant un jeton d'accès valide.</li>
+  <li>Les certificats X.509 : les utilisateurs ou les processus peuvent s'authentifier en utilisant des certificats X.509.</li>
+  <li>Les fournisseurs d'identité tiers : Kubernetes peut être intégré à des fournisseurs d'identité tiers tels que LDAP, Active Directory, etc.</li>
+</ul>
+
+<p>Pour l'autorisation, Kubernetes utilise un système basé sur les rôles (RBAC - Role-Based Access Control). Les rôles définissent les autorisations accordées à un utilisateur ou à un groupe d'utilisateurs. Les autorisations peuvent être définies au niveau du cluster ou au niveau des espaces de noms.</p>
+
+<h2>Gestion des certificats</h2>
+<p>Les certificats jouent un rôle crucial dans la sécurité des clusters Kubernetes. Ils sont utilisés pour sécuriser les communications entre les différents composants du cluster, ainsi que pour authentifier les utilisateurs et les processus.</p>
+
+<p>La gestion des certificats dans Kubernetes implique la génération, la distribution et le renouvellement des certificats. Kubernetes prend en charge la génération automatique des certificats pour les composants internes du cluster, tels que l'API server, les contrôleurs, etc. Pour les certificats d'utilisateur, Kubernetes peut être intégré à des fournisseurs d'identité tiers pour gérer la génération et la distribution des certificats.</p>
+
+<p>Il est essentiel de mettre en place un processus de renouvellement régulier des certificats pour garantir la sécurité continue du cluster Kubernetes.</p>
+
+<h2>Politiques de sécurité</h2>
+<p>Les politiques de sécurité permettent de définir des règles et des contrôles pour protéger le cluster Kubernetes contre les menaces potentielles. Ces politiques peuvent inclure des règles de pare-feu, des restrictions d'accès réseau, des politiques de chiffrement, etc.</p>
+
+<p>Les politiques de sécurité peuvent être définies au niveau du cluster ou au niveau des espaces de noms. Elles permettent de contrôler les communications entre les différents composants du cluster, ainsi que les communications entre les pods.</p>
+
+<h2>Isolation des ressources</h2>
+<p>L'isolation des ressources est un aspect important de la sécurité dans Kubernetes. Elle permet de garantir que les ressources d'un pod ou d'un groupe de pods sont isolées des autres ressources du cluster.</p>
+
+<p>Kubernetes offre plusieurs mécanismes pour l'isolation des ressources, notamment :</p>
+<ul>
+  <li>Les espaces de noms : les espaces de noms permettent de créer des environnements virtuels isolés au sein du cluster.</li>
+  <li>Les politiques réseau : les politiques réseau permettent de contrôler les communications entre les pods, en définissant des règles de filtrage du trafic.</li>
+  <li>Les contraintes de ressources : les contraintes de ressources permettent de limiter les ressources (CPU, mémoire, etc.) qu'un pod peut utiliser.</li>
+</ul>
+
+<p>En utilisant ces mécanismes, il est possible de garantir que les ressources d'un pod ne sont accessibles qu'aux entités autorisées.</p>
+
+<h2>Sécurité des conteneurs</h2>
+<p>La sécurité des conteneurs est un aspect crucial de la sécurité dans Kubernetes. Les conteneurs peuvent être vulnérables à différentes attaques, telles que les attaques par injection de code, les attaques de déni de service, etc.</p>
+
+<p>Pour renforcer la sécurité des conteneurs, il est recommandé de suivre les meilleures pratiques suivantes :</p>
+<ul>
+  <li>Utiliser des images de conteneurs sécurisées provenant de sources fiables.</li>
+  <li>Appliquer les correctifs de sécurité régulièrement.</li>
+  <li>Utiliser des outils de sécurité des conteneurs tels que les scanners de vulnérabilités, les outils de détection des intrusions, etc.</li>
+  <li>Utiliser des politiques de sécurité pour limiter les privilèges des conteneurs.</li>
+</ul>
+
+<p>En suivant ces meilleures pratiques, il est possible de réduire les risques liés à la sécurité des conteneurs dans Kubernetes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

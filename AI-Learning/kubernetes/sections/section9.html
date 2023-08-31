@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Surveiller et dépanner Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Outils de surveillance dans Kubernetes</h2>
+<p>La surveillance est un aspect essentiel de la gestion d'un cluster Kubernetes. Elle permet de détecter les problèmes potentiels, de surveiller les performances et de garantir la disponibilité des applications. Kubernetes propose plusieurs outils de surveillance intégrés pour vous aider à surveiller votre cluster :</p>
+
+<ul>
+  <li><strong>Kube-state-metrics :</strong> Cet outil collecte les métriques de l'état du cluster et les expose via une API Prometheus. Il fournit des informations sur les pods, les services, les réplicas, les déploiements, etc.</li>
+  <li><strong>Prometheus :</strong> Un système de surveillance et d'alerte open-source qui collecte les métriques de différents composants Kubernetes. Il permet de créer des tableaux de bord personnalisés et de configurer des alertes en fonction des seuils définis.</li>
+  <li><strong>Grafana :</strong> Un outil de visualisation open-source qui peut être utilisé avec Prometheus pour créer des tableaux de bord interactifs et personnalisés. Il permet de surveiller les métriques en temps réel et de générer des graphiques pour une analyse approfondie.</li>
+  <li><strong>Kubernetes Dashboard :</strong> Une interface utilisateur basée sur le web qui permet de visualiser et de surveiller les ressources du cluster Kubernetes. Il fournit des informations détaillées sur les pods, les services, les déploiements, les réplicas, etc.</li>
+</ul>
+
+<h2>Dépannage des problèmes courants</h2>
+<p>Malgré la robustesse de Kubernetes, il est possible de rencontrer des problèmes lors de l'exécution d'applications dans un cluster. Voici quelques problèmes courants et des conseils pour les résoudre :</p>
+
+<ul>
+  <li><strong>Problème : Les pods ne se déploient pas correctement.</strong> Vérifiez les journaux des pods pour identifier les erreurs spécifiques. Assurez-vous que les ressources nécessaires sont disponibles et que les images des conteneurs sont accessibles.</li>
+  <li><strong>Problème : Les services ne sont pas accessibles.</strong> Vérifiez que les règles de pare-feu sont correctement configurées pour permettre l'accès aux services. Vérifiez également que les étiquettes des services correspondent aux sélecteurs des pods.</li>
+  <li><strong>Problème : Les performances sont lentes.</strong> Vérifiez l'utilisation des ressources du cluster pour vous assurer qu'il n'est pas surchargé. Optimisez les requêtes et les configurations des applications pour améliorer les performances.</li>
+  <li><strong>Problème : Les mises à jour ne sont pas appliquées correctement.</strong> Vérifiez les stratégies de déploiement et les versions des images pour vous assurer qu'elles sont correctement configurées. Vérifiez également les journaux des déploiements pour identifier les erreurs éventuelles.</li>
+</ul>
+
+<h2>Analyse des journaux et des métriques</h2>
+<p>L'analyse des journaux et des métriques est essentielle pour comprendre le comportement de votre cluster Kubernetes et diagnostiquer les problèmes potentiels. Voici quelques outils couramment utilisés pour l'analyse des journaux et des métriques :</p>
+
+<ul>
+  <li><strong>Elasticsearch et Kibana :</strong> Elasticsearch est un moteur de recherche et d'analyse de données distribué, tandis que Kibana est une interface utilisateur qui permet de visualiser et d'explorer les données stockées dans Elasticsearch. Ensemble, ils peuvent être utilisés pour l'analyse des journaux et des métriques dans Kubernetes.</li>
+  <li><strong>Fluentd :</strong> Un collecteur de journaux open-source qui peut être utilisé pour collecter, filtrer et transférer les journaux des conteneurs vers un emplacement centralisé pour l'analyse.</li>
+  <li><strong>Prometheus :</strong> Comme mentionné précédemment, Prometheus peut également être utilisé pour collecter et analyser les métriques du cluster Kubernetes. Il fournit des graphiques et des alertes basées sur les métriques collectées.</li>
+</ul>
+
+<h2>Optimisation des performances</h2>
+<p>Pour optimiser les performances de votre cluster Kubernetes, voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li><strong>Surveillez les ressources :</strong> Utilisez les outils de surveillance mentionnés précédemment pour surveiller l'utilisation des ressources du cluster. Identifiez les goulets d'étranglement et ajustez les ressources en conséquence.</li>
+  <li><strong>Optimisez les requêtes :</strong> Analysez les requêtes des applications et identifiez les goulots d'étranglement potentiels. Optimisez les requêtes en utilisant des index, des caches et d'autres techniques de performance.</li>
+  <li><strong>Mettez en cache les données :</strong> Utilisez des solutions de mise en cache telles que Redis pour réduire la charge sur les bases de données et améliorer les performances des applications.</li>
+  <li><strong>Utilisez des stratégies de mise à l'échelle automatique :</strong> Configurez des stratégies de mise à l'échelle automatique pour augmenter ou diminuer le nombre de réplicas en fonction de la charge de travail. Cela garantit une utilisation efficace des ressources.</li>
+</ul>
+
+<p>Avec ces outils et bonnes pratiques, vous serez en mesure de surveiller et de dépanner efficacement votre cluster Kubernetes, garantissant ainsi la disponibilité et les performances de vos applications.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

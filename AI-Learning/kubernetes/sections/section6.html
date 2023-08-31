@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Réseau dans Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Modèles de réseau dans Kubernetes</h2>
+<p>Les modèles de réseau dans Kubernetes définissent comment les pods communiquent entre eux et avec les services. Il existe plusieurs modèles de réseau disponibles, tels que :</p>
+<ul>
+  <li>Modèle de réseau à plat : Dans ce modèle, chaque pod dispose d'une adresse IP unique et peut communiquer directement avec les autres pods.</li>
+  <li>Modèle de réseau à routage : Dans ce modèle, les pods sont regroupés en sous-réseaux et communiquent via des routeurs.</li>
+  <li>Modèle de réseau overlay : Dans ce modèle, les pods sont connectés via un réseau virtuel qui s'étend sur plusieurs hôtes.</li>
+</ul>
+
+<h2>Services réseau</h2>
+<p>Les services réseau dans Kubernetes permettent d'exposer les pods à l'intérieur ou à l'extérieur du cluster. Il existe différents types de services réseau :</p>
+<ul>
+  <li>Service ClusterIP : Ce type de service expose le pod uniquement à l'intérieur du cluster.</li>
+  <li>Service NodePort : Ce type de service expose le pod sur un port spécifique de chaque nœud du cluster.</li>
+  <li>Service LoadBalancer : Ce type de service utilise un équilibreur de charge externe pour exposer le pod.</li>
+  <li>Service ExternalName : Ce type de service permet de rediriger les requêtes vers un service externe en utilisant son nom DNS.</li>
+</ul>
+
+<h2>Ingress et load balancing</h2>
+<p>L'Ingress dans Kubernetes permet de gérer l'accès aux services à partir de l'extérieur du cluster. Il agit comme un contrôleur de trafic et peut être utilisé pour configurer des règles de routage et de réécriture d'URL. Le load balancing est une fonctionnalité intégrée à l'Ingress qui permet de répartir la charge entre plusieurs instances d'un service.</p>
+
+<h2>Politiques réseau</h2>
+<p>Les politiques réseau dans Kubernetes permettent de définir des règles de communication entre les pods. Elles peuvent être utilisées pour autoriser ou refuser certaines connexions en fonction de critères tels que les adresses IP source ou les ports de destination.</p>
+
+<h2>Communication entre les pods</h2>
+<p>Les pods dans Kubernetes peuvent communiquer entre eux en utilisant leurs adresses IP. Ils peuvent également utiliser des services pour communiquer avec d'autres pods ou avec des services externes. La communication entre les pods peut se faire de manière sécurisée en utilisant des certificats et des mécanismes d'authentification.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

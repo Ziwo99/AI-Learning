@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Kubernetes Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Installation et configuration de Kubernetes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/kubernetes/kubernetes.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Prérequis pour l'installation de Kubernetes</h2>
+<p>Avant d'installer Kubernetes, assurez-vous de disposer des éléments suivants :</p>
+<ul>
+  <li>Un système d'exploitation compatible, tel que Linux, macOS ou Windows</li>
+  <li>Un cluster de machines virtuelles ou physiques pour exécuter Kubernetes</li>
+  <li>Un accès administratif aux machines du cluster</li>
+  <li>Un réseau fonctionnel pour permettre la communication entre les machines du cluster</li>
+  <li>Une connexion Internet pour télécharger les composants nécessaires</li>
+</ul>
+
+<h2>Installation de Kubernetes sur différents systèmes d'exploitation</h2>
+<p>La procédure d'installation de Kubernetes varie en fonction du système d'exploitation utilisé. Voici les étapes générales pour chaque système :</p>
+
+<h3>Linux :</h3>
+<p>Pour installer Kubernetes sur Linux, vous pouvez utiliser des outils tels que kubeadm, kops ou minikube. Voici les étapes générales :</p>
+<ol>
+  <li>Installez Docker pour Linux</li>
+  <li>Installez kubeadm, kubectl et kubelet</li>
+  <li>Initialisez le cluster avec kubeadm</li>
+  <li>Configurez kubectl pour se connecter au cluster</li>
+  <li>Vérifiez l'état du cluster avec kubectl</li>
+</ol>
+
+<h3>macOS :</h3>
+<p>Pour installer Kubernetes sur macOS, vous pouvez utiliser des outils tels que Docker Desktop ou minikube. Voici les étapes générales :</p>
+<ol>
+  <li>Téléchargez et installez Docker Desktop pour macOS</li>
+  <li>Activez Kubernetes dans les paramètres de Docker Desktop</li>
+  <li>Vérifiez l'état de Kubernetes avec kubectl</li>
+</ol>
+
+<h3>Windows :</h3>
+<p>Pour installer Kubernetes sur Windows, vous pouvez utiliser des outils tels que Docker Desktop ou minikube. Voici les étapes générales :</p>
+<ol>
+  <li>Téléchargez et installez Docker Desktop pour Windows</li>
+  <li>Activez Kubernetes dans les paramètres de Docker Desktop</li>
+  <li>Vérifiez l'état de Kubernetes avec kubectl</li>
+</ol>
+
+<h2>Configuration de Kubernetes pour un environnement de production</h2>
+<p>Une fois Kubernetes installé, vous devez le configurer pour un environnement de production. Voici quelques étapes importantes :</p>
+<ol>
+  <li>Configurez les nœuds du cluster pour une haute disponibilité</li>
+  <li>Configurez le réseau pour permettre la communication entre les nœuds</li>
+  <li>Configurez les politiques de sécurité pour protéger le cluster</li>
+  <li>Configurez les options de stockage persistant pour les applications</li>
+  <li>Configurez les paramètres de surveillance et de journalisation</li>
+</ol>
+
+<h2>Vérification de l'installation et de la configuration de Kubernetes</h2>
+<p>Pour vérifier que l'installation et la configuration de Kubernetes sont correctes, vous pouvez effectuer les actions suivantes :</p>
+<ol>
+  <li>Vérifiez l'état des nœuds du cluster avec kubectl</li>
+  <li>Vérifiez l'état des pods en cours d'exécution avec kubectl</li>
+  <li>Vérifiez l'état des services avec kubectl</li>
+  <li>Vérifiez les journaux et les métriques pour détecter d'éventuels problèmes</li>
+</ol>
+
+<p>Assurez-vous de suivre attentivement les instructions spécifiques à votre système d'exploitation lors de l'installation et de la configuration de Kubernetes. Ces étapes sont générales et peuvent varier en fonction de votre environnement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/kubernetes/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/kubernetes/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
