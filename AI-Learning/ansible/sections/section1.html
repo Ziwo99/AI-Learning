@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ansible Section 1</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 1: Introduction à Ansible</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/ansible.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Qu'est-ce qu'Ansible ?</h2>
+<p>Ansible est une plateforme open-source d'automatisation et de gestion de configuration. Il permet aux administrateurs système de gérer et de déployer des infrastructures informatiques de manière efficace et reproductible. Ansible utilise une approche déclarative pour décrire l'état souhaité du système, ce qui le rend facile à comprendre et à utiliser.</p>
+
+<p>Avec Ansible, vous pouvez automatiser des tâches courantes telles que la configuration des serveurs, le déploiement d'applications, la gestion des utilisateurs et bien plus encore. Il est basé sur le langage de programmation Python et utilise SSH pour se connecter aux machines distantes.</p>
+
+<h2>Avantages et cas d'utilisation d'Ansible</h2>
+<p>Ansible offre de nombreux avantages pour les administrateurs système et les équipes de développement. Voici quelques-uns des principaux avantages :</p>
+
+<ul>
+  <li><strong>Simplicité :</strong> Ansible utilise une syntaxe simple et lisible pour décrire les tâches à effectuer. Il ne nécessite pas de connaissances avancées en programmation, ce qui le rend accessible à tous.</li>
+  <li><strong>Automatisation :</strong> Avec Ansible, vous pouvez automatiser des tâches répétitives et fastidieuses, ce qui vous permet de gagner du temps et d'améliorer l'efficacité de votre infrastructure.</li>
+  <li><strong>Reproductibilité :</strong> Ansible permet de décrire l'état souhaité du système de manière déclarative, ce qui garantit que les configurations sont cohérentes et reproductibles.</li>
+  <li><strong>Extensibilité :</strong> Ansible dispose d'une vaste bibliothèque de modules et de plugins qui vous permettent d'étendre ses fonctionnalités et de l'adapter à vos besoins spécifiques.</li>
+</ul>
+
+<p>Voici quelques cas d'utilisation courants d'Ansible :</p>
+
+<ul>
+  <li>Gestion de configuration : Ansible peut être utilisé pour configurer et maintenir des serveurs, des réseaux et d'autres infrastructures informatiques.</li>
+  <li>Déploiement d'applications : Ansible facilite le déploiement d'applications sur des serveurs, en automatisant les tâches de configuration et de déploiement.</li>
+  <li>Orchestration de conteneurs : Ansible peut être utilisé pour orchestrer des conteneurs Docker et d'autres technologies de conteneurisation.</li>
+  <li>Gestion des environnements de développement : Ansible permet de créer et de gérer des environnements de développement cohérents et reproductibles.</li>
+</ul>
+
+<h2>Installation et configuration d'Ansible</h2>
+<p>Pour installer Ansible, vous pouvez suivre les étapes suivantes :</p>
+
+<ol>
+  <li>Assurez-vous d'avoir Python installé sur votre système.</li>
+  <li>Ouvrez une fenêtre de terminal et exécutez la commande suivante pour installer Ansible :</li>
+</ol>
+
+<pre><code>pip install ansible</code></pre>
+
+<p>Une fois Ansible installé, vous pouvez le configurer en créant un fichier d'inventaire et en définissant des variables de configuration. L'inventaire est un fichier qui répertorie les hôtes sur lesquels vous souhaitez exécuter des tâches avec Ansible.</p>
+
+<p>Voici un exemple de fichier d'inventaire :</p>
+
+<pre><code>[servers]
+server1 ansible_host=192.168.1.10
+server2 ansible_host=192.168.1.11
+
+[databases]
+db1 ansible_host=192.168.1.20
+db2 ansible_host=192.168.1.21
+</code></pre>
+
+<p>Une fois que vous avez configuré votre inventaire, vous pouvez exécuter des tâches avec Ansible en utilisant la commande suivante :</p>
+
+<pre><code>ansible-playbook -i inventory.ini playbook.yml</code></pre>
+
+<p>Remplacez "inventory.ini" par le chemin vers votre fichier d'inventaire et "playbook.yml" par le chemin vers votre playbook Ansible.</p>
+
+<p>Vous êtes maintenant prêt à commencer à utiliser Ansible pour automatiser vos tâches de gestion et de déploiement.</p>
+					
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/sections/section2.html"
+								class="button primary">Section
+								suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ansible Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Sécurité et gestion des secrets avec Ansible</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/ansible.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des clés SSH</h2>
+<p>La gestion des clés SSH est essentielle pour sécuriser les connexions entre les hôtes et les contrôleurs Ansible. Les clés SSH permettent d'authentifier les utilisateurs et de chiffrer les communications. Voici les étapes pour gérer les clés SSH avec Ansible :</p>
+
+<ol>
+  <li>Génération des clés SSH : Utilisez la commande <code>ssh-keygen</code> pour générer une paire de clés SSH (clé publique et clé privée).</li>
+  <li>Distribution des clés publiques : Utilisez le module Ansible <code>authorized_key</code> pour distribuer les clés publiques aux hôtes distants.</li>
+  <li>Configuration des connexions SSH : Utilisez le fichier de configuration SSH (<code>~/.ssh/config</code>) pour spécifier les paramètres de connexion, tels que l'utilisateur, le port et la clé privée.</li>
+</ol>
+
+<h2>Chiffrement des données sensibles</h2>
+<p>Le chiffrement des données sensibles est crucial pour protéger les informations confidentielles, telles que les mots de passe et les clés d'accès. Ansible propose plusieurs options pour chiffrer les données sensibles :</p>
+
+<ul>
+  <li>Utilisation de variables chiffrées : Ansible Vault permet de chiffrer les variables sensibles dans les fichiers de configuration. Vous pouvez créer un fichier Vault avec la commande <code>ansible-vault create</code> et y stocker les variables chiffrées.</li>
+  <li>Utilisation de fichiers chiffrés : Vous pouvez chiffrer des fichiers entiers à l'aide d'Ansible Vault. Utilisez la commande <code>ansible-vault encrypt</code> pour chiffrer un fichier et <code>ansible-vault decrypt</code> pour le déchiffrer.</li>
+</ul>
+
+<h2>Gestion des secrets avec Ansible Vault</h2>
+<p>Ansible Vault est un outil intégré à Ansible qui permet de gérer les secrets de manière sécurisée. Voici comment utiliser Ansible Vault :</p>
+
+<ol>
+  <li>Création d'un fichier Vault : Utilisez la commande <code>ansible-vault create</code> pour créer un nouveau fichier Vault.</li>
+  <li>Modification d'un fichier Vault : Utilisez la commande <code>ansible-vault edit</code> pour modifier un fichier Vault existant.</li>
+  <li>Exécution de playbooks avec un fichier Vault : Utilisez l'option <code>--ask-vault-pass</code> pour demander le mot de passe du fichier Vault lors de l'exécution d'un playbook.</li>
+</ol>
+
+<h2>Bonnes pratiques de sécurité avec Ansible</h2>
+<p>Pour garantir la sécurité de vos configurations et de vos données, voici quelques bonnes pratiques à suivre avec Ansible :</p>
+
+<ul>
+  <li>Utilisez des clés SSH fortes et protégez-les avec des mots de passe forts.</li>
+  <li>Chiffrez les données sensibles à l'aide d'Ansible Vault.</li>
+  <li>Limitez l'accès aux fichiers de configuration et aux playbooks Ansible.</li>
+  <li>Mettez à jour régulièrement Ansible et les modules utilisés.</li>
+  <li>Effectuez des audits de sécurité réguliers pour détecter les vulnérabilités.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pouvez renforcer la sécurité de vos infrastructures et de vos données lors de l'utilisation d'Ansible.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

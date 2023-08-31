@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ansible Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Concepts fondamentaux d'Ansible</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/ansible.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Inventaire et gestion des hôtes</h2>
+  <p>L'inventaire dans Ansible est un fichier qui répertorie tous les hôtes sur lesquels vous souhaitez exécuter des tâches. Il peut être au format INI ou YAML. L'inventaire peut être utilisé pour regrouper les hôtes en fonction de différents critères tels que les rôles, les environnements, etc.</p>
+  <p>Voici un exemple d'inventaire au format INI :</p>
+  <pre><code>[servers]
+  server1 ansible_host=192.168.0.1
+  server2 ansible_host=192.168.0.2
+
+  [database]
+  db1 ansible_host=192.168.0.3
+  db2 ansible_host=192.168.0.4
+  </code></pre>
+  <p>Une fois que vous avez défini votre inventaire, vous pouvez utiliser des modules Ansible pour gérer les hôtes. Par exemple, vous pouvez utiliser le module "ping" pour vérifier si les hôtes sont accessibles :</p>
+  <pre><code>- name: Ping all hosts
+  hosts: all
+  tasks:
+    - name: Ping host
+      ping:
+  </code></pre>
+
+  <h2>Playbooks et tâches</h2>
+  <p>Les playbooks sont des fichiers YAML qui décrivent les tâches à exécuter sur les hôtes. Ils permettent de définir des scénarios d'automatisation en spécifiant les tâches à effectuer, les hôtes sur lesquels les exécuter et les variables à utiliser.</p>
+  <p>Voici un exemple de playbook qui installe Apache sur un groupe d'hôtes :</p>
+  <pre><code>- name: Install Apache
+  hosts: webservers
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+  </code></pre>
+
+  <h2>Modules et plugins</h2>
+  <p>Les modules sont des unités de travail autonomes dans Ansible. Ils sont utilisés pour effectuer des actions spécifiques sur les hôtes. Ansible fournit de nombreux modules prêts à l'emploi pour effectuer des tâches courantes telles que la gestion des packages, la configuration des services, etc.</p>
+  <p>Voici un exemple d'utilisation du module "copy" pour copier un fichier sur les hôtes :</p>
+  <pre><code>- name: Copy file
+  hosts: all
+  tasks:
+    - name: Copy file
+      copy:
+        src: /path/to/source/file
+        dest: /path/to/destination/file
+  </code></pre>
+
+  <h2>Variables et gestion des données</h2>
+  <p>Les variables sont utilisées pour stocker des données dans Ansible. Elles peuvent être définies au niveau du playbook, de l'inventaire ou dans des fichiers séparés appelés "vars_files". Les variables peuvent être utilisées pour personnaliser les tâches en fonction des hôtes ou des groupes d'hôtes.</p>
+  <p>Voici un exemple d'utilisation de variables dans un playbook :</p>
+  <pre><code>- name: Install package
+  hosts: all
+  vars:
+    package_name: apache2
+  tasks:
+    - name: Install package
+      apt:
+        name: "{{ package_name }}"
+        state: present
+  </code></pre>
+
+  <h2>Gestion des erreurs et débogage</h2>
+  <p>Ansible fournit des mécanismes pour gérer les erreurs et déboguer les playbooks. Vous pouvez utiliser des blocs "ignore_errors" pour ignorer les erreurs spécifiques et continuer l'exécution du playbook. Vous pouvez également utiliser le module "debug" pour afficher des informations de débogage pendant l'exécution du playbook.</p>
+  <p>Voici un exemple d'utilisation du bloc "ignore_errors" :</p>
+  <pre><code>- name: Install package
+  hosts: all
+  tasks:
+    - name: Install package
+      apt:
+        name: apache2
+        state: present
+      ignore_errors: yes
+  </code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

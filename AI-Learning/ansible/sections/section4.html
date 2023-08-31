@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ansible Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Déploiement d'infrastructures avec Ansible</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/ansible.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Provisionnement d'instances virtuelles</h2>
+  <p>Le provisionnement d'instances virtuelles est une étape essentielle dans le déploiement d'infrastructures avec Ansible. Il permet de créer et de configurer des machines virtuelles sur des plateformes telles que VMware, VirtualBox, AWS, Azure, etc.</p>
+  <p>Pour provisionner des instances virtuelles avec Ansible, vous pouvez utiliser le module "ec2" pour AWS, le module "azure_rm_virtualmachine" pour Azure, le module "vmware_guest" pour VMware, etc. Ces modules vous permettent de spécifier les détails de l'instance virtuelle, tels que le type d'instance, l'image, les clés SSH, les groupes de sécurité, etc.</p>
+  <p>Voici un exemple de playbook Ansible pour provisionner une instance virtuelle sur AWS :</p>
+  <pre><code>- name: Provision AWS EC2 instance
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - name: Create EC2 instance
+      ec2:
+        key_name: my_key
+        instance_type: t2.micro
+        image: ami-0c94855ba95c71c99
+        wait: true
+        count: 1
+        vpc_subnet_id: subnet-0c94855ba95c71c99
+        assign_public_ip: true
+        group: my_security_group
+        region: us-west-2
+        instance_tags:
+          Name: my_instance
+      register: ec2_instance
+
+    - name: Add instance to host group
+      add_host:
+        hostname: "{{ ec2_instance.instances[0].public_ip }}"
+        groups: ec2_instances
+</code></pre>
+
+  <h2>Configuration des serveurs web</h2>
+  <p>La configuration des serveurs web est une autre tâche courante lors du déploiement d'infrastructures avec Ansible. Vous pouvez utiliser le module "template" pour générer des fichiers de configuration, le module "service" pour gérer les services web, et le module "firewalld" pour configurer les règles de pare-feu.</p>
+  <p>Voici un exemple de playbook Ansible pour configurer un serveur web Apache :</p>
+  <pre><code>- name: Configure Apache web server
+  hosts: web_servers
+  become: true
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: Copy Apache configuration file
+      template:
+        src: templates/httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Start Apache service
+      service:
+        name: httpd
+        state: started
+        enabled: true
+
+    - name: Allow HTTP traffic
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+</code></pre>
+
+  <h2>Configuration des bases de données</h2>
+  <p>La configuration des bases de données est également une étape importante dans le déploiement d'infrastructures avec Ansible. Vous pouvez utiliser le module "mysql_db" pour créer des bases de données, le module "mysql_user" pour gérer les utilisateurs et les autorisations, et le module "mysql_query" pour exécuter des requêtes SQL.</p>
+  <p>Voici un exemple de playbook Ansible pour configurer une base de données MySQL :</p>
+  <pre><code>- name: Configure MySQL database
+  hosts: db_servers
+  become: true
+  tasks:
+    - name: Install MySQL server
+      yum:
+        name: mysql-server
+        state: present
+
+    - name: Start MySQL service
+      service:
+        name: mysqld
+        state: started
+        enabled: true
+
+    - name: Secure MySQL installation
+      mysql_user:
+        name: root
+        password: "{{ mysql_root_password }}"
+        host: localhost
+        login_unix_socket: /var/lib/mysql/mysql.sock
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        check_implicit_admin: yes
+        check_implicit_admin_with_grants: yes
+        check_implicit_admin_with_grants_password: "{{ mysql_root_password }}"
+        priv: "*.*:ALL,GRANT"
+        state: present
+
+    - name: Create database
+      mysql_db:
+        name: my_database
+        state: present
+
+    - name: Create database user
+      mysql_user:
+        name: my_user
+        password: "{{ my_user_password }}"
+        host: localhost
+        priv: "my_database.*:ALL"
+        state: present
+</code></pre>
+
+  <h2>Orchestration de conteneurs</h2>
+  <p>L'orchestration de conteneurs est devenue une pratique courante dans le déploiement d'infrastructures. Ansible peut être utilisé pour orchestrer des conteneurs Docker, Kubernetes, etc. Vous pouvez utiliser le module "docker_container" pour gérer les conteneurs Docker, le module "k8s" pour gérer les ressources Kubernetes, etc.</p>
+  <p>Voici un exemple de playbook Ansible pour orchestrer des conteneurs Docker :</p>
+  <pre><code>- name: Orchestrate Docker containers
+  hosts: docker_hosts
+  become: true
+  tasks:
+    - name: Install Docker
+      yum:
+        name: docker
+        state: present
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Pull Docker image
+      docker_image:
+        name: nginx:latest
+        source: pull
+
+    - name: Run Docker container
+      docker_container:
+        name: my_nginx
+        image: nginx:latest
+        ports:
+          - "80:80"
+        state: started
+</code></pre>
+
+  <h2>Gestion des environnements de développement</h2>
+  <p>La gestion des environnements de développement est essentielle pour assurer la cohérence et la reproductibilité des déploiements. Ansible peut être utilisé pour créer des environnements de développement isolés, installer des dépendances, configurer des variables d'environnement, etc.</p>
+  <p>Voici un exemple de playbook Ansible pour gérer un environnement de développement :</p>
+  <pre><code>- name: Manage development environment
+  hosts: dev_servers
+  become: true
+  tasks:
+    - name: Install dependencies
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - git
+        - python3
+        - pip
+
+    - name: Clone Git repository
+      git:
+        repo: https://github.com/my_repository.git
+        dest: /opt/my_app
+        version: master
+
+    - name: Install Python dependencies
+      pip:
+        requirements: /opt/my_app/requirements.txt
+        virtualenv: /opt/my_app/venv
+
+    - name: Set environment variables
+      lineinfile:
+        path: /etc/environment
+        line: "MY_APP_ENV=development"
+        state: present
+</code></pre>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

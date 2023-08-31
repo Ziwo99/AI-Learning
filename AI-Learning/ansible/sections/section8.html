@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ansible Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Cas d'utilisation réels et exemples pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/ansible.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Déploiement d'une application web avec Ansible</h2>
+  <p>Le déploiement d'une application web avec Ansible est l'un des cas d'utilisation les plus courants. Ansible permet de gérer facilement et efficacement le déploiement d'une application web sur un ou plusieurs serveurs.</p>
+  <p>Pour déployer une application web avec Ansible, vous pouvez utiliser des playbooks et des rôles pour automatiser les tâches nécessaires. Voici un exemple de playbook pour le déploiement d'une application web :</p>
+  <pre><code>- name: Deploy web application
+  hosts: web_servers
+  tasks:
+    - name: Clone application repository
+      git:
+        repo: https://github.com/example/app.git
+        dest: /var/www/app
+        version: master
+
+    - name: Install application dependencies
+      command: npm install
+      args:
+        chdir: /var/www/app
+
+    - name: Start application
+      command: npm start
+      args:
+        chdir: /var/www/app
+</code></pre>
+  <p>Dans cet exemple, nous clonons le dépôt de l'application depuis GitHub, installons les dépendances nécessaires et démarrons l'application.</p>
+  <p>Vous pouvez personnaliser ce playbook en fonction des besoins spécifiques de votre application. Par exemple, vous pouvez ajouter des tâches pour configurer un serveur web comme Nginx ou Apache, configurer une base de données, etc.</p>
+  <h2>Configuration d'un cluster de serveurs avec Ansible</h2>
+  <p>La configuration d'un cluster de serveurs avec Ansible est un autre cas d'utilisation courant. Un cluster de serveurs est un groupe de serveurs qui travaillent ensemble pour fournir des services hautement disponibles et évolutifs.</p>
+  <p>Avec Ansible, vous pouvez facilement configurer et gérer un cluster de serveurs en utilisant des playbooks et des rôles. Voici un exemple de playbook pour la configuration d'un cluster de serveurs :</p>
+  <pre><code>- name: Configure server cluster
+  hosts: cluster_servers
+  tasks:
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - package1
+        - package2
+        - package3
+
+    - name: Configure cluster services
+      template:
+        src: cluster.conf.j2
+        dest: /etc/cluster.conf
+</code></pre>
+  <p>Dans cet exemple, nous installons les packages nécessaires sur les serveurs du cluster et configurons les services du cluster en utilisant un fichier de configuration modèle.</p>
+  <p>Vous pouvez personnaliser ce playbook en fonction de votre configuration de cluster spécifique. Par exemple, vous pouvez ajouter des tâches pour configurer la réplication de données, la gestion de la charge, etc.</p>
+  <h2>Automatisation de la gestion des configurations réseau</h2>
+  <p>L'automatisation de la gestion des configurations réseau est un autre cas d'utilisation important d'Ansible. Ansible permet de gérer facilement et efficacement les configurations réseau sur un ou plusieurs équipements réseau.</p>
+  <p>Pour automatiser la gestion des configurations réseau avec Ansible, vous pouvez utiliser des playbooks et des rôles pour définir les configurations souhaitées. Voici un exemple de playbook pour l'automatisation de la gestion des configurations réseau :</p>
+  <pre><code>- name: Configure network devices
+  hosts: network_devices
+  tasks:
+    - name: Configure VLANs
+      ios_vlan:
+        vlan_id: 10
+        name: VLAN10
+        state: present
+
+    - name: Configure interfaces
+      ios_interface:
+        name: GigabitEthernet1/0/1
+        description: "Connected to Server1"
+        state: present
+        mode: access
+        access_vlan: 10
+</code></pre>
+  <p>Dans cet exemple, nous configurons les VLANs et les interfaces sur les équipements réseau. Vous pouvez personnaliser ce playbook en fonction de votre configuration réseau spécifique.</p>
+  <h2>Déploiement d'une infrastructure multi-cloud avec Ansible</h2>
+  <p>Le déploiement d'une infrastructure multi-cloud avec Ansible est un cas d'utilisation avancé mais très puissant. Ansible permet de gérer facilement et efficacement des ressources sur différentes plateformes cloud, telles que AWS, Azure, Google Cloud, etc.</p>
+  <p>Pour déployer une infrastructure multi-cloud avec Ansible, vous pouvez utiliser des playbooks et des rôles pour provisionner et configurer les ressources nécessaires sur chaque plateforme cloud. Voici un exemple de playbook pour le déploiement d'une infrastructure multi-cloud :</p>
+  <pre><code>- name: Deploy multi-cloud infrastructure
+  hosts: localhost
+  tasks:
+    - name: Provision AWS EC2 instances
+      ec2_instance:
+        name: instance1
+        instance_type: t2.micro
+        image: ami-12345678
+        count: 2
+        region: us-west-2
+        state: present
+
+    - name: Provision Azure VMs
+      azure_rm_virtualmachine:
+        name: vm1
+        vm_size: Standard_DS1_v2
+        image:
+          offer: UbuntuServer
+          publisher: Canonical
+          sku: 16.04-LTS
+        resource_group: myResourceGroup
+        location: westus
+        state: present
+</code></pre>
+  <p>Dans cet exemple, nous provisionnons des instances EC2 sur AWS et des VMs sur Azure. Vous pouvez personnaliser ce playbook en fonction des plateformes cloud que vous utilisez et des ressources que vous souhaitez déployer.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

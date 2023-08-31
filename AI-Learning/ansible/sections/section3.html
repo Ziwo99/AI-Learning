@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ansible Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Automatisation des tâches avec Ansible</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ansible/ansible.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des fichiers et répertoires</h2>
+<p>La gestion des fichiers et des répertoires est une tâche courante lors de l'automatisation des tâches avec Ansible. Ansible fournit plusieurs modules pour faciliter cette gestion.</p>
+
+<p>Le module "file" permet de créer, supprimer ou modifier des fichiers. Par exemple, pour créer un fichier "example.txt" avec le contenu "Hello World", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Créer un fichier
+  hosts: localhost
+  tasks:
+    - name: Créer le fichier example.txt
+      file:
+        path: /path/to/example.txt
+        state: touch
+        mode: '0644'
+        owner: user
+        group: group
+        content: "Hello World"
+</code></pre>
+
+<p>Le module "copy" permet de copier des fichiers d'une machine à une autre. Par exemple, pour copier le fichier "example.txt" du répertoire local vers le répertoire distant "/path/to/", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Copier un fichier
+  hosts: destination
+  tasks:
+    - name: Copier le fichier example.txt
+      copy:
+        src: /path/to/example.txt
+        dest: /path/to/example.txt
+        owner: user
+        group: group
+        mode: '0644'
+</code></pre>
+
+<p>Le module "template" permet de générer des fichiers à partir de modèles. Par exemple, pour générer un fichier de configuration à partir d'un modèle "example.conf.j2" avec des variables, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Générer un fichier de configuration
+  hosts: localhost
+  tasks:
+    - name: Générer le fichier example.conf
+      template:
+        src: /path/to/example.conf.j2
+        dest: /path/to/example.conf
+        owner: user
+        group: group
+        mode: '0644'
+</code></pre>
+
+<h2>Gestion des services et processus</h2>
+<p>La gestion des services et des processus est une autre tâche courante lors de l'automatisation des tâches avec Ansible. Ansible fournit plusieurs modules pour faciliter cette gestion.</p>
+
+<p>Le module "service" permet de démarrer, arrêter ou redémarrer des services. Par exemple, pour démarrer le service "apache2", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Démarrer un service
+  hosts: localhost
+  tasks:
+    - name: Démarrer le service apache2
+      service:
+        name: apache2
+        state: started
+</code></pre>
+
+<p>Le module "systemd" permet de gérer les services systemd. Par exemple, pour activer le service "nginx" au démarrage du système, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Activer un service systemd
+  hosts: localhost
+  tasks:
+    - name: Activer le service nginx
+      systemd:
+        name: nginx
+        enabled: yes
+</code></pre>
+
+<p>Le module "command" permet d'exécuter des commandes sur les hôtes distants. Par exemple, pour exécuter la commande "ls -l" sur l'hôte distant, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Exécuter une commande
+  hosts: localhost
+  tasks:
+    - name: Exécuter la commande ls -l
+      command: ls -l
+</code></pre>
+
+<h2>Configuration des réseaux</h2>
+<p>La configuration des réseaux est une autre tâche courante lors de l'automatisation des tâches avec Ansible. Ansible fournit plusieurs modules pour faciliter cette configuration.</p>
+
+<p>Le module "lineinfile" permet de modifier des lignes dans un fichier. Par exemple, pour ajouter la ligne "nameserver 8.8.8.8" dans le fichier "/etc/resolv.conf", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Modifier un fichier
+  hosts: localhost
+  tasks:
+    - name: Ajouter la ligne nameserver 8.8.8.8
+      lineinfile:
+        path: /etc/resolv.conf
+        line: "nameserver 8.8.8.8"
+</code></pre>
+
+<p>Le module "iptables" permet de configurer les règles de pare-feu. Par exemple, pour autoriser les connexions SSH entrantes, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Configurer le pare-feu
+  hosts: localhost
+  tasks:
+    - name: Autoriser les connexions SSH entrantes
+      iptables:
+        chain: INPUT
+        protocol: tcp
+        destination_port: 22
+        jump: ACCEPT
+</code></pre>
+
+<p>Le module "hostname" permet de configurer le nom d'hôte d'un hôte distant. Par exemple, pour définir le nom d'hôte "webserver" sur l'hôte distant, vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Configurer le nom d'hôte
+  hosts: localhost
+  tasks:
+    - name: Définir le nom d'hôte webserver
+      hostname:
+        name: webserver
+</code></pre>
+
+<h2>Gestion des packages et logiciels</h2>
+<p>La gestion des packages et des logiciels est une autre tâche courante lors de l'automatisation des tâches avec Ansible. Ansible fournit plusieurs modules pour faciliter cette gestion.</p>
+
+<p>Le module "apt" permet de gérer les packages sur les systèmes basés sur Debian. Par exemple, pour installer le package "nginx", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Installer un package
+  hosts: localhost
+  tasks:
+    - name: Installer le package nginx
+      apt:
+        name: nginx
+        state: present
+</code></pre>
+
+<p>Le module "yum" permet de gérer les packages sur les systèmes basés sur Red Hat. Par exemple, pour installer le package "httpd", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Installer un package
+  hosts: localhost
+  tasks:
+    - name: Installer le package httpd
+      yum:
+        name: httpd
+        state: present
+</code></pre>
+
+<p>Le module "pip" permet de gérer les packages Python. Par exemple, pour installer le package "requests", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Installer un package Python
+  hosts: localhost
+  tasks:
+    - name: Installer le package requests
+      pip:
+        name: requests
+        state: present
+</code></pre>
+
+<h2>Gestion des utilisateurs et des autorisations</h2>
+<p>La gestion des utilisateurs et des autorisations est une autre tâche courante lors de l'automatisation des tâches avec Ansible. Ansible fournit plusieurs modules pour faciliter cette gestion.</p>
+
+<p>Le module "user" permet de créer, supprimer ou modifier des utilisateurs. Par exemple, pour créer un utilisateur "john" avec le répertoire personnel "/home/john", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Créer un utilisateur
+  hosts: localhost
+  tasks:
+    - name: Créer l'utilisateur john
+      user:
+        name: john
+        state: present
+        createhome: yes
+        home: /home/john
+</code></pre>
+
+<p>Le module "group" permet de créer, supprimer ou modifier des groupes. Par exemple, pour créer un groupe "developers", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Créer un groupe
+  hosts: localhost
+  tasks:
+    - name: Créer le groupe developers
+      group:
+        name: developers
+        state: present
+</code></pre>
+
+<p>Le module "file" permet de gérer les autorisations des fichiers et des répertoires. Par exemple, pour définir les autorisations "read" et "write" pour l'utilisateur "john" sur le fichier "/path/to/file.txt", vous pouvez utiliser le code suivant :</p>
+
+<pre><code>- name: Gérer les autorisations d'un fichier
+  hosts: localhost
+  tasks:
+    - name: Définir les autorisations pour l'utilisateur john
+      file:
+        path: /path/to/file.txt
+        owner: john
+        group: john
+        mode: '0644'
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ansible/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ansible/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
