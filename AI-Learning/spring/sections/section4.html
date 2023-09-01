@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Gestion des beans</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Comprendre les beans dans Spring</h2>
+<p>Les beans sont des objets gérés par le conteneur Spring. Ils sont créés, configurés et gérés par Spring, ce qui permet une meilleure gestion des dépendances et une meilleure modularité de l'application.</p>
+<p>Un bean est une instance d'une classe qui est configurée dans le fichier de configuration Spring ou annotée avec les annotations appropriées. Il peut être utilisé pour encapsuler des données, des services ou des fonctionnalités spécifiques.</p>
+<p>Spring permet de créer des beans en utilisant différentes méthodes, telles que la configuration XML ou les annotations. Les beans peuvent être instanciés en utilisant des constructeurs ou des méthodes d'usine, et leurs dépendances peuvent être injectées à l'aide de l'injection de dépendances.</p>
+
+<h2>Cycle de vie des beans</h2>
+<p>Le cycle de vie d'un bean dans Spring comprend plusieurs étapes :</p>
+<ol>
+  <li>Instantiation : le conteneur Spring crée une instance du bean.</li>
+  <li>Initialisation : les propriétés du bean sont configurées et les dépendances sont injectées.</li>
+  <li>Utilisation : le bean est utilisé dans l'application.</li>
+  <li>Destruction : lorsque le bean n'est plus nécessaire, le conteneur Spring détruit l'instance du bean.</li>
+</ol>
+<p>Spring offre des méthodes pour personnaliser le cycle de vie des beans, telles que les méthodes d'initialisation et de destruction, qui peuvent être définies dans la configuration XML ou annotées dans la classe du bean.</p>
+
+<h2>Utilisation des scopes de beans</h2>
+<p>Les scopes de beans définissent la durée de vie et la portée d'un bean dans l'application. Spring prend en charge plusieurs scopes de beans :</p>
+<ul>
+  <li>Singleton : un seul bean est créé pour toute l'application.</li>
+  <li>Prototype : un nouveau bean est créé à chaque demande.</li>
+  <li>Request : un bean est créé pour chaque requête HTTP.</li>
+  <li>Session : un bean est créé pour chaque session utilisateur.</li>
+  <li>Application : un bean est créé pour toute l'application Web.</li>
+</ul>
+<p>Le scope d'un bean peut être défini dans la configuration XML ou annoté dans la classe du bean. Il est important de choisir le bon scope en fonction des besoins de l'application pour éviter les problèmes de performance ou de partage de données.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

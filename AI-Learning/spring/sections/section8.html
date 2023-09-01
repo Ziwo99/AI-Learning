@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Tests dans Spring</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux tests dans Spring</h2>
+<p>Les tests jouent un rôle crucial dans le développement d'applications Spring de haute qualité. Ils permettent de vérifier le bon fonctionnement des différentes fonctionnalités de l'application et de détecter les éventuels problèmes ou bugs. Dans cette sous-section, nous allons explorer les différentes approches de tests disponibles dans Spring.</p>
+
+<h2>Utilisation de JUnit avec Spring</h2>
+<p>JUnit est l'un des frameworks de tests les plus populaires pour les applications Java. Il fournit une structure de base pour l'écriture de tests unitaires. Dans cette sous-section, nous allons voir comment utiliser JUnit avec Spring pour tester les différentes composantes de notre application.</p>
+
+<p>Voici un exemple de test unitaire utilisant JUnit et Spring :</p>
+
+<pre><code>@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = { AppConfig.class })
+public class UserServiceTest {
+
+    @Autowired
+    private UserService userService;
+
+    @Test
+    public void testGetUserById() {
+        User user = userService.getUserById(1);
+        assertNotNull(user);
+        assertEquals("John Doe", user.getName());
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons l'annotation <code>@RunWith(SpringJUnit4ClassRunner.class)</code> pour exécuter le test avec le runner de JUnit spécifique à Spring. L'annotation <code>@ContextConfiguration</code> est utilisée pour spécifier la configuration de l'application Spring à utiliser lors de l'exécution du test.</p>
+
+<h2>Utilisation de Mockito pour les tests de dépendances</h2>
+<p>Mockito est un framework de tests qui permet de créer des objets simulés (mocks) pour les dépendances de notre application. Cela nous permet de tester une classe spécifique sans avoir à instancier toutes ses dépendances réelles. Dans cette sous-section, nous allons voir comment utiliser Mockito avec Spring pour tester les dépendances de notre application.</p>
+
+<p>Voici un exemple de test utilisant Mockito pour simuler une dépendance :</p>
+
+<pre><code>@RunWith(MockitoJUnitRunner.class)
+public class UserServiceTest {
+
+    @Mock
+    private UserRepository userRepository;
+
+    @InjectMocks
+    private UserService userService;
+
+    @Test
+    public void testGetUserById() {
+        User user = new User(1, "John Doe");
+        when(userRepository.findById(1)).thenReturn(user);
+
+        User result = userService.getUserById(1);
+
+        assertNotNull(result);
+        assertEquals("John Doe", result.getName());
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons l'annotation <code>@RunWith(MockitoJUnitRunner.class)</code> pour exécuter le test avec le runner de Mockito. L'annotation <code>@Mock</code> est utilisée pour créer un mock de la dépendance UserRepository. L'annotation <code>@InjectMocks</code> est utilisée pour injecter automatiquement les mocks dans la classe UserService.</p>
+
+<p>En utilisant <code>when(userRepository.findById(1)).thenReturn(user)</code>, nous définissons le comportement du mock lorsque la méthode <code>findById</code> est appelée avec l'argument 1. Ainsi, lorsque nous appelons <code>userService.getUserById(1)</code>, le mock renvoie l'objet User simulé que nous avons créé.</p>
+
+<p>Il est important de noter que Mockito ne fonctionne qu'avec des dépendances qui sont des interfaces ou des classes avec des constructeurs par défaut.</p>
+
+<p>Ces exemples illustrent comment utiliser JUnit et Mockito pour tester les différentes fonctionnalités de notre application Spring. Il est essentiel de couvrir tous les cas de test pertinents pour garantir la qualité de notre code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

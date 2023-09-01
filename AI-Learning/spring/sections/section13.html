@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13: Performance et optimisation dans Spring</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Comprendre les performances dans Spring</h2>
+<p>
+Dans cette sous-section, nous allons explorer les concepts fondamentaux liés aux performances dans Spring. Comprendre les performances est essentiel pour optimiser les applications Spring et garantir une expérience utilisateur fluide.
+</p>
+
+<p>
+Les performances d'une application Spring peuvent être évaluées en mesurant des métriques telles que le temps de réponse, la consommation de mémoire et l'utilisation du processeur. Il est important de surveiller ces métriques pour identifier les goulots d'étranglement et les zones d'amélioration.
+</p>
+
+<p>
+Pour améliorer les performances dans Spring, il est essentiel de comprendre les facteurs qui peuvent influencer les performances, tels que la conception de l'application, l'architecture, la gestion des ressources et l'optimisation du code.
+</p>
+
+<h2>Optimisation des requêtes de base de données</h2>
+<p>
+L'optimisation des requêtes de base de données est un aspect crucial de la performance dans Spring. Les requêtes inefficaces peuvent entraîner des temps de réponse lents et une utilisation excessive des ressources.
+</p>
+
+<p>
+Pour optimiser les requêtes de base de données dans Spring, il est recommandé d'utiliser des outils tels que Hibernate pour la gestion des requêtes et des transactions. De plus, l'utilisation de caches de requêtes peut améliorer les performances en évitant les requêtes répétitives.
+</p>
+
+<p>
+Il est également important de concevoir des schémas de base de données efficaces et d'indexer les tables appropriées pour accélérer les opérations de recherche et de jointure.
+</p>
+
+<h2>Utilisation du cache dans Spring</h2>
+<p>
+Le cache est un mécanisme puissant pour améliorer les performances dans Spring. Il permet de stocker temporairement les résultats de calculs ou de requêtes coûteuses afin de les réutiliser ultérieurement.
+</p>
+
+<p>
+Dans Spring, le cache peut être configuré à l'aide d'annotations ou de fichiers de configuration XML. Il existe plusieurs fournisseurs de cache pris en charge par Spring, tels que Ehcache, Redis et Memcached.
+</p>
+
+<p>
+L'utilisation du cache dans Spring peut réduire considérablement les temps de réponse en évitant les calculs ou les accès coûteux à la base de données. Cependant, il est important de surveiller et de gérer correctement le cache pour éviter les problèmes de cohérence des données.
+</p>
+
+<h2>Exemple de code : Utilisation du cache dans Spring</h2>
+<pre><code>
+// Configuration du cache
+@Configuration
+@EnableCaching
+public class CacheConfig extends CachingConfigurerSupport {
+
+    @Bean
+    public CacheManager cacheManager() {
+        return new ConcurrentMapCacheManager("myCache");
+    }
+}
+
+// Utilisation du cache dans un service
+@Service
+public class MyService {
+
+    @Cacheable("myCache")
+    public String getData(String key) {
+        // Logique pour récupérer les données
+        return data;
+    }
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous configurons un cache nommé "myCache" à l'aide de l'annotation @EnableCaching. Ensuite, dans un service, nous utilisons l'annotation @Cacheable pour indiquer que la méthode "getData" doit être mise en cache. Lorsque cette méthode est appelée avec une clé spécifique, Spring vérifie d'abord si les données sont déjà présentes dans le cache. Si c'est le cas, les données sont renvoyées directement à partir du cache, évitant ainsi une opération coûteuse.
+</p>
+
+<p>
+Il est important de noter que le cache doit être utilisé avec précaution, car une mauvaise utilisation peut entraîner des problèmes de cohérence des données ou une surutilisation de la mémoire.
+</p>
+
+<h2>Récapitulatif</h2>
+<p>
+Dans cette section, nous avons exploré les performances et l'optimisation dans Spring. Nous avons discuté de l'importance de comprendre les performances, de l'optimisation des requêtes de base de données et de l'utilisation du cache. En comprenant ces concepts et en appliquant les bonnes pratiques, vous pourrez améliorer les performances de vos applications Spring et offrir une meilleure expérience utilisateur.
+</p>
+
+<h2>Prochaines étapes pour approfondir vos connaissances en Spring</h2>
+<p>
+Maintenant que vous avez acquis une compréhension approfondie des performances et de l'optimisation dans Spring, vous pouvez continuer à approfondir vos connaissances en explorant d'autres sujets avancés tels que la mise à l'échelle horizontale, la gestion des transactions et l'optimisation du code. Vous pouvez également consulter la documentation officielle de Spring et participer à des forums de discussion pour rester à jour avec les dernières tendances et les meilleures pratiques en matière de développement Spring.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

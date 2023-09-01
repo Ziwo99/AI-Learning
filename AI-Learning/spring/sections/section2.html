@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Configuration de base de Spring</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Installation et configuration de l'environnement de développement</h2>
+<p>Pour commencer à travailler avec Spring, vous devez d'abord installer et configurer votre environnement de développement. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Téléchargez et installez Java JDK (Java Development Kit) sur votre machine. Assurez-vous d'ajouter le chemin d'accès à Java dans votre variable d'environnement PATH.</li>
+  <li>Téléchargez et installez un IDE (Integrated Development Environment) tel qu'Eclipse ou IntelliJ IDEA. Ces IDE sont largement utilisés pour le développement d'applications Spring.</li>
+  <li>Téléchargez et installez Apache Maven, un outil de gestion de projet qui facilite la construction et la gestion des dépendances de votre application Spring.</li>
+  <li>Configurez votre IDE pour utiliser Maven en tant qu'outil de construction. Cela vous permettra de créer et de gérer facilement votre projet Spring.</li>
+</ol>
+
+<h2>Configuration XML de Spring</h2>
+<p>La configuration XML de Spring est l'une des méthodes les plus anciennes et les plus couramment utilisées pour configurer une application Spring. Voici comment configurer Spring à l'aide de fichiers XML :</p>
+
+<p>Tout d'abord, créez un fichier de configuration XML, généralement nommé "applicationContext.xml". Ce fichier contiendra les informations de configuration de votre application Spring.</p>
+
+<p>Dans ce fichier, vous pouvez définir les beans, les dépendances, les propriétés et les autres éléments nécessaires à votre application. Voici un exemple de configuration XML de base :</p>
+
+<pre><code>&lt;beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;
+
+    &lt;bean id="myBean" class="com.example.MyBean"&gt;
+        &lt;property name="myProperty" value="myValue" /&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous avons défini un bean avec l'ID "myBean" et la classe "com.example.MyBean". Nous avons également défini une propriété "myProperty" avec la valeur "myValue".</p>
+
+<h2>Configuration basée sur les annotations</h2>
+<p>La configuration basée sur les annotations est une méthode plus récente et plus concise pour configurer une application Spring. Elle utilise des annotations spéciales pour définir les beans, les dépendances et les autres éléments de configuration.</p>
+
+<p>Pour utiliser la configuration basée sur les annotations, vous devez ajouter la balise <code>&lt;context:annotation-config /&gt;</code> à votre fichier de configuration XML. Cela permet à Spring de scanner votre application à la recherche des annotations et de les traiter correctement.</p>
+
+<p>Voici un exemple de configuration basée sur les annotations :</p>
+
+<pre><code>&lt;beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd"&gt;
+
+    &lt;context:annotation-config /&gt;
+
+    &lt;bean id="myBean" class="com.example.MyBean"&gt;
+        &lt;property name="myProperty" value="myValue" /&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous avons ajouté la balise <code>&lt;context:annotation-config /&gt;</code> pour activer la configuration basée sur les annotations. Ensuite, nous avons défini un bean avec l'ID "myBean" et la classe "com.example.MyBean", tout comme dans l'exemple de configuration XML.</p>
+
+<p>La configuration basée sur les annotations offre une syntaxe plus concise et facilite la lecture et la compréhension du code. Elle est largement utilisée dans les applications Spring modernes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

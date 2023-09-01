@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Spring MVC</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à Spring MVC</h2>
+<p>Spring MVC est un framework de développement web basé sur le modèle MVC (Modèle-Vue-Contrôleur) qui facilite la création d'applications web robustes et flexibles. Il offre une structure claire pour organiser le code et séparer les préoccupations liées à la logique métier, à la présentation et à la gestion des requêtes et des réponses.</p>
+
+<h2>Configuration de base de Spring MVC</h2>
+<p>Pour commencer à utiliser Spring MVC, vous devez configurer votre application en utilisant des fichiers de configuration. La configuration de base de Spring MVC comprend la définition des contrôleurs, des vues et des gestionnaires de requêtes.</p>
+
+<p>Voici un exemple de configuration XML de base pour Spring MVC :</p>
+<pre><code>&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd"&gt;
+
+    &lt;context:component-scan base-package="com.example.controllers" /&gt;
+
+    &lt;mvc:annotation-driven /&gt;
+
+    &lt;bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;
+        &lt;property name="prefix" value="/WEB-INF/views/" /&gt;
+        &lt;property name="suffix" value=".jsp" /&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;</code></pre>
+
+<h2>Gestion des requêtes et des réponses</h2>
+<p>Spring MVC offre une gestion puissante des requêtes et des réponses HTTP. Vous pouvez définir des méthodes de contrôleur pour gérer différents types de requêtes (GET, POST, etc.) et utiliser des annotations pour mapper les URL aux méthodes correspondantes.</p>
+
+<p>Voici un exemple de méthode de contrôleur qui gère une requête GET :</p>
+<pre><code>@Controller
+@RequestMapping("/hello")
+public class HelloController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String sayHello(ModelMap model) {
+        model.addAttribute("message", "Hello Spring MVC!");
+        return "hello";
+    }
+}</code></pre>
+
+<h2>Utilisation des annotations dans Spring MVC</h2>
+<p>Spring MVC utilise des annotations pour simplifier le développement des applications web. Vous pouvez utiliser des annotations telles que @Controller, @RequestMapping, @RequestParam, etc. pour définir les contrôleurs, mapper les URL, récupérer les paramètres de requête, etc.</p>
+
+<p>Voici un exemple d'utilisation de l'annotation @RequestMapping :</p>
+<pre><code>@Controller
+@RequestMapping("/hello")
+public class HelloController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String sayHello(ModelMap model) {
+        model.addAttribute("message", "Hello Spring MVC!");
+        return "hello";
+    }
+}</code></pre>
+
+<p>Dans cet exemple, la méthode sayHello() est associée à l'URL "/hello" et est appelée lorsqu'une requête GET est effectuée sur cette URL.</p>
+
+<p>Vous pouvez également utiliser d'autres annotations telles que @RequestParam pour récupérer les paramètres de requête :</p>
+<pre><code>@Controller
+@RequestMapping("/hello")
+public class HelloController {
+
+    @RequestMapping(method = RequestMethod.GET)
+    public String sayHello(@RequestParam("name") String name, ModelMap model) {
+        model.addAttribute("message", "Hello " + name + "!");
+        return "hello";
+    }
+}</code></pre>
+
+<p>Dans cet exemple, la méthode sayHello() récupère le paramètre de requête "name" et l'utilise pour personnaliser le message de salutation.</p>
+
+<p>Il existe de nombreuses autres annotations disponibles dans Spring MVC pour gérer différents aspects du développement web, telles que @ModelAttribute, @ResponseBody, @PathVariable, etc.</p>
+
+<p>En utilisant ces annotations, vous pouvez développer des applications web puissantes et flexibles avec Spring MVC.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Intégration avec d'autres frameworks</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Intégration de Spring avec Hibernate</h2>
+<p>
+Hibernate est un framework de persistance des données qui permet de mapper les objets Java aux tables de base de données. L'intégration de Spring avec Hibernate offre une solution puissante pour la gestion des données dans une application Spring.
+</p>
+<p>
+Pour intégrer Spring avec Hibernate, vous devez ajouter les dépendances appropriées dans votre fichier pom.xml si vous utilisez Maven. Voici un exemple de dépendance pour Hibernate :
+</p>
+<pre><code>
+&lt;dependency&gt;
+    &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+    &lt;artifactId&gt;hibernate-core&lt;/artifactId&gt;
+    &lt;version&gt;5.4.32.Final&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>
+Ensuite, vous devez configurer la session factory de Hibernate dans votre fichier de configuration Spring. Voici un exemple de configuration XML :
+</p>
+<pre><code>
+&lt;bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"&gt;
+    &lt;property name="dataSource" ref="dataSource" /&gt;
+    &lt;property name="packagesToScan" value="com.example.model" /&gt;
+    &lt;property name="hibernateProperties"&gt;
+        &lt;props&gt;
+            &lt;prop key="hibernate.dialect"&gt;org.hibernate.dialect.MySQL5Dialect&lt;/prop&gt;
+            &lt;prop key="hibernate.show_sql"&gt;true&lt;/prop&gt;
+        &lt;/props&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+<p>
+Dans cet exemple, nous configurons la session factory pour utiliser une base de données MySQL avec le dialecte MySQL5Dialect. Nous activons également l'affichage des requêtes SQL pour faciliter le débogage.
+</p>
+<p>
+Une fois que la session factory est configurée, vous pouvez utiliser les fonctionnalités de Hibernate dans votre application Spring. Par exemple, vous pouvez créer des entités Hibernate annotées et les utiliser dans vos services Spring pour effectuer des opérations de lecture/écriture sur la base de données.
+</p>
+
+<h2>Intégration de Spring avec AngularJS</h2>
+<p>
+AngularJS est un framework JavaScript populaire pour le développement d'applications web. L'intégration de Spring avec AngularJS permet de créer des applications web dynamiques en utilisant les fonctionnalités de Spring pour la gestion des données et d'AngularJS pour la manipulation du DOM.
+</p>
+<p>
+Pour intégrer Spring avec AngularJS, vous devez configurer votre application Spring pour servir les fichiers statiques d'AngularJS et créer des API RESTful pour communiquer avec votre application AngularJS.
+</p>
+<p>
+Tout d'abord, vous devez inclure les fichiers JavaScript d'AngularJS dans votre application web Spring. Vous pouvez le faire en ajoutant les dépendances appropriées dans votre fichier pom.xml si vous utilisez Maven. Voici un exemple de dépendance pour AngularJS :
+</p>
+<pre><code>
+&lt;dependency&gt;
+    &lt;groupId&gt;org.webjars&lt;/groupId&gt;
+    &lt;artifactId&gt;angularjs&lt;/artifactId&gt;
+    &lt;version&gt;1.8.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>
+Ensuite, vous devez configurer votre application Spring pour servir les fichiers statiques d'AngularJS. Voici un exemple de configuration XML :
+</p>
+<pre><code>
+&lt;mvc:resources mapping="/resources/**" location="/resources/" /&gt;
+</code></pre>
+<p>
+Dans cet exemple, nous configurons Spring pour servir les fichiers statiques d'AngularJS à partir du répertoire "/resources/" de notre application.
+</p>
+<p>
+Ensuite, vous pouvez créer des API RESTful dans votre application Spring pour communiquer avec votre application AngularJS. Vous pouvez utiliser les annotations de Spring MVC pour définir les points de terminaison de votre API et les méthodes de contrôleur correspondantes.
+</p>
+<p>
+Par exemple, vous pouvez créer un contrôleur Spring qui gère les requêtes GET pour récupérer des données à afficher dans votre application AngularJS :
+</p>
+<pre><code>
+@RestController
+@RequestMapping("/api")
+public class ApiController {
+    
+    @Autowired
+    private DataService dataService;
+    
+    @GetMapping("/data")
+    public List&lt;Data&gt; getData() {
+        return dataService.getData();
+    }
+    
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons l'annotation @RestController pour indiquer que ce contrôleur gère les requêtes RESTful. Nous utilisons également l'annotation @GetMapping pour définir le point de terminaison "/api/data" qui renvoie une liste de données.
+</p>
+<p>
+Avec cette configuration, vous pouvez maintenant utiliser AngularJS pour interagir avec votre application Spring via les API RESTful que vous avez créées.
+</p>
+
+<h2>Intégration de Spring avec RESTful Web Services</h2>
+<p>
+Les services web RESTful sont une approche populaire pour la création d'API web. L'intégration de Spring avec les services web RESTful permet de créer des API robustes et évolutives en utilisant les fonctionnalités de Spring pour la gestion des requêtes et des réponses.
+</p>
+<p>
+Pour intégrer Spring avec les services web RESTful, vous pouvez utiliser le module Spring MVC qui fournit des fonctionnalités pour la création d'API RESTful.
+</p>
+<p>
+Tout d'abord, vous devez configurer votre application Spring pour utiliser le module Spring MVC. Voici un exemple de configuration XML :
+</p>
+<pre><code>
+&lt;mvc:annotation-driven /&gt;
+</code></pre>
+<p>
+Dans cet exemple, nous activons la prise en charge des annotations de Spring MVC pour la gestion des requêtes et des réponses.
+</p>
+<p>
+Ensuite, vous pouvez créer des contrôleurs Spring qui gèrent les requêtes RESTful. Vous pouvez utiliser les annotations de Spring MVC pour définir les points de terminaison de votre API et les méthodes de contrôleur correspondantes.
+</p>
+<p>
+Par exemple, vous pouvez créer un contrôleur Spring qui gère les requêtes GET pour récupérer des données à partir de votre API RESTful :
+</p>
+<pre><code>
+@RestController
+@RequestMapping("/api")
+public class ApiController {
+    
+    @Autowired
+    private DataService dataService;
+    
+    @GetMapping("/data")
+    public List&lt;Data&gt; getData() {
+        return dataService.getData();
+    }
+    
+}
+</code></pre>
+<p>
+Dans cet exemple, nous utilisons l'annotation @RestController pour indiquer que ce contrôleur gère les requêtes RESTful. Nous utilisons également l'annotation @GetMapping pour définir le point de terminaison "/api/data" qui renvoie une liste de données.
+</p>
+<p>
+Avec cette configuration, vous pouvez maintenant utiliser votre API RESTful Spring en effectuant des requêtes HTTP appropriées depuis d'autres applications ou services.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

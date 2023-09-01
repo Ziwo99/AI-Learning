@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12: Déploiement et gestion des applications Spring</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Déploiement d'une application Spring sur un serveur d'applications</h2>
+<p>Lorsque vous avez terminé le développement de votre application Spring, vous devez la déployer sur un serveur d'applications pour qu'elle puisse être exécutée. Le déploiement d'une application Spring sur un serveur d'applications peut être réalisé de différentes manières, en fonction du serveur d'applications que vous utilisez.</p>
+
+<p>Voici les étapes générales pour déployer une application Spring sur un serveur d'applications :</p>
+
+<ol>
+  <li>Créez un fichier WAR (Web Application Archive) de votre application Spring. Ce fichier contient tous les fichiers nécessaires à l'exécution de votre application sur le serveur d'applications.</li>
+  <li>Accédez à l'interface d'administration du serveur d'applications et localisez l'option de déploiement d'une nouvelle application.</li>
+  <li>Téléchargez le fichier WAR de votre application Spring sur le serveur d'applications.</li>
+  <li>Suivez les instructions spécifiques du serveur d'applications pour déployer votre application Spring.</li>
+  <li>Une fois le déploiement terminé, vous pouvez accéder à votre application en utilisant l'URL fournie par le serveur d'applications.</li>
+</ol>
+
+<h2>Gestion des dépendances avec Maven</h2>
+<p>Maven est un outil de gestion de projet qui facilite la gestion des dépendances de votre application Spring. Il utilise un fichier de configuration appelé <code>pom.xml</code> pour spécifier les dépendances nécessaires à votre projet.</p>
+
+<p>Voici comment gérer les dépendances avec Maven :</p>
+
+<ol>
+  <li>Ajoutez les dépendances nécessaires à votre projet dans le fichier <code>pom.xml</code>. Vous pouvez spécifier la version des dépendances et Maven se chargera de les télécharger et de les ajouter à votre projet.</li>
+  <li>Exécutez la commande <code>mvn clean install</code> pour télécharger les dépendances et les ajouter à votre projet.</li>
+  <li>Utilisez les dépendances dans votre code en important les classes nécessaires.</li>
+</ol>
+
+<p>Maven facilite également la gestion des versions des dépendances. Vous pouvez spécifier une plage de versions dans le fichier <code>pom.xml</code> et Maven choisira automatiquement la version la plus récente qui est compatible avec votre projet.</p>
+
+<h2>Utilisation de Spring Actuator pour la gestion des applications</h2>
+<p>Spring Actuator est un module de Spring qui fournit des fonctionnalités de gestion et de surveillance pour votre application. Il expose des points de terminaison (endpoints) qui vous permettent de surveiller et de gérer votre application à partir d'une interface utilisateur ou d'une API.</p>
+
+<p>Voici quelques fonctionnalités fournies par Spring Actuator :</p>
+
+<ul>
+  <li><strong>Endpoint de santé (health endpoint)</strong> : vous permet de vérifier l'état de santé de votre application.</li>
+  <li><strong>Endpoint d'informations (info endpoint)</strong> : vous permet de récupérer des informations sur votre application, telles que la version, la description, etc.</li>
+  <li><strong>Endpoint de métriques (metrics endpoint)</strong> : vous permet de collecter et de surveiller des métriques sur votre application, telles que le nombre de requêtes, la consommation de mémoire, etc.</li>
+  <li><strong>Endpoint de journalisation (loggers endpoint)</strong> : vous permet de gérer les niveaux de journalisation de votre application en temps réel.</li>
+</ul>
+
+<p>Pour utiliser Spring Actuator, vous devez ajouter la dépendance appropriée à votre projet Maven et configurer les points de terminaison que vous souhaitez exposer dans votre fichier de configuration.</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+
+<p>Une fois que vous avez configuré Spring Actuator, vous pouvez accéder aux points de terminaison à partir de l'URL de votre application, en ajoutant le chemin approprié pour chaque point de terminaison.</p>
+
+<p>Par exemple, pour accéder à l'endpoint de santé, vous pouvez utiliser l'URL suivante : <code>http://localhost:8080/actuator/health</code>.</p>
+
+<p>Spring Actuator est un outil puissant pour la gestion et la surveillance de votre application Spring. Il vous permet de collecter des informations précieuses sur votre application en temps réel, ce qui peut vous aider à diagnostiquer les problèmes et à optimiser les performances.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Accès aux données avec Spring</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à l'accès aux données avec Spring</h2>
+<p>
+L'accès aux données est une partie essentielle du développement d'applications, et Spring offre plusieurs options pour faciliter cette tâche. Dans cette section, nous explorerons les différentes méthodes d'accès aux données avec Spring et comment les utiliser efficacement dans vos projets.
+</p>
+
+<h2>Utilisation de JDBC avec Spring</h2>
+<p>
+JDBC (Java Database Connectivity) est une API standard pour l'accès aux bases de données relationnelles en Java. Spring facilite l'utilisation de JDBC en fournissant des classes utilitaires et des fonctionnalités supplémentaires pour simplifier les opérations de base de données. Voici un exemple d'utilisation de JDBC avec Spring :
+</p>
+<pre><code>
+// Configuration du DataSource
+@Bean
+public DataSource dataSource() {
+    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+    dataSource.setUrl("jdbc:mysql://localhost:3306/mydatabase");
+    dataSource.setUsername("username");
+    dataSource.setPassword("password");
+    return dataSource;
+}
+
+// Utilisation de JdbcTemplate pour exécuter des requêtes SQL
+@Autowired
+private JdbcTemplate jdbcTemplate;
+
+public void getAllUsers() {
+    String sql = "SELECT * FROM users";
+    List&lt;User&gt; users = jdbcTemplate.query(sql, new UserMapper());
+    for (User user : users) {
+        System.out.println(user);
+    }
+}
+</code></pre>
+
+<h2>Utilisation de JPA avec Spring</h2>
+<p>
+JPA (Java Persistence API) est une spécification Java pour la gestion des données persistantes. Spring facilite l'utilisation de JPA en fournissant des fonctionnalités d'intégration transparente avec les fournisseurs JPA tels que Hibernate. Voici un exemple d'utilisation de JPA avec Spring :
+</p>
+<pre><code>
+// Configuration du EntityManagerFactory
+@Bean
+public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+    em.setDataSource(dataSource());
+    em.setPackagesToScan("com.example.model");
+    em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+    return em;
+}
+
+// Utilisation de JpaRepository pour effectuer des opérations CRUD
+@Autowired
+private UserRepository userRepository;
+
+public void getAllUsers() {
+    List&lt;User&gt; users = userRepository.findAll();
+    for (User user : users) {
+        System.out.println(user);
+    }
+}
+</code></pre>
+
+<h2>Utilisation de Spring Data</h2>
+<p>
+Spring Data est un projet qui simplifie encore plus l'accès aux données en fournissant des fonctionnalités d'abstraction supplémentaires. Il permet de générer automatiquement les requêtes SQL en fonction des méthodes définies dans les interfaces de repository. Voici un exemple d'utilisation de Spring Data avec Spring :
+</p>
+<pre><code>
+// Définition d'une interface de repository
+public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
+    List&lt;User&gt; findByLastName(String lastName);
+}
+
+// Utilisation du repository pour effectuer des opérations CRUD
+@Autowired
+private UserRepository userRepository;
+
+public void getUsersByLastName(String lastName) {
+    List&lt;User&gt; users = userRepository.findByLastName(lastName);
+    for (User user : users) {
+        System.out.println(user);
+    }
+}
+</code></pre>
+
+<p>
+Dans cette section, nous avons exploré différentes méthodes d'accès aux données avec Spring. Que vous utilisiez JDBC, JPA ou Spring Data, Spring offre des fonctionnalités puissantes pour faciliter l'accès aux données dans vos applications. Il est important de choisir la méthode qui convient le mieux à votre projet et de comprendre comment l'utiliser efficacement.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

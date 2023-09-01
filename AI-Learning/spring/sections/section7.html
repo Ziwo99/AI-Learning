@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Sécurité dans Spring</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à la sécurité dans Spring</h2>
+<p>
+La sécurité est un aspect essentiel de toute application web. Dans cette section, nous allons explorer comment Spring peut nous aider à mettre en place des mécanismes de sécurité robustes pour nos applications. La sécurité dans Spring repose sur le concept d'authentification et d'autorisation, qui permet de contrôler l'accès aux ressources de l'application en fonction des rôles et des permissions des utilisateurs.
+</p>
+
+<h2>Configuration de base de la sécurité dans Spring</h2>
+<p>
+Avant de commencer à sécuriser notre application, nous devons configurer les paramètres de sécurité de base. Dans Spring, cela se fait en utilisant la configuration Java ou XML. Nous allons explorer les deux approches dans cette sous-section.
+</p>
+
+<h2>Gestion de l'authentification et de l'autorisation</h2>
+<p>
+L'authentification est le processus de vérification de l'identité d'un utilisateur, tandis que l'autorisation est le processus de détermination des actions qu'un utilisateur est autorisé à effectuer. Dans cette sous-section, nous allons examiner comment Spring gère ces deux aspects de la sécurité.
+</p>
+
+<h2>Utilisation des annotations pour la sécurité dans Spring</h2>
+<p>
+Spring propose une approche basée sur les annotations pour la configuration de la sécurité. Cela permet de définir des règles de sécurité directement dans le code source de l'application. Dans cette sous-section, nous allons découvrir comment utiliser ces annotations pour sécuriser nos contrôleurs et nos méthodes.
+</p>
+
+<p>Voici un exemple de code utilisant les annotations de sécurité dans Spring :</p>
+<pre><code>@Controller
+public class UserController {
+
+    @Secured("ROLE_ADMIN")
+    @RequestMapping("/users")
+    public String getUsers(Model model) {
+        // Code pour récupérer la liste des utilisateurs
+        return "users";
+    }
+
+    @PreAuthorize("hasRole('ROLE_USER')")
+    @RequestMapping("/profile")
+    public String getUserProfile(Model model) {
+        // Code pour afficher le profil de l'utilisateur
+        return "profile";
+    }
+}
+</code></pre>
+
+<p>
+Dans cet exemple, la méthode <code>getUsers</code> est accessible uniquement aux utilisateurs ayant le rôle "ROLE_ADMIN", tandis que la méthode <code>getUserProfile</code> est accessible uniquement aux utilisateurs ayant le rôle "ROLE_USER".
+</p>
+
+<p>
+Il est important de noter que les annotations de sécurité peuvent être utilisées en combinaison avec d'autres annotations Spring, telles que <code>@RequestMapping</code>, pour définir des règles de sécurité plus complexes.
+</p>
+
+<p>
+Nous avons maintenant une compréhension approfondie de la sécurité dans Spring. Dans la prochaine section, nous allons explorer les meilleures pratiques de développement avec Spring pour garantir des applications sécurisées et fiables.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

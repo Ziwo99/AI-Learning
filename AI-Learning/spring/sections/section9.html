@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Spring Boot</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à Spring Boot</h2>
+<p>Spring Boot est un framework développé par Pivotal Software qui facilite la création d'applications Spring autonomes et prêtes à l'emploi. Il vise à simplifier le processus de configuration et de déploiement des applications Spring en fournissant des conventions intelligentes et des fonctionnalités par défaut.</p>
+<p>Avec Spring Boot, vous pouvez créer rapidement des applications Spring en minimisant la configuration manuelle. Il intègre également des fonctionnalités telles que l'auto-configuration, qui détecte automatiquement les bibliothèques et les modules utilisés dans votre application et les configure en conséquence.</p>
+
+<h2>Configuration automatique avec Spring Boot</h2>
+<p>La configuration automatique est l'une des fonctionnalités clés de Spring Boot. Elle permet à votre application de détecter automatiquement les dépendances et de les configurer en fonction des conventions et des meilleures pratiques.</p>
+<p>Spring Boot utilise des starters, qui sont des dépendances prédéfinies qui incluent toutes les bibliothèques et les configurations nécessaires pour un certain type d'application. Par exemple, le starter "spring-boot-starter-web" inclut toutes les dépendances nécessaires pour créer une application web avec Spring Boot.</p>
+<p>En utilisant les starters, vous pouvez rapidement démarrer un projet Spring Boot sans avoir à configurer manuellement toutes les dépendances. Il vous suffit d'ajouter le starter approprié à votre fichier de configuration et Spring Boot s'occupera du reste.</p>
+
+<h2>Déploiement d'une application Spring Boot</h2>
+<p>Une fois que vous avez développé votre application Spring Boot, vous pouvez la déployer de différentes manières en fonction de vos besoins et de votre environnement.</p>
+<p>Une option courante est de créer un fichier JAR exécutable qui contient toutes les dépendances de votre application. Ce fichier JAR peut être exécuté directement en utilisant la commande "java -jar" ou déployé sur un serveur d'applications compatible avec Java.</p>
+<p>Spring Boot facilite également le déploiement sur des plateformes cloud telles que Heroku, AWS ou Google Cloud Platform. Il fournit des intégrations et des outils spécifiques pour simplifier le déploiement et la gestion de votre application sur ces plateformes.</p>
+<p>En outre, Spring Boot prend en charge le déploiement de microservices en utilisant des conteneurs Docker. Vous pouvez créer une image Docker de votre application et la déployer sur n'importe quelle plateforme compatible avec Docker.</p>
+
+<p>Voici un exemple de configuration d'une application Spring Boot :</p>
+<pre><code>import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MyApp {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons l'annotation @SpringBootApplication pour marquer notre classe principale. Cette annotation active la configuration automatique de Spring Boot et configure notre application en tant qu'application Spring Boot.</p>
+<p>La méthode main() est la méthode d'entrée de notre application. Elle utilise la classe SpringApplication pour démarrer notre application Spring Boot.</p>
+
+<p>Une fois votre application Spring Boot déployée, vous pouvez accéder à celle-ci en utilisant l'URL appropriée, en fonction de votre configuration de serveur et de votre application.</p>
+<p>Assurez-vous de suivre les meilleures pratiques de déploiement et de sécurité lors du déploiement de votre application Spring Boot.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

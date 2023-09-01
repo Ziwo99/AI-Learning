@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Spring Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Injection de dépendances</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/spring/spring.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Comprendre l'injection de dépendances</h2>
+<p>L'injection de dépendances est un concept clé dans le framework Spring. Il s'agit d'une technique qui permet de fournir les dépendances nécessaires à une classe sans que celle-ci ait à les instancier elle-même. Au lieu de créer directement les objets dont elle a besoin, la classe dépendante les reçoit de l'extérieur.</p>
+
+<p>Cela permet de rendre les classes plus modulaires, flexibles et faciles à tester. Au lieu d'avoir des dépendances fortement couplées, où une classe crée et utilise directement d'autres objets, l'injection de dépendances favorise une approche plus souple où les dépendances sont fournies par un conteneur Spring.</p>
+
+<p>Il existe trois types d'injection de dépendances dans Spring :</p>
+
+<ul>
+  <li>L'injection de dépendances par constructeur : les dépendances sont passées au constructeur de la classe.</li>
+  <li>L'injection de dépendances par setter : les dépendances sont passées aux setters de la classe.</li>
+  <li>L'injection de dépendances par champ : les dépendances sont directement injectées dans les champs de la classe.</li>
+</ul>
+
+<h2>Utilisation des annotations pour l'injection de dépendances</h2>
+<p>Spring propose plusieurs annotations pour faciliter l'injection de dépendances :</p>
+
+<ul>
+  <li><code>@Autowired</code> : cette annotation permet d'injecter automatiquement une dépendance par type. Elle peut être utilisée sur les constructeurs, les setters et les champs.</li>
+  <li><code>@Qualifier</code> : cette annotation est utilisée en conjonction avec <code>@Autowired</code> pour spécifier le nom de la dépendance à injecter lorsque plusieurs beans du même type sont disponibles.</li>
+  <li><code>@Resource</code> : cette annotation permet d'injecter une dépendance par nom. Elle peut être utilisée sur les constructeurs, les setters et les champs.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de l'annotation <code>@Autowired</code> :</p>
+
+<pre><code>@Autowired
+private UserService userService;</code></pre>
+
+<p>Dans cet exemple, le bean de type <code>UserService</code> sera automatiquement injecté dans le champ <code>userService</code> de la classe.</p>
+
+<h2>Utilisation de la configuration XML pour l'injection de dépendances</h2>
+<p>En plus des annotations, Spring permet également de configurer l'injection de dépendances à l'aide de fichiers XML. Voici un exemple de configuration XML pour l'injection de dépendances :</p>
+
+<pre><code>&lt;bean id="userService" class="com.example.UserService"&gt;
+    &lt;property name="userRepository" ref="userRepository" /&gt;
+&lt;/bean&gt;
+
+&lt;bean id="userRepository" class="com.example.UserRepository"&gt;
+    &lt;property name="dataSource" ref="dataSource" /&gt;
+&lt;/bean&gt;
+
+&lt;bean id="dataSource" class="com.example.DataSource"&gt;
+    &lt;property name="url" value="jdbc:mysql://localhost:3306/mydb" /&gt;
+    &lt;property name="username" value="root" /&gt;
+    &lt;property name="password" value="password" /&gt;
+&lt;/bean&gt;</code></pre>
+
+<p>Dans cet exemple, nous configurons l'injection de dépendances pour la classe <code>UserService</code>. Nous injectons le bean <code>userRepository</code> dans la propriété <code>userRepository</code> de la classe <code>UserService</code>. De même, nous injectons le bean <code>dataSource</code> dans la propriété <code>dataSource</code> de la classe <code>UserRepository</code>.</p>
+
+<p>Cette configuration XML permet de définir les dépendances entre les différents beans de l'application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/spring/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/spring/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
