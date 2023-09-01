@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Tests unitaires et intégration continue</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux tests unitaires</h2>
+<p>Les tests unitaires sont une pratique essentielle dans le développement d'applications Angular. Ils permettent de vérifier le bon fonctionnement des différentes parties de notre code de manière isolée, en testant chaque unité de code de manière indépendante.</p>
+
+<p>Les tests unitaires sont généralement écrits en utilisant le framework de test Jasmine, qui est intégré par défaut dans Angular. Jasmine fournit une syntaxe simple et expressive pour écrire des tests, ce qui facilite la création de cas de test clairs et compréhensibles.</p>
+
+<p>Pour écrire des tests unitaires dans Angular, nous créons des fichiers de spécifications de test (fichiers .spec.ts) pour chaque composant, service ou directive que nous souhaitons tester. Ces fichiers de spécifications contiennent des suites de tests et des cas de test individuels.</p>
+
+<h2>Configuration et exécution de tests unitaires avec Jasmine et Karma</h2>
+<p>Pour exécuter nos tests unitaires, Angular utilise le test runner Karma. Karma est un outil puissant qui nous permet de lancer nos tests dans différents navigateurs et de voir les résultats en temps réel.</p>
+
+<p>Pour configurer Karma, nous devons créer un fichier de configuration karma.conf.js à la racine de notre projet. Ce fichier contient des informations sur les fichiers à inclure dans les tests, les navigateurs à utiliser et d'autres paramètres de configuration.</p>
+
+<p>Une fois que notre configuration Karma est prête, nous pouvons exécuter nos tests unitaires en utilisant la commande "ng test" dans notre terminal. Cela lancera Karma, qui ouvrira les navigateurs spécifiés dans notre configuration et exécutera les tests.</p>
+
+<p>Les résultats des tests unitaires s'afficheront dans notre terminal, ainsi que dans les navigateurs que nous avons ouverts. Nous pourrons voir si nos tests ont réussi ou échoué, ainsi que des informations détaillées sur les erreurs éventuelles.</p>
+
+<h2>Intégration continue avec Angular et outils de CI/CD</h2>
+<p>L'intégration continue (CI) est une pratique de développement qui consiste à intégrer régulièrement les modifications de code dans un référentiel partagé, puis à exécuter automatiquement des tests et à déployer l'application si les tests réussissent.</p>
+
+<p>Angular s'intègre facilement avec de nombreux outils de CI/CD populaires tels que Jenkins, Travis CI et CircleCI. Ces outils nous permettent de configurer des pipelines d'intégration continue pour notre application Angular, ce qui facilite le processus de test et de déploiement.</p>
+
+<p>Pour configurer l'intégration continue avec Angular, nous devons créer un fichier de configuration spécifique à l'outil de CI/CD que nous utilisons. Ce fichier de configuration contient des étapes pour installer les dépendances, exécuter les tests et déployer l'application.</p>
+
+<p>Une fois que notre configuration CI/CD est prête, chaque fois que nous poussons des modifications de code dans notre référentiel partagé, notre pipeline d'intégration continue sera déclenché. Les tests seront exécutés automatiquement et, si les tests réussissent, l'application sera déployée sur notre environnement de production.</p>
+
+<p>L'intégration continue nous permet de détecter rapidement les erreurs et les problèmes de notre application, en nous assurant que chaque modification de code est testée et fonctionne correctement avant d'être déployée.</p>
+
+<p>En résumé, les tests unitaires et l'intégration continue sont des pratiques essentielles dans le développement d'applications Angular. Les tests unitaires nous permettent de vérifier le bon fonctionnement de notre code de manière isolée, tandis que l'intégration continue nous permet de détecter rapidement les erreurs et de déployer notre application de manière fiable.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

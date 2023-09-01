@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13: Projets pratiques et études de cas</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Réalisation d'un projet complet avec Angular</h2>
+<p>Dans cette sous-section, nous allons vous guider à travers la réalisation d'un projet complet en utilisant Angular. Nous allons commencer par la création d'un nouveau projet Angular à partir de zéro, puis nous allons ajouter des fonctionnalités et des composants pour construire une application fonctionnelle.</p>
+
+<p>Tout d'abord, nous allons créer un nouveau projet Angular en utilisant la commande suivante dans votre terminal :</p>
+<pre><code>ng new mon-projet-angular</code></pre>
+
+<p>Cette commande va créer un nouveau répertoire appelé "mon-projet-angular" et y installer tous les fichiers nécessaires pour démarrer un projet Angular.</p>
+
+<p>Une fois que le projet est créé, nous allons nous rendre dans le répertoire du projet en utilisant la commande suivante :</p>
+<pre><code>cd mon-projet-angular</code></pre>
+
+<p>Ensuite, nous allons générer un nouveau composant en utilisant la commande suivante :</p>
+<pre><code>ng generate component mon-composant</code></pre>
+
+<p>Cette commande va créer un nouveau répertoire appelé "mon-composant" contenant tous les fichiers nécessaires pour le composant.</p>
+
+<p>Ensuite, nous allons ajouter du code HTML et CSS dans le fichier "mon-composant.component.html" pour définir la structure et le style du composant.</p>
+<pre><code>&lt;h2&gt;Mon Composant&lt;/h2&gt;
+&lt;p&gt;Ceci est mon composant Angular.&lt;/p&gt;</code></pre>
+
+<p>Ensuite, nous allons ajouter du code TypeScript dans le fichier "mon-composant.component.ts" pour définir le comportement du composant.</p>
+<pre><code>import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-mon-composant',
+  templateUrl: './mon-composant.component.html',
+  styleUrls: ['./mon-composant.component.css']
+})
+export class MonComposantComponent {
+  constructor() { }
+}</code></pre>
+
+<p>Enfin, nous allons ajouter le composant à notre application en l'important dans le fichier "app.module.ts" :</p>
+<pre><code>import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { MonComposantComponent } from './mon-composant/mon-composant.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    MonComposantComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }</code></pre>
+
+<p>Une fois que tout est en place, nous pouvons exécuter notre application en utilisant la commande suivante :</p>
+<pre><code>ng serve</code></pre>
+
+<p>Cette commande va compiler notre application et la rendre disponible sur un serveur local. Vous pouvez accéder à l'application en ouvrant votre navigateur et en naviguant vers "http://localhost:4200". Vous devriez voir le texte "Mon Composant" s'afficher à l'écran.</p>
+
+<h2>Études de cas réels utilisant Angular</h2>
+<p>Dans cette sous-section, nous allons examiner quelques études de cas réels qui utilisent Angular comme framework de développement. Ces études de cas vous donneront un aperçu de la façon dont Angular est utilisé dans des projets réels et vous montreront comment appliquer les concepts que vous avez appris dans cette formation.</p>
+
+<p>Étude de cas 1: Une application de gestion des tâches</p>
+<p>Dans cette étude de cas, nous allons examiner une application de gestion des tâches qui permet aux utilisateurs de créer, mettre à jour et supprimer des tâches. L'application utilisera Angular pour créer une interface utilisateur réactive et conviviale.</p>
+
+<p>Étude de cas 2: Un site de commerce électronique</p>
+<p>Dans cette étude de cas, nous allons examiner un site de commerce électronique qui permet aux utilisateurs de parcourir et d'acheter des produits en ligne. L'application utilisera Angular pour gérer la navigation, l'affichage des produits et le traitement des commandes.</p>
+
+<h2>Exemples de bonnes pratiques dans des projets réels</h2>
+<p>Dans cette sous-section, nous allons examiner quelques exemples de bonnes pratiques de développement Angular dans des projets réels. Ces exemples vous montreront comment structurer votre code, organiser vos fichiers et optimiser les performances de votre application.</p>
+
+<p>Exemple 1: Organisation du code</p>
+<p>Dans cet exemple, nous allons examiner comment organiser votre code Angular en utilisant des modules, des composants et des services. Nous allons vous montrer comment découper votre application en fonctionnalités distinctes et comment utiliser des modules pour regrouper les composants et les services associés.</p>
+
+<p>Exemple 2: Optimisation des performances</p>
+<p>Dans cet exemple, nous allons examiner quelques techniques d'optimisation des performances que vous pouvez utiliser dans vos projets Angular. Nous allons vous montrer comment minimiser le temps de chargement de votre application, comment optimiser les requêtes HTTP et comment utiliser le lazy loading pour charger les modules de manière asynchrone.</p>
+
+<p>Ce sont quelques exemples de projets pratiques et d'études de cas que vous pouvez réaliser avec Angular. En travaillant sur ces projets, vous pourrez appliquer les concepts que vous avez appris dans cette formation et acquérir une expérience pratique du développement avec Angular.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

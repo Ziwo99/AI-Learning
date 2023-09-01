@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Composants et Templates</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création et utilisation de composants</h2>
+<p>Les composants sont les éléments de base d'une application Angular. Ils permettent de regrouper du code, des styles et des templates pour créer des fonctionnalités réutilisables.</p>
+<p>Pour créer un nouveau composant, vous pouvez utiliser la commande suivante :</p>
+<pre><code>ng generate component nom-du-composant</code></pre>
+<p>Cela générera automatiquement les fichiers nécessaires pour votre composant, y compris le fichier TypeScript, le fichier HTML et le fichier CSS.</p>
+<p>Une fois que votre composant est créé, vous pouvez l'utiliser dans d'autres parties de votre application en l'important et en l'ajoutant à la liste des déclarations dans le module correspondant.</p>
+<p>Par exemple, si vous avez un composant nommé "MonComposant", vous pouvez l'importer dans un autre fichier TypeScript de la manière suivante :</p>
+<pre><code>import { MonComposant } from './mon-composant.component';</code></pre>
+<p>Ensuite, vous pouvez l'ajouter à la liste des déclarations dans le module :</p>
+<pre><code>@NgModule({
+  declarations: [
+    MonComposant
+  ],
+  ...
+})
+export class MonModule { }</code></pre>
+
+<h2>Communication entre composants</h2>
+<p>La communication entre composants est essentielle dans une application Angular. Il existe plusieurs façons de réaliser cette communication, notamment en utilisant les propriétés d'entrée et de sortie, ainsi que les services.</p>
+<p>Les propriétés d'entrée permettent de passer des données d'un composant parent à un composant enfant. Pour définir une propriété d'entrée dans un composant enfant, vous pouvez utiliser le décorateur @Input :</p>
+<pre><code>@Input() maPropriete: string;</code></pre>
+<p>Dans le composant parent, vous pouvez ensuite lier cette propriété à une valeur :</p>
+<pre><code>&lt;app-mon-composant [maPropriete]="valeur"&gt;&lt;/app-mon-composant&gt;</code></pre>
+<p>Les propriétés de sortie permettent à un composant enfant d'émettre des événements vers son composant parent. Pour définir une propriété de sortie dans un composant enfant, vous pouvez utiliser le décorateur @Output :</p>
+<pre><code>@Output() monEvenement: EventEmitter&lt;string&gt; = new EventEmitter&lt;string&gt;();</code></pre>
+<p>Dans le composant enfant, vous pouvez ensuite émettre un événement :</p>
+<pre><code>this.monEvenement.emit('valeur');</code></pre>
+<p>Dans le composant parent, vous pouvez écouter cet événement :</p>
+<pre><code>&lt;app-mon-composant (monEvenement)="maFonction($event)"&gt;&lt;/app-mon-composant&gt;</code></pre>
+
+<h2>Utilisation de templates et directives structurelles</h2>
+<p>Les templates et les directives structurelles permettent de manipuler la structure du DOM en fonction des données et de la logique de votre application.</p>
+<p>Un template est une représentation HTML d'un composant. Il peut contenir des balises HTML, des directives et des expressions Angular.</p>
+<p>Les directives structurelles permettent de conditionner l'affichage de certaines parties du template en fonction de conditions spécifiques. Par exemple, la directive *ngIf permet d'afficher ou de masquer un élément en fonction d'une expression booléenne :</p>
+<pre><code>&lt;div *ngIf="condition"&gt;Contenu conditionnel&lt;/div&gt;</code></pre>
+<p>La directive *ngFor permet de répéter un élément pour chaque élément d'un tableau :</p>
+<pre><code>&lt;ul&gt;
+  &lt;li *ngFor="let item of items"&gt;{{ item }}&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<p>Il existe de nombreuses autres directives structurelles, telles que *ngSwitch, *ngFor et *ngClass, qui permettent de manipuler la structure du DOM de manière dynamique.</p>
+
+<p>C'est ainsi que se termine la section sur les composants et les templates. Vous avez appris à créer et à utiliser des composants, à communiquer entre eux et à utiliser des templates et des directives structurelles pour manipuler la structure du DOM. Dans la prochaine section, nous aborderons les modules et les services.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

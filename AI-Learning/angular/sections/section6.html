@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Formulaires</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création et validation de formulaires</h2>
+<p>Les formulaires sont un élément essentiel de toute application web, car ils permettent aux utilisateurs d'interagir avec le contenu et de soumettre des données. Dans Angular, la création et la validation de formulaires sont simplifiées grâce à l'utilisation du module FormsModule.</p>
+
+<p>Pour créer un formulaire dans Angular, nous devons d'abord importer le module FormsModule dans notre module principal. Pour ce faire, nous ajoutons l'importation suivante :</p>
+
+<pre><code>import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [
+    FormsModule
+  ],
+  // ...
+})
+export class AppModule { }
+</code></pre>
+
+<p>Une fois que nous avons importé le module FormsModule, nous pouvons utiliser les directives fournies par Angular pour créer et valider nos formulaires.</p>
+
+<p>Pour créer un formulaire, nous utilisons la balise &lt;form&gt; et nous lui attribuons une variable de référence à l'aide de la directive ngForm. Par exemple :</p>
+
+<pre><code>&lt;form #myForm="ngForm"&gt;
+  <!-- Contenu du formulaire -->
+&lt;/form&gt;
+</code></pre>
+
+<p>Nous pouvons ensuite ajouter des champs de formulaire à l'intérieur de la balise &lt;form&gt;. Par exemple, pour ajouter un champ de saisie de texte, nous utilisons la balise &lt;input&gt; :</p>
+
+<pre><code>&lt;form #myForm="ngForm"&gt;
+  &lt;input type="text" name="firstName" [(ngModel)]="firstName"&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous avons ajouté un champ de saisie de texte avec le nom "firstName" et nous avons lié sa valeur à la variable "firstName" à l'aide de la directive ngModel.</p>
+
+<p>Pour valider les données saisies par l'utilisateur, nous pouvons utiliser les directives de validation fournies par Angular. Par exemple, pour rendre le champ "firstName" obligatoire, nous pouvons ajouter l'attribut required à la balise &lt;input&gt; :</p>
+
+<pre><code>&lt;form #myForm="ngForm"&gt;
+  &lt;input type="text" name="firstName" [(ngModel)]="firstName" required&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Angular fournira automatiquement des classes CSS pour indiquer si un champ est valide ou non. Nous pouvons également accéder aux états de validation du formulaire et des champs individuels à l'aide de la variable de référence "myForm". Par exemple, pour vérifier si le formulaire est valide, nous pouvons utiliser la propriété "valid" :</p>
+
+<pre><code>&lt;form #myForm="ngForm"&gt;
+  &lt;input type="text" name="firstName" [(ngModel)]="firstName" required&gt;
+  &lt;button type="submit" [disabled]="!myForm.valid"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Dans cet exemple, le bouton de soumission sera désactivé tant que le formulaire n'est pas valide.</p>
+
+<h2>Utilisation des contrôles de formulaire</h2>
+<p>Angular fournit une variété de contrôles de formulaire prédéfinis que nous pouvons utiliser pour faciliter la saisie des données par l'utilisateur. Ces contrôles incluent des champs de saisie de texte, des cases à cocher, des boutons radio, des listes déroulantes, etc.</p>
+
+<p>Pour utiliser un contrôle de formulaire prédéfini, nous devons simplement ajouter la balise appropriée à notre formulaire et lui attribuer un nom unique à l'aide de l'attribut "name". Par exemple, pour ajouter une case à cocher, nous utilisons la balise &lt;input&gt; avec le type "checkbox" :</p>
+
+<pre><code>&lt;form #myForm="ngForm"&gt;
+  &lt;input type="checkbox" name="agree" [(ngModel)]="agree"&gt; I agree to the terms and conditions
+&lt;/form&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous avons ajouté une case à cocher avec le nom "agree" et nous avons lié sa valeur à la variable "agree" à l'aide de la directive ngModel.</p>
+
+<p>Nous pouvons également utiliser des contrôles de formulaire personnalisés en créant nos propres composants. Pour ce faire, nous devons créer un composant avec un modèle de formulaire et utiliser la directive ngModel pour lier les valeurs du composant au formulaire principal.</p>
+
+<h2>Gestion des soumissions de formulaire</h2>
+<p>Lorsque l'utilisateur soumet un formulaire, nous pouvons capturer cet événement en utilisant la directive ngSubmit. Pour ce faire, nous ajoutons l'attribut "ngSubmit" à la balise &lt;form&gt; et nous lui attribuons une méthode à appeler lors de la soumission du formulaire. Par exemple :</p>
+
+<pre><code>&lt;form #myForm="ngForm" (ngSubmit)="onSubmit()"&gt;
+  <!-- Contenu du formulaire -->
+&lt;/form&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous avons ajouté l'attribut "ngSubmit" à la balise &lt;form&gt; et nous avons lié cet événement à la méthode "onSubmit()" de notre composant.</p>
+
+<p>La méthode "onSubmit()" sera appelée lorsque l'utilisateur soumettra le formulaire. À l'intérieur de cette méthode, nous pouvons effectuer des actions telles que l'envoi des données du formulaire à un serveur, la validation supplémentaire des données, etc.</p>
+
+<p>Il est également possible d'annuler la soumission du formulaire en utilisant la méthode "preventDefault()" de l'objet Event. Par exemple :</p>
+
+<pre><code>onSubmit(event: Event) {
+  event.preventDefault();
+  // Autres actions à effectuer lors de la soumission du formulaire
+}
+</code></pre>
+
+<p>Dans cet exemple, nous avons utilisé la méthode "preventDefault()" pour empêcher le comportement par défaut de la soumission du formulaire.</p>
+
+<p>En résumé, dans cette section, nous avons appris à créer et à valider des formulaires dans Angular en utilisant le module FormsModule. Nous avons également exploré l'utilisation des contrôles de formulaire prédéfinis et la gestion des soumissions de formulaire. Les formulaires sont un élément essentiel de toute application web, et Angular facilite grandement leur création et leur gestion.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

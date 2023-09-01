@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Modules et Services</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création et utilisation de modules</h2>
+<p>Les modules sont des conteneurs logiques qui regroupent des composants, des directives, des services et d'autres fonctionnalités d'Angular. Ils permettent d'organiser et de structurer une application Angular de manière modulaire.</p>
+<p>Pour créer un module, vous pouvez utiliser la commande suivante :</p>
+<pre><code>ng generate module nom-du-module</code></pre>
+<p>Cela générera un nouveau fichier de module avec le nom spécifié.</p>
+<p>Pour utiliser un module dans votre application, vous devez l'importer dans le fichier AppModule (ou dans un autre module si vous souhaitez l'utiliser dans un module spécifique). Vous pouvez le faire en ajoutant l'instruction d'importation suivante :</p>
+<pre><code>import { NomDuModule } from './chemin-vers-le-module';</code></pre>
+<p>Ensuite, vous devez ajouter le module importé à la liste des imports du décorateur @NgModule :</p>
+<pre><code>@NgModule({
+  imports: [
+    // ...
+    NomDuModule
+  ],
+  // ...
+})
+export class AppModule { }</code></pre>
+<p>Une fois que vous avez importé et ajouté le module à la liste des imports, vous pouvez utiliser les fonctionnalités fournies par le module dans votre application.</p>
+
+<h2>Injection de dépendances et utilisation de services</h2>
+<p>L'injection de dépendances est un concept clé dans Angular qui permet de fournir des instances de services à d'autres classes ou composants.</p>
+<p>Pour créer un service, vous pouvez utiliser la commande suivante :</p>
+<pre><code>ng generate service nom-du-service</code></pre>
+<p>Cela générera un nouveau fichier de service avec le nom spécifié.</p>
+<p>Pour utiliser un service dans une classe ou un composant, vous devez l'injecter en tant que dépendance. Vous pouvez le faire en ajoutant le service dans le constructeur de la classe :</p>
+<pre><code>constructor(private nomDuService: NomDuService) { }</code></pre>
+<p>Une fois que vous avez injecté le service, vous pouvez l'utiliser en appelant ses méthodes ou en accédant à ses propriétés dans la classe ou le composant.</p>
+
+<h2>Utilisation de services pour la communication entre composants</h2>
+<p>Les services peuvent également être utilisés pour faciliter la communication entre différents composants dans une application Angular.</p>
+<p>Pour cela, vous pouvez créer un service qui contient des méthodes ou des propriétés permettant de partager des données ou de déclencher des actions entre les composants.</p>
+<p>Par exemple, vous pouvez créer un service de données partagées qui contient une propriété et des méthodes pour la mettre à jour :</p>
+<pre><code>import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataService {
+  private data: string;
+
+  constructor() { }
+
+  getData(): string {
+    return this.data;
+  }
+
+  setData(newData: string): void {
+    this.data = newData;
+  }
+}</code></pre>
+<p>Ensuite, vous pouvez injecter ce service dans les composants qui ont besoin d'accéder ou de mettre à jour les données partagées :</p>
+<pre><code>import { Component } from '@angular/core';
+import { DataService } from './chemin-vers-le-service';
+
+@Component({
+  selector: 'app-component1',
+  template: `
+    &lt;h2&gt;Component 1&lt;/h2&gt;
+    &lt;p&gt;Data: {{ data }}&lt;/p&gt;
+    &lt;button (click)="updateData()"&gt;Update Data&lt;/button&gt;
+  `
+})
+export class Component1 {
+  data: string;
+
+  constructor(private dataService: DataService) {
+    this.data = dataService.getData();
+  }
+
+  updateData(): void {
+    this.dataService.setData('New data');
+    this.data = this.dataService.getData();
+  }
+}</code></pre>
+<p>Ainsi, lorsque le bouton "Update Data" est cliqué dans le Component1, il met à jour la donnée partagée dans le service DataService et le Component2, qui affiche également la donnée, est automatiquement mis à jour.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

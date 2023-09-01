@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Routage et Navigation</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration du routage dans Angular</h2>
+<p>Le routage est un aspect essentiel du développement d'applications Angular, car il permet de naviguer entre différentes vues et de gérer les URL de manière efficace. Pour configurer le routage dans Angular, vous devez suivre les étapes suivantes :</p>
+
+<pre><code>import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+// Importez les composants pour lesquels vous souhaitez configurer le routage
+import { HomeComponent } from './home.component';
+import { AboutComponent } from './about.component';
+import { ContactComponent } from './contact.component';
+
+// Définissez les routes de votre application
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+</code></pre>
+
+<p>Dans cet exemple, nous importons les composants HomeComponent, AboutComponent et ContactComponent, puis nous définissons les routes pour chaque composant. Le chemin vide ('') correspond à la page d'accueil, tandis que les autres chemins correspondent aux URL spécifiques pour chaque composant.</p>
+
+<p>Une fois que vous avez défini vos routes, vous devez les ajouter à votre module principal en important le module de routage et en l'ajoutant à la liste des imports :</p>
+
+<pre><code>import { AppRoutingModule } from './app-routing.module';
+
+@NgModule({
+  imports: [
+    // Autres imports...
+    AppRoutingModule
+  ],
+  // Autres configurations...
+})
+export class AppModule { }
+</code></pre>
+
+<p>Avec cette configuration en place, vous pouvez maintenant utiliser les liens de navigation et les directives de routage dans vos templates pour naviguer entre les différentes vues de votre application.</p>
+
+<h2>Utilisation des routes et paramètres</h2>
+<p>Une fois que vous avez configuré le routage dans votre application Angular, vous pouvez utiliser les routes pour naviguer entre les différentes vues. Pour cela, vous pouvez utiliser la directive <code>routerLink</code> dans vos templates :</p>
+
+<pre><code>&lt;a routerLink="/"&gt;Accueil&lt;/a&gt;
+&lt;a routerLink="/about"&gt;À propos&lt;/a&gt;
+&lt;a routerLink="/contact"&gt;Contact&lt;/a&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la directive <code>routerLink</code> pour créer des liens vers les différentes vues de notre application. Lorsque l'utilisateur clique sur l'un de ces liens, Angular gère automatiquement la navigation vers la vue correspondante.</p>
+
+<p>Vous pouvez également passer des paramètres dans les URL en utilisant la syntaxe suivante :</p>
+
+<pre><code>&lt;a [routerLink]="['/product', productId]"&gt;Voir le produit&lt;/a&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la syntaxe <code>[routerLink]</code> pour lier dynamiquement l'URL à un paramètre spécifique. Lorsque l'utilisateur clique sur le lien, Angular remplace automatiquement <code>productId</code> par la valeur réelle du paramètre.</p>
+
+<h2>Navigation entre les différentes vues</h2>
+<p>En plus d'utiliser les liens de navigation, vous pouvez également naviguer entre les différentes vues de votre application en utilisant le service <code>Router</code> fourni par Angular. Voici comment vous pouvez naviguer vers une autre vue :</p>
+
+<pre><code>import { Router } from '@angular/router';
+
+export class HomeComponent {
+  constructor(private router: Router) {}
+
+  goToAbout() {
+    this.router.navigate(['/about']);
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous injectons le service <code>Router</code> dans le composant HomeComponent, puis nous utilisons la méthode <code>navigate</code> pour naviguer vers la vue AboutComponent lorsque la méthode <code>goToAbout</code> est appelée.</p>
+
+<p>Vous pouvez également utiliser des méthodes supplémentaires du service <code>Router</code> pour effectuer des actions de navigation plus avancées, telles que la navigation vers une URL externe ou la navigation avec des paramètres supplémentaires.</p>
+
+<p>Avec ces concepts de base du routage et de la navigation dans Angular, vous pouvez créer des applications web dynamiques et interactives qui permettent aux utilisateurs de naviguer facilement entre différentes vues et de passer des paramètres dans les URL.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

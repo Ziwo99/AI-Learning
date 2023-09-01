@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Angular Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Communication avec les APIs</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/angular/angular.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des services HTTP pour communiquer avec une API</h2>
+<p>Les services HTTP sont utilisés dans Angular pour communiquer avec une API. Ils permettent d'effectuer des requêtes HTTP telles que GET, POST, PUT, DELETE, etc. et de gérer les réponses reçues.</p>
+<p>Pour utiliser les services HTTP, il faut d'abord importer le module HttpClientModule dans le fichier AppModule :</p>
+<pre><code>import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  imports: [
+    HttpClientModule
+  ],
+  ...
+})
+export class AppModule { }
+</code></pre>
+<p>Ensuite, il est possible d'injecter le service HttpClient dans un composant ou un service :</p>
+<pre><code>import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+export class MyService {
+  constructor(private http: HttpClient) { }
+}
+</code></pre>
+<p>Une fois le service HttpClient injecté, il est possible d'effectuer des requêtes HTTP. Par exemple, pour effectuer une requête GET :</p>
+<pre><code>this.http.get('https://api.example.com/data')
+  .subscribe((response) => {
+    console.log(response);
+  });
+</code></pre>
+<p>La méthode subscribe permet de s'abonner à l'observable retourné par la requête HTTP. L'observable émettra la réponse de la requête lorsque celle-ci sera terminée.</p>
+
+<h2>Gestion des requêtes et réponses HTTP</h2>
+<p>Les requêtes HTTP peuvent être configurées avec des options telles que les en-têtes, les paramètres, etc. :</p>
+<pre><code>const options = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  }),
+  params: new HttpParams().set('param', 'value')
+};
+
+this.http.get('https://api.example.com/data', options)
+  .subscribe((response) => {
+    console.log(response);
+  });
+</code></pre>
+<p>Les réponses HTTP peuvent également être gérées. Par exemple, pour gérer les erreurs :</p>
+<pre><code>this.http.get('https://api.example.com/data')
+  .subscribe(
+    (response) => {
+      console.log(response);
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+</code></pre>
+<p>Il est également possible de spécifier le type de la réponse attendue :</p>
+<pre><code>this.http.get&lt;MyData&gt;('https://api.example.com/data')
+  .subscribe((response) => {
+    console.log(response);
+  });
+</code></pre>
+<p>Cela permet de bénéficier de l'inférence de type et d'accéder aux propriétés spécifiques à MyData dans la réponse.</p>
+
+<h2>Utilisation des intercepteurs pour la manipulation des requêtes</h2>
+<p>Les intercepteurs permettent de manipuler les requêtes HTTP avant leur envoi et les réponses HTTP avant leur traitement. Ils peuvent être utilisés pour ajouter des en-têtes, gérer les erreurs, effectuer des transformations, etc.</p>
+<p>Pour créer un intercepteur, il faut implémenter l'interface HttpInterceptor :</p>
+<pre><code>import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class MyInterceptor implements HttpInterceptor {
+  intercept(request: HttpRequest&lt;any&gt;, next: HttpHandler): Observable&lt;HttpEvent&lt;any&gt;&gt; {
+    // Manipulation de la requête
+    const modifiedRequest = request.clone({
+      setHeaders: {
+        'Authorization': 'Bearer token'
+      }
+    });
+
+    // Poursuite du traitement de la requête
+    return next.handle(modifiedRequest);
+  }
+}
+</code></pre>
+<p>Pour utiliser l'intercepteur, il faut le fournir dans le module AppModule :</p>
+<pre><code>import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+@NgModule({
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyInterceptor,
+      multi: true
+    }
+  ],
+  ...
+})
+export class AppModule { }
+</code></pre>
+<p>Ainsi, l'intercepteur sera appliqué à toutes les requêtes HTTP effectuées par l'application.</p>
+<p>Il est également possible de créer des intercepteurs spécifiques à certains services ou composants en utilisant le paramètre "providedIn" lors de la création de l'intercepteur.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/angular/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/angular/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
