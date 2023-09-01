@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Boost Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les bibliothèques de Boost</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/boost/boost.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/boost/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/boost/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Boost.Array</h2>
+<p>Boost.Array est une bibliothèque qui fournit un conteneur de tableau fixe en C++. Elle permet de manipuler des tableaux de taille fixe avec des fonctionnalités supplémentaires par rapport aux tableaux natifs de C++. Boost.Array garantit la sécurité des accès aux éléments du tableau et facilite la gestion de la mémoire.</p>
+<pre><code>#include &lt;boost/array.hpp&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    boost::array&lt;int, 5&gt; arr = {1, 2, 3, 4, 5};
+
+    for (const auto&amp; element : arr) {
+        std::cout &lt;&lt; element &lt;&lt; " ";
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Array pour créer un tableau de taille fixe contenant les entiers de 1 à 5. Nous parcourons ensuite le tableau et affichons chaque élément à l'aide d'une boucle for-each.</p>
+
+<h2>Boost.Bind</h2>
+<p>Boost.Bind est une bibliothèque qui permet de créer des fonctions ou des objets fonctionnels à partir de fonctions existantes en spécifiant certains arguments. Cela facilite la création de fonctions partielles ou de fonctions adaptées à des interfaces spécifiques.</p>
+<pre><code>#include &lt;boost/bind.hpp&gt;
+#include &lt;iostream&gt;
+
+void printSum(int a, int b) {
+    std::cout &lt;&lt; "Sum: " &lt;&lt; a + b &lt;&lt; std::endl;
+}
+
+int main() {
+    auto sumFunction = boost::bind(printSum, 10, _1);
+    sumFunction(5);
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Bind pour créer une fonction partiellement appliquée à partir de la fonction printSum. La fonction sumFunction prend un seul argument et l'utilise comme deuxième argument pour la fonction printSum, avec le premier argument fixé à 10. Ainsi, lorsque nous appelons sumFunction avec l'argument 5, la fonction printSum est appelée avec les arguments 10 et 5, affichant ainsi la somme 15.</p>
+
+<h2>Boost.Date_Time</h2>
+<p>Boost.Date_Time est une bibliothèque qui fournit des fonctionnalités avancées pour la manipulation des dates et du temps en C++. Elle facilite la gestion des calendriers, des fuseaux horaires, des durées et des opérations sur les dates et les heures.</p>
+<pre><code>#include &lt;boost/date_time.hpp&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    boost::posix_time::ptime now = boost::posix_time::second_clock::local_time();
+    std::cout &lt;&lt; "Current time: " &lt;&lt; now &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Date_Time pour obtenir l'heure locale actuelle à l'aide de la classe ptime et de la fonction second_clock::local_time(). Nous affichons ensuite cette heure à l'aide de std::cout.</p>
+
+<h2>Boost.Filesystem</h2>
+<p>Boost.Filesystem est une bibliothèque qui fournit des fonctionnalités pour la manipulation des fichiers et des répertoires en C++. Elle facilite la création, la suppression, le déplacement et la recherche de fichiers et de répertoires, ainsi que la manipulation des chemins d'accès.</p>
+<pre><code>#include &lt;boost/filesystem.hpp&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    boost::filesystem::path filePath("path/to/file.txt");
+
+    if (boost::filesystem::exists(filePath)) {
+        std::cout &lt;&lt; "File exists!" &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; "File does not exist." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Filesystem pour vérifier si un fichier spécifié par le chemin d'accès "path/to/file.txt" existe. Nous utilisons la fonction exists() pour effectuer cette vérification et affichons un message approprié en fonction du résultat.</p>
+
+<h2>Boost.Regex</h2>
+<p>Boost.Regex est une bibliothèque qui fournit des fonctionnalités pour la manipulation des expressions régulières en C++. Elle permet de rechercher, de valider et de manipuler des chaînes de caractères en utilisant des motifs spécifiques.</p>
+<pre><code>#include &lt;boost/regex.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string input = "Hello, Boost!";
+    boost::regex pattern("Boost");
+
+    if (boost::regex_search(input, pattern)) {
+        std::cout &lt;&lt; "Pattern found!" &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; "Pattern not found." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Regex pour rechercher le motif "Boost" dans une chaîne de caractères. Nous utilisons la fonction regex_search() pour effectuer cette recherche et affichons un message approprié en fonction du résultat.</p>
+
+<h2>Boost.Serialization</h2>
+<p>Boost.Serialization est une bibliothèque qui fournit des fonctionnalités pour la sérialisation d'objets en C++. Elle permet de convertir des objets en une représentation binaire ou textuelle, ce qui facilite leur stockage ou leur transmission.</p>
+<pre><code>#include &lt;boost/serialization/serialization.hpp&gt;
+#include &lt;boost/archive/text_oarchive.hpp&gt;
+#include &lt;boost/archive/text_iarchive.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+class MyClass {
+public:
+    int data;
+
+    template &lt;class Archive&gt;
+    void serialize(Archive&amp; ar, const unsigned int version) {
+        ar &amp; data;
+    }
+};
+
+int main() {
+    MyClass obj;
+    obj.data = 42;
+
+    std::ofstream file("data.txt");
+    boost::archive::text_oarchive archive(file);
+    archive &lt;&lt; obj;
+    file.close();
+
+    std::ifstream file2("data.txt");
+    boost::archive::text_iarchive archive2(file2);
+    MyClass obj2;
+    archive2 &gt;&gt; obj2;
+    file2.close();
+
+    std::cout &lt;&lt; "Deserialized data: " &lt;&lt; obj2.data &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Serialization pour sérialiser un objet de la classe MyClass en utilisant un archiveur textuel. Nous stockons ensuite la représentation sérialisée dans un fichier "data.txt". Nous pouvons ensuite désérialiser l'objet à partir du fichier et afficher la valeur de son membre "data".</p>
+
+<h2>Boost.Smart_Ptr</h2>
+<p>Boost.Smart_Ptr est une bibliothèque qui fournit des pointeurs intelligents en C++. Elle facilite la gestion de la mémoire en automatisant la libération des ressources allouées dynamiquement lorsque les pointeurs intelligents sortent de portée.</p>
+<pre><code>#include &lt;boost/smart_ptr.hpp&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    boost::shared_ptr&lt;int&gt; ptr(new int(42));
+    std::cout &lt;&lt; "Value: " &lt;&lt; *ptr &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Smart_Ptr pour créer un pointeur intelligent partagé vers un entier de valeur 42. Nous utilisons ensuite l'opérateur de déréférencement (*) pour accéder à la valeur pointée et l'afficher à l'aide de std::cout.</p>
+
+<h2>Boost.Thread</h2>
+<p>Boost.Thread est une bibliothèque qui fournit des fonctionnalités pour la programmation multi-threading en C++. Elle facilite la création, la synchronisation et la communication entre les threads, ainsi que la gestion des verrous et des variables conditionnelles.</p>
+<pre><code>#include &lt;boost/thread.hpp&gt;
+#include &lt;iostream&gt;
+
+void printMessage() {
+    std::cout &lt;&lt; "Hello from thread!" &lt;&lt; std::endl;
+}
+
+int main() {
+    boost::thread thread(printMessage);
+    thread.join();
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Thread pour créer un thread qui exécute la fonction printMessage. Nous utilisons la fonction join() pour attendre que le thread se termine avant de terminer le programme principal.</p>
+
+<h2>Boost.Units</h2>
+<p>Boost.Units est une bibliothèque qui fournit des fonctionnalités pour la manipulation des unités de mesure en C++. Elle facilite la conversion entre différentes unités, la réalisation d'opérations mathématiques avec des quantités de différentes unités et la vérification de la cohérence des unités.</p>
+<pre><code>#include &lt;boost/units.hpp&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    typedef boost::units::quantity&lt;boost::units::si::length&gt; Length;
+    Length distance = 10.0 * boost::units::si::meters;
+
+    std::cout &lt;&lt; "Distance: " &lt;&lt; distance &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Units pour définir une quantité de longueur en mètres à l'aide du type Length. Nous utilisons ensuite cette quantité pour afficher la distance à l'aide de std::cout.</p>
+
+<h2>Boost.Utility</h2>
+<p>Boost.Utility est une bibliothèque qui fournit diverses fonctionnalités utilitaires en C++. Elle comprend des fonctions pour la manipulation des chaînes de caractères, la génération de nombres aléatoires, la manipulation des types, la gestion des exceptions et bien plus encore.</p>
+<pre><code>#include &lt;boost/utility.hpp&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::string str = "Boost.Utility";
+    std::cout &lt;&lt; "Length: " &lt;&lt; boost::size(str) &lt;&lt; std::endl;
+
+    return 0;
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons Boost.Utility pour obtenir la taille de la chaîne de caractères "Boost.Utility" à l'aide de la fonction size(). Nous affichons ensuite cette taille à l'aide de std::cout.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/boost/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/boost/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

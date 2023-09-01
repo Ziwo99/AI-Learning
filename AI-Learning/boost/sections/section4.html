@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Boost Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Utilisation avancée de Boost</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/boost/boost.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/boost/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/boost/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Boost avec C++11 et versions ultérieures</h2>
+<p>Boost est compatible avec les versions récentes de C++, y compris C++11 et les versions ultérieures. L'utilisation de Boost avec ces versions offre de nombreuses fonctionnalités supplémentaires et améliorations par rapport aux versions antérieures de C++.</p>
+<p>Par exemple, Boost offre des bibliothèques qui complètent les fonctionnalités de C++11, telles que Boost.Thread, qui fournit des fonctionnalités de programmation multi-threading plus avancées que celles disponibles dans le standard C++11.</p>
+<p>De plus, Boost propose des bibliothèques qui sont devenues obsolètes dans les versions récentes de C++, telles que Boost.Bind, qui permet de lier des arguments à des fonctions, ce qui est désormais intégré dans le standard C++11 avec les lambdas et les fonctions de liaison.</p>
+<p>Il est important de noter que l'utilisation de Boost avec C++11 et versions ultérieures peut nécessiter des ajustements dans le code existant, en particulier si des fonctionnalités similaires sont déjà disponibles dans le standard C++. Il est recommandé de consulter la documentation de Boost pour connaître les différences et les meilleures pratiques lors de l'utilisation de Boost avec les versions récentes de C++.</p>
+
+<h2>Utilisation de Boost dans des projets multi-threading</h2>
+<p>Boost offre une bibliothèque complète pour la programmation multi-threading, appelée Boost.Thread. Cette bibliothèque fournit des fonctionnalités avancées pour la création, la gestion et la synchronisation des threads.</p>
+<p>Pour utiliser Boost.Thread, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/thread.hpp&gt;</code></pre>
+<p>Ensuite, vous pouvez créer des threads en utilisant la classe boost::thread :</p>
+<pre><code>void myThreadFunction()
+{
+    // Code exécuté par le thread
+}
+
+int main()
+{
+    boost::thread myThread(myThreadFunction);
+
+    // Faire d'autres opérations
+
+    myThread.join();
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous créons un thread en passant une fonction à exécuter en tant que paramètre au constructeur de boost::thread. Le thread est ensuite démarré et exécute la fonction spécifiée.</p>
+<p>La fonction join() est utilisée pour attendre que le thread se termine avant de continuer l'exécution du programme principal.</p>
+<p>Boost.Thread offre également des fonctionnalités pour la synchronisation des threads, telles que les mutex, les variables conditionnelles et les barrières. Ces fonctionnalités permettent de coordonner l'exécution de plusieurs threads et d'éviter les problèmes de concurrence.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Thread dans des projets multi-threading.</p>
+
+<h2>Utilisation de Boost pour la gestion des exceptions</h2>
+<p>Boost propose une bibliothèque appelée Boost.Exception qui facilite la gestion des exceptions dans les programmes C++. Cette bibliothèque fournit des fonctionnalités supplémentaires par rapport au système d'exceptions standard de C++.</p>
+<p>Pour utiliser Boost.Exception, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/exception/all.hpp&gt;</code></pre>
+<p>Boost.Exception fournit des types d'exceptions supplémentaires, tels que boost::exception et boost::error_info, qui permettent de capturer et de transmettre des informations supplémentaires lors de la levée d'une exception.</p>
+<p>Voici un exemple d'utilisation de Boost.Exception :</p>
+<pre><code>try {
+    // Code susceptible de lever une exception
+    throw boost::enable_error_info(std::runtime_error("Erreur critique")) 
+        &lt;&lt; boost::errinfo_file_name("fichier.txt")
+        &lt;&lt; boost::errinfo_line_number(42);
+}
+catch (const boost::exception&amp; ex) {
+    std::cerr &lt;&lt; boost::diagnostic_information(ex) &lt;&lt; std::endl;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::enable_error_info pour ajouter des informations supplémentaires à l'exception levée. Nous utilisons ensuite les macros boost::errinfo_file_name et boost::errinfo_line_number pour spécifier le nom du fichier et le numéro de ligne où l'exception a été levée.</p>
+<p>Lors de la capture de l'exception, nous utilisons boost::diagnostic_information pour afficher les informations de l'exception, y compris les informations supplémentaires ajoutées avec boost::errinfo_file_name et boost::errinfo_line_number.</p>
+<p>Boost.Exception offre également d'autres fonctionnalités pour la gestion des exceptions, telles que la gestion des exceptions polymorphiques et la gestion des exceptions dans des contextes multi-threading.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Exception pour la gestion des exceptions.</p>
+
+<h2>Utilisation de Boost pour la manipulation de fichiers et de répertoires</h2>
+<p>Boost propose une bibliothèque appelée Boost.Filesystem qui facilite la manipulation des fichiers et des répertoires dans les programmes C++. Cette bibliothèque fournit des fonctionnalités supplémentaires par rapport aux fonctionnalités standard de C++ pour la manipulation des fichiers et des répertoires.</p>
+<p>Pour utiliser Boost.Filesystem, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/filesystem.hpp&gt;</code></pre>
+<p>Boost.Filesystem offre des classes et des fonctions pour la manipulation des chemins de fichiers, la création, la suppression, le déplacement et la copie de fichiers et de répertoires, ainsi que d'autres opérations courantes sur les fichiers et les répertoires.</p>
+<p>Voici un exemple d'utilisation de Boost.Filesystem :</p>
+<pre><code>#include &lt;boost/filesystem.hpp&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+    boost::filesystem::path filePath("chemin/vers/fichier.txt");
+
+    if (boost::filesystem::exists(filePath)) {
+        std::cout &lt;&lt; "Le fichier existe." &lt;&lt; std::endl;
+    }
+    else {
+        std::cout &lt;&lt; "Le fichier n'existe pas." &lt;&lt; std::endl;
+    }
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::filesystem::path pour représenter un chemin de fichier. Nous utilisons ensuite boost::filesystem::exists pour vérifier si le fichier existe.</p>
+<p>Boost.Filesystem offre également des fonctionnalités pour la manipulation des attributs de fichiers, la recherche récursive de fichiers, la création de liens symboliques et bien plus encore.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Filesystem pour la manipulation des fichiers et des répertoires.</p>
+
+<h2>Utilisation de Boost pour la manipulation de chaînes de caractères</h2>
+<p>Boost propose une bibliothèque appelée Boost.StringAlgorithms qui facilite la manipulation des chaînes de caractères dans les programmes C++. Cette bibliothèque fournit des fonctionnalités supplémentaires par rapport aux fonctionnalités standard de C++ pour la manipulation des chaînes de caractères.</p>
+<p>Pour utiliser Boost.StringAlgorithms, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/algorithm/string.hpp&gt;</code></pre>
+<p>Boost.StringAlgorithms offre des fonctions pour la conversion de casse, la suppression des espaces, le découpage en sous-chaînes, la recherche et le remplacement de motifs, ainsi que d'autres opérations courantes sur les chaînes de caractères.</p>
+<p>Voici un exemple d'utilisation de Boost.StringAlgorithms :</p>
+<pre><code>#include &lt;boost/algorithm/string.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+
+int main()
+{
+    std::string str = "Hello, World!";
+
+    boost::algorithm::to_upper(str);
+
+    std::cout &lt;&lt; str &lt;&lt; std::endl;
+
+    std::vector&lt;std::string&gt; words;
+    boost::algorithm::split(words, str, boost::algorithm::is_any_of(", "));
+
+    for (const auto&amp; word : words) {
+        std::cout &lt;&lt; word &lt;&lt; std::endl;
+    }
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::algorithm::to_upper pour convertir la chaîne de caractères en majuscules. Nous utilisons ensuite boost::algorithm::split pour découper la chaîne de caractères en sous-chaînes en utilisant les délimiteurs "," et " ".</p>
+<p>Boost.StringAlgorithms offre également des fonctionnalités pour la comparaison de chaînes de caractères, la suppression de caractères spécifiques, la suppression des espaces en début et en fin de chaîne, et bien plus encore.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.StringAlgorithms pour la manipulation des chaînes de caractères.</p>
+
+<h2>Utilisation de Boost pour la gestion des dates et du temps</h2>
+<p>Boost propose une bibliothèque appelée Boost.Date_Time qui facilite la gestion des dates et du temps dans les programmes C++. Cette bibliothèque fournit des fonctionnalités supplémentaires par rapport aux fonctionnalités standard de C++ pour la gestion des dates et du temps.</p>
+<p>Pour utiliser Boost.Date_Time, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/date_time.hpp&gt;</code></pre>
+<p>Boost.Date_Time offre des classes et des fonctions pour la manipulation des dates, des heures, des durées, des fuseaux horaires, ainsi que d'autres opérations courantes sur les dates et le temps.</p>
+<p>Voici un exemple d'utilisation de Boost.Date_Time :</p>
+<pre><code>#include &lt;boost/date_time.hpp&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+    boost::gregorian::date today = boost::gregorian::day_clock::local_day();
+
+    std::cout &lt;&lt; today &lt;&lt; std::endl;
+
+    boost::posix_time::ptime now = boost::posix_time::second_clock::local_time();
+
+    std::cout &lt;&lt; now &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::gregorian::day_clock::local_day pour obtenir la date actuelle et boost::posix_time::second_clock::local_time pour obtenir l'heure actuelle.</p>
+<p>Boost.Date_Time offre également des fonctionnalités pour la manipulation des intervalles de temps, le calcul des écarts entre les dates et les heures, la conversion entre les fuseaux horaires, et bien plus encore.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Date_Time pour la gestion des dates et du temps.</p>
+
+<h2>Utilisation de Boost pour la sérialisation d'objets</h2>
+<p>Boost propose une bibliothèque appelée Boost.Serialization qui facilite la sérialisation et la désérialisation d'objets dans les programmes C++. Cette bibliothèque permet de convertir des objets en une représentation binaire ou textuelle, qui peut être stockée ou transmise, puis reconvertie en objets.</p>
+<p>Pour utiliser Boost.Serialization, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/serialization.hpp&gt;</code></pre>
+<p>Boost.Serialization offre des classes et des fonctions pour la sérialisation d'objets, y compris la sérialisation d'objets polymorphiques, la gestion des références circulaires, la sérialisation des conteneurs, et bien plus encore.</p>
+<p>Voici un exemple d'utilisation de Boost.Serialization :</p>
+<pre><code>#include &lt;boost/serialization/vector.hpp&gt;
+#include &lt;boost/archive/text_oarchive.hpp&gt;
+#include &lt;boost/archive/text_iarchive.hpp&gt;
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;vector&gt;
+
+class MyClass
+{
+public:
+    int x;
+    std::string str;
+
+    template &lt;class Archive&gt;
+    void serialize(Archive&amp; ar, const unsigned int version)
+    {
+        ar &amp; x;
+        ar &amp; str;
+    }
+};
+
+int main()
+{
+    std::vector&lt;MyClass&gt; objects;
+    objects.push_back({ 42, "Hello" });
+    objects.push_back({ 99, "World" });
+
+    std::ofstream file("data.txt");
+    boost::archive::text_oarchive archive(file);
+    archive &lt;&lt; objects;
+
+    file.close();
+
+    std::vector&lt;MyClass&gt; loadedObjects;
+
+    std::ifstream inputFile("data.txt");
+    boost::archive::text_iarchive inputArchive(inputFile);
+    inputArchive &gt;&gt; loadedObjects;
+
+    inputFile.close();
+
+    for (const auto&amp; obj : loadedObjects) {
+        std::cout &lt;&lt; obj.x &lt;&lt; ": " &lt;&lt; obj.str &lt;&lt; std::endl;
+    }
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::serialization pour sérialiser et désérialiser un vecteur d'objets de la classe MyClass. Nous utilisons boost::archive::text_oarchive pour sérialiser les objets dans un fichier texte, puis boost::archive::text_iarchive pour désérialiser les objets à partir du fichier texte.</p>
+<p>Boost.Serialization offre également des fonctionnalités pour la sérialisation d'objets dans d'autres formats, tels que le format binaire, XML et JSON.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Serialization pour la sérialisation d'objets.</p>
+
+<h2>Utilisation de Boost pour la gestion de la mémoire</h2>
+<p>Boost propose une bibliothèque appelée Boost.Smart_Ptr qui facilite la gestion de la mémoire dans les programmes C++. Cette bibliothèque fournit des classes pour la gestion automatique de la durée de vie des objets, en utilisant des pointeurs intelligents.</p>
+<p>Pour utiliser Boost.Smart_Ptr, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/smart_ptr.hpp&gt;</code></pre>
+<p>Boost.Smart_Ptr offre plusieurs types de pointeurs intelligents, tels que boost::shared_ptr, boost::scoped_ptr et boost::weak_ptr.</p>
+<p>Voici un exemple d'utilisation de Boost.Smart_Ptr :</p>
+<pre><code>#include &lt;boost/smart_ptr.hpp&gt;
+#include &lt;iostream&gt;
+
+class MyClass
+{
+public:
+    MyClass() { std::cout &lt;&lt; "Constructeur" &lt;&lt; std::endl; }
+    ~MyClass() { std::cout &lt;&lt; "Destructeur" &lt;&lt; std::endl; }
+};
+
+int main()
+{
+    boost::shared_ptr&lt;MyClass&gt; ptr(new MyClass);
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::shared_ptr pour créer un pointeur intelligent qui gère automatiquement la durée de vie de l'objet de la classe MyClass. Lorsque le pointeur intelligent sort de portée, l'objet est automatiquement détruit.</p>
+<p>Boost.Smart_Ptr offre également des fonctionnalités pour la gestion des références circulaires, la gestion des pointeurs nuls, et bien plus encore.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Smart_Ptr pour la gestion de la mémoire.</p>
+
+<h2>Utilisation de Boost pour la gestion des unités de mesure</h2>
+<p>Boost propose une bibliothèque appelée Boost.Units qui facilite la gestion des unités de mesure dans les programmes C++. Cette bibliothèque fournit des classes et des fonctions pour effectuer des calculs avec des quantités physiques et des unités de mesure.</p>
+<p>Pour utiliser Boost.Units, vous devez inclure le fichier d'en-tête approprié :</p>
+<pre><code>#include &lt;boost/units.hpp&gt;</code></pre>
+<p>Boost.Units offre des classes pour représenter des quantités physiques avec des unités, ainsi que des fonctions pour effectuer des conversions entre différentes unités, des calculs avec des quantités physiques, et bien plus encore.</p>
+<p>Voici un exemple d'utilisation de Boost.Units :</p>
+<pre><code>#include &lt;boost/units.hpp&gt;
+#include &lt;iostream&gt;
+
+int main()
+{
+    typedef boost::units::quantity&lt;boost::units::si::length&gt; Length;
+
+    Length distance = 10.0 * boost::units::si::meters;
+
+    Length convertedDistance = distance / 1000.0;
+
+    std::cout &lt;&lt; convertedDistance &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+<p>Dans cet exemple, nous utilisons boost::units::quantity pour représenter une quantité physique avec une unité de mesure. Nous utilisons boost::units::si::length pour représenter une longueur en unités du système international (mètres). Nous effectuons ensuite une conversion de la distance en kilomètres en divisant par 1000.0.</p>
+<p>Boost.Units offre également des fonctionnalités pour la gestion des unités dérivées, la définition de nouvelles unités, la gestion des conversions entre les systèmes d'unités, et bien plus encore.</p>
+<p>Il est recommandé de consulter la documentation de Boost pour en savoir plus sur l'utilisation de Boost.Units pour la gestion des unités de mesure.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/boost/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/boost/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
