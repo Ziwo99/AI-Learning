@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Plugins jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux plugins jQuery</h2>
+<p>Les plugins jQuery sont des extensions qui ajoutent des fonctionnalités supplémentaires à la bibliothèque jQuery de base. Ils permettent d'étendre les capacités de jQuery en ajoutant de nouvelles méthodes, événements ou effets.</p>
+<p>Les plugins jQuery sont généralement créés par des développeurs tiers et sont disponibles gratuitement ou moyennant un coût. Ils sont largement utilisés dans l'industrie du développement web pour simplifier et accélérer la création d'applications interactives.</p>
+
+<h2>Utilisation des plugins existants</h2>
+<p>Pour utiliser un plugin jQuery existant, vous devez d'abord inclure le fichier JavaScript du plugin dans votre page HTML, après avoir inclus la bibliothèque jQuery de base. Ensuite, vous pouvez utiliser les nouvelles fonctionnalités fournies par le plugin en appelant les méthodes ou en utilisant les événements spécifiques du plugin.</p>
+<p>Par exemple, si vous souhaitez utiliser le plugin "jQuery UI Datepicker" pour ajouter un sélecteur de date à un champ de formulaire, vous devez inclure le fichier JavaScript du plugin et ensuite appliquer le plugin au champ de formulaire spécifique en utilisant la méthode appropriée fournie par le plugin.</p>
+<pre><code>&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script src="jquery-ui.js"&gt;&lt;/script&gt;
+
+&lt;input type="text" id="datepicker"&gt;
+
+&lt;script&gt;
+    $(function() {
+        $("#datepicker").datepicker();
+    });
+&lt;/script&gt;</code></pre>
+
+<h2>Création de plugins personnalisés</h2>
+<p>Si vous avez besoin de fonctionnalités spécifiques qui ne sont pas disponibles dans les plugins existants, vous pouvez créer votre propre plugin jQuery personnalisé. Pour cela, vous devez étendre l'objet jQuery en ajoutant de nouvelles méthodes ou événements.</p>
+<p>La création d'un plugin personnalisé implique généralement la définition d'une nouvelle méthode jQuery en utilisant la fonction <code>$.fn</code>. Cette fonction vous permet d'ajouter de nouvelles méthodes à l'objet jQuery, qui peuvent ensuite être utilisées sur les éléments sélectionnés.</p>
+<pre><code>$.fn.monPlugin = function() {
+    // Code de votre plugin ici
+};
+
+// Utilisation du plugin personnalisé
+$("#monElement").monPlugin();</code></pre>
+
+<h2>Bonnes pratiques pour l'utilisation des plugins</h2>
+<p>Lors de l'utilisation de plugins jQuery, il est important de suivre certaines bonnes pratiques pour garantir une intégration fluide et éviter les conflits ou les problèmes de performance :</p>
+<ul>
+  <li>Assurez-vous de toujours inclure la bibliothèque jQuery de base avant d'inclure les plugins.</li>
+  <li>Lisez attentivement la documentation du plugin pour comprendre comment l'utiliser correctement.</li>
+  <li>Évitez d'utiliser trop de plugins différents, car cela peut entraîner des conflits ou des problèmes de performance.</li>
+  <li>Mettez à jour régulièrement les plugins pour bénéficier des dernières fonctionnalités et corrections de bugs.</li>
+  <li>Testez soigneusement les plugins dans différents navigateurs pour vous assurer qu'ils fonctionnent correctement.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pourrez tirer le meilleur parti des plugins jQuery et améliorer la qualité et l'efficacité de vos applications web.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

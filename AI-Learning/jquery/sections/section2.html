@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Sélecteurs jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Sélection d'éléments HTML</h2>
+<p>Les sélecteurs jQuery permettent de sélectionner des éléments HTML spécifiques dans une page web. Pour sélectionner un élément HTML, on utilise le symbole dollar ($) suivi de parenthèses contenant une chaîne de caractères représentant le sélecteur.</p>
+<p>Par exemple, pour sélectionner tous les éléments de paragraphe (balise &lt;p&gt;) dans une page, on utilise le sélecteur "p" :</p>
+<pre><code>$("p")</code></pre>
+<p>Cela retournera un objet jQuery contenant tous les éléments de paragraphe de la page.</p>
+
+<h2>Utilisation des sélecteurs CSS</h2>
+<p>jQuery utilise les sélecteurs CSS pour sélectionner des éléments HTML. Les sélecteurs CSS permettent de cibler des éléments en fonction de leur balise, de leur classe, de leur ID, de leurs attributs, etc.</p>
+<p>Par exemple, pour sélectionner tous les éléments de classe "example" dans une page, on utilise le sélecteur ".example" :</p>
+<pre><code>$(".example")</code></pre>
+<p>Cela retournera un objet jQuery contenant tous les éléments de classe "example" de la page.</p>
+
+<h2>Sélection d'éléments par attribut</h2>
+<p>Il est également possible de sélectionner des éléments en fonction de leurs attributs. On utilise le sélecteur "[attribut=valeur]" pour cela.</p>
+<p>Par exemple, pour sélectionner tous les liens (&lt;a&gt;) ayant l'attribut "href" égal à "https://www.example.com", on utilise le sélecteur 'a[href="https://www.example.com"]' :</p>
+<pre><code>$('a[href="https://www.example.com"]')</code></pre>
+<p>Cela retournera un objet jQuery contenant tous les liens ayant l'attribut "href" égal à "https://www.example.com".</p>
+
+<h2>Sélection d'éléments par position</h2>
+<p>Il est possible de sélectionner des éléments en fonction de leur position dans la structure HTML. On utilise les sélecteurs ":first", ":last", ":even" et ":odd" pour cela.</p>
+<p>Par exemple, pour sélectionner le premier élément de paragraphe (&lt;p&gt;) dans une page, on utilise le sélecteur "p:first" :</p>
+<pre><code>$("p:first")</code></pre>
+<p>Cela retournera un objet jQuery contenant le premier élément de paragraphe de la page.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

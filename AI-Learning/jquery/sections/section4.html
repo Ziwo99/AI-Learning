@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Evénements jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des événements de base</h2>
+<p>Les événements sont des actions déclenchées par l'utilisateur ou par le navigateur, comme un clic de souris, une pression de touche ou le chargement d'une page. jQuery permet de gérer ces événements de manière simple et efficace.</p>
+<p>Pour attacher un gestionnaire d'événements à un élément, on utilise la méthode <code>on()</code>. Par exemple, pour attacher un gestionnaire d'événements au clic sur un bouton :</p>
+<pre><code>$('#monBouton').on('click', function() {
+    // Code à exécuter lorsque le bouton est cliqué
+});
+</code></pre>
+<p>Le premier argument de la méthode <code>on()</code> est le nom de l'événement, et le deuxième argument est la fonction à exécuter lorsque l'événement se produit.</p>
+
+<h2>Utilisation des événements de souris</h2>
+<p>jQuery offre une variété d'événements de souris que vous pouvez utiliser pour interagir avec les éléments de votre page. Voici quelques-uns des événements de souris les plus couramment utilisés :</p>
+<ul>
+  <li><code>click</code> : se déclenche lorsqu'un élément est cliqué</li>
+  <li><code>mouseover</code> : se déclenche lorsque le curseur de la souris survole un élément</li>
+  <li><code>mouseout</code> : se déclenche lorsque le curseur de la souris quitte un élément</li>
+  <li><code>mousedown</code> : se déclenche lorsque le bouton de la souris est enfoncé sur un élément</li>
+  <li><code>mouseup</code> : se déclenche lorsque le bouton de la souris est relâché sur un élément</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'événement <code>click</code> :</p>
+<pre><code>$('#monElement').on('click', function() {
+    // Code à exécuter lorsque l'élément est cliqué
+});
+</code></pre>
+
+<h2>Utilisation des événements de clavier</h2>
+<p>jQuery permet également de gérer les événements de clavier, tels que les pressions de touche. Voici quelques-uns des événements de clavier les plus couramment utilisés :</p>
+<ul>
+  <li><code>keydown</code> : se déclenche lorsque la touche d'un clavier est enfoncée</li>
+  <li><code>keyup</code> : se déclenche lorsque la touche d'un clavier est relâchée</li>
+  <li><code>keypress</code> : se déclenche lorsque la touche d'un clavier est enfoncée et relâchée</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'événement <code>keydown</code> :</p>
+<pre><code>$('#monInput').on('keydown', function(event) {
+    // Code à exécuter lorsque la touche d'un clavier est enfoncée
+    console.log('La touche ' + event.key + ' a été enfoncée.');
+});
+</code></pre>
+
+<h2>Utilisation des événements de formulaire</h2>
+<p>jQuery facilite la gestion des événements liés aux formulaires, tels que la soumission d'un formulaire ou le changement de valeur d'un champ de saisie. Voici quelques-uns des événements de formulaire les plus couramment utilisés :</p>
+<ul>
+  <li><code>submit</code> : se déclenche lorsqu'un formulaire est soumis</li>
+  <li><code>change</code> : se déclenche lorsqu'une valeur de champ de saisie est modifiée</li>
+  <li><code>focus</code> : se déclenche lorsqu'un champ de saisie obtient le focus</li>
+  <li><code>blur</code> : se déclenche lorsqu'un champ de saisie perd le focus</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'événement <code>submit</code> :</p>
+<pre><code>$('#monFormulaire').on('submit', function(event) {
+    // Code à exécuter lorsque le formulaire est soumis
+    event.preventDefault(); // Empêche le comportement par défaut du formulaire
+});
+</code></pre>
+
+<p>Ces exemples vous donnent un aperçu de la manière dont vous pouvez utiliser les événements jQuery pour interagir avec les utilisateurs et rendre votre application plus dynamique et interactive.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

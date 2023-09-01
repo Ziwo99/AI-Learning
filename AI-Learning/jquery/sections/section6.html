@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : AJAX avec jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à AJAX</h2>
+<p>AJAX (Asynchronous JavaScript and XML) est une technique de développement web qui permet de mettre à jour une partie d'une page web sans avoir à recharger toute la page. Cela permet d'améliorer l'expérience utilisateur en rendant les interactions plus fluides et en évitant les temps de chargement inutiles.</p>
+
+<p>AJAX utilise principalement JavaScript pour envoyer des requêtes HTTP asynchrones au serveur et récupérer les données nécessaires. jQuery facilite grandement l'utilisation d'AJAX en fournissant des méthodes simplifiées pour effectuer ces requêtes et gérer les réponses.</p>
+
+<h2>Utilisation de la méthode $.ajax()</h2>
+<p>La méthode $.ajax() est la méthode principale de jQuery pour effectuer des requêtes AJAX. Elle permet d'envoyer des requêtes HTTP GET, POST, PUT, DELETE, etc. vers un serveur et de récupérer les réponses.</p>
+
+<p>Voici un exemple d'utilisation de la méthode $.ajax() pour envoyer une requête GET et récupérer les données JSON renvoyées par le serveur :</p>
+
+<pre><code>$.ajax({
+    url: 'https://api.example.com/data',
+    method: 'GET',
+    dataType: 'json',
+    success: function(response) {
+        // Traitement des données JSON
+    },
+    error: function(xhr, status, error) {
+        // Gestion des erreurs
+    }
+});
+</code></pre>
+
+<p>Dans cet exemple, nous spécifions l'URL de l'API que nous souhaitons interroger, la méthode HTTP GET, le type de données attendu (JSON dans ce cas), et nous définissons des fonctions de rappel pour traiter la réponse en cas de succès ou d'erreur.</p>
+
+<h2>Gestion des réponses AJAX</h2>
+<p>Une fois que nous avons envoyé une requête AJAX et reçu une réponse du serveur, nous devons être en mesure de traiter cette réponse de manière appropriée. jQuery facilite cela en nous permettant de spécifier des fonctions de rappel pour différents événements liés à la réponse.</p>
+
+<p>Voici quelques-uns des événements les plus couramment utilisés :</p>
+
+<ul>
+    <li><code>success</code> : Cette fonction de rappel est exécutée lorsque la requête est réussie et que la réponse est renvoyée avec un code de statut HTTP 200.</li>
+    <li><code>error</code> : Cette fonction de rappel est exécutée lorsque la requête échoue ou que la réponse renvoie un code de statut HTTP autre que 200.</li>
+    <li><code>complete</code> : Cette fonction de rappel est exécutée une fois que la requête est terminée, qu'elle ait réussi ou échoué.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de ces fonctions de rappel :</p>
+
+<pre><code>$.ajax({
+    url: 'https://api.example.com/data',
+    method: 'GET',
+    dataType: 'json',
+    success: function(response) {
+        // Traitement des données JSON en cas de succès
+    },
+    error: function(xhr, status, error) {
+        // Gestion des erreurs en cas d'échec
+    },
+    complete: function() {
+        // Code exécuté une fois que la requête est terminée
+    }
+});
+</code></pre>
+
+<h2>Utilisation des méthodes raccourcies AJAX</h2>
+<p>jQuery propose également des méthodes raccourcies pour effectuer des requêtes AJAX courantes, telles que <code>$.get()</code>, <code>$.post()</code>, <code>$.getJSON()</code>, etc. Ces méthodes simplifient encore plus le processus en réduisant la quantité de code nécessaire.</p>
+
+<p>Voici un exemple d'utilisation de la méthode raccourcie <code>$.get()</code> pour envoyer une requête GET et récupérer les données JSON renvoyées par le serveur :</p>
+
+<pre><code>$.get('https://api.example.com/data', function(response) {
+    // Traitement des données JSON
+}, 'json');
+</code></pre>
+
+<p>Dans cet exemple, nous spécifions simplement l'URL de l'API, une fonction de rappel pour traiter la réponse en cas de succès, et le type de données attendu (JSON dans ce cas).</p>
+
+<p>Les méthodes raccourcies AJAX sont très pratiques pour les requêtes simples, mais elles peuvent être limitées dans certains cas. Dans ces cas, il est préférable d'utiliser la méthode $.ajax() complète pour plus de flexibilité.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

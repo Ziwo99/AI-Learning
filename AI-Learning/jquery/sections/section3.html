@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Manipulation du DOM avec jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Modification du contenu HTML</h2>
+<p>La manipulation du contenu HTML est l'une des fonctionnalités les plus puissantes de jQuery. Elle permet de modifier le contenu d'un élément HTML de manière dynamique.</p>
+<p>Pour modifier le contenu HTML d'un élément avec jQuery, on utilise la méthode <code>html()</code>. Cette méthode permet de récupérer le contenu HTML d'un élément ou de le modifier.</p>
+<p>Voici un exemple qui montre comment modifier le contenu HTML d'un élément avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myElement"
+  var element = $("#myElement");
+  
+  // Modification du contenu HTML de l'élément
+  element.html("Nouveau contenu");
+});
+</code></pre>
+
+<h2>Modification des attributs</h2>
+<p>En plus de la modification du contenu HTML, jQuery permet également de modifier les attributs des éléments HTML. Cela peut être utile pour changer des attributs tels que l'URL d'une image, la valeur d'un champ de formulaire, etc.</p>
+<p>Pour modifier un attribut avec jQuery, on utilise la méthode <code>attr()</code>. Cette méthode permet de récupérer la valeur d'un attribut ou de le modifier.</p>
+<p>Voici un exemple qui montre comment modifier un attribut avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myImage"
+  var image = $("#myImage");
+  
+  // Modification de l'attribut "src" de l'image
+  image.attr("src", "nouvelle_image.jpg");
+});
+</code></pre>
+
+<h2>Ajout et suppression d'éléments</h2>
+<p>jQuery permet également d'ajouter et de supprimer des éléments HTML de manière dynamique. Cela peut être utile pour ajouter de nouveaux éléments à une liste, supprimer des éléments indésirables, etc.</p>
+<p>Pour ajouter un nouvel élément avec jQuery, on utilise la méthode <code>append()</code>. Cette méthode permet d'ajouter un élément à la fin d'un autre élément.</p>
+<p>Voici un exemple qui montre comment ajouter un nouvel élément avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myList"
+  var list = $("#myList");
+  
+  // Ajout d'un nouvel élément à la liste
+  list.append("<li>Nouvel élément</li>");
+});
+</code></pre>
+<p>Pour supprimer un élément avec jQuery, on utilise la méthode <code>remove()</code>. Cette méthode permet de supprimer un élément de la page.</p>
+<p>Voici un exemple qui montre comment supprimer un élément avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myElement"
+  var element = $("#myElement");
+  
+  // Suppression de l'élément
+  element.remove();
+});
+</code></pre>
+
+<h2>Manipulation des classes CSS</h2>
+<p>La manipulation des classes CSS est une autre fonctionnalité importante de jQuery. Elle permet de modifier les classes d'un élément HTML, ce qui peut être utile pour ajouter ou supprimer des styles CSS dynamiquement.</p>
+<p>Pour ajouter une classe à un élément avec jQuery, on utilise la méthode <code>addClass()</code>. Cette méthode permet d'ajouter une ou plusieurs classes à un élément.</p>
+<p>Voici un exemple qui montre comment ajouter une classe à un élément avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myElement"
+  var element = $("#myElement");
+  
+  // Ajout de la classe "highlight" à l'élément
+  element.addClass("highlight");
+});
+</code></pre>
+<p>Pour supprimer une classe d'un élément avec jQuery, on utilise la méthode <code>removeClass()</code>. Cette méthode permet de supprimer une ou plusieurs classes d'un élément.</p>
+<p>Voici un exemple qui montre comment supprimer une classe d'un élément avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myElement"
+  var element = $("#myElement");
+  
+  // Suppression de la classe "highlight" de l'élément
+  element.removeClass("highlight");
+});
+</code></pre>
+<p>Il est également possible de basculer une classe d'un élément avec jQuery en utilisant la méthode <code>toggleClass()</code>. Cette méthode permet d'ajouter une classe si elle est absente, ou de la supprimer si elle est présente.</p>
+<p>Voici un exemple qui montre comment basculer une classe d'un élément avec jQuery :</p>
+<pre><code>$(document).ready(function(){
+  // Sélection de l'élément avec l'ID "myElement"
+  var element = $("#myElement");
+  
+  // Basculement de la classe "highlight" de l'élément
+  element.toggleClass("highlight");
+});
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

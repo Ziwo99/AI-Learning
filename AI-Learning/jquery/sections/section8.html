@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Optimisation et performances avec jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Minification et compression du code jQuery</h2>
+<p>La minification et la compression du code jQuery sont des techniques couramment utilisées pour optimiser les performances d'une application web. La minification consiste à supprimer tous les espaces, les commentaires et les caractères inutiles du code jQuery, ce qui réduit la taille du fichier et accélère le chargement de la page. La compression, quant à elle, consiste à compresser le code en utilisant des algorithmes de compression, tels que Gzip, ce qui permet également de réduire la taille du fichier.</p>
+
+<p>Voici un exemple de code jQuery avant et après la minification :</p>
+
+<pre><code>// Code jQuery avant la minification
+$(document).ready(function() {
+    $('button').click(function() {
+        $('p').hide();
+    });
+});
+</code></pre>
+
+<pre><code>// Code jQuery après la minification
+$(document).ready(function(){$('button').click(function(){$('p').hide();});});
+</code></pre>
+
+<p>Comme vous pouvez le voir, le code minifié est beaucoup plus court et plus difficile à lire pour les humains, mais il est plus efficace en termes de performances.</p>
+
+<h2>Utilisation de CDN pour jQuery</h2>
+<p>Un CDN (Content Delivery Network) est un réseau de serveurs répartis dans le monde entier qui permet de distribuer les fichiers jQuery de manière plus efficace. Au lieu de charger le fichier jQuery à partir de votre propre serveur, vous pouvez utiliser un CDN pour charger le fichier à partir du serveur le plus proche de l'utilisateur, ce qui réduit le temps de chargement de la page.</p>
+
+<p>Voici un exemple de code pour charger jQuery à partir du CDN de Google :</p>
+
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>En utilisant un CDN, vous pouvez bénéficier des avantages de la mise en cache et de la distribution mondiale des fichiers jQuery, ce qui améliore les performances de votre application web.</p>
+
+<h2>Bonnes pratiques pour l'optimisation du code jQuery</h2>
+<p>Pour optimiser le code jQuery et améliorer les performances de votre application web, voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+  <li>Utilisez des sélecteurs d'éléments spécifiques plutôt que des sélecteurs génériques pour cibler les éléments que vous souhaitez manipuler. Cela réduit le temps de recherche des éléments dans le DOM.</li>
+  <li>Évitez d'utiliser des sélecteurs basés sur les attributs ou les positions des éléments, car ils sont généralement plus lents que les sélecteurs d'éléments.</li>
+  <li>Utilisez des méthodes jQuery optimisées, telles que <code>find()</code> et <code>closest()</code>, pour rechercher des éléments dans le DOM de manière plus efficace.</li>
+  <li>Évitez d'utiliser des boucles jQuery pour manipuler des éléments, car cela peut ralentir les performances. Préférez plutôt les méthodes jQuery qui permettent de manipuler plusieurs éléments en une seule fois.</li>
+  <li>Utilisez la délégation d'événements pour gérer les événements sur les éléments dynamiques, ce qui réduit le nombre d'écouteurs d'événements et améliore les performances.</li>
+</ul>
+
+<h2>Outils de débogage et de profilage</h2>
+<p>Il existe plusieurs outils de débogage et de profilage disponibles pour vous aider à optimiser et à déboguer votre code jQuery. Voici quelques-uns des outils les plus populaires :</p>
+
+<ul>
+  <li><strong>Chrome DevTools :</strong> C'est un ensemble d'outils de développement intégrés dans le navigateur Google Chrome. Il vous permet de déboguer et de profiler votre code jQuery, d'inspecter les éléments du DOM, de surveiller les performances de la page, etc.</li>
+  <li><strong>Firebug :</strong> C'est une extension pour le navigateur Firefox qui offre des fonctionnalités de débogage et de profilage avancées. Il vous permet de surveiller les requêtes AJAX, d'inspecter les éléments du DOM, de déboguer le code JavaScript, etc.</li>
+  <li><strong>jQuery Performance :</strong> C'est une extension pour le navigateur Google Chrome qui vous permet de profiler les performances de votre code jQuery. Il vous donne des informations détaillées sur le temps d'exécution de chaque fonction jQuery, les requêtes AJAX, etc.</li>
+</ul>
+
+<p>Ces outils vous aident à identifier les problèmes de performances, les erreurs de code et les goulots d'étranglement dans votre application jQuery, ce qui vous permet d'optimiser votre code et d'améliorer les performances.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

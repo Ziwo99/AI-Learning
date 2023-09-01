@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : jQuery et les frameworks JavaScript</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de jQuery avec AngularJS</h2>
+<p>AngularJS est un framework JavaScript développé par Google qui facilite la création d'applications web dynamiques. Il utilise une approche basée sur les modèles pour lier les données et les éléments de l'interface utilisateur. jQuery peut être utilisé en conjonction avec AngularJS pour faciliter la manipulation du DOM et l'interaction avec les événements.</p>
+<p>Voici un exemple d'utilisation de jQuery avec AngularJS :</p>
+<pre><code>angular.module('myApp', [])
+    .controller('myController', function($scope) {
+        $scope.message = 'Hello World!';
+        
+        $('#myButton').click(function() {
+            $scope.$apply(function() {
+                $scope.message = 'Button clicked!';
+            });
+        });
+    });
+</code></pre>
+<p>Dans cet exemple, nous utilisons jQuery pour sélectionner l'élément avec l'ID "myButton" et lui ajouter un gestionnaire d'événements click. Lorsque le bouton est cliqué, nous utilisons la fonction $apply de AngularJS pour mettre à jour la variable $scope.message, ce qui entraîne la mise à jour automatique de l'interface utilisateur.</p>
+
+<h2>Utilisation de jQuery avec React</h2>
+<p>React est une bibliothèque JavaScript développée par Facebook pour la création d'interfaces utilisateur interactives. Il utilise une approche basée sur les composants pour organiser et gérer l'état de l'interface utilisateur. Bien que React ait sa propre façon de manipuler le DOM, jQuery peut être utilisé en conjonction avec React pour effectuer des opérations plus avancées sur le DOM ou pour interagir avec des plugins jQuery existants.</p>
+<p>Voici un exemple d'utilisation de jQuery avec React :</p>
+<pre><code>class MyComponent extends React.Component {
+    componentDidMount() {
+        $(this.refs.myElement).addClass('highlight');
+    }
+    
+    render() {
+        return (
+            &lt;div ref="myElement"&gt;
+                Hello World!
+            &lt;/div&gt;
+        );
+    }
+}
+</code></pre>
+<p>Dans cet exemple, nous utilisons jQuery pour sélectionner l'élément référencé par "myElement" et lui ajouter la classe "highlight" lorsqu'il est monté dans le DOM. Cela peut être utile pour appliquer des styles ou des animations spécifiques à cet élément.</p>
+
+<h2>Utilisation de jQuery avec Vue.js</h2>
+<p>Vue.js est un framework JavaScript progressif pour la création d'interfaces utilisateur. Il utilise une approche basée sur les composants et facilite la gestion de l'état de l'interface utilisateur. Bien que Vue.js ait sa propre façon de manipuler le DOM, jQuery peut être utilisé en conjonction avec Vue.js pour effectuer des opérations plus avancées sur le DOM ou pour interagir avec des plugins jQuery existants.</p>
+<p>Voici un exemple d'utilisation de jQuery avec Vue.js :</p>
+<pre><code>new Vue({
+    el: '#app',
+    mounted() {
+        $(this.$refs.myElement).addClass('highlight');
+    }
+});
+</code></pre>
+<p>Dans cet exemple, nous utilisons jQuery pour sélectionner l'élément référencé par "myElement" et lui ajouter la classe "highlight" lorsqu'il est monté dans le DOM. Cela peut être utile pour appliquer des styles ou des animations spécifiques à cet élément.</p>
+
+<h2>Comparaison des frameworks JavaScript avec jQuery</h2>
+<p>jQuery est une bibliothèque JavaScript légère et polyvalente qui facilite la manipulation du DOM, l'interaction avec les événements et l'animation des éléments. Cependant, il existe maintenant de nombreux frameworks JavaScript plus avancés qui offrent des fonctionnalités similaires, ainsi que des fonctionnalités supplémentaires pour la création d'applications web plus complexes.</p>
+<p>Voici une comparaison des frameworks JavaScript les plus populaires avec jQuery :</p>
+<ul>
+    <li><strong>AngularJS :</strong> Framework développé par Google, utilise une approche basée sur les modèles et offre des fonctionnalités avancées pour la création d'applications web.</li>
+    <li><strong>React :</strong> Bibliothèque développée par Facebook, utilise une approche basée sur les composants et offre des performances élevées et une gestion efficace de l'état de l'interface utilisateur.</li>
+    <li><strong>Vue.js :</strong> Framework progressif, offre une approche basée sur les composants et est facile à apprendre et à intégrer dans des projets existants.</li>
+</ul>
+<p>Chaque framework a ses propres avantages et inconvénients, et le choix dépendra des besoins spécifiques du projet et des préférences de l'équipe de développement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

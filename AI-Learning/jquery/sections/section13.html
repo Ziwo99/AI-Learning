@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13 : Projet pratique : Création d'une application web interactive avec jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Analyse des besoins du projet</h2>
+<p>L'objectif de ce projet est de créer une application web interactive en utilisant jQuery. L'application sera un gestionnaire de tâches qui permettra aux utilisateurs de créer, modifier et supprimer des tâches.</p>
+
+<p>Pour répondre aux besoins du projet, nous aurons besoin des fonctionnalités suivantes :</p>
+
+<ul>
+  <li>Création d'une nouvelle tâche</li>
+  <li>Affichage de la liste des tâches existantes</li>
+  <li>Modification d'une tâche existante</li>
+  <li>Suppression d'une tâche existante</li>
+</ul>
+
+<h2>Conception de l'interface utilisateur</h2>
+<p>Pour concevoir l'interface utilisateur de notre application, nous aurons besoin des éléments HTML suivants :</p>
+
+<ul>
+  <li>Un formulaire pour ajouter une nouvelle tâche, comprenant un champ de saisie et un bouton "Ajouter"</li>
+  <li>Une liste pour afficher les tâches existantes</li>
+  <li>Pour chaque tâche, un élément de liste contenant le nom de la tâche et des boutons "Modifier" et "Supprimer"</li>
+</ul>
+
+<p>Voici un exemple de structure HTML pour notre interface utilisateur :</p>
+
+<pre><code>&lt;form id="task-form"&gt;
+  &lt;input type="text" id="task-input" placeholder="Ajouter une tâche"&gt;
+  &lt;button id="add-task-button"&gt;Ajouter&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;ul id="task-list"&gt;
+  &lt;li class="task-item"&gt;
+    &lt;span class="task-name"&gt;Tâche 1&lt;/span&gt;
+    &lt;button class="edit-task-button"&gt;Modifier&lt;/button&gt;
+    &lt;button class="delete-task-button"&gt;Supprimer&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="task-item"&gt;
+    &lt;span class="task-name"&gt;Tâche 2&lt;/span&gt;
+    &lt;button class="edit-task-button"&gt;Modifier&lt;/button&gt;
+    &lt;button class="delete-task-button"&gt;Supprimer&lt;/button&gt;
+  &lt;/li&gt;
+  &lt;li class="task-item"&gt;
+    &lt;span class="task-name"&gt;Tâche 3&lt;/span&gt;
+    &lt;button class="edit-task-button"&gt;Modifier&lt;/button&gt;
+    &lt;button class="delete-task-button"&gt;Supprimer&lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h2>Implémentation des fonctionnalités avec jQuery</h2>
+<p>Pour implémenter les fonctionnalités de notre application, nous utiliserons les méthodes et les événements de jQuery. Voici les étapes pour chaque fonctionnalité :</p>
+
+<h3>Création d'une nouvelle tâche</h3>
+<p>Lorsque l'utilisateur remplit le formulaire et clique sur le bouton "Ajouter", nous devons ajouter une nouvelle tâche à la liste. Voici comment nous pouvons le faire :</p>
+
+<pre><code>$('#add-task-button').click(function() {
+  var taskName = $('#task-input').val();
+  var taskItem = '&lt;li class="task-item"&gt;&lt;span class="task-name"&gt;' + taskName + '&lt;/span&gt;&lt;button class="edit-task-button"&gt;Modifier&lt;/button&gt;&lt;button class="delete-task-button"&gt;Supprimer&lt;/button&gt;&lt;/li&gt;';
+  $('#task-list').append(taskItem);
+  $('#task-input').val('');
+});
+</code></pre>
+
+<h3>Affichage de la liste des tâches existantes</h3>
+<p>Une fois que nous avons ajouté une nouvelle tâche à la liste, nous devons également afficher toutes les tâches existantes. Voici comment nous pouvons le faire :</p>
+
+<pre><code>$(document).ready(function() {
+  // Récupérer les tâches existantes depuis une source de données (par exemple, une API)
+  var tasks = ['Tâche 1', 'Tâche 2', 'Tâche 3'];
+
+  // Parcourir les tâches et les ajouter à la liste
+  for (var i = 0; i &lt; tasks.length; i++) {
+    var taskItem = '&lt;li class="task-item"&gt;&lt;span class="task-name"&gt;' + tasks[i] + '&lt;/span&gt;&lt;button class="edit-task-button"&gt;Modifier&lt;/button&gt;&lt;button class="delete-task-button"&gt;Supprimer&lt;/button&gt;&lt;/li&gt;';
+    $('#task-list').append(taskItem);
+  }
+});
+</code></pre>
+
+<h3>Modification d'une tâche existante</h3>
+<p>Lorsque l'utilisateur clique sur le bouton "Modifier" d'une tâche, nous devons permettre à l'utilisateur de modifier le nom de la tâche. Voici comment nous pouvons le faire :</p>
+
+<pre><code>$(document).on('click', '.edit-task-button', function() {
+  var taskItem = $(this).closest('.task-item');
+  var taskName = taskItem.find('.task-name').text();
+  var newTaskName = prompt('Modifier la tâche', taskName);
+
+  if (newTaskName !== null) {
+    taskItem.find('.task-name').text(newTaskName);
+  }
+});
+</code></pre>
+
+<h3>Suppression d'une tâche existante</h3>
+<p>Lorsque l'utilisateur clique sur le bouton "Supprimer" d'une tâche, nous devons supprimer cette tâche de la liste. Voici comment nous pouvons le faire :</p>
+
+<pre><code>$(document).on('click', '.delete-task-button', function() {
+  var taskItem = $(this).closest('.task-item');
+  taskItem.remove();
+});
+</code></pre>
+
+<h2>Test et débogage de l'application</h2>
+<p>Pour tester notre application, nous devons nous assurer que toutes les fonctionnalités fonctionnent correctement. Voici quelques étapes de test que nous pouvons suivre :</p>
+
+<ul>
+  <li>Ajouter une nouvelle tâche et vérifier si elle est ajoutée à la liste</li>
+  <li>Modifier le nom d'une tâche existante et vérifier si le nom est mis à jour dans la liste</li>
+  <li>Supprimer une tâche existante et vérifier si elle est supprimée de la liste</li>
+</ul>
+
+<p>Si des problèmes sont rencontrés lors des tests, nous pouvons utiliser les outils de débogage de navigateur pour identifier et résoudre les problèmes.</p>
+
+<h2>Conclusion et ressources supplémentaires</h2>
+<p>Dans cette section, nous avons appris à créer une application web interactive en utilisant jQuery. Nous avons couvert les étapes d'analyse des besoins du projet, de conception de l'interface utilisateur, d'implémentation des fonctionnalités avec jQuery, de test et de débogage de l'application.</p>
+
+<p>Pour approfondir vos connaissances en jQuery, voici quelques ressources supplémentaires recommandées :</p>
+
+<ul>
+  <li><a href="https://jquery.com/">Site officiel de jQuery</a></li>
+  <li><a href="https://api.jquery.com/">Documentation officielle de jQuery</a></li>
+  <li><a href="https://www.w3schools.com/jquery/">Tutoriels jQuery sur W3Schools</a></li>
+</ul>
+
+<p>Félicitations pour avoir terminé cette formation e-learning en jQuery ! Vous avez maintenant les compétences nécessaires pour créer des applications web interactives avec jQuery.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Bonnes pratiques et astuces avec jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de la délégation d'événements</h2>
+<p>Lorsque vous attachez des gestionnaires d'événements à des éléments, il est préférable d'utiliser la délégation d'événements plutôt que d'attacher les gestionnaires directement aux éléments. La délégation d'événements permet de gérer les événements pour les éléments présents dans le DOM, même s'ils sont ajoutés dynamiquement après le chargement initial de la page.</p>
+<p>La méthode <code>on()</code> de jQuery est utilisée pour attacher des gestionnaires d'événements en utilisant la délégation. Voici un exemple :</p>
+<pre><code>$(document).on('click', '.my-element', function() {
+    // Code à exécuter lors du clic sur un élément avec la classe 'my-element'
+});
+</code></pre>
+
+<h2>Utilisation de la chaîne de méthodes</h2>
+<p>La chaîne de méthodes est une technique qui permet d'appeler plusieurs méthodes jQuery les unes après les autres, en les séparant par des points. Cela permet d'écrire un code plus concis et plus lisible. Voici un exemple :</p>
+<pre><code>$('.my-element')
+    .addClass('active')
+    .fadeIn()
+    .html('Nouveau contenu');
+</code></pre>
+<p>Dans cet exemple, la classe 'active' est ajoutée à l'élément avec la classe 'my-element', puis l'élément est affiché avec une animation de fondu, et enfin son contenu est remplacé par 'Nouveau contenu'.</p>
+
+<h2>Utilisation de la délégation d'éléments</h2>
+<p>La délégation d'éléments est une technique similaire à la délégation d'événements, mais elle est utilisée pour attacher des gestionnaires d'événements à des éléments enfants d'un élément parent. Cela permet de gérer les événements pour les éléments enfants, même s'ils sont ajoutés dynamiquement après le chargement initial de la page.</p>
+<p>La méthode <code>on()</code> de jQuery est également utilisée pour attacher des gestionnaires d'événements en utilisant la délégation d'éléments. Voici un exemple :</p>
+<pre><code>$('.parent-element').on('click', '.child-element', function() {
+    // Code à exécuter lors du clic sur un élément enfant de '.parent-element'
+});
+</code></pre>
+
+<h2>Astuces pour améliorer les performances</h2>
+<p>Pour améliorer les performances de votre code jQuery, voici quelques astuces :</p>
+<ul>
+  <li>Utilisez des sélecteurs spécifiques pour cibler uniquement les éléments nécessaires, plutôt que de sélectionner tous les éléments de la page.</li>
+  <li>Cachez les éléments que vous n'utilisez pas ou que vous n'affichez pas, plutôt que de les supprimer du DOM.</li>
+  <li>Utilisez des méthodes jQuery optimisées, telles que <code>find()</code> et <code>closest()</code>, plutôt que des sélecteurs complexes.</li>
+  <li>Utilisez des méthodes jQuery pour effectuer des opérations en bloc sur plusieurs éléments, plutôt que d'itérer sur chaque élément individuellement.</li>
+  <li>Minifiez et compressez votre code jQuery pour réduire la taille des fichiers et améliorer les temps de chargement.</li>
+</ul>
+<p>En suivant ces bonnes pratiques, vous pouvez optimiser les performances de votre application jQuery et offrir une meilleure expérience utilisateur.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

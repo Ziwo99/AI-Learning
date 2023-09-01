@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : jQuery UI</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à jQuery UI</h2>
+<p>jQuery UI est une bibliothèque JavaScript qui étend les fonctionnalités de jQuery en ajoutant des composants d'interface utilisateur interactifs et personnalisables. Elle permet de créer des interfaces utilisateur riches et conviviales pour les applications web.</p>
+
+<p>jQuery UI offre une large gamme de composants prêts à l'emploi, tels que des boutons, des menus déroulants, des onglets, des boîtes de dialogue, des calendriers, des sliders, etc. Ces composants sont faciles à utiliser et à personnaliser grâce à une API simple et cohérente.</p>
+
+<p>En utilisant jQuery UI, vous pouvez améliorer l'expérience utilisateur de votre application en ajoutant des interactions avancées et des effets visuels attrayants.</p>
+
+<h2>Utilisation des composants d'interface utilisateur</h2>
+<p>Pour utiliser les composants d'interface utilisateur de jQuery UI, vous devez d'abord inclure la bibliothèque jQuery UI dans votre page HTML, après avoir inclus jQuery lui-même.</p>
+
+<pre><code>&lt;script src="jquery.js"&gt;&lt;/script&gt;
+&lt;script src="jquery-ui.js"&gt;&lt;/script&gt;</code></pre>
+
+<p>Une fois que vous avez inclus jQuery UI, vous pouvez utiliser les composants d'interface utilisateur en appelant les méthodes appropriées sur les éléments HTML ciblés.</p>
+
+<p>Par exemple, pour créer un bouton avec jQuery UI, vous pouvez utiliser la méthode <code>.button()</code> :</p>
+
+<pre><code>&lt;button id="myButton"&gt;Cliquez ici&lt;/button&gt;
+
+&lt;script&gt;
+    $(document).ready(function() {
+        $("#myButton").button();
+    });
+&lt;/script&gt;</code></pre>
+
+<p>Cette méthode applique le style et le comportement du bouton jQuery UI à l'élément HTML avec l'ID "myButton". Vous pouvez également personnaliser le bouton en utilisant les options disponibles.</p>
+
+<h2>Personnalisation des thèmes jQuery UI</h2>
+<p>jQuery UI propose un système de thèmes qui vous permet de personnaliser l'apparence des composants d'interface utilisateur selon vos besoins. Vous pouvez choisir parmi une variété de thèmes prédéfinis ou créer votre propre thème personnalisé.</p>
+
+<p>Pour utiliser un thème prédéfini, vous devez inclure le fichier CSS correspondant dans votre page HTML, après avoir inclus jQuery UI :</p>
+
+<pre><code>&lt;link rel="stylesheet" href="jquery-ui.css"&gt;</code></pre>
+
+<p>Une fois que vous avez inclus le fichier CSS du thème, les composants d'interface utilisateur seront stylisés en fonction du thème choisi.</p>
+
+<p>Si vous souhaitez créer votre propre thème personnalisé, vous pouvez utiliser le Themeroller de jQuery UI. Le Themeroller est un outil en ligne qui vous permet de personnaliser tous les aspects du thème, tels que les couleurs, les polices, les bordures, etc. Une fois que vous avez terminé de personnaliser votre thème, vous pouvez le télécharger et l'inclure dans votre application.</p>
+
+<h2>Création de composants personnalisés avec jQuery UI</h2>
+<p>En plus des composants prêts à l'emploi, jQuery UI vous permet de créer vos propres composants personnalisés en utilisant le widget factory. Le widget factory est une API puissante qui facilite la création de composants réutilisables et extensibles.</p>
+
+<p>Pour créer un composant personnalisé, vous devez étendre la classe de base <code>$.widget</code> et définir les méthodes et les options spécifiques à votre composant.</p>
+
+<p>Voici un exemple de création d'un composant personnalisé de type "monSlider" :</p>
+
+<pre><code>$.widget("custom.monSlider", {
+    options: {
+        // Options par défaut du composant
+    },
+    
+    _create: function() {
+        // Initialisation du composant
+    },
+    
+    _destroy: function() {
+        // Nettoyage du composant
+    },
+    
+    // Autres méthodes spécifiques au composant
+});
+
+// Utilisation du composant personnalisé
+$("#mySlider").monSlider();</code></pre>
+
+<p>Dans cet exemple, nous avons créé un composant personnalisé appelé "monSlider" en étendant la classe <code>$.widget</code>. Nous avons défini les options par défaut, les méthodes de création et de destruction du composant, ainsi que d'autres méthodes spécifiques au composant.</p>
+
+<p>Ensuite, nous avons utilisé le composant personnalisé en appelant la méthode <code>.monSlider()</code> sur l'élément HTML avec l'ID "mySlider".</p>
+
+<h2>Bonnes pratiques pour l'utilisation de jQuery UI</h2>
+<p>Lors de l'utilisation de jQuery UI, il est important de suivre certaines bonnes pratiques pour optimiser les performances et assurer la compatibilité avec les différentes versions de jQuery UI et jQuery.</p>
+
+<p>Voici quelques bonnes pratiques à suivre :</p>
+
+<ul>
+    <li>Utilisez la dernière version stable de jQuery UI pour bénéficier des dernières fonctionnalités et corrections de bugs.</li>
+    <li>Minifiez et compressez les fichiers JavaScript et CSS de jQuery UI pour réduire leur taille et améliorer les performances de chargement.</li>
+    <li>Utilisez les options et les méthodes appropriées pour personnaliser les composants d'interface utilisateur plutôt que de modifier directement le code source de jQuery UI.</li>
+    <li>Évitez d'inclure des fichiers JavaScript ou CSS inutiles dans votre page HTML, car cela peut ralentir le chargement de votre application.</li>
+    <li>Testez votre application dans différents navigateurs et plates-formes pour vous assurer de sa compatibilité.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pourrez tirer le meilleur parti de jQuery UI et créer des interfaces utilisateur de haute qualité pour vos applications web.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

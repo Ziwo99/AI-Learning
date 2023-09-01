@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - jQuery Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Effets et animations avec jQuery</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/jquery/jquery.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Affichage et masquage d'éléments</h2>
+<p>jQuery offre plusieurs méthodes pour afficher et masquer des éléments sur une page web. Ces méthodes permettent de créer des transitions fluides et des effets visuels attrayants.</p>
+
+<p>La méthode <code>show()</code> permet d'afficher un élément en le rendant visible. Par exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("p").show();
+  });
+});
+</code></pre>
+
+<p>La méthode <code>hide()</code> permet de masquer un élément en le rendant invisible. Par exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide();
+  });
+});
+</code></pre>
+
+<p>La méthode <code>toggle()</code> permet d'alterner entre l'affichage et le masquage d'un élément. Par exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("p").toggle();
+  });
+});
+</code></pre>
+
+<h2>Animation des éléments</h2>
+<p>jQuery permet également d'animer les éléments d'une page web en leur appliquant des transitions fluides. Les méthodes d'animation de jQuery incluent <code>fadeIn()</code>, <code>fadeOut()</code>, <code>slideUp()</code>, <code>slideDown()</code>, <code>slideToggle()</code>, <code>animate()</code>, etc.</p>
+
+<p>Par exemple, la méthode <code>fadeIn()</code> permet de faire apparaître progressivement un élément. Voici un exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("div").fadeIn();
+  });
+});
+</code></pre>
+
+<p>La méthode <code>fadeOut()</code> permet de faire disparaître progressivement un élément. Voici un exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("div").fadeOut();
+  });
+});
+</code></pre>
+
+<p>La méthode <code>animate()</code> permet de créer des animations personnalisées en spécifiant les propriétés CSS à modifier et la durée de l'animation. Par exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      left: '250px',
+      opacity: '0.5',
+      height: '+=150px',
+      width: '+=150px'
+    });
+  });
+});
+</code></pre>
+
+<h2>Utilisation des effets prédéfinis</h2>
+<p>jQuery propose également des effets prédéfinis qui peuvent être utilisés pour créer des animations rapidement et facilement. Ces effets incluent <code>fadeIn()</code>, <code>fadeOut()</code>, <code>slideDown()</code>, <code>slideUp()</code>, <code>slideToggle()</code>, <code>show()</code>, <code>hide()</code>, etc.</p>
+
+<p>Par exemple, la méthode <code>slideDown()</code> permet de faire apparaître un élément en le faisant glisser vers le bas. Voici un exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("div").slideDown();
+  });
+});
+</code></pre>
+
+<p>La méthode <code>slideUp()</code> permet de faire disparaître un élément en le faisant glisser vers le haut. Voici un exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("div").slideUp();
+  });
+});
+</code></pre>
+
+<h2>Création d'effets personnalisés</h2>
+<p>En plus des effets prédéfinis, jQuery permet de créer des effets personnalisés en utilisant la méthode <code>animate()</code>. Cette méthode permet de spécifier les propriétés CSS à modifier et la durée de l'animation.</p>
+
+<p>Par exemple, pour créer un effet de fondu personnalisé, on peut utiliser la méthode <code>animate()</code> pour modifier progressivement l'opacité de l'élément. Voici un exemple :</p>
+
+<pre><code>$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({
+      opacity: '0'
+    }, 1000);
+  });
+});
+</code></pre>
+
+<p>Cet exemple fera disparaître l'élément en le rendant progressivement transparent sur une durée de 1 seconde.</p>
+
+<p>Il est également possible de combiner plusieurs propriétés CSS pour créer des effets plus complexes.</p>
+
+<p>Il est important de noter que les effets personnalisés peuvent être créés en utilisant des valeurs numériques, des pourcentages ou d'autres unités de mesure CSS.</p>
+
+<p>Il existe également des bibliothèques et des plugins jQuery qui offrent des effets et des animations avancés prêts à l'emploi.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/jquery/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/jquery/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
