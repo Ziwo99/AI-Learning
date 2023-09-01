@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Les exceptions du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des exceptions dans le STL</h2>
+<p>Le Standard Template Library (STL) offre une gestion des exceptions intégrée pour gérer les erreurs et les situations exceptionnelles. Lorsqu'une exception est levée, le STL fournit des mécanismes pour la capturer et la traiter de manière appropriée.</p>
+
+<p>Le STL utilise principalement des exceptions de type <code>std::exception</code> pour signaler les erreurs. Cette classe de base fournit des informations sur l'exception, telles que son type et un message d'erreur associé. Les exceptions spécifiques du STL sont dérivées de cette classe de base.</p>
+
+<p>Il est important de noter que le STL ne définit pas de politique de gestion des exceptions spécifique. Cela signifie que la gestion des exceptions peut varier en fonction de l'implémentation du STL utilisée. Il est donc essentiel de consulter la documentation de votre implémentation spécifique du STL pour connaître les détails de la gestion des exceptions.</p>
+
+<h2>Utilisation des exceptions avec les conteneurs et les algorithmes du STL</h2>
+<p>Les conteneurs et les algorithmes du STL peuvent lever des exceptions dans différentes situations. Par exemple, lors de l'accès à un élément en dehors des limites d'un conteneur, une exception de type <code>std::out_of_range</code> peut être levée. De même, lorsqu'une opération sur un conteneur échoue en raison d'une allocation de mémoire insuffisante, une exception de type <code>std::bad_alloc</code> peut être levée.</p>
+
+<p>Il est important de prendre en compte ces exceptions lors de l'utilisation des conteneurs et des algorithmes du STL. Il est recommandé d'utiliser des blocs <code>try-catch</code> pour capturer et traiter les exceptions de manière appropriée. Voici un exemple de code qui illustre l'utilisation des exceptions avec un conteneur du STL :</p>
+
+<pre><code>try {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5};
+    std::cout &lt;&lt; numbers.at(10) &lt;&lt; std::endl;
+} catch (const std::out_of_range&amp; e) {
+    std::cout &lt;&lt; "Exception caught: " &lt;&lt; e.what() &lt;&lt; std::endl;
+}</code></pre>
+
+<p>Dans cet exemple, nous essayons d'accéder à l'élément à l'index 10 d'un vecteur, ce qui est en dehors de ses limites. L'exception <code>std::out_of_range</code> est levée et capturée dans le bloc <code>catch</code>. Nous pouvons ensuite afficher le message d'erreur associé à l'exception en utilisant la méthode <code>what()</code>.</p>
+
+<p>Il est également possible de définir des gestionnaires d'exceptions personnalisés pour traiter les exceptions du STL de manière spécifique à votre application. Cela peut être utile si vous souhaitez effectuer des actions spécifiques en cas d'exception, telles que la journalisation des erreurs ou la récupération des données.</p>
+
+<p>En résumé, la gestion des exceptions dans le STL est essentielle pour garantir un comportement fiable et prévisible de vos programmes. Assurez-vous de comprendre les exceptions spécifiques du STL et de les traiter de manière appropriée pour éviter les erreurs et les comportements indésirables.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

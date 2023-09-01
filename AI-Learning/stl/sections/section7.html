@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Les allocations de mémoire du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les allocations de mémoire dynamique</h2>
+<p>Le STL offre des mécanismes pour allouer et libérer de la mémoire de manière dynamique. L'allocation de mémoire dynamique est utile lorsque vous avez besoin de créer des objets dont la taille est inconnue à la compilation ou lorsque vous souhaitez gérer manuellement la durée de vie des objets.</p>
+
+<p>La classe <code>std::allocator</code> est utilisée pour allouer de la mémoire dynamique dans le STL. Voici un exemple d'utilisation :</p>
+
+<pre><code>std::allocator&lt;int&gt; alloc;
+int* ptr = alloc.allocate(5); // Alloue de la mémoire pour 5 entiers
+
+for (int i = 0; i &lt; 5; i++) {
+    alloc.construct(&ptr[i], i); // Construit les entiers dans la mémoire allouée
+}
+
+for (int i = 0; i &lt; 5; i++) {
+    std::cout &lt;&lt; ptr[i] &lt;&lt; " "; // Affiche les entiers
+}
+
+for (int i = 0; i &lt; 5; i++) {
+    alloc.destroy(&ptr[i]); // Détruit les entiers
+}
+
+alloc.deallocate(ptr, 5); // Libère la mémoire</code></pre>
+
+<p>Dans cet exemple, nous utilisons <code>std::allocator</code> pour allouer de la mémoire pour 5 entiers. Ensuite, nous construisons les entiers dans la mémoire allouée à l'aide de <code>alloc.construct</code>. Après avoir utilisé les entiers, nous les détruisons avec <code>alloc.destroy</code>. Enfin, nous libérons la mémoire avec <code>alloc.deallocate</code>.</p>
+
+<h2>Les allocations de mémoire personnalisées</h2>
+<p>Le STL permet également d'utiliser des allocations de mémoire personnalisées. Cela peut être utile lorsque vous souhaitez utiliser votre propre stratégie d'allocation de mémoire ou lorsque vous devez interagir avec d'autres bibliothèques qui utilisent des allocations de mémoire spécifiques.</p>
+
+<p>Pour utiliser une allocation de mémoire personnalisée, vous devez définir une classe qui implémente l'opérateur de surcharge <code>operator()</code> et qui respecte l'interface requise par le STL. Voici un exemple :</p>
+
+<pre><code>template &lt;typename T&gt;
+struct MyAllocator {
+    using value_type = T;
+
+    T* allocate(std::size_t n) {
+        // Implémentation personnalisée de l'allocation de mémoire
+    }
+
+    void deallocate(T* ptr, std::size_t n) {
+        // Implémentation personnalisée de la libération de mémoire
+    }
+};
+
+std::vector&lt;int, MyAllocator&lt;int&gt;&gt; vec; // Utilise MyAllocator pour allouer de la mémoire pour les entiers</code></pre>
+
+<p>Dans cet exemple, nous définissons une classe <code>MyAllocator</code> qui implémente les fonctions <code>allocate</code> et <code>deallocate</code> pour allouer et libérer de la mémoire personnalisée. Ensuite, nous utilisons cette allocation de mémoire personnalisée avec le conteneur <code>std::vector</code> en spécifiant <code>MyAllocator&lt;int&gt;</code> comme deuxième argument du conteneur.</p>
+
+<p>Il est important de noter que la classe d'allocation de mémoire personnalisée doit respecter les exigences de l'interface du STL pour les allocations de mémoire. Vous pouvez vous référer à la documentation du STL pour plus de détails sur ces exigences.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

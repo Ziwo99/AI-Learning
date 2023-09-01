@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Les algorithmes du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les algorithmes de tri</h2>
+<p>Les algorithmes de tri sont utilisés pour organiser les éléments d'un conteneur dans un ordre spécifique. Le STL propose plusieurs algorithmes de tri, tels que :</p>
+<ul>
+  <li><code>sort()</code> : trie les éléments d'un conteneur dans l'ordre croissant par défaut.</li>
+  <li><code>stable_sort()</code> : trie les éléments d'un conteneur de manière stable, c'est-à-dire en préservant l'ordre relatif des éléments égaux.</li>
+  <li><code>partial_sort()</code> : trie les premiers éléments d'un conteneur dans l'ordre croissant, laissant les autres éléments dans un état non trié.</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'algorithme <code>sort()</code> :</p>
+<pre><code>std::vector<int> numbers = {5, 2, 8, 1, 9};
+std::sort(numbers.begin(), numbers.end());
+
+// Résultat : numbers = {1, 2, 5, 8, 9}</code></pre>
+
+<h2>Les algorithmes de recherche</h2>
+<p>Les algorithmes de recherche permettent de trouver des éléments dans un conteneur en fonction de critères spécifiques. Le STL propose plusieurs algorithmes de recherche, tels que :</p>
+<ul>
+  <li><code>find()</code> : recherche la première occurrence d'un élément dans un conteneur.</li>
+  <li><code>binary_search()</code> : vérifie si un élément est présent dans un conteneur trié en utilisant une recherche binaire.</li>
+  <li><code>count()</code> : compte le nombre d'occurrences d'un élément dans un conteneur.</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'algorithme <code>find()</code> :</p>
+<pre><code>std::vector<int> numbers = {5, 2, 8, 1, 9};
+auto it = std::find(numbers.begin(), numbers.end(), 8);
+
+if (it != numbers.end()) {
+    std::cout << "Element found at index: " << std::distance(numbers.begin(), it) << std::endl;
+} else {
+    std::cout << "Element not found" << std::endl;
+}</code></pre>
+
+<h2>Les algorithmes de manipulation de conteneurs</h2>
+<p>Les algorithmes de manipulation de conteneurs permettent d'effectuer des opérations telles que l'insertion, la suppression et la modification d'éléments. Le STL propose plusieurs algorithmes de manipulation de conteneurs, tels que :</p>
+<ul>
+  <li><code>copy()</code> : copie les éléments d'un conteneur source vers un conteneur destination.</li>
+  <li><code>remove()</code> : supprime tous les éléments égaux à une valeur donnée d'un conteneur.</li>
+  <li><code>replace()</code> : remplace tous les éléments égaux à une valeur donnée par une autre valeur dans un conteneur.</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'algorithme <code>copy()</code> :</p>
+<pre><code>std::vector<int> source = {1, 2, 3, 4, 5};
+std::vector<int> destination(5);
+
+std::copy(source.begin(), source.end(), destination.begin());
+
+// Résultat : destination = {1, 2, 3, 4, 5}</code></pre>
+
+<h2>Les algorithmes de transformation</h2>
+<p>Les algorithmes de transformation permettent d'appliquer une opération à chaque élément d'un conteneur et de stocker les résultats dans un autre conteneur. Le STL propose plusieurs algorithmes de transformation, tels que :</p>
+<ul>
+  <li><code>transform()</code> : applique une fonction à chaque élément d'un conteneur et stocke les résultats dans un autre conteneur.</li>
+  <li><code>accumulate()</code> : calcule la somme des éléments d'un conteneur en utilisant une opération spécifiée.</li>
+  <li><code>replace_if()</code> : remplace les éléments d'un conteneur qui satisfont un prédicat par une autre valeur.</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'algorithme <code>transform()</code> :</p>
+<pre><code>std::vector<int> numbers = {1, 2, 3, 4, 5};
+std::vector<int> squared_numbers(numbers.size());
+
+std::transform(numbers.begin(), numbers.end(), squared_numbers.begin(), [](int n) {
+    return n * n;
+});
+
+// Résultat : squared_numbers = {1, 4, 9, 16, 25}</code></pre>
+
+<h2>Les algorithmes numériques</h2>
+<p>Les algorithmes numériques permettent d'effectuer des opérations mathématiques sur les éléments d'un conteneur. Le STL propose plusieurs algorithmes numériques, tels que :</p>
+<ul>
+  <li><code>accumulate()</code> : calcule la somme des éléments d'un conteneur en utilisant une opération spécifiée.</li>
+  <li><code>inner_product()</code> : calcule le produit scalaire de deux conteneurs.</li>
+  <li><code>partial_sum()</code> : calcule les sommes partielles des éléments d'un conteneur.</li>
+</ul>
+<p>Voici un exemple d'utilisation de l'algorithme <code>accumulate()</code> :</p>
+<pre><code>std::vector<int> numbers = {1, 2, 3, 4, 5};
+int sum = std::accumulate(numbers.begin(), numbers.end(), 0);
+
+// Résultat : sum = 15</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

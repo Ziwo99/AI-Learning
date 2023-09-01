@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Cas d'utilisation avancés du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Utilisation du STL dans les applications multithreadées</h2>
+  <p>
+    Le STL offre des fonctionnalités qui peuvent être utilisées dans des applications multithreadées pour gérer la concurrence et la synchronisation des données. Par exemple, la classe <code>std::mutex</code> peut être utilisée pour créer des sections critiques de code qui doivent être exécutées de manière exclusive par un seul thread à la fois. Voici un exemple d'utilisation de <code>std::mutex</code> :
+  </p>
+  <pre><code>
+#include <iostream>
+#include <thread>
+#include <mutex>
+
+std::mutex mtx;
+
+void printMessage(const std::string& message) {
+    std::lock_guard&lt;std::mutex&gt; lock(mtx);
+    std::cout &lt;&lt; message &lt;&lt; std::endl;
+}
+
+int main() {
+    std::thread t1(printMessage, "Hello from thread 1");
+    std::thread t2(printMessage, "Hello from thread 2");
+
+    t1.join();
+    t2.join();
+
+    return 0;
+}
+  </code></pre>
+  <p>
+    Dans cet exemple, la fonction <code>printMessage</code> est appelée par deux threads différents. La classe <code>std::lock_guard</code> est utilisée pour verrouiller le mutex <code>mtx</code> pendant l'exécution de la fonction, garantissant ainsi que les messages sont affichés de manière cohérente et sans interférence entre les threads.
+  </p>
+
+  <h2>Utilisation du STL avec d'autres bibliothèques C++</h2>
+  <p>
+    Le STL peut être utilisé en combinaison avec d'autres bibliothèques C++ pour étendre les fonctionnalités et faciliter le développement. Par exemple, la bibliothèque Boost offre de nombreuses extensions au STL, telles que des algorithmes supplémentaires, des structures de données avancées et des fonctionnalités de programmation fonctionnelle. Voici un exemple d'utilisation du STL avec Boost :
+  </p>
+  <pre><code>
+#include <iostream>
+#include <vector>
+#include <boost/algorithm/string.hpp>
+
+int main() {
+    std::string sentence = "Hello, world!";
+
+    std::vector&lt;std::string&gt; words;
+    boost::split(words, sentence, boost::is_any_of(" ,!"));
+
+    for (const std::string& word : words) {
+        std::cout &lt;&lt; word &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+  </code></pre>
+  <p>
+    Dans cet exemple, la fonction <code>boost::split</code> est utilisée pour diviser la phrase en mots en utilisant les délimiteurs spécifiés. Le résultat est stocké dans un vecteur de chaînes de caractères, qui est ensuite parcouru pour afficher chaque mot.
+  </p>
+
+  <h2>Utilisation du STL dans des projets de grande envergure</h2>
+  <p>
+    Le STL est largement utilisé dans des projets de grande envergure en raison de sa flexibilité, de sa performance et de sa facilité d'utilisation. Il peut être utilisé pour gérer efficacement de grandes quantités de données, effectuer des opérations complexes sur les conteneurs et optimiser les performances. Voici un exemple d'utilisation du STL dans un projet de grande envergure :
+  </p>
+  <pre><code>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+struct Person {
+    std::string name;
+    int age;
+};
+
+int main() {
+    std::vector&lt;Person&gt; people = {{"Alice", 25}, {"Bob", 30}, {"Charlie", 20}};
+
+    // Trier les personnes par âge
+    std::sort(people.begin(), people.end(), [](const Person& a, const Person& b) {
+        return a.age &lt; b.age;
+    });
+
+    // Afficher les personnes triées
+    for (const Person& person : people) {
+        std::cout &lt;&lt; person.name &lt;&lt; ", " &lt;&lt; person.age &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+  </code></pre>
+  <p>
+    Dans cet exemple, une structure <code>Person</code> est définie pour représenter une personne avec un nom et un âge. Un vecteur de personnes est créé et trié en fonction de l'âge à l'aide de la fonction <code>std::sort</code>. Ensuite, les personnes triées sont affichées à l'écran. Ce type de manipulation de données est courant dans les projets de grande envergure où il est nécessaire de gérer et de traiter de grandes quantités d'informations.
+  </p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

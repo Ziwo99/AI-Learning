@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les conteneurs du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les tableaux (array)</h2>
+<p>Les tableaux sont des structures de données statiques qui permettent de stocker une collection d'éléments de même type. Ils ont une taille fixe déterminée lors de leur création et ne peuvent pas être modifiés par la suite.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'un tableau :</p>
+<pre><code>int tableau[5]; // Déclaration d'un tableau de 5 entiers
+
+tableau[0] = 10; // Assignation de la valeur 10 à la première case du tableau
+tableau[1] = 20; // Assignation de la valeur 20 à la deuxième case du tableau
+tableau[2] = 30; // Assignation de la valeur 30 à la troisième case du tableau
+tableau[3] = 40; // Assignation de la valeur 40 à la quatrième case du tableau
+tableau[4] = 50; // Assignation de la valeur 50 à la cinquième case du tableau
+
+for (int i = 0; i < 5; i++) {
+    cout << tableau[i] << " "; // Affichage des valeurs du tableau
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>10 20 30 40 50</code></pre>
+
+<h2>Les vecteurs (vector)</h2>
+<p>Les vecteurs sont des conteneurs dynamiques qui permettent de stocker une collection d'éléments de même type. Contrairement aux tableaux, les vecteurs peuvent être redimensionnés dynamiquement pendant l'exécution du programme.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'un vecteur :</p>
+<pre><code>#include &lt;vector&gt;
+using namespace std;
+
+vector&lt;int&gt; vecteur; // Déclaration d'un vecteur d'entiers
+
+vecteur.push_back(10); // Ajout de la valeur 10 à la fin du vecteur
+vecteur.push_back(20); // Ajout de la valeur 20 à la fin du vecteur
+vecteur.push_back(30); // Ajout de la valeur 30 à la fin du vecteur
+vecteur.push_back(40); // Ajout de la valeur 40 à la fin du vecteur
+vecteur.push_back(50); // Ajout de la valeur 50 à la fin du vecteur
+
+for (int i = 0; i < vecteur.size(); i++) {
+    cout << vecteur[i] << " "; // Affichage des valeurs du vecteur
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>10 20 30 40 50</code></pre>
+
+<h2>Les listes (list)</h2>
+<p>Les listes sont des conteneurs dynamiques qui permettent de stocker une collection d'éléments de même type. Contrairement aux vecteurs, les listes ne sont pas basées sur des tableaux, ce qui leur permet d'insérer et de supprimer des éléments efficacement à n'importe quelle position.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'une liste :</p>
+<pre><code>#include &lt;list&gt;
+using namespace std;
+
+list&lt;int&gt; liste; // Déclaration d'une liste d'entiers
+
+liste.push_back(10); // Ajout de la valeur 10 à la fin de la liste
+liste.push_back(20); // Ajout de la valeur 20 à la fin de la liste
+liste.push_front(5); // Ajout de la valeur 5 au début de la liste
+liste.push_front(0); // Ajout de la valeur 0 au début de la liste
+
+for (auto it = liste.begin(); it != liste.end(); ++it) {
+    cout << *it << " "; // Affichage des valeurs de la liste
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>0 5 10 20</code></pre>
+
+<h2>Les piles (stack)</h2>
+<p>Les piles sont des conteneurs qui suivent le principe du dernier entré, premier sorti (LIFO - Last In, First Out). Les éléments sont ajoutés et supprimés uniquement à partir du sommet de la pile.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'une pile :</p>
+<pre><code>#include &lt;stack&gt;
+using namespace std;
+
+stack&lt;int&gt; pile; // Déclaration d'une pile d'entiers
+
+pile.push(10); // Ajout de la valeur 10 au sommet de la pile
+pile.push(20); // Ajout de la valeur 20 au sommet de la pile
+pile.push(30); // Ajout de la valeur 30 au sommet de la pile
+
+while (!pile.empty()) {
+    cout << pile.top() << " "; // Affichage de la valeur au sommet de la pile
+    pile.pop(); // Suppression de la valeur au sommet de la pile
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>30 20 10</code></pre>
+
+<h2>Les files (queue)</h2>
+<p>Les files sont des conteneurs qui suivent le principe du premier entré, premier sorti (FIFO - First In, First Out). Les éléments sont ajoutés à la fin de la file et supprimés à partir du début de la file.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'une file :</p>
+<pre><code>#include &lt;queue&gt;
+using namespace std;
+
+queue&lt;int&gt; file; // Déclaration d'une file d'entiers
+
+file.push(10); // Ajout de la valeur 10 à la fin de la file
+file.push(20); // Ajout de la valeur 20 à la fin de la file
+file.push(30); // Ajout de la valeur 30 à la fin de la file
+
+while (!file.empty()) {
+    cout << file.front() << " "; // Affichage de la valeur au début de la file
+    file.pop(); // Suppression de la valeur au début de la file
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>10 20 30</code></pre>
+
+<h2>Les ensembles (set)</h2>
+<p>Les ensembles sont des conteneurs qui stockent des éléments uniques, triés par ordre croissant par défaut. Les opérations d'insertion, de suppression et de recherche sont très efficaces dans les ensembles.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'un ensemble :</p>
+<pre><code>#include &lt;set&gt;
+using namespace std;
+
+set&lt;int&gt; ensemble; // Déclaration d'un ensemble d'entiers
+
+ensemble.insert(10); // Ajout de la valeur 10 à l'ensemble
+ensemble.insert(20); // Ajout de la valeur 20 à l'ensemble
+ensemble.insert(30); // Ajout de la valeur 30 à l'ensemble
+
+for (auto it = ensemble.begin(); it != ensemble.end(); ++it) {
+    cout << *it << " "; // Affichage des valeurs de l'ensemble
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>10 20 30</code></pre>
+
+<h2>Les cartes (map)</h2>
+<p>Les cartes sont des conteneurs qui stockent des paires clé-valeur, triées par ordre croissant des clés par défaut. Les opérations d'insertion, de suppression et de recherche sont très efficaces dans les cartes.</p>
+<p>Voici un exemple de déclaration et d'utilisation d'une carte :</p>
+<pre><code>#include &lt;map&gt;
+using namespace std;
+
+map&lt;string, int&gt; carte; // Déclaration d'une carte de chaînes de caractères vers des entiers
+
+carte["un"] = 1; // Ajout de la paire clé-valeur "un" - 1 à la carte
+carte["deux"] = 2; // Ajout de la paire clé-valeur "deux" - 2 à la carte
+carte["trois"] = 3; // Ajout de la paire clé-valeur "trois" - 3 à la carte
+
+for (auto it = carte.begin(); it != carte.end(); ++it) {
+    cout << it->first << " : " << it->second << endl; // Affichage des paires clé-valeur de la carte
+}
+</code></pre>
+<p>Résultat :</p>
+<pre><code>deux : 2
+trois : 3
+un : 1</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

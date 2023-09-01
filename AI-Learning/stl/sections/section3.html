@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Les itérateurs du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les itérateurs d'entrée (input iterators)</h2>
+<p>Les itérateurs d'entrée sont utilisés pour parcourir les éléments d'un conteneur STL dans une seule direction, de gauche à droite. Ils permettent uniquement la lecture des éléments et ne peuvent pas être utilisés pour modifier les valeurs des éléments.</p>
+<p>Voici un exemple d'utilisation d'un itérateur d'entrée pour parcourir un vecteur :</p>
+<pre><code>std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Parcours du vecteur avec un itérateur d'entrée
+for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
+    std::cout << *it << " ";
+}
+</code></pre>
+<p>Dans cet exemple, l'itérateur "it" est utilisé pour parcourir le vecteur "numbers" et afficher chaque élément.</p>
+
+<h2>Les itérateurs de sortie (output iterators)</h2>
+<p>Les itérateurs de sortie sont utilisés pour écrire des valeurs dans un conteneur STL. Ils permettent uniquement l'écriture des éléments et ne peuvent pas être utilisés pour lire les valeurs des éléments.</p>
+<p>Voici un exemple d'utilisation d'un itérateur de sortie pour écrire des valeurs dans un vecteur :</p>
+<pre><code>std::vector<int> numbers(5);
+
+// Utilisation d'un itérateur de sortie pour écrire des valeurs dans le vecteur
+for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
+    *it = 10;
+}
+</code></pre>
+<p>Dans cet exemple, l'itérateur "it" est utilisé pour écrire la valeur 10 dans chaque élément du vecteur "numbers".</p>
+
+<h2>Les itérateurs avant (forward iterators)</h2>
+<p>Les itérateurs avant sont similaires aux itérateurs d'entrée, mais ils permettent également de modifier les valeurs des éléments d'un conteneur STL.</p>
+<p>Voici un exemple d'utilisation d'un itérateur avant pour parcourir et modifier un vecteur :</p>
+<pre><code>std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+// Parcours et modification du vecteur avec un itérateur avant
+for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
+    *it *= 2;
+}
+</code></pre>
+<p>Dans cet exemple, l'itérateur "it" est utilisé pour parcourir le vecteur "numbers" et multiplier chaque élément par 2.</p>
+
+<h2>Les itérateurs bidirectionnels (bidirectional iterators)</h2>
+<p>Les itérateurs bidirectionnels permettent de parcourir les éléments d'un conteneur STL dans les deux sens, de gauche à droite et de droite à gauche. Ils peuvent être utilisés pour lire et modifier les valeurs des éléments.</p>
+<p>Voici un exemple d'utilisation d'un itérateur bidirectionnel pour parcourir et modifier une liste :</p>
+<pre><code>std::list<int> numbers = {1, 2, 3, 4, 5};
+
+// Parcours et modification de la liste avec un itérateur bidirectionnel
+for (std::list<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
+    *it += 1;
+}
+
+// Parcours inversé de la liste avec un itérateur bidirectionnel
+for (std::list<int>::reverse_iterator it = numbers.rbegin(); it != numbers.rend(); ++it) {
+    std::cout << *it << " ";
+}
+</code></pre>
+<p>Dans cet exemple, l'itérateur "it" est utilisé pour parcourir la liste "numbers" et ajouter 1 à chaque élément. Ensuite, un autre itérateur bidirectionnel est utilisé pour parcourir la liste dans l'ordre inverse et afficher les éléments.</p>
+
+<h2>Les itérateurs aléatoires (random access iterators)</h2>
+<p>Les itérateurs aléatoires permettent un accès direct aux éléments d'un conteneur STL. Ils peuvent être utilisés pour lire et modifier les valeurs des éléments, ainsi que pour effectuer des opérations arithmétiques sur les itérateurs.</p>
+<p>Voici un exemple d'utilisation d'un itérateur aléatoire pour accéder aux éléments d'un tableau :</p>
+<pre><code>int numbers[] = {1, 2, 3, 4, 5};
+
+// Accès aux éléments du tableau avec un itérateur aléatoire
+for (int* it = std::begin(numbers); it != std::end(numbers); ++it) {
+    std::cout << *it << " ";
+}
+
+// Utilisation d'opérations arithmétiques sur l'itérateur aléatoire
+int* thirdElement = std::begin(numbers) + 2;
+std::cout << *thirdElement; // Affiche 3
+</code></pre>
+<p>Dans cet exemple, l'itérateur "it" est utilisé pour accéder aux éléments du tableau "numbers" et les afficher. Ensuite, un autre itérateur aléatoire est utilisé pour accéder au troisième élément du tableau en utilisant des opérations arithmétiques sur l'itérateur.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

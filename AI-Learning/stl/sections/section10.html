@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Les bonnes pratiques du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation correcte des conteneurs et des algorithmes</h2>
+<p>Il est essentiel de comprendre comment utiliser correctement les conteneurs et les algorithmes du STL pour garantir des performances optimales et un code robuste. Voici quelques bonnes pratiques à suivre :</p>
+
+<h3>1. Choix du conteneur approprié</h3>
+<p>Il est important de choisir le bon conteneur en fonction des besoins spécifiques de votre programme. Par exemple, utilisez un tableau (array) si vous avez besoin d'un accès rapide aux éléments par leur indice, ou utilisez une liste (list) si vous devez insérer ou supprimer fréquemment des éléments au milieu de la structure de données.</p>
+
+<h3>2. Utilisation des itérateurs</h3>
+<p>Les itérateurs sont des objets qui permettent de parcourir les éléments d'un conteneur. Utilisez-les correctement pour accéder aux éléments du conteneur de manière efficace. Par exemple, utilisez des itérateurs aléatoires (random access iterators) pour accéder rapidement aux éléments d'un vecteur (vector).</p>
+
+<h3>3. Utilisation des algorithmes du STL</h3>
+<p>Le STL propose de nombreux algorithmes prédéfinis qui peuvent être utilisés avec les conteneurs. Utilisez ces algorithmes plutôt que d'écrire votre propre code pour des opérations courantes telles que le tri, la recherche ou la transformation des éléments d'un conteneur.</p>
+<pre><code>// Exemple d'utilisation de l'algorithme de tri
+std::vector<int> numbers = {5, 2, 8, 1, 9};
+std::sort(numbers.begin(), numbers.end());
+</code></pre>
+
+<h3>4. Gestion de la mémoire</h3>
+<p>Le STL gère automatiquement la mémoire pour vous, mais il est important de comprendre comment cela fonctionne. Assurez-vous de libérer la mémoire allouée par les conteneurs lorsque vous n'en avez plus besoin, en utilisant la fonction <code>clear()</code> par exemple.</p>
+
+<h2>Écriture de code STL robuste et maintenable</h2>
+<p>Pour écrire un code STL robuste et maintenable, voici quelques bonnes pratiques à suivre :</p>
+
+<h3>1. Commentaires et documentation</h3>
+<p>Commentez votre code de manière appropriée pour expliquer son fonctionnement et son objectif. Utilisez également des conventions de documentation pour rendre votre code plus compréhensible pour les autres développeurs.</p>
+
+<h3>2. Nommage des variables et des fonctions</h3>
+<p>Choisissez des noms de variables et de fonctions significatifs et descriptifs pour faciliter la compréhension du code. Évitez les noms génériques ou ambigus qui pourraient prêter à confusion.</p>
+
+<h3>3. Utilisation des types de données appropriés</h3>
+<p>Utilisez les types de données appropriés pour les variables et les fonctions du STL. Par exemple, utilisez <code>size_t</code> pour représenter la taille d'un conteneur plutôt que <code>int</code>.</p>
+
+<h3>4. Gestion des erreurs</h3>
+<p>Gérez correctement les erreurs et les exceptions qui peuvent survenir lors de l'utilisation du STL. Utilisez des blocs try-catch pour capturer les exceptions et assurez-vous de les traiter de manière appropriée.</p>
+
+<h3>5. Tests unitaires</h3>
+<p>Écrivez des tests unitaires pour vérifier le bon fonctionnement de votre code STL. Cela vous permettra de détecter rapidement les erreurs et de les corriger avant qu'elles ne deviennent des problèmes plus importants.</p>
+
+<p>En suivant ces bonnes pratiques, vous serez en mesure d'écrire un code STL de haute qualité, facile à maintenir et à comprendre.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

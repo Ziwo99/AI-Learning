@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Les foncteurs et les prédicats du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les foncteurs</h2>
+<p>Les foncteurs, également appelés objets fonctionnels, sont des objets qui peuvent être utilisés comme des fonctions. Ils sont souvent utilisés avec les algorithmes du STL pour effectuer des opérations sur les conteneurs. Les foncteurs peuvent être des objets de classe avec une surcharge de l'opérateur de parenthèses (), ou des objets de classe avec une surcharge de l'opérateur de fonction ().</p>
+
+<p>Voici un exemple de foncteur qui multiplie chaque élément d'un conteneur par un facteur :</p>
+
+<pre><code>class MultiplyByFactor {
+public:
+    MultiplyByFactor(int factor) : m_factor(factor) {}
+
+    int operator()(int value) const {
+        return value * m_factor;
+    }
+
+private:
+    int m_factor;
+};
+
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+std::transform(numbers.begin(), numbers.end(), numbers.begin(), MultiplyByFactor(2));
+// numbers contiendra maintenant {2, 4, 6, 8, 10}</code></pre>
+
+<p>Dans cet exemple, nous utilisons le foncteur MultiplyByFactor avec l'algorithme std::transform pour multiplier chaque élément du vecteur numbers par 2.</p>
+
+<h2>Les prédicats</h2>
+<p>Les prédicats sont des fonctions ou des foncteurs qui retournent une valeur booléenne. Ils sont souvent utilisés avec les algorithmes du STL pour effectuer des opérations conditionnelles sur les conteneurs. Les prédicats peuvent être utilisés pour filtrer, trier ou rechercher des éléments dans un conteneur.</p>
+
+<p>Voici un exemple de prédicat qui vérifie si un nombre est pair :</p>
+
+<pre><code>class IsEven {
+public:
+    bool operator()(int value) const {
+        return value % 2 == 0;
+    }
+};
+
+std::vector<int> numbers = {1, 2, 3, 4, 5};
+int count = std::count_if(numbers.begin(), numbers.end(), IsEven());
+// count contiendra maintenant 2, car il y a 2 nombres pairs dans le vecteur numbers</code></pre>
+
+<p>Dans cet exemple, nous utilisons le prédicat IsEven avec l'algorithme std::count_if pour compter le nombre d'éléments pairs dans le vecteur numbers.</p>
+
+<h2>Utilisation des foncteurs et des prédicats avec les algorithmes du STL</h2>
+<p>Les foncteurs et les prédicats peuvent être utilisés avec de nombreux algorithmes du STL pour effectuer des opérations spécifiques sur les conteneurs. Voici quelques exemples :</p>
+
+<ul>
+  <li>std::transform : utilise un foncteur pour appliquer une opération à chaque élément d'un conteneur.</li>
+  <li>std::find_if : utilise un prédicat pour rechercher le premier élément qui satisfait une condition dans un conteneur.</li>
+  <li>std::sort : utilise un prédicat pour trier les éléments d'un conteneur selon un ordre spécifique.</li>
+  <li>std::remove_if : utilise un prédicat pour supprimer tous les éléments qui satisfont une condition dans un conteneur.</li>
+</ul>
+
+<p>Il est important de noter que les foncteurs et les prédicats doivent être des objets immuables, c'est-à-dire qu'ils ne doivent pas modifier l'état des objets sur lesquels ils opèrent. Cela garantit que les opérations effectuées avec les foncteurs et les prédicats sont prévisibles et sans effets secondaires.</p>
+
+<p>En utilisant les foncteurs et les prédicats avec les algorithmes du STL, vous pouvez effectuer des opérations complexes sur les conteneurs de manière concise et efficace.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

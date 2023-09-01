@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - STL Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Les adaptateurs du STL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/stl/stl.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les adaptateurs de conteneurs</h2>
+<p>Les adaptateurs de conteneurs sont des classes qui fournissent une interface différente pour accéder aux éléments d'un conteneur STL existant. Ils permettent de modifier la façon dont les éléments sont organisés ou accessibles.</p>
+
+<p>Un exemple d'adaptateur de conteneurs est la classe <code>stack</code>. Elle permet d'accéder aux éléments d'un conteneur sous forme de pile, où le dernier élément ajouté est le premier à être retiré (principe LIFO - Last In, First Out).</p>
+
+<p>Voici un exemple d'utilisation de la classe <code>stack</code> :</p>
+
+<pre><code>#include &lt;stack&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::stack&lt;int&gt; myStack;
+
+    myStack.push(1);
+    myStack.push(2);
+    myStack.push(3);
+
+    while (!myStack.empty()) {
+        std::cout &lt;&lt; myStack.top() &lt;&lt; " ";
+        myStack.pop();
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous créons une pile d'entiers à l'aide de la classe <code>stack</code>. Nous ajoutons ensuite les entiers 1, 2 et 3 à la pile à l'aide de la fonction <code>push</code>. Ensuite, nous utilisons une boucle pour afficher les éléments de la pile à l'aide de la fonction <code>top</code>, puis nous les retirons de la pile à l'aide de la fonction <code>pop</code>.</p>
+
+<h2>Les adaptateurs d'itérateurs</h2>
+<p>Les adaptateurs d'itérateurs sont des classes qui fournissent une interface différente pour parcourir les éléments d'un conteneur STL existant. Ils permettent de modifier la façon dont les éléments sont parcourus ou manipulés.</p>
+
+<p>Un exemple d'adaptateur d'itérateurs est la classe <code>reverse_iterator</code>. Elle permet de parcourir un conteneur STL dans l'ordre inverse.</p>
+
+<p>Voici un exemple d'utilisation de la classe <code>reverse_iterator</code> :</p>
+
+<pre><code>#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::vector&lt;int&gt; myVector = {1, 2, 3, 4, 5};
+
+    for (auto it = myVector.rbegin(); it != myVector.rend(); ++it) {
+        std::cout &lt;&lt; *it &lt;&lt; " ";
+    }
+
+    return 0;
+}
+</code></pre>
+
+<p>Dans cet exemple, nous créons un vecteur d'entiers à l'aide de la classe <code>vector</code>. Nous utilisons ensuite la classe <code>reverse_iterator</code> pour parcourir le vecteur dans l'ordre inverse. La fonction <code>rbegin</code> retourne un itérateur pointant vers le dernier élément du vecteur, et la fonction <code>rend</code> retourne un itérateur pointant avant le premier élément du vecteur. Nous utilisons ensuite une boucle pour afficher les éléments du vecteur à l'envers.</p>
+
+<p>Il existe de nombreux autres adaptateurs de conteneurs et d'itérateurs dans le STL, chacun offrant des fonctionnalités spécifiques pour répondre à différents besoins de programmation.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/stl/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/stl/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
