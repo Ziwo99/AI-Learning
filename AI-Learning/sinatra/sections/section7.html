@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Déploiement de l'application</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration de l'environnement de production</h2>
+<p>Lorsque vous êtes prêt à déployer votre application Sinatra en production, il est important de configurer correctement votre environnement pour garantir des performances optimales et une sécurité adéquate. Voici quelques étapes à suivre pour configurer votre environnement de production :</p>
+
+<p>1. Utilisez un serveur web approprié : Apache, Nginx ou même Passenger peuvent être utilisés pour héberger votre application Sinatra en production. Assurez-vous d'installer et de configurer correctement le serveur web choisi.</p>
+
+<p>2. Configurez les variables d'environnement : Dans votre application Sinatra, vous pouvez utiliser des variables d'environnement pour stocker des informations sensibles telles que les clés d'API ou les informations de connexion à la base de données. Assurez-vous de configurer correctement ces variables d'environnement sur votre serveur de production.</p>
+
+<p>3. Activez la mise en cache : Pour améliorer les performances de votre application Sinatra, vous pouvez activer la mise en cache. Cela permet de stocker en mémoire les résultats des requêtes fréquentes, réduisant ainsi le temps de réponse global de votre application.</p>
+
+<h2>Déploiement sur un serveur web</h2>
+<p>Une fois que vous avez configuré votre environnement de production, vous pouvez procéder au déploiement de votre application Sinatra sur un serveur web. Voici les étapes générales à suivre :</p>
+
+<p>1. Préparez votre application pour le déploiement : Assurez-vous que votre application est prête à être déployée en production. Cela inclut la gestion des dépendances, la compilation des assets, etc.</p>
+
+<p>2. Transférez les fichiers sur le serveur : Utilisez un outil de transfert de fichiers tel que FTP ou SCP pour transférer les fichiers de votre application sur le serveur web.</p>
+
+<p>3. Configurez le serveur web : Selon le serveur web que vous utilisez, vous devrez configurer les fichiers de configuration appropriés pour indiquer au serveur web comment gérer les requêtes vers votre application Sinatra.</p>
+
+<p>4. Redémarrez le serveur web : Une fois que vous avez configuré le serveur web, redémarrez-le pour prendre en compte les modifications. Votre application Sinatra devrait maintenant être accessible via l'URL configurée.</p>
+
+<h2>Utilisation de services de déploiement en ligne</h2>
+<p>Si vous ne souhaitez pas gérer vous-même le déploiement de votre application Sinatra, vous pouvez utiliser des services de déploiement en ligne qui simplifient le processus. Voici quelques-uns des services populaires :</p>
+
+<p>1. Heroku : Heroku est une plateforme de déploiement en ligne qui prend en charge de nombreux langages de programmation, y compris Ruby utilisé par Sinatra. Il vous permet de déployer facilement votre application Sinatra en quelques étapes simples.</p>
+
+<p>2. AWS Elastic Beanstalk : AWS Elastic Beanstalk est un service d'hébergement géré par Amazon Web Services. Il vous permet de déployer rapidement et facilement votre application Sinatra sur une infrastructure scalable.</p>
+
+<p>3. DigitalOcean : DigitalOcean est un fournisseur d'infrastructure cloud qui propose des serveurs virtuels privés (VPS). Vous pouvez déployer votre application Sinatra sur un VPS DigitalOcean et bénéficier de performances élevées et d'une flexibilité accrue.</p>
+
+<h2>Exemple de déploiement sur Heroku :</h2>
+<pre><code>1. Créez un compte Heroku et installez l'outil en ligne de commande Heroku (Heroku CLI) sur votre machine locale.
+
+2. Dans le répertoire racine de votre application Sinatra, initialisez un dépôt Git en exécutant la commande suivante :
+   <code>git init</code>
+
+3. Créez un fichier de configuration de l'application Heroku en exécutant la commande suivante :
+   <code>touch Procfile</code>
+
+4. Ouvrez le fichier Procfile avec un éditeur de texte et ajoutez la ligne suivante :
+   <code>web: bundle exec ruby app.rb -p $PORT</code>
+
+5. Enregistrez et fermez le fichier Procfile.
+
+6. Exécutez la commande suivante pour ajouter tous les fichiers de votre application au dépôt Git :
+   <code>git add .</code>
+
+7. Exécutez la commande suivante pour effectuer un commit initial :
+   <code>git commit -m "Initial commit"</code>
+
+8. Connectez-vous à votre compte Heroku en exécutant la commande suivante :
+   <code>heroku login</code>
+
+9. Créez une nouvelle application Heroku en exécutant la commande suivante :
+   <code>heroku create</code>
+
+10. Déployez votre application sur Heroku en exécutant la commande suivante :
+    <code>git push heroku master</code>
+
+11. Votre application Sinatra est maintenant déployée sur Heroku. Vous pouvez accéder à votre application en exécutant la commande suivante :
+    <code>heroku open</code></pre></code>
+
+<h2>Utilisation de services de déploiement en ligne</h2>
+<p>Si vous ne souhaitez pas gérer vous-même le déploiement de votre application Sinatra, vous pouvez utiliser des services de déploiement en ligne qui simplifient le processus. Voici quelques-uns des services populaires :</p>
+
+<p>1. Heroku : Heroku est une plateforme de déploiement en ligne qui prend en charge de nombreux langages de programmation, y compris Ruby utilisé par Sinatra. Il vous permet de déployer facilement votre application Sinatra en quelques étapes simples.</p>
+
+<p>2. AWS Elastic Beanstalk : AWS Elastic Beanstalk est un service d'hébergement géré par Amazon Web Services. Il vous permet de déployer rapidement et facilement votre application Sinatra sur une infrastructure scalable.</p>
+
+<p>3. DigitalOcean : DigitalOcean est un fournisseur d'infrastructure cloud qui propose des serveurs virtuels privés (VPS). Vous pouvez déployer votre application Sinatra sur un VPS DigitalOcean et bénéficier de performances élevées et d'une flexibilité accrue.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

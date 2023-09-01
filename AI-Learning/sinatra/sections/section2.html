@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Installation et configuration de Sinatra</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Installation de Sinatra</h2>
+<p>Pour commencer à utiliser Sinatra, vous devez d'abord l'installer sur votre machine. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Ouvrez votre terminal ou votre invite de commande.</li>
+  <li>Assurez-vous d'avoir Ruby installé sur votre machine. Vous pouvez vérifier cela en exécutant la commande <code>ruby -v</code>. Si Ruby n'est pas installé, vous pouvez le télécharger et l'installer à partir du site officiel de Ruby.</li>
+  <li>Une fois Ruby installé, vous pouvez installer Sinatra en exécutant la commande suivante :</li>
+</ol>
+
+<pre><code>gem install sinatra</code></pre>
+
+<p>Cette commande téléchargera et installera la dernière version de Sinatra sur votre machine.</p>
+
+<h2>Configuration de l'environnement de développement</h2>
+<p>Avant de commencer à développer des applications Sinatra, vous devez configurer votre environnement de développement. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Ouvrez votre éditeur de code préféré.</li>
+  <li>Créez un nouveau dossier pour votre projet Sinatra.</li>
+  <li>Ouvrez une nouvelle fenêtre de terminal ou d'invite de commande et naviguez jusqu'au dossier de votre projet.</li>
+  <li>Créez un nouveau fichier Ruby avec l'extension .rb, par exemple <code>app.rb</code>.</li>
+  <li>Ouvrez le fichier Ruby dans votre éditeur de code.</li>
+</ol>
+
+<p>Votre environnement de développement est maintenant prêt à être utilisé pour développer des applications Sinatra.</p>
+
+<h2>Création d'une application Sinatra de base</h2>
+<p>Une fois que vous avez installé Sinatra et configuré votre environnement de développement, vous pouvez commencer à créer une application Sinatra de base. Voici les étapes à suivre :</p>
+
+<ol>
+  <li>Ouvrez le fichier Ruby que vous avez créé précédemment.</li>
+  <li>Commencez par exiger la gemme Sinatra en ajoutant la ligne suivante en haut de votre fichier :</li>
+</ol>
+
+<pre><code>require 'sinatra'</code></pre>
+
+<p>Cette ligne permet à votre application d'utiliser les fonctionnalités de Sinatra.</p>
+
+<ol start="3">
+  <li>Définissez une route racine en ajoutant le code suivant :</li>
+</ol>
+
+<pre><code>get '/' do
+  'Hello, world!'
+end</code></pre>
+
+<p>Ce code définit une route racine qui renvoie simplement la chaîne de caractères "Hello, world!".</p>
+
+<ol start="4">
+  <li>Enregistrez votre fichier Ruby.</li>
+  <li>Exécutez votre application en exécutant la commande suivante dans votre terminal ou votre invite de commande :</li>
+</ol>
+
+<pre><code>ruby app.rb</code></pre>
+
+<p>Cette commande démarre votre application Sinatra et la rend accessible à l'adresse <code>http://localhost:4567</code>.</p>
+
+<p>Vous pouvez maintenant ouvrir votre navigateur et accéder à <code>http://localhost:4567</code> pour voir le message "Hello, world!" affiché par votre application Sinatra.</p>
+
+<p>Félicitations ! Vous avez créé avec succès une application Sinatra de base.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Modèles de données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Utilisation de modèles de données dans Sinatra</h2>
+  <p>Les modèles de données sont un élément essentiel dans le développement d'applications web avec Sinatra. Ils permettent de représenter et de manipuler les données de manière structurée. Dans Sinatra, les modèles de données sont généralement créés à l'aide d'une bibliothèque d'ORM (Object-Relational Mapping) telle que ActiveRecord ou Sequel.</p>
+  <p>Pour utiliser des modèles de données dans Sinatra, il est nécessaire de définir une classe pour chaque table de la base de données que vous souhaitez manipuler. Cette classe doit hériter de la classe de modèle fournie par la bibliothèque ORM que vous avez choisie.</p>
+  <p>Par exemple, si vous utilisez ActiveRecord, vous pouvez définir une classe de modèle pour une table "users" de la manière suivante :</p>
+  <pre><code>class User &lt; ActiveRecord::Base
+  # Définition des associations, validations, etc.
+end</code></pre>
+  <p>Une fois que vous avez défini vos classes de modèle, vous pouvez les utiliser dans vos routes pour effectuer des opérations de création, lecture, mise à jour et suppression de données.</p>
+
+  <h2>Connexion à une base de données</h2>
+  <p>Pour pouvoir utiliser des modèles de données dans Sinatra, il est nécessaire de configurer une connexion à la base de données. Cette étape peut varier en fonction de la bibliothèque ORM que vous utilisez.</p>
+  <p>Par exemple, si vous utilisez ActiveRecord, vous pouvez configurer la connexion à la base de données en spécifiant les informations de connexion dans un fichier de configuration, tel que "database.yml". Une fois la configuration effectuée, vous pouvez établir la connexion en appelant la méthode <code>establish_connection</code> dans votre application Sinatra.</p>
+  <pre><code>require 'sinatra/activerecord'
+
+class MyApp &lt; Sinatra::Base
+  configure :development do
+    set :database, { adapter: 'sqlite3', database: 'myapp.db' }
+  end
+
+  # Établir la connexion à la base de données
+  ActiveRecord::Base.establish_connection(settings.database)
+end</code></pre>
+  <p>Assurez-vous d'adapter la configuration de la base de données en fonction de votre environnement de développement (par exemple, "development", "production", etc.) et des informations de connexion spécifiques à votre base de données.</p>
+
+  <h2>Création, lecture, mise à jour et suppression de données</h2>
+  <p>Une fois que vous avez configuré la connexion à la base de données et défini vos classes de modèle, vous pouvez commencer à manipuler les données à l'aide des opérations CRUD (Create, Read, Update, Delete).</p>
+  <p>Voici quelques exemples d'opérations courantes :</p>
+
+  <h3>Création de données</h3>
+  <pre><code>user = User.new(name: 'John', email: 'john@example.com')
+user.save</code></pre>
+
+  <h3>Lecture de données</h3>
+  <pre><code>users = User.all
+user = User.find(1)</code></pre>
+
+  <h3>Mise à jour de données</h3>
+  <pre><code>user = User.find(1)
+user.name = 'John Doe'
+user.save</code></pre>
+
+  <h3>Suppression de données</h3>
+  <pre><code>user = User.find(1)
+user.destroy</code></pre>
+
+  <p>Il est important de noter que ces exemples sont basés sur l'utilisation d'ActiveRecord. Si vous utilisez une autre bibliothèque ORM telle que Sequel, les méthodes et la syntaxe peuvent être légèrement différentes.</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

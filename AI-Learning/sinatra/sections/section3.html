@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Routes et gestion des requêtes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Définition des routes dans Sinatra</h2>
+<p>Les routes dans Sinatra sont utilisées pour définir les URL que l'application peut gérer. Une route est associée à une action spécifique de l'application, qui sera exécutée lorsque l'URL correspondante sera appelée.</p>
+<p>Les routes dans Sinatra sont définies à l'aide de la méthode <code>get</code>, qui prend en paramètre l'URL à laquelle la route est associée et une action à exécuter. Par exemple, la route suivante associe l'URL "/hello" à une action qui affiche le message "Hello, World!" :</p>
+
+<pre><code>get '/hello' do
+  "Hello, World!"
+end
+</code></pre>
+
+<p>Il est également possible de définir des routes pour d'autres méthodes HTTP telles que <code>post</code>, <code>put</code> et <code>delete</code>. Par exemple, la route suivante associe l'URL "/users" à une action qui crée un nouvel utilisateur en utilisant la méthode HTTP POST :</p>
+
+<pre><code>post '/users' do
+  # Créer un nouvel utilisateur
+end
+</code></pre>
+
+<h2>Gestion des différentes méthodes HTTP</h2>
+<p>Dans Sinatra, la gestion des différentes méthodes HTTP se fait en utilisant les méthodes correspondantes, telles que <code>get</code>, <code>post</code>, <code>put</code> et <code>delete</code>. Chaque méthode est associée à une route spécifique et à une action à exécuter lorsque cette route est appelée avec la méthode HTTP correspondante.</p>
+<p>Par exemple, la route suivante utilise la méthode <code>get</code> pour afficher la liste des utilisateurs :</p>
+
+<pre><code>get '/users' do
+  # Afficher la liste des utilisateurs
+end
+</code></pre>
+
+<p>De même, la route suivante utilise la méthode <code>post</code> pour créer un nouvel utilisateur :</p>
+
+<pre><code>post '/users' do
+  # Créer un nouvel utilisateur
+end
+</code></pre>
+
+<h2>Utilisation des paramètres de requête</h2>
+<p>Les paramètres de requête sont utilisés pour transmettre des données à une route via l'URL. Dans Sinatra, les paramètres de requête sont accessibles à l'aide de la variable <code>params</code>.</p>
+<p>Par exemple, la route suivante utilise les paramètres de requête pour afficher le nom de l'utilisateur passé en tant que paramètre :</p>
+
+<pre><code>get '/hello' do
+  "Hello, #{params['name']}!"
+end
+</code></pre>
+
+<p>Si l'URL "/hello?name=John" est appelée, la route affichera "Hello, John!".</p>
+
+<h2>Utilisation des paramètres de route</h2>
+<p>Les paramètres de route sont utilisés pour capturer des parties variables d'une URL. Dans Sinatra, les paramètres de route sont définis en utilisant le symbole ":" suivi du nom du paramètre.</p>
+<p>Par exemple, la route suivante utilise un paramètre de route pour afficher le profil de l'utilisateur correspondant à l'ID passé en tant que paramètre :</p>
+
+<pre><code>get '/users/:id' do
+  # Afficher le profil de l'utilisateur avec l'ID correspondant à params['id']
+end
+</code></pre>
+
+<p>Si l'URL "/users/123" est appelée, la route affichera le profil de l'utilisateur avec l'ID 123.</p>
+
+<p>Les paramètres de route peuvent également être utilisés dans d'autres parties de l'URL, par exemple :</p>
+
+<pre><code>get '/users/:id/edit' do
+  # Afficher le formulaire d'édition pour l'utilisateur avec l'ID correspondant à params['id']
+end
+</code></pre>
+
+<p>Si l'URL "/users/123/edit" est appelée, la route affichera le formulaire d'édition pour l'utilisateur avec l'ID 123.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

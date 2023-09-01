@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Sessions et authentification</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+
+  <h2>Gestion des sessions dans Sinatra</h2>
+  <p>
+    Les sessions sont un mécanisme essentiel pour gérer l'état des utilisateurs dans une application web. Dans Sinatra, la gestion des sessions est très simple grâce à l'utilisation du module intégré "sessions".
+  </p>
+  <p>
+    Pour activer les sessions dans votre application Sinatra, vous devez ajouter la ligne suivante au début de votre fichier principal :
+  </p>
+  <pre><code>enable :sessions</code></pre>
+  <p>
+    Une fois les sessions activées, vous pouvez stocker des informations spécifiques à chaque utilisateur en utilisant la variable de session. Par exemple, pour stocker le nom d'utilisateur d'un utilisateur connecté, vous pouvez utiliser la syntaxe suivante :
+  </p>
+  <pre><code>session[:username] = "JohnDoe"</code></pre>
+  <p>
+    Vous pouvez également accéder aux informations de session à partir de n'importe quelle route ou vue en utilisant la même syntaxe. Par exemple, pour afficher le nom d'utilisateur stocké dans la session, vous pouvez utiliser :
+  </p>
+  <pre><code>&lt;%= session[:username] %&gt;</code></pre>
+
+  <h2>Authentification des utilisateurs</h2>
+  <p>
+    L'authentification des utilisateurs est un aspect crucial de nombreuses applications web. Sinatra facilite l'implémentation de l'authentification en utilisant des méthodes de filtrage et des sessions.
+  </p>
+  <p>
+    Pour créer un système d'authentification basique, vous pouvez utiliser un formulaire de connexion qui envoie les informations d'identification de l'utilisateur à une route spécifique. Dans cette route, vous pouvez vérifier les informations d'identification et, si elles sont valides, stocker l'identifiant de l'utilisateur dans la session.
+  </p>
+  <pre><code>post '/login' do
+  username = params[:username]
+  password = params[:password]
+
+  # Vérifier les informations d'identification de l'utilisateur
+  if username == "admin" && password == "password"
+    session[:user_id] = 1
+    redirect '/dashboard'
+  else
+    redirect '/login'
+  end
+end</code></pre>
+  <p>
+    Dans cet exemple, si les informations d'identification sont valides, l'identifiant de l'utilisateur est stocké dans la session et l'utilisateur est redirigé vers le tableau de bord. Sinon, l'utilisateur est redirigé vers la page de connexion.
+  </p>
+
+  <h2>Utilisation de middlewares pour la gestion des sessions</h2>
+  <p>
+    Les middlewares sont des composants logiciels qui s'exécutent entre la requête et la réponse dans une application web. Ils sont utilisés pour effectuer des tâches telles que la gestion des sessions.
+  </p>
+  <p>
+    Dans Sinatra, vous pouvez utiliser le middleware intégré "Rack::Session::Cookie" pour gérer les sessions de manière transparente. Pour l'utiliser, vous devez ajouter la ligne suivante au début de votre fichier principal :
+  </p>
+  <pre><code>use Rack::Session::Cookie, secret: "your_secret_key"</code></pre>
+  <p>
+    Assurez-vous de remplacer "your_secret_key" par une clé secrète unique pour votre application.
+  </p>
+  <p>
+    Une fois le middleware activé, vous pouvez accéder aux informations de session de la même manière qu'avec l'approche précédente.
+  </p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

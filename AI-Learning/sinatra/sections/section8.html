@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Optimisation et bonnes pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Optimisation des performances de l'application</h2>
+  <p>L'optimisation des performances est essentielle pour garantir une expérience utilisateur fluide et réactive. Voici quelques bonnes pratiques à suivre pour optimiser les performances de votre application Sinatra :</p>
+  <ul>
+    <li><strong>Mise en cache :</strong> Utilisez la mise en cache pour stocker les résultats de requêtes fréquemment utilisées. Cela permettra de réduire le temps de réponse et d'améliorer les performances globales de l'application.</li>
+    <li><strong>Optimisation de la base de données :</strong> Assurez-vous d'optimiser les requêtes SQL en utilisant des index appropriés, en évitant les jointures coûteuses et en limitant le nombre de requêtes exécutées.</li>
+    <li><strong>Compression des ressources :</strong> Minimisez la taille des fichiers CSS et JavaScript en les compressant. Cela réduira le temps de chargement des pages et améliorera les performances.</li>
+    <li><strong>Utilisation de CDN :</strong> Utilisez un réseau de diffusion de contenu (CDN) pour livrer les ressources statiques, telles que les images, les fichiers CSS et JavaScript. Cela permettra de réduire la charge sur votre serveur et d'améliorer les performances.</li>
+    <li><strong>Optimisation des requêtes :</strong> Évitez d'exécuter des requêtes coûteuses à chaque demande. Utilisez des techniques telles que le chargement différé (lazy loading) et le prefetching pour optimiser les requêtes et améliorer les performances.</li>
+  </ul>
+  
+  <h2>Utilisation de tests automatisés</h2>
+  <p>Les tests automatisés sont essentiels pour garantir la qualité et la stabilité de votre application Sinatra. Voici quelques types de tests que vous pouvez effectuer :</p>
+  <ul>
+    <li><strong>Tests unitaires :</strong> Les tests unitaires vous permettent de vérifier le bon fonctionnement des différentes parties de votre application, telles que les modèles, les contrôleurs et les vues. Utilisez un framework de test tel que RSpec pour écrire et exécuter vos tests unitaires.</li>
+    <li><strong>Tests d'intégration :</strong> Les tests d'intégration vous permettent de vérifier que les différentes parties de votre application fonctionnent correctement ensemble. Vous pouvez utiliser des outils tels que Capybara pour simuler des interactions utilisateur et tester l'application dans son ensemble.</li>
+    <li><strong>Tests de performance :</strong> Les tests de performance vous permettent de mesurer les performances de votre application dans des conditions réelles. Utilisez des outils tels que Apache JMeter pour simuler une charge de travail élevée et identifier les éventuels goulots d'étranglement.</li>
+  </ul>
+  
+  <h2>Bonnes pratiques de développement avec Sinatra</h2>
+  <p>Voici quelques bonnes pratiques à suivre lors du développement d'une application Sinatra :</p>
+  <ul>
+    <li><strong>Organisation du code :</strong> Organisez votre code en utilisant une structure de répertoires logique. Par exemple, placez les modèles dans un répertoire "models", les contrôleurs dans un répertoire "controllers" et les vues dans un répertoire "views". Cela facilitera la maintenance et la compréhension de votre code.</li>
+    <li><strong>Utilisation de helpers :</strong> Utilisez des helpers pour regrouper des fonctionnalités communes et réutilisables. Les helpers vous permettent de simplifier votre code et d'améliorer sa lisibilité.</li>
+    <li><strong>Séparation des responsabilités :</strong> Assurez-vous de séparer les différentes responsabilités de votre application en utilisant le modèle MVC (Modèle-Vue-Contrôleur). Cela vous permettra de maintenir un code propre et facilement évolutif.</li>
+    <li><strong>Utilisation de middlewares :</strong> Les middlewares sont des composants qui s'exécutent entre la requête et la réponse. Utilisez des middlewares pour ajouter des fonctionnalités supplémentaires à votre application, telles que la gestion des sessions, l'authentification et la compression des réponses.</li>
+    <li><strong>Sécurité :</strong> Assurez-vous de mettre en place des mesures de sécurité appropriées, telles que la protection contre les attaques par injection SQL, la validation des entrées utilisateur et l'utilisation de sessions sécurisées.</li>
+  </ul>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

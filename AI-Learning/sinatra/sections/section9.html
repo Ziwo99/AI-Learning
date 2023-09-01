@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Extensions et intégrations</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  
+  <h2>Utilisation d'extensions populaires avec Sinatra</h2>
+  <p>
+    Sinatra offre une grande flexibilité grâce à sa capacité à intégrer des extensions populaires. Ces extensions permettent d'ajouter des fonctionnalités supplémentaires à votre application Sinatra. Voici quelques-unes des extensions les plus utilisées :
+  </p>
+  
+  <h3>Rack</h3>
+  <p>
+    Rack est une interface standard pour les serveurs web Ruby. Il permet de gérer les requêtes HTTP et les réponses. Sinatra est construit sur Rack, ce qui signifie que vous pouvez utiliser toutes les fonctionnalités de Rack dans votre application Sinatra.
+  </p>
+  <pre><code>require 'rack'
+
+class HelloWorld
+  def call(env)
+    [200, {"Content-Type" => "text/html"}, ["Hello World"]]
+  end
+end
+
+run HelloWorld.new</code></pre>
+  
+  <h3>Sinatra-Contrib</h3>
+  <p>
+    Sinatra-Contrib est une bibliothèque qui regroupe un ensemble d'extensions pour Sinatra. Elle offre des fonctionnalités supplémentaires telles que la gestion des sessions, l'authentification, la validation des formulaires, etc. Vous pouvez l'ajouter à votre application en utilisant la commande suivante :
+  </p>
+  <pre><code>gem install sinatra-contrib</code></pre>
+  
+  <h3>Sinatra-Flash</h3>
+  <p>
+    Sinatra-Flash est une extension qui permet de gérer les messages flash dans votre application Sinatra. Les messages flash sont des messages temporaires qui sont affichés à l'utilisateur après une action spécifique, comme la soumission d'un formulaire. Voici comment l'utiliser :
+  </p>
+  <pre><code>require 'sinatra'
+require 'sinatra/flash'
+
+enable :sessions
+
+get '/' do
+  flash[:notice] = "Welcome to my website!"
+  erb :index
+end</code></pre>
+  
+  <h2>Intégration avec d'autres frameworks et bibliothèques</h2>
+  <p>
+    Sinatra peut être intégré avec d'autres frameworks et bibliothèques pour étendre ses fonctionnalités. Voici quelques exemples d'intégration :
+  </p>
+  
+  <h3>Sinatra avec ActiveRecord</h3>
+  <p>
+    ActiveRecord est une bibliothèque ORM (Object-Relational Mapping) populaire en Ruby. Vous pouvez l'utiliser avec Sinatra pour faciliter la manipulation des données de votre application. Voici comment l'intégrer :
+  </p>
+  <pre><code>require 'sinatra'
+require 'sinatra/activerecord'
+
+set :database, "sqlite3:mydatabase.sqlite3"
+
+class User < ActiveRecord::Base
+end</code></pre>
+  
+  <h3>Sinatra avec AngularJS</h3>
+  <p>
+    AngularJS est un framework JavaScript qui facilite la création d'applications web interactives. Vous pouvez l'intégrer avec Sinatra pour créer des applications web plus dynamiques. Voici comment l'utiliser :
+  </p>
+  <pre><code>require 'sinatra'
+
+get '/' do
+  erb :index, :locals => {:name => 'John'}
+end</code></pre>
+  
+  <h2>Utilisation de Sinatra dans des projets réels</h2>
+  <p>
+    Sinatra est utilisé dans de nombreux projets réels, allant des petites applications web aux grandes plateformes. Voici quelques exemples de projets qui utilisent Sinatra :
+  </p>
+  
+  <h3>Github Gist</h3>
+  <p>
+    Github Gist est une fonctionnalité de Github qui permet de partager du code avec d'autres développeurs. Il utilise Sinatra pour gérer les requêtes et les réponses HTTP.
+  </p>
+  
+  <h3>Heroku</h3>
+  <p>
+    Heroku est une plateforme de déploiement d'applications web. Elle utilise Sinatra pour gérer les requêtes et les réponses des applications déployées sur sa plateforme.
+  </p>
+  
+  <h3>Basecamp</h3>
+  <p>
+    Basecamp est un outil de gestion de projet en ligne. Il utilise Sinatra pour gérer les requêtes et les réponses de son interface utilisateur.
+  </p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Sinatra Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Projet final</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/sinatra/sinatra.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					<section>
+  
+  <h2>Création d'une application complète en utilisant toutes les fonctionnalités de Sinatra</h2>
+  <p>Dans cette dernière section, nous allons mettre en pratique tout ce que nous avons appris jusqu'à présent en créant une application complète en utilisant toutes les fonctionnalités de Sinatra.</p>
+  
+  <p>Tout d'abord, nous allons définir les fonctionnalités de notre application. Nous allons créer un site de gestion de tâches où les utilisateurs pourront créer, lire, mettre à jour et supprimer des tâches. Chaque tâche aura un titre, une description et une date d'échéance.</p>
+  
+  <p>Pour commencer, nous allons créer une base de données SQLite pour stocker nos tâches. Nous utiliserons le module ActiveRecord pour gérer la connexion à la base de données et les opérations CRUD (Create, Read, Update, Delete).</p>
+  
+  <pre><code>require 'sinatra'
+require 'sinatra/activerecord'
+
+# Configuration de la base de données
+set :database, {adapter: "sqlite3", database: "tasks.db"}
+
+# Définition du modèle de données
+class Task &lt; ActiveRecord::Base
+end
+
+# Routes pour la gestion des tâches
+get '/tasks' do
+  @tasks = Task.all
+  erb :index
+end
+
+get '/tasks/new' do
+  erb :new
+end
+
+post '/tasks' do
+  task = Task.new(params[:task])
+  if task.save
+    redirect '/tasks'
+  else
+    erb :new
+  end
+end
+
+get '/tasks/:id' do
+  @task = Task.find(params[:id])
+  erb :show
+end
+
+get '/tasks/:id/edit' do
+  @task = Task.find(params[:id])
+  erb :edit
+end
+
+put '/tasks/:id' do
+  task = Task.find(params[:id])
+  if task.update(params[:task])
+    redirect '/tasks'
+  else
+    erb :edit
+  end
+end
+
+delete '/tasks/:id' do
+  Task.destroy(params[:id])
+  redirect '/tasks'
+end
+
+# Vue pour l'affichage de la liste des tâches
+# index.erb
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Liste des tâches&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Liste des tâches&lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;% @tasks.each do |task| %&gt;
+      &lt;li&gt;&lt;%= task.title %&gt; - &lt;%= task.description %&gt; - &lt;%= task.due_date %&gt;&lt;/li&gt;
+    &lt;% end %&gt;
+  &lt;/ul&gt;
+  &lt;a href="/tasks/new"&gt;Ajouter une tâche&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+# Vue pour la création d'une nouvelle tâche
+# new.erb
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Nouvelle tâche&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Nouvelle tâche&lt;/h1&gt;
+  &lt;form action="/tasks" method="post"&gt;
+    &lt;label for="title"&gt;Titre&lt;/label&gt;
+    &lt;input type="text" name="task[title]" id="title"&gt;&lt;br&gt;
+    &lt;label for="description"&gt;Description&lt;/label&gt;
+    &lt;textarea name="task[description]" id="description"&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;label for="due_date"&gt;Date d'échéance&lt;/label&gt;
+    &lt;input type="date" name="task[due_date]" id="due_date"&gt;&lt;br&gt;
+    &lt;input type="submit" value="Créer"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+# Vue pour l'affichage d'une tâche
+# show.erb
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Tâche&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;&lt;%= @task.title %&gt;&lt;/h1&gt;
+  &lt;p&gt;&lt;%= @task.description %&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;%= @task.due_date %&gt;&lt;/p&gt;
+  &lt;a href="/tasks"&gt;Retour à la liste des tâches&lt;/a&gt;
+  &lt;a href="/tasks/&lt;%= @task.id %&gt;/edit"&gt;Modifier&lt;/a&gt;
+  &lt;form action="/tasks/&lt;%= @task.id %&gt;" method="post"&gt;
+    &lt;input type="hidden" name="_method" value="delete"&gt;
+    &lt;input type="submit" value="Supprimer"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+# Vue pour la modification d'une tâche
+# edit.erb
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Modifier une tâche&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Modifier une tâche&lt;/h1&gt;
+  &lt;form action="/tasks/&lt;%= @task.id %&gt;" method="post"&gt;
+    &lt;input type="hidden" name="_method" value="put"&gt;
+    &lt;label for="title"&gt;Titre&lt;/label&gt;
+    &lt;input type="text" name="task[title]" id="title" value="&lt;%= @task.title %&gt;"&gt;&lt;br&gt;
+    &lt;label for="description"&gt;Description&lt;/label&gt;
+    &lt;textarea name="task[description]" id="description"&gt;&lt;%= @task.description %&gt;&lt;/textarea&gt;&lt;br&gt;
+    &lt;label for="due_date"&gt;Date d'échéance&lt;/label&gt;
+    &lt;input type="date" name="task[due_date]" id="due_date" value="&lt;%= @task.due_date %&gt;"&gt;&lt;br&gt;
+    &lt;input type="submit" value="Modifier"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  
+  <p>Une fois que vous avez créé ces fichiers, vous pouvez exécuter votre application en utilisant la commande <code>ruby app.rb</code> dans votre terminal. Vous pourrez ensuite accéder à votre application en ouvrant votre navigateur et en visitant l'URL <code>http://localhost:4567/tasks</code>.</p>
+  
+  <p>Vous pouvez maintenant créer, lire, mettre à jour et supprimer des tâches à partir de votre application. Félicitations, vous avez réussi à créer une application complète en utilisant toutes les fonctionnalités de Sinatra !</p>
+</section>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/sinatra/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/sinatra/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
