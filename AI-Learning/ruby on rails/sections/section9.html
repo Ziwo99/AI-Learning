@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Les frameworks et bibliothèques populaires en Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux frameworks et bibliothèques</h2>
+<p>Les frameworks et bibliothèques sont des outils essentiels pour développer des applications web en Ruby on Rails. Ils offrent des fonctionnalités prêtes à l'emploi qui permettent de gagner du temps et d'améliorer la qualité du code. Voici quelques-uns des frameworks et bibliothèques les plus populaires utilisés dans l'écosystème Ruby on Rails :</p>
+
+<h2>Les frameworks front-end (Bootstrap, Foundation)</h2>
+<p>Les frameworks front-end sont des ensembles de composants et de styles préconçus qui facilitent la création d'interfaces utilisateur attrayantes et réactives. Deux des frameworks front-end les plus populaires en Ruby on Rails sont :</p>
+
+<h3>Bootstrap</h3>
+<p>Bootstrap est un framework front-end open source qui offre une collection de composants et de styles prêts à l'emploi. Il permet de créer rapidement des interfaces utilisateur modernes et réactives. Voici un exemple d'utilisation de Bootstrap pour créer un bouton :</p>
+
+<pre><code>&lt;button class="btn btn-primary"&gt;Cliquez ici&lt;/button&gt;</code></pre>
+
+<h3>Foundation</h3>
+<p>Foundation est un autre framework front-end populaire qui propose une variété de composants et de styles pour la création d'interfaces utilisateur. Il est hautement personnalisable et offre une grande flexibilité. Voici un exemple d'utilisation de Foundation pour créer une barre de navigation :</p>
+
+<pre><code>&lt;nav class="top-bar"&gt;
+  &lt;ul class="menu"&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+<h2>Les bibliothèques de gestion des tâches (Sidekiq, Resque)</h2>
+<p>Les bibliothèques de gestion des tâches permettent de gérer des tâches asynchrones dans une application Ruby on Rails. Elles sont utiles pour exécuter des tâches en arrière-plan, telles que l'envoi d'e-mails, le traitement d'images ou la mise à jour de données. Deux des bibliothèques de gestion des tâches les plus utilisées en Ruby on Rails sont :</p>
+
+<h3>Sidekiq</h3>
+<p>Sidekiq est une bibliothèque de gestion des tâches basée sur Redis. Elle offre une interface simple et intuitive pour la définition et l'exécution de tâches asynchrones. Voici un exemple d'utilisation de Sidekiq pour exécuter une tâche en arrière-plan :</p>
+
+<pre><code>class MyWorker
+  include Sidekiq::Worker
+
+  def perform(name)
+    puts "Bonjour, #{name}!"
+  end
+end
+
+MyWorker.perform_async('John')</code></pre>
+
+<h3>Resque</h3>
+<p>Resque est une autre bibliothèque de gestion des tâches en Ruby on Rails. Elle utilise Redis comme backend pour stocker les tâches en attente d'exécution. Voici un exemple d'utilisation de Resque pour exécuter une tâche en arrière-plan :</p>
+
+<pre><code>class MyJob
+  @queue = :my_queue
+
+  def self.perform(name)
+    puts "Bonjour, #{name}!"
+  end
+end
+
+Resque.enqueue(MyJob, 'John')</code></pre>
+
+<h2>Les bibliothèques de génération de PDF (Prawn, Wicked PDF)</h2>
+<p>Les bibliothèques de génération de PDF permettent de créer des fichiers PDF à partir de données dynamiques dans une application Ruby on Rails. Elles sont utiles pour générer des factures, des rapports ou d'autres documents au format PDF. Deux des bibliothèques de génération de PDF les plus couramment utilisées en Ruby on Rails sont :</p>
+
+<h3>Prawn</h3>
+<p>Prawn est une bibliothèque de génération de PDF en Ruby. Elle offre une API simple et expressive pour créer des fichiers PDF. Voici un exemple d'utilisation de Prawn pour générer un fichier PDF :</p>
+
+<pre><code>require 'prawn'
+
+Prawn::Document.generate('exemple.pdf') do
+  text 'Bonjour, monde!'
+end</code></pre>
+
+<h3>Wicked PDF</h3>
+<p>Wicked PDF est une autre bibliothèque de génération de PDF en Ruby on Rails. Elle utilise le moteur de rendu HTML/CSS de la gem wkhtmltopdf pour convertir des vues en fichiers PDF. Voici un exemple d'utilisation de Wicked PDF pour générer un fichier PDF à partir d'une vue :</p>
+
+<pre><code>class ExempleController &lt; ApplicationController
+  def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'exemple',
+               template: 'exemple/show.html.erb',
+               layout: 'pdf.html.erb'
+      end
+    end
+  end
+end</code></pre>
+
+<h2>Les bibliothèques de gestion des paiements (Stripe, PayPal)</h2>
+<p>Les bibliothèques de gestion des paiements facilitent l'intégration de fonctionnalités de paiement dans une application Ruby on Rails. Elles offrent des API pour gérer les transactions, les abonnements et les remboursements. Deux des bibliothèques de gestion des paiements les plus populaires en Ruby on Rails sont :</p>
+
+<h3>Stripe</h3>
+<p>Stripe est une plateforme de paiement en ligne qui propose une API simple et puissante pour gérer les paiements. Elle prend en charge les paiements par carte de crédit, les abonnements et les remboursements. Voici un exemple d'utilisation de la bibliothèque Stripe pour créer un paiement :</p>
+
+<pre><code>require 'stripe'
+
+Stripe.api_key = 'votre_clé_secrète'
+
+charge = Stripe::Charge.create(
+  amount: 1000,
+  currency: 'usd',
+  source: 'tok_visa',
+  description: 'Exemple de paiement'
+)</code></pre>
+
+<h3>PayPal</h3>
+<p>PayPal est une autre plateforme de paiement en ligne populaire qui propose une API pour gérer les transactions financières. Elle prend en charge les paiements par carte de crédit, les paiements récurrents et les remboursements. Voici un exemple d'utilisation de la bibliothèque PayPal pour créer un paiement :</p>
+
+<pre><code>require 'paypal-sdk-rest'
+
+PayPal::SDK::REST.set_config(
+  mode: 'sandbox',
+  client_id: 'votre_client_id',
+  client_secret: 'votre_client_secret'
+)
+
+payment = PayPal::SDK::REST::Payment.new(
+  intent: 'sale',
+  payer: {
+    payment_method: 'paypal'
+  },
+  transactions: [
+    {
+      amount: {
+        total: '10.00',
+        currency: 'USD'
+      }
+    }
+  ]
+)
+
+if payment.create
+  redirect_to payment.links.find { |link| link.method == 'REDIRECT' }.href
+else
+  puts payment.error.inspect
+end</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

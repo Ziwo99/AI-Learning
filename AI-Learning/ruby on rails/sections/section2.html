@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structure d'une application Ruby on Rails</h2>
+<p>Une application Ruby on Rails suit une structure spécifique qui facilite le développement et la maintenance du code. Voici la structure de base d'une application Ruby on Rails :</p>
+<pre><code>myapp/
+  ├── app/
+  │   ├── assets/
+  │   ├── controllers/
+  │   ├── models/
+  │   └── views/
+  ├── config/
+  ├── db/
+  ├── lib/
+  ├── log/
+  ├── public/
+  ├── test/
+  └── tmp/
+</code></pre>
+<p>Chaque répertoire a un rôle spécifique :</p>
+<ul>
+  <li><code>app/</code> : Contient les fichiers liés à la logique de l'application, tels que les contrôleurs, les modèles et les vues.</li>
+  <li><code>config/</code> : Contient les fichiers de configuration de l'application, tels que les routes et les paramètres de base de données.</li>
+  <li><code>db/</code> : Contient les fichiers de migration de la base de données.</li>
+  <li><code>lib/</code> : Contient les bibliothèques et les modules personnalisés.</li>
+  <li><code>log/</code> : Contient les fichiers de journalisation de l'application.</li>
+  <li><code>public/</code> : Contient les fichiers statiques accessibles publiquement, tels que les images et les feuilles de style.</li>
+  <li><code>test/</code> : Contient les tests unitaires et fonctionnels de l'application.</li>
+  <li><code>tmp/</code> : Contient les fichiers temporaires générés par l'application.</li>
+</ul>
+
+<h2>Création d'un nouveau projet</h2>
+<p>Pour créer un nouveau projet Ruby on Rails, utilisez la commande suivante :</p>
+<pre><code>rails new nom_du_projet
+</code></pre>
+<p>Cette commande génère une nouvelle application Ruby on Rails avec une structure de base et les fichiers nécessaires.</p>
+
+<h2>Les routes</h2>
+<p>Les routes dans Ruby on Rails définissent les URL et les actions correspondantes dans les contrôleurs. Elles sont définies dans le fichier <code>config/routes.rb</code>. Voici un exemple de route :</p>
+<pre><code>get '/articles', to: 'articles#index'
+</code></pre>
+<p>Cette route définit l'URL <code>/articles</code> qui est associée à l'action <code>index</code> du contrôleur <code>articles</code>.</p>
+
+<h2>Les contrôleurs</h2>
+<p>Les contrôleurs dans Ruby on Rails gèrent les actions et les interactions avec les modèles et les vues. Voici un exemple de contrôleur :</p>
+<pre><code>class ArticlesController &lt; ApplicationController
+  def index
+    @articles = Article.all
+  end
+
+  def show
+    @article = Article.find(params[:id])
+  end
+
+  def create
+    @article = Article.new(article_params)
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :content)
+  end
+end
+</code></pre>
+<p>Ce contrôleur contient des actions telles que <code>index</code>, <code>show</code> et <code>create</code>. Chaque action effectue des opérations spécifiques, telles que la récupération des articles, l'affichage d'un article spécifique et la création d'un nouvel article.</p>
+
+<h2>Les vues</h2>
+<p>Les vues dans Ruby on Rails sont responsables de l'affichage des données aux utilisateurs. Elles utilisent le langage de template ERB (Embedded Ruby) pour combiner du code Ruby avec du HTML. Voici un exemple de vue :</p>
+<pre><code>&lt;h1>&lt;%= @article.title %>&lt;/h1>
+&lt;p>&lt;%= @article.content %>&lt;/p>
+</code></pre>
+<p>Cette vue affiche le titre et le contenu d'un article en utilisant les variables d'instance <code>@article.title</code> et <code>@article.content</code>.</p>
+
+<h2>Les modèles</h2>
+<p>Les modèles dans Ruby on Rails représentent les données de l'application et gèrent les interactions avec la base de données. Voici un exemple de modèle :</p>
+<pre><code>class Article &lt; ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
+end
+</code></pre>
+<p>Ce modèle définit une classe <code>Article</code> qui est liée à la table <code>articles</code> dans la base de données. Il utilise des validations pour s'assurer que les champs <code>title</code> et <code>content</code> sont présents.</p>
+
+<h2>Les migrations</h2>
+<p>Les migrations dans Ruby on Rails permettent de gérer les modifications de la structure de la base de données. Voici un exemple de migration :</p>
+<pre><code>class CreateArticles &lt; ActiveRecord::Migration[6.0]
+  def change
+    create_table :articles do |t|
+      t.string :title
+      t.text :content
+
+      t.timestamps
+    end
+  end
+end
+</code></pre>
+<p>Cette migration crée une table <code>articles</code> avec les colonnes <code>title</code>, <code>content</code> et les timestamps <code>created_at</code> et <code>updated_at</code>.</p>
+
+<h2>Les associations entre modèles</h2>
+<p>Les associations entre modèles dans Ruby on Rails permettent de définir des relations entre les différentes tables de la base de données. Voici un exemple d'association :</p>
+<pre><code>class Article &lt; ApplicationRecord
+  has_many :comments
+end
+
+class Comment &lt; ApplicationRecord
+  belongs_to :article
+end
+</code></pre>
+<p>Cette association indique qu'un article peut avoir plusieurs commentaires (<code>has_many :comments</code>) et qu'un commentaire appartient à un article spécifique (<code>belongs_to :article</code>).</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

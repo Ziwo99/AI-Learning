@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Le déploiement d'une application Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les différents environnements de déploiement</h2>
+<p>Lorsque vous êtes prêt à déployer votre application Ruby on Rails, vous avez plusieurs options d'environnements de déploiement à considérer. Chaque environnement a ses propres avantages et inconvénients, il est donc important de choisir celui qui convient le mieux à vos besoins.</p>
+
+<h2>Les services d'hébergement</h2>
+<p>Il existe de nombreux services d'hébergement qui vous permettent de déployer votre application Ruby on Rails. Ces services offrent généralement une infrastructure prête à l'emploi, ce qui facilite grandement le déploiement de votre application. Certains des services d'hébergement populaires pour Ruby on Rails incluent Heroku, AWS Elastic Beanstalk et DigitalOcean.</p>
+
+<h2>Le déploiement sur un serveur dédié</h2>
+<p>Le déploiement sur un serveur dédié vous donne un contrôle total sur votre environnement de déploiement. Vous pouvez choisir et configurer votre propre matériel et logiciel, ce qui vous permet de personnaliser votre environnement selon vos besoins spécifiques. Cependant, cela nécessite également une expertise technique pour la configuration et la gestion du serveur.</p>
+
+<h2>Le déploiement sur un service de cloud</h2>
+<p>Le déploiement sur un service de cloud, comme AWS (Amazon Web Services) ou Google Cloud Platform, vous permet de bénéficier des avantages de l'évolutivité et de la flexibilité offerts par le cloud. Ces services vous permettent de déployer votre application sur des serveurs virtuels, ce qui facilite la mise à l'échelle de votre application en fonction de la demande.</p>
+
+<p>Voici un exemple de déploiement d'une application Ruby on Rails sur Heroku :</p>
+<pre><code>1. Créez un compte Heroku et installez l'interface en ligne de commande Heroku (CLI).
+2. Dans le répertoire racine de votre application, exécutez la commande 'heroku login' pour vous connecter à votre compte Heroku.
+3. Exécutez la commande 'heroku create' pour créer une nouvelle application Heroku.
+4. Ajoutez un référentiel Git à votre application en exécutant la commande 'git remote add heroku https://git.heroku.com/your-app-name.git'.
+5. Exécutez la commande 'git push heroku master' pour déployer votre application sur Heroku.
+6. Exécutez la commande 'heroku run rails db:migrate' pour exécuter les migrations de base de données sur votre application déployée.
+7. Votre application est maintenant déployée sur Heroku et accessible via l'URL fournie par Heroku.</code></pre>
+
+<p>Assurez-vous de suivre les instructions spécifiques du service d'hébergement que vous choisissez pour déployer votre application Ruby on Rails.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

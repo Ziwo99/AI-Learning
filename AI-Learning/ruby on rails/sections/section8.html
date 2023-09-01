@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Les bonnes pratiques de développement en Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'architecture MVC</h2>
+<p>L'architecture MVC (Modèle-Vue-Contrôleur) est un modèle de conception couramment utilisé dans le développement d'applications web avec Ruby on Rails. Il divise l'application en trois composants principaux :</p>
+<ul>
+  <li>Le modèle (Model) : responsable de la gestion des données et de la logique métier de l'application.</li>
+  <li>La vue (View) : responsable de l'affichage des données et de l'interface utilisateur.</li>
+  <li>Le contrôleur (Controller) : responsable de la gestion des requêtes utilisateur, de la coordination entre le modèle et la vue, et de la logique de l'application.</li>
+</ul>
+<p>Cette séparation des responsabilités permet une meilleure organisation du code et facilite la maintenance et l'évolutivité de l'application.</p>
+
+<h2>La gestion des dépendances</h2>
+<p>La gestion des dépendances est un aspect important du développement en Ruby on Rails. Elle permet de gérer les bibliothèques externes et les plugins utilisés dans l'application. RubyGems est l'outil de gestion des dépendances le plus couramment utilisé dans l'écosystème Ruby.</p>
+<p>Pour ajouter une dépendance à votre application Ruby on Rails, vous devez spécifier la dépendance dans le fichier Gemfile. Par exemple :</p>
+<pre><code>gem 'devise'</code></pre>
+<p>Une fois que vous avez ajouté une dépendance, vous devez exécuter la commande <code>bundle install</code> pour installer la dépendance et mettre à jour le fichier Gemfile.lock.</p>
+
+<h2>La documentation du code</h2>
+<p>La documentation du code est essentielle pour faciliter la compréhension et la maintenance de l'application. Ruby on Rails encourage l'utilisation de la documentation en utilisant des commentaires bien structurés et en générant automatiquement une documentation à l'aide d'outils tels que RDoc ou YARD.</p>
+<p>Les commentaires de documentation doivent être ajoutés au-dessus des classes, des méthodes et des blocs de code pour expliquer leur fonctionnement, leurs paramètres et leurs valeurs de retour. Par exemple :</p>
+<pre><code># Cette méthode calcule la somme de deux nombres
+# 
+# * +a+ - Le premier nombre
+# * +b+ - Le deuxième nombre
+#
+# Retourne la somme des deux nombres
+def sum(a, b)
+  return a + b
+end
+</code></pre>
+
+<h2>La gestion des versions</h2>
+<p>La gestion des versions est cruciale pour le suivi des modifications apportées à l'application au fil du temps. Ruby on Rails utilise généralement Git comme système de contrôle de version. Il est recommandé de créer un dépôt Git pour votre application et de suivre les meilleures pratiques de gestion des versions, telles que la création de branches pour les fonctionnalités en cours de développement et l'utilisation de balises pour marquer les versions stables.</p>
+<p>Voici quelques commandes Git couramment utilisées :</p>
+<pre><code># Créer un nouveau dépôt Git
+git init
+
+# Ajouter tous les fichiers au dépôt Git
+git add .
+
+# Créer un commit avec les modifications
+git commit -m "Ajouter une nouvelle fonctionnalité"
+
+# Créer une nouvelle branche
+git branch nouvelle-fonctionnalite
+
+# Basculer vers une branche spécifique
+git checkout nouvelle-fonctionnalite
+
+# Créer une balise pour marquer une version stable
+git tag v1.0.0
+</code></pre>
+
+<h2>La collaboration en équipe</h2>
+<p>La collaboration en équipe est essentielle dans le développement d'applications Ruby on Rails. Voici quelques bonnes pratiques pour faciliter la collaboration :</p>
+<ul>
+  <li>Utilisez un système de contrôle de version tel que Git pour permettre aux membres de l'équipe de travailler simultanément sur le code.</li>
+  <li>Utilisez des outils de gestion de projet tels que Trello ou Jira pour suivre les tâches et les problèmes.</li>
+  <li>Organisez des réunions régulières pour discuter des progrès, des problèmes et des décisions importantes.</li>
+  <li>Utilisez des outils de communication tels que Slack ou Microsoft Teams pour faciliter la communication entre les membres de l'équipe.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques, vous pouvez améliorer la productivité et la qualité du travail d'équipe.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

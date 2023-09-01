@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Les fonctionnalités avancées de Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les validations</h2>
+<p>Les validations sont utilisées pour s'assurer que les données entrées dans les modèles respectent certaines règles. Elles permettent de garantir l'intégrité des données et d'éviter les erreurs ou les incohérences.</p>
+<p>Par exemple, pour valider qu'un champ "email" est présent et qu'il est unique dans la base de données, on peut utiliser la validation suivante :</p>
+<pre><code>class User &lt; ApplicationRecord
+  validates :email, presence: true, uniqueness: true
+end
+</code></pre>
+<p>Cette validation s'assure que l'attribut "email" est présent et qu'il n'existe pas déjà dans la base de données. Si la validation échoue, une erreur sera ajoutée à l'objet "User" et il ne pourra pas être sauvegardé en base de données.</p>
+
+<h2>Les callbacks</h2>
+<p>Les callbacks sont des méthodes qui sont exécutées à des moments spécifiques du cycle de vie d'un objet. Ils permettent d'ajouter du code supplémentaire avant ou après certaines actions, comme la création, la mise à jour ou la suppression d'un objet.</p>
+<p>Par exemple, pour exécuter une méthode "send_email" après la création d'un nouvel utilisateur, on peut utiliser le callback suivant :</p>
+<pre><code>class User &lt; ApplicationRecord
+  after_create :send_email
+
+  private
+
+  def send_email
+    # Code pour envoyer l'email
+  end
+end
+</code></pre>
+<p>Cette méthode "send_email" sera automatiquement appelée après la création d'un nouvel utilisateur.</p>
+
+<h2>Les scopes</h2>
+<p>Les scopes permettent de définir des requêtes prédéfinies dans un modèle. Ils permettent de simplifier l'écriture de requêtes complexes et de les réutiliser facilement.</p>
+<p>Par exemple, pour définir un scope "active" qui renvoie tous les utilisateurs actifs, on peut utiliser le code suivant :</p>
+<pre><code>class User &lt; ApplicationRecord
+  scope :active, -&gt; { where(active: true) }
+end
+</code></pre>
+<p>On peut ensuite utiliser ce scope pour récupérer tous les utilisateurs actifs :</p>
+<pre><code>users = User.active
+</code></pre>
+
+<h2>Les formulaires</h2>
+<p>Les formulaires sont utilisés pour collecter des données auprès des utilisateurs. Ruby on Rails fournit des fonctionnalités intégrées pour la création et la gestion de formulaires.</p>
+<p>Par exemple, pour créer un formulaire d'inscription pour un nouvel utilisateur, on peut utiliser le code suivant :</p>
+<pre><code>&lt;%= form_with model: @user, url: users_path do |form| %&gt;
+  &lt;%= form.label :email %&gt;
+  &lt;%= form.text_field :email %&gt;
+
+  &lt;%= form.label :password %&gt;
+  &lt;%= form.password_field :password %&gt;
+
+  &lt;%= form.submit "S'inscrire" %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>Ce code génère un formulaire avec des champs pour l'email et le mot de passe, ainsi qu'un bouton pour soumettre le formulaire.</p>
+
+<h2>Les relations polymorphiques</h2>
+<p>Les relations polymorphiques permettent à un modèle d'appartenir à plusieurs autres modèles différents. Cela permet de créer des associations flexibles entre les modèles.</p>
+<p>Par exemple, pour créer une relation polymorphique entre un modèle "Comment" et plusieurs autres modèles (par exemple "Article" et "Photo"), on peut utiliser le code suivant :</p>
+<pre><code>class Comment &lt; ApplicationRecord
+  belongs_to :commentable, polymorphic: true
+end
+
+class Article &lt; ApplicationRecord
+  has_many :comments, as: :commentable
+end
+
+class Photo &lt; ApplicationRecord
+  has_many :comments, as: :commentable
+end
+</code></pre>
+<p>Ainsi, un commentaire peut appartenir à la fois à un article et à une photo.</p>
+
+<h2>Les filtres</h2>
+<p>Les filtres permettent d'exécuter du code avant, après ou autour d'une action dans un contrôleur. Ils sont utilisés pour effectuer des opérations communes, telles que l'authentification, la vérification des autorisations ou la gestion des exceptions.</p>
+<p>Par exemple, pour définir un filtre "authenticate_user" qui vérifie si un utilisateur est connecté avant d'exécuter une action, on peut utiliser le code suivant :</p>
+<pre><code>class ApplicationController &lt; ActionController::Base
+  before_action :authenticate_user
+
+  private
+
+  def authenticate_user
+    # Code pour vérifier si l'utilisateur est connecté
+  end
+end
+</code></pre>
+<p>Ce filtre sera exécuté avant chaque action dans tous les contrôleurs qui héritent de "ApplicationController".</p>
+
+<h2>Les services</h2>
+<p>Les services sont des classes qui encapsulent des fonctionnalités spécifiques et réutilisables. Ils permettent de garder le code du contrôleur propre et organisé.</p>
+<p>Par exemple, pour créer un service "EmailSender" qui envoie des emails, on peut utiliser le code suivant :</p>
+<pre><code>class EmailSender
+  def send_email(to, subject, body)
+    # Code pour envoyer l'email
+  end
+end
+</code></pre>
+<p>On peut ensuite utiliser ce service dans un contrôleur :</p>
+<pre><code>class UsersController &lt; ApplicationController
+  def create
+    # Code pour créer un utilisateur
+
+    EmailSender.new.send_email(user.email, "Bienvenue", "Bienvenue sur notre site !")
+  end
+end
+</code></pre>
+
+<h2>Les tâches planifiées</h2>
+<p>Les tâches planifiées permettent d'exécuter du code à des moments spécifiques, de manière automatique. Elles sont utilisées pour effectuer des tâches récurrentes, telles que l'envoi d'emails périodiques ou la mise à jour de données.</p>
+<p>Par exemple, pour planifier l'envoi d'un email de rappel chaque semaine, on peut utiliser une gemme comme "whenever" :</p>
+<pre><code>every :week do
+  runner "ReminderMailer.send_reminder"
+end
+</code></pre>
+<p>Ce code exécutera la méthode "send_reminder" du mailer "ReminderMailer" chaque semaine.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

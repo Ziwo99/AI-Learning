@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: La sécurité en Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les attaques courantes</h2>
+<p>Les applications Ruby on Rails peuvent être vulnérables à différentes attaques. Il est important de comprendre les attaques courantes afin de pouvoir les prévenir et les contrer efficacement.</p>
+<p>Voici quelques-unes des attaques courantes :</p>
+<ul>
+  <li>Injection SQL : Les attaquants peuvent exploiter les failles de sécurité pour injecter du code SQL malveillant dans les requêtes de l'application, ce qui peut entraîner la divulgation de données sensibles ou la modification de la base de données.</li>
+  <li>Attaques XSS (Cross-Site Scripting) : Les attaquants peuvent insérer du code JavaScript malveillant dans les pages web de l'application, ce qui leur permet de voler des informations confidentielles des utilisateurs ou de modifier le contenu de la page.</li>
+  <li>Attaques CSRF (Cross-Site Request Forgery) : Les attaquants peuvent exploiter les sessions actives des utilisateurs pour effectuer des actions non autorisées en leur nom, telles que la modification de leurs informations personnelles ou la réalisation de transactions financières.</li>
+  <li>Attaques de force brute : Les attaquants peuvent essayer de deviner les mots de passe en essayant différentes combinaisons jusqu'à ce qu'ils trouvent le bon.</li>
+  <li>Attaques de déni de service : Les attaquants peuvent surcharger l'application en envoyant un grand nombre de requêtes simultanées, ce qui peut entraîner une indisponibilité du service pour les utilisateurs légitimes.</li>
+</ul>
+
+<h2>Les mesures de sécurité</h2>
+<p>Pour protéger une application Ruby on Rails contre les attaques, il est essentiel de mettre en place des mesures de sécurité appropriées. Voici quelques-unes des mesures de sécurité recommandées :</p>
+<ul>
+  <li>Validation des données d'entrée : Toutes les données provenant des utilisateurs doivent être validées et filtrées pour éviter les attaques par injection SQL ou XSS.</li>
+  <li>Utilisation de tokens CSRF : Les formulaires de l'application doivent inclure des tokens CSRF pour empêcher les attaques CSRF en vérifiant l'origine des requêtes.</li>
+  <li>Chiffrement des données sensibles : Les informations sensibles, telles que les mots de passe des utilisateurs, doivent être stockées de manière sécurisée en utilisant des algorithmes de chiffrement forts.</li>
+  <li>Utilisation de pare-feu : Un pare-feu peut être utilisé pour filtrer le trafic entrant et sortant de l'application, en bloquant les requêtes malveillantes.</li>
+  <li>Mise à jour régulière des dépendances : Il est important de maintenir à jour toutes les dépendances de l'application, y compris Ruby on Rails et les gems utilisées, pour bénéficier des dernières corrections de sécurité.</li>
+</ul>
+
+<h2>L'authentification et l'autorisation</h2>
+<p>L'authentification et l'autorisation sont des aspects essentiels de la sécurité d'une application Ruby on Rails.</p>
+<p>L'authentification permet de vérifier l'identité des utilisateurs, tandis que l'autorisation contrôle les actions qu'ils sont autorisés à effectuer.</p>
+<p>Voici quelques-unes des meilleures pratiques pour l'authentification et l'autorisation :</p>
+<ul>
+  <li>Utilisation de l'authentification basée sur les sessions : Les utilisateurs doivent s'identifier en fournissant leurs identifiants (par exemple, nom d'utilisateur et mot de passe) et une session doit être créée pour maintenir leur connexion.</li>
+  <li>Utilisation de l'autorisation basée sur les rôles : Les utilisateurs peuvent se voir attribuer des rôles spécifiques (par exemple, administrateur, utilisateur standard) qui déterminent les actions auxquelles ils ont accès.</li>
+  <li>Protection des routes sensibles : Les routes qui nécessitent une authentification ou une autorisation doivent être protégées pour empêcher l'accès non autorisé.</li>
+  <li>Gestion sécurisée des mots de passe : Les mots de passe des utilisateurs doivent être stockés de manière sécurisée en utilisant des algorithmes de hachage forts, tels que bcrypt.</li>
+</ul>
+
+<h2>La protection contre les injections SQL</h2>
+<p>Les injections SQL sont l'une des attaques les plus courantes contre les applications Ruby on Rails. Pour se protéger contre les injections SQL, il est essentiel de comprendre comment elles se produisent et de mettre en place des mesures de protection appropriées.</p>
+<p>Voici quelques-unes des meilleures pratiques pour la protection contre les injections SQL :</p>
+<ul>
+  <li>Utilisation de requêtes préparées : Au lieu de concaténer directement des valeurs dans les requêtes SQL, il est recommandé d'utiliser des requêtes préparées qui permettent de séparer les données des instructions SQL.</li>
+  <li>Utilisation de l'ORM (Object-Relational Mapping) : Ruby on Rails utilise ActiveRecord, qui est un ORM, pour interagir avec la base de données. L'utilisation de l'ORM permet de générer automatiquement des requêtes sécurisées en utilisant des paramètres liés.</li>
+  <li>Validation des données d'entrée : Toutes les données provenant des utilisateurs doivent être validées et filtrées pour éviter les attaques par injection SQL.</li>
+</ul>
+
+<h2>La protection contre les attaques XSS</h2>
+<p>Les attaques XSS (Cross-Site Scripting) sont une autre menace courante pour les applications Ruby on Rails. Pour se protéger contre les attaques XSS, il est important de comprendre comment elles se produisent et de mettre en place des mesures de protection appropriées.</p>
+<p>Voici quelques-unes des meilleures pratiques pour la protection contre les attaques XSS :</p>
+<ul>
+  <li>Validation et échappement des données d'entrée : Toutes les données provenant des utilisateurs doivent être validées et échappées avant d'être affichées dans les pages web de l'application.</li>
+  <li>Utilisation de balises de sécurité : Ruby on Rails fournit des balises de sécurité, telles que <code>&lt;%= raw %&gt;</code> et <code>&lt;%= sanitize %&gt;</code>, qui permettent de gérer correctement l'affichage des données dans les vues.</li>
+  <li>Utilisation de Content Security Policy (CSP) : CSP est une mesure de sécurité qui permet de spécifier les sources autorisées pour les ressources (scripts, styles, images, etc.) chargées par l'application.</li>
+</ul>
+
+<p>Cette section a couvert les principaux aspects de la sécurité en Ruby on Rails. Il est essentiel de mettre en place des mesures de sécurité appropriées pour protéger les applications contre les attaques courantes. En suivant les meilleures pratiques de sécurité, vous pouvez garantir que votre application Ruby on Rails est robuste et sécurisée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

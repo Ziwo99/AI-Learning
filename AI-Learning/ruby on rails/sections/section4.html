@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Les tests en Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux tests</h2>
+<p>Les tests sont une partie essentielle du développement d'applications Ruby on Rails. Ils permettent de vérifier que le code fonctionne correctement et de détecter les éventuels problèmes ou bugs. Les tests garantissent également que les nouvelles fonctionnalités ajoutées à l'application ne cassent pas les fonctionnalités existantes.</p>
+
+<p>Les tests en Ruby on Rails sont généralement écrits à l'aide du framework de tests intégré appelé "RSpec". RSpec fournit une syntaxe expressive et facile à lire pour écrire des tests.</p>
+
+<h2>Les tests unitaires</h2>
+<p>Les tests unitaires sont utilisés pour tester des parties spécifiques du code, appelées "unités". Une unité peut être une méthode, une classe ou même un module. Les tests unitaires vérifient que chaque unité fonctionne correctement de manière isolée.</p>
+
+<p>Voici un exemple de test unitaire en Ruby on Rails :</p>
+<pre><code>require 'rails_helper'
+
+RSpec.describe User, type: :model do
+  it "is valid with valid attributes" do
+    user = User.new(name: "John Doe", email: "john@example.com")
+    expect(user).to be_valid
+  end
+
+  it "is not valid without a name" do
+    user = User.new(email: "john@example.com")
+    expect(user).to_not be_valid
+  end
+
+  it "is not valid without an email" do
+    user = User.new(name: "John Doe")
+    expect(user).to_not be_valid
+  end
+end
+</code></pre>
+
+<p>Dans cet exemple, nous testons le modèle "User". Nous vérifions qu'un utilisateur est valide avec des attributs valides, et qu'il n'est pas valide sans nom ou sans email.</p>
+
+<h2>Les tests d'intégration</h2>
+<p>Les tests d'intégration sont utilisés pour tester le fonctionnement de l'application dans son ensemble. Ils vérifient que les différentes parties de l'application fonctionnent correctement ensemble.</p>
+
+<p>Voici un exemple de test d'intégration en Ruby on Rails :</p>
+<pre><code>require 'rails_helper'
+
+RSpec.describe "Users", type: :request do
+  describe "GET /users" do
+    it "returns a 200 OK status" do
+      get "/users"
+      expect(response).to have_http_status(200)
+    end
+  end
+end
+</code></pre>
+
+<p>Dans cet exemple, nous testons la requête GET "/users". Nous vérifions que la réponse renvoie un statut 200 OK.</p>
+
+<h2>Les tests fonctionnels</h2>
+<p>Les tests fonctionnels sont utilisés pour tester le comportement des contrôleurs de l'application. Ils vérifient que les actions des contrôleurs fonctionnent correctement et renvoient les bonnes réponses.</p>
+
+<p>Voici un exemple de test fonctionnel en Ruby on Rails :</p>
+<pre><code>require 'rails_helper'
+
+RSpec.describe UsersController, type: :controller do
+  describe "GET #index" do
+    it "returns a success response" do
+      get :index
+      expect(response).to be_successful
+    end
+  end
+end
+</code></pre>
+
+<p>Dans cet exemple, nous testons l'action "index" du contrôleur "UsersController". Nous vérifions que la réponse est un succès.</p>
+
+<h2>Les tests de performance</h2>
+<p>Les tests de performance sont utilisés pour évaluer les performances de l'application. Ils permettent de détecter les éventuels problèmes de performance et d'optimiser le code si nécessaire.</p>
+
+<p>Voici un exemple de test de performance en Ruby on Rails :</p>
+<pre><code>require 'rails_helper'
+require 'benchmark'
+
+RSpec.describe "Performance", type: :performance do
+  it "performs the task in less than 1 second" do
+    expect {
+      Benchmark.realtime do
+        # Code à tester
+      end
+    }.to be < 1.0
+  end
+end
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la classe Benchmark pour mesurer le temps d'exécution d'une tâche. Nous vérifions que le temps d'exécution est inférieur à 1 seconde.</p>
+
+<h2>Les tests de sécurité</h2>
+<p>Les tests de sécurité sont utilisés pour vérifier que l'application est sécurisée contre les attaques courantes, telles que les injections SQL ou les attaques XSS.</p>
+
+<p>Voici un exemple de test de sécurité en Ruby on Rails :</p>
+<pre><code>require 'rails_helper'
+
+RSpec.describe "Security", type: :request do
+  it "prevents SQL injection" do
+    user = User.create(name: "John Doe", email: "john@example.com")
+    malicious_input = "'; DROP TABLE users; --"
+    post "/users", params: { name: malicious_input, email: "test@example.com" }
+    expect(User.find_by(name: malicious_input)).to be_nil
+  end
+end
+</code></pre>
+
+<p>Dans cet exemple, nous testons si l'application est vulnérable aux injections SQL. Nous créons un utilisateur avec un nom malveillant contenant une instruction SQL, puis nous vérifions que l'utilisateur n'est pas enregistré dans la base de données.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

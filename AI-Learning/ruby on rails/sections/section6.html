@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Ruby on Rails Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: L'optimisation des performances en Ruby on Rails</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/ruby%20on%20rails/ruby%20on%20rails.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les bonnes pratiques de performance</h2>
+<p>Lors du développement d'une application Ruby on Rails, il est essentiel de prendre en compte les bonnes pratiques de performance afin d'optimiser les performances globales de l'application. Voici quelques conseils pour améliorer les performances :</p>
+
+<p>- Utilisez le caching pour stocker les résultats de requêtes fréquemment utilisées et réduire ainsi le temps de réponse de l'application.</p>
+
+<p>- Évitez les requêtes SQL coûteuses en utilisant les associations préchargées et en utilisant les méthodes de requête efficaces fournies par ActiveRecord.</p>
+
+<p>- Utilisez des index sur les colonnes fréquemment utilisées dans les requêtes pour améliorer les performances des requêtes de base de données.</p>
+
+<p>- Minimisez le nombre de requêtes HTTP en regroupant les fichiers CSS et JavaScript et en utilisant des outils de compression tels que gzip.</p>
+
+<p>- Utilisez des outils de surveillance des performances tels que New Relic pour identifier les goulots d'étranglement et les problèmes de performances dans votre application.</p>
+
+<h2>L'optimisation des requêtes</h2>
+<p>L'optimisation des requêtes est un aspect crucial pour améliorer les performances d'une application Ruby on Rails. Voici quelques techniques pour optimiser les requêtes :</p>
+
+<p>- Utilisez les méthodes de requête efficaces fournies par ActiveRecord, telles que <code>pluck</code> et <code>select</code>, pour récupérer uniquement les données nécessaires.</p>
+
+<p>- Utilisez les associations préchargées pour éviter les requêtes SQL supplémentaires lors de l'accès aux associations d'un modèle.</p>
+
+<p>- Utilisez les requêtes SQL brutes lorsque cela est nécessaire pour exécuter des requêtes complexes ou optimisées spécifiques à votre base de données.</p>
+
+<p>- Utilisez des outils de surveillance des requêtes tels que Bullet pour identifier les requêtes lentes ou inefficaces dans votre application.</p>
+
+<h2>Le caching</h2>
+<p>Le caching est une technique couramment utilisée pour améliorer les performances d'une application Ruby on Rails en stockant les résultats de requêtes fréquemment utilisées. Voici comment utiliser le caching :</p>
+
+<p>- Utilisez le caching de fragment pour stocker des parties spécifiques de vos vues qui sont coûteuses à générer.</p>
+
+<p>- Utilisez le caching de modèle pour stocker des objets ActiveRecord entiers, ce qui peut être utile pour les vues qui affichent des données statiques.</p>
+
+<p>- Utilisez le caching de requête pour stocker les résultats de requêtes complexes ou coûteuses.</p>
+
+<p>- Utilisez des outils de surveillance du caching tels que Dalli pour surveiller les performances et l'utilisation du caching dans votre application.</p>
+
+<h2>L'utilisation efficace des ressources</h2>
+<p>Pour améliorer les performances d'une application Ruby on Rails, il est important d'utiliser efficacement les ressources disponibles. Voici quelques conseils :</p>
+
+<p>- Utilisez des serveurs d'applications tels que Puma ou Unicorn pour gérer efficacement les requêtes HTTP entrantes.</p>
+
+<p>- Utilisez des outils de surveillance des ressources tels que Scout ou New Relic pour surveiller l'utilisation des ressources telles que la mémoire, le processeur et le disque.</p>
+
+<p>- Utilisez des outils de profiling tels que Rack Mini Profiler pour identifier les parties de votre application qui consomment le plus de ressources.</p>
+
+<h2>L'optimisation du code Ruby</h2>
+<p>L'optimisation du code Ruby est un aspect important pour améliorer les performances d'une application Ruby on Rails. Voici quelques techniques d'optimisation du code Ruby :</p>
+
+<p>- Utilisez des méthodes Ruby efficaces telles que <code>map</code>, <code>reduce</code> et <code>select</code> pour manipuler les collections de données de manière efficace.</p>
+
+<p>- Évitez les boucles imbriquées et les opérations coûteuses à l'intérieur des boucles, car elles peuvent ralentir considérablement les performances.</p>
+
+<p>- Utilisez des outils de profiling tels que Ruby Prof pour identifier les parties du code qui consomment le plus de temps d'exécution.</p>
+
+<p>- Utilisez des bibliothèques optimisées telles que Nokogiri pour le parsing XML ou JSON, qui sont souvent plus rapides que les solutions Ruby natives.</p>
+
+<p>En suivant ces bonnes pratiques et en optimisant les performances de votre application Ruby on Rails, vous pouvez garantir une expérience utilisateur fluide et réactive.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/ruby%20on%20rails/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
