@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Cas d'utilisation et exemples pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Hibernate dans une application web</h2>
+<p>
+Hibernate est largement utilisé dans le développement d'applications web pour faciliter la persistance des données. Il offre une solution efficace pour mapper les objets Java aux tables de base de données relationnelles. Voici un exemple d'utilisation de Hibernate dans une application web :
+</p>
+
+<pre><code>@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "username")
+    private String username;
+    
+    @Column(name = "password")
+    private String password;
+    
+    // Getters and setters
+}
+
+public class UserDao {
+    private SessionFactory sessionFactory;
+    
+    public void saveUser(User user) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(user);
+    }
+    
+    public User getUserById(Long id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(User.class, id);
+    }
+    
+    // Other CRUD operations
+}
+
+// Utilisation dans un contrôleur
+@Controller
+public class UserController {
+    @Autowired
+    private UserDao userDao;
+    
+    @PostMapping("/users")
+    public String createUser(@ModelAttribute User user) {
+        userDao.saveUser(user);
+        return "redirect:/users/" + user.getId();
+    }
+    
+    @GetMapping("/users/{id}")
+    public String getUser(@PathVariable Long id, Model model) {
+        User user = userDao.getUserById(id);
+        model.addAttribute("user", user);
+        return "user-details";
+    }
+    
+    // Autres méthodes du contrôleur
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous avons une entité User qui est annotée avec @Entity et @Table pour spécifier le nom de la table correspondante dans la base de données. Les attributs de l'entité sont mappés aux colonnes de la table à l'aide de l'annotation @Column. La classe UserDao utilise la SessionFactory de Hibernate pour effectuer des opérations de persistance sur l'entité User. Enfin, dans le contrôleur UserController, nous utilisons l'objet UserDao pour créer et récupérer des utilisateurs.
+</p>
+
+<h2>Utilisation de Hibernate dans une application de bureau</h2>
+<p>
+Hibernate peut également être utilisé dans le développement d'applications de bureau pour gérer la persistance des données. Voici un exemple d'utilisation de Hibernate dans une application de bureau :
+</p>
+
+<pre><code>public class Product {
+    private Long id;
+    private String name;
+    private double price;
+    
+    // Getters and setters
+}
+
+public class ProductDao {
+    private SessionFactory sessionFactory;
+    
+    public void saveProduct(Product product) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(product);
+    }
+    
+    public Product getProductById(Long id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Product.class, id);
+    }
+    
+    // Other CRUD operations
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SessionFactory sessionFactory = // Créer la SessionFactory
+        
+        ProductDao productDao = new ProductDao();
+        productDao.setSessionFactory(sessionFactory);
+        
+        Product product = new Product();
+        product.setName("Ordinateur portable");
+        product.setPrice(999.99);
+        
+        productDao.saveProduct(product);
+        
+        Product retrievedProduct = productDao.getProductById(product.getId());
+        System.out.println(retrievedProduct.getName());
+    }
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous avons une classe Product qui représente un produit avec des attributs tels que le nom et le prix. La classe ProductDao utilise la SessionFactory de Hibernate pour effectuer des opérations de persistance sur l'objet Product. Dans la classe Main, nous créons une instance de ProductDao et utilisons ses méthodes pour sauvegarder un produit dans la base de données et le récupérer ensuite.
+</p>
+
+<h2>Utilisation de Hibernate dans une application mobile</h2>
+<p>
+Hibernate peut également être utilisé dans le développement d'applications mobiles pour gérer la persistance des données. Voici un exemple d'utilisation de Hibernate dans une application mobile Android :
+</p>
+
+<pre><code>@Entity
+@Table(name = "contacts")
+public class Contact {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(name = "name")
+    private String name;
+    
+    @Column(name = "phone")
+    private String phone;
+    
+    // Getters and setters
+}
+
+public class ContactDao {
+    private SessionFactory sessionFactory;
+    
+    public void saveContact(Contact contact) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(contact);
+    }
+    
+    public Contact getContactById(Long id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Contact.class, id);
+    }
+    
+    // Other CRUD operations
+}
+
+public class MainActivity extends AppCompatActivity {
+    private ContactDao contactDao;
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        // Initialiser la SessionFactory
+        
+        contactDao = new ContactDao();
+        contactDao.setSessionFactory(sessionFactory);
+        
+        Contact contact = new Contact();
+        contact.setName("John Doe");
+        contact.setPhone("1234567890");
+        
+        contactDao.saveContact(contact);
+        
+        Contact retrievedContact = contactDao.getContactById(contact.getId());
+        Log.d("MainActivity", "Contact name: " + retrievedContact.getName());
+    }
+    
+    // Autres méthodes de l'activité
+}
+</code></pre>
+
+<p>
+Dans cet exemple, nous avons une entité Contact qui représente un contact avec des attributs tels que le nom et le numéro de téléphone. La classe ContactDao utilise la SessionFactory de Hibernate pour effectuer des opérations de persistance sur l'entité Contact. Dans l'activité MainActivity, nous créons une instance de ContactDao et utilisons ses méthodes pour sauvegarder un contact dans la base de données et le récupérer ensuite.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Requêtes avec Hibernate</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux requêtes avec Hibernate</h2>
+<p>
+Hibernate offre plusieurs méthodes pour effectuer des requêtes sur la base de données. Ces requêtes peuvent être utilisées pour récupérer des données, les modifier ou les supprimer. Les requêtes avec Hibernate peuvent être écrites en utilisant le langage HQL (Hibernate Query Language), les critères de requête ou les requêtes natives.
+</p>
+
+<h2>Utilisation du langage HQL (Hibernate Query Language)</h2>
+<p>
+Le langage HQL est un langage de requête orienté objet qui permet d'écrire des requêtes en utilisant les objets et les propriétés de vos entités. Il est similaire au SQL, mais utilise les noms des classes et des propriétés au lieu des noms des tables et des colonnes.
+</p>
+<p>
+Voici un exemple de requête HQL pour récupérer tous les utilisateurs dont le nom commence par "John" :
+</p>
+<pre><code>String hql = "FROM User u WHERE u.name LIKE 'John%'";
+Query query = session.createQuery(hql);
+List&lt;User&gt; users = query.list();
+</code></pre>
+
+<h2>Utilisation des critères de requête</h2>
+<p>
+Les critères de requête sont une autre méthode pour effectuer des requêtes avec Hibernate. Ils permettent de construire des requêtes de manière programmatique en utilisant des objets Criteria. Les critères de requête offrent une syntaxe fluide et expressive pour spécifier les conditions de recherche.
+</p>
+<p>
+Voici un exemple de requête avec des critères pour récupérer tous les utilisateurs dont l'âge est supérieur à 18 ans :
+</p>
+<pre><code>Criteria criteria = session.createCriteria(User.class);
+criteria.add(Restrictions.gt("age", 18));
+List&lt;User&gt; users = criteria.list();
+</code></pre>
+
+<h2>Utilisation des requêtes natives</h2>
+<p>
+Les requêtes natives permettent d'écrire des requêtes SQL directement dans votre code Hibernate. Elles peuvent être utiles lorsque vous avez besoin d'utiliser des fonctionnalités spécifiques de votre base de données qui ne sont pas prises en charge par HQL ou les critères de requête.
+</p>
+<p>
+Voici un exemple de requête native pour récupérer tous les utilisateurs dont le nom commence par "John" :
+</p>
+<pre><code>String sql = "SELECT * FROM users WHERE name LIKE 'John%'";
+SQLQuery query = session.createSQLQuery(sql);
+query.addEntity(User.class);
+List&lt;User&gt; users = query.list();
+</code></pre>
+
+<p>
+Ces différentes méthodes de requête offrent une grande flexibilité pour interagir avec votre base de données en utilisant Hibernate. Choisissez la méthode qui convient le mieux à votre cas d'utilisation et assurez-vous de comprendre les avantages et les limitations de chaque méthode.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

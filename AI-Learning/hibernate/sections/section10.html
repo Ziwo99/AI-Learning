@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Développement avancé avec Hibernate</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des intercepteurs et des événements</h2>
+<p>Les intercepteurs et les événements sont des fonctionnalités avancées de Hibernate qui permettent de personnaliser le comportement de la persistance des objets. Les intercepteurs sont des classes qui peuvent être utilisées pour intercepter et modifier les opérations de persistance, telles que l'insertion, la mise à jour et la suppression d'objets. Les événements, quant à eux, permettent de réagir à des événements spécifiques, tels que la création ou la mise à jour d'un objet.</p>
+
+<p>Pour utiliser un intercepteur avec Hibernate, vous devez créer une classe qui implémente l'interface <code>Interceptor</code>. Cette interface définit plusieurs méthodes que vous pouvez implémenter pour personnaliser le comportement de la persistance. Par exemple, la méthode <code>onSave()</code> est appelée avant l'insertion d'un nouvel objet dans la base de données, ce qui vous permet de modifier les valeurs des propriétés de l'objet avant qu'il ne soit persisté.</p>
+
+<p>Voici un exemple d'implémentation d'un intercepteur :</p>
+
+<pre><code>public class MyInterceptor implements Interceptor {
+    public boolean onSave(Object entity, Serializable id, Object[] state, String[] propertyNames, Type[] types) {
+        // Modifier les valeurs des propriétés de l'objet avant l'insertion
+        return false;
+    }
+    
+    // Autres méthodes à implémenter...
+}</code></pre>
+
+<p>Pour utiliser un intercepteur, vous devez le configurer dans le fichier de configuration Hibernate (<code>hibernate.cfg.xml</code>) en spécifiant la classe de l'intercepteur :</p>
+
+<pre><code>&lt;property name="interceptor"&gt;com.example.MyInterceptor&lt;/property&gt;</code></pre>
+
+<p>Les événements, quant à eux, sont gérés par des classes appelées "listeners". Vous pouvez créer vos propres listeners en implémentant les interfaces appropriées, telles que <code>PreInsertEventListener</code> ou <code>PostUpdateEventListener</code>. Ces interfaces définissent des méthodes qui sont appelées avant ou après l'exécution d'une opération de persistance spécifique.</p>
+
+<p>Voici un exemple d'implémentation d'un listener :</p>
+
+<pre><code>public class MyListener implements PreInsertEventListener {
+    public boolean onPreInsert(PreInsertEvent event) {
+        // Réagir à l'événement de pré-insertion
+        return false;
+    }
+    
+    // Autres méthodes à implémenter...
+}</code></pre>
+
+<p>Pour utiliser un listener, vous devez le configurer dans le fichier de configuration Hibernate (<code>hibernate.cfg.xml</code>) en spécifiant la classe du listener :</p>
+
+<pre><code>&lt;listener class="com.example.MyListener" /&gt;</code></pre>
+
+<h2>Utilisation des types personnalisés</h2>
+<p>Hibernate permet d'utiliser des types personnalisés pour mapper des propriétés d'entités à des types non standard de la base de données. Par exemple, vous pouvez utiliser un type personnalisé pour mapper une propriété de type <code>Money</code> à une colonne de type <code>DECIMAL</code> dans la base de données.</p>
+
+<p>Pour créer un type personnalisé, vous devez créer une classe qui implémente l'interface <code>UserType</code>. Cette interface définit plusieurs méthodes que vous devez implémenter, telles que <code>sqlTypes()</code> pour spécifier les types SQL correspondants, <code>deepCopy()</code> pour effectuer une copie profonde de la valeur de la propriété, et <code>assemble()</code> et <code>disassemble()</code> pour convertir la valeur de la propriété entre sa représentation Hibernate et sa représentation SQL.</p>
+
+<p>Voici un exemple d'implémentation d'un type personnalisé :</p>
+
+<pre><code>public class MoneyType implements UserType {
+    public int[] sqlTypes() {
+        return new int[] { Types.DECIMAL };
+    }
+    
+    public Class returnedClass() {
+        return Money.class;
+    }
+    
+    public boolean equals(Object x, Object y) {
+        // Comparer les valeurs des propriétés de type Money
+        return false;
+    }
+    
+    // Autres méthodes à implémenter...
+}</code></pre>
+
+<p>Pour utiliser un type personnalisé, vous devez l'associer à une propriété d'entité en utilisant l'annotation <code>Type</code> ou la configuration XML. Par exemple, avec les annotations :</p>
+
+<pre><code>@Entity
+public class Product {
+    // Utilisation du type personnalisé Money
+    @Type(type = "com.example.MoneyType")
+    private Money price;
+    
+    // Autres propriétés...
+}</code></pre>
+
+<h2>Utilisation des procédures stockées et des fonctions</h2>
+<p>Hibernate permet d'appeler des procédures stockées et des fonctions de la base de données à l'aide de la classe <code>org.hibernate.procedure.ProcedureCall</code>. Cette classe vous permet de spécifier le nom de la procédure ou de la fonction, ainsi que les paramètres d'entrée et de sortie.</p>
+
+<p>Voici un exemple d'appel à une procédure stockée :</p>
+
+<pre><code>ProcedureCall call = session.createStoredProcedureCall("my_procedure");
+call.registerParameter(1, String.class, ParameterMode.IN).bindValue("param1");
+call.registerParameter(2, Integer.class, ParameterMode.OUT);
+
+Output output = call.getOutputs().getCurrent();
+Integer result = (Integer) output.getOutputParameterValue(2);</code></pre>
+
+<p>Vous pouvez également appeler des fonctions de la base de données en utilisant la méthode <code>registerParameter()</code> avec le mode de paramètre <code>ParameterMode.INOUT</code> ou <code>ParameterMode.OUT</code>.</p>
+
+<p>Assurez-vous que la base de données que vous utilisez prend en charge les procédures stockées et les fonctions, et que vous avez les droits nécessaires pour les appeler.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

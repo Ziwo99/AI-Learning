@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Bonnes pratiques et astuces</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Bonnes pratiques de conception avec Hibernate</h2>
+<p>Les bonnes pratiques de conception avec Hibernate sont essentielles pour garantir des performances optimales et une maintenance aisée de votre application. Voici quelques conseils à suivre :</p>
+
+<p><strong>1. Utilisez des classes d'entité légères :</strong> Il est recommandé de créer des classes d'entité simples et légères, en évitant les dépendances inutiles et les héritages complexes. Cela permettra d'améliorer les performances de chargement et de manipulation des objets.</p>
+
+<p><strong>2. Utilisez des identifiants générés automatiquement :</strong> Hibernate propose plusieurs stratégies de génération automatique des identifiants, telles que l'auto-incrémentation ou l'utilisation de séquences. Utilisez ces fonctionnalités pour simplifier la gestion des identifiants dans votre application.</p>
+
+<p><strong>3. Évitez les requêtes excessives :</strong> Hibernate propose des mécanismes de mise en cache pour optimiser les performances des requêtes. Utilisez-les judicieusement pour éviter les requêtes excessives à la base de données.</p>
+
+<p><strong>4. Utilisez des transactions appropriées :</strong> Les transactions sont essentielles pour garantir l'intégrité des données. Utilisez-les de manière appropriée en définissant des limites claires et en évitant les transactions trop longues.</p>
+
+<p><strong>5. Gérez les associations entre entités avec soin :</strong> Les associations entre entités peuvent être complexes à gérer. Assurez-vous de bien comprendre les différentes options de mapping proposées par Hibernate et choisissez celle qui convient le mieux à votre cas d'utilisation.</p>
+
+<h2>Astuces pour optimiser les performances</h2>
+<p>Optimiser les performances de votre application Hibernate est crucial pour garantir une expérience utilisateur fluide. Voici quelques astuces pour optimiser les performances :</p>
+
+<p><strong>1. Utilisez le cache de premier niveau :</strong> Hibernate propose un cache de premier niveau pour stocker les objets récupérés de la base de données. Utilisez ce cache pour éviter les requêtes excessives et améliorer les performances de lecture.</p>
+
+<p><strong>2. Utilisez le cache de second niveau :</strong> En plus du cache de premier niveau, Hibernate propose également un cache de second niveau qui peut être partagé entre plusieurs sessions. Utilisez ce cache pour optimiser les performances de lecture et d'écriture.</p>
+
+<p><strong>3. Optimisez les requêtes avec les jointures et les projections :</strong> L'utilisation de jointures et de projections peut considérablement améliorer les performances des requêtes en limitant les données récupérées de la base de données.</p>
+
+<p><strong>4. Utilisez des index appropriés :</strong> Assurez-vous de créer des index appropriés sur les colonnes fréquemment utilisées dans vos requêtes Hibernate. Cela permettra d'accélérer les opérations de recherche et de tri.</p>
+
+<h2>Gestion des migrations de base de données avec Hibernate</h2>
+<p>La gestion des migrations de base de données est un aspect important du développement d'applications Hibernate. Voici quelques conseils pour gérer efficacement les migrations :</p>
+
+<p><strong>1. Utilisez les outils de migration :</strong> Hibernate propose des outils tels que Flyway ou Liquibase pour gérer les migrations de base de données de manière automatisée. Utilisez ces outils pour faciliter la mise à jour de votre schéma de base de données.</p>
+
+<p><strong>2. Planifiez les migrations avec soin :</strong> Avant d'effectuer une migration de base de données, assurez-vous de planifier et de tester attentivement les modifications à apporter. Cela permettra de minimiser les risques de perturbation de l'application en production.</p>
+
+<p><strong>3. Sauvegardez les données importantes :</strong> Avant d'effectuer une migration de base de données, assurez-vous de sauvegarder les données importantes pour éviter toute perte accidentelle. Il est recommandé de tester la restauration des sauvegardes avant de procéder à la migration.</p>
+
+<p><strong>4. Documentez les migrations :</strong> Pour faciliter la maintenance et la compréhension de votre application, documentez chaque migration de base de données en détaillant les modifications apportées et les raisons qui ont motivé ces changements.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

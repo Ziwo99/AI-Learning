@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11 : Hibernate et les bases de données NoSQL</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction aux bases de données NoSQL</h2>
+<p>Les bases de données NoSQL, également connues sous le nom de "non-SQL" ou "non relationnelles", sont des systèmes de gestion de bases de données conçus pour stocker et récupérer des données de manière flexible et évolutive. Contrairement aux bases de données relationnelles traditionnelles, les bases de données NoSQL ne reposent pas sur un schéma fixe et utilisent souvent des structures de données telles que des documents, des graphes ou des paires clé-valeur.</p>
+
+<h2>Utilisation de Hibernate avec MongoDB</h2>
+<p>MongoDB est l'une des bases de données NoSQL les plus populaires, utilisée pour stocker des données sous forme de documents JSON. Hibernate offre une intégration transparente avec MongoDB, permettant aux développeurs d'utiliser les fonctionnalités de mapping objet-relationnel de Hibernate avec cette base de données NoSQL.</p>
+
+<p>Pour utiliser Hibernate avec MongoDB, vous devez d'abord configurer votre application pour utiliser le pilote MongoDB et le dialecte MongoDB dans votre fichier de configuration Hibernate. Ensuite, vous pouvez utiliser les annotations de Hibernate pour mapper vos classes d'entité aux collections MongoDB.</p>
+
+<p>Par exemple, supposons que vous ayez une classe d'entité "Person" que vous souhaitez mapper à une collection "persons" dans MongoDB. Vous pouvez utiliser l'annotation "@Entity" pour marquer la classe comme une entité Hibernate, et l'annotation "@Document" pour spécifier la collection MongoDB correspondante :</p>
+
+<pre><code>@Entity
+@Document(collection = "persons")
+public class Person {
+    // ...
+}
+</code></pre>
+
+<p>Ensuite, vous pouvez utiliser les annotations de Hibernate pour mapper les propriétés de la classe d'entité aux champs du document MongoDB. Par exemple, vous pouvez utiliser l'annotation "@Id" pour spécifier la clé primaire :</p>
+
+<pre><code>@Entity
+@Document(collection = "persons")
+public class Person {
+    @Id
+    private String id;
+    
+    private String name;
+    
+    // ...
+}
+</code></pre>
+
+<p>Une fois que vous avez configuré vos classes d'entité et vos annotations, vous pouvez utiliser les fonctionnalités de Hibernate pour effectuer des opérations CRUD (Create, Read, Update, Delete) sur la base de données MongoDB. Hibernate se charge de la conversion entre les objets Java et les documents JSON, vous permettant de travailler avec des objets familiers tout en utilisant MongoDB comme backend de stockage.</p>
+
+<h2>Utilisation de Hibernate avec Cassandra</h2>
+<p>Cassandra est une autre base de données NoSQL populaire, conçue pour gérer de grandes quantités de données réparties sur de nombreux serveurs. Hibernate offre également une intégration avec Cassandra, vous permettant de profiter des fonctionnalités de mapping objet-relationnel de Hibernate avec cette base de données NoSQL.</p>
+
+<p>Pour utiliser Hibernate avec Cassandra, vous devez d'abord configurer votre application pour utiliser le pilote Cassandra et le dialecte Cassandra dans votre fichier de configuration Hibernate. Ensuite, vous pouvez utiliser les annotations de Hibernate pour mapper vos classes d'entité aux tables Cassandra.</p>
+
+<p>Par exemple, supposons que vous ayez une classe d'entité "Product" que vous souhaitez mapper à une table "products" dans Cassandra. Vous pouvez utiliser l'annotation "@Entity" pour marquer la classe comme une entité Hibernate, et l'annotation "@Table" pour spécifier la table Cassandra correspondante :</p>
+
+<pre><code>@Entity
+@Table(name = "products")
+public class Product {
+    // ...
+}
+</code></pre>
+
+<p>Ensuite, vous pouvez utiliser les annotations de Hibernate pour mapper les propriétés de la classe d'entité aux colonnes de la table Cassandra. Par exemple, vous pouvez utiliser l'annotation "@Id" pour spécifier la clé primaire :</p>
+
+<pre><code>@Entity
+@Table(name = "products")
+public class Product {
+    @Id
+    private UUID id;
+    
+    private String name;
+    
+    // ...
+}
+</code></pre>
+
+<p>Une fois que vous avez configuré vos classes d'entité et vos annotations, vous pouvez utiliser les fonctionnalités de Hibernate pour effectuer des opérations CRUD sur la base de données Cassandra. Hibernate se charge de la conversion entre les objets Java et les lignes de la table Cassandra, vous permettant de travailler avec des objets familiers tout en utilisant Cassandra comme backend de stockage.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

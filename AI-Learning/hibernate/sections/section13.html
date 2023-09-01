@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13 : Tests et débogage avec Hibernate</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des outils de débogage avec Hibernate</h2>
+<p>Lors du développement d'une application Hibernate, il est essentiel de pouvoir déboguer et comprendre le comportement de Hibernate. Heureusement, Hibernate offre plusieurs outils de débogage pour faciliter ce processus.</p>
+
+<p>Un outil de débogage couramment utilisé avec Hibernate est le journal (log) de Hibernate. Le journal de Hibernate enregistre les requêtes SQL exécutées, les transactions effectuées et les erreurs rencontrées. Pour activer le journal de Hibernate, vous devez configurer le niveau de journalisation approprié dans le fichier de configuration de votre application. Par exemple, pour activer le journal de Hibernate avec le niveau de journalisation DEBUG, vous pouvez ajouter la configuration suivante :</p>
+
+<pre><code>&lt;property name="hibernate.show_sql"&gt;true&lt;/property&gt;
+&lt;property name="hibernate.format_sql"&gt;true&lt;/property&gt;
+&lt;property name="hibernate.use_sql_comments"&gt;true&lt;/property&gt;</code></pre>
+
+<p>Ces propriétés permettent d'afficher les requêtes SQL générées par Hibernate dans la console de votre IDE ou dans les fichiers journaux de votre application.</p>
+
+<p>Un autre outil de débogage utile est le débogueur de votre IDE. En utilisant le débogueur, vous pouvez mettre des points d'arrêt dans votre code Hibernate et examiner les valeurs des variables, les appels de méthode et les résultats de requête en temps réel. Cela peut être particulièrement utile pour comprendre le flux d'exécution de votre application et identifier les problèmes potentiels.</p>
+
+<h2>Tests unitaires avec Hibernate</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité et la fiabilité de votre code Hibernate. Les tests unitaires vous permettent de vérifier le comportement attendu de vos entités et de vos requêtes Hibernate.</p>
+
+<p>Pour écrire des tests unitaires avec Hibernate, vous pouvez utiliser des frameworks de test populaires tels que JUnit ou TestNG. Ces frameworks vous permettent de créer des cas de test et d'exécuter des assertions pour vérifier les résultats attendus.</p>
+
+<p>Voici un exemple de test unitaire utilisant JUnit pour vérifier si une entité est correctement enregistrée dans la base de données :</p>
+
+<pre><code>import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class HibernateUnitTest {
+
+    @Test
+    public void testSaveEntity() {
+        // Créer une session Hibernate et ouvrir une transaction
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        // Créer une instance de l'entité à tester
+        Entity entity = new Entity();
+        entity.setName("Test");
+
+        // Enregistrer l'entité dans la base de données
+        session.save(entity);
+
+        // Fermer la transaction et la session
+        transaction.commit();
+        session.close();
+
+        // Vérifier si l'entité a été enregistrée avec succès
+        assertNotNull(entity.getId());
+    }
+}</code></pre>
+
+<p>Ce test unitaire crée une session Hibernate, ouvre une transaction, enregistre une entité dans la base de données, puis vérifie si l'entité a été enregistrée avec succès en vérifiant si son identifiant a été généré.</p>
+
+<h2>Tests d'intégration avec Hibernate</h2>
+<p>Les tests d'intégration sont utilisés pour vérifier l'interaction entre les différentes parties de votre application, y compris Hibernate et la base de données. Ces tests sont plus complexes que les tests unitaires car ils nécessitent souvent la mise en place d'une base de données de test et la création de données de test.</p>
+
+<p>Pour écrire des tests d'intégration avec Hibernate, vous pouvez utiliser des frameworks de test tels que JUnit ou TestNG, tout comme pour les tests unitaires. Cependant, vous devrez également configurer une base de données de test et gérer les transactions de test.</p>
+
+<p>Voici un exemple de test d'intégration utilisant JUnit pour vérifier si une requête Hibernate renvoie les résultats attendus :</p>
+
+<pre><code>import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class HibernateIntegrationTest {
+
+    @Test
+    public void testQuery() {
+        // Créer une session Hibernate et ouvrir une transaction
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = session.beginTransaction();
+
+        // Exécuter une requête Hibernate
+        Query query = session.createQuery("SELECT e FROM Entity e WHERE e.name = :name");
+        query.setParameter("name", "Test");
+        List&lt;Entity&gt; entities = query.list();
+
+        // Fermer la transaction et la session
+        transaction.commit();
+        session.close();
+
+        // Vérifier si la requête a renvoyé les résultats attendus
+        assertEquals(1, entities.size());
+        assertEquals("Test", entities.get(0).getName());
+    }
+}</code></pre>
+
+<p>Ce test d'intégration crée une session Hibernate, ouvre une transaction, exécute une requête Hibernate pour récupérer les entités avec un certain nom, puis vérifie si la requête a renvoyé les résultats attendus.</p>
+
+<p>Il est important de noter que les tests d'intégration peuvent être plus lents que les tests unitaires en raison de la nécessité d'interagir avec la base de données. Il est donc recommandé de les exécuter séparément des tests unitaires et de les limiter aux cas les plus critiques.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

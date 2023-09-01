@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12 : Hibernate et la sécurité</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des autorisations et des rôles avec Hibernate</h2>
+<p>
+Hibernate offre des fonctionnalités intégrées pour gérer les autorisations et les rôles dans une application. Cela permet de contrôler l'accès aux ressources et d'assurer la sécurité des données. Hibernate propose plusieurs mécanismes pour mettre en œuvre cette fonctionnalité.
+</p>
+
+<p>
+L'un des mécanismes les plus couramment utilisés est l'utilisation des annotations de sécurité fournies par Hibernate. Ces annotations permettent de définir des autorisations et des rôles pour les entités et les méthodes de l'application. Par exemple, vous pouvez utiliser l'annotation @RolesAllowed pour spécifier les rôles autorisés à accéder à une méthode particulière.
+</p>
+
+<p>
+Hibernate prend également en charge l'utilisation de filtres de sécurité pour restreindre l'accès aux données en fonction des autorisations et des rôles. Les filtres de sécurité peuvent être configurés au niveau de l'entité ou de la requête, et ils permettent de définir des conditions supplémentaires pour filtrer les données en fonction des autorisations de l'utilisateur connecté.
+</p>
+
+<p>
+En plus des annotations et des filtres de sécurité, Hibernate offre également la possibilité de personnaliser la gestion des autorisations et des rôles en utilisant des intercepteurs. Les intercepteurs Hibernate permettent d'intercepter les appels aux méthodes et de mettre en œuvre une logique personnalisée pour vérifier les autorisations et les rôles avant d'exécuter la méthode.
+</p>
+
+<h2>Utilisation de Hibernate pour la protection des données</h2>
+<p>
+Hibernate propose plusieurs fonctionnalités pour protéger les données sensibles dans une application. Ces fonctionnalités permettent de garantir la confidentialité et l'intégrité des données stockées dans la base de données.
+</p>
+
+<p>
+L'une des fonctionnalités les plus importantes est le support de la cryptographie. Hibernate offre des annotations et des types personnalisés pour chiffrer les données sensibles avant de les stocker dans la base de données. Par exemple, vous pouvez utiliser l'annotation @ColumnTransformer pour spécifier un algorithme de chiffrement et une clé de chiffrement pour une colonne particulière.
+</p>
+
+<p>
+Hibernate prend également en charge la validation des données pour garantir l'intégrité des données stockées dans la base de données. Vous pouvez utiliser des annotations de validation telles que @NotNull, @Size, @Pattern, etc. pour spécifier les contraintes de validation sur les propriétés des entités. Hibernate vérifiera automatiquement ces contraintes lors de la sauvegarde ou de la mise à jour des entités.
+</p>
+
+<p>
+En outre, Hibernate offre des fonctionnalités pour gérer les attaques par injection SQL. Hibernate utilise des requêtes paramétrées pour éviter les attaques par injection SQL. Les requêtes paramétrées permettent de séparer les données des instructions SQL, ce qui rend les attaques par injection SQL impossibles.
+</p>
+
+<p>
+Enfin, Hibernate propose des mécanismes de journalisation pour enregistrer les activités suspectes et les tentatives d'accès non autorisées. Vous pouvez configurer Hibernate pour enregistrer les requêtes SQL, les erreurs de validation, les erreurs d'autorisation, etc. dans les fichiers journaux. Cela permet de détecter et de résoudre rapidement les problèmes de sécurité.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

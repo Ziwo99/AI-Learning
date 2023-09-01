@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Mapping objet-relationnel avec Hibernate</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction au mapping objet-relationnel</h2>
+<p>
+Le mapping objet-relationnel est un processus qui permet de faire correspondre les objets d'une application Java avec les tables d'une base de données relationnelle. Hibernate est un framework de mapping objet-relationnel qui facilite cette correspondance en automatisant une grande partie du processus.
+</p>
+<p>
+Le mapping objet-relationnel est essentiel pour permettre à une application Java d'interagir avec une base de données relationnelle de manière transparente. Il permet de manipuler les données de la base de données en utilisant des objets Java, ce qui facilite le développement d'applications robustes et maintenables.
+</p>
+
+<h2>Configuration du mapping avec les annotations</h2>
+<p>
+Hibernate offre la possibilité de configurer le mapping objet-relationnel en utilisant des annotations. Les annotations sont des métadonnées ajoutées au code source Java pour spécifier comment les objets doivent être persistés dans la base de données.
+</p>
+<p>
+Les annotations Hibernate les plus couramment utilisées pour le mapping objet-relationnel sont @Entity, @Table, @Column, @Id, @GeneratedValue, @OneToOne, @OneToMany, @ManyToOne et @ManyToMany. Chaque annotation a un rôle spécifique dans la définition du mapping entre les objets Java et les tables de la base de données.
+</p>
+<pre><code>
+@Entity
+@Table(name = "employee")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    
+    @Column(name = "name")
+    private String name;
+    
+    // Autres attributs et méthodes
+}
+</code></pre>
+
+<h2>Configuration du mapping avec les fichiers XML</h2>
+<p>
+En plus des annotations, Hibernate permet également de configurer le mapping objet-relationnel en utilisant des fichiers XML. Les fichiers XML de mapping Hibernate décrivent comment les objets Java doivent être associés aux tables de la base de données.
+</p>
+<p>
+Le fichier XML de mapping Hibernate le plus couramment utilisé est le fichier hbm.xml. Ce fichier contient des balises qui définissent les classes, les propriétés, les associations et les tables correspondantes.
+</p>
+<pre><code>
+&lt;hibernate-mapping&gt;
+    &lt;class name="com.example.Employee" table="employee"&gt;
+        &lt;id name="id" column="id" type="long"&gt;
+            &lt;generator class="identity" /&gt;
+        &lt;/id&gt;
+        &lt;property name="name" column="name" type="string" /&gt;
+        &lt;!-- Autres propriétés et associations --&gt;
+    &lt;/class&gt;
+&lt;/hibernate-mapping&gt;
+</code></pre>
+
+<h2>Utilisation des relations entre les entités</h2>
+<p>
+Hibernate permet de définir des relations entre les entités en utilisant des annotations ou des fichiers XML. Les relations les plus couramment utilisées sont les relations un-à-un, un-à-plusieurs, plusieurs-à-un et plusieurs-à-plusieurs.
+</p>
+<p>
+Pour définir une relation un-à-un, on utilise l'annotation @OneToOne ou la balise &lt;one-to-one&gt;. Pour définir une relation un-à-plusieurs, on utilise l'annotation @OneToMany ou la balise &lt;one-to-many&gt;. Pour définir une relation plusieurs-à-un, on utilise l'annotation @ManyToOne ou la balise &lt;many-to-one&gt;. Enfin, pour définir une relation plusieurs-à-plusieurs, on utilise l'annotation @ManyToMany ou la balise &lt;many-to-many&gt;.
+</p>
+<pre><code>
+@Entity
+@Table(name = "employee")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    
+    @Column(name = "name")
+    private String name;
+    
+    @OneToOne(mappedBy = "employee")
+    private Address address;
+    
+    @OneToMany(mappedBy = "employee")
+    private List&lt;Phone&gt; phones;
+    
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Department department;
+    
+    @ManyToMany
+    @JoinTable(name = "employee_project",
+        joinColumns = @JoinColumn(name = "employee_id"),
+        inverseJoinColumns = @JoinColumn(name = "project_id"))
+    private List&lt;Project&gt; projects;
+    
+    // Autres attributs et méthodes
+}
+</code></pre>
+
+<p>
+Ce contenu détaillé de la section 2 : Mapping objet-relationnel avec Hibernate de la formation e-learning Hibernate fournit une introduction complète au mapping objet-relationnel avec Hibernate. Il explique comment configurer le mapping en utilisant les annotations et les fichiers XML, ainsi que comment définir des relations entre les entités. Ces connaissances sont essentielles pour maîtriser Hibernate et développer des applications Java robustes et maintenables.
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

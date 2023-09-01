@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Gestion des sessions et des transactions</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des sessions avec Hibernate</h2>
+<p>
+La gestion des sessions est un aspect essentiel de l'utilisation de Hibernate. Une session Hibernate représente une connexion entre l'application et la base de données. Elle est utilisée pour effectuer des opérations de lecture, d'écriture et de mise à jour des objets persistants.
+</p>
+<p>
+Pour commencer une session avec Hibernate, vous devez créer une instance de la classe SessionFactory. La SessionFactory est responsable de la création de sessions individuelles pour chaque demande de connexion à la base de données. Voici un exemple de code pour créer une SessionFactory :
+</p>
+<pre><code>Configuration configuration = new Configuration();
+configuration.configure("hibernate.cfg.xml");
+SessionFactory sessionFactory = configuration.buildSessionFactory();
+</code></pre>
+<p>
+Une fois que vous avez une SessionFactory, vous pouvez ouvrir une session en appelant la méthode openSession(). Voici un exemple de code pour ouvrir une session :
+</p>
+<pre><code>Session session = sessionFactory.openSession();
+</code></pre>
+<p>
+Une fois que vous avez une session ouverte, vous pouvez effectuer des opérations de lecture, d'écriture et de mise à jour des objets persistants. Par exemple, pour enregistrer un nouvel objet dans la base de données, vous pouvez utiliser la méthode save() de la session :
+</p>
+<pre><code>MyObject myObject = new MyObject();
+myObject.setName("John Doe");
+session.save(myObject);
+</code></pre>
+<p>
+Après avoir effectué toutes les opérations nécessaires, vous devez fermer la session en appelant la méthode close(). Cela libère les ressources utilisées par la session et met fin à la connexion à la base de données. Voici un exemple de code pour fermer une session :
+</p>
+<pre><code>session.close();
+</code></pre>
+
+<h2>Utilisation des transactions avec Hibernate</h2>
+<p>
+Les transactions sont utilisées pour regrouper plusieurs opérations de base de données en une seule unité logique. Cela garantit que toutes les opérations sont exécutées avec succès ou que toutes les opérations sont annulées en cas d'erreur.
+</p>
+<p>
+Pour utiliser les transactions avec Hibernate, vous devez d'abord ouvrir une transaction en appelant la méthode beginTransaction() de la session. Voici un exemple de code pour ouvrir une transaction :
+</p>
+<pre><code>Transaction transaction = session.beginTransaction();
+</code></pre>
+<p>
+Une fois que vous avez ouvert une transaction, vous pouvez effectuer des opérations de lecture, d'écriture et de mise à jour des objets persistants. Par exemple, pour mettre à jour un objet existant dans la base de données, vous pouvez utiliser la méthode update() de la session :
+</p>
+<pre><code>MyObject myObject = session.get(MyObject.class, 1);
+myObject.setName("Jane Doe");
+session.update(myObject);
+</code></pre>
+<p>
+Après avoir effectué toutes les opérations nécessaires, vous devez valider la transaction en appelant la méthode commit(). Cela confirme toutes les opérations effectuées dans la transaction et les rend permanentes dans la base de données. Voici un exemple de code pour valider une transaction :
+</p>
+<pre><code>transaction.commit();
+</code></pre>
+<p>
+Si une erreur se produit pendant la transaction, vous pouvez l'annuler en appelant la méthode rollback(). Cela annule toutes les opérations effectuées dans la transaction et les rend non permanentes dans la base de données. Voici un exemple de code pour annuler une transaction :
+</p>
+<pre><code>transaction.rollback();
+</code></pre>
+
+<h2>Gestion des erreurs et des exceptions</h2>
+<p>
+Lorsque vous utilisez Hibernate, il est important de gérer correctement les erreurs et les exceptions qui peuvent survenir lors de l'exécution des opérations de base de données. Cela garantit que votre application fonctionne de manière fiable et qu'elle peut récupérer en cas d'erreur.
+</p>
+<p>
+Hibernate utilise des exceptions pour signaler les erreurs et les problèmes lors de l'exécution des opérations de base de données. Les exceptions les plus courantes sont HibernateException, SQLException et ConstraintViolationException.
+</p>
+<p>
+Pour gérer les erreurs et les exceptions, vous pouvez utiliser des blocs try-catch. Voici un exemple de code pour gérer une exception Hibernate :
+</p>
+<pre><code>try {
+    // Code Hibernate
+} catch (HibernateException e) {
+    // Gestion de l'exception
+}
+</code></pre>
+<p>
+Dans le bloc catch, vous pouvez effectuer des actions spécifiques pour gérer l'exception, telles que l'enregistrement des détails de l'exception dans un fichier journal, l'affichage d'un message d'erreur à l'utilisateur ou la récupération à partir d'une sauvegarde.
+</p>
+<p>
+Il est également important de fermer correctement la session en cas d'erreur. Vous pouvez utiliser un bloc finally pour vous assurer que la session est fermée, même en cas d'exception. Voici un exemple de code pour fermer la session dans un bloc finally :
+</p>
+<pre><code>try {
+    // Code Hibernate
+} catch (HibernateException e) {
+    // Gestion de l'exception
+} finally {
+    session.close();
+}
+</code></pre>
+<p>
+En gérant correctement les erreurs et les exceptions, vous pouvez garantir que votre application Hibernate fonctionne de manière fiable et qu'elle peut récupérer en cas d'erreur.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

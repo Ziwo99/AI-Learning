@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Hibernate Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Gestion des transactions avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/hibernate/hibernate.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des transactions distribuées</h2>
+<p>Les transactions distribuées sont utilisées lorsque plusieurs bases de données sont impliquées dans une transaction. Hibernate prend en charge les transactions distribuées en utilisant le gestionnaire de transactions Java (JTA). Pour utiliser les transactions distribuées avec Hibernate, vous devez configurer un gestionnaire de transactions JTA dans votre environnement.</p>
+<p>Voici un exemple de configuration d'un gestionnaire de transactions JTA avec Hibernate :</p>
+<pre><code>&lt;property name="hibernate.transaction.jta.platform" value="org.hibernate.engine.transaction.jta.platform.internal.JBossStandAloneJtaPlatform" /&gt;</code></pre>
+
+<h2>Utilisation des verrous pessimistes et optimistes</h2>
+<p>Les verrous pessimistes et optimistes sont utilisés pour gérer la concurrence lors de l'accès aux données. Les verrous pessimistes bloquent l'accès aux données pour les autres utilisateurs jusqu'à ce que la transaction soit terminée, tandis que les verrous optimistes permettent à plusieurs utilisateurs d'accéder aux données en même temps et détectent les conflits lors de la validation de la transaction.</p>
+<p>Pour utiliser les verrous pessimistes avec Hibernate, vous pouvez utiliser la méthode <code>setLockMode()</code> lors de l'exécution d'une requête :</p>
+<pre><code>Query query = session.createQuery("FROM User u WHERE u.id = :id");
+query.setParameter("id", 1);
+query.setLockMode("u", LockMode.PESSIMISTIC_WRITE);
+User user = (User) query.uniqueResult();</code></pre>
+<p>Pour utiliser les verrous optimistes avec Hibernate, vous devez ajouter une colonne de version à votre entité et annoter cette colonne avec <code>@Version</code>. Hibernate utilisera cette colonne pour détecter les conflits lors de la validation de la transaction.</p>
+<pre><code>@Entity
+public class User {
+    @Id
+    private Long id;
+    
+    // Autres attributs
+    
+    @Version
+    private Long version;
+    
+    // Getters et setters
+}</code></pre>
+
+<h2>Utilisation des verrous d'optimisme versionnés</h2>
+<p>Les verrous d'optimisme versionnés sont une extension des verrous optimistes qui permettent de gérer les conflits de manière plus fine. Avec les verrous d'optimisme versionnés, vous pouvez spécifier la stratégie de résolution des conflits en utilisant l'annotation <code>@OptimisticLocking</code>.</p>
+<p>Voici un exemple d'utilisation des verrous d'optimisme versionnés avec Hibernate :</p>
+<pre><code>@Entity
+@OptimisticLocking(type = OptimisticLockType.DIRTY)
+public class User {
+    @Id
+    private Long id;
+    
+    // Autres attributs
+    
+    @Version
+    private Long version;
+    
+    // Getters et setters
+}</code></pre>
+<p>Avec cette configuration, Hibernate ne vérifiera que les attributs modifiés lors de la validation de la transaction, ce qui réduit le risque de conflits.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/hibernate/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/hibernate/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
