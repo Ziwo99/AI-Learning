@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de React</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Composants React</h2>
+<p>Les composants sont les éléments de base de React. Ils permettent de diviser l'interface utilisateur en morceaux réutilisables et indépendants. Un composant peut être une partie d'une page ou une page entière.</p>
+<p>Voici un exemple de création d'un composant React :</p>
+<pre><code>import React from 'react';
+
+class MonComposant extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;p&gt;Ceci est mon composant React.&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MonComposant;
+</code></pre>
+
+<h2>JSX (JavaScript XML)</h2>
+<p>JSX est une extension de syntaxe qui permet d'écrire du code HTML dans du code JavaScript. Il facilite la création d'éléments React en utilisant une syntaxe familière.</p>
+<p>Voici un exemple d'utilisation de JSX :</p>
+<pre><code>import React from 'react';
+
+class MonComposant extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;p&gt;Ceci est mon composant React.&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MonComposant;
+</code></pre>
+
+<h2>Rendu des composants</h2>
+<p>Le rendu des composants est la manière dont les composants React sont affichés à l'écran. Le rendu est effectué en utilisant la méthode <code>render()</code> d'un composant.</p>
+<p>Voici un exemple de rendu d'un composant :</p>
+<pre><code>import React from 'react';
+import ReactDOM from 'react-dom';
+
+class MonComposant extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;p&gt;Ceci est mon composant React.&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+ReactDOM.render(&lt;MonComposant /&gt;, document.getElementById('root'));
+</code></pre>
+
+<h2>Gestion des événements</h2>
+<p>La gestion des événements permet de réagir aux actions de l'utilisateur, comme un clic sur un bouton ou une soumission de formulaire. Les événements sont gérés en utilisant des attributs spécifiques dans les éléments JSX.</p>
+<p>Voici un exemple de gestion d'événements :</p>
+<pre><code>import React from 'react';
+
+class MonComposant extends React.Component {
+  handleClick() {
+    console.log('Le bouton a été cliqué.');
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;button onClick={this.handleClick}&gt;Cliquez ici&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MonComposant;
+</code></pre>
+
+<h2>Utilisation des états (state)</h2>
+<p>Les états sont des objets JavaScript qui contiennent des données qui peuvent être modifiées dans un composant React. Les états permettent de rendre les composants dynamiques et réactifs aux changements.</p>
+<p>Voici un exemple d'utilisation des états :</p>
+<pre><code>import React from 'react';
+
+class MonComposant extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  handleClick() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;p&gt;Count: {this.state.count}&lt;/p&gt;
+        &lt;button onClick={this.handleClick.bind(this)}&gt;Incrémenter&lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MonComposant;
+</code></pre>
+
+<h2>Utilisation des propriétés (props)</h2>
+<p>Les propriétés sont des valeurs qui peuvent être passées à un composant React depuis son parent. Les propriétés permettent de personnaliser les composants et de leur transmettre des données.</p>
+<p>Voici un exemple d'utilisation des propriétés :</p>
+<pre><code>import React from 'react';
+
+class MonComposant extends React.Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;p&gt;Bonjour, {this.props.name} !&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MonComposant;
+</code></pre>
+
+<h2>Cycle de vie des composants</h2>
+<p>Les composants React ont un cycle de vie qui comprend différentes étapes, comme la création, la mise à jour et la suppression. Les méthodes du cycle de vie permettent d'exécuter du code à des moments spécifiques du cycle de vie d'un composant.</p>
+<p>Voici un exemple des méthodes du cycle de vie :</p>
+<pre><code>import React from 'react';
+
+class MonComposant extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('Le composant est en cours de création.');
+  }
+
+  componentDidMount() {
+    console.log('Le composant a été monté.');
+  }
+
+  componentDidUpdate() {
+    console.log('Le composant a été mis à jour.');
+  }
+
+  componentWillUnmount() {
+    console.log('Le composant va être supprimé.');
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;h2&gt;Mon Composant&lt;/h2&gt;
+        &lt;p&gt;Ceci est mon composant React.&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default MonComposant;
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

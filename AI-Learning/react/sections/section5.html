@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Communication avec les API</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Appels API avec Fetch</h2>
+<p>
+Lorsque vous travaillez avec React, il est courant d'avoir besoin de communiquer avec une API pour récupérer ou envoyer des données. Une façon courante de le faire est d'utiliser la fonction Fetch, qui est intégrée à la plupart des navigateurs modernes.
+</p>
+
+<p>
+Fetch est une fonction asynchrone qui prend une URL en argument et renvoie une promesse qui résout en une réponse. Voici un exemple de code montrant comment effectuer un appel API avec Fetch :
+</p>
+
+<pre><code>fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    // Faire quelque chose avec les données récupérées
+  })
+  .catch(error => {
+    // Gérer les erreurs
+  });
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons l'URL "https://api.example.com/data" pour récupérer des données. La fonction Fetch renvoie une promesse qui résout en une réponse. Nous utilisons ensuite la méthode json() de la réponse pour extraire les données au format JSON. Ensuite, nous pouvons utiliser ces données pour effectuer des opérations supplémentaires.
+</p>
+
+<p>
+Il est important de noter que Fetch renvoie également une promesse rejetée si la requête échoue, par exemple en cas d'erreur réseau. Nous pouvons utiliser la méthode catch() pour gérer ces erreurs et afficher un message approprié à l'utilisateur.
+</p>
+
+<h2>Utilisation d'axios pour les appels API</h2>
+<p>
+Bien que Fetch soit une méthode courante pour effectuer des appels API, certains développeurs préfèrent utiliser une bibliothèque tierce appelée axios. Axios est une bibliothèque JavaScript qui facilite les appels API en fournissant une syntaxe plus simple et des fonctionnalités supplémentaires.
+</p>
+
+<p>
+Pour utiliser axios, vous devez d'abord l'installer en tant que dépendance de votre projet. Vous pouvez le faire en exécutant la commande suivante dans votre terminal :
+</p>
+
+<pre><code>npm install axios
+</code></pre>
+
+<p>
+Une fois que vous avez installé axios, vous pouvez l'importer dans votre fichier JavaScript et l'utiliser pour effectuer des appels API. Voici un exemple de code montrant comment utiliser axios pour récupérer des données à partir d'une API :
+</p>
+
+<pre><code>import axios from 'axios';
+
+axios.get('https://api.example.com/data')
+  .then(response => {
+    // Faire quelque chose avec les données récupérées
+  })
+  .catch(error => {
+    // Gérer les erreurs
+  });
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons la méthode get() d'axios pour effectuer une requête GET à l'URL "https://api.example.com/data". Comme avec Fetch, nous utilisons ensuite la méthode then() pour traiter la réponse et la méthode catch() pour gérer les erreurs.
+</p>
+
+<h2>Gestion des réponses asynchrones</h2>
+<p>
+Lorsque vous effectuez des appels API, il est important de comprendre que ces appels sont asynchrones. Cela signifie que le code continuera à s'exécuter pendant que l'appel API est en cours, et que la réponse ne sera disponible que plus tard.
+</p>
+
+<p>
+Pour gérer les réponses asynchrones, vous pouvez utiliser des promesses ou des fonctions async/await. Les promesses sont couramment utilisées avec Fetch et axios, tandis que les fonctions async/await offrent une syntaxe plus concise et plus lisible.
+</p>
+
+<p>
+Voici un exemple de code montrant comment utiliser des promesses pour gérer une réponse asynchrone avec Fetch :
+</p>
+
+<pre><code>fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    // Faire quelque chose avec les données récupérées
+  })
+  .catch(error => {
+    // Gérer les erreurs
+  });
+</code></pre>
+
+<p>
+Et voici un exemple de code montrant comment utiliser des fonctions async/await pour gérer une réponse asynchrone avec axios :
+</p>
+
+<pre><code>import axios from 'axios';
+
+async function fetchData() {
+  try {
+    const response = await axios.get('https://api.example.com/data');
+    // Faire quelque chose avec les données récupérées
+  } catch (error) {
+    // Gérer les erreurs
+  }
+}
+
+fetchData();
+</code></pre>
+
+<p>
+Dans cet exemple, nous utilisons le mot-clé async pour déclarer une fonction asynchrone, et le mot-clé await pour attendre que la promesse se résolve. Cela nous permet d'écrire du code de manière synchrone, ce qui le rend plus facile à lire et à comprendre.
+</p>
+
+<p>
+Il est important de noter que les fonctions async/await ne sont pas prises en charge dans tous les navigateurs. Si vous prévoyez de les utiliser, assurez-vous de vérifier la compatibilité du navigateur ou d'utiliser un transpileur comme Babel pour les convertir en code compatible avec les navigateurs plus anciens.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

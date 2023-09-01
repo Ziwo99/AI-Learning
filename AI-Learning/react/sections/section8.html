@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Déploiement d'une application React</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration de l'environnement de production</h2>
+<p>Lorsque vous êtes prêt à déployer votre application React en production, il est important de configurer correctement votre environnement pour garantir des performances optimales et une expérience utilisateur fluide. Voici quelques étapes à suivre pour configurer votre environnement de production :</p>
+
+<ol>
+  <li>Optimisation des fichiers statiques : avant de déployer votre application, vous devez optimiser vos fichiers statiques tels que les fichiers CSS et JavaScript. Cela peut être fait en utilisant des outils tels que Webpack pour regrouper et minimiser vos fichiers.</li>
+  
+  <li>Configuration du serveur : assurez-vous d'avoir un serveur web configuré pour servir votre application React. Vous pouvez utiliser des serveurs tels que Nginx ou Apache pour cela. Assurez-vous également de configurer les règles de routage appropriées pour gérer les différentes URL de votre application.</li>
+  
+  <li>Gestion des variables d'environnement : il est courant d'avoir des variables d'environnement spécifiques à votre environnement de production, telles que les clés d'API ou les informations de connexion à la base de données. Assurez-vous de configurer correctement ces variables d'environnement sur votre serveur de production.</li>
+  
+  <li>Optimisation des performances : pour garantir des performances optimales, vous pouvez utiliser des techniques telles que la mise en cache des ressources statiques, la compression Gzip et la mise en œuvre de la mise en cache côté serveur.</li>
+  
+  <li>Sécurité : assurez-vous de mettre en place les mesures de sécurité appropriées pour protéger votre application et vos données. Cela peut inclure l'utilisation de certificats SSL, la configuration de pare-feu et la mise en place de politiques de sécurité.</li>
+</ol>
+
+<h2>Déploiement sur un serveur</h2>
+<p>Une fois que vous avez configuré votre environnement de production, vous pouvez déployer votre application React sur un serveur. Voici quelques étapes à suivre pour déployer votre application sur un serveur :</p>
+
+<ol>
+  <li>Créez un package de production : avant de déployer votre application, vous devez créer un package de production optimisé. Cela peut être fait en utilisant des outils tels que Webpack ou Create React App. Ces outils vous permettent de créer un bundle optimisé de votre application prêt à être déployé.</li>
+  
+  <li>Transférez les fichiers sur le serveur : une fois que vous avez créé votre package de production, vous devez transférer les fichiers sur votre serveur. Vous pouvez utiliser des outils tels que FTP ou SCP pour cela. Assurez-vous de transférer tous les fichiers nécessaires, y compris les fichiers HTML, CSS, JavaScript et les ressources statiques.</li>
+  
+  <li>Configurez le serveur : une fois que les fichiers sont transférés sur le serveur, vous devez configurer le serveur pour servir votre application. Cela peut inclure la configuration du serveur web pour servir les fichiers statiques et la configuration des règles de routage appropriées.</li>
+  
+  <li>Testez votre application : une fois que votre application est déployée, assurez-vous de la tester pour vous assurer qu'elle fonctionne correctement. Vérifiez les différentes fonctionnalités de votre application et assurez-vous qu'il n'y a pas d'erreurs ou de problèmes de performance.</li>
+</ol>
+
+<h2>Utilisation de services d'hébergement cloud</h2>
+<p>Une autre option pour déployer votre application React est d'utiliser des services d'hébergement cloud. Ces services vous permettent de déployer votre application sur des serveurs gérés par des fournisseurs de cloud tels que AWS, Google Cloud ou Microsoft Azure. Voici quelques étapes à suivre pour utiliser des services d'hébergement cloud :</p>
+
+<ol>
+  <li>Créez un compte sur le service d'hébergement cloud : la première étape consiste à créer un compte sur le service d'hébergement cloud de votre choix. Suivez les instructions fournies par le fournisseur de cloud pour créer votre compte.</li>
+  
+  <li>Configurez votre environnement de développement : une fois que vous avez créé votre compte, vous devez configurer votre environnement de développement pour travailler avec le service d'hébergement cloud. Cela peut inclure l'installation d'outils spécifiques ou la configuration de variables d'environnement.</li>
+  
+  <li>Déployez votre application : une fois que votre environnement de développement est configuré, vous pouvez déployer votre application sur le service d'hébergement cloud. Suivez les instructions fournies par le fournisseur de cloud pour déployer votre application.</li>
+  
+  <li>Testez votre application : une fois que votre application est déployée, assurez-vous de la tester pour vous assurer qu'elle fonctionne correctement. Vérifiez les différentes fonctionnalités de votre application et assurez-vous qu'il n'y a pas d'erreurs ou de problèmes de performance.</li>
+</ol>
+
+<p>En utilisant des services d'hébergement cloud, vous pouvez bénéficier de la mise à l'échelle automatique, de la haute disponibilité et de la facilité de gestion de votre application React.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

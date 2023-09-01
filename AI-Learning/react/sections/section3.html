@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Gestion de l'état avec React</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de l'état local</h2>
+<p>L'état local est utilisé pour stocker des données spécifiques à un composant React. Il est géré à l'intérieur du composant et peut être modifié à l'aide de la méthode <code>setState()</code>. Lorsque l'état local est mis à jour, le composant est automatiquement re-rendu pour refléter les changements.</p>
+
+<p>Voici un exemple d'utilisation de l'état local dans un composant React :</p>
+
+<pre><code>import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;</code></pre>
+
+<p>Dans cet exemple, nous utilisons le hook <code>useState</code> pour initialiser l'état local <code>count</code> à 0. La fonction <code>setCount</code> est utilisée pour mettre à jour la valeur de <code>count</code> lorsque le bouton est cliqué.</p>
+
+<h2>Utilisation de l'état global avec Redux</h2>
+<p>L'état global est utilisé pour stocker des données partagées entre plusieurs composants React. Redux est une bibliothèque populaire pour gérer l'état global dans une application React. Il utilise un concept de store centralisé pour stocker toutes les données de l'application.</p>
+
+<p>Voici un exemple d'utilisation de Redux pour gérer l'état global :</p>
+
+<pre><code>// actions.js
+export const increment = () => {
+  return {
+    type: 'INCREMENT'
+  };
+};
+
+// reducers.js
+const initialState = {
+  count: 0
+};
+
+const counterReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return {
+        ...state,
+        count: state.count + 1
+      };
+    default:
+      return state;
+  }
+};
+
+export default counterReducer;
+
+// App.js
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment } from './actions';
+
+function App() {
+  const count = useSelector(state => state.count);
+  const dispatch = useDispatch();
+
+  const handleIncrement = () => {
+    dispatch(increment());
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  );
+}
+
+export default App;</code></pre>
+
+<p>Dans cet exemple, nous avons défini une action <code>increment</code> qui incrémente la valeur de <code>count</code>. Le reducer <code>counterReducer</code> gère les actions et met à jour l'état global en conséquence. Dans le composant <code>App</code>, nous utilisons les hooks <code>useSelector</code> et <code>useDispatch</code> pour accéder à l'état global et envoyer des actions.</p>
+
+<h2>Gestion des formulaires avec React</h2>
+<p>React facilite la gestion des formulaires en utilisant l'état local pour stocker les valeurs des champs de formulaire. Lorsque les valeurs des champs changent, l'état est mis à jour et le composant est re-rendu pour refléter les changements.</p>
+
+<p>Voici un exemple de gestion d'un formulaire avec React :</p>
+
+<pre><code>import React, { useState } from 'react';
+
+function Form() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Name:', name);
+    console.log('Email:', email);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Name:
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+      </label>
+      <label>
+        Email:
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default Form;</code></pre>
+
+<p>Dans cet exemple, nous utilisons l'état local pour stocker les valeurs des champs de formulaire <code>name</code> et <code>email</code>. Lorsque les valeurs des champs changent, les fonctions <code>setName</code> et <code>setEmail</code> sont utilisées pour mettre à jour l'état. Lorsque le formulaire est soumis, la fonction <code>handleSubmit</code> est appelée pour traiter les données.</p>
+
+<h2>Utilisation des hooks pour gérer l'état</h2>
+<p>React fournit des hooks pour gérer l'état dans les composants fonctionnels. Les hooks les plus couramment utilisés sont <code>useState</code> et <code>useEffect</code>.</p>
+
+<p>Voici un exemple d'utilisation des hooks pour gérer l'état :</p>
+
+<pre><code>import React, { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `Count: ${count}`;
+  }, [count]);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;</code></pre>
+
+<p>Dans cet exemple, nous utilisons le hook <code>useState</code> pour initialiser l'état local <code>count</code> à 0. Le hook <code>useEffect</code> est utilisé pour mettre à jour le titre de la page en fonction de la valeur de <code>count</code>. Lorsque <code>count</code> change, le code à l'intérieur de <code>useEffect</code> est exécuté.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

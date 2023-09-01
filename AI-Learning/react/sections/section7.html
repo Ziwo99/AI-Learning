@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Tests et débogage</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Écriture de tests unitaires avec Jest</h2>
+<p>Les tests unitaires sont essentiels pour garantir la qualité et la fiabilité de votre application React. Jest est un framework de test populaire qui facilite l'écriture et l'exécution de tests unitaires.</p>
+<p>Voici un exemple de test unitaire avec Jest :</p>
+<pre><code>import { sum } from './mathUtils';
+
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
+});
+</code></pre>
+<p>Dans cet exemple, nous importons la fonction sum depuis le fichier mathUtils.js. Nous testons ensuite si l'addition de 1 et 2 est égale à 3 en utilisant la fonction expect de Jest.</p>
+<p>Les tests unitaires peuvent être exécutés en utilisant la commande suivante :</p>
+<pre><code>npm test</code></pre>
+
+<h2>Utilisation de l'extension React Developer Tools</h2>
+<p>L'extension React Developer Tools est un outil précieux pour le débogage et l'inspection des composants React dans votre application.</p>
+<p>Voici comment utiliser l'extension React Developer Tools :</p>
+<ol>
+  <li>Installez l'extension React Developer Tools depuis le Chrome Web Store ou le Firefox Add-ons Store.</li>
+  <li>Ouvrez votre application React dans le navigateur.</li>
+  <li>Cliquez avec le bouton droit de la souris sur n'importe quel élément de votre application et sélectionnez "Inspecter" dans le menu contextuel.</li>
+  <li>Dans l'onglet "React", vous pouvez voir la hiérarchie des composants, leurs propriétés et leur état.</li>
+  <li>Utilisez les fonctionnalités de l'extension pour déboguer et inspecter les composants de votre application.</li>
+</ol>
+
+<h2>Débogage des erreurs courantes</h2>
+<p>Le débogage des erreurs est une compétence essentielle pour tout développeur React. Voici quelques erreurs courantes que vous pouvez rencontrer et comment les déboguer :</p>
+
+<h3>Erreur de rendu "Cannot read property 'map' of undefined"</h3>
+<p>Cette erreur se produit lorsque vous essayez d'itérer sur une propriété qui est undefined ou null. Pour déboguer cette erreur, vous pouvez utiliser la fonctionnalité de débogage de votre navigateur pour vérifier la valeur de la propriété.</p>
+<p>Voici un exemple de débogage avec la console :</p>
+<pre><code>console.log(data); // Vérifiez la valeur de la propriété "data"
+console.log(data.map(item => item.name)); // Assurez-vous que "data" est un tableau avant d'itérer dessus
+</code></pre>
+
+<h3>Erreur de syntaxe "Unexpected token"</h3>
+<p>Cette erreur se produit lorsque vous avez une erreur de syntaxe dans votre code JavaScript. Pour déboguer cette erreur, vous pouvez utiliser l'outil de développement de votre navigateur pour vérifier la ligne de code où l'erreur se produit.</p>
+<p>Voici un exemple de débogage avec l'outil de développement de Chrome :</p>
+<ol>
+  <li>Ouvrez l'onglet "Sources" dans l'outil de développement de Chrome.</li>
+  <li>Recherchez la ligne de code où l'erreur se produit.</li>
+  <li>Utilisez les fonctionnalités de l'outil pour identifier et corriger l'erreur de syntaxe.</li>
+</ol>
+
+<h3>Erreur de rendu "Invariant Violation: Objects are not valid as a React child"</h3>
+<p>Cette erreur se produit lorsque vous essayez de rendre un objet directement dans votre composant React. Pour déboguer cette erreur, vous pouvez utiliser la fonctionnalité de débogage de votre navigateur pour vérifier la valeur de l'objet.</p>
+<p>Voici un exemple de débogage avec la console :</p>
+<pre><code>console.log(obj); // Vérifiez la valeur de l'objet
+console.log(JSON.stringify(obj)); // Convertissez l'objet en une chaîne de caractères avant de le rendre
+</code></pre>
+
+<p>En utilisant ces techniques de débogage, vous serez en mesure d'identifier et de résoudre rapidement les erreurs courantes dans votre application React.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

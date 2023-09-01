@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Bonnes pratiques et astuces avancées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de bibliothèques tierces populaires</h2>
+<p>React offre une grande flexibilité en permettant l'utilisation de bibliothèques tierces pour améliorer les fonctionnalités de votre application. Voici quelques-unes des bibliothèques tierces populaires que vous pouvez utiliser avec React :</p>
+
+<ul>
+  <li><strong>React Router</strong> : Cette bibliothèque vous permet de gérer la navigation entre les différentes pages de votre application React. Elle facilite la création de routes et la gestion des paramètres d'URL.</li>
+  <li><strong>Material-UI</strong> : Material-UI est une bibliothèque de composants React basée sur le design Material. Elle offre une large gamme de composants prêts à l'emploi pour créer une interface utilisateur attrayante et réactive.</li>
+  <li><strong>Redux</strong> : Redux est une bibliothèque de gestion d'état préférée pour les applications React. Elle vous permet de gérer l'état global de votre application de manière prévisible et maintenable.</li>
+  <li><strong>Styled Components</strong> : Cette bibliothèque vous permet de créer des composants React avec des styles CSS intégrés. Elle facilite la création de styles réutilisables et maintenables pour votre application.</li>
+</ul>
+
+<h2>Utilisation de Redux Middleware</h2>
+<p>Redux Middleware est un concept clé dans la gestion de l'état avec Redux. Il vous permet d'ajouter des fonctionnalités supplémentaires à votre flux de données Redux, telles que la gestion des appels asynchrones, la journalisation des actions ou la gestion des erreurs.</p>
+
+<p>Un middleware Redux est une fonction qui intercepte les actions avant qu'elles n'atteignent le reducer. Il peut effectuer des opérations supplémentaires, telles que l'appel à une API, la modification de l'action ou la journalisation des actions.</p>
+
+<p>Voici un exemple de middleware Redux qui gère les appels asynchrones avec Redux Thunk :</p>
+
+<pre><code>import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './reducers';
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk)
+);
+
+export default store;</code></pre>
+
+<p>Dans cet exemple, nous utilisons le middleware Redux Thunk pour gérer les appels asynchrones. Il nous permet d'écrire des actions Redux qui retournent des fonctions au lieu d'objets, ce qui nous permet d'effectuer des appels asynchrones avant de dispatch l'action.</p>
+
+<h2>Utilisation de React Hooks avancés</h2>
+<p>Les React Hooks sont une fonctionnalité introduite dans React 16.8 qui permet de gérer l'état et d'autres fonctionnalités de React sans avoir à utiliser de classes. Voici quelques-uns des hooks avancés que vous pouvez utiliser :</p>
+
+<ul>
+  <li><strong>useEffect</strong> : Ce hook vous permet d'effectuer des effets de côté dans vos composants fonctionnels. Il est souvent utilisé pour effectuer des appels API, s'abonner à des événements ou nettoyer des ressources.</li>
+  <li><strong>useContext</strong> : Ce hook vous permet d'accéder au contexte de votre application React. Il est utile lorsque vous avez besoin de partager des données entre plusieurs composants sans passer par les propriétés.</li>
+  <li><strong>useReducer</strong> : Ce hook vous permet de gérer l'état complexe avec des actions et un reducer, similaire à Redux. Il est utile lorsque vous avez besoin d'un état plus avancé dans vos composants fonctionnels.</li>
+  <li><strong>useMemo</strong> : Ce hook vous permet de mémoriser le résultat d'un calcul coûteux afin de l'utiliser ultérieurement. Il est utile pour optimiser les performances en évitant les recalculs inutiles.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation du hook useEffect :</p>
+
+<pre><code>import React, { useState, useEffect } from 'react';
+
+function MyComponent() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    setData(data);
+  };
+
+  return (
+    &lt;div&gt;
+      {data.map(item => (
+        &lt;div key={item.id}&gt;{item.name}&lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+export default MyComponent;</code></pre>
+
+<p>Dans cet exemple, nous utilisons le hook useEffect pour effectuer un appel API et mettre à jour l'état du composant lors du montage initial. L'appel API est effectué dans la fonction fetchData, qui est appelée une seule fois grâce au tableau de dépendances vide ([]).</p>
+
+<h2>Conclusion</h2>
+<p>Dans cette section, nous avons exploré certaines des bonnes pratiques et astuces avancées pour travailler avec React. L'utilisation de bibliothèques tierces populaires, de Redux Middleware et de React Hooks avancés peut grandement améliorer la qualité et la maintenabilité de votre code React. Continuez à explorer ces concepts et à les appliquer dans vos projets pour devenir un développeur React plus efficace et compétent.</p>
+
+<h2>Ressources supplémentaires pour approfondir ses connaissances</h2>
+<p>Voici quelques ressources supplémentaires qui peuvent vous aider à approfondir vos connaissances sur les bonnes pratiques et les astuces avancées de React :</p>
+
+<ul>
+  <li><a href="https://reactjs.org/docs/hooks-intro.html" target="_blank" rel="noopener noreferrer">Documentation officielle de React Hooks</a></li>
+  <li><a href="https://redux.js.org/introduction/getting-started" target="_blank" rel="noopener noreferrer">Documentation officielle de Redux</a></li>
+  <li><a href="https://reacttraining.com/react-router/" target="_blank" rel="noopener noreferrer">Documentation officielle de React Router</a></li>
+  <li><a href="https://material-ui.com/" target="_blank" rel="noopener noreferrer">Documentation officielle de Material-UI</a></li>
+</ul>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

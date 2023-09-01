@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Optimisation des performances</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de la mise en cache</h2>
+<p>La mise en cache est une technique couramment utilisée pour améliorer les performances d'une application React. Elle consiste à stocker temporairement des données fréquemment utilisées dans la mémoire cache, afin de les rendre rapidement accessibles lorsqu'elles sont nécessaires.</p>
+<p>En React, la mise en cache peut être réalisée de différentes manières. L'une des approches les plus courantes consiste à utiliser le hook useMemo(). Ce hook permet de mémoriser le résultat d'un calcul coûteux et de le réutiliser si les dépendances ne changent pas.</p>
+<p>Voici un exemple d'utilisation de useMemo() pour mettre en cache le résultat d'un calcul :</p>
+
+<pre><code>import React, { useMemo } from 'react';
+
+const MyComponent = ({ data }) => {
+  const expensiveCalculation = useMemo(() => {
+    // Effectuer un calcul coûteux ici
+    return data * 2;
+  }, [data]);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Le résultat du calcul est : {expensiveCalculation}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default MyComponent;
+</code></pre>
+
+<p>Dans cet exemple, le calcul coûteux est effectué dans la fonction de rappel passée à useMemo(). Le résultat de ce calcul est ensuite stocké dans la variable expensiveCalculation. Si la valeur de la variable data change, le calcul sera réexécuté. Sinon, la valeur mise en cache sera réutilisée.</p>
+
+<h2>Utilisation de la pagination</h2>
+<p>La pagination est une technique couramment utilisée pour améliorer les performances des applications React qui affichent de grandes quantités de données. Elle consiste à diviser les données en plusieurs pages et à ne charger que les données nécessaires à chaque page.</p>
+<p>En React, la pagination peut être mise en œuvre de différentes manières. Une approche courante consiste à utiliser un composant de pagination prêt à l'emploi, tel que react-paginate ou react-js-pagination.</p>
+<p>Voici un exemple d'utilisation du composant react-paginate pour implémenter la pagination :</p>
+
+<pre><code>import React, { useState } from 'react';
+import ReactPaginate from 'react-paginate';
+
+const MyComponent = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;Contenu de la page {currentPage + 1}&lt;/p&gt;
+      &lt;ReactPaginate
+        pageCount={10}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={2}
+        onPageChange={handlePageChange}
+        containerClassName={'pagination'}
+        activeClassName={'active'}
+      /&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default MyComponent;
+</code></pre>
+
+<p>Dans cet exemple, le composant react-paginate est utilisé pour afficher une pagination avec 10 pages au total. Lorsque l'utilisateur clique sur un numéro de page, la fonction handlePageChange est appelée et met à jour l'état currentPage en fonction de la page sélectionnée.</p>
+
+<h2>Utilisation du code splitting</h2>
+<p>Le code splitting est une technique qui consiste à diviser le code d'une application React en plusieurs morceaux (chunks) plus petits. Cela permet de charger uniquement le code nécessaire à une partie spécifique de l'application, ce qui peut considérablement améliorer les performances.</p>
+<p>En React, le code splitting peut être réalisé à l'aide de la fonctionnalité de chargement dynamique (dynamic import) ou en utilisant des outils tels que Webpack ou Babel.</p>
+<p>Voici un exemple d'utilisation de la fonctionnalité de chargement dynamique pour diviser le code en plusieurs morceaux :</p>
+
+<pre><code>import React, { lazy, Suspense } from 'react';
+
+const MyComponent = () => {
+  const LazyComponent = lazy(() => import('./LazyComponent'));
+
+  return (
+    &lt;div&gt;
+      &lt;Suspense fallback={'Chargement...'}&gt;
+        &lt;LazyComponent /&gt;
+      &lt;/Suspense&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default MyComponent;
+</code></pre>
+
+<p>Dans cet exemple, le composant LazyComponent est chargé de manière dynamique à l'aide de la fonction lazy() et de l'importation dynamique. Le composant est ensuite rendu à l'intérieur du composant Suspense, qui affiche un message de chargement pendant que le composant est en train d'être chargé.</p>
+
+<p>Il est important de noter que le code splitting peut nécessiter une configuration supplémentaire, en fonction de l'outil utilisé. Par exemple, si vous utilisez Webpack, vous devrez configurer le chunking dans votre fichier de configuration Webpack.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - React Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Routage avec React</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/react/react.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Navigation entre les pages</h2>
+<p>La navigation entre les pages est un aspect essentiel du développement d'applications web. Avec React, nous pouvons utiliser React Router pour gérer la navigation de manière efficace et intuitive.</p>
+<p>Pour commencer, nous devons installer React Router en utilisant la commande suivante dans notre terminal :</p>
+<pre><code>npm install react-router-dom</code></pre>
+<p>Une fois que nous avons installé React Router, nous pouvons l'importer dans notre application :</p>
+<pre><code>import { BrowserRouter as Router, Route, Link } from 'react-router-dom';</code></pre>
+<p>La balise <code>&lt;Router&gt;</code> est utilisée pour envelopper notre application et fournir un contexte de routage. Nous pouvons ensuite utiliser la balise <code>&lt;Route&gt;</code> pour définir les différentes routes de notre application.</p>
+<p>Par exemple, si nous voulons créer une route pour une page d'accueil, nous pouvons utiliser la balise <code>&lt;Route&gt;</code> de la manière suivante :</p>
+<pre><code>&lt;Route exact path="/" component={HomePage} /&gt;</code></pre>
+<p>Ici, le chemin <code>"/"</code> correspond à l'URL de la page d'accueil et le composant <code>HomePage</code> est le composant React qui sera rendu lorsque l'URL correspond à cette route.</p>
+<p>Nous pouvons également ajouter des paramètres à nos routes en utilisant la syntaxe suivante :</p>
+<pre><code>&lt;Route path="/users/:id" component={UserPage} /&gt;</code></pre>
+<p>Ici, le chemin <code>"/users/:id"</code> correspond à une URL qui contient un paramètre <code>id</code>. Ce paramètre sera disponible dans le composant <code>UserPage</code> via les <code>props</code>.</p>
+<p>Pour naviguer entre les pages, nous pouvons utiliser la balise <code>&lt;Link&gt;</code> de la manière suivante :</p>
+<pre><code>&lt;Link to="/users"&gt;Voir les utilisateurs&lt;/Link&gt;</code></pre>
+<p>Cela créera un lien qui, lorsqu'il est cliqué, naviguera vers l'URL spécifiée.</p>
+
+<h2>Utilisation de React Router</h2>
+<p>React Router offre de nombreuses fonctionnalités avancées pour la gestion de la navigation, telles que la gestion des paramètres d'URL, la redirection, la navigation programmée, etc.</p>
+<p>Par exemple, nous pouvons utiliser la balise <code>&lt;Redirect&gt;</code> pour rediriger l'utilisateur vers une autre page :</p>
+<pre><code>&lt;Redirect to="/login" /&gt;</code></pre>
+<p>Cela redirigera l'utilisateur vers la page de connexion.</p>
+<p>Nous pouvons également utiliser le hook <code>useHistory</code> pour naviguer de manière programmée :</p>
+<pre><code>import { useHistory } from 'react-router-dom';
+
+function MyComponent() {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/dashboard');
+  };
+
+  return (
+    &lt;button onClick={handleClick}&gt;Aller au tableau de bord&lt;/button&gt;
+  );
+}</code></pre>
+<p>Ici, lorsque le bouton est cliqué, nous utilisons la fonction <code>push</code> de l'objet <code>history</code> pour naviguer vers l'URL spécifiée.</p>
+
+<p>Avec React Router, nous pouvons également gérer des mises en page complexes avec des mises en page imbriquées et des mises en page multiples. Cela nous permet de créer des applications avec une structure de navigation flexible et modulaire.</p>
+<p>En utilisant React Router, nous pouvons créer des applications React avec une navigation fluide et une expérience utilisateur améliorée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/react/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/react/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
