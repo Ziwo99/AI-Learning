@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Déploiement d'une application Flask</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration de l'environnement de production</h2>
+<p>Lorsque vous êtes prêt à déployer votre application Flask, il est important de configurer correctement votre environnement de production pour assurer une performance optimale et une sécurité accrue. Voici quelques étapes clés à suivre :</p>
+
+<p>1. Utilisez un serveur web approprié : Pour déployer une application Flask, vous pouvez utiliser des serveurs web tels que Apache ou Nginx. Ces serveurs peuvent être configurés pour gérer les requêtes HTTP et transférer le trafic vers votre application Flask.</p>
+
+<p>2. Configurez les variables d'environnement : Il est recommandé de stocker les informations sensibles, telles que les clés secrètes et les informations de connexion à la base de données, dans des variables d'environnement plutôt que de les inclure directement dans votre code. Cela permet de garder ces informations confidentielles et de les gérer facilement en fonction de l'environnement de déploiement.</p>
+
+<p>3. Activez le mode production : Assurez-vous de configurer votre application Flask en mode production. Cela peut être fait en définissant la variable d'environnement FLASK_ENV sur "production". Cela désactive le mode de débogage et active les fonctionnalités de sécurité supplémentaires.</p>
+
+<h2>Déploiement sur un serveur web</h2>
+<p>Une fois que vous avez configuré votre environnement de production, vous pouvez procéder au déploiement de votre application Flask sur un serveur web. Voici les étapes générales à suivre :</p>
+
+<p>1. Installez le serveur web : Commencez par installer le serveur web de votre choix, tel que Apache ou Nginx, sur votre serveur. Suivez les instructions spécifiques à votre système d'exploitation pour effectuer cette installation.</p>
+
+<p>2. Configurez le serveur web : Une fois le serveur web installé, vous devez configurer les fichiers de configuration appropriés pour indiquer au serveur web comment gérer les requêtes HTTP et transférer le trafic vers votre application Flask. Consultez la documentation du serveur web que vous utilisez pour obtenir des instructions détaillées sur la configuration.</p>
+
+<p>3. Déployez votre application Flask : Copiez les fichiers de votre application Flask sur le serveur web, en veillant à conserver la structure de répertoires appropriée. Assurez-vous également d'installer toutes les dépendances requises pour votre application.</p>
+
+<p>4. Configurez le serveur web pour exécuter votre application Flask : Configurez le serveur web pour exécuter votre application Flask en utilisant le module WSGI (Web Server Gateway Interface). Cela permet au serveur web de communiquer avec votre application Flask et de gérer les requêtes HTTP.</p>
+
+<h2>Gestion des mises à jour et des sauvegardes</h2>
+<p>Une fois votre application Flask déployée, il est important de mettre en place une stratégie de gestion des mises à jour et des sauvegardes pour assurer la stabilité et la sécurité de votre application. Voici quelques bonnes pratiques à suivre :</p>
+
+<p>1. Planifiez des mises à jour régulières : Assurez-vous de planifier des mises à jour régulières de votre application Flask pour bénéficier des dernières fonctionnalités et des correctifs de sécurité. Suivez les meilleures pratiques de votre serveur web pour effectuer ces mises à jour en minimisant les temps d'arrêt.</p>
+
+<p>2. Effectuez des sauvegardes régulières : Mettez en place un système de sauvegarde régulier pour votre application Flask et sa base de données. Cela vous permettra de restaurer rapidement votre application en cas de problème ou de perte de données.</p>
+
+<p>3. Testez les mises à jour et les sauvegardes : Avant de déployer une mise à jour ou de restaurer une sauvegarde, assurez-vous de les tester dans un environnement de test pour éviter tout impact négatif sur votre application en production.</p>
+
+<p>En suivant ces bonnes pratiques, vous pourrez déployer et maintenir votre application Flask de manière efficace et sécurisée.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

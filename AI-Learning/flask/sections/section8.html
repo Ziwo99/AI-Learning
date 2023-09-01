@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Bonnes pratiques et optimisation</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structure de projet recommandée</h2>
+<p>Une structure de projet bien organisée est essentielle pour maintenir un code Flask propre et facilement maintenable. Voici une structure de projet recommandée :</p>
+
+<pre><code>my_project/
+├── app/
+│   ├── static/
+│   ├── templates/
+│   ├── __init__.py
+│   ├── models.py
+│   ├── views.py
+│   ├── forms.py
+│   └── utils.py
+├── config.py
+├── requirements.txt
+└── run.py
+</code></pre>
+
+<p>Dans cette structure, le dossier "app" contient tous les fichiers spécifiques à l'application Flask. Le dossier "static" est utilisé pour stocker les fichiers statiques tels que les fichiers CSS et JavaScript. Le dossier "templates" contient les fichiers HTML utilisés pour le rendu des vues.</p>
+
+<p>Le fichier "__init__.py" est le point d'entrée de l'application Flask. Il initialise l'application et configure les extensions. Le fichier "models.py" contient les définitions des modèles de données utilisés par l'application. Le fichier "views.py" contient les routes et les fonctions de vue. Le fichier "forms.py" contient les définitions des formulaires utilisés par l'application. Le fichier "utils.py" contient des fonctions utilitaires.</p>
+
+<p>Le fichier "config.py" contient la configuration de l'application Flask, telle que les clés secrètes et les paramètres de base de données. Le fichier "requirements.txt" liste toutes les dépendances du projet. Le fichier "run.py" est utilisé pour lancer l'application Flask.</p>
+
+<h2>Tests unitaires avec Flask-Testing</h2>
+<p>Les tests unitaires sont essentiels pour s'assurer que votre application Flask fonctionne correctement. Flask-Testing est une extension Flask qui facilite l'écriture de tests unitaires. Voici un exemple de test unitaire avec Flask-Testing :</p>
+
+<pre><code>import unittest
+from flask_testing import TestCase
+from app import create_app, db
+
+class MyTestCase(TestCase):
+    def create_app(self):
+        app = create_app('testing')
+        return app
+
+    def setUp(self):
+        db.create_all()
+
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
+
+    def test_my_function(self):
+        # Test your function here
+        pass
+
+if __name__ == '__main__':
+    unittest.main()
+</code></pre>
+
+<p>Dans cet exemple, nous créons une classe de test qui hérite de la classe TestCase de Flask-Testing. La méthode create_app() est utilisée pour créer une instance de l'application Flask en mode "testing". La méthode setUp() est utilisée pour configurer l'environnement de test avant chaque test, et la méthode tearDown() est utilisée pour nettoyer l'environnement de test après chaque test.</p>
+
+<p>Vous pouvez ensuite écrire vos tests dans des méthodes commençant par "test_". Utilisez les assertions de la bibliothèque de tests unitaires de votre choix pour vérifier les résultats attendus.</p>
+
+<h2>Optimisation des performances</h2>
+<p>L'optimisation des performances est importante pour garantir une expérience utilisateur fluide. Voici quelques conseils pour optimiser les performances de votre application Flask :</p>
+
+<ul>
+  <li>Utilisez le cache pour stocker les données fréquemment utilisées et réduire les requêtes à la base de données.</li>
+  <li>Utilisez des requêtes SQL efficaces en évitant les jointures coûteuses et en utilisant des index appropriés.</li>
+  <li>Utilisez des outils de surveillance des performances tels que Flask-Profiler pour identifier les goulots d'étranglement et les zones de code lentes.</li>
+  <li>Optimisez les requêtes de base de données en utilisant des techniques telles que le chargement paresseux et le prefetching.</li>
+  <li>Utilisez des techniques de mise en cache côté client, telles que la mise en cache des fichiers statiques avec des en-têtes de cache.</li>
+</ul>
+
+<h2>Gestion des erreurs et des logs</h2>
+<p>La gestion des erreurs est essentielle pour garantir la stabilité de votre application Flask. Voici quelques bonnes pratiques pour gérer les erreurs :</p>
+
+<ul>
+  <li>Utilisez des gestionnaires d'erreurs Flask pour capturer les erreurs et afficher des pages d'erreur personnalisées.</li>
+  <li>Enregistrez les erreurs dans des fichiers de logs pour faciliter le débogage.</li>
+  <li>Utilisez des outils de suivi des erreurs tels que Sentry pour être averti des erreurs en temps réel.</li>
+  <li>Utilisez des tests unitaires pour vérifier le comportement attendu en cas d'erreur.</li>
+</ul>
+
+<p>En suivant ces bonnes pratiques et en optimisant votre application Flask, vous pouvez garantir un code de qualité professionnelle et des performances optimales.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Les bases de Flask</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structure d'une application Flask</h2>
+<p>Une application Flask est généralement organisée en utilisant une structure de répertoires spécifique. Voici une structure de projet recommandée :</p>
+<pre><code>myapp/
+    app.py
+    templates/
+        index.html
+    static/
+        css/
+            style.css
+        js/
+            script.js
+</code></pre>
+<p>Dans cette structure, le fichier <code>app.py</code> est le point d'entrée de l'application Flask. Le répertoire <code>templates</code> contient les fichiers HTML utilisés pour le rendu des vues, tandis que le répertoire <code>static</code> contient les fichiers statiques tels que les fichiers CSS et JavaScript.</p>
+
+<h2>Routes et vues</h2>
+<p>Les routes dans Flask sont utilisées pour associer des URL spécifiques à des fonctions de vue. Une fonction de vue est une fonction Python qui renvoie une réponse HTTP, généralement une page HTML.</p>
+<p>Voici un exemple de définition d'une route dans Flask :</p>
+<pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return 'Hello, Flask!'
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<p>Dans cet exemple, la route <code>@app.route('/')</code> associe l'URL racine à la fonction <code>index()</code>. Lorsque l'URL racine est accédée, la fonction <code>index()</code> est appelée et renvoie la chaîne de caractères 'Hello, Flask!' en réponse.</p>
+
+<h2>Modèles de rendu</h2>
+<p>Les modèles de rendu dans Flask sont utilisés pour générer des pages HTML dynamiques en utilisant des modèles pré-définis. Flask utilise le moteur de rendu Jinja2 par défaut.</p>
+<p>Voici un exemple de rendu d'un modèle dans Flask :</p>
+<pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html', name='Flask')
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<p>Dans cet exemple, la fonction <code>render_template()</code> est utilisée pour rendre le modèle <code>index.html</code> en utilisant le moteur de rendu Jinja2. Le modèle peut contenir des variables, qui peuvent être passées à la fonction <code>render_template()</code> en tant qu'arguments nommés.</p>
+
+<h2>Gestion des formulaires</h2>
+<p>La gestion des formulaires dans Flask permet de récupérer les données soumises par les utilisateurs via des formulaires HTML. Flask fournit un module appelé Flask-WTF pour faciliter la gestion des formulaires.</p>
+<p>Voici un exemple de gestion d'un formulaire dans Flask :</p>
+<pre><code>from flask import Flask, render_template, request
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'mysecretkey'
+
+class MyForm(FlaskForm):
+    name = StringField('Name')
+    submit = SubmitField('Submit')
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    form = MyForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        return 'Hello, ' + name + '!'
+    return render_template('index.html', form=form)
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<p>Dans cet exemple, nous définissons une classe de formulaire <code>MyForm</code> qui contient un champ de texte <code>name</code> et un bouton de soumission <code>submit</code>. Lorsque le formulaire est soumis, la fonction <code>index()</code> récupère les données du champ de texte et les affiche dans la réponse.</p>
+
+<h2>Gestion des erreurs</h2>
+<p>La gestion des erreurs dans Flask permet de gérer les erreurs HTTP et de personnaliser les pages d'erreur affichées aux utilisateurs.</p>
+<p>Voici un exemple de gestion d'une erreur 404 dans Flask :</p>
+<pre><code>from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html'), 404
+
+if __name__ == '__main__':
+    app.run()
+</code></pre>
+<p>Dans cet exemple, la fonction <code>page_not_found()</code> est décorée avec <code>@app.errorhandler(404)</code>, ce qui signifie qu'elle sera appelée lorsque l'erreur 404 se produit. La fonction renvoie le modèle <code>404.html</code> en réponse avec le code d'état HTTP 404.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

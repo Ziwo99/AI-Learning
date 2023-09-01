@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Extensions et bibliothèques Flask</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Flask-WTF : gestion des formulaires avancée</h2>
+<p>Flask-WTF est une extension Flask qui facilite la gestion des formulaires dans une application Flask. Il fournit des fonctionnalités avancées pour la validation des données, la protection contre les attaques CSRF (Cross-Site Request Forgery) et la génération automatique de formulaires HTML.</p>
+
+<p>Pour commencer à utiliser Flask-WTF, vous devez l'installer en exécutant la commande suivante dans votre environnement virtuel :</p>
+
+<pre><code>pip install Flask-WTF</code></pre>
+
+<p>Une fois installé, vous pouvez l'importer dans votre application Flask :</p>
+
+<pre><code>from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email, EqualTo</code></pre>
+
+<p>Flask-WTF utilise des classes pour représenter les formulaires. Vous pouvez créer une classe de formulaire en héritant de la classe FlaskForm. Chaque champ du formulaire est représenté par une instance de classe, telle que StringField, PasswordField, etc.</p>
+
+<p>Voici un exemple de classe de formulaire Flask-WTF :</p>
+
+<pre><code>class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Mot de passe', validators=[DataRequired()])
+    submit = SubmitField('Se connecter')</code></pre>
+
+<p>Dans cet exemple, nous avons créé un formulaire de connexion avec deux champs : email et password. Les champs StringField et PasswordField prennent un libellé en premier argument et une liste de validateurs en deuxième argument.</p>
+
+<p>Pour afficher le formulaire dans une vue Flask, vous pouvez utiliser la méthode render_template et passer l'instance du formulaire en tant que contexte :</p>
+
+<pre><code>from flask import render_template
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        # Traitement du formulaire
+        return 'Connexion réussie'
+    return render_template('login.html', form=form)</code></pre>
+
+<p>Dans cet exemple, nous avons associé la vue /login à la fonction login(). Nous créons une instance du formulaire LoginForm et la passons à la vue via le contexte render_template. Lorsque le formulaire est soumis, nous vérifions sa validité à l'aide de la méthode validate_on_submit(). Si le formulaire est valide, nous pouvons effectuer le traitement approprié.</p>
+
+<h2>Flask-RESTful : création d'une API REST</h2>
+<p>Flask-RESTful est une extension Flask qui facilite la création d'une API REST (Representational State Transfer) dans une application Flask. Il fournit des fonctionnalités pour la définition des ressources, la gestion des requêtes HTTP et la sérialisation des données.</p>
+
+<p>Pour commencer à utiliser Flask-RESTful, vous devez l'installer en exécutant la commande suivante dans votre environnement virtuel :</p>
+
+<pre><code>pip install Flask-RESTful</code></pre>
+
+<p>Une fois installé, vous pouvez l'importer dans votre application Flask :</p>
+
+<pre><code>from flask_restful import Api, Resource</code></pre>
+
+<p>Flask-RESTful utilise des classes pour représenter les ressources de l'API. Vous pouvez créer une classe de ressource en héritant de la classe Resource. Chaque méthode de la classe de ressource correspond à une action sur la ressource, telle que la récupération, la création, la mise à jour ou la suppression.</p>
+
+<p>Voici un exemple de classe de ressource Flask-RESTful :</p>
+
+<pre><code>class TodoResource(Resource):
+    def get(self, todo_id):
+        # Récupérer une tâche par ID
+        pass
+
+    def put(self, todo_id):
+        # Mettre à jour une tâche par ID
+        pass
+
+    def delete(self, todo_id):
+        # Supprimer une tâche par ID
+        pass</code></pre>
+
+<p>Dans cet exemple, nous avons créé une classe de ressource TodoResource avec trois méthodes : get, put et delete. Chaque méthode correspond à une action sur une tâche identifiée par todo_id.</p>
+
+<p>Pour ajouter les ressources à votre API Flask-RESTful, vous devez créer une instance de la classe Api et associer les ressources aux routes :</p>
+
+<pre><code>api = Api(app)
+api.add_resource(TodoResource, '/todos/&lt;int:todo_id&gt;')</code></pre>
+
+<p>Dans cet exemple, nous avons créé une instance de la classe Api et ajouté la ressource TodoResource à la route /todos/&lt;int:todo_id&gt;. L'identifiant de la tâche est passé en tant que paramètre de la route.</p>
+
+<h2>Flask-Mail : envoi d'e-mails</h2>
+<p>Flask-Mail est une extension Flask qui facilite l'envoi d'e-mails dans une application Flask. Il fournit des fonctionnalités pour la configuration des paramètres SMTP, la création de messages et l'envoi d'e-mails.</p>
+
+<p>Pour commencer à utiliser Flask-Mail, vous devez l'installer en exécutant la commande suivante dans votre environnement virtuel :</p>
+
+<pre><code>pip install Flask-Mail</code></pre>
+
+<p>Une fois installé, vous pouvez l'importer dans votre application Flask :</p>
+
+<pre><code>from flask_mail import Mail, Message</code></pre>
+
+<p>Pour configurer Flask-Mail, vous devez définir les paramètres SMTP dans votre fichier de configuration Flask :</p>
+
+<pre><code>app.config['MAIL_SERVER'] = 'smtp.example.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your-email@example.com'
+app.config['MAIL_PASSWORD'] = 'your-password'</code></pre>
+
+<p>Une fois configuré, vous pouvez créer une instance de la classe Mail :</p>
+
+<pre><code>mail = Mail(app)</code></pre>
+
+<p>Pour envoyer un e-mail, vous pouvez créer une instance de la classe Message et l'envoyer via la méthode send() :</p>
+
+<pre><code>msg = Message('Sujet de l\'e-mail', sender='your-email@example.com', recipients=['recipient@example.com'])
+msg.body = 'Contenu de l\'e-mail'
+mail.send(msg)</code></pre>
+
+<p>Dans cet exemple, nous avons créé un message avec un sujet, un expéditeur et un ou plusieurs destinataires. Nous avons également défini le contenu de l'e-mail en utilisant la propriété body du message. Enfin, nous avons envoyé l'e-mail en utilisant la méthode send() de l'instance Mail.</p>
+
+<h2>Flask-Cache : mise en cache des données</h2>
+<p>Flask-Cache est une extension Flask qui facilite la mise en cache des données dans une application Flask. Il fournit des fonctionnalités pour la configuration du cache, la gestion des clés de cache et la gestion des durées de vie des données mises en cache.</p>
+
+<p>Pour commencer à utiliser Flask-Cache, vous devez l'installer en exécutant la commande suivante dans votre environnement virtuel :</p>
+
+<pre><code>pip install Flask-Cache</code></pre>
+
+<p>Une fois installé, vous pouvez l'importer dans votre application Flask :</p>
+
+<pre><code>from flask_cache import Cache</code></pre>
+
+<p>Pour configurer Flask-Cache, vous devez définir les paramètres de cache dans votre fichier de configuration Flask :</p>
+
+<pre><code>app.config['CACHE_TYPE'] = 'simple'</code></pre>
+
+<p>Une fois configuré, vous pouvez créer une instance de la classe Cache :</p>
+
+<pre><code>cache = Cache(app)</code></pre>
+
+<p>Pour mettre en cache des données, vous pouvez utiliser le décorateur cache.cached :</p>
+
+<pre><code>@app.route('/data')
+@cache.cached(timeout=60)
+def get_data():
+    # Récupérer les données
+    return data</code></pre>
+
+<p>Dans cet exemple, nous avons utilisé le décorateur cache.cached pour mettre en cache les données de la vue get_data(). Le paramètre timeout spécifie la durée de vie du cache en secondes. Si les données sont déjà mises en cache, elles seront renvoyées directement sans exécuter à nouveau la vue.</p>
+
+<p>Vous pouvez également utiliser d'autres méthodes de mise en cache, telles que cache.memoize et cache.memoize_timeout, pour mettre en cache des fonctions et des résultats de calculs.</p>
+
+<p>Ce sont là quelques-unes des extensions et bibliothèques populaires disponibles pour Flask. Elles vous permettent d'ajouter des fonctionnalités avancées à votre application Flask et de gagner du temps dans le développement. N'hésitez pas à explorer davantage ces extensions et à les intégrer dans vos projets Flask.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

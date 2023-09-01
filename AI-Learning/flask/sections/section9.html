@@ -1,0 +1,470 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9 : Projets pratiques</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Création d'un blog avec Flask</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer un blog avec Flask. Un blog est une application web qui permet aux utilisateurs de publier des articles, de les lire et de les commenter. Nous allons voir comment mettre en place les fonctionnalités essentielles d'un blog, telles que la création d'un compte utilisateur, la publication d'articles, la gestion des commentaires, etc.</p>
+
+<p>Pour commencer, nous allons créer une structure de projet Flask pour notre blog. Voici un exemple de structure de projet recommandée :</p>
+
+<pre><code>blog/
+    app/
+        __init__.py
+        models.py
+        views.py
+        templates/
+            base.html
+            home.html
+            auth/
+                login.html
+                register.html
+            blog/
+                create.html
+                edit.html
+                view.html
+        static/
+            css/
+                style.css
+            js/
+                script.js
+    config.py
+    run.py
+</code></pre>
+
+<p>Dans le fichier <code>app/__init__.py</code>, nous allons initialiser notre application Flask et configurer les extensions nécessaires. Voici un exemple de code :</p>
+
+<pre><code>from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your-secret-key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+
+db = SQLAlchemy(app)
+
+from app import models, views
+</code></pre>
+
+<p>Dans le fichier <code>app/models.py</code>, nous allons définir les modèles de données pour notre blog. Voici un exemple de code :</p>
+
+<pre><code>from app import db
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('posts', lazy=True))
+
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('comments', lazy=True))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
+    post = db.relationship('Post', backref=db.backref('comments', lazy=True))
+</code></pre>
+
+<p>Dans le fichier <code>app/views.py</code>, nous allons définir les routes et les vues pour notre blog. Voici un exemple de code :</p>
+
+<pre><code>from app import app, db
+from flask import render_template, redirect, url_for, request
+from app.models import User, Post, Comment
+
+@app.route('/')
+def home():
+    posts = Post.query.all()
+    return render_template('home.html', posts=posts)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    # Code pour la gestion de la connexion utilisateur
+    pass
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # Code pour la gestion de l'inscription utilisateur
+    pass
+
+@app.route('/create', methods=['GET', 'POST'])
+def create_post():
+    # Code pour la création d'un nouvel article
+    pass
+
+@app.route('/edit/<int:post_id>', methods=['GET', 'POST'])
+def edit_post(post_id):
+    # Code pour la modification d'un article existant
+    pass
+
+@app.route('/view/<int:post_id>', methods=['GET', 'POST'])
+def view_post(post_id):
+    # Code pour afficher un article et ses commentaires
+    pass
+
+@app.route('/comment/<int:post_id>', methods=['POST'])
+def add_comment(post_id):
+    # Code pour ajouter un commentaire à un article
+    pass
+</code></pre>
+
+<p>Dans les fichiers HTML situés dans le dossier <code>app/templates</code>, nous allons créer les templates pour notre blog. Voici un exemple de template pour la page d'accueil (<code>home.html</code>) :</p>
+
+<pre><code>&lt;h1&gt;Bienvenue sur mon blog&lt;/h1&gt;
+
+&lt;ul&gt;
+    {% for post in posts %}
+    &lt;li&gt;
+        &lt;h2&gt;{{ post.title }}&lt;/h2&gt;
+        &lt;p&gt;{{ post.content }}&lt;/p&gt;
+        &lt;a href="{{ url_for('view_post', post_id=post.id) }}"&gt;Lire la suite&lt;/a&gt;
+    &lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>Ceci est juste un exemple pour vous montrer comment utiliser les templates avec Flask. Vous pouvez personnaliser les templates selon vos besoins.</p>
+
+<p>C'est tout pour la création d'un blog avec Flask. Vous pouvez maintenant ajouter d'autres fonctionnalités à votre blog, telles que la gestion des utilisateurs, la pagination des articles, la recherche, etc. N'hésitez pas à explorer la documentation de Flask pour en savoir plus sur les fonctionnalités avancées.</p>
+
+<h2>Développement d'une application de gestion de tâches</h2>
+<p>Dans cette sous-section, nous allons apprendre à développer une application de gestion de tâches avec Flask. Une application de gestion de tâches permet aux utilisateurs de créer, modifier et supprimer des tâches, ainsi que de les marquer comme terminées ou non.</p>
+
+<p>Pour commencer, nous allons créer une structure de projet Flask pour notre application de gestion de tâches. Voici un exemple de structure de projet recommandée :</p>
+
+<pre><code>task_manager/
+    app/
+        __init__.py
+        models.py
+        views.py
+        templates/
+            base.html
+            home.html
+            tasks/
+                create.html
+                edit.html
+                view.html
+        static/
+            css/
+                style.css
+            js/
+                script.js
+    config.py
+    run.py
+</code></pre>
+
+<p>Dans le fichier <code>app/__init__.py</code>, nous allons initialiser notre application Flask et configurer les extensions nécessaires. Voici un exemple de code :</p>
+
+<pre><code>from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your-secret-key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///task_manager.db'
+
+db = SQLAlchemy(app)
+
+from app import models, views
+</code></pre>
+
+<p>Dans le fichier <code>app/models.py</code>, nous allons définir les modèles de données pour notre application de gestion de tâches. Voici un exemple de code :</p>
+
+<pre><code>from app import db
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    completed = db.Column(db.Boolean, default=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('tasks', lazy=True))
+</code></pre>
+
+<p>Dans le fichier <code>app/views.py</code>, nous allons définir les routes et les vues pour notre application de gestion de tâches. Voici un exemple de code :</p>
+
+<pre><code>from app import app, db
+from flask import render_template, redirect, url_for, request
+from app.models import User, Task
+
+@app.route('/')
+def home():
+    tasks = Task.query.all()
+    return render_template('home.html', tasks=tasks)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    # Code pour la gestion de la connexion utilisateur
+    pass
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    # Code pour la gestion de l'inscription utilisateur
+    pass
+
+@app.route('/tasks/create', methods=['GET', 'POST'])
+def create_task():
+    # Code pour la création d'une nouvelle tâche
+    pass
+
+@app.route('/tasks/edit/<int:task_id>', methods=['GET', 'POST'])
+def edit_task(task_id):
+    # Code pour la modification d'une tâche existante
+    pass
+
+@app.route('/tasks/view/<int:task_id>', methods=['GET', 'POST'])
+def view_task(task_id):
+    # Code pour afficher une tâche
+    pass
+
+@app.route('/tasks/delete/<int:task_id>', methods=['POST'])
+def delete_task(task_id):
+    # Code pour supprimer une tâche
+    pass
+
+@app.route('/tasks/complete/<int:task_id>', methods=['POST'])
+def complete_task(task_id):
+    # Code pour marquer une tâche comme terminée
+    pass
+</code></pre>
+
+<p>Dans les fichiers HTML situés dans le dossier <code>app/templates</code>, nous allons créer les templates pour notre application de gestion de tâches. Voici un exemple de template pour la page d'accueil (<code>home.html</code>) :</p>
+
+<pre><code>&lt;h1&gt;Mes tâches&lt;/h1&gt;
+
+&lt;ul&gt;
+    {% for task in tasks %}
+    &lt;li&gt;
+        &lt;h2&gt;{{ task.title }}&lt;/h2&gt;
+        &lt;p&gt;{{ task.description }}&lt;/p&gt;
+        {% if task.completed %}
+        &lt;p&gt;Terminée&lt;/p&gt;
+        {% else %}
+        &lt;p&gt;En cours&lt;/p&gt;
+        {% endif %}
+        &lt;a href="{{ url_for('view_task', task_id=task.id) }}"&gt;Voir&lt;/a&gt;
+    &lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>Ceci est juste un exemple pour vous montrer comment utiliser les templates avec Flask. Vous pouvez personnaliser les templates selon vos besoins.</p>
+
+<p>C'est tout pour le développement d'une application de gestion de tâches avec Flask. Vous pouvez maintenant ajouter d'autres fonctionnalités à votre application, telles que la recherche de tâches, la gestion des utilisateurs, la pagination, etc. N'hésitez pas à explorer la documentation de Flask pour en savoir plus sur les fonctionnalités avancées.</p>
+
+<h2>Création d'une API REST avec Flask</h2>
+<p>Dans cette sous-section, nous allons apprendre à créer une API REST avec Flask. Une API REST (Representational State Transfer) est une interface qui permet aux applications de communiquer entre elles en utilisant des requêtes HTTP. Nous allons voir comment mettre en place les fonctionnalités essentielles d'une API REST, telles que la création, la lecture, la mise à jour et la suppression de ressources.</p>
+
+<p>Pour commencer, nous allons créer une structure de projet Flask pour notre API REST. Voici un exemple de structure de projet recommandée :</p>
+
+<pre><code>api/
+    app/
+        __init__.py
+        models.py
+        views.py
+    config.py
+    run.py
+</code></pre>
+
+<p>Dans le fichier <code>app/__init__.py</code>, nous allons initialiser notre application Flask et configurer les extensions nécessaires. Voici un exemple de code :</p>
+
+<pre><code>from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your-secret-key'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///api.db'
+
+db = SQLAlchemy(app)
+
+from app import models, views
+</code></pre>
+
+<p>Dans le fichier <code>app/models.py</code>, nous allons définir les modèles de données pour notre API REST. Voici un exemple de code :</p>
+
+<pre><code>from app import db
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+</code></pre>
+
+<p>Dans le fichier <code>app/views.py</code>, nous allons définir les routes et les vues pour notre API REST. Voici un exemple de code :</p>
+
+<pre><code>from app import app, db
+from flask import jsonify, request
+from app.models import User, Product
+
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify({'users': [user.serialize() for user in users]})
+
+@app.route('/api/users/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    user = User.query.get(user_id)
+    return jsonify(user.serialize())
+
+@app.route('/api/products', methods=['GET'])
+def get_products():
+    products = Product.query.all()
+    return jsonify({'products': [product.serialize() for product in products]})
+
+@app.route('/api/products/<int:product_id>', methods=['GET'])
+def get_product(product_id):
+    product = Product.query.get(product_id)
+    return jsonify(product.serialize())
+
+@app.route('/api/products', methods=['POST'])
+def create_product():
+    data = request.get_json()
+    name = data['name']
+    price = data['price']
+    product = Product(name=name, price=price)
+    db.session.add(product)
+    db.session.commit()
+    return jsonify(product.serialize()), 201
+
+@app.route('/api/products/<int:product_id>', methods=['PUT'])
+def update_product(product_id):
+    product = Product.query.get(product_id)
+    data = request.get_json()
+    product.name = data['name']
+    product.price = data['price']
+    db.session.commit()
+    return jsonify(product.serialize())
+
+@app.route('/api/products/<int:product_id>', methods=['DELETE'])
+def delete_product(product_id):
+    product = Product.query.get(product_id)
+    db.session.delete(product)
+    db.session.commit()
+    return jsonify({'message': 'Product deleted'})
+</code></pre>
+
+<p>C'est tout pour la création d'une API REST avec Flask. Vous pouvez maintenant tester votre API en utilisant des outils tels que Postman ou cURL. N'hésitez pas à explorer la documentation de Flask pour en savoir plus sur les fonctionnalités avancées de création d'API.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

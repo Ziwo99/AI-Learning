@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3 : Base de données avec Flask</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration d'une base de données</h2>
+<p>La configuration d'une base de données est une étape essentielle dans le développement d'une application Flask. Flask offre une grande flexibilité en termes de choix de base de données, mais l'une des options les plus populaires est Flask-SQLAlchemy.</p>
+<p>Pour configurer une base de données avec Flask-SQLAlchemy, vous devez tout d'abord installer le package en utilisant la commande suivante :</p>
+<pre><code>pip install flask-sqlalchemy</code></pre>
+<p>Une fois que vous avez installé Flask-SQLAlchemy, vous pouvez commencer à configurer votre base de données dans votre application Flask. Voici un exemple de configuration :</p>
+<pre><code>from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)</code></pre>
+<p>Dans cet exemple, nous importons la classe Flask et la classe SQLAlchemy depuis les packages correspondants. Ensuite, nous créons une instance de l'application Flask et nous configurons l'URL de la base de données en utilisant la clé 'SQLALCHEMY_DATABASE_URI' dans l'objet de configuration de l'application. Ici, nous utilisons une base de données SQLite, mais vous pouvez également utiliser d'autres bases de données comme MySQL ou PostgreSQL.</p>
+<p>Une fois que vous avez configuré votre base de données, vous pouvez créer des modèles de données pour représenter les tables de votre base de données.</p>
+
+<h2>Modèles de données avec Flask-SQLAlchemy</h2>
+<p>Les modèles de données sont des classes qui représentent les tables de votre base de données. Ils sont utilisés pour effectuer des opérations de création, de lecture, de mise à jour et de suppression (CRUD) sur les données de votre application.</p>
+<p>Voici un exemple de modèle de données avec Flask-SQLAlchemy :</p>
+<pre><code>from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '&lt;User %r&gt;' % self.username</code></pre>
+<p>Dans cet exemple, nous importons la classe SQLAlchemy et nous créons une instance de la classe User qui hérite de la classe Model de SQLAlchemy. Nous définissons ensuite les colonnes de la table User en utilisant les attributs de classe id, username et email. Nous utilisons également des contraintes comme primary_key, unique et nullable pour spécifier les règles de validation des données.</p>
+<p>Une fois que vous avez défini vos modèles de données, vous pouvez effectuer des opérations CRUD sur votre base de données en utilisant les méthodes fournies par SQLAlchemy, telles que add(), commit(), query(), etc.</p>
+
+<h2>Requêtes et filtres</h2>
+<p>Les requêtes et les filtres sont utilisés pour récupérer des données spécifiques à partir de votre base de données. Flask-SQLAlchemy fournit une syntaxe simple et expressive pour effectuer des requêtes et des filtres.</p>
+<p>Voici quelques exemples de requêtes et de filtres avec Flask-SQLAlchemy :</p>
+<pre><code># Récupérer tous les utilisateurs
+users = User.query.all()
+
+# Récupérer un utilisateur par son identifiant
+user = User.query.get(1)
+
+# Récupérer les utilisateurs dont le nom d'utilisateur contient 'john'
+users = User.query.filter(User.username.like('%john%')).all()</code></pre>
+<p>Dans ces exemples, nous utilisons la méthode query() pour créer une requête sur la table User. Ensuite, nous utilisons les méthodes all(), get() et filter() pour spécifier les critères de recherche. La méthode all() renvoie tous les enregistrements correspondants, la méthode get() renvoie un enregistrement spécifique par son identifiant, et la méthode filter() permet de spécifier des filtres plus complexes en utilisant des opérateurs comme like() et les jokers %.</p>
+
+<h2>Migrations de base de données</h2>
+<p>Les migrations de base de données sont utilisées pour mettre à jour la structure de votre base de données au fil du temps, en ajoutant de nouvelles tables, en modifiant des colonnes existantes, etc. Flask-SQLAlchemy utilise un outil appelé Flask-Migrate pour gérer les migrations de base de données.</p>
+<p>Voici comment utiliser Flask-Migrate pour effectuer des migrations de base de données :</p>
+<pre><code># Installer Flask-Migrate
+pip install flask-migrate
+
+# Initialiser les migrations
+flask db init
+
+# Générer une migration
+flask db migrate -m "Ajouter la table 'Post'"
+
+# Appliquer les migrations
+flask db upgrade</code></pre>
+<p>Dans ces exemples, nous utilisons la commande flask db init pour initialiser les migrations dans notre application Flask. Ensuite, nous utilisons la commande flask db migrate pour générer une nouvelle migration avec un message descriptif. Enfin, nous utilisons la commande flask db upgrade pour appliquer les migrations et mettre à jour la structure de la base de données.</p>
+<p>Il est important de noter que Flask-Migrate utilise des fichiers de migration pour stocker les modifications de la base de données. Ces fichiers sont générés automatiquement et peuvent être révisés avant d'être appliqués.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

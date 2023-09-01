@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10 : Aller plus loin avec Flask</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation avancée des décorateurs</h2>
+<p>Les décorateurs sont une fonctionnalité puissante de Python et peuvent être utilisés de manière avancée dans Flask pour étendre les fonctionnalités de base du framework. Les décorateurs permettent de modifier le comportement d'une fonction ou d'une classe sans avoir à la modifier directement. Dans le contexte de Flask, les décorateurs sont souvent utilisés pour ajouter des fonctionnalités supplémentaires aux routes.</p>
+
+<p>Par exemple, le décorateur <code>@app.route</code> est utilisé pour définir une route dans une application Flask. Cependant, il existe d'autres décorateurs qui peuvent être utilisés pour ajouter des fonctionnalités supplémentaires, tels que :</p>
+
+<pre><code>@app.before_request</code></pre>
+<p>Ce décorateur permet d'exécuter une fonction avant chaque requête entrante. Cela peut être utilisé pour effectuer des tâches telles que la vérification de l'authentification de l'utilisateur ou la configuration de variables globales.</p>
+
+<pre><code>@app.after_request</code></pre>
+<p>Ce décorateur permet d'exécuter une fonction après chaque requête sortante. Cela peut être utilisé pour effectuer des tâches telles que l'ajout d'en-têtes personnalisés à la réponse ou la modification de la réponse avant qu'elle ne soit renvoyée au client.</p>
+
+<pre><code>@app.errorhandler</code></pre>
+<p>Ce décorateur permet de définir une fonction de gestion des erreurs pour une ou plusieurs exceptions spécifiques. Cela peut être utilisé pour personnaliser la façon dont les erreurs sont traitées dans une application Flask.</p>
+
+<p>Il est également possible de créer ses propres décorateurs personnalisés en utilisant la syntaxe <code>@app.route</code>. Cela permet d'ajouter des fonctionnalités spécifiques à une route, telles que la vérification des autorisations ou la journalisation des requêtes.</p>
+
+<h2>Intégration avec d'autres frameworks et bibliothèques</h2>
+<p>Flask est un framework flexible qui peut être intégré avec d'autres frameworks et bibliothèques pour étendre ses fonctionnalités. Voici quelques exemples d'intégration courante :</p>
+
+<pre><code>Flask-SQLAlchemy</code></pre>
+<p>Flask-SQLAlchemy est une extension qui facilite l'intégration de SQLAlchemy, un ORM (Object-Relational Mapping) populaire, avec Flask. Cela permet de simplifier la gestion des bases de données dans une application Flask en utilisant des modèles de données et des requêtes SQL.</p>
+
+<pre><code>Flask-RESTful</code></pre>
+<p>Flask-RESTful est une extension qui permet de créer facilement une API RESTful dans une application Flask. Cela facilite la création de points de terminaison pour les opérations CRUD (Create, Read, Update, Delete) et la gestion des formats de données tels que JSON.</p>
+
+<pre><code>Flask-Mail</code></pre>
+<p>Flask-Mail est une extension qui facilite l'envoi d'e-mails dans une application Flask. Cela permet d'envoyer des e-mails de manière asynchrone, de gérer les modèles d'e-mails et de gérer les pièces jointes.</p>
+
+<pre><code>Flask-Cache</code></pre>
+<p>Flask-Cache est une extension qui permet de mettre en cache les données dans une application Flask. Cela peut améliorer les performances en évitant de recalculer les données fréquemment utilisées.</p>
+
+<p>Il existe de nombreuses autres extensions et bibliothèques disponibles pour Flask, qui peuvent être utilisées pour ajouter des fonctionnalités supplémentaires à une application. La documentation officielle de Flask est une ressource précieuse pour découvrir et apprendre à utiliser ces extensions.</p>
+
+<h2>Développement d'extensions Flask personnalisées</h2>
+<p>Si les extensions existantes ne répondent pas aux besoins spécifiques d'une application, il est possible de développer ses propres extensions Flask personnalisées. Cela peut être fait en créant une classe qui étend la classe de base d'extension Flask et en implémentant les fonctionnalités souhaitées.</p>
+
+<p>Pour développer une extension Flask personnalisée, il est recommandé de suivre les bonnes pratiques de développement d'extensions Flask, telles que :</p>
+
+<ul>
+  <li>Utiliser un nom de package Python unique pour l'extension</li>
+  <li>Fournir une documentation complète et des exemples d'utilisation</li>
+  <li>Utiliser des tests unitaires pour assurer la qualité de l'extension</li>
+  <li>Publier l'extension sur des plateformes de distribution de packages Python, telles que PyPI, pour faciliter son installation et son utilisation par d'autres développeurs</li>
+</ul>
+
+<p>Le développement d'extensions Flask personnalisées peut être complexe, mais cela offre une grande flexibilité pour répondre aux besoins spécifiques d'une application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

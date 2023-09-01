@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5 : Sécurité dans Flask</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Protection contre les attaques CSRF</h2>
+<p>Flask offre des fonctionnalités intégrées pour protéger votre application contre les attaques CSRF (Cross-Site Request Forgery). Le CSRF est une attaque où un attaquant exploite la confiance d'un utilisateur authentifié pour effectuer des actions non autorisées en son nom.</p>
+
+<p>Pour protéger votre application Flask contre les attaques CSRF, vous pouvez utiliser le module Flask-WTF, qui fournit des fonctionnalités de protection CSRF intégrées. Pour activer la protection CSRF, vous devez générer un jeton CSRF pour chaque formulaire dans votre application Flask.</p>
+
+<p>Voici un exemple de génération d'un jeton CSRF dans un formulaire Flask :</p>
+
+<pre><code>from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+
+class MyForm(FlaskForm):
+    name = StringField('Name')
+    submit = SubmitField('Submit')
+</code></pre>
+
+<p>Dans cet exemple, le formulaire MyForm utilise le champ StringField de Flask-WTF pour le champ "Name" et le champ SubmitField pour le bouton "Submit". Lorsque vous générez le formulaire dans votre vue Flask, Flask-WTF génère automatiquement un jeton CSRF pour vous.</p>
+
+<p>Il est important de noter que Flask-WTF stocke le jeton CSRF dans un cookie sécurisé sur le navigateur de l'utilisateur. Lorsque le formulaire est soumis, Flask-WTF vérifie que le jeton CSRF dans le cookie correspond au jeton CSRF dans le formulaire, ce qui empêche les attaques CSRF.</p>
+
+<h2>Gestion des mots de passe sécurisés</h2>
+<p>La gestion des mots de passe sécurisés est essentielle pour protéger les informations sensibles des utilisateurs dans votre application Flask. Flask propose plusieurs méthodes pour stocker et gérer les mots de passe de manière sécurisée.</p>
+
+<p>Une approche courante consiste à utiliser le module Flask-Bcrypt, qui utilise l'algorithme de hachage bcrypt pour stocker les mots de passe de manière sécurisée. Voici un exemple de hachage d'un mot de passe avec Flask-Bcrypt :</p>
+
+<pre><code>from flask_bcrypt import Bcrypt
+
+bcrypt = Bcrypt()
+
+password = 'my_password'
+hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+print(hashed_password)
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la méthode generate_password_hash de Flask-Bcrypt pour hacher le mot de passe "my_password". Le mot de passe haché est ensuite stocké dans la variable hashed_password.</p>
+
+<p>Lorsque vous devez vérifier si un mot de passe saisi par un utilisateur correspond à un mot de passe haché stocké, vous pouvez utiliser la méthode check_password_hash de Flask-Bcrypt :</p>
+
+<pre><code>password = 'my_password'
+hashed_password = '...' # mot de passe haché stocké
+
+if bcrypt.check_password_hash(hashed_password, password):
+    print('Le mot de passe est valide')
+else:
+    print('Le mot de passe est invalide')
+</code></pre>
+
+<p>Cette méthode compare le mot de passe saisi par l'utilisateur avec le mot de passe haché stocké et renvoie True si les deux correspondent.</p>
+
+<h2>Gestion des sessions sécurisées</h2>
+<p>La gestion des sessions sécurisées est cruciale pour protéger l'authentification et l'autorisation des utilisateurs dans votre application Flask. Flask utilise le module Flask-Session pour gérer les sessions sécurisées.</p>
+
+<p>Pour activer les sessions sécurisées dans votre application Flask, vous devez définir une clé secrète. Cette clé secrète est utilisée pour signer les cookies de session, ce qui empêche les attaquants de falsifier ou de manipuler les cookies de session.</p>
+
+<p>Voici un exemple de configuration des sessions sécurisées dans une application Flask :</p>
+
+<pre><code>from flask import Flask
+from flask_session import Session
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SESSION_TYPE'] = 'filesystem'
+
+Session(app)
+</code></pre>
+
+<p>Dans cet exemple, nous définissons la clé secrète en utilisant la configuration SECRET_KEY de Flask. Nous utilisons également la configuration SESSION_TYPE pour spécifier que nous voulons stocker les sessions dans le système de fichiers.</p>
+
+<p>Une fois que les sessions sécurisées sont activées, vous pouvez les utiliser dans vos vues Flask en utilisant l'objet session. Par exemple, vous pouvez stocker l'ID de l'utilisateur authentifié dans la session :</p>
+
+<pre><code>from flask import session
+
+user_id = 1
+session['user_id'] = user_id
+</code></pre>
+
+<p>Vous pouvez ensuite accéder à l'ID de l'utilisateur dans d'autres vues en utilisant la session :</p>
+
+<pre><code>from flask import session
+
+user_id = session.get('user_id')
+</code></pre>
+
+<p>Il est important de noter que Flask-Session gère automatiquement la sécurisation des cookies de session et la gestion des sessions dans le système de fichiers.</p>
+
+<h2>Gestion des autorisations et des rôles</h2>
+<p>La gestion des autorisations et des rôles est essentielle pour contrôler l'accès des utilisateurs aux fonctionnalités de votre application Flask. Flask propose plusieurs méthodes pour gérer les autorisations et les rôles des utilisateurs.</p>
+
+<p>Une approche courante consiste à utiliser le module Flask-Principal, qui permet de définir des rôles et des autorisations pour chaque utilisateur. Voici un exemple de définition de rôles et d'autorisations avec Flask-Principal :</p>
+
+<pre><code>from flask import Flask
+from flask_principal import Principal, Permission, RoleNeed
+
+app = Flask(__name__)
+principal = Principal(app)
+
+admin_permission = Permission(RoleNeed('admin'))
+
+@app.route('/admin')
+@admin_permission.require(http_exception=403)
+def admin_page():
+    return 'Page d\'administration'
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons le module Flask-Principal pour définir un rôle "admin" et une autorisation "admin_permission" pour accéder à la page d'administration. Lorsque l'utilisateur accède à la page d'administration, Flask-Principal vérifie si l'utilisateur a le rôle "admin" et l'autorisation "admin_permission". Si l'utilisateur ne possède pas ces rôles et autorisations, une erreur 403 est renvoyée.</p>
+
+<p>Vous pouvez également utiliser Flask-Principal pour vérifier les rôles et les autorisations dans vos vues Flask. Par exemple, vous pouvez vérifier si l'utilisateur a le rôle "admin" :</p>
+
+<pre><code>from flask import request
+from flask_principal import RoleNeed, UserNeed
+
+if RoleNeed('admin') in request.user.principal:
+    print('L\'utilisateur a le rôle "admin"')
+</code></pre>
+
+<p>Cette méthode vérifie si l'utilisateur actuel a le rôle "admin" en utilisant l'objet principal de l'utilisateur.</p>
+
+<p>Il est important de noter que Flask-Principal offre une flexibilité pour définir des rôles et des autorisations personnalisés en fonction des besoins de votre application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

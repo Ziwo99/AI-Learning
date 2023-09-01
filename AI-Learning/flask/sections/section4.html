@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Flask Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4 : Authentification et autorisation</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/flask/flask.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Gestion des utilisateurs</h2>
+<p>La gestion des utilisateurs est une partie essentielle de toute application Flask qui nécessite une authentification et une autorisation. Dans cette sous-section, nous allons apprendre comment gérer les utilisateurs dans notre application Flask.</p>
+
+<p>Pour commencer, nous devons créer une table dans notre base de données pour stocker les informations des utilisateurs. Cette table peut contenir des champs tels que l'identifiant de l'utilisateur, son nom, son adresse e-mail et son mot de passe. Nous pouvons utiliser l'extension Flask-SQLAlchemy pour faciliter la création et la gestion de cette table.</p>
+
+<pre><code>from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    email = db.Column(db.String(50), unique=True)
+    password = db.Column(db.String(100))
+
+    def __init__(self, name, email, password):
+        self.name = name
+        self.email = email
+        self.password = password
+</code></pre>
+
+<p>Une fois que nous avons notre modèle de données pour les utilisateurs, nous pouvons commencer à implémenter les fonctionnalités d'inscription, de connexion et de déconnexion dans notre application Flask. Ces fonctionnalités peuvent être implémentées à l'aide des routes et des vues de Flask.</p>
+
+<h2>Authentification avec Flask-Login</h2>
+<p>Flask-Login est une extension Flask qui facilite l'implémentation de l'authentification des utilisateurs dans notre application. Elle fournit des fonctionnalités telles que la gestion des sessions utilisateur, la vérification des informations d'identification et la gestion des utilisateurs connectés.</p>
+
+<p>Pour utiliser Flask-Login, nous devons d'abord initialiser l'extension dans notre application Flask :</p>
+
+<pre><code>from flask_login import LoginManager
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+</code></pre>
+
+<p>Ensuite, nous devons définir une fonction de rappel qui sera appelée pour charger un utilisateur à partir de son identifiant :</p>
+
+<pre><code>@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+</code></pre>
+
+<p>Une fois que nous avons configuré Flask-Login, nous pouvons utiliser ses décorateurs pour protéger certaines vues de notre application. Par exemple, nous pouvons utiliser le décorateur <code>@login_required</code> pour s'assurer que seuls les utilisateurs connectés peuvent accéder à une vue spécifique :</p>
+
+<pre><code>from flask_login import login_required
+
+@app.route('/profile')
+@login_required
+def profile():
+    return 'Profile page'
+</code></pre>
+
+<h2>Autorisation avec Flask-Principal</h2>
+<p>Flask-Principal est une autre extension Flask qui nous permet de gérer l'autorisation des utilisateurs dans notre application. Elle nous permet de définir des rôles et des permissions pour chaque utilisateur, et de restreindre l'accès à certaines vues en fonction de ces rôles et permissions.</p>
+
+<p>Pour utiliser Flask-Principal, nous devons d'abord initialiser l'extension dans notre application Flask :</p>
+
+<pre><code>from flask_principal import Principal
+
+principal = Principal(app)
+</code></pre>
+
+<p>Ensuite, nous pouvons utiliser les décorateurs fournis par Flask-Principal pour définir les rôles et les permissions des utilisateurs, et pour restreindre l'accès à certaines vues :</p>
+
+<pre><code>from flask_principal import Permission, RoleNeed
+
+admin_permission = Permission(RoleNeed('admin'))
+
+@app.route('/admin')
+@admin_permission.require()
+def admin():
+    return 'Admin page'
+</code></pre>
+
+<p>Avec Flask-Principal, nous pouvons également vérifier les rôles et les permissions d'un utilisateur dans nos vues :</p>
+
+<pre><code>from flask_principal import identity_loaded, UserNeed
+
+@identity_loaded.connect_via(app)
+def on_identity_loaded(sender, identity):
+    if hasattr(current_user, 'role'):
+        identity.provides.add(RoleNeed(current_user.role))
+
+    if hasattr(current_user, 'id'):
+        identity.provides.add(UserNeed(current_user.id))
+</code></pre>
+
+<p>Avec ces fonctionnalités d'authentification et d'autorisation mises en place, nous pouvons créer des applications Flask sécurisées et contrôler l'accès des utilisateurs à certaines parties de l'application en fonction de leurs rôles et permissions.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/flask/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/flask/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
