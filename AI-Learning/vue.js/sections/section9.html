@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 9</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 9: Tests et débogage</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les outils de débogage de Vue.js</h2>
+<p>Les outils de débogage de Vue.js sont des outils puissants qui permettent aux développeurs de comprendre et de résoudre les problèmes dans leurs applications Vue.js. Voici quelques-uns des outils de débogage les plus couramment utilisés :</p>
+
+<ul>
+  <li><strong>Vue Devtools :</strong> Il s'agit d'une extension de navigateur qui permet d'inspecter et de déboguer les composants, les états, les événements et les performances de votre application Vue.js. Vous pouvez l'installer dans les navigateurs Chrome et Firefox.</li>
+  <li><strong>Vue CLI :</strong> L'interface de ligne de commande Vue CLI fournit des outils de débogage intégrés pour le développement d'applications Vue.js. Vous pouvez utiliser la commande "vue inspect" pour afficher les configurations internes de votre projet et résoudre les problèmes liés à la configuration.</li>
+  <li><strong>Vue Error Handler :</strong> Vue.js fournit un gestionnaire d'erreurs global qui peut être utilisé pour capturer et gérer les erreurs non interceptées dans votre application. Vous pouvez personnaliser ce gestionnaire pour afficher des messages d'erreur détaillés et les envoyer à un service de suivi des erreurs.</li>
+</ul>
+
+<h2>Les tests unitaires avec Jest</h2>
+<p>Jest est un framework de test JavaScript populaire qui est souvent utilisé pour écrire des tests unitaires dans les applications Vue.js. Il offre une syntaxe simple et expressive pour écrire des tests et fournit des fonctionnalités avancées telles que le mocking, les assertions avancées et la couverture de code.</p>
+
+<p>Voici un exemple de test unitaire avec Jest :</p>
+
+<pre><code>import { mount } from '@vue/test-utils';
+import MyComponent from './MyComponent.vue';
+
+describe('MyComponent', () => {
+  test('affiche le message correct', () => {
+    const wrapper = mount(MyComponent);
+    expect(wrapper.text()).toContain('Bonjour, monde!');
+  });
+});
+</code></pre>
+
+<p>Dans cet exemple, nous importons le composant MyComponent et utilisons la fonction mount de @vue/test-utils pour le monter dans un wrapper. Ensuite, nous utilisons l'assertion expect pour vérifier si le texte du wrapper contient le message "Bonjour, monde!".</p>
+
+<h2>Les tests d'intégration avec Cypress</h2>
+<p>Cypress est un outil de test d'interface utilisateur en bout en bout qui est souvent utilisé pour écrire des tests d'intégration dans les applications Vue.js. Il offre une API simple et puissante pour interagir avec votre application et effectuer des assertions sur son comportement.</p>
+
+<p>Voici un exemple de test d'intégration avec Cypress :</p>
+
+<pre><code>describe('MyApp', () => {
+  it('affiche le message correct', () => {
+    cy.visit('/');
+    cy.contains('Bonjour, monde!').should('be.visible');
+  });
+});
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction describe pour définir une suite de tests pour notre application. Ensuite, nous utilisons la fonction it pour définir un test spécifique. À l'intérieur du test, nous utilisons la fonction cy.visit pour visiter la page d'accueil de notre application, puis la fonction cy.contains pour vérifier si le message "Bonjour, monde!" est visible à l'écran.</p>
+
+<p>Cypress offre également des fonctionnalités avancées telles que l'enregistrement et la relecture des tests, la prise de captures d'écran et la génération de rapports de test détaillés.</p>
+
+<p>Avec Jest et Cypress, vous pouvez couvrir efficacement les tests unitaires et d'intégration de votre application Vue.js, ce qui vous permet de détecter et de résoudre les problèmes plus rapidement.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section8.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section10.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

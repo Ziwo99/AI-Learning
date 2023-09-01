@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 10</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 10: Déploiement et intégration continue</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration de l'environnement de production</h2>
+<p>Lorsque vous êtes prêt à déployer votre application Vue.js en production, il est important de configurer correctement votre environnement pour garantir des performances optimales et une expérience utilisateur fluide. Voici quelques étapes clés pour configurer votre environnement de production :</p>
+
+<p>1. Minification et concaténation des fichiers : Pour réduire la taille des fichiers et améliorer les performances de chargement, il est recommandé de minifier et de concaténer vos fichiers JavaScript et CSS. Vous pouvez utiliser des outils tels que Webpack ou Rollup pour automatiser ce processus.</p>
+
+<p>2. Utilisation de la mise en cache côté client : En utilisant des mécanismes de mise en cache côté client tels que les en-têtes de cache HTTP ou les services de stockage local, vous pouvez réduire le nombre de requêtes réseau et améliorer la vitesse de chargement de votre application.</p>
+
+<p>3. Configuration du serveur web : Assurez-vous que votre serveur web est correctement configuré pour gérer les requêtes de votre application Vue.js. Vous pouvez utiliser des serveurs tels que Nginx ou Apache et configurer des règles spécifiques pour gérer les routes de votre application.</p>
+
+<p>4. Gestion des variables d'environnement : Pour sécuriser vos informations sensibles, telles que les clés d'API ou les identifiants de base de données, vous pouvez utiliser des variables d'environnement. Ces variables peuvent être configurées sur votre serveur de production et utilisées dans votre application Vue.js.</p>
+
+<h2>Optimisation des performances pour la production</h2>
+<p>Une fois que votre environnement de production est configuré, vous pouvez optimiser les performances de votre application Vue.js pour garantir une expérience utilisateur rapide et réactive. Voici quelques techniques d'optimisation courantes :</p>
+
+<p>1. Code splitting : Divisez votre application en plusieurs morceaux (chunks) afin de ne charger que le code nécessaire à chaque page. Cela réduit le temps de chargement initial et permet une navigation plus fluide.</p>
+
+<p>2. Compression GZIP : Activez la compression GZIP sur votre serveur pour réduire la taille des fichiers transférés. Cela permet de réduire le temps de chargement et la consommation de bande passante.</p>
+
+<p>3. Utilisation de CDN : Utilisez un réseau de diffusion de contenu (CDN) pour distribuer vos fichiers statiques tels que les fichiers CSS et JavaScript. Cela permet de réduire la latence et d'améliorer les performances de chargement pour les utilisateurs du monde entier.</p>
+
+<p>4. Optimisation des images : Réduisez la taille de vos images en les compressant et en utilisant des formats d'image plus efficaces tels que WebP. Cela réduit le temps de chargement de vos pages.</p>
+
+<h2>Intégration continue avec Vue.js</h2>
+<p>L'intégration continue (CI) est une pratique de développement qui consiste à automatiser le processus de construction, de test et de déploiement de votre application. Avec Vue.js, vous pouvez facilement intégrer votre projet à des outils populaires tels que Jenkins, Travis CI ou CircleCI. Voici quelques étapes pour intégrer votre projet Vue.js à un système d'intégration continue :</p>
+
+<p>1. Configuration du fichier de configuration CI : Créez un fichier de configuration spécifique à votre système CI (par exemple, .travis.yml pour Travis CI) à la racine de votre projet. Ce fichier contiendra les étapes nécessaires pour construire, tester et déployer votre application.</p>
+
+<p>2. Définition des étapes de construction : Configurez votre système CI pour exécuter les commandes nécessaires pour construire votre application Vue.js. Cela peut inclure l'installation des dépendances, la compilation des fichiers JavaScript et CSS, et la génération des fichiers de production.</p>
+
+<p>3. Exécution des tests : Configurez votre système CI pour exécuter les tests unitaires et d'intégration de votre application. Vous pouvez utiliser des outils tels que Jest ou Cypress pour automatiser ces tests.</p>
+
+<p>4. Déploiement automatique : Configurez votre système CI pour déployer automatiquement votre application sur votre environnement de production une fois que les étapes précédentes ont été réussies. Cela peut inclure le transfert des fichiers de production sur votre serveur, la configuration des variables d'environnement et la mise à jour de votre application en direct.</p>
+
+<p>Avec une intégration continue bien configurée, vous pouvez automatiser le processus de déploiement de votre application Vue.js, réduire les erreurs humaines et garantir une livraison rapide et fiable de votre application.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section9.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section11.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

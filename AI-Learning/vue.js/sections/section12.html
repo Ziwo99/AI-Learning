@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 12</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 12: Vue.js et les frameworks front-end</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Intégration de Vue.js avec Bootstrap</h2>
+<p>L'intégration de Vue.js avec Bootstrap permet de combiner les fonctionnalités et le design de Bootstrap avec la facilité de développement de Vue.js. Bootstrap est un framework front-end populaire qui offre une collection de composants prêts à l'emploi pour la création d'interfaces utilisateur réactives.</p>
+<p>Pour intégrer Vue.js avec Bootstrap, vous pouvez utiliser la bibliothèque officielle appelée "bootstrap-vue". Cette bibliothèque fournit des composants Vue.js qui correspondent aux composants Bootstrap, ce qui facilite leur utilisation dans votre application Vue.js.</p>
+<p>Voici un exemple de code montrant comment intégrer Bootstrap avec Vue.js :</p>
+<pre><code>import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+Vue.use(BootstrapVue);
+
+new Vue({
+  el: '#app',
+  // ...
+});
+</code></pre>
+
+<h2>Intégration de Vue.js avec Tailwind CSS</h2>
+<p>Tailwind CSS est un framework CSS utilitaire qui permet de créer des interfaces utilisateur personnalisées en utilisant des classes prédéfinies. L'intégration de Vue.js avec Tailwind CSS offre une flexibilité maximale pour la conception et le style de votre application Vue.js.</p>
+<p>Pour intégrer Vue.js avec Tailwind CSS, vous pouvez installer la bibliothèque "tailwindcss" et la configurer dans votre projet Vue.js. Ensuite, vous pouvez utiliser les classes Tailwind CSS directement dans vos composants Vue.js pour styliser votre application.</p>
+<p>Voici un exemple de code montrant comment intégrer Tailwind CSS avec Vue.js :</p>
+<pre><code>npm install tailwindcss
+
+// Dans votre fichier de configuration tailwind.config.js
+module.exports = {
+  // ...
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    // ...
+  ],
+}
+
+// Dans votre fichier main.js
+import Vue from 'vue';
+import 'tailwindcss/tailwind.css';
+
+new Vue({
+  el: '#app',
+  // ...
+});
+</code></pre>
+
+<h2>Intégration de Vue.js avec Material Design</h2>
+<p>Material Design est un système de conception développé par Google qui offre des directives et des composants pour créer des interfaces utilisateur modernes et réactives. L'intégration de Vue.js avec Material Design permet d'utiliser les composants et les styles de Material Design dans votre application Vue.js.</p>
+<p>Pour intégrer Vue.js avec Material Design, vous pouvez utiliser la bibliothèque "vuetify". Cette bibliothèque fournit une collection complète de composants Vue.js qui correspondent aux spécifications de Material Design. Vous pouvez les utiliser dans votre application Vue.js pour créer une interface utilisateur attrayante et cohérente.</p>
+<p>Voici un exemple de code montrant comment intégrer Material Design avec Vue.js :</p>
+<pre><code>npm install vuetify
+
+// Dans votre fichier main.js
+import Vue from 'vue';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.css';
+
+Vue.use(Vuetify);
+
+new Vue({
+  el: '#app',
+  // ...
+});
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section11.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section13.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 21</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 21: Vue.js et les bonnes pratiques de développement</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section20.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section22.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Structure de projet recommandée</h2>
+<p>La structure de projet recommandée pour une application Vue.js est basée sur la séparation des préoccupations et la modularité. Voici une structure de projet typique :</p>
+
+<pre><code>my-app/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── views/
+│   ├── router/
+│   ├── store/
+│   ├── utils/
+│   ├── App.vue
+│   └── main.js
+├── tests/
+├── .eslintrc.js
+├── .prettierrc.js
+├── babel.config.js
+├── package.json
+└── README.md
+</code></pre>
+
+<p>Dans cette structure, le dossier <code>public</code> contient le fichier <code>index.html</code> qui est le point d'entrée de l'application. Le dossier <code>src</code> contient tous les fichiers sources de l'application, tels que les composants, les vues, le router, le store, les utilitaires, etc. Le dossier <code>tests</code> contient les fichiers de test de l'application. Les fichiers de configuration tels que <code>.eslintrc.js</code>, <code>.prettierrc.js</code> et <code>babel.config.js</code> sont utilisés pour configurer les outils de linting et de formatage du code. Le fichier <code>package.json</code> contient les dépendances et les scripts de l'application.</p>
+
+<h2>Gestion des dépendances avec Vue.js</h2>
+<p>Pour gérer les dépendances dans une application Vue.js, il est recommandé d'utiliser npm (Node Package Manager) ou yarn. Ces outils permettent d'installer et de gérer les packages nécessaires à votre application.</p>
+
+<p>Pour installer une dépendance, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>npm install nom-du-package
+</code></pre>
+
+<p>ou</p>
+
+<pre><code>yarn add nom-du-package
+</code></pre>
+
+<p>Une fois installée, vous pouvez l'importer dans votre code à l'aide de la syntaxe <code>import</code> ou <code>require</code>.</p>
+
+<h2>Utilisation de linter et de formateurs de code</h2>
+<p>Un linter est un outil qui analyse votre code à la recherche d'erreurs de syntaxe, de problèmes de style et de bonnes pratiques. Il est fortement recommandé d'utiliser un linter dans votre projet Vue.js pour maintenir un code propre et cohérent.</p>
+
+<p>ESLint est l'un des linters les plus populaires pour JavaScript. Pour l'utiliser dans votre projet Vue.js, vous devez d'abord l'installer :</p>
+
+<pre><code>npm install eslint --save-dev
+</code></pre>
+
+<p>ou</p>
+
+<pre><code>yarn add eslint --dev
+</code></pre>
+
+<p>Ensuite, vous pouvez configurer ESLint en créant un fichier <code>.eslintrc.js</code> à la racine de votre projet. Voici un exemple de configuration :</p>
+
+<pre><code>module.exports = {
+  root: true,
+  env: {
+    node: true,
+  },
+  extends: [
+    'plugin:vue/essential',
+    'eslint:recommended',
+  ],
+  parserOptions: {
+    parser: 'babel-eslint',
+  },
+  rules: {
+    // Vos règles personnalisées ici
+  },
+};
+</code></pre>
+
+<p>Pour formater votre code, vous pouvez utiliser Prettier. Prettier est un outil de formatage de code qui vous permet de définir des règles de formatage cohérentes pour votre projet. Pour l'installer, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>npm install prettier --save-dev
+</code></pre>
+
+<p>ou</p>
+
+<pre><code>yarn add prettier --dev
+</code></pre>
+
+<p>Une fois installé, vous pouvez configurer Prettier en créant un fichier <code>.prettierrc.js</code> à la racine de votre projet. Voici un exemple de configuration :</p>
+
+<pre><code>module.exports = {
+  semi: true,
+  trailingComma: 'all',
+  singleQuote: true,
+  printWidth: 80,
+  tabWidth: 2,
+};
+</code></pre>
+
+<p>Pour formater votre code, vous pouvez utiliser la commande suivante :</p>
+
+<pre><code>npx prettier --write .
+</code></pre>
+
+<p>Cette commande formatera tous les fichiers de votre projet selon les règles définies dans le fichier de configuration Prettier.</p>
+
+<p>Il est recommandé d'intégrer ESLint et Prettier dans votre flux de travail de développement en utilisant des extensions pour votre éditeur de code préféré. Cela vous permettra de détecter et de corriger automatiquement les erreurs de linting et de formatage pendant que vous écrivez du code.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section20.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section22.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

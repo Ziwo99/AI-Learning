@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 11</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 11: Vue.js avancé</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les directives personnalisées</h2>
+<p>Les directives personnalisées sont un moyen puissant d'étendre les fonctionnalités de Vue.js. Elles permettent aux développeurs de créer leurs propres directives, qui peuvent être utilisées dans les templates pour manipuler le DOM, ajouter des comportements spécifiques ou effectuer des opérations personnalisées.</p>
+
+<p>Pour créer une directive personnalisée, nous utilisons la méthode <code>directive</code> de l'objet Vue. Voici un exemple de création d'une directive personnalisée appelée <code>v-focus</code> qui met automatiquement le focus sur un élément lorsqu'il est affiché :</p>
+
+<pre><code>Vue.directive('focus', {
+  inserted: function (el) {
+    el.focus();
+  }
+});
+</code></pre>
+
+<p>Dans cet exemple, la méthode <code>inserted</code> est utilisée pour définir le comportement de la directive lorsqu'elle est insérée dans le DOM. Dans ce cas, nous utilisons la méthode <code>focus()</code> pour mettre le focus sur l'élément.</p>
+
+<p>Pour utiliser notre directive personnalisée dans un template, nous utilisons simplement l'attribut correspondant. Par exemple :</p>
+
+<pre><code>&lt;input v-focus&gt;
+</code></pre>
+
+<p>Cette directive mettra automatiquement le focus sur l'élément <code>&lt;input&gt;</code> lorsqu'il sera affiché à l'écran.</p>
+
+<h2>Les mixins avancés</h2>
+<p>Les mixins sont un moyen pratique de réutiliser du code dans plusieurs composants Vue. Ils permettent de regrouper des options de composants réutilisables dans un objet, puis de les inclure dans d'autres composants.</p>
+
+<p>Pour créer un mixin, nous utilisons la méthode <code>Vue.mixin()</code>. Voici un exemple de création d'un mixin appelé <code>loggerMixin</code> qui ajoute une méthode <code>log</code> à tous les composants qui l'utilisent :</p>
+
+<pre><code>var loggerMixin = {
+  methods: {
+    log: function (message) {
+      console.log(message);
+    }
+  }
+};
+
+Vue.mixin(loggerMixin);
+</code></pre>
+
+<p>Une fois que le mixin est créé, nous pouvons l'inclure dans n'importe quel composant en utilisant la propriété <code>mixins</code>. Par exemple :</p>
+
+<pre><code>Vue.component('my-component', {
+  mixins: [loggerMixin],
+  // ...
+});
+</code></pre>
+
+<p>Dans cet exemple, le composant <code>my-component</code> aura maintenant accès à la méthode <code>log</code> définie dans le mixin <code>loggerMixin</code>.</p>
+
+<h2>Les plugins Vue.js</h2>
+<p>Les plugins Vue.js sont des bibliothèques externes qui étendent les fonctionnalités de Vue.js. Ils peuvent ajouter de nouvelles directives, des composants, des méthodes globales ou des fonctionnalités spécifiques à un domaine.</p>
+
+<p>Pour utiliser un plugin Vue.js, nous utilisons la méthode <code>Vue.use()</code>. Voici un exemple d'utilisation du plugin <code>vue-router</code> pour ajouter la fonctionnalité de routage à notre application Vue :</p>
+
+<pre><code>import VueRouter from 'vue-router';
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  // configuration du routage
+});
+
+new Vue({
+  router,
+  // ...
+});
+</code></pre>
+
+<p>Dans cet exemple, nous importons le plugin <code>vue-router</code> et l'utilisons avec la méthode <code>Vue.use()</code>. Ensuite, nous créons une instance de <code>VueRouter</code> avec la configuration du routage, que nous passons ensuite à notre instance Vue.</p>
+
+<p>Une fois que le plugin est installé, nous pouvons utiliser les fonctionnalités qu'il offre dans nos composants. Par exemple, nous pouvons utiliser la directive <code>&lt;router-link&gt;</code> pour créer des liens de navigation :</p>
+
+<pre><code>&lt;router-link to="/about"&gt;À propos&lt;/router-link&gt;
+</code></pre>
+
+<p>Cette directive générera un lien vers la route <code>/about</code> dans notre application.</p>
+
+<h2>Les transitions et animations</h2>
+<p>Les transitions et animations sont des fonctionnalités intégrées à Vue.js qui permettent d'ajouter des effets de transition et d'animation aux éléments lorsqu'ils sont ajoutés, modifiés ou supprimés du DOM.</p>
+
+<p>Pour utiliser les transitions et animations dans Vue.js, nous utilisons les composants <code>&lt;transition&gt;</code> et <code>&lt;transition-group&gt;</code>. Voici un exemple d'utilisation de la transition <code>fade</code> pour ajouter un effet de fondu lorsqu'un élément est ajouté ou supprimé :</p>
+
+<pre><code>&lt;transition name="fade"&gt;
+  &lt;div v-if="show"&gt;Contenu de l'élément&lt;/div&gt;
+&lt;/transition&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la directive <code>v-if</code> pour conditionnellement afficher ou masquer le contenu de l'élément. Lorsque l'élément est ajouté ou supprimé du DOM, la transition <code>fade</code> sera appliquée, créant un effet de fondu.</p>
+
+<p>Nous pouvons également utiliser des animations personnalisées en utilisant les classes CSS. Par exemple :</p>
+
+<pre><code>&lt;transition name="custom-animation"&gt;
+  &lt;div v-if="show"&gt;Contenu de l'élément&lt;/div&gt;
+&lt;/transition&gt;
+</code></pre>
+
+<p>Dans ce cas, nous utilisons la classe CSS <code>custom-animation-enter</code> pour définir l'animation d'entrée, la classe <code>custom-animation-leave</code> pour définir l'animation de sortie, et la classe <code>custom-animation-active</code> pour définir l'état actif de l'animation.</p>
+
+<p>Les transitions et animations peuvent être personnalisées en utilisant les classes CSS et en définissant les propriétés de transition appropriées, telles que la durée, le délai, l'accélération, etc.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section10.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section12.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

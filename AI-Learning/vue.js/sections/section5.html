@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Gestion des formulaires avec Vue.js</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Liaison de données avec les formulaires</h2>
+<p>
+La liaison de données est un concept clé dans Vue.js qui permet de lier les valeurs des éléments de formulaire à des propriétés dans l'instance Vue. Cela permet de synchroniser automatiquement les données du formulaire avec l'état de l'application.
+</p>
+<p>
+Pour lier une valeur d'entrée de formulaire à une propriété dans l'instance Vue, nous utilisons la directive v-model. Par exemple, pour lier une entrée de texte à une propriété nom dans l'instance Vue, nous pouvons utiliser la syntaxe suivante :
+</p>
+<pre><code>&lt;input type="text" v-model="nom"&gt;</code></pre>
+<p>
+Dans cet exemple, chaque fois que l'utilisateur saisit du texte dans l'entrée, la propriété nom dans l'instance Vue sera automatiquement mise à jour avec la valeur saisie.
+</p>
+<p>
+La liaison de données avec les formulaires fonctionne également avec d'autres types d'éléments de formulaire tels que les cases à cocher, les boutons radio et les menus déroulants. Il suffit d'utiliser la directive v-model avec l'élément approprié.
+</p>
+
+<h2>Validation des données</h2>
+<p>
+La validation des données est un aspect important de la gestion des formulaires. Vue.js offre plusieurs mécanismes pour valider les données saisies par l'utilisateur.
+</p>
+<p>
+Une façon courante de valider les données est d'utiliser les attributs HTML5 tels que required, min, max, pattern, etc. Ces attributs peuvent être utilisés en conjonction avec la directive v-model pour effectuer une validation de base côté client.
+</p>
+<p>
+Vue.js offre également une intégration transparente avec des bibliothèques de validation tierces telles que VeeValidate et Vuelidate. Ces bibliothèques fournissent des fonctionnalités avancées de validation des données telles que la validation conditionnelle, la validation asynchrone, les messages d'erreur personnalisés, etc.
+</p>
+<p>
+Voici un exemple d'utilisation de la bibliothèque VeeValidate pour valider un champ de saisie de texte :
+</p>
+<pre><code>&lt;input type="text" v-model="email" v-validate="'required|email'"&gt;
+&lt;span v-show="errors.has('email')" class="error"&gt;{{ errors.first('email') }}&lt;/span&gt;</code></pre>
+<p>
+Dans cet exemple, la directive v-validate est utilisée pour spécifier les règles de validation à appliquer au champ de saisie de texte. La méthode errors.has() est utilisée pour vérifier si des erreurs de validation existent, et la méthode errors.first() est utilisée pour afficher le premier message d'erreur.
+</p>
+
+<h2>Gestion des états de formulaire</h2>
+<p>
+La gestion des états de formulaire est un autre aspect important de la création de formulaires avec Vue.js. Vue.js fournit des fonctionnalités intégrées pour suivre l'état de validation, l'état de soumission et l'état de modification des formulaires.
+</p>
+<p>
+Pour suivre l'état de validation d'un formulaire, nous pouvons utiliser la propriété $invalid de l'instance Vue. Cette propriété renvoie true si le formulaire contient des erreurs de validation et false sinon.
+</p>
+<p>
+Pour suivre l'état de soumission d'un formulaire, nous pouvons utiliser la propriété $submitted de l'instance Vue. Cette propriété renvoie true si le formulaire a été soumis et false sinon.
+</p>
+<p>
+Pour suivre l'état de modification d'un formulaire, nous pouvons utiliser la propriété $dirty de l'instance Vue. Cette propriété renvoie true si le formulaire a été modifié depuis sa dernière soumission et false sinon.
+</p>
+<p>
+Voici un exemple d'utilisation de ces propriétés pour afficher un message d'état du formulaire :
+</p>
+<pre><code>&lt;p v-if="$invalid"&gt;Le formulaire contient des erreurs de validation.&lt;/p&gt;
+&lt;p v-if="$submitted"&gt;Le formulaire a été soumis.&lt;/p&gt;
+&lt;p v-if="$dirty"&gt;Le formulaire a été modifié.&lt;/p&gt;</code></pre>
+
+<h2>Utilisation de composants de formulaire</h2>
+<p>
+Vue.js offre la possibilité de créer des composants de formulaire réutilisables. Les composants de formulaire encapsulent la logique de gestion des formulaires et peuvent être utilisés dans plusieurs parties de l'application.
+</p>
+<p>
+Pour créer un composant de formulaire, nous pouvons utiliser la directive v-model pour lier les valeurs des éléments de formulaire aux propriétés du composant. Nous pouvons également utiliser les directives v-bind et v-on pour transmettre des données et des événements entre le composant de formulaire et son parent.
+</p>
+<p>
+Voici un exemple de création d'un composant de formulaire personnalisé pour la saisie d'un nom :
+</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;label for="nom"&gt;Nom:&lt;/label&gt;
+    &lt;input type="text" v-model="nom"&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      nom: ''
+    };
+  }
+};
+&lt;/script&gt;</code></pre>
+<p>
+Dans cet exemple, le composant de formulaire contient un champ de saisie de texte lié à la propriété nom. Lorsque l'utilisateur saisit du texte dans le champ, la propriété nom sera automatiquement mise à jour.
+</p>
+<p>
+Le composant de formulaire peut ensuite être utilisé dans d'autres parties de l'application en l'incluant avec la balise <custom-form></custom-form>, où custom-form est le nom du composant.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

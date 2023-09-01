@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 14</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 14: Vue.js et les applications mobiles</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Vue.js avec Cordova</h2>
+<p>
+Cordova est un framework de développement d'applications mobiles multiplateformes qui permet d'utiliser des technologies web telles que HTML, CSS et JavaScript pour créer des applications mobiles. Vue.js peut être intégré à Cordova pour développer des applications mobiles avec une interface utilisateur réactive et dynamique.
+</p>
+<p>
+Pour utiliser Vue.js avec Cordova, vous devez d'abord créer un projet Cordova en utilisant la commande suivante :
+</p>
+<pre><code>cordova create my-app com.example.myapp MyApp</code></pre>
+<p>
+Ensuite, vous pouvez ajouter la plateforme Android à votre projet en utilisant la commande suivante :
+</p>
+<pre><code>cordova platform add android</code></pre>
+<p>
+Une fois que vous avez configuré votre projet Cordova, vous pouvez installer Vue.js en utilisant npm (Node Package Manager) :
+</p>
+<pre><code>npm install vue</code></pre>
+<p>
+Ensuite, vous pouvez créer vos composants Vue.js et les intégrer dans votre application Cordova en utilisant les balises <code>&lt;script&gt;</code> et <code>&lt;template&gt;</code>. Vous pouvez également utiliser des directives Vue pour lier des données et gérer les événements.
+</p>
+<p>
+Une fois que vous avez développé votre application Vue.js avec Cordova, vous pouvez la tester en l'exécutant sur un émulateur ou en la déployant sur un appareil Android à l'aide de la commande suivante :
+</p>
+<pre><code>cordova run android</code></pre>
+
+<h2>Utilisation de Vue.js avec Capacitor</h2>
+<p>
+Capacitor est un autre framework de développement d'applications mobiles multiplateformes qui permet d'utiliser des technologies web pour créer des applications mobiles. Il est similaire à Cordova mais offre des fonctionnalités supplémentaires telles que la prise en charge des PWA (Progressive Web Apps) et une meilleure intégration avec les outils de développement modernes.
+</p>
+<p>
+Pour utiliser Vue.js avec Capacitor, vous devez d'abord créer un projet Capacitor en utilisant la commande suivante :
+</p>
+<pre><code>npx @capacitor/cli create</code></pre>
+<p>
+Ensuite, vous pouvez ajouter la plateforme Android à votre projet en utilisant la commande suivante :
+</p>
+<pre><code>npx cap add android</code></pre>
+<p>
+Une fois que vous avez configuré votre projet Capacitor, vous pouvez installer Vue.js en utilisant npm :
+</p>
+<pre><code>npm install vue</code></pre>
+<p>
+Ensuite, vous pouvez créer vos composants Vue.js et les intégrer dans votre application Capacitor en utilisant les balises <code>&lt;script&gt;</code> et <code>&lt;template&gt;</code>. Vous pouvez également utiliser des directives Vue pour lier des données et gérer les événements.
+</p>
+<p>
+Une fois que vous avez développé votre application Vue.js avec Capacitor, vous pouvez la tester en l'exécutant sur un émulateur ou en la déployant sur un appareil Android à l'aide de la commande suivante :
+</p>
+<pre><code>npx cap open android</code></pre>
+
+<h2>Utilisation de Vue.js avec NativeScript</h2>
+<p>
+NativeScript est un framework de développement d'applications mobiles qui permet de créer des applications natives pour iOS et Android en utilisant des technologies web. Il offre une intégration étroite avec les API natives des appareils mobiles, ce qui permet de créer des applications performantes et réactives.
+</p>
+<p>
+Pour utiliser Vue.js avec NativeScript, vous devez d'abord créer un projet NativeScript en utilisant la commande suivante :
+</p>
+<pre><code>tns create my-app --template @nativescript/template-vue</code></pre>
+<p>
+Ensuite, vous pouvez ajouter la plateforme Android à votre projet en utilisant la commande suivante :
+</p>
+<pre><code>tns platform add android</code></pre>
+<p>
+Une fois que vous avez configuré votre projet NativeScript, vous pouvez installer Vue.js en utilisant npm :
+</p>
+<pre><code>npm install vue</code></pre>
+<p>
+Ensuite, vous pouvez créer vos composants Vue.js et les intégrer dans votre application NativeScript en utilisant les balises <code>&lt;script&gt;</code> et <code>&lt;template&gt;</code>. Vous pouvez également utiliser des directives Vue pour lier des données et gérer les événements.
+</p>
+<p>
+Une fois que vous avez développé votre application Vue.js avec NativeScript, vous pouvez la tester en l'exécutant sur un émulateur ou en la déployant sur un appareil Android à l'aide de la commande suivante :
+</p>
+<pre><code>tns run android</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section13.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section15.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

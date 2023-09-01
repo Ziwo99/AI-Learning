@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 13</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 13: Vue.js et les API externes</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation d'API REST avec Vue.js</h2>
+<p>L'utilisation d'API REST (Representational State Transfer) avec Vue.js permet d'établir une communication entre une application Vue.js et un serveur distant. Les API REST sont largement utilisées pour échanger des données entre le client et le serveur de manière simple et efficace.</p>
+
+<p>Pour utiliser une API REST avec Vue.js, vous pouvez utiliser la bibliothèque <code>axios</code> qui facilite les requêtes HTTP. Voici un exemple de code qui montre comment effectuer une requête GET vers une API REST :</p>
+
+<pre><code>import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      users: []
+    }
+  },
+  mounted() {
+    axios.get('https://api.example.com/users')
+      .then(response => {
+        this.users = response.data;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous importons la bibliothèque <code>axios</code> et nous utilisons la méthode <code>get</code> pour effectuer une requête GET vers l'URL <code>https://api.example.com/users</code>. Une fois la réponse reçue, nous stockons les données dans la propriété <code>users</code> de notre composant Vue.js.</p>
+
+<h2>Utilisation d'API GraphQL avec Vue.js</h2>
+<p>GraphQL est une alternative aux API REST qui permet de récupérer uniquement les données dont vous avez besoin. Contrairement aux API REST, où vous devez récupérer toutes les données d'un endpoint, avec GraphQL, vous pouvez spécifier les champs exacts que vous souhaitez récupérer.</p>
+
+<p>Pour utiliser une API GraphQL avec Vue.js, vous pouvez utiliser la bibliothèque <code>vue-apollo</code>. Voici un exemple de code qui montre comment effectuer une requête GraphQL :</p>
+
+<pre><code>import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+
+export default {
+  data() {
+    return {
+      users: []
+    }
+  },
+  mounted() {
+    const client = new ApolloClient({
+      uri: 'https://api.example.com/graphql',
+      cache: new InMemoryCache()
+    });
+
+    client.query({
+      query: gql`
+        query {
+          users {
+            id
+            name
+            email
+          }
+        }
+      `
+    })
+    .then(response => {
+      this.users = response.data.users;
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous importons les classes nécessaires pour utiliser Apollo Client et nous créons une instance de <code>ApolloClient</code> en spécifiant l'URL de l'API GraphQL. Ensuite, nous utilisons la méthode <code>query</code> pour effectuer une requête GraphQL qui récupère les champs <code>id</code>, <code>name</code> et <code>email</code> de tous les utilisateurs. Les données sont ensuite stockées dans la propriété <code>users</code> de notre composant Vue.js.</p>
+
+<h2>Utilisation d'API WebSocket avec Vue.js</h2>
+<p>Les API WebSocket permettent une communication bidirectionnelle en temps réel entre le client et le serveur. Contrairement aux requêtes HTTP traditionnelles, les connexions WebSocket restent ouvertes, ce qui permet au serveur d'envoyer des données au client sans que celui-ci ait besoin de faire une requête.</p>
+
+<p>Pour utiliser une API WebSocket avec Vue.js, vous pouvez utiliser la bibliothèque <code>vue-native-websocket</code>. Voici un exemple de code qui montre comment établir une connexion WebSocket :</p>
+
+<pre><code>import VueNativeSock from 'vue-native-websocket';
+
+export default {
+  data() {
+    return {
+      messages: []
+    }
+  },
+  mounted() {
+    Vue.use(VueNativeSock, 'wss://api.example.com/socket', {
+      format: 'json',
+      store: this.$store,
+      reconnection: true,
+      reconnectionAttempts: 5,
+      reconnectionDelay: 3000
+    });
+
+    this.$options.sockets.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      this.messages.push(message);
+    };
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, nous importons la bibliothèque <code>vue-native-websocket</code> et nous l'installons en utilisant <code>Vue.use</code>. Nous spécifions l'URL du serveur WebSocket (<code>wss://api.example.com/socket</code>) ainsi que d'autres options telles que le format des données (<code>json</code>), la gestion de la reconnexion et les délais entre les tentatives de reconnexion.</p>
+
+<p>Ensuite, nous utilisons <code>this.$options.sockets.onmessage</code> pour écouter les messages reçus du serveur WebSocket. Chaque message est ensuite ajouté à la propriété <code>messages</code> de notre composant Vue.js.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section12.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section14.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

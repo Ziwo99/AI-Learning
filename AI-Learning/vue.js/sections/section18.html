@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 18</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 18: Vue.js et les applications en temps réel</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section17.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section19.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation de Vue.js avec Socket.io</h2>
+<p>
+L'utilisation de Vue.js avec Socket.io permet de créer des applications en temps réel qui peuvent communiquer avec les clients en utilisant des websockets. Socket.io est une bibliothèque JavaScript qui facilite la communication bidirectionnelle en temps réel entre le serveur et le client. Voici comment intégrer Socket.io avec Vue.js :
+</p>
+
+<pre><code>1. Installer Socket.io en utilisant npm :
+   npm install socket.io
+
+2. Importer Socket.io dans votre composant Vue :
+   import io from 'socket.io-client';
+
+3. Créer une instance de Socket.io et se connecter au serveur :
+   const socket = io('http://localhost:3000');
+
+4. Écouter les événements du serveur et réagir en conséquence :
+   socket.on('message', (data) => {
+     console.log(data);
+   });
+
+5. Émettre des événements depuis le client vers le serveur :
+   socket.emit('chat message', 'Hello, server!');</code></pre>
+
+<p>
+Dans cet exemple, nous avons installé Socket.io en utilisant npm, importé la bibliothèque dans notre composant Vue, créé une instance de Socket.io et écouté les événements du serveur. Nous avons également émis un événement depuis le client vers le serveur.
+</p>
+
+<h2>Utilisation de Vue.js avec Firebase</h2>
+<p>
+Firebase est une plateforme de développement d'applications mobiles et web qui fournit des outils et des services pour créer des applications en temps réel. Vue.js peut être intégré avec Firebase pour créer des applications en temps réel avec une base de données en temps réel. Voici comment utiliser Vue.js avec Firebase :
+</p>
+
+<pre><code>1. Créer un projet Firebase sur le site officiel de Firebase.
+
+2. Installer le package Firebase en utilisant npm :
+   npm install firebase
+
+3. Importer Firebase dans votre composant Vue :
+   import firebase from 'firebase/app';
+   import 'firebase/database';
+
+4. Configurer votre application Firebase en utilisant votre clé d'API :
+   const firebaseConfig = {
+     apiKey: 'YOUR_API_KEY',
+     authDomain: 'YOUR_AUTH_DOMAIN',
+     databaseURL: 'YOUR_DATABASE_URL',
+     projectId: 'YOUR_PROJECT_ID',
+     storageBucket: 'YOUR_STORAGE_BUCKET',
+     messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
+     appId: 'YOUR_APP_ID'
+   };
+
+   firebase.initializeApp(firebaseConfig);
+
+5. Utiliser la base de données en temps réel de Firebase dans votre composant Vue :
+   const db = firebase.database();
+
+   // Écouter les modifications de données en temps réel
+   db.ref('messages').on('value', (snapshot) => {
+     console.log(snapshot.val());
+   });
+
+   // Écrire des données dans la base de données
+   db.ref('messages').push('Hello, Firebase!');</code></pre>
+
+<p>
+Dans cet exemple, nous avons créé un projet Firebase, installé le package Firebase en utilisant npm, importé Firebase dans notre composant Vue et configuré notre application Firebase en utilisant notre clé d'API. Nous avons également utilisé la base de données en temps réel de Firebase pour écouter les modifications de données en temps réel et écrire des données dans la base de données.
+</p>
+
+<h2>Utilisation de Vue.js avec Pusher</h2>
+<p>
+Pusher est un service de messagerie en temps réel qui permet aux développeurs de créer des applications en temps réel avec facilité. Vue.js peut être utilisé avec Pusher pour créer des applications en temps réel qui peuvent envoyer et recevoir des messages en temps réel. Voici comment utiliser Vue.js avec Pusher :
+</p>
+
+<pre><code>1. Créer un compte Pusher sur le site officiel de Pusher.
+
+2. Installer le package Pusher en utilisant npm :
+   npm install pusher-js
+
+3. Importer Pusher dans votre composant Vue :
+   import Pusher from 'pusher-js';
+
+4. Configurer votre application Pusher en utilisant votre clé d'API :
+   const pusher = new Pusher('YOUR_API_KEY', {
+     cluster: 'YOUR_CLUSTER'
+   });
+
+5. Souscrire à un canal Pusher et écouter les événements :
+   const channel = pusher.subscribe('my-channel');
+
+   channel.bind('my-event', (data) => {
+     console.log(data);
+   });
+
+6. Émettre des événements depuis le client vers Pusher :
+   pusher.trigger('my-channel', 'my-event', {
+     message: 'Hello, Pusher!'
+   });</code></pre>
+
+<p>
+Dans cet exemple, nous avons créé un compte Pusher, installé le package Pusher en utilisant npm, importé Pusher dans notre composant Vue et configuré notre application Pusher en utilisant notre clé d'API. Nous avons également souscrit à un canal Pusher, écouté les événements du canal et émis des événements depuis le client vers Pusher.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section17.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section19.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

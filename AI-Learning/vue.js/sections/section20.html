@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 20</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 20: Vue.js et les tests de performance</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section19.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section21.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les outils de test de performance pour Vue.js</h2>
+<p>Les tests de performance sont essentiels pour s'assurer que votre application Vue.js fonctionne de manière optimale et réactive. Voici quelques-uns des outils les plus populaires pour effectuer des tests de performance sur des applications Vue.js :</p>
+
+<p><strong>1. Vue Performance Devtool :</strong> Cet outil est une extension de navigateur qui permet de profiler les performances d'une application Vue.js. Il fournit des informations détaillées sur le temps d'exécution des composants, les mises à jour du DOM et les re-rendus inutiles. Vous pouvez l'utiliser pour identifier les goulots d'étranglement et optimiser les performances de votre application.</p>
+
+<p><strong>2. Lighthouse :</strong> Lighthouse est un outil d'audit de performance fourni par Google. Il analyse votre application Vue.js et fournit des recommandations pour améliorer les performances, l'accessibilité, la compatibilité avec les appareils mobiles et l'optimisation du référencement. Lighthouse peut être utilisé en ligne de commande ou directement dans le navigateur Chrome.</p>
+
+<p><strong>3. WebPageTest :</strong> WebPageTest est un outil en ligne qui permet de tester les performances d'une application Vue.js en simulant différentes connexions réseau et en mesurant les temps de chargement de la page. Il fournit des métriques détaillées telles que le temps de chargement initial, le temps de chargement complet, le nombre de requêtes réseau, etc. Vous pouvez utiliser WebPageTest pour évaluer les performances de votre application dans différentes conditions.</p>
+
+<h2>Les bonnes pratiques de performance avec Vue.js</h2>
+<p>Pour optimiser les performances de votre application Vue.js, voici quelques bonnes pratiques à suivre :</p>
+
+<p><strong>1. Utilisez la compilation en production :</strong> Lorsque vous déployez votre application Vue.js en production, assurez-vous de compiler le code en mode production. Cela supprime les avertissements de développement, active la minification du code et améliore les performances globales de l'application.</p>
+
+<p><strong>2. Utilisez la directive v-once :</strong> La directive v-once permet de rendre un composant ou un élément statique, ce qui signifie qu'il ne sera pas mis à jour lors des changements de données. Cela peut améliorer les performances en évitant les re-rendus inutiles.</p>
+
+<p><strong>3. Lazy loading des composants :</strong> Si votre application Vue.js contient de nombreux composants, vous pouvez envisager de les charger de manière asynchrone lorsque cela est nécessaire. Cela réduit le temps de chargement initial de l'application et améliore l'expérience utilisateur.</p>
+
+<p><strong>4. Utilisez la directive v-show vs v-if :</strong> La directive v-show et la directive v-if sont utilisées pour conditionner l'affichage des éléments dans une application Vue.js. Cependant, v-show est plus performante que v-if car elle utilise la propriété CSS display pour masquer ou afficher les éléments, tandis que v-if ajoute ou supprime les éléments du DOM.</p>
+
+<h2>Optimisation des performances avec Vue.js</h2>
+<p>Pour optimiser les performances de votre application Vue.js, voici quelques techniques avancées que vous pouvez utiliser :</p>
+
+<p><strong>1. Utilisez des composants fonctionnels :</strong> Les composants fonctionnels sont des composants Vue.js qui n'ont pas de state interne et n'utilisent pas les cycles de vie. Ils sont plus légers et plus rapides à rendre que les composants réguliers, ce qui les rend idéaux pour les parties de l'interface utilisateur qui ne nécessitent pas de réactivité.</p>
+
+<p><strong>2. Utilisez la directive v-once :</strong> La directive v-once peut également être utilisée pour optimiser les performances en évitant les re-rendus inutiles de composants ou d'éléments statiques.</p>
+
+<p><strong>3. Lazy loading des composants :</strong> En utilisant des outils tels que Webpack, vous pouvez diviser votre application Vue.js en plusieurs bundles et charger les composants de manière asynchrone lorsque cela est nécessaire. Cela réduit le temps de chargement initial de l'application et améliore les performances globales.</p>
+
+<p><strong>4. Utilisez la compression GZIP :</strong> La compression GZIP est une technique de compression de fichiers qui peut être utilisée pour réduire la taille des fichiers JavaScript, CSS et HTML de votre application Vue.js. Cela réduit le temps de chargement de l'application et améliore les performances.</p>
+
+<p>En suivant ces bonnes pratiques et en utilisant les techniques d'optimisation appropriées, vous pouvez améliorer considérablement les performances de votre application Vue.js.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section19.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section21.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2: Les bases de Vue.js</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Composants Vue</h2>
+<p>Les composants sont les blocs de construction de Vue.js. Ils permettent de créer des éléments réutilisables et modulaires dans une application Vue.js. Un composant Vue est essentiellement une instance de Vue avec des options prédéfinies.</p>
+<p>Voici un exemple de définition d'un composant Vue :</p>
+<pre><code>Vue.component('mon-composant', {
+  template: '&lt;div&gt;Ceci est mon composant&lt;/div&gt;'
+})</code></pre>
+<p>Dans cet exemple, nous avons défini un composant appelé "mon-composant" avec un template qui affiche simplement un div contenant le texte "Ceci est mon composant". Ce composant peut maintenant être utilisé dans d'autres parties de l'application.</p>
+
+<h2>Directives Vue</h2>
+<p>Les directives sont des instructions spéciales que l'on ajoute aux éléments HTML pour leur donner des comportements dynamiques. Les directives Vue sont préfixées par le préfixe "v-".</p>
+<p>Voici un exemple d'utilisation de la directive v-if :</p>
+<pre><code>&lt;div v-if="condition"&gt;
+  Ce texte s'affiche si la condition est vraie.
+&lt;/div&gt;</code></pre>
+<p>Dans cet exemple, le div ne sera affiché que si la condition est vraie.</p>
+
+<h2>Interpolation et liaisons de données</h2>
+<p>L'interpolation et les liaisons de données sont des fonctionnalités clés de Vue.js qui permettent d'afficher et de mettre à jour dynamiquement les données dans le template.</p>
+<p>Voici un exemple d'interpolation de données :</p>
+<pre><code>&lt;p&gt;{{ message }}&lt;/p&gt;</code></pre>
+<p>Dans cet exemple, la variable "message" sera affichée à l'intérieur du paragraphe.</p>
+<p>Voici un exemple de liaison de données bidirectionnelle :</p>
+<pre><code>&lt;input v-model="message"&gt;</code></pre>
+<p>Dans cet exemple, la valeur de l'input sera liée à la variable "message". Toute modification de l'input mettra à jour la valeur de "message" et vice versa.</p>
+
+<h2>Gestion des événements</h2>
+<p>La gestion des événements permet de réagir aux actions de l'utilisateur, comme les clics de souris ou les saisies au clavier. Dans Vue.js, les événements sont gérés à l'aide de la directive v-on.</p>
+<p>Voici un exemple de gestion d'un événement de clic :</p>
+<pre><code>&lt;button v-on:click="handleClick"&gt;Cliquez ici&lt;/button&gt;</code></pre>
+<p>Dans cet exemple, lorsque le bouton est cliqué, la méthode "handleClick" sera appelée.</p>
+
+<h2>Les cycles de vie des composants</h2>
+<p>Les composants Vue passent par différents cycles de vie, de leur création à leur destruction. Chaque cycle de vie correspond à un moment spécifique dans lequel des actions peuvent être effectuées.</p>
+<p>Voici les principales étapes du cycle de vie d'un composant Vue :</p>
+<ul>
+  <li>beforeCreate: appelé avant la création du composant</li>
+  <li>created: appelé après la création du composant</li>
+  <li>beforeMount: appelé avant que le composant soit inséré dans le DOM</li>
+  <li>mounted: appelé après que le composant ait été inséré dans le DOM</li>
+  <li>beforeUpdate: appelé avant que le composant soit mis à jour</li>
+  <li>updated: appelé après que le composant ait été mis à jour</li>
+  <li>beforeDestroy: appelé avant la destruction du composant</li>
+  <li>destroyed: appelé après la destruction du composant</li>
+</ul>
+<p>Chaque étape du cycle de vie peut être utilisée pour effectuer des actions spécifiques, comme l'initialisation des données ou la nettoyage des ressources.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

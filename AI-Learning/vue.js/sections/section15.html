@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 15</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 15: Vue.js et les applications SSR</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section14.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section16.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration d'une application Vue.js SSR</h2>
+<p>Lorsque vous souhaitez créer une application Vue.js avec le rendu côté serveur (SSR), vous devez effectuer quelques étapes de configuration. Tout d'abord, vous devez installer le package Vue CLI en utilisant la commande suivante :</p>
+
+<pre><code>npm install -g @vue/cli</code></pre>
+
+<p>Ensuite, vous pouvez créer un nouveau projet Vue.js en utilisant la commande suivante :</p>
+
+<pre><code>vue create my-ssr-app</code></pre>
+
+<p>Lorsque vous êtes invité à choisir un preset, sélectionnez "Manually select features" et cochez l'option "Server-side rendering (SSR)".</p>
+
+<p>Une fois que le projet est créé, vous pouvez accéder au dossier du projet en utilisant la commande suivante :</p>
+
+<pre><code>cd my-ssr-app</code></pre>
+
+<p>Ensuite, vous devez installer les dépendances nécessaires pour le rendu côté serveur en utilisant la commande suivante :</p>
+
+<pre><code>npm install</code></pre>
+
+<p>Après avoir installé les dépendances, vous pouvez démarrer l'application en mode développement en utilisant la commande suivante :</p>
+
+<pre><code>npm run serve</code></pre>
+
+<p>Cela lancera le serveur de développement avec le rendu côté serveur activé. Vous pouvez maintenant accéder à votre application SSR en ouvrant votre navigateur et en visitant l'URL indiquée dans la console.</p>
+
+<h2>Rendu côté serveur avec Vue.js</h2>
+<p>Le rendu côté serveur (SSR) avec Vue.js permet de générer le contenu HTML initial sur le serveur, ce qui améliore les performances et l'expérience utilisateur. Pour utiliser le rendu côté serveur, vous devez créer un composant racine spécifique pour le rendu côté serveur.</p>
+
+<p>Voici un exemple de composant racine pour le rendu côté serveur :</p>
+
+<pre><code>import Vue from 'vue';
+import App from './App.vue';
+
+export default context => {
+  const app = new Vue({
+    render: h => h(App),
+  });
+
+  return app;
+};
+</code></pre>
+
+<p>Dans cet exemple, nous exportons une fonction qui crée une nouvelle instance de Vue avec le composant racine App. La fonction prend un objet de contexte en paramètre, qui peut contenir des informations spécifiques à la requête en cours, telles que l'URL demandée.</p>
+
+<p>Une fois que vous avez créé le composant racine pour le rendu côté serveur, vous devez le configurer dans votre serveur Node.js. Vous pouvez utiliser des frameworks tels que Express.js pour configurer votre serveur.</p>
+
+<p>Voici un exemple de configuration d'un serveur Express.js pour le rendu côté serveur avec Vue.js :</p>
+
+<pre><code>const express = require('express');
+const { createBundleRenderer } = require('vue-server-renderer');
+const serverBundle = require('./dist/vue-ssr-server-bundle.json');
+const clientManifest = require('./dist/vue-ssr-client-manifest.json');
+
+const renderer = createBundleRenderer(serverBundle, {
+  runInNewContext: false,
+  template: require('fs').readFileSync('./index.html', 'utf-8'),
+  clientManifest,
+});
+
+const app = express();
+
+app.get('*', (req, res) => {
+  const context = { url: req.url };
+  renderer.renderToString(context, (err, html) => {
+    if (err) {
+      console.error(err);
+      res.status(500).end('Internal Server Error');
+      return;
+    }
+    res.end(html);
+  });
+});
+
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+</code></pre>
+
+<p>Dans cet exemple, nous utilisons la fonction createBundleRenderer du package vue-server-renderer pour créer un rendu côté serveur. Nous passons le bundle du serveur, le manifeste du client et le template HTML à la fonction createBundleRenderer.</p>
+
+<p>Ensuite, nous configurons une route générique qui utilise la fonction renderToString du rendu côté serveur pour générer le contenu HTML pour chaque requête. Nous passons également le contexte de la requête à la fonction renderToString.</p>
+
+<p>Enfin, nous démarrons le serveur Express.js et écoutons les requêtes sur le port 3000.</p>
+
+<h2>Gestion de l'état côté serveur avec Vue.js</h2>
+<p>Lorsque vous utilisez le rendu côté serveur (SSR) avec Vue.js, vous pouvez également gérer l'état côté serveur. Cela signifie que vous pouvez pré-remplir l'état initial de votre application Vue.js sur le serveur, ce qui permet d'améliorer les performances et l'expérience utilisateur.</p>
+
+<p>Pour gérer l'état côté serveur, vous devez utiliser le module Vuex, qui est le gestionnaire d'état officiel de Vue.js. Voici comment vous pouvez pré-remplir l'état initial de votre application Vue.js sur le serveur :</p>
+
+<pre><code>// Dans le composant racine pour le rendu côté serveur
+import Vue from 'vue';
+import App from './App.vue';
+import { createStore } from './store';
+
+export default context => {
+  const store = createStore();
+
+  const app = new Vue({
+    render: h => h(App),
+    store,
+  });
+
+  return { app, store };
+};
+
+// Dans le serveur Express.js
+app.get('*', (req, res) => {
+  const context = { url: req.url };
+  const { app, store } = createApp(context);
+
+  store.dispatch('fetchData').then(() => {
+    renderer.renderToString(app, (err, html) => {
+      // ...
+    });
+  });
+});
+</code></pre>
+
+<p>Dans cet exemple, nous créons une instance de Vuex store dans le composant racine pour le rendu côté serveur. Nous passons ensuite le store à l'instance de Vue.</p>
+
+<p>Lorsque nous recevons une requête sur le serveur Express.js, nous appelons la méthode fetchData du store pour pré-remplir l'état initial de l'application avec les données nécessaires. Une fois que les données sont récupérées, nous appelons la fonction renderToString pour générer le contenu HTML.</p>
+
+<p>Ainsi, lorsque l'application est rendue sur le serveur, elle contient déjà les données nécessaires dans son état initial, ce qui évite d'avoir à effectuer des appels supplémentaires pour récupérer les données côté client.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section14.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section16.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

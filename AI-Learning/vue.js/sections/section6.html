@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6: Communication entre composants</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les événements personnalisés</h2>
+<p>Les événements personnalisés sont un moyen de communication entre les composants de Vue.js. Ils permettent à un composant parent d'envoyer des données à un composant enfant, ou vice versa. Pour créer un événement personnalisé, nous utilisons la méthode <code>$emit</code> dans le composant émetteur et la directive <code>@</code> dans le composant récepteur.</p>
+
+<p>Voici un exemple de création et de gestion d'un événement personnalisé :</p>
+
+<pre><code>// Composant émetteur
+&lt;template&gt;
+  &lt;button @click="$emit('mon-evenement', data)"&gt;Envoyer l'événement&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      data: 'Données à envoyer'
+    }
+  }
+}
+&lt;/script&gt;
+
+// Composant récepteur
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Données reçues : {{ receivedData }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      receivedData: ''
+    }
+  },
+  methods: {
+    handleEvent(data) {
+      this.receivedData = data;
+    }
+  },
+  mounted() {
+    this.$on('mon-evenement', this.handleEvent);
+  },
+  beforeDestroy() {
+    this.$off('mon-evenement', this.handleEvent);
+  }
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>Dans cet exemple, le composant émetteur est un bouton qui déclenche l'événement personnalisé lorsqu'il est cliqué. Le composant récepteur affiche ensuite les données reçues de l'événement.</p>
+
+<h2>Les bus d'événements</h2>
+<p>Les bus d'événements sont une autre méthode de communication entre les composants de Vue.js. Ils permettent de créer un canal de communication centralisé auquel tous les composants peuvent s'abonner et émettre des événements.</p>
+
+<p>Voici comment créer et utiliser un bus d'événements :</p>
+
+<pre><code>// main.js
+import Vue from 'vue';
+
+export const eventBus = new Vue();
+
+// Composant émetteur
+&lt;template&gt;
+  &lt;button @click="emitEvent"&gt;Envoyer l'événement&lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { eventBus } from './main.js';
+
+export default {
+  methods: {
+    emitEvent() {
+      eventBus.$emit('mon-evenement', data);
+    }
+  }
+}
+&lt;/script&gt;
+
+// Composant récepteur
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Données reçues : {{ receivedData }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { eventBus } from './main.js';
+
+export default {
+  data() {
+    return {
+      receivedData: ''
+    }
+  },
+  mounted() {
+    eventBus.$on('mon-evenement', data =&gt; {
+      this.receivedData = data;
+    });
+  },
+  beforeDestroy() {
+    eventBus.$off('mon-evenement');
+  }
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous créons un bus d'événements dans le fichier <code>main.js</code> en utilisant une instance de Vue. Le composant émetteur utilise ensuite cette instance pour émettre l'événement, tandis que le composant récepteur s'abonne à l'événement en utilisant également cette instance.</p>
+
+<h2>Les slots</h2>
+<p>Les slots sont une fonctionnalité de Vue.js qui permet aux composants parents de fournir du contenu aux composants enfants. Ils sont utilisés pour créer des composants réutilisables et flexibles.</p>
+
+<p>Voici comment utiliser les slots :</p>
+
+<pre><code>// Composant parent
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h2&gt;Titre du composant parent&lt;/h2&gt;
+    &lt;slot&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+// Composant enfant
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;h3&gt;Titre du composant enfant&lt;/h3&gt;
+    &lt;slot&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>Dans cet exemple, le composant parent contient un slot qui peut être rempli avec du contenu par le composant enfant. Le composant enfant affiche ensuite ce contenu à l'endroit du slot.</p>
+
+<h2>Les mixins</h2>
+<p>Les mixins sont une fonctionnalité de Vue.js qui permet de réutiliser du code entre plusieurs composants. Ils permettent de partager des options de composants, des méthodes, des hooks de cycle de vie, etc.</p>
+
+<p>Voici comment utiliser les mixins :</p>
+
+<pre><code>// mixin.js
+export default {
+  data() {
+    return {
+      message: 'Message partagé'
+    }
+  },
+  methods: {
+    showMessage() {
+      console.log(this.message);
+    }
+  }
+}
+
+// Composant utilisant le mixin
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;{{ message }}&lt;/p&gt;
+    &lt;button @click="showMessage"&gt;Afficher le message&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import mixin from './mixin.js';
+
+export default {
+  mixins: [mixin]
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>Dans cet exemple, nous créons un mixin qui contient des données et des méthodes. Le composant utilise ensuite ce mixin en l'important et en l'ajoutant à la liste des mixins.</p>
+
+<p>Il est important de noter que les mixins peuvent entraîner des conflits si des options de composant avec le même nom sont définies à la fois dans le composant et dans le mixin. Dans ce cas, les options du composant prendront le dessus.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

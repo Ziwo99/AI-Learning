@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 4</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 4: Routage avec Vue.js</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Configuration du routage</h2>
+<p>Le routage est une fonctionnalité essentielle dans le développement d'applications Vue.js. Il permet de naviguer entre différentes pages ou vues de manière fluide et de gérer les paramètres de route. Pour configurer le routage dans une application Vue.js, vous devez d'abord installer le package Vue Router à l'aide de npm ou yarn :</p>
+
+<pre><code>npm install vue-router</code></pre>
+
+<p>Une fois le package installé, vous pouvez créer un fichier de configuration pour le routage. Par convention, ce fichier est généralement nommé "router.js" et est placé dans le répertoire src de votre projet Vue.js.</p>
+
+<p>Dans ce fichier, vous devez importer Vue et Vue Router, puis créer une instance de Vue Router en utilisant la méthode Vue.use(). Ensuite, vous pouvez définir les routes de votre application en utilisant la méthode router.addRoutes(). Voici un exemple de configuration de base :</p>
+
+<pre><code>// Importer Vue et Vue Router
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+
+// Utiliser Vue Router
+Vue.use(VueRouter);
+
+// Créer une instance de Vue Router
+const router = new VueRouter({
+  routes: [
+    {
+      path: '/',
+      component: Home
+    },
+    {
+      path: '/about',
+      component: About
+    },
+    // Autres routes...
+  ]
+});
+
+// Ajouter les routes à l'instance de Vue Router
+router.addRoutes([
+  {
+    path: '/contact',
+    component: Contact
+  },
+  // Autres routes...
+]);
+
+// Exporter l'instance de Vue Router
+export default router;</code></pre>
+
+<p>Dans cet exemple, nous avons défini trois routes : une route pour la page d'accueil ("/"), une route pour la page "À propos" ("/about") et une route pour la page de contact ("/contact"). Chaque route est associée à un composant Vue spécifique.</p>
+
+<h2>Navigation entre les routes</h2>
+<p>Une fois que vous avez configuré les routes de votre application, vous pouvez naviguer entre elles en utilisant les liens ou les méthodes de navigation fournies par Vue Router.</p>
+
+<p>Pour créer un lien vers une autre route, vous pouvez utiliser la balise <code>&lt;router-link&gt;</code>. Cette balise génère un lien HTML avec l'URL correspondante à la route spécifiée. Voici un exemple :</p>
+
+<pre><code>&lt;router-link to="/about"&gt;À propos&lt;/router-link&gt;</code></pre>
+
+<p>Vous pouvez également utiliser la méthode <code>$router.push()</code> pour naviguer vers une autre route programmation. Voici un exemple :</p>
+
+<pre><code>this.$router.push('/contact');</code></pre>
+
+<p>Cette méthode peut être appelée à partir de n'importe quel composant Vue.</p>
+
+<h2>Gestion des paramètres de route</h2>
+<p>Les paramètres de route permettent de passer des données dynamiques entre les différentes vues de votre application. Par exemple, vous pouvez avoir une route pour afficher les détails d'un produit et passer l'ID du produit en tant que paramètre de route.</p>
+
+<p>Pour définir des paramètres de route, vous devez spécifier un segment de route précédé par un deux-points (:). Voici un exemple :</p>
+
+<pre><code>{
+  path: '/product/:id',
+  component: ProductDetails
+}</code></pre>
+
+<p>Dans cet exemple, la route "/product/:id" correspondra à n'importe quelle URL commençant par "/product/" suivi d'un identifiant de produit. L'identifiant sera disponible en tant que propriété dans le composant ProductDetails.</p>
+
+<p>Pour accéder aux paramètres de route dans un composant, vous pouvez utiliser la propriété <code>$route.params</code>. Voici un exemple :</p>
+
+<pre><code>export default {
+  mounted() {
+    const productId = this.$route.params.id;
+    // Utiliser l'ID du produit...
+  }
+}</code></pre>
+
+<h2>Routage dynamique</h2>
+<p>Le routage dynamique vous permet de générer des routes à la volée en fonction des données de votre application. Par exemple, vous pouvez avoir une liste de produits et générer une route pour chaque produit.</p>
+
+<p>Pour créer des routes dynamiques, vous pouvez utiliser la propriété <code>props</code> dans la configuration de la route. Voici un exemple :</p>
+
+<pre><code>{
+  path: '/product/:id',
+  component: ProductDetails,
+  props: true
+}</code></pre>
+
+<p>Dans cet exemple, nous avons défini la propriété <code>props</code> à <code>true</code>, ce qui signifie que les paramètres de route seront passés en tant que propriétés au composant ProductDetails. Vous pouvez également définir des fonctions pour calculer les valeurs des propriétés en fonction des paramètres de route.</p>
+
+<p>Une fois que vous avez configuré le routage dynamique, vous pouvez générer des liens vers les routes dynamiques en utilisant la balise <code>&lt;router-link&gt;</code> avec les paramètres appropriés. Voici un exemple :</p>
+
+<pre><code>&lt;router-link :to="{ name: 'product', params: { id: product.id } }"&gt;{{ product.name }}&lt;/router-link&gt;</code></pre>
+
+<p>Dans cet exemple, nous utilisons la propriété <code>:to</code> pour générer dynamiquement l'URL de la route en utilisant le nom de la route et les paramètres nécessaires.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section3.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section5.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

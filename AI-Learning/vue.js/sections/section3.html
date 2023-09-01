@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 3</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 3: Gestion des données avec Vue.js</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les propriétés réactives</h2>
+<p>Les propriétés réactives sont l'un des concepts clés de Vue.js. Elles permettent de lier les données à l'interface utilisateur de manière dynamique, de sorte que toute modification des données se reflète automatiquement dans l'interface utilisateur et vice versa.</p>
+<p>Pour déclarer une propriété réactive dans Vue.js, vous pouvez utiliser l'objet <code>data</code> dans votre composant. Par exemple :</p>
+
+<pre><code>data() {
+  return {
+    message: 'Hello Vue.js!'
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, la propriété <code>message</code> est déclarée comme une propriété réactive. Vous pouvez ensuite l'utiliser dans votre template :</p>
+
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    {{ message }}
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>Chaque fois que la valeur de la propriété <code>message</code> change, l'interface utilisateur sera automatiquement mise à jour pour refléter cette modification.</p>
+
+<h2>Les méthodes et calculs</h2>
+<p>Les méthodes et calculs sont utilisés pour effectuer des opérations et des calculs sur les données dans Vue.js. Vous pouvez déclarer des méthodes dans votre composant en utilisant l'option <code>methods</code>. Par exemple :</p>
+
+<pre><code>methods: {
+  sayHello() {
+    console.log('Hello!');
+  },
+  calculateSum(a, b) {
+    return a + b;
+  }
+}
+</code></pre>
+
+<p>Vous pouvez ensuite appeler ces méthodes dans votre template ou dans d'autres méthodes :</p>
+
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;button @click="sayHello"&gt;Say Hello&lt;/button&gt;
+    &lt;p&gt;{{ calculateSum(2, 3) }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>Les calculs sont similaires aux méthodes, mais ils sont utilisés pour effectuer des calculs basés sur les données réactives. Vous pouvez les déclarer en utilisant l'option <code>computed</code>. Par exemple :</p>
+
+<pre><code>computed: {
+  fullName() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, la propriété calculée <code>fullName</code> est basée sur les propriétés réactives <code>firstName</code> et <code>lastName</code>. Vous pouvez ensuite l'utiliser dans votre template :</p>
+
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Full Name: {{ fullName }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>Chaque fois que les valeurs des propriétés réactives <code>firstName</code> ou <code>lastName</code> changent, la propriété calculée <code>fullName</code> sera automatiquement mise à jour.</p>
+
+<h2>Les filtres</h2>
+<p>Les filtres sont utilisés pour formater et manipuler les données dans Vue.js. Ils peuvent être utilisés dans les templates pour modifier la valeur d'une expression avant de l'afficher. Par exemple :</p>
+
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;{{ message | capitalize }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      message: 'hello vue.js!'
+    }
+  },
+  filters: {
+    capitalize(value) {
+      if (!value) return '';
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>Dans cet exemple, le filtre <code>capitalize</code> est utilisé pour mettre en majuscule la première lettre de la valeur de la propriété <code>message</code>.</p>
+
+<h2>Les watchers</h2>
+<p>Les watchers sont utilisés pour effectuer des actions en réponse à des changements spécifiques dans les données réactives. Vous pouvez déclarer des watchers dans votre composant en utilisant l'option <code>watch</code>. Par exemple :</p>
+
+<pre><code>watch: {
+  message(newValue, oldValue) {
+    console.log('Message changed from ' + oldValue + ' to ' + newValue);
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, le watcher surveille les changements de la propriété réactive <code>message</code>. Chaque fois que la valeur de <code>message</code> change, la fonction de rappel sera exécutée.</p>
+
+<h2>Les computed properties</h2>
+<p>Les computed properties sont similaires aux propriétés calculées, mais elles sont utilisées pour effectuer des calculs plus complexes ou pour regrouper plusieurs propriétés réactives. Vous pouvez les déclarer en utilisant l'option <code>computed</code>. Par exemple :</p>
+
+<pre><code>computed: {
+  fullName() {
+    return this.firstName + ' ' + this.lastName;
+  },
+  fullNameLength() {
+    return this.fullName.length;
+  }
+}
+</code></pre>
+
+<p>Dans cet exemple, la propriété calculée <code>fullNameLength</code> est basée sur la propriété calculée <code>fullName</code>. Vous pouvez ensuite l'utiliser dans votre template :</p>
+
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;p&gt;Full Name: {{ fullName }}&lt;/p&gt;
+    &lt;p&gt;Full Name Length: {{ fullNameLength }}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>Chaque fois que les valeurs des propriétés réactives <code>firstName</code> ou <code>lastName</code> changent, les propriétés calculées <code>fullName</code> et <code>fullNameLength</code> seront automatiquement mises à jour.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section2.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section4.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

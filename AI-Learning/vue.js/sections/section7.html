@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7: Gestion de l'état global avec Vuex</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Introduction à Vuex</h2>
+<p>
+Vuex est un gestionnaire d'état pour les applications Vue.js. Il permet de gérer efficacement l'état global de l'application et de le partager entre les différents composants. L'utilisation de Vuex facilite la gestion des données et la communication entre les composants, en suivant le principe de flux unidirectionnel des données.
+</p>
+
+<h2>Configuration et utilisation de Vuex</h2>
+<p>
+Pour commencer à utiliser Vuex, nous devons d'abord l'installer et le configurer dans notre application Vue.js. Voici les étapes à suivre :
+</p>
+
+<ol>
+  <li>Installer Vuex en utilisant npm ou yarn :</li>
+</ol>
+
+<pre><code>npm install vuex</code></pre>
+
+<ol start="2">
+  <li>Importer Vuex dans notre application :</li>
+</ol>
+
+<pre><code>import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)</code></pre>
+
+<ol start="3">
+  <li>Créer un store Vuex :</li>
+</ol>
+
+<pre><code>const store = new Vuex.Store({
+  // options du store
+})</code></pre>
+
+<ol start="4">
+  <li>Configurer le store dans notre application Vue :</li>
+</ol>
+
+<pre><code>new Vue({
+  store,
+  // autres options de l'application
+}).$mount('#app')</code></pre>
+
+<p>
+Maintenant que notre store Vuex est configuré, nous pouvons l'utiliser pour gérer l'état global de notre application.
+</p>
+
+<h2>Les mutations et actions</h2>
+<p>
+Les mutations et les actions sont les deux principaux concepts de Vuex pour modifier l'état du store. Les mutations sont des fonctions synchrones qui effectuent les modifications de l'état, tandis que les actions sont des fonctions asynchrones qui peuvent effectuer des opérations asynchrones avant de déclencher une mutation.
+</p>
+
+<p>
+Voici comment définir une mutation dans notre store Vuex :
+</p>
+
+<pre><code>const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment(state) {
+      state.count++
+    }
+  }
+})</code></pre>
+
+<p>
+Et voici comment définir une action dans notre store Vuex :
+</p>
+
+<pre><code>const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment(state) {
+      state.count++
+    }
+  },
+  actions: {
+    incrementAsync(context) {
+      setTimeout(() => {
+        context.commit('increment')
+      }, 1000)
+    }
+  }
+})</code></pre>
+
+<p>
+Pour appeler une mutation ou une action depuis un composant, nous utilisons les méthodes <code>commit</code> et <code>dispatch</code> respectivement. Par exemple, pour appeler la mutation <code>increment</code> depuis un composant, nous utilisons :
+</p>
+
+<pre><code>this.$store.commit('increment')</code></pre>
+
+<p>
+Et pour appeler l'action <code>incrementAsync</code> depuis un composant, nous utilisons :
+</p>
+
+<pre><code>this.$store.dispatch('incrementAsync')</code></pre>
+
+<h2>Gestion des modules</h2>
+<p>
+Dans les applications Vue.js de grande taille, il peut être utile d'organiser le store Vuex en modules. Les modules permettent de diviser le store en plusieurs parties, chacune ayant son propre état, ses mutations, ses actions et ses getters.
+</p>
+
+<p>
+Voici comment définir un module dans notre store Vuex :
+</p>
+
+<pre><code>const moduleA = {
+  state: { ... },
+  mutations: { ... },
+  actions: { ... },
+  getters: { ... }
+}
+
+const moduleB = {
+  state: { ... },
+  mutations: { ... },
+  actions: { ... },
+  getters: { ... }
+}
+
+const store = new Vuex.Store({
+  modules: {
+    moduleA,
+    moduleB
+  }
+})</code></pre>
+
+<p>
+Pour accéder à l'état, aux mutations, aux actions ou aux getters d'un module depuis un composant, nous utilisons le chemin du module suivi du nom de la propriété. Par exemple, pour accéder à l'état <code>count</code> du moduleA depuis un composant, nous utilisons :
+</p>
+
+<pre><code>this.$store.state.moduleA.count</code></pre>
+
+<p>
+Et pour appeler la mutation <code>increment</code> du moduleB depuis un composant, nous utilisons :
+</p>
+
+<pre><code>this.$store.commit('moduleB/increment')</code></pre>
+
+<p>
+Avec la gestion des modules, nous pouvons organiser notre store Vuex de manière plus structurée et maintenable, en séparant les fonctionnalités en modules distincts.
+</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

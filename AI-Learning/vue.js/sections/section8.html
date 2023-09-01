@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Vue.js Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8: Optimisation et performances</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/vue.js/vue.js.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Composants fonctionnels</h2>
+<p>Les composants fonctionnels sont une fonctionnalité de Vue.js qui permet d'améliorer les performances en réduisant la surcharge liée à la création et à la mise à jour des instances de composants. Les composants fonctionnels sont des composants sans état, ce qui signifie qu'ils n'ont pas de données réactives et ne gèrent pas d'état interne. Ils sont donc plus légers et plus rapides à rendre.</p>
+<p>Voici un exemple de composant fonctionnel :</p>
+<pre><code>&lt;template functional&gt;
+  &lt;div&gt;
+    &lt;p&gt;Ceci est un composant fonctionnel.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<h2>Utilisation de la directive v-once</h2>
+<p>La directive v-once permet de rendre un élément ou un composant statique, c'est-à-dire qu'il ne sera pas mis à jour même si les données auxquelles il est lié changent. Cela peut améliorer les performances en évitant les rendus inutiles.</p>
+<p>Voici un exemple d'utilisation de la directive v-once :</p>
+<pre><code>&lt;template&gt;
+  &lt;div v-once&gt;
+    &lt;p&gt;Ce paragraphe ne sera pas mis à jour même si les données changent.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<h2>Lazy loading des composants</h2>
+<p>Le lazy loading des composants est une technique qui consiste à charger les composants de manière asynchrone, uniquement lorsque cela est nécessaire. Cela permet de réduire le temps de chargement initial de l'application en ne chargeant que les composants requis pour la vue actuelle.</p>
+<p>Voici un exemple d'utilisation du lazy loading des composants avec Vue Router :</p>
+<pre><code>const Foo = () =&gt; import('./Foo.vue');
+const Bar = () =&gt; import('./Bar.vue');
+
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+];
+</code></pre>
+
+<h2>Utilisation de la directive v-show vs v-if</h2>
+<p>La directive v-show et la directive v-if sont toutes deux utilisées pour conditionner l'affichage des éléments en fonction d'une expression. Cependant, elles fonctionnent de manière légèrement différente et ont un impact sur les performances.</p>
+<p>La directive v-show rend l'élément en utilisant la propriété CSS "display" pour le cacher ou l'afficher. Cela signifie que l'élément est toujours présent dans le DOM, même s'il est caché.</p>
+<p>La directive v-if, quant à elle, ajoute ou supprime l'élément du DOM en fonction de l'expression. Cela signifie que si l'expression est fausse, l'élément sera complètement supprimé du DOM.</p>
+<p>En général, si vous avez des éléments qui sont souvent cachés et affichés, il est préférable d'utiliser la directive v-show pour éviter de manipuler le DOM à chaque fois. Si vous avez des éléments qui sont rarement affichés, il est préférable d'utiliser la directive v-if pour optimiser les performances en évitant d'avoir des éléments inutiles dans le DOM.</p>
+<p>Voici un exemple d'utilisation de la directive v-show et de la directive v-if :</p>
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;div v-show="showElement"&gt;Cet élément est caché et affiché en utilisant v-show.&lt;/div&gt;
+    &lt;div v-if="showElement"&gt;Cet élément est ajouté ou supprimé du DOM en utilisant v-if.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      showElement: true
+    };
+  }
+};
+&lt;/script&gt;
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/vue.js/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/vue.js/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
