@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Excel Section 5</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 5: Analyse des données</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/excel/excel.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/excel/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/excel/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Utilisation des tableaux croisés dynamiques</h2>
+<p>Les tableaux croisés dynamiques sont un outil puissant dans Excel qui permet de résumer et d'analyser rapidement de grandes quantités de données. Ils permettent de regrouper et de synthétiser les données en fonction de différents critères.</p>
+
+<p>Pour créer un tableau croisé dynamique, suivez les étapes suivantes :</p>
+
+<ol>
+  <li>Sélectionnez les données que vous souhaitez analyser.</li>
+  <li>Cliquez sur l'onglet "Insertion" dans le ruban Excel.</li>
+  <li>Cliquez sur le bouton "Tableau croisé dynamique" dans le groupe "Tableaux".</li>
+  <li>Une boîte de dialogue s'ouvrira. Sélectionnez les options appropriées pour votre analyse.</li>
+  <li>Cliquez sur "OK" pour créer le tableau croisé dynamique.</li>
+</ol>
+
+<p>Une fois que vous avez créé le tableau croisé dynamique, vous pouvez le personnaliser en ajoutant des champs aux différentes zones du tableau. Les zones les plus couramment utilisées sont :</p>
+
+<ul>
+  <li>Zone "Lignes" : affiche les valeurs uniques d'un champ dans une colonne.</li>
+  <li>Zone "Colonnes" : affiche les valeurs uniques d'un champ dans une ligne.</li>
+  <li>Zone "Valeurs" : affiche les valeurs numériques d'un champ.</li>
+  <li>Zone "Filtres" : permet de filtrer les données en fonction de critères spécifiques.</li>
+</ul>
+
+<p>Vous pouvez également appliquer des opérations mathématiques aux valeurs dans le tableau croisé dynamique, telles que la somme, la moyenne, le minimum, le maximum, etc.</p>
+
+<p>Voici un exemple de code pour créer un tableau croisé dynamique en utilisant VBA :</p>
+
+<pre><code>Sub CreatePivotTable()
+    Dim ws As Worksheet
+    Dim rng As Range
+    Dim pvtCache As PivotCache
+    Dim pvtTable As PivotTable
+    
+    ' Set the worksheet and range
+    Set ws = ThisWorkbook.Worksheets("Sheet1")
+    Set rng = ws.Range("A1:D10")
+    
+    ' Create a new pivot cache
+    Set pvtCache = ThisWorkbook.PivotCaches.Create(SourceType:=xlDatabase, SourceData:=rng)
+    
+    ' Create a new pivot table
+    Set pvtTable = pvtCache.CreatePivotTable(TableDestination:=ws.Range("F1"), TableName:="PivotTable1")
+    
+    ' Add fields to the pivot table
+    With pvtTable
+        .PivotFields("Category").Orientation = xlRowField
+        .PivotFields("Product").Orientation = xlRowField
+        .PivotFields("Sales").Orientation = xlDataField
+    End With
+End Sub
+</code></pre>
+
+<h2>Utilisation des fonctions statistiques</h2>
+<p>Excel propose de nombreuses fonctions statistiques qui permettent d'analyser et de résumer les données. Ces fonctions peuvent être utilisées pour calculer des moyennes, des médianes, des écarts-types, des corrélations, des régressions, etc.</p>
+
+<p>Voici quelques exemples de fonctions statistiques couramment utilisées :</p>
+
+<ul>
+  <li><code>AVERAGE</code> : calcule la moyenne des valeurs dans une plage de cellules.</li>
+  <li><code>MEDIAN</code> : calcule la médiane des valeurs dans une plage de cellules.</li>
+  <li><code>STDEV</code> : calcule l'écart-type des valeurs dans une plage de cellules.</li>
+  <li><code>CORREL</code> : calcule le coefficient de corrélation entre deux ensembles de données.</li>
+  <li><code>LINEST</code> : calcule les coefficients de régression linéaire pour un ensemble de données.</li>
+</ul>
+
+<p>Voici un exemple d'utilisation de la fonction <code>AVERAGE</code> :</p>
+
+<pre><code>=AVERAGE(A1:A10)</code></pre>
+
+<p>Cette formule calcule la moyenne des valeurs dans la plage de cellules A1 à A10.</p>
+
+<h2>Utilisation des graphiques avancés</h2>
+<p>Excel offre une grande variété de graphiques avancés qui permettent de visualiser et d'analyser les données de manière plus approfondie. Ces graphiques incluent des graphiques en courbes, des graphiques à barres empilées, des graphiques en aires, des graphiques radar, des graphiques en boîtes à moustaches, etc.</p>
+
+<p>Pour créer un graphique avancé, suivez les étapes suivantes :</p>
+
+<ol>
+  <li>Sélectionnez les données que vous souhaitez représenter dans le graphique.</li>
+  <li>Cliquez sur l'onglet "Insertion" dans le ruban Excel.</li>
+  <li>Sélectionnez le type de graphique souhaité dans le groupe "Graphiques".</li>
+  <li>Une fois que le graphique est créé, vous pouvez le personnaliser en ajoutant des titres, des légendes, des étiquettes de données, etc.</li>
+</ol>
+
+<p>Voici un exemple de code pour créer un graphique en courbes en utilisant VBA :</p>
+
+<pre><code>Sub CreateLineChart()
+    Dim ws As Worksheet
+    Dim rng As Range
+    Dim cht As Chart
+    
+    ' Set the worksheet and range
+    Set ws = ThisWorkbook.Worksheets("Sheet1")
+    Set rng = ws.Range("A1:B10")
+    
+    ' Create a new chart
+    Set cht = ws.Shapes.AddChart2(240, xlLineMarkers).Chart
+    
+    ' Set the chart data
+    With cht
+        .SetSourceData Source:=rng
+        .HasTitle = True
+        .ChartTitle.Text = "Sales Data"
+        .Axes(xlCategory).HasTitle = True
+        .Axes(xlCategory).AxisTitle.Text = "Month"
+        .Axes(xlValue).HasTitle = True
+        .Axes(xlValue).AxisTitle.Text = "Sales"
+    End With
+End Sub
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/excel/sections/section4.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/excel/sections/section6.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
