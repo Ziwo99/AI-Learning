@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Statistique Section 8</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 8 : Analyse de données multivariées</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/statistique/statistique.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'analyse en composantes principales</h2>
+<p>L'analyse en composantes principales (ACP) est une technique statistique utilisée pour réduire la dimensionnalité des données multivariées. Elle permet de transformer un ensemble de variables corrélées en un ensemble de variables non corrélées appelées composantes principales. L'objectif de l'ACP est de capturer la variance maximale des données en projetant les observations sur les axes principaux.</p>
+
+<p>Pour effectuer une ACP, les étapes suivantes sont généralement suivies :</p>
+
+<ol>
+  <li>Standardisation des variables : les variables sont centrées et réduites pour avoir une moyenne de zéro et un écart-type de un.</li>
+  <li>Calcul de la matrice de covariance ou de corrélation : la matrice de covariance est utilisée si les variables ont des unités de mesure différentes, tandis que la matrice de corrélation est utilisée si les variables sont mesurées dans la même unité.</li>
+  <li>Calcul des valeurs propres et des vecteurs propres : les valeurs propres représentent la quantité de variance expliquée par chaque composante principale, tandis que les vecteurs propres définissent la direction de chaque composante principale.</li>
+  <li>Sélection des composantes principales : les composantes principales sont classées en fonction de leurs valeurs propres et seules les composantes principales les plus importantes sont conservées.</li>
+  <li>Projection des données : les observations sont projetées sur les composantes principales sélectionnées pour obtenir les nouvelles variables non corrélées.</li>
+</ol>
+
+<p>L'ACP est largement utilisée dans de nombreux domaines, tels que l'analyse des données, la reconnaissance de formes, la bioinformatique, etc. Elle permet de simplifier les données en réduisant leur dimensionnalité tout en préservant autant d'informations que possible.</p>
+
+<h2>L'analyse factorielle</h2>
+<p>L'analyse factorielle est une méthode statistique utilisée pour explorer les relations entre un grand nombre de variables observées et pour expliquer ces variables en termes de facteurs latents sous-jacents. Elle vise à réduire la complexité des données en identifiant les facteurs communs qui expliquent la variance partagée entre les variables.</p>
+
+<p>Les étapes de base de l'analyse factorielle sont les suivantes :</p>
+
+<ol>
+  <li>Standardisation des variables : les variables sont centrées et réduites pour avoir une moyenne de zéro et un écart-type de un.</li>
+  <li>Estimation des facteurs : les facteurs sont estimés à partir de la matrice de covariance ou de corrélation des variables.</li>
+  <li>Rotation des facteurs : les facteurs sont souvent rotés pour faciliter leur interprétation. Les méthodes de rotation les plus couramment utilisées sont la rotation varimax et la rotation oblique.</li>
+  <li>Interprétation des facteurs : les facteurs sont interprétés en examinant les charges factorielles, qui indiquent la corrélation entre chaque variable et chaque facteur.</li>
+</ol>
+
+<p>L'analyse factorielle est utilisée dans de nombreux domaines, tels que la psychologie, la sociologie, le marketing, etc. Elle permet de réduire la complexité des données en identifiant les facteurs sous-jacents qui expliquent les relations entre les variables observées.</p>
+
+<h2>Les méthodes de classification</h2>
+<p>Les méthodes de classification sont des techniques statistiques utilisées pour regrouper les observations en fonction de leurs caractéristiques communes. Elles permettent de découvrir des structures cachées dans les données et de prédire l'appartenance à un groupe pour de nouvelles observations.</p>
+
+<p>Il existe plusieurs méthodes de classification, notamment :</p>
+
+<ul>
+  <li>L'analyse discriminante : elle vise à trouver une fonction discriminante qui maximise la séparation entre les groupes.</li>
+  <li>Les arbres de décision : ils utilisent une série de règles de décision pour diviser les observations en groupes homogènes.</li>
+  <li>Les méthodes de clustering : elles regroupent les observations en fonction de leur similarité, sans connaître à l'avance les groupes.</li>
+  <li>Les réseaux de neurones : ils utilisent des modèles mathématiques inspirés du fonctionnement du cerveau pour classer les observations.</li>
+</ul>
+
+<p>Les méthodes de classification sont largement utilisées dans de nombreux domaines, tels que la reconnaissance de formes, l'apprentissage automatique, la bioinformatique, etc. Elles permettent de prendre des décisions basées sur les caractéristiques des observations et de prédire de nouvelles observations en fonction des modèles appris à partir des données existantes.</p>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section7.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section9.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

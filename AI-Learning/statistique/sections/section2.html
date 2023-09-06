@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Statistique Section 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 2 : Probabilités et distributions</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/statistique/statistique.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>Les concepts de probabilité</h2>
+<p>La probabilité est une mesure de la possibilité qu'un événement se produise. Elle est souvent exprimée comme un nombre entre 0 et 1, où 0 signifie que l'événement est impossible et 1 signifie qu'il est certain. La probabilité peut également être exprimée en pourcentage.</p>
+<p>Il existe deux types de probabilités : la probabilité théorique et la probabilité empirique. La probabilité théorique est basée sur des calculs mathématiques et des modèles probabilistes, tandis que la probabilité empirique est basée sur des observations et des expériences réelles.</p>
+<p>Les concepts clés de la probabilité comprennent l'événement, l'espace des échantillons, l'événement complémentaire, l'événement indépendant et l'événement conditionnel. Un événement est un résultat possible d'une expérience aléatoire. L'espace des échantillons est l'ensemble de tous les résultats possibles de l'expérience aléatoire. L'événement complémentaire est l'événement qui ne se produit pas. Deux événements sont indépendants si la probabilité de l'un n'est pas affectée par la réalisation de l'autre. Un événement conditionnel est la probabilité qu'un événement se produise, sachant que l'autre événement s'est déjà produit.</p>
+
+<h2>Les distributions de probabilité discrètes</h2>
+<p>Une distribution de probabilité discrète est une fonction qui associe à chaque valeur possible d'une variable aléatoire discrète une probabilité. Une variable aléatoire discrète est une variable qui peut prendre un nombre fini ou dénombrable de valeurs distinctes.</p>
+<p>Les distributions de probabilité discrètes les plus couramment utilisées sont la distribution uniforme, la distribution de Bernoulli, la distribution binomiale, la distribution de Poisson et la distribution géométrique.</p>
+<p>La distribution uniforme attribue la même probabilité à chaque valeur possible de la variable aléatoire. La distribution de Bernoulli est utilisée pour modéliser une expérience aléatoire avec deux résultats possibles, généralement notés 0 et 1. La distribution binomiale est utilisée pour modéliser le nombre de succès dans un certain nombre d'essais indépendants et identiquement distribués. La distribution de Poisson est utilisée pour modéliser le nombre d'événements rares qui se produisent dans un intervalle de temps ou d'espace donné. La distribution géométrique est utilisée pour modéliser le nombre d'essais nécessaires pour obtenir le premier succès dans une série d'essais indépendants et identiquement distribués.</p>
+
+<h2>Les distributions de probabilité continues</h2>
+<p>Une distribution de probabilité continue est une fonction qui associe à chaque valeur possible d'une variable aléatoire continue une probabilité. Une variable aléatoire continue est une variable qui peut prendre n'importe quelle valeur dans un intervalle donné.</p>
+<p>Les distributions de probabilité continues les plus couramment utilisées sont la distribution normale, la distribution exponentielle et la distribution uniforme continue.</p>
+<p>La distribution normale, également connue sous le nom de courbe en cloche, est la distribution de probabilité la plus importante en statistique. Elle est caractérisée par sa moyenne et son écart-type. La distribution exponentielle est utilisée pour modéliser le temps entre les événements rares et indépendants qui se produisent de manière continue. La distribution uniforme continue attribue la même probabilité à chaque valeur possible de la variable aléatoire dans un intervalle donné.</p>
+
+<p>Voici un exemple de code pour générer des valeurs aléatoires à partir d'une distribution normale :</p>
+<pre><code>import numpy as np
+
+mean = 0
+std = 1
+size = 1000
+
+samples = np.random.normal(mean, std, size)
+print(samples)</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section1.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section3.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

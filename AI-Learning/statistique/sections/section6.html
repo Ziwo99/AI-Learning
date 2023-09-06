@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Statistique Section 6</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 6 : Analyse de variance</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/statistique/statistique.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>L'analyse de variance à un facteur</h2>
+<p>L'analyse de variance à un facteur est une méthode statistique utilisée pour comparer les moyennes de plusieurs groupes. Elle permet de déterminer si les différences observées entre les groupes sont statistiquement significatives ou simplement dues au hasard.</p>
+
+<p>Pour réaliser une analyse de variance à un facteur, on utilise la méthode de la somme des carrés. Cette méthode consiste à calculer la somme des carrés des écarts entre chaque observation et la moyenne de son groupe, puis à comparer cette somme des carrés à celle qui serait attendue si les groupes étaient identiques.</p>
+
+<p>La statistique de test utilisée en analyse de variance à un facteur est le rapport de la somme des carrés inter-groupes sur la somme des carrés intra-groupes. Si ce rapport est supérieur à un certain seuil critique, on peut conclure que les moyennes des groupes sont significativement différentes.</p>
+
+<p>Voici un exemple de code en R pour réaliser une analyse de variance à un facteur :</p>
+
+<pre><code># Création des données
+groupe1 <- c(10, 12, 14, 16, 18)
+groupe2 <- c(20, 22, 24, 26, 28)
+groupe3 <- c(30, 32, 34, 36, 38)
+
+# Réalisation de l'analyse de variance
+resultats <- aov(c(groupe1, groupe2, groupe3) ~ c(rep("Groupe 1", 5), rep("Groupe 2", 5), rep("Groupe 3", 5)))
+
+# Affichage des résultats
+summary(resultats)</code></pre>
+
+<h2>L'analyse de variance à deux facteurs</h2>
+<p>L'analyse de variance à deux facteurs est une extension de l'analyse de variance à un facteur, qui permet de prendre en compte l'effet de deux variables indépendantes sur une variable dépendante.</p>
+
+<p>Cette méthode statistique permet de déterminer si les moyennes des groupes formés par les différentes combinaisons des deux facteurs sont significativement différentes. Elle permet également d'identifier les interactions entre les deux facteurs, c'est-à-dire les cas où l'effet d'un facteur dépend de la valeur de l'autre facteur.</p>
+
+<p>La réalisation d'une analyse de variance à deux facteurs nécessite de calculer plusieurs sommes des carrés, correspondant aux effets principaux des deux facteurs et à l'interaction entre les deux facteurs. Ces sommes des carrés sont ensuite comparées à celles qui seraient attendues si les groupes étaient identiques.</p>
+
+<p>Voici un exemple de code en R pour réaliser une analyse de variance à deux facteurs :</p>
+
+<pre><code># Création des données
+groupe1 <- c(10, 12, 14, 16, 18)
+groupe2 <- c(20, 22, 24, 26, 28)
+groupe3 <- c(30, 32, 34, 36, 38)
+facteur1 <- c(rep("A", 5), rep("B", 5), rep("C", 5))
+facteur2 <- c(rep("X", 5), rep("Y", 5), rep("Z", 5))
+
+# Réalisation de l'analyse de variance
+resultats <- aov(c(groupe1, groupe2, groupe3) ~ facteur1 * facteur2)
+
+# Affichage des résultats
+summary(resultats)</code></pre>
+
+<h2>Les plans d'expérience</h2>
+<p>Les plans d'expérience sont une méthode statistique utilisée pour optimiser les expériences en contrôlant les facteurs qui influencent une variable de réponse. Ils permettent de déterminer les conditions expérimentales qui maximisent ou minimisent la variable de réponse, tout en minimisant les effets des facteurs indésirables.</p>
+
+<p>Il existe différents types de plans d'expérience, tels que le plan factoriel, le plan en blocs aléatoires, le plan en carré latin, etc. Chaque type de plan d'expérience a ses propres caractéristiques et objectifs.</p>
+
+<p>La réalisation d'un plan d'expérience nécessite de définir les facteurs à étudier, les niveaux de chaque facteur, les répétitions de l'expérience, etc. Les données collectées lors de l'expérience sont ensuite analysées à l'aide de méthodes statistiques appropriées, telles que l'analyse de variance.</p>
+
+<p>Voici un exemple de code en R pour réaliser un plan d'expérience :</p>
+
+<pre><code># Création des données
+facteur1 <- c(rep("A", 5), rep("B", 5), rep("C", 5))
+facteur2 <- c(rep("X", 5), rep("Y", 5), rep("Z", 5))
+reponse <- c(10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38)
+
+# Réalisation du plan d'expérience
+resultats <- aov(reponse ~ facteur1 * facteur2)
+
+# Affichage des résultats
+summary(resultats)</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section5.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section7.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

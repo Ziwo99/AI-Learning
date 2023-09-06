@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>AI-Learning - Statistique Section 7</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/dracula.min.css">
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt" style="display: flex; align-items: center;">
+			<a href="/index.html" style="text-decoration: none; border: none; outline: none;">
+				<img src="/images/ai-learning-logo.svg" alt="Votre Logo" style="display: block; border: none;">
+			</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<div class="inner">
+				<h2>Menu</h2>
+				<ul class="links">
+					<li><a href="/index.html">Accueil</a></li>
+					<li><a href="/courses.html">Formations</a></li>
+					<li><a href="/ai-learning.html">Qu'est ce qu'AI-Learning ?</a></li>
+					<li><a href="/generation.html">Comment sont générées nos formations ?</a></li>
+					<li><a href="/research.html">Travail de recherche</a></li>
+				</ul>
+				<a href="#" class="close">Close</a>
+			</div>
+		</nav>
+
+		<!-- Wrapper -->
+		<section id="wrapper">
+			<header>
+				<div class="inner">
+					<h2>Section 7 : Modèles de régression avancés</h2>
+					<ul class="actions stacked">
+						<li><a href="/AI-Learning/statistique/statistique.html"
+								class="button">
+								Revenir à la fiche du cours</a></li>
+					</ul>
+				</div>
+			</header>
+			<!-- Content -->
+			<div class="wrapper">
+				<div class="inner">
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+					
+
+<h2>La régression logistique</h2>
+<p>La régression logistique est une technique statistique utilisée pour modéliser la relation entre une variable dépendante binaire et un ensemble de variables indépendantes. Elle est couramment utilisée pour prédire la probabilité d'un événement binaire, tel que la présence ou l'absence d'une maladie, en fonction de variables explicatives.</p>
+
+<p>La régression logistique utilise une fonction logistique pour modéliser la relation entre les variables indépendantes et la variable dépendante. La fonction logistique transforme la somme pondérée des variables indépendantes en une probabilité comprise entre 0 et 1.</p>
+
+<p>Voici un exemple de code en R pour effectuer une régression logistique :</p>
+
+<pre><code># Charger la librairie de régression logistique
+library(glm)
+
+# Créer un modèle de régression logistique
+modele_logistique <- glm(Y ~ X1 + X2, data = data, family = binomial)
+
+# Afficher les résultats du modèle
+summary(modele_logistique)
+</code></pre>
+
+<h2>La régression non linéaire</h2>
+<p>La régression non linéaire est une technique statistique utilisée pour modéliser la relation entre une variable dépendante et un ensemble de variables indépendantes lorsque la relation n'est pas linéaire. Contrairement à la régression linéaire, la régression non linéaire permet de modéliser des relations plus complexes, telles que des courbes ou des surfaces.</p>
+
+<p>La régression non linéaire utilise des fonctions non linéaires pour modéliser la relation entre les variables indépendantes et la variable dépendante. Ces fonctions peuvent être choisies en fonction de la forme supposée de la relation.</p>
+
+<p>Voici un exemple de code en Python pour effectuer une régression non linéaire :</p>
+
+<pre><code># Charger la librairie de régression non linéaire
+from scipy.optimize import curve_fit
+
+# Définir la fonction non linéaire
+def fonction_non_lineaire(x, a, b, c):
+    return a * np.exp(-b * x) + c
+
+# Effectuer la régression non linéaire
+parametres, covariances = curve_fit(fonction_non_lineaire, x, y)
+
+# Afficher les paramètres estimés
+print("Paramètres estimés :", parametres)
+</code></pre>
+
+<h2>La régression multinomiale</h2>
+<p>La régression multinomiale est une extension de la régression logistique utilisée pour modéliser la relation entre une variable dépendante avec plusieurs catégories et un ensemble de variables indépendantes. Elle est couramment utilisée pour prédire la probabilité d'appartenance à chaque catégorie de la variable dépendante en fonction des variables explicatives.</p>
+
+<p>La régression multinomiale utilise une fonction logistique pour modéliser la relation entre les variables indépendantes et la variable dépendante. Cependant, elle est adaptée pour les situations où la variable dépendante a plus de deux catégories.</p>
+
+<p>Voici un exemple de code en R pour effectuer une régression multinomiale :</p>
+
+<pre><code># Charger la librairie de régression multinomiale
+library(nnet)
+
+# Créer un modèle de régression multinomiale
+modele_multinomial <- multinom(Y ~ X1 + X2, data = data)
+
+# Afficher les résultats du modèle
+summary(modele_multinomial)
+</code></pre>
+					
+					<ul class="actions">
+						<li><a href="/AI-Learning/statistique/sections/section6.html"
+								class="button primary">
+								Section précédente</a></li>
+						<li><a href="/AI-Learning/statistique/sections/section8.html"
+								class="button primary" id="last">
+								Section suivante</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Untitled Inc. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/browser.min.js"></script>
+	<script src="/assets/js/breakpoints.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
